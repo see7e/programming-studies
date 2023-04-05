@@ -3,7 +3,7 @@
 -- DROP SCHEMA IF EXISTS projeto_nome ;
 
 CREATE SCHEMA IF NOT EXISTS projeto_nome
-    AUTHORIZATION chicago;
+    AUTHORIZATION adm;
 
 COMMENT ON SCHEMA projeto_nome
     IS 'Projeto da #localização#, gerido por #gestor#';
