@@ -1,0 +1,85 @@
+QGIS version: 3.22.4-Bia?owie?a
+QGIS code revision: ce8e65e9
+Qt version: 5.15.2
+Python version: 3.9.5
+GDAL version: 3.4.1
+GEOS version: 3.10.2-CAPI-1.16.0
+PROJ version: Rel. 8.2.1, January 1st, 2022
+PDAL version: 2.3.0 (git-version: 9f35b7)
+Algorithm started at: 2022-12-26T16:21:34
+Algorithm 'Better Geometries' starting…
+Input parameters:
+{ 'native:snapgeometries_1:snapped_aerialBoxes' : 'C:/Users/gabryel.nobrega/AppData/Roaming/QGIS/QGIS3/profiles/default/processing/outputs/snapped_aerialBoxes.shp', 'native:snapgeometries_5:snapped_dCables' : 'C:/Users/gabryel.nobrega/AppData/Roaming/QGIS/QGIS3/profiles/default/processing/outputs/snapped_dCables.shp', 'native:snapgeometries_6:snapped_fCables' : 'C:/Users/gabryel.nobrega/AppData/Roaming/QGIS/QGIS3/profiles/default/processing/outputs/snapped_fCables.shp', 'native:snapgeometries_7:snapped_dropCables' : 'C:/Users/gabryel.nobrega/AppData/Roaming/QGIS/QGIS3/profiles/default/processing/outputs/snapped_dropCables.shp', 'native:snapgeometries_9:snapped_dDucts' : 'C:/Users/gabryel.nobrega/AppData/Roaming/QGIS/QGIS3/profiles/default/processing/outputs/snapped_dDucts.shp' }
+
+Prepare algorithm: native:snapgeometries_1
+Running Snap AerialBox to Paal [1/12]
+Input Parameters:
+{ BEHAVIOR: 2, INPUT: 'C:/Users/gabryel.nobrega/Documents/UNIF/ChaudFontaine1/POP1/01 - Cópia/export_shapes/export - Aerial Box.shp', OUTPUT: 'C:/Users/gabryel.nobrega/AppData/Roaming/QGIS/QGIS3/profiles/default/processing/outputs/snapped_aerialBoxes.shp', REFERENCE_LAYER: 'C:/Users/gabryel.nobrega/Documents/UNIF/ChaudFontaine1/POP1/01 - Cópia/export_shapes/export - Paal.shp', TOLERANCE: 0.005 }
+OK. Execution took 0.669 s (1 outputs).
+Prepare algorithm: native:snapgeometries_9
+Running Snap DDuct to DP [2/12]
+Input Parameters:
+{ BEHAVIOR: 4, INPUT: 'C:/Users/gabryel.nobrega/Documents/UNIF/ChaudFontaine1/POP1/01 - Cópia/export_shapes/export - D-Duct.shp', OUTPUT: 'C:/Users/gabryel.nobrega/AppData/Roaming/QGIS/QGIS3/profiles/default/processing/outputs/snapped_dDucts.shp', REFERENCE_LAYER: 'C:/Users/gabryel.nobrega/AppData/Roaming/QGIS/QGIS3/profiles/default/processing/outputs/snapped_aerialBoxes.shp', TOLERANCE: 0.005 }
+OK. Execution took 0.246 s (1 outputs).
+Prepare algorithm: native:fixgeometries_1
+Running Fix D-Cables geometries [3/12]
+Input Parameters:
+{ INPUT: 'C:/Users/gabryel.nobrega/Documents/UNIF/ChaudFontaine1/POP1/01 - Cópia/export_shapes/export - D-Cable.shp', OUTPUT: 'memory:Fixed geometries' }
+Fixing geometry for feature 833 resulted in MultiPoint, geometry has been dropped.
+OK. Execution took 0.229 s (1 outputs).
+Prepare algorithm: native:snapgeometries_2
+Running Snap (fx)DCables to Paal [4/12]
+Input Parameters:
+{ BEHAVIOR: 4, INPUT: 'memory://MultiLineString?crs=EPSG:31370&field=ID:long(11,0)&field=Categorie:string(255,0)&field=CsType:string(255,0)&field=GeoLength:double(17,9)&field=Handle:long(11,0)&field=Identifier:string(255,0)&field=Label:string(255,0)&field=CoconType:string(255,0)&field=PrijsPerMet:double(17,9)&field=Spec:long(11,0)&field=StructureId:long(11,0)&field=StructureMa:long(11,0)&field=StructureMi:long(11,0)&field=Type:string(255,0)&uid={ae5fedd8-0981-4b6d-9b21-3af7e9700222}', OUTPUT: 'memory:Snapped geometry', REFERENCE_LAYER: 'C:/Users/gabryel.nobrega/Documents/UNIF/ChaudFontaine1/POP1/01 - Cópia/export_shapes/export - Paal.shp', TOLERANCE: 0.005 }
+OK. Execution took 0.2 s (1 outputs).
+Prepare algorithm: native:snapgeometries_4
+Running Snap (fx)DCable to TermBox [5/12]
+Input Parameters:
+{ BEHAVIOR: 4, INPUT: 'memory://MultiLineString?crs=EPSG:31370&field=ID:long(11,0)&field=Categorie:string(255,0)&field=CsType:string(255,0)&field=GeoLength:double(17,9)&field=Handle:long(11,0)&field=Identifier:string(255,0)&field=Label:string(255,0)&field=CoconType:string(255,0)&field=PrijsPerMet:double(17,9)&field=Spec:long(11,0)&field=StructureId:long(11,0)&field=StructureMa:long(11,0)&field=StructureMi:long(11,0)&field=Type:string(255,0)&uid={cad3e715-75e2-4105-94b6-0c31e8876513}', OUTPUT: 'memory:Snapped geometry', REFERENCE_LAYER: 'C:/Users/gabryel.nobrega/Documents/UNIF/ChaudFontaine1/POP1/01 - Cópia/export_shapes/export - Termination Box.shp', TOLERANCE: 0.005 }
+OK. Execution took 0.217 s (1 outputs).
+Prepare algorithm: native:snapgeometries_8
+Running Snap (fx)DCable to Riser [6/12]
+Input Parameters:
+{ BEHAVIOR: 4, INPUT: 'memory://MultiLineString?crs=EPSG:31370&field=ID:long(11,0)&field=Categorie:string(255,0)&field=CsType:string(255,0)&field=GeoLength:double(17,9)&field=Handle:long(11,0)&field=Identifier:string(255,0)&field=Label:string(255,0)&field=CoconType:string(255,0)&field=PrijsPerMet:double(17,9)&field=Spec:long(11,0)&field=StructureId:long(11,0)&field=StructureMa:long(11,0)&field=StructureMi:long(11,0)&field=Type:string(255,0)&uid={2675bedc-fe80-42a5-bd4a-372f8a4d3fa7}', OUTPUT: 'memory:Snapped geometry', REFERENCE_LAYER: 'C:/Users/gabryel.nobrega/Documents/UNIF/ChaudFontaine1/POP1/01 - Cópia/export_shapes/export - Riser.shp', TOLERANCE: 0.005 }
+OK. Execution took 0.234 s (1 outputs).
+Prepare algorithm: native:snapgeometries_5
+Running Snap(fx) DCable to DP [7/12]
+Input Parameters:
+{ BEHAVIOR: 4, INPUT: 'memory://MultiLineString?crs=EPSG:31370&field=ID:long(11,0)&field=Categorie:string(255,0)&field=CsType:string(255,0)&field=GeoLength:double(17,9)&field=Handle:long(11,0)&field=Identifier:string(255,0)&field=Label:string(255,0)&field=CoconType:string(255,0)&field=PrijsPerMet:double(17,9)&field=Spec:long(11,0)&field=StructureId:long(11,0)&field=StructureMa:long(11,0)&field=StructureMi:long(11,0)&field=Type:string(255,0)&uid={47bf0b8b-b622-429a-89ac-2e7afdc42959}', OUTPUT: 'C:/Users/gabryel.nobrega/AppData/Roaming/QGIS/QGIS3/profiles/default/processing/outputs/snapped_dCables.shp', REFERENCE_LAYER: 'C:/Users/gabryel.nobrega/Documents/UNIF/ChaudFontaine1/POP1/01 - Cópia/export_shapes/export - DP.shp', TOLERANCE: 0.005 }
+OK. Execution took 0.245 s (1 outputs).
+Prepare algorithm: native:fixgeometries_2
+Running Fix F-Cables geometries [8/12]
+Input Parameters:
+{ INPUT: 'C:/Users/gabryel.nobrega/Documents/UNIF/ChaudFontaine1/POP1/01 - Cópia/export_shapes/export - F-Cable.shp', OUTPUT: 'memory:Fixed geometries' }
+OK. Execution took 0.195 s (1 outputs).
+Prepare algorithm: native:snapgeometries_6
+Running Snap (fx) FCable to CO [9/12]
+Input Parameters:
+{ BEHAVIOR: 4, INPUT: 'memory://MultiLineString?crs=EPSG:31370&field=ID:long(11,0)&field=Categorie:string(255,0)&field=CsType:string(255,0)&field=GeoLength:double(17,9)&field=Handle:long(11,0)&field=Identifier:string(255,0)&field=Label:string(255,0)&field=CoconType:string(255,0)&field=PrijsPerMet:double(17,9)&field=Spec:long(11,0)&field=StructureId:long(11,0)&field=StructureMa:long(11,0)&field=StructureMi:long(11,0)&field=Type:string(255,0)&uid={cbf914f1-1939-49e2-ba32-9bff05a94fe5}', OUTPUT: 'C:/Users/gabryel.nobrega/AppData/Roaming/QGIS/QGIS3/profiles/default/processing/outputs/snapped_fCables.shp', REFERENCE_LAYER: 'C:/Users/gabryel.nobrega/Documents/UNIF/ChaudFontaine1/POP1/01 - Cópia/Shapes de Base/CO.shp', TOLERANCE: 0.005 }
+OK. Execution took 0.022 s (1 outputs).
+Prepare algorithm: native:fixgeometries_3
+Running Fix DropCable geometries [10/12]
+Input Parameters:
+{ INPUT: 'C:/Users/gabryel.nobrega/Documents/UNIF/ChaudFontaine1/POP1/01 - Cópia/export_shapes/export - Drop Cable.shp', OUTPUT: 'memory:Fixed geometries' }
+OK. Execution took 0.219 s (1 outputs).
+Prepare algorithm: native:snapgeometries_3
+Running Snap dropCable to Paal [11/12]
+Input Parameters:
+{ BEHAVIOR: 4, INPUT: 'memory://MultiLineString?crs=EPSG:31370&field=ID:long(11,0)&field=Categorie:string(255,0)&field=CsType:string(255,0)&field=GeoLength:double(17,9)&field=Handle:long(11,0)&field=Identifier:string(255,0)&field=Label:string(255,0)&field=CoconType:string(255,0)&field=PrijsPerMet:double(17,9)&field=Spec:long(11,0)&field=StructureId:long(11,0)&field=StructureMa:long(11,0)&field=StructureMi:long(11,0)&field=Type:string(255,0)&uid={81d07bba-5799-4ff5-b850-4d20e6a443c7}', OUTPUT: 'memory:Snapped geometry', REFERENCE_LAYER: 'C:/Users/gabryel.nobrega/Documents/UNIF/ChaudFontaine1/POP1/01 - Cópia/export_shapes/export - Paal.shp', TOLERANCE: 0.005 }
+OK. Execution took 0.487 s (1 outputs).
+Prepare algorithm: native:snapgeometries_7
+Running Snap (fx)dropCable to HP [12/12]
+Input Parameters:
+{ BEHAVIOR: 4, INPUT: 'memory://MultiLineString?crs=EPSG:31370&field=ID:long(11,0)&field=Categorie:string(255,0)&field=CsType:string(255,0)&field=GeoLength:double(17,9)&field=Handle:long(11,0)&field=Identifier:string(255,0)&field=Label:string(255,0)&field=CoconType:string(255,0)&field=PrijsPerMet:double(17,9)&field=Spec:long(11,0)&field=StructureId:long(11,0)&field=StructureMa:long(11,0)&field=StructureMi:long(11,0)&field=Type:string(255,0)&uid={2d0033ed-7e92-4a6e-b039-7808b06aa599}', OUTPUT: 'C:/Users/gabryel.nobrega/AppData/Roaming/QGIS/QGIS3/profiles/default/processing/outputs/snapped_dropCables.shp', REFERENCE_LAYER: 'C:/Users/gabryel.nobrega/Documents/UNIF/ChaudFontaine1/POP1/01 - Cópia/Shapes de Base/HPs.shp', TOLERANCE: 0.005 }
+OK. Execution took 0.799 s (1 outputs).
+Model processed OK. Executed 12 algorithms total in 5.035 s.
+Execution completed in 5.10 seconds
+Results:
+{'native:snapgeometries_1:snapped_aerialBoxes': 'C:/Users/gabryel.nobrega/AppData/Roaming/QGIS/QGIS3/profiles/default/processing/outputs/snapped_aerialBoxes.shp',
+'native:snapgeometries_5:snapped_dCables': 'C:/Users/gabryel.nobrega/AppData/Roaming/QGIS/QGIS3/profiles/default/processing/outputs/snapped_dCables.shp',
+'native:snapgeometries_6:snapped_fCables': 'C:/Users/gabryel.nobrega/AppData/Roaming/QGIS/QGIS3/profiles/default/processing/outputs/snapped_fCables.shp',
+'native:snapgeometries_7:snapped_dropCables': 'C:/Users/gabryel.nobrega/AppData/Roaming/QGIS/QGIS3/profiles/default/processing/outputs/snapped_dropCables.shp',
+'native:snapgeometries_9:snapped_dDucts': 'C:/Users/gabryel.nobrega/AppData/Roaming/QGIS/QGIS3/profiles/default/processing/outputs/snapped_dDucts.shp'}
+
+Loading resulting layers
+Algorithm 'Better Geometries' finished
