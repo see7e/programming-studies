@@ -33,7 +33,49 @@ Revisitar o manifesto regularmente é um exercício útil para as equipes como u
 
 # [Planejamento de Software e Documentação Técnica](https://www.youtube.com/watch?v=2qlcY9LkFik)
 
-![Estrutura text](src/gestao-documental.jpg)
+```mermaid
+flowchart TD
+	A(Gestão Documental)
+	A --> AA(Documentação do Produto)
+		
+	AA --> AAA(Requerimentos do Produto)
+	AAA --> AAAA(Funcionais)
+	AAA --> AAAB(Não-funcionais)
+	
+	AA --> AAB(UX)
+	AAB--> AABA(Perfil do Usuário)
+	AAB--> AABB(Cenários)
+	
+	AA--> AAC(Arquitetura)
+	
+	A --> AB(Documentação do Processo)
+	AB --> ABA(Roadmaps)
+	ABA --> ABAA(Estratégias)
+	ABA --> ABAB(Tecnologias)
+	ABA --> ABAC(Releases)
+	
+	AB --> ABB(Métricas)
+	ABB --> ABBA(Work in progress)
+	ABB --> ABBB(Saúde do Processo e Gargalos)
+	ABB --> ABBC(Qualidade de Código)
+
+	AB --> ABC(Guidelines)
+	ABC --> ABCA(Melhores práticas)
+	ABC --> ABCB(Manuais)
+
+	ABBA --> ABBAA(Velocidade)
+	ABBA --> ABBAB(Sprint Burndowns)
+	ABBA --> ABBAC(Release Burndowns)
+
+	ABBB --> ABBBA(Ciclos)
+	ABBB --> ABBBB(Fluxo Culmulativo)
+	ABBB --> ABBBC(Eficiência do Fluxo)
+	
+	ABBC --> ABBCA(Média de código)
+	ABBC --> ABBCB(Automação vs Testes manuais)
+	ABBC --> ABBCC(Rotatividade de código)
+	ABBC --> ABBCD(MCC)
+```
 
 1.	Documentação do produto
     1.	Requerimentos do produto
