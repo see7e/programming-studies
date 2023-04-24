@@ -1,3 +1,11 @@
+---
+title: Create Users PSQL
+tags: studies
+use: Documentation
+languages: SQL
+dependences: PostgreSQL
+---
+
 ## Como criar restrições de acesso de usuários a esquemas de banco de dados em postgresql
 </br>
 

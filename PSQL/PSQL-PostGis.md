@@ -1,3 +1,11 @@
+---
+title: PSQL PostGis
+tags: studies
+use: Documentation
+languages: SQL
+dependences: PostgreSQL
+---
+
 > structured query language
 # Commandos
 - `ctrl + L`	limpa a tela

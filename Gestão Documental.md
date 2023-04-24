@@ -1,3 +1,10 @@
+---
+title: Gestão Documental
+tags: studies
+use: Documentation
+languages: NULL
+dependences: NULL
+---
 # 12 princípios do Manifesto Ágil
 
 1. Nossa maior prioridade é satisfazer o cliente por meio da entrega antecipada e contínua de software valioso. ![principio1]( https://scrumorg-website-prod.s3.amazonaws.com/drupal/inline-images/Henrik.png)
