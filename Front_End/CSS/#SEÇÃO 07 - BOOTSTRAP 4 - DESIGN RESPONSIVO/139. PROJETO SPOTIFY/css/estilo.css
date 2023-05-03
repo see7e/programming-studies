@@ -1,0 +1,244 @@
+/* LAYOUT
+------------------------*/
+	html, body, #home {
+		height: 100%;
+
+		overflow-x: hidden;
+	}
+
+	body {
+		background: url(../imagens/capa.png),
+					url(../imagens/ruido.png),
+					linear-gradient(50deg,#ff4169,#7c26f8);
+		background-attachment: fixed;
+		font-family: Helvetica, Arial, sans-serif;
+	}
+
+/* Barra de nanvegação  ---*/
+	nav.navbar-transparente{
+		background-color: rgba(0,0,0,0.6);
+		padding: 15px 0;
+	}
+
+	.navbar-nav .nav-link{
+		color: white;
+	}
+
+	.navbar-nav .nav-link:hover{
+		color: #9bf0e1;
+	}
+
+	.divisor{
+		width: 1px;
+		margin: 12px 15px;
+		background: white;
+	}
+
+	.rotacionar{
+		/*prefixos*/
+		-ms-transform: rotate(30deg);
+		-webkit-transform: rotate(30deg);
+		transform: rotate(30deg);
+
+		padding-left: 80px;
+	}
+
+/* Capa  ---*/
+	.capa{
+		text-align: center;
+	}
+
+/* Tipografia  ---*/
+	h1{
+		font-weight: 900;
+		letter-spacing: -.05em;
+		color: white;
+	}
+
+	h2{
+		font-size: 3em;
+		font-weight: 700;
+		letter-spacing: -.04em;
+	}
+
+	h3{
+		font-size: 2em;
+		font-weight: 700;
+		letter-spacing: -.04em;
+	}
+
+	footer h4{
+		color: #919496;
+		font-size: .8em;
+		text-transform: uppercase;
+	}
+
+	footer .navbar-nav a{
+		color: white;
+		font-size: .8em;
+	}
+
+	footer .navbar-nav a:hover{
+		color: #9bf0e1;
+		text-decoration: none;
+	}
+
+/* Estruturas ---*/
+	#servicos{
+		background: white;
+
+		padding-top: 20px;
+		padding-bottom: 20px;
+	}
+
+	#servicos h2, h3, p{
+		color: #7c25f8;
+	}
+
+	#recursos{
+		padding-top: 20px;
+		padding-bottom: 20px;	
+	}
+
+	#recursos h2, p{
+		color: white;
+	}
+
+	#recursos h3{
+		color: #9bf0e1;
+	}
+
+	.albuns{
+		padding: 10px 0;
+	}
+
+	.btn-roxo{
+		background: #7c25f8;
+	}
+
+	.btn-roxo:hover{
+		background: #6207e3;
+		color: white;
+	}
+
+	.btn-branco{
+		border: 2px solid white;
+	}
+
+	.btn-branco:hover{
+		background: white;
+		color: black;
+	}
+
+	footer{
+		background: #000;
+		padding: 50px 0 20px 0;
+
+		position: relative;
+	}
+
+	footer ul{
+		list-style: none;
+	}
+
+	footer ul li{
+		float: right;
+
+		margin: 0 5px;
+	}
+
+/* MEDIA QUARIES ------------------
+ESTUDAR SOLULÇÃO*/
+	/* Extra small devices (below 576px)*/
+
+		@media (max-width: 575.98px) {
+
+			 h1 {
+
+			   font-size: 3em;
+
+			 }
+
+		 .btn-custom {
+
+		    color: white;
+
+		    border-radius: 500px;
+
+		    -webkit-border-radius: 500px;
+
+		    -moz-border-radius: 500px;
+
+		    text-transform: uppercase;
+
+		    transition: background 0.4s, color 0.4s;
+
+		    padding: 10px 20px;
+		    margin: 10px 0;
+
+		  }
+
+		}
+
+	/* Small devices (landscape phones, 576px and up)*/
+
+		@media (min-width: 576px) and (max-width: 767.98px) {
+
+			  h1 {
+
+			    font-size: 3em;
+
+			  }
+
+			.btn-custom {
+
+			    color: white;
+
+			    border-radius: 500px;
+
+			    -webkit-border-radius: 500px;
+
+			    -moz-border-radius: 500px;
+
+			    text-transform: uppercase;
+
+			    transition: background 0.4s, color 0.4s;
+
+			    padding: 10px 20px;
+			    margin: 10px 0;
+
+			}
+
+			}
+
+			/* Medium - large devices*/
+
+			@media (min-width: 768px) {
+
+			  h1 {
+
+			    font-size: 4em;
+
+			  }
+
+
+			  .btn-custom {
+
+			    color: white;
+
+			    border-radius: 500px;
+
+			    -webkit-border-radius: 500px;
+
+			    -moz-border-radius: 500px;
+
+			    text-transform: uppercase;
+
+			    transition: background 0.4s, color 0.4s;
+
+			    padding: 10px 20px;
+			    margin: 0 10px;
+
+			   }
+		}
+

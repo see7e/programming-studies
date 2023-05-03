@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>205 ATIVIDADE</title>
+
+		<script type="text/javascript">
+			var objetos = ['Cadeira', 'Impressora', 'Garfo'];
+
+			console.log('Array inicial')
+			console.log(objetos)
+
+			//var item = document.getElementById('item').value
+
+			//adicionar func
+				function adicionar () {
+					//recuperar valor do <input>
+					var item = document.getElementById('item').value
+
+					//verificar vazio
+					if (item != '') {
+						//verificar se ja foi adicionado anteriormente
+						if(objetos.indexOf(item) !==-1) {
+
+							console.log('Valor recorrente')
+							console.log(objetos.indexOf(item));
+
+							alert('Item já foi adicionado.');
+						} else {
+							objetos.push(item);
+							console.log('Item adicionado.')
+							console.log(objetos)
+
+							document.getElementById('item').value = ''
+						}
+					} else {
+					alert('Informe um item válido.')
+					}
+				}
+
+			//ordernar func
+				function ordenar () {
+					//ordenar de forma alfabetica
+					objetos.sort()
+					
+					console.log(objetos)
+
+				}
+		</script>
+	</head>
+	<body>
+		<input type="text" id="item" placeholder="Digite um item">
+		<button onclick="adicionar()">Adicionar</button>
+		<button onclick="ordenar()">Ordenar</button>
+	</body>
+</html>

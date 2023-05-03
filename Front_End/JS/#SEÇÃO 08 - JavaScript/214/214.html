@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>214</title>
+
+		<script type="text/javascript">
+			console.log('Item 1')
+			var lista_frutas = ['Banana', 'Maçã', 'Morango', 'Uva']
+
+			console.log(lista_frutas)
+
+			for (var i = 0; i <= lista_frutas.length; i++) {
+				console.log(lista_frutas[i])
+			}
+
+			console.log('Item 2')
+
+			/*var x = 1
+			var y = 1
+
+
+			while(y <= 10){
+				console.log('laço externo')
+
+				//codigo
+				while(x <= 10){
+					console.log('laço interno')
+					//codigo
+					document.write(y + ' x ' + x + '=' + (y*x) + '<br/>')
+					//parada
+					x++
+
+				}
+
+				//parada
+				if (x=10) {
+					y++
+					continue	
+				}			
+			
+			}*/
+
+			var x = 1;
+			var y = 1;
+
+			while (x <= 10) {
+				y = 1;
+
+				while (y <= 10) {
+					console.log(x + ' x ' + y + ' = ' + x * y);
+					document.write(x + ' x ' + y + ' = ' + x * y + '<br/>');
+					y++;
+				}
+
+				console.log("\n");
+
+				document.write("<hr/>");
+
+				x++
+			}
+
+		</script>
+	</head>
+	<body>
+
+	</body>
+</html>

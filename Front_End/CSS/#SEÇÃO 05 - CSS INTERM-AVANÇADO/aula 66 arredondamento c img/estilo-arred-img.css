@@ -1,0 +1,45 @@
+/**********************
+ * LAYOUTS*************/
+
+body{
+	font-family: "trebuchet MS", Helvetica, sans-serif;
+}
+
+.caixa1{
+	width: 400px;
+	margin: 20px;
+
+	background: #dedede url(_/topo.png) no-repeat left top;
+}
+
+
+.caixa1 h2{
+	padding: 10px 20px 0px 20px;
+}
+
+.caixa1 p{
+	background: url(_/baixo.png) no-repeat left bottom;
+	padding: 0px 20px 20px 20px;
+}
+
+.caixa2{
+	width: 400px;
+	margin: 20px;
+	
+	background: #dedede url(_/fundo-arredondamento.png) repeat-y;
+}
+
+
+.caixa2 h2{
+	padding: 10px 20px 0px 20px;
+	background: url(_/topo2.png) no-repeat left top;
+}
+
+.caixa2 p{
+	padding: 0px 20px;
+}
+
+.caixa2 .ultimo{
+	padding-bottom: 20px;
+	background: url(_/baixo2.png) no-repeat left bottom;
+}

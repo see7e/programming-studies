@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>NOVAS TAGS INPUT</title>
+	</head>
+	<body>
+		<form>
+			<label for="nome">Nome</label>
+			<br>
+			<input type="text" name="nome" id="nome" required autofocus> 
+
+			<!--required(determina compo obrigarório) -- autofocus(determina campo inicial)-->
+
+			<br><br>
+
+			<!--type="email"--->
+			<label for="email">Email</label>
+			<br>
+			<input type="email" name="email" id="email" required>
+
+			<br><br>
+
+			<!--type="number"--->
+			<label for="numero">Número</label>
+			<br>
+			<input type="number" id="numero" min="1" max="10">
+
+			<br><br>
+
+			<!--type="url"--->
+			<label for="url">Url</label>
+			<br>
+			<input type="url" name="url" id="url" placeholder="ex: http://www...">
+
+			<br><br>
+
+			<!--type="search"--->
+			<label for="pesquisa">Search</label>
+			<br>
+			<input type="search" id="search">
+
+			<br><br>
+
+			<!--type="range"--->
+			<label for="range">Range</label>
+			<br>
+			<input type="range" id="range" min="1" max="3" value="2">
+
+			<!--atributo value="" determina o valor inicial-->
+
+			<br><br>
+
+			<!--type="date"--->
+			<label for="date">Data</label>
+			<br>
+			<input type="date" id="date">
+
+			<br><br>
+
+			<!--type="color"--->
+			<label for="cor">Cor</label>
+			<br>
+			<input type="color" id="cor">
+
+			<br><br>
+
+			<input type="submit" value="Enviar">
+		</form>
+	</body>
+</html>

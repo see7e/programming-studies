@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>Fuñções Callback</title>
+	</head>
+	<body>
+		<script>
+			/*
+			//entrada
+			var num1 = prompt('Digite um valor: ');
+			var num2 = prompt('Digite outro valor: ');
+
+			var operacao = prompt('Digite qual opreação (Soma / Subtração): ');
+
+			num1 = parseFloat(num1);
+			num2 = parseFloat(num2);
+
+			var resultado = 0;
+
+			//soma/subtração
+			function somarSubtrair (num1, num2, operacao) {
+
+				if(operacao == 'Soma'){
+					resultado = num1 + num2;
+
+				}	
+
+				if(operacao == 'Subtração'){
+					resultado = num1 - num2;
+				}
+
+				return resultado;
+			}
+
+			document.write('O resultado é: ' + resultado ); 	//ele não chama o chama o "resultado"
+																//e sim a função cujo retorno é result
+			*/
+
+			var num1 = prompt('Digite um número');
+			var operacao = prompt('Digite a operação');
+			var num2 = prompt('Digite outro número');
+
+			function calc(num1, num2, operacao){
+
+			 num1 = parseFloat(num1);
+			 num2 = parseFloat(num2);
+
+			 var resultado = 0;
+
+			 if(operacao == 'soma'){
+			 resultado = num1 + num2;
+			 }
+
+			 if(operacao == 'subtracao'){
+			 resultado = num1 - num2;
+			 }
+
+			 return resultado;
+			}
+
+			document.write('O resultado é: ' + calc(num1, num2, operacao)); 
+
+
+		</script>
+	</body>
+</html>

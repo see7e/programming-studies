@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <!-- Meta tags Obrigatórias -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="BS5/css/bootstrap.min.css">
+
+    <!-- Font Awesome (BS 5) -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
+
+    <title>Hello, friend!</title>
+
+    <script type="text/javascript">
+
+      document.write ('<h1>Hello, friend!</h1>');
+
+        //inicio
+        var a = 10
+        var b = 20
+        var c = null
+
+        document.write ('o valor de "A" é ' + a + '<br />')
+        document.write ('o valor de "B" é ' + b + '<br />')
+        document.write ('o valor de "C" é '  + c + '<br />')
+        document.write ('<hr />');
+
+      //logica
+        c = a //utilizada a variável C para armazenar temporariamente o valor da variável A
+        a = b //sobrepõe o valor da variável A com o valor da variável B
+        
+        b = c //sobrepóe o valor da variável B com o valor da variável C (C nesse momento contém o valor da variável A)
+
+        c = null //opcional: remove o valor contido na variável C
+
+
+      //valores alternados
+        document.write ('o valor de "A" é ' + a + '<br />')
+        document.write ('o valor de "B" é ' + b + '<br />')
+        document.write ('o valor de "C" é ' + c + '<br />');
+
+    </script>
+  </head>
+  <body>
+
+  <!-- Optional JavaScript; choose one of the two! -->
+
+    <!-- Option 1: Bootstrap Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+
+   
+
+  </body>
+</html>
