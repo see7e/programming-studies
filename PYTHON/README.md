@@ -275,9 +275,9 @@ Visit the following resources to learn more:
 	print(lst)
 	```
 	Aplications:
-    -   Used in `JSON` format
-    -   Useful for Array operations
-    -   Used in Databases
+	-   Used in `JSON` format
+	-   Useful for Array operations
+	-   Used in Databases
 
 -	**Tuple**: is a collection of Python objects separated by commas. *Represented by* `()`.
 	In some ways, a tuple is similar to a list in terms of indexing, nested objects, and repetition but **a tuple is immutable**, unlike lists that are mutable.
@@ -392,14 +392,14 @@ Visit the following resources to learn more:
 -   [Heaps, Stacks, Queues](https://stephanosterburg.gitbook.io/scrapbook/coding/coding-interview/data-structures/heaps-stacks-queues)
 -   [Python Stacks, Queues, and Priority Queues in Practice](https://realpython.com/queue-in-python/)
 -   stacks
-    -   [Stack Data Structure | Illustrated Data Structures](https://www.youtube.com/watch?v=I5lq6sCuABE)
-    -   [Stack in Python](https://www.geeksforgeeks.org/stack-in-python/)
-    -   [How to Implement Python Stack?](https://realpython.com/how-to-implement-python-stack/)
+	-   [Stack Data Structure | Illustrated Data Structures](https://www.youtube.com/watch?v=I5lq6sCuABE)
+	-   [Stack in Python](https://www.geeksforgeeks.org/stack-in-python/)
+	-   [How to Implement Python Stack?](https://realpython.com/how-to-implement-python-stack/)
 -   heaps
-    -   [Heap Implementation in Python](https://www.educative.io/answers/heap-implementation-in-python)
+	-   [Heap Implementation in Python](https://www.educative.io/answers/heap-implementation-in-python)
 -	queues
--   [Queue Data Structure | Illustrated Data Structures](https://www.youtube.com/watch?v=mDCi1lXd9hc)
--   [Queue in Python](https://www.geeksforgeeks.org/queue-in-python/)
+	-   [Queue Data Structure | Illustrated Data Structures](https://www.youtube.com/watch?v=mDCi1lXd9hc)
+	-   [Queue in Python](https://www.geeksforgeeks.org/queue-in-python/)
 
 ## Hash Tables
 ## Binary Search Trees

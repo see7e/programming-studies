@@ -1,2 +1,9 @@
 # remove the desktop.ini files
 *.ini
+
+# Big Picture
+## this will exclude som folders that have its own repositories
+## to see the complete structure just follow the README instruc-
+## tions.
+CS50/
+42/

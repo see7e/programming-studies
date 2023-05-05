@@ -1,5 +1,5 @@
 ---
-title: Estudos (tabela / lista)
+title: Studies (table / list)
 tags: programação_semanal, studies
 use: PROGRAMAÇÃO
 languages: NULL
@@ -9,17 +9,17 @@ dependences: NULL
 <table>
     <thead>
         <tr>
-            <th>HORÁRIO</br>(18h ~ 19:30)</th>
-            <th>Segunda</th>
-            <th>Terça</th>
-            <th>Quarta</th>
-            <th>Quinta</th>
-            <th>Sexta</th>
+            <th>HOURS</br>(18h ~ 19:30)</th>
+            <th>Monday</th>
+            <th>Tuesday</th>
+            <th>Wednesday</th>
+            <th>Thursday</th>
+            <th>Friday</th>
         </tr>
     </thead>
     <tbody>
         <tr>
-            <td>1ª Parte</td>
+            <td>1ª Part</td>
             <td rowspan=3>(C) CS50</td>
             <td rowspan=2>(Python)</br>Roadmap</td>
             <td rowspan=2>(SQL)/(PQSL)</br>Roadmap</td>
@@ -27,11 +27,11 @@ dependences: NULL
             <td rowspan=3>(C) CS50</td>
         </tr>
         <tr>
-            <td>2ª Parte</td>
+            <td>2ª Part</td>
             <td rowspan=2>(Python)</br>Roadmap</td>
         </tr>
         <tr>
-            <td>3ª Parte</td>
+            <td>3ª Part</td>
             <td>(Python)</br>Libraries</td>
             <td>PowerBI /</br>Powerapps</td>
         </tr>
@@ -64,11 +64,11 @@ gantt
     PowerApps           :10d
 ```
 
-# PROGRAMAÇÃO
-## [Lista - Studies](./README.md)
+# PROGRAMING
+## [List - Studies](./README.md)
 
-Basicamente separei os dias que tenho mais tempo para estudar C e Python, que são as grandes demandas. Em seguida, vem SQL (Postgre e PostGis) junto com PowerBI e PowerApps, para aplicação na empresa.
+Basically, I set aside the days when I have more time to study C and Python, which are the biggest demands. Then comes SQL (Postgre and PostGis) along with PowerBI and PowerApps, for application in the company.
 
-Sobre o tempo, se conseguir conciliar entre os intervalos das demandas, ótimo, se não... Usar o tempo reservado por dia mesmo.
+About the time, if you manage to reconcile between demands intervals, great, if not... Use the reserved time per day.
 
 
