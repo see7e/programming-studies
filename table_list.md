@@ -22,7 +22,7 @@ dependences: NULL
             <td>1ª Part</td>
             <td rowspan=3>(C) CS50</td>
             <td rowspan=2>(Python)</br>Roadmap</td>
-            <td rowspan=2>(SQL)/(PQSL)</br>Roadmap</td>
+            <td rowspan=2>Revisão</td>
             <td>(Python)</br>Libraries</td>
             <td rowspan=3>(C) CS50</td>
         </tr>
@@ -49,13 +49,13 @@ gantt
 
     section Python
     RoadMap             :02-05-2023, 60d
-    Lib, No. 1          :03-05-2023, 5d
-    Lib, No. 2          :10-05-2023, 5d
-    Lib, No. 3          :17-05-2023, 5d
-    Lib, No. 4          :24-05-2023, 5d
+    OpenPyXL            :10-05-2023, 5d
+    Lib, No. 2          :17-05-2023, 5d
+    Lib, No. 3          :24-05-2023, 5d
+    Lib, No. 4          :31-05-2023, 5d
 
     section SQL
-    SQL RoadMap         :02-05-2023, 20d
+    SQL RoadMap         :06-06-2023, 30d
     PostgreSQL          :30d
     PostGis             :20d
 

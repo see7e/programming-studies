@@ -16,7 +16,7 @@ dependences: NULL
     But the problem is that all my information was divided in a big folder structure, so I took my time and started thinking about how to conciliate both methods, PARA and Zettel.
     </p>
     <p>
-    The links, the special <code>[[]]</code> Obisidian type and the common <code>[]()</code>. The first one don't work in GitHub, and the second one if is a web url Obisian won't link the way we expect. So what I will do/did is put altoghether in one folder, and set <code>.gitignore</code> for exclude the independent subfolders wich are individual repositories, and with that Git won't create a mess during the commits and pushs.
+    The links, the special <code>[[]]</code> Obisidian type and the common <code>[](./path/to/file)</code>. The first one don't work in GitHub, and the second one if is a web url Obisian won't link the way we expect. So what I will do/did is put altoghether in one folder, and set <code>.gitignore</code> for exclude the independent subfolders wich are individual repositories, and with that Git won't create a mess during the commits and pushs.
     </p>
 </details>
 
@@ -25,6 +25,9 @@ This repo is divided in two branches, [main](#) has common links and [obsidian](
 ## Table of Contents
 - [`Python`](./PYTHON/README.md)
     - [`PyQGis`](./PYTHON/PYQGIS/README.md)
+    - Libraries
+	    - [openpyxl](./PYTHON/openpyxl.md)
+	    - [(geo)pandas](./PYTHON/(geo)pandas.md)
 - [C](./C/)
     - CS50 - [Week 1](./CS50/week1/README.md)
 - [Front End](./Front_End/)

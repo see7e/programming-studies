@@ -56,7 +56,7 @@ Some examples of how data structures are used include the following:
 -   **Storing data.** Data structures are used for [efficient data persistence](https://www.techtarget.com/searchapparchitecture/answer/What-is-the-best-pattern-to-use-for-data-persistence), such as specifying the collection of attributes and corresponding structures used to store records in a database management system.
 -   **Managing resources and services.** Core operating system (OS) resources and services are enabled through the use of data structures such as linked lists for memory allocation, file directory management and file structure trees, as well as process scheduling queues.
 -   **Data exchange.** Data structures define the organization of information shared between applications, such as TCP/IP packets.
--   **Ordering and sorting.** Data structures such as binary search trees -- also known as an ordered or sorted binary tree -- provide efficient methods of sorting objects, such as character strings used as tags. With data structures such as [**priority queues**](./Priority-list.md), programmers can manage items organized according to a specific priority.
+-   **Ordering and sorting.** Data structures such as binary search trees -- also known as an ordered or sorted binary tree -- provide efficient methods of sorting objects, such as character strings used as tags. With data structures such as [**priority queues**](./priority_list.md), programmers can manage items organized according to a specific priority.
 -   **Indexing**. Even more sophisticated data structures such as B-trees are used to index objects, such as those stored in a database.
 -   **Searching.** Indexes created using binary search trees, B-trees or hash tables speed the ability to find a specific sought-after item.
 -   **Scalability.** Big data applications use data structures for allocating and managing data storage across distributed storage locations, ensuring scalability and performance. Certain big data programming environments -- such as [Apache Spark](https://www.techtarget.com/searchdatamanagement/definition/Apache-Spark) -- provide data structures that mirror the underlying structure of database records to simplify querying.
@@ -87,12 +87,6 @@ An array stores a collection of items at adjoining memory locations. Items that 
 ![Abstract array data structure diagram](https://cdn.ttgtmedia.com/rms/onlineimages/sqlserver-one_dimensional_array_four_elements-f_mobile.png)
 > An array can hold a collection of integers, floating-point numbers, stings or even other arrays.
 
-### [**Stack**](https://www.techtarget.com/whatis/definition/stack)
-A stack stores a collection of items in the linear order that operations are applied. This order could be last in, first out (LIFO) or first in, first out ([FIFO](https://www.techtarget.com/whatis/definition/FIFO-first-in-first-out)).
-
-### [**Queue**](https://www.techtarget.com/whatis/definition/queue)
-A queue stores a collection of items like a stack; however, the operation order can only be first in, first out.
-
 ### **Linked list.**
 A linked list stores a collection of items in a linear order. Each element, or **node**, in a linked list contains a data item, as well as a reference ([pointer](../C/Pointers.md)), or link, to the next item in the list. **Please see [code example](../PYTHON/code/linked_list.py) made in Python.**
 
@@ -100,16 +94,58 @@ A linked list stores a collection of items in a linear order. Each element, or *
 > Linked list data structures are a set of nodes that contain data and the address or a pointer to the next node.
 
     Imagine you have a lot of cards and you want to put them in order. A linked list is like having all your cards on a table, and each card has an arrow pointing to the next card. The first card is special because it doesn't have an arrow pointing to it.
-
     In this program, we have a special card called LinkedListNode. Each card has a "key" and a "value" written on it, like a word and its definition. When we create a new card, we give it a key and a value.
-
     We can add new cards to the list using the "insert" function. When we add a new card, we look at the first card on the table and follow its arrow to the next card. If there isn't a next card, we add our new card there. If there is a next card, we go to that card and repeat the process until we find a place to put our new card.
-
     We can also add a new card after a specific index in the list using the "insertAfterIndex" function. This function looks at each card in the list until it finds the card at the given index. It then puts the new card after that card.
-
     We can remove a card from the list using the "removeAtIndex" function. This function also looks at each card in the list until it finds the card at the given index. It then removes that card from the list.
-
     Finally, we can print out all the cards in the list using the "printList" function. This function looks at each card in the list and prints out its key and value.
+
+### [**Stack**](https://www.techtarget.com/whatis/definition/stack)
+Commonly used in algorithms such as depth-first search, expression evaluation, and backtracking. *A stack stores a collection of items in the linear order* that operations are applied. The order is generaly reffered as **Last-in-Fisrt-Out ([`LIFO`](./Other/lifo_fifo.md))**. You can relate as a pile of plates, one on top of another.
+> could be first in, first out ([FIFO](https://www.techtarget.com/whatis/definition/FIFO-first-in-first-out))?
+
+ The basic operations that can be performed on a stack include **push**, **pop**, **peek**, and **is_empty**.
+ - `push` operation is used to add an element to the top of the stack.
+ - `pop` operation is used to remove the top element from the stack.
+ - `peek` operation is used to view the top element without removing it.
+ - `is_empty` operation is used to check if the stack is empty.
+
+*I.e. an Array to create a Stack:*
+```python
+class Stack:  
+	def __init__(self):
+		self.items = []
+	def push(self, item):
+		self.items.append(item)
+	def pop(self):
+		return self.items.pop()
+	def peek(self):
+		return self.items[-1]
+	def is_empty(self):
+		return len(self.items) == 0
+```
+
+### [**Queue**](https://www.techtarget.com/whatis/definition/queue)
+Commonly used in algorithms such as breadth-first search, scheduling, and simulations. *A queue stores a collection of items like a stack*; however, **the operation order can only be first in, first out (*FIFO*)**. You can relate as a row of people to buy some tickets, the first to arrive is the first to leave. The basic operations that can be performed on a queue include **enqueue**, **dequeue**, **peek**, and **is_empty**.
+- `enqueue` operation is used to add an element to the back of the queue.
+- `dequeue` operation is used to remove the front element from the queue.
+- `peek` now sees the **first** element.
+
+*I.e. an Array to create a Queue:*
+```python
+class Queue:  
+	def __init__(self):
+		self.items = []
+	def enqueue(self, item):
+		self.items.append(item)
+	def dequeue(self):
+		return self.items.pop(0)
+	def peek(self):
+		return self.items[0]
+	def is_empty(self):
+		return len(self.items) == 0
+```
+
 
 ### **[Tree](https://www.techtarget.com/whatis/definition/heap)**
 A tree stores a collection of items in an abstract, hierarchical way. Each node is associated with a key value, with parent nodes linked to child nodes -- or subnodes. There is one root node that is the ancestor of all the nodes in the tree.

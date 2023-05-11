@@ -6,6 +6,30 @@ languages: Python
 dependences: NULL
 ---
 
+- [RoadMap](#roadmap)
+- [Learn\_the\_Basics](#learn_the_basics)
+	- [Basic Syntax](#basic-syntax)
+	- [Variables and Data Types](#variables-and-data-types)
+	- [Conditionals](#conditionals)
+	- [Typecasting](#typecasting)
+		- [Errors and Exceptions](#errors-and-exceptions)
+	- [Functions](#functions)
+		- [Argument x Parameter](#argument-x-parameter)
+		- [Return](#return)
+	- [Lists, Tuples, Sets, and Dictionaries](#lists-tuples-sets-and-dictionaries)
+- [Datastructures\_and\_Algorithms](#datastructures_and_algorithms)
+	- [Arrays and Linked Lists](#arrays-and-linked-lists)
+	- [Heaps, Stacks and Queues (Data Structures)](#heaps-stacks-and-queues-data-structures)
+	- [Hash Tables](#hash-tables)
+	- [Binary Search Trees](#binary-search-trees)
+	- [Recursion](#recursion)
+	- [Sorting Algorithms](#sorting-algorithms)
+- [Advanced\_Topics](#advanced_topics)
+- [Learn\_a\_Framework](#learn_a_framework)
+- [Testing\_your\_Apps](#testing_your_apps)
+- [Continue](#continue)
+
+
 # RoadMap
 > Edited from [© roadmap.sh](https://roadmap.sh/python)
 ```mermaid
@@ -380,10 +404,10 @@ Visit the following resources to learn more:
 -	[Array Data Structure | Illustrated Data Structures](https://www.youtube.com/watch?v=QJNwK2uJyGs)
 -	[Linked List Data Structure | Illustrated Data Structures](https://www.youtube.com/watch?v=odW9FU8jPRQ)
 
-## Heaps, Stacks and Queues ([Data Structures](../Other/Data%20Structure.md))
--	**Stacks:** Operations are performed `LIFO` (last in, first out), which means that the last element added will be the first one removed. A stack can be implemented using an array or a linked list. If the stack runs out of memory, it’s called a stack overflow.
+## Heaps, Stacks and Queues ([Data Structures](../Other/data_structure.md))
+-	**Stacks:** Operations are performed [`LIFO`](../Other/lifo_fifo.md) (last in, first out), which means that the last element added will be the first one removed. A stack can be implemented using an array or a linked list. If the stack runs out of memory, it’s called a stack overflow.
 
--	**Queue:** Operations are performed `FIFO` (first in, first out), which means that the first element added will be the first one removed. A queue can be implemented using an array.
+-	**Queue:** Operations are performed [`FIFO`](../Other/lifo_fifo.md) (first in, first out), which means that the first element added will be the first one removed. A queue can be implemented using an array.
 
 -	**Heap:** A tree-based data structure in which the value of a parent node is ordered in a certain way with respect to the value of its child node(s). A heap can be either a min heap (the value of a parent node is less than or equal to the value of its children) or a max heap (the value of a parent node is greater than or equal to the value of its children).
 
@@ -409,5 +433,6 @@ Visit the following resources to learn more:
 # Advanced_Topics
 # Learn_a_Framework
 # Testing_your_Apps
-# Continue
-	
+# Continue 
+## Libraries
+- [openpyxl](./openpyxl.md)
