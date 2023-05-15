@@ -28,6 +28,7 @@ dependences: NULL
 - [Learn\_a\_Framework](#learn_a_framework)
 - [Testing\_your\_Apps](#testing_your_apps)
 - [Continue](#continue)
+	- [Libraries](#libraries)
 
 
 # RoadMap
@@ -186,31 +187,31 @@ The process of converting the value of one data type (integer, string, float, et
 
 -	**Implicit** - in this, method, Python converts the datatype into another datatype automatically. In this process, users don’t have to involve in this process.
 
-```py
+```python
 # Python program to demonstrate
 # implicit type Casting
 
 # Python automatically converts
 # a to int
-a = 7
-print(type(a))
+>>> a = 7
+>>> print(type(a))
 
 # Python automatically converts
 # b to float
-b = 3.0
-print(type(b))
+>>> b = 3.0
+>>> print(type(b))
 
 # Python automatically converts
 # c to float as it is a float addition
-c = a + b
-print(c)
-print(type(c))
+>>> c = a + b
+>>> print(c)
+>>> print(type(c))
 
 # Python automatically converts
 # d to float as it is a float multiplication
-d = a * b
-print(d)
-print(type(d))
+>>> d = a * b
+>>> print(d)
+>>> print(type(d))
 ```
 
 -	**Explicit** - in this method, Python needs user involvement to convert the variable data type into a certain data type in order to the operation required.
@@ -247,19 +248,19 @@ def function_name(parameter1, parameter2):
 
 ### Return
 The use of a function can be only for processing algorithms or just to print an information:
-```py
-def my_function():
-	print("Hello friend, from a function")
+```python
+>>> def my_function():
+...		print("Hello friend, from a function")
 
-my_function()
+>>> my_function()
 ```
 
 Or to `return` a value, like a math operation:
-```py
-def sum(a, b)
-	return (a + b)
+```python
+>>> def sum(a, b)
+...		return (a + b)
 
-print(sum(3, 4))
+>>> print(sum(3, 4))
 ```
 
 Visit the following resources to learn more:
@@ -279,24 +280,24 @@ Visit the following resources to learn more:
 	-	The `count()` method returns the number of times the specified element appears in the list.
 	-	The `reverse()` method reverses the elements of the list.
 
-	```py
+	```python
 	#definition
-	lst = list()
+	>>> lst = list()
 	
 	#example
 	#index 0 1 2  3  4  5
-	lst = [1,1,2,'c',4,'e']
-	print(lst)
+	>>> lst = [1,1,2,'c',4,'e']
+	>>> print(lst)
 	
 	#index/element
-	print(lst.index('c'))
-	print(lst[3])
+	>>> print(lst.index('c'))
+	>>> print(lst[3])
 
 	#can be modified
-	lst.append('f')	#builtin add method
-	print(lst)
-	lst.pop()	#builtin remove method
-	print(lst)
+	>>> lst.append('f')	#builtin add method
+	>>> print(lst)
+	>>> lst.pop()	#builtin remove method
+	>>> print(lst)
 	```
 	Aplications:
 	-   Used in `JSON` format
@@ -308,14 +309,14 @@ Visit the following resources to learn more:
 	-	The `count()` method returns the number of times a specified value occurs in a tuple.
 	-	The `reverse()` method is **not defined** in tuples, as they are unchangeable
 
-	```py
+	```python
 	#definition
-	tpl = tuple()
+	>>> tpl = tuple()
 	
 	#example
 	#index 0 1 2  3  4  5
-	tpl = (1,1,2,'c',4,'e')
-	print(tpl)
+	>>> tpl = (1,1,2,'c',4,'e')
+	>>> print(tpl)
 	```
 	Aplications
 	-	Used to insert records in the database through `SQL` query at a time.
@@ -327,19 +328,19 @@ Visit the following resources to learn more:
 	-	There `count()` method is **not defined** in sets, as they do not allow any duplicates.
 	-	The `reverse()` method is **not defined** in sets, they're unordered, which restricts from applying.
 
-	```py
+	```python
 	#definition
-	st = set()
+	>>> st = set()
 	
 	#example
-	st = (1,1,2,'c',4,'e')
-	print(st)
+	>>> st = (1,1,2,'c',4,'e')
+	>>> print(st)
 
 	#can be modified
-	st.add('f')	#builtin add method
-	print(st)
-	st.pop()	#builtin remove method
-	print(st)
+	>>> st.add('f')	#builtin add method
+	>>> print(st)
+	>>> st.pop()	#builtin remove method
+	>>> print(st)
 	```
 	Aplications
 	-   Finding unique elements
@@ -353,26 +354,26 @@ Visit the following resources to learn more:
 	-	The `count()` method is not defined in the dictionary.
 	-	The elements cannot be reversed, as the items in the dictionary are in the form of `key-value` pairs
 
-	```py
+	```python
 	#definition
-	dic = dict()
+	>>> dic = dict()
 	
 	#example
-	dic={
-		"key1": 1,
-		"key3": 2,
-		"key2": 3
+	>>> dic={
+	...		"key1": 1,
+	...		"key3": 2,
+	...		"key2": 3
 	}
-	print(dic)
+	>>> print(dic)
 
 	#element
-	print(dic.get("key2"))
+	>>> print(dic.get("key2"))
 
 	#can be modified
-	dic.update("key4":4)	#builtin add method
-	print(dic)
-	dic.pop("key4")	#builtin remove method
-	print(dic)
+	>>> dic.update("key4":4)	#builtin add method
+	>>> print(dic)
+	>>> dic.pop("key4")	#builtin remove method
+	>>> print(dic)
 	```
 	Aplications
 	-	Used to create a data frame with lists
@@ -393,7 +394,7 @@ Arrays store elements in contiguous memory locations, resulting in easily calcul
 
 Arrays of the array module are a thin wrapper over C arrays, and are useful when you want to work with homogeneous data. They are also more compact and take up less memory and space which makes them more size efficient compared to lists.
 
-If you want to perform mathematical calculations, then you should use [**NumPy**](https://www.w3schools.com/python/numpy/numpy_getting_started.asp) arrays (be sure to install [`pip install numpy`]). Besides that, you should just use Python arrays when you really need to, as lists work in a similar way and are more flexible to work with.
+If you want to perform mathematical calculations, then you should use [**NumPy**](./numpy.md) (https://www.w3schools.com/python/numpy/numpy_getting_started.asp) arrays (be sure to install [`pip install numpy`]). Besides that, you should just use Python arrays when you really need to, as lists work in a similar way and are more flexible to work with.
 
 Visit the following resources to learn more:
 
@@ -436,3 +437,4 @@ Visit the following resources to learn more:
 # Continue 
 ## Libraries
 - [openpyxl](./openpyxl.md)
+- [numpy](./numpy.md)

@@ -6,7 +6,25 @@ languages: NULL
 dependences: NULL
 ---
 
-# Data Structures
+- [Definition](#definition)
+- [Characteristics of data structures](#characteristics-of-data-structures)
+- [Why are data structures important?](#why-are-data-structures-important)
+- [How are data structures used?](#how-are-data-structures-used)
+- [Data types](#data-types)
+- [How to choose a data structure](#how-to-choose-a-data-structure)
+- [Types of data structures](#types-of-data-structures)
+	- [Arrays](#arrays)
+	- [Linked list.](#linked-list)
+	- [Stack#](#stack)
+	- [Queue#](#queue)
+	- [Hash Table (or Map)](#hash-table-or-map)
+		- [Hashing (Hash Function)](#hashing-hash-function)
+		- [Good Hash Functions](#good-hash-functions)
+	- [Binary Tree#](#binary-tree)
+	- [Heap#](#heap)
+	- [Graph](#graph)
+	- [Trie](#trie)
+- [Some real-world examples include:](#some-real-world-examples-include)
 
 ## Definition
 
@@ -25,8 +43,8 @@ Data structures are often classified by their characteristics. The following thr
 2.  **Homogeneous or heterogeneous.** This characteristic describes whether all data items in a given repository *are of the same type or not*. One example is a collection of elements in an array, or of various types, such as an abstract data type defined as a structure in C or a class specification in Java.
 
 3.  **[Static or dynamic](https://www.techtarget.com/searchnetworking/definition/dynamic-and-static).** This characteristic *describes how the data structures are compiled*.
-    -  Static data structures have **fixed** sizes, structures and memory locations at compile time.
-    -  Dynamic data structures have sizes, structures and memory locations that **can shrink or expand**, depending on the use.
+	-  Static data structures have **fixed** sizes, structures and memory locations at compile time.
+	-  Dynamic data structures have sizes, structures and memory locations that **can shrink or expand**, depending on the use.
 
 
 ## Why are data structures important?
@@ -61,7 +79,6 @@ Some examples of how data structures are used include the following:
 -   **Searching.** Indexes created using binary search trees, B-trees or hash tables speed the ability to find a specific sought-after item.
 -   **Scalability.** Big data applications use data structures for allocating and managing data storage across distributed storage locations, ensuring scalability and performance. Certain big data programming environments -- such as [Apache Spark](https://www.techtarget.com/searchdatamanagement/definition/Apache-Spark) -- provide data structures that mirror the underlying structure of database records to simplify querying.
 
-
 ## Data types
 
 If data structures are the building blocks of algorithms and computer programs, the primitive -- or base -- data types are the building blocks of data structures. The typical base data types include the following:
@@ -77,40 +94,146 @@ If data structures are the building blocks of algorithms and computer programs, 
 ![Data structure hierarchy](https://cdn.ttgtmedia.com/rms/onlineimages/whatis-data_structure_mobile.png)
 > The data structure hierarchy shows how data types and data structures are related.
 
+## How to choose a data structure
+
+When choosing a data structure for a program or application, developers should consider the answers to the following three questions:
+
+1.  **Supported operations.** What functions and operations does the program need?
+2.  **Computational complexity.** What level of computational performance is tolerable? For speed, a data structure whose operations execute in time linear to the number of items managed -- using [Big O Notation: O(n)](./big_o_notation.md) (https://lankydan.dev/2017/04/23/learning-big-o-notation-with-on-complexity) -- will be faster than a data structure whose operations execute in time proportional to the square of the number of items managed -- O(n^2).
+3.  **Programming elegance.** Are the organization of the data structure and its functional interface easy to use?
+
+
 ## Types of data structures
 
 The data structure type used in a particular situation is determined by the type of operations that will be required or the kinds of algorithms that will be applied. The various data structure types include the following:
 
-### **Array.**
-An array stores a collection of items at adjoining memory locations. Items that are the same type are stored together so the position of each element can be calculated or retrieved easily by an index. Arrays can be fixed or flexible in length.
+### Arrays
+
+An array stores a collection of items at adjoining memory locations. Items that are the same type are stored together so the position of each element can be calculated or retrieved easily by an index. Arrays can be fixed or flexible in length depending of the language.
 
 ![Abstract array data structure diagram](https://cdn.ttgtmedia.com/rms/onlineimages/sqlserver-one_dimensional_array_four_elements-f_mobile.png)
 > An array can hold a collection of integers, floating-point numbers, stings or even other arrays.
 
-### **Linked list.**
+To define an Array in `C`:
+```c
+>>> int numbers[3] = {1, 2, 3};
+```
+
+But in some languages like `JavaScript`, the size of these elements can be mofified with the `.push()` method. Behind the scenes what the program will do is:
+	1. Check if there's space for the new feature in the next block of memory. 
+	2. If not possible,
+		1. The program will allocate a new space in memory where the Array fits.
+		2. Move all the features to each new space.
+		3. Free the previous allocated space.
+		4. Push (or append) the newly feature into the Array. 
+
+
+For the Mixed Type Arrays, the program will verify the maximum length (bites) of the elements and alocate this amount of bits for the others.
+
+```javascript
+>>> const mixed = [true, 7, "druid"];
+//			       1bite,2b, 5bites
+```
+
+The "problem" is that it will store more space in memory that it actually needs.
+
+**Operations**:
+- Add new element `O(n)`
+- Remove element `O(n)`
+- Accessing an element `O(1)`
+
+### Linked list.
+
 A linked list stores a collection of items in a linear order. Each element, or **node**, in a linked list contains a data item, as well as a reference ([pointer](../C/Pointers.md)), or link, to the next item in the list. **Please see [code example](../PYTHON/code/linked_list.py) made in Python.**
 
 ![Linked list data structure diagram](https://cdn.ttgtmedia.com/rms/onlineimages/sqlserver-linked_list_data_structure-f_mobile.png)
 > Linked list data structures are a set of nodes that contain data and the address or a pointer to the next node.
 
-    Imagine you have a lot of cards and you want to put them in order. A linked list is like having all your cards on a table, and each card has an arrow pointing to the next card. The first card is special because it doesn't have an arrow pointing to it.
-    In this program, we have a special card called LinkedListNode. Each card has a "key" and a "value" written on it, like a word and its definition. When we create a new card, we give it a key and a value.
-    We can add new cards to the list using the "insert" function. When we add a new card, we look at the first card on the table and follow its arrow to the next card. If there isn't a next card, we add our new card there. If there is a next card, we go to that card and repeat the process until we find a place to put our new card.
-    We can also add a new card after a specific index in the list using the "insertAfterIndex" function. This function looks at each card in the list until it finds the card at the given index. It then puts the new card after that card.
-    We can remove a card from the list using the "removeAtIndex" function. This function also looks at each card in the list until it finds the card at the given index. It then removes that card from the list.
-    Finally, we can print out all the cards in the list using the "printList" function. This function looks at each card in the list and prints out its key and value.
+	Imagine you have a lot of cards and you want to put them in order. A linked list is like having all your cards on a table, and each card has an arrow pointing to the next card. The first card is special because it doesn't have an arrow pointing to it.
+	In this program, we have a special card called LinkedListNode. Each card has a "key" and a "value" written on it, like a word and its definition. When we create a new card, we give it a key and a value.
+	We can add new cards to the list using the "insert" function. When we add a new card, we look at the first card on the table and follow its arrow to the next card. If there isn't a next card, we add our new card there. If there is a next card, we go to that card and repeat the process until we find a place to put our new card.
+	We can also add a new card after a specific index in the list using the "insertAfterIndex" function. This function looks at each card in the list until it finds the card at the given index. It then puts the new card after that card.
+	We can remove a card from the list using the "removeAtIndex" function. This function also looks at each card in the list until it finds the card at the given index. It then removes that card from the list.
+	Finally, we can print out all the cards in the list using the "printList" function. This function looks at each card in the list and prints out its key and value.
 
-### [**Stack**](https://www.techtarget.com/whatis/definition/stack)
-Commonly used in algorithms such as depth-first search, expression evaluation, and backtracking. *A stack stores a collection of items in the linear order* that operations are applied. The order is generaly reffered as **Last-in-Fisrt-Out ([`LIFO`](./Other/lifo_fifo.md))**. You can relate as a pile of plates, one on top of another.
+The advantage is that Linked List don't use consecutive slots of memory, making them easier to manuplulate. They're faster, and the nodes can have multiple types of elemnts.
+
+```mermaid
+classDiagram
+direction LR
+
+class HEAD_a {
+	data: 'a'
+	memory_add: &b
+}
+
+class NODE_b {
+	data: 'b'
+	memory_add: &c
+}
+
+class NODE_c {
+	data: 'c'
+	memory_add: &d
+}
+
+class TAIL_d {
+	data: 'd'
+	memory_add: null
+}
+
+HEAD_a --> NODE_b
+NODE_b --> NODE_c 
+NODE_c --> TAIL_d
+```
+
+**Operations:**
+- Add new element `O(1)`
+- Remove element `O(1)`
+- Accessing an element `O(n)`
+
+### Stack[#](https://www.techtarget.com/whatis/definition/stack)
+
+Commonly used in algorithms such as depth-first search, expression evaluation, and backtracking. *A stack stores a collection of items in the linear order* that operations are applied. The order is generaly reffered as **Last-in-Fisrt-Out ([`LIFO`](../Other/lifo_fifo.md))**. You can relate as a pile of plates, one on top of another.
 > could be first in, first out ([FIFO](https://www.techtarget.com/whatis/definition/FIFO-first-in-first-out))?
 
- The basic operations that can be performed on a stack include **push**, **pop**, **peek**, and **is_empty**.
- - `push` operation is used to add an element to the top of the stack.
- - `pop` operation is used to remove the top element from the stack.
- - `peek` operation is used to view the top element without removing it.
- - `is_empty` operation is used to check if the stack is empty.
+ The basic **operations** that can be performed on a stack include **push**, **pop**, **peek**, and **is_empty**.
+ - `is_empty()` operation is used to check if the stack is empty. `O(1)`
+ - `push(value)` operation is used to add an element to the top of the stack. `O(1)`
+ - `pop()` operation is used to remove the top element from the stack. `O(1)`
+ - `peek()` operation is used to view the top element without removing it. `O(1)`
+ - `size()` returns the current size of the Stack. `O(1)`
 
-*I.e. an Array to create a Stack:*
+In pure `C` we need to create every method as a function that will be called in `main()`. Please see the [full code](../C/code/stack_implementation.c).
+Other difference the need to create the space in the memory before allocating the element.
+
+```c
+// Stack implementation in C
+// [...]
+// Main
+int	main()
+{
+	int ch;
+	st *s = (st *)malloc(sizeof(st));
+
+	createEmptyStack(s);
+
+	push(s, 1);
+	push(s, 2);
+	push(s, 3);
+	push(s, 4);
+
+	printStack(s);
+
+	pop(s);
+
+	printf("\nAfter popping out\n");
+	printStack(s);
+}
+```
+
+For Python is quite simpler:
+
 ```python
 class Stack:  
 	def __init__(self):
@@ -125,13 +248,59 @@ class Stack:
 		return len(self.items) == 0
 ```
 
-### [**Queue**](https://www.techtarget.com/whatis/definition/queue)
-Commonly used in algorithms such as breadth-first search, scheduling, and simulations. *A queue stores a collection of items like a stack*; however, **the operation order can only be first in, first out (*FIFO*)**. You can relate as a row of people to buy some tickets, the first to arrive is the first to leave. The basic operations that can be performed on a queue include **enqueue**, **dequeue**, **peek**, and **is_empty**.
-- `enqueue` operation is used to add an element to the back of the queue.
-- `dequeue` operation is used to remove the front element from the queue.
-- `peek` now sees the **first** element.
+A **real-world** example is
+- an `undo / redo` feature, that stores a stack list of every action or command executed and in a moment of need, the program can retrive the steps in a reverse order 
+- to do a backtrack, like a make solve program that count the steps taken if it hits a dead end. 
 
-*I.e. an Array to create a Queue:*
+### Queue[#](https://www.techtarget.com/whatis/definition/queue)
+
+Commonly used in algorithms such as breadth-first search, scheduling, and simulations. *A queue stores a collection of items like a stack*; however, **the operation order can only be first in, first out (*FIFO*)**. You can relate as a row of people to buy some tickets, the first to arrive is the first to leave.
+https://www.programiz.com/dsa
+There are four different types of queues:
+-   Simple Queue
+-   Circular Queue
+-   Priority Queue
+-   Double Ended Queue
+
+The basic operations that can be performed on a queue include **enqueue**, **dequeue**, **peek**, and **is_empty**.
+- `enqueue()` operation is used to add an element to the back of the queue. `O()`
+- `dequeue()` operation is used to remove the front element from the queue. `O()`
+- `peek()` now sees the **first** element. `O()`
+- `size()`: returns the size of the Queue. `O()`
+- `isEmpty()`: check if the queue is empty. `O()`
+- `isFull()`: check if the queue is full. `O()`
+
+In pure `C` we need to create every method as a function that will be called in `main()`. Please see the [full code](../C/code/queue_implementation.c).
+
+```c
+// Queue implementation in C
+// [...]
+// Main
+int main()
+{
+  // Try to deQueue from an empty queue.
+  deQueue();
+  // Enqueue 5 elements to the queue.
+  enQueue(1);
+  enQueue(2);
+  enQueue(3);
+  enQueue(4);
+  enQueue(5);
+  // Try to enqueue a 6th element, which won't be possible because the queue is full.
+  enQueue(6);
+  // Display the elements of the queue.
+  display();
+  // Dequeue the first element from the queue, which is 1.
+  deQueue();
+  // Display the updated elements of the queue.
+  display();
+  // Return 0 to indicate successful execution of the program.
+  return (0);
+}
+```
+
+To create a Queue in Python is "simpler":
+
 ```python
 class Queue:  
 	def __init__(self):
@@ -146,23 +315,11 @@ class Queue:
 		return len(self.items) == 0
 ```
 
+A **real-world** example is
+- an application that handles booking reservations, or tickets, each new ticket enters in a line of precedence.
 
-### **[Tree](https://www.techtarget.com/whatis/definition/heap)**
-A tree stores a collection of items in an abstract, hierarchical way. Each node is associated with a key value, with parent nodes linked to child nodes -- or subnodes. There is one root node that is the ancestor of all the nodes in the tree.
+### Hash Table (or Map)
 
-![Binary search tree diagram](https://cdn.ttgtmedia.com/rms/onlineimages/sqlserver-binary_search_tree-f_mobile.png)
-> A binary search tree is a set of nodes where each has a value and can point to two child nodes.
-
-### **[Heap](https://www.techtarget.com/whatis/definition/heap)**
-A heap is a tree-based structure in which each parent node's associated key value is greater than or equal to the key values of any of its children's key values.
-
-### **Graph.**
-A graph stores a collection of items in a nonlinear fashion. Graphs are made up of a finite set of nodes, also known as vertices, and lines that connect them, also known as edges. These are useful for representing real-world systems such as computer networks.
-
-### **Trie.**
-A trie, also known as a keyword tree, is a data structure that stores strings as data items that can be organized in a visual graph.
-
-### **Hash table.**
 A hash table -- also known as a hash map -- stores a collection of items in an associative array that plots keys to values. A hash table uses a hash function to convert an index into an array of buckets that contain the desired data item.
 
 ![Hash table diagram](https://cdn.ttgtmedia.com/rms/onlineimages/sqlserver-hash_table_example-f_mobile.png)
@@ -170,15 +327,89 @@ A hash table -- also known as a hash map -- stores a collection of items in an a
 
 These are considered complex data structures as they can store large amounts of interconnected data.
 
-## How to choose a data structure
+**Operations**
+- Search `O(1)`
+- Insert `O(1)`
+- Delete `O(1)`
 
-When choosing a data structure for a program or application, developers should consider the answers to the following three questions:
+https://www.programiz.com/dsa/hash-table
 
-1.  **Supported operations.** What functions and operations does the program need?
-2.  **Computational complexity.** What level of computational performance is tolerable? For speed, a data structure whose operations execute in time linear to the number of items managed -- using Big O Notation: O(n) -- will be faster than a data structure whose operations execute in time proportional to the square of the number of items managed -- O(n^2).
-3.  **Programming elegance.** Are the organization of the data structure and its functional interface easy to use?
+The Hash table data structure stores elements in key-value pairs where
 
-Some real-world examples include:
+-   **Key**\- unique integer that is used for indexing the values
+-   **Value** - data that are associated with keys.
+
+
+#### Hashing (Hash Function)
+
+In a hash table, a new index is processed using the keys. And, the element corresponding to that key is stored in the index. This process is called **hashing**.
+
+Let k be a key and h(x) be a hash function.
+
+Here, h(k) will give us a new index to store the element linked with k.
+
+<img src="https://cdn.programiz.com/sites/tutorial2program/files/Hash-2_0.png"" alt="Hash Table representation"" style="background-color:white" width="500">
+
+To learn more, visit [Hashing](https://www.programiz.com/dsa/hashing "Hashing").
+
+#### Good Hash Functions
+
+A good hash function may not prevent the collisions completely however it can reduce their number.
+
+Here, we will look into different methods to find a good hash function
+
+1. Division Method
+	If `k` is a key and `m` is the size of the hash table, the hash function `h()` is calculated as:
+	`h(k) = k mod m`
+	For example, If the size of a hash table is `10` and `k = 112` then `h(k) = 112` mod `10 = 2`. The value of `m` must not be the powers of `2`. This is because the powers of `2` in binary format are `10, 100, 1000, …`. When we find `k mod m`, we will always get the lower order p-bits.
+
+	```
+	if m = 22, k = 17, then h(k) = 17 mod 22 = 10001 mod 100 = 01
+	if m = 23, k = 17, then h(k) = 17 mod 22 = 10001 mod 100 = 001
+	if m = 24, k = 17, then h(k) = 17 mod 22 = 10001 mod 100 = 0001
+	if m = 2p, then h(k) = p lower bits of m
+	```
+
+2. Multiplication Method
+	`h(k) = ⌊m(kA mod 1)⌋`
+	where,
+	-   `kA mod 1` gives the fractional part `kA`,
+	-   `⌊ ⌋` gives the floor value
+	-   `A` is any constant. The value of `A` lies between 0 and 1. But, an optimal choice will be `≈ (√5-1)/2` suggested by Knuth.
+
+3. Universal Hashing
+	In Universal hashing, the hash function is chosen at random independent of keys.
+
+
+
+
+### Binary Tree[#](https://www.techtarget.com/whatis/definition/heap)
+
+A tree stores a collection of items in an abstract, hierarchical way. Each node is associated with a key value, with parent nodes linked to child nodes -- or subnodes. There is one root node that is the ancestor of all the nodes in the tree.
+
+![Binary search tree diagram](https://cdn.ttgtmedia.com/rms/onlineimages/sqlserver-binary_search_tree-f_mobile.png)
+> A binary search tree is a set of nodes where each has a value and can point to two child nodes.
+
+### Heap[#](https://www.techtarget.com/whatis/definition/heap)
+A heap is a tree-based structure in which each parent node's associated key value is greater than or equal to the key values of any of its children's key values.
+
+### Graph
+A graph stores a collection of items in a nonlinear fashion. Graphs are made up of a finite set of nodes, also known as vertices, and lines that connect them, also known as edges. These are useful for representing real-world systems such as computer networks.
+
+### Trie
+A trie, also known as a keyword tree, is a data structure that stores strings as data items that can be organized in a visual graph.
+
+
+
+
+
+
+
+
+
+
+--- 
+## Some real-world examples include:
 
 -   **Linked lists** are best if a program is managing a collection of items that don't need to be ordered, constant time is required for adding or removing an item from the collection and increased search time is OK.
 -   **Stacks** are best if the program is managing a collection that needs to support a LIFO order.

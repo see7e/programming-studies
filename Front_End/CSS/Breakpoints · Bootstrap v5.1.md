@@ -3,7 +3,7 @@ title: Breakpoints - CSS
 tags: studies, programação
 use: Documentation
 languages: CSS
-dependences: NULL
+dependences: bootstrap
 ---
 
     Designed and built with all the love in the world by the Bootstrap team with the help of our contributors.

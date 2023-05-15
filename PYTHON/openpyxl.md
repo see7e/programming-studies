@@ -445,6 +445,7 @@ For **themes and tints**:
 ```
 
 You can refer to the image below:
+`#0000FF00` 
 
 ![legacy_colors](../src/legacy_colors.png)
 
