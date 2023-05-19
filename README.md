@@ -6,6 +6,10 @@ languages: NULL
 dependences: NULL
 ---
 
+> [!] The links are built for the obsidian branch, i was workin in main but now i'll split correctly and after that update all the interdocument links 
+
+---
+
 > This is a list of interesting documents gathered during development studies
 # The Big Picture
 
@@ -20,41 +24,86 @@ dependences: NULL
     </p>
 </details>
 
-This repo is divided in two branches, [main](#) has common links and [obsidian](#) links follow a Zettelkasten adapted model along with Obisidian to map the network of documents. If you want to set up in you computer, [click here](./obisidian_init.md).
+This repo is divided in two branches, [main](https://github.com/see7e/programing-studies) has common links and [obsidian]([#](https://github.com/see7e/programing-studies/tree/obsidian)) links follow a Zettelkasten adapted model along with Obisidian to map the network of documents. If you want to set up in you computer, [click here](./obisidian_init.md).
 
-## Table of Contents
-- [`Python`](./PYTHON/README.md)
-    - [`PyQGis`](./PYTHON/PYQGIS/README.md)
-    - Libraries
-	    - [openpyxl](./PYTHON/openpyxl.md)
-	    - [(geo)pandas](./PYTHON/(geo)pandas.md)
-- [C](./C/)
-    - CS50 - [Week 1](./CS50/week1/README.md)
-- [Front End](./Front_End/)
-    - [`HTML`](./Front_End/HTML/README.md)
-    - [`CSS`](./Front_End/CSS/README.md)
-    - [`JS`](./Front_End/JS/README.md)
-        - App Game Mata Mosquito
-        - Projeto Finans
-        - App Orçamento Pessoal (App para controle pessoal de finanças)
-    - [`SASS`](./Front_End/SASS/README.md)
-    - [`IONIC`](./Front_End/IONIC/README.md)
-        - Projeto Gasolina ou Álcool
-- [Back End](./Back_End/)
-    - [`PHP 7`](./Back_End/PHP/README.md)
-        - App Help Desk (App para abertura e acompanhamento de suportes técnicos)
-        - App Send Mail (App para criação e envio de e-mails)
-        - App Lista de Tarefas (`PHP` com `PDO` e `MySQL`)
-        - Projeto miniframework (Criação de um miniframework baseado na arquitetura **MVC**)
-    - [`PSQL`](./Back_End/PSQL/README.md)
-    - [`MySQL`](./Back_End/MySQL/README.md) (`MariaDB`)
-        - Projeto Banco de Dados Loja Virtual (Implementação do banco de dados de uma loja virtual)
-        - Publicação de aplicações web (`PHP` e `MySQL`) utilizando o InfintyFree
-    -[`Ajax`](./Back_End/Ajax/README.md)
-        - App Pesquisa Endereço (Aprenda a realizar requisições HTTP via XMLHttpRequest para API's)
-    - [`API` com Slim Framework](./Back_End/API/README.md)
-        - Projeto API de Produtos
-- [Other](./Other)
-    - [Techinical Project Documentation](./Other/project_documentation.md)
-    - [Data Structure](./Other/data_structure.md)
-    - [Shell](./Other/shell.md)
+# [List of Documents](./DIRECTORY.md)
+
+## Progress
+
+<table>
+    <thead>
+        <tr>
+            <th>HOURS</br>(18h ~ 19:30)</th>
+            <th>Monday</th>
+            <th>Tuesday</th>
+            <th>Wednesday</th>
+            <th>Thursday</th>
+            <th>Friday</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>1ª Part</td>
+            <td rowspan=3>(C) CS50</td>
+            <td rowspan=2>(Python)</br>Roadmap</td>
+            <td rowspan=2>Revisão</td>
+            <td>(Python)</br>Libraries</td>
+            <td rowspan=3>(C) CS50</td>
+        </tr>
+        <tr>
+            <td>2ª Part</td>
+            <td rowspan=2>(Python)</br>Roadmap</td>
+        </tr>
+        <tr>
+            <td>3ª Part</td>
+            <td>(Python)</br>Libraries</td>
+            <td>PowerBI /</br>Powerapps</td>
+        </tr>
+    </tbody>
+</table>
+
+
+```mermaid
+gantt
+	title My Roadmap
+    dateFormat  DD-MM-YYYY
+    section C
+    CS50                    :a1, 02-05-2023, 90d
+    42-Common Core          :a2, 02-10-2023, 10d
+
+    section Python
+    RoadMap                 :02-05-2023, 60d
+    OpenPyXL                :10-05-2023, 5d
+    Pandas                  :17-05-2023, 5d
+    Lib, No. 3              :24-05-2023, 5d
+    Lib, No. 4              :31-05-2023, 5d
+
+    section SQL
+    SQL RoadMap             :06-06-2023, 30d
+    PostgreSQL              :30d
+    PostGis                 :20d
+
+    section Other
+    PowerBI (not started)   :02-05-2023, 30d
+    PowerApps               :10d
+```
+
+Basically, I set aside the days when I have more time to study C and Python, which are the biggest demands. Then comes SQL (Postgre and PostGis) along with PowerBI and PowerApps, for application in the company.
+
+About the time, if you manage to reconcile between demands intervals, great, if not... Use the reserved time per day.
+
+---
+
+**LINKS** (need remember to filter after when I have the time #REVISAR )
+- https://roadmap.sh
+- cs50
+	- https://cs50.me/cs50x
+	- https://learning.edx.org/course/course-v1:HarvardX+CS50+X/home
+- https://egghead.io/q?access_state=free
+- https://my-learning.w3schools.com
+- https://leetcode.com/problemset/all
+- https://www.codewars.com
+- pyqgis
+	- http://geospatialdesktop.com/2009/02/creating_a_standalone_gis_application_1/
+- [Python @dataclasses](https://www.youtube.com/watch?v=vBH6GRJ1REM)
+- [Dynamic Programming - Learn to Solve Algorithmic Problems & Coding Challenges](https://www.youtube.com/watch?v=oBt53YbR9Kk)

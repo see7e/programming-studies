@@ -1,171 +1,160 @@
-// Implementing hash table in C
-
 #include <stdio.h>
 #include <stdlib.h>
 
-struct set
-{
-  int key;
-  int data;
+// Structure to represent key-value pair
+struct set {
+	int key;
+	int data;
 };
-struct set *array;
-int capacity = 10;
-int size = 0;
 
-int hashFunction(int key)
-{
-  return (key % capacity);
-}
-int checkPrime(int n)
-{
-  int i;
-  if (n == 1 || n == 0)
-  {
-  return 0;
-  }
-  for (i = 2; i < n / 2; i++)
-  {
-  if (n % i == 0)
-  {
-    return 0;
-  }
-  }
-  return 1;
-}
-int getPrime(int n)
-{
-  if (n % 2 == 0)
-  {
-  n++;
-  }
-  while (!checkPrime(n))
-  {
-  n += 2;
-  }
-  return n;
-}
-void init_array()
-{
-  capacity = getPrime(capacity);
-  array = (struct set *)malloc(capacity * sizeof(struct set));
-  for (int i = 0; i < capacity; i++)
-  {
-  array[i].key = 0;
-  array[i].data = 0;
-  }
+// Global variables
+struct set *array; // Array to store elements
+int capacity = 10; // Initial capacity of the array
+int size = 0;      // Current size of the hash table
+
+// Hash function to calculate index for a given key
+int hashFunction(int key) {
+	return (key % capacity);
 }
 
-void insert(int key, int data)
-{
-  int index = hashFunction(key);
-  if (array[index].data == 0)
-  {
-  array[index].key = key;
-  array[index].data = data;
-  size++;
-  printf("\n Key (%d) has been inserted \n", key);
-  }
-  else if (array[index].key == key)
-  {
-  array[index].data = data;
-  }
-  else
-  {
-  printf("\n Collision occured  \n");
-  }
+// Function to check if a number is prime
+int checkPrime(int n) {
+	int i;
+	if (n == 1 || n == 0) {
+		return 0;
+	}
+	for (i = 2; i <= n / 2; i++) {
+		if (n % i == 0) {
+			return 0;
+		}
+	}
+	return 1;
 }
 
-void remove_element(int key)
-{
-  int index = hashFunction(key);
-  if (array[index].data == 0)
-  {
-  printf("\n This key does not exist \n");
-  }
-  else
-  {
-  array[index].key = 0;
-  array[index].data = 0;
-  size--;
-  printf("\n Key (%d) has been removed \n", key);
-  }
-}
-void display()
-{
-  int i;
-  for (i = 0; i < capacity; i++)
-  {
-  if (array[i].data == 0)
-  {
-    printf("\n array[%d]: / ", i);
-  }
-  else
-  {
-    printf("\n key: %d array[%d]: %d \t", array[i].key, i, array[i].data);
-  }
-  }
+// Function to get the next prime number greater than n
+int getPrime(int n) {
+	if (n % 2 == 0) {
+		n++;
+	}
+	while (!checkPrime(n)) {
+		n += 2;
+	}
+	return n;
 }
 
-int size_of_hashtable()
-{
-  return size;
+// Function to initialize the hash table
+void init_array() {
+	capacity = getPrime(capacity); // Get a prime capacity for the array
+	array = (struct set *)malloc(capacity * sizeof(struct set)); // Allocate memory for the array
+	for (int i = 0; i < capacity; i++) {
+		array[i].key = 0;   // Initialize key to 0
+		array[i].data = 0;  // Initialize data to 0
+	}
 }
 
-int main()
-{
-  int choice, key, data, n;
-  int c = 0;
-  init_array();
+// Function to insert an element into the hash table
+void insert(int key, int data) {
+	int index = hashFunction(key); // Calculate the index for the given key
+	if (array[index].data == 0) {
+		array[index].key = key;   // Set the key
+		array[index].data = data; // Set the data
+		size++;                   // Increment the size of the hash table
+		printf("\n Key (%d) has been inserted \n", key);
+	} else if (array[index].key == key) {
+		array[index].data = data;  // Update the data if key already exists
+		printf("\n Key (%d) already exists. Data has been updated. \n", key);
+	} else {
+		// Collision occurred, perform linear probing to find an empty slot
+		int i = 1;
+		while (array[(index + i) % capacity].data != 0) {
+			i++;
+		}
+		index = (index + i) % capacity;
+		array[index].key = key;
+		array[index].data = data;
+		size++;
+		printf("\n Collision occurred. Key (%d) has been inserted at index %d \n", key, index);
+	}
+}
 
-  do
-  {
-  printf("1.Insert item in the Hash Table"
-     "\n2.Remove item from the Hash Table"
-     "\n3.Check the size of Hash Table"
-     "\n4.Display a Hash Table"
-     "\n\n Please enter your choice: ");
+// Function to remove an element from the hash table
+void remove_element(int key) {
+	int index = hashFunction(key); // Calculate the index for the given key
+	if (array[index].data == 0) {
+		printf("\n This key does not exist \n"); // Key does not exist in the hash table
+	} else if (array[index].key == key) {
+		array[index].key = 0;   // Set the key to 0
+		array[index].data = 0;  // Set the data to 0
+		size--;                 // Decrement the size of the hash table
+		printf("\n Key (%d) has been removed \n", key);
+	} else {
+		printf("\n Collision occurred. Key (%d) at index %d. \n", key, index);
+	}
+}
 
-  scanf("%d", &choice);
-  switch (choice)
-  {
-  case 1:
+// Function to display the hash table
+void display() {
+	int i;
+	for (i = 0; i < capacity; i++) {
+		if (array[i].data == 0) {
+			printf("\n array[%d]: / ", i); // Empty slot in the hash table
+		} else {
+			printf("\n key: %d array[%d]: %d", array[i].key, i, array[i].data); // Display key-value pair
+		}
+	}
+}
 
-    printf("Enter key -:\t");
-    scanf("%d", &key);
-    printf("Enter data -:\t");
-    scanf("%d", &data);
-    insert(key, data);
+// Function to get the size of the hash table
+int size_of_hashtable() {
+	return size; // Return the current size of the hash table
+}
 
-    break;
+// Main function
+int main() {
+	int choice, key, data, n;
+	int c = 1;
+	init_array(); // Initialize the hash table
 
-  case 2:
+	do {
+		printf("\n1. Insert item in the Hash Table");
+		printf("\n2. Remove item from the Hash Table");
+		printf("\n3. Check the size of the Hash Table");
+		printf("\n4. Display the Hash Table");
+		printf("\n\nPlease enter your choice: ");
+		scanf("%d", &choice);
 
-    printf("Enter the key to delete-:");
-    scanf("%d", &key);
-    remove_element(key);
+		switch (choice) {
+			case 1:
+				printf("Enter key: ");
+				scanf("%d", &key);
+				printf("Enter data: ");
+				scanf("%d", &data);
+				insert(key, data); // Insert key-value pair into the hash table
+				break;
 
-    break;
+			case 2:
+				printf("Enter the key to delete: ");
+				scanf("%d", &key);
+				remove_element(key); // Remove key-value pair from the hash table
+				break;
 
-  case 3:
+			case 3:
+				n = size_of_hashtable();
+				printf("Size of Hash Table is: %d\n", n); // Get and display the size of the hash table
+				break;
 
-    n = size_of_hashtable();
-    printf("Size of Hash Table is-:%d\n", n);
+			case 4:
+				display(); // Display the hash table
+				break;
 
-    break;
+			default:
+				printf("Invalid Input\n");
+		}
 
-  case 4:
+		printf("\nDo you want to continue? (Press 1 for yes): ");
+		scanf("%d", &c);
+	} while (c == 1);
 
-    display();
-
-    break;
-
-  default:
-
-    printf("Invalid Input\n");
-  }
-
-  printf("\nDo you want to continue (press 1 for yes): ");
-  scanf("%d", &c);
-
-  } while (c == 1);
+	free(array); // Free the allocated memory
+	return 0;
 }

@@ -7,6 +7,8 @@ dependences: Python, openpyxl
 ---
 > [Python Roadmap](./README.md)
 
+<details> <summary>Table of Contents</summary>
+
 - [Installation](#installation)
 - [Workbook](#workbook)
 - [Worksheets](#worksheets)
@@ -31,6 +33,8 @@ dependences: Python, openpyxl
   - [Working with Pandas Dataframes](#working-with-pandas-dataframes)
   - [Converting a worksheet to a Dataframe](#converting-a-worksheet-to-a-dataframe)
 - [References](#references)
+
+</details>
 
 ## Installation
 
@@ -447,7 +451,7 @@ For **themes and tints**:
 You can refer to the image below:
 `#0000FF00` 
 
-![legacy_colors](../src/legacy_colors.png)
+![legacy_colors](../src/img/legacy_colors.png)
 
 ### Applying Styles
 

@@ -12,21 +12,21 @@ dependences: NULL
 	- [Variables and Data Types](#variables-and-data-types)
 	- [Conditionals](#conditionals)
 	- [Typecasting](#typecasting)
-		- [Errors and Exceptions](#errors-and-exceptions)
+		- [Errors and Exceptions#](#errors-and-exceptions)
 	- [Functions](#functions)
 		- [Argument x Parameter](#argument-x-parameter)
 		- [Return](#return)
 	- [Lists, Tuples, Sets, and Dictionaries](#lists-tuples-sets-and-dictionaries)
-- [Datastructures\_and\_Algorithms](#datastructures_and_algorithms)
+- [Datastructures and Algorithms](#datastructures-and-algorithms)
 	- [Arrays and Linked Lists](#arrays-and-linked-lists)
-	- [Heaps, Stacks and Queues (Data Structures)](#heaps-stacks-and-queues-data-structures)
+	- [Heaps, Stacks and Queues](#heaps-stacks-and-queues)
 	- [Hash Tables](#hash-tables)
 	- [Binary Search Trees](#binary-search-trees)
 	- [Recursion](#recursion)
 	- [Sorting Algorithms](#sorting-algorithms)
-- [Advanced\_Topics](#advanced_topics)
-- [Learn\_a\_Framework](#learn_a_framework)
-- [Testing\_your\_Apps](#testing_your_apps)
+- [Advanced Topics](#advanced-topics)
+- [Learn a Framework](#learn-a-framework)
+- [Testing your Apps](#testing-your-apps)
 - [Continue](#continue)
 	- [Libraries](#libraries)
 
@@ -120,9 +120,11 @@ classDiagram
 	link Continue "#"
 ```
 # Learn_the_Basics
+
 Python is a high-level, interpreted, general-purpose programming language. Its design philosophy emphasizes code readability with the use of significant indentation. Python is dynamically-typed and garbage-collected.
 
 ## Basic Syntax
+
 Setup the environment for python and get started with the basics.
 
 Visit the following resources to learn more:
@@ -132,6 +134,7 @@ Visit the following resources to learn more:
 -	[Learn X in Y Minutes / Python](https://learnxinyminutes.com/docs/python/)
 
 ## Variables and Data Types
+
 Variables are used to store information to be referenced and manipulated in a computer program. They also provide a way of labeling data with a descriptive name, so our programs can be understood more clearly by the reader and ourselves. It is helpful to think of variables as containers that hold information. Their sole purpose is to label and store data in memory. This data can then be used throughout your program.
 
 Visit the following resources to learn more:
@@ -175,6 +178,7 @@ C --> L
 ```
 
 ## Conditionals
+
 Conditional Statements in Python perform different actions depending on whether a specific condition evaluates to true or false. Conditional Statements are handled by `IF`-`ELIF`-`ELSE` statements and `MATCH`-`CASE` statements in Python.
 
 Visit the following resources to learn more:
@@ -183,6 +187,7 @@ Visit the following resources to learn more:
 -	[How to use a match statement in Python](https://learnpython.com/blog/python-match-case-statement/)
 
 ## Typecasting
+
 The process of converting the value of one data type (integer, string, float, etc.) to another data type is called type conversion. Python has two types of type conversion:
 
 -	**Implicit** - in this, method, Python converts the datatype into another datatype automatically. In this process, users don’t have to involve in this process.
@@ -219,7 +224,8 @@ The process of converting the value of one data type (integer, string, float, et
 	-   **float():** [Python float()](https://www.geeksforgeeks.org/float-in-python/) function take int or string as an argument and return float type object.
 	-   **str():** [Python str()](https://www.geeksforgeeks.org/python-str-function/) function takes float or int as an argument and returns string type object.
 
-### [Errors and Exceptions](https://docs.python.org/3/tutorial/errors.html)
+### Errors and Exceptions[#](https://docs.python.org/3/tutorial/errors.html)
+
 There are (at least) two distinguishable kinds of errors: **syntax errors** and **exceptions**.
 
 Eventualy you'll elaborate a code that [handle with it's own exceptions](https://www.programiz.com/python-programming/exception-handling), using generaly `try` and `except` comands.
@@ -231,6 +237,7 @@ Visit the following resources to learn more:
 -	[Python Try Except](https://www.w3schools.com/python/python_try_except.asp)
 
 ## Functions
+
 In programming, a function is a reusable block of code that executes a certain functionality when it is called. Functions are integral parts of every programming language because they help make your code more modular and reusable.
 
 In Python, you *define* a function with the `def` keyword, then write the function identifier (*name*) followed by parentheses (*parameters*) and a colon, like:
@@ -242,11 +249,13 @@ def function_name(parameter1, parameter2):
 ```
 
 ### Argument x Parameter
+
 "*A parameter is the variable listed inside the parentheses in the function definition. An argument is the value that is sent to the function when it is called.*" [_font_](https://stackoverflow.com/questions/156767/whats-the-difference-between-an-argument-and-a-parameter#:~:text=A%20parameter%20is%20the%20variable,function%20when%20it%20is%20called.)
 
 ![arg vs param](https://i.stack.imgur.com/9lg1H.png)
 
 ### Return
+
 The use of a function can be only for processing algorithms or just to print an information:
 ```python
 >>> def my_function():
@@ -270,6 +279,7 @@ Visit the following resources to learn more:
 -	[Built-in Functions in Python](https://docs.python.org/3/library/functions.html)
 
 ## Lists, Tuples, Sets, and Dictionaries
+
 -	**Lists**: are just like dynamic sized arrays, declared in other languages (vector in C++ and ArrayList in Java).  *Represented with* `[]`.
 	They're non-homogeneous (allows multitype and duplicate elements) and ordered (*index* starts with `0`) data structure that stores the elements in single row and multiple rows and columns, is mutable.
 
@@ -386,10 +396,14 @@ Visit the following resources to learn more:
 - [Python for Beginners: Lists](https://thenewstack.io/python-for-beginners-lists/)
 - [Python for Beginners: When and How to Use Tuples](https://thenewstack.io/python-for-beginners-when-and-how-to-use-tuples/)
 
-# Datastructures_and_Algorithms
-A data structure is a named location that can be used to store and organize data. And, an algorithm is a collection of steps to solve a particular problem. Learning data structures and algorithms allow us to write efficient and optimized computer programs.
+# [Datastructures and Algorithms](../Other/data_structure.md)
+
+A data structure is a named location that can be used to store and organize data. And, an algorithm is a collection of steps to solve a particular problem. Learning data structures and algorithms allow us to write efficient and optimized computer programs. There're a main division in the pathern:
+- **Linear** (Arrays, Linked Lists, Stacks, Queues and Hash Tables)
+- **Non-linear** (Binary Tree (hierarchical), Graphs)
 
 ## Arrays and Linked Lists
+
 Arrays store elements in contiguous memory locations, resulting in easily calculable addresses for the elements stored and this allows faster access to an element at a specific index. [Linked lists](./code/linked_list.py) are less rigid in their storage structure and elements are usually not stored in contiguous locations, hence they need to be stored with additional tags giving a reference to the next element. *This difference in the data storage scheme decides which data structure would be more suitable for a given situation*. **Needs to be imported with `import array`**. 
 
 Arrays of the array module are a thin wrapper over C arrays, and are useful when you want to work with homogeneous data. They are also more compact and take up less memory and space which makes them more size efficient compared to lists.
@@ -405,7 +419,8 @@ Visit the following resources to learn more:
 -	[Array Data Structure | Illustrated Data Structures](https://www.youtube.com/watch?v=QJNwK2uJyGs)
 -	[Linked List Data Structure | Illustrated Data Structures](https://www.youtube.com/watch?v=odW9FU8jPRQ)
 
-## Heaps, Stacks and Queues ([Data Structures](../Other/data_structure.md))
+## Heaps, Stacks and Queues
+
 -	**Stacks:** Operations are performed [`LIFO`](../Other/lifo_fifo.md) (last in, first out), which means that the last element added will be the first one removed. A stack can be implemented using an array or a linked list. If the stack runs out of memory, it’s called a stack overflow.
 
 -	**Queue:** Operations are performed [`FIFO`](../Other/lifo_fifo.md) (first in, first out), which means that the first element added will be the first one removed. A queue can be implemented using an array.
@@ -422,19 +437,51 @@ Visit the following resources to learn more:
 	-   [How to Implement Python Stack?](https://realpython.com/how-to-implement-python-stack/)
 -   heaps
 	-   [Heap Implementation in Python](https://www.educative.io/answers/heap-implementation-in-python)
--	queues
+-   queues
 	-   [Queue Data Structure | Illustrated Data Structures](https://www.youtube.com/watch?v=mDCi1lXd9hc)
 	-   [Queue in Python](https://www.geeksforgeeks.org/queue-in-python/)
 
 ## Hash Tables
+
+Hash Table, Map, HashMap, Dictionary or Associative are all the names of the same data structure. It is a data structure that implements a set abstract data type, a structure that can map keys to values.
+
+Visit the following resources to learn more:
+
+-   [Hash Table Data Structure | Illustrated Data Structures](https://www.youtube.com/watch?v=jalSiaIi8j4)
+-   [Hash Tables and Hashmaps in Python](https://www.edureka.co/blog/hash-tables-and-hashmaps-in-python/)
+-   [Build a Hash Table in Python](https://realpython.com/python-hash-table/)
+
 ## Binary Search Trees
-## Recursion
+
+A binary search tree, also called an ordered or sorted binary tree, is a rooted binary tree data structure with the key of each internal node being greater than all the keys in the respective node’s left subtree and less than the ones in its right subtree
+
+Visit the following resources to learn more:
+
+-   [Tree Data Structure | Illustrated Data Structures](https://www.youtube.com/watch?v=S2W3SXGPVyU)
+-   [How to Implement Binary Search Tree in Python](https://www.section.io/engineering-education/implementing-binary-search-tree-using-python/)
+-   [Problem Set](https://www.geeksforgeeks.org/binary-search-tree-data-structure/?ref=gcse)
+
+## [Recursion](../Other/recursion.md)
+
+Recursion is a method of solving a computational problem where the solution depends on solutions to smaller instances of the same problem. Recursion solves such recursive problems by using functions that call themselves from within their own code.
+
+Visit the following resources to learn more:
+
+-   [Recursion in Python](https://www.geeksforgeeks.org/recursion/)
+-   [Recursion in Python: An Introduction](https://realpython.com/python-recursion/)
+
 ## Sorting Algorithms
 
-# Advanced_Topics
-# Learn_a_Framework
-# Testing_your_Apps
+
+# Advanced Topics
+
+# Learn a Framework
+
+# Testing your Apps
+
 # Continue 
+
 ## Libraries
 - [openpyxl](./openpyxl.md)
+- [pandas e geopandas](./geo-pandas.md)
 - [numpy](./numpy.md)

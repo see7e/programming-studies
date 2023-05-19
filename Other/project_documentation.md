@@ -94,14 +94,14 @@ flowchart TD
         2.	Logica de negocio
         3.	Database
 
-    ![Arquitetura](src/arquit.png)
+    ![Arquitetura](src/img/arquit.png)
     >from [AltexSoft]( https://www.youtube.com/@AltexSoft)
     </br>
 
     4.	Testing plans (define os responsáveis por cada caso e os casos)
         1.	Casos (descrição de como cada feature deve ser testada)
 
-    ![Etapas do processo](src/processo.png)
+    ![Etapas do processo](src/img/processo.png)
     >from [AltexSoft]( https://www.youtube.com/@AltexSoft)
     </br>
 
@@ -112,7 +112,7 @@ flowchart TD
         3.	Releases
     2.	Métricas
 
-    ![Métricas](src/metricas.png)
+    ![Métricas](src/img/metricas.png)
     >from [AltexSoft]( https://www.youtube.com/@AltexSoft)
     </br>
 
