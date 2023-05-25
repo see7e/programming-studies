@@ -9,7 +9,7 @@ dependences: NULL
 <details> <summary>Table of Contents</summary>
 
 - [Code File #](#code-file-)
-- [Explanation (`ChatGPT`)](#explanation-chatgpt)
+- [Explanation](#explanation)
 - [Found in Programiz](#found-in-programiz)
 
 </details>
@@ -18,10 +18,10 @@ dependences: NULL
 
 # Code File [#](./code/hash_table.c)
 
-# Explanation (`ChatGPT`)
+# Explanation
+> ChatGPT powered
 
 > Here are some explanations for the code snippets in the given code:
-
 1.  **Structure to represent key-value pair:**
 	
 	```c

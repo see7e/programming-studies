@@ -30,7 +30,13 @@ dependences: Python, pandas
   - [Remove Duplicates](#remove-duplicates)
 - [Advanced](#advanced)
   - [Correlations](#correlations)
+    - [Finding Relationships](#finding-relationships)
+    - [Perfect Correlation:](#perfect-correlation)
+    - [Good Correlation:](#good-correlation)
+    - [Bad Correlation:](#bad-correlation)
   - [Plotting](#plotting)
+    - [Scatter Plot](#scatter-plot)
+    - [Histogram](#histogram)
 - [References](#references)
 
 </details>
@@ -129,7 +135,7 @@ With the `index` argument, you can name your own labels. And when you have cre
 import pandas as pd  
   
 a = [1, 7, 2]
-myvar = pd.Series(a, index = ["x", "y", "z"])  
+myvar = pd.Series(a, index = ["x","y","z"])  
 # Print
 print(myvar) # full series
 print(myvar["y"]) # series item
@@ -173,21 +179,17 @@ df_workout = pd.DataFrame(data)
 print(df_workout)
 ```
 
-There´s another way to add data in the DF, is using loops and `.append(_other_, _ignore_index=False_, _verify_integrity=False_, _sort=False_)` method:
+There´s another way to add data in the DF, is using loops and [`.append(_other_, _ignore_index=False_, _verify_integrity=False_, _sort=False_)`](https://pandas.pydata.org/pandas-docs/version/1.3/reference/api/pandas.DataFrame.append.html) method:
 
 Parameters
 
-- **other** (*DataFrame or Series/dict-like object, or list of these*)
-  > The `data` to append.
+- **other** (*DataFrame or Series/dict-like object, or list of these*), the data to append.
 
-- **ignore_index** (*bool, default False*)
-  > If True, the resulting axis will be labeled 0, 1, …, `n-1`.
+- **ignore_index** (*bool, default False*), if True, the resulting axis will be labeled 0, 1, …, `n-1`.
 
-- **verify_integrity** (*bool, default False*)
-  > If `True`, raise `ValueError` on creating index with duplicates.
+- **verify_integrity** (*bool, default False*), if True, raise ValueError on creating index with duplicates.
 
-- **sort** (*bool, default False*)
-  > Sort columns if the columns of self and other are not aligned.
+- **sort** (*bool, default False*), sort columns if the columns of self and other are not aligned.
 
 ```python
 new_row = {'day': 1, 'excercise': "burple", 'calories': 1500, 'duration': 5,}
@@ -197,9 +199,40 @@ df_workout = df_workout.append(new_row, ignore_index=True)
 
 Please note that **the `return` is a new DataFrame**, so if you want to add to an existing one, you have to reassign.
 
+> From [version 2.0.0 changes](https://pandas.pydata.org/docs/whatsnew/v2.0.0.html#removal-of-prior-version-deprecations-changes) the `.append()` method was removed.
+> *Removed deprecated `Series.append()`, `DataFrame.append()`, use `concat()` instead ([GH35407](https://github.com/pandas-dev/pandas/issues/35407))*
+
+The [`.concat(_objs_, _*_, _axis=0_, _join='outer'_, _ignore_index=False_, _keys=None_, _levels=None_, _names=None_, _verify_integrity=False_, _sort=False_, _copy=None_)`](https://pandas.pydata.org/docs/reference/api/pandas.concat.html#pandas.concat) with the following parameters:
+- **objs**: *a sequence or mapping of Series or DataFrame objects*, If a mapping is passed, the sorted keys will be used as the keys argument, unless it is passed, in which case the values will be selected (see below). Any None objects will be dropped silently unless they are all None in which case a ValueError will be raised.
+
+- **axis**: *{0/’index’, 1/’columns’}, **default** 0*, the axis to concatenate along.
+
+- **join**: *{‘inner’, ‘outer’}, **default** ‘outer’*, how to handle indexes on other axis (or axes).
+
+- **ignore_index**: *bool, **default** False*, if True, do not use the index values along the concatenation axis. The resulting axis will be labelled 0, …, n - 1.
+
+- **keys**: *sequence, **default** None*, if multiple levels passed, should contain tuples. Construct hierarchical index using the passed keys as the outermost level.
+
+- **levels**: *list of sequences, **default** None*, specific levels (unique values) to use for constructing a MultiIndex. Otherwise they will be inferred from the keys.
+
+- **names**: *list, **default** None*, names for the levels in the resulting hierarchical index.
+
+- **verify_integrity**: *bool, **default** False*, check whether the new concatenated axis contains duplicates. This can be very expensive relative to the actual data concatenation. 
+
+- **sort**: *bool, **default** False*, sort non-concatenation axis if it is not already aligned.
+
+- **copy**: *bool, **default** True*, if False, do not copy data unnecessarily.
+
+And returns a object witch is a `Series` or a `DataFrame`.
+An usage code example:
+
+```python
+df = pd.concat([df, pd.DataFrame([new_row])], ignore_index=True)
+```
+
 ### Indexing and selecting data
 
-The axis labeling information in pandas objects serves many purposes:
+The axis labelling information in pandas objects serves many purposes:
 
 -   Identifies data (i.e. provides _metadata_) using known indicators, important for analysis, visualization, and interactive console display.
 -   Enables automatic and explicit data alignment.
@@ -740,30 +773,165 @@ df.dropna(subset=['Date'], inplace = True)
 ```
 
 **Parameters**
-- **axis** ({`0` or `index`, `1` or `columns`}, default 0), Determine if rows or columns which contain missing values are removed.
-- **how** ({`any`, `all`}, default `any`), Determine if row or column is removed from DataFrame, when we have at least one NA or all NA.
-- **thresh** (`int`, optional), Require that many non-NA values. Cannot be combined with how.
-- **subset** (column label or sequence of labels, optional), Labels along other axis to consider, e.g. if you are dropping rows these would be a list of columns to include.
-- **inplace** (`bool`, default False), Whether to modify the DataFrame rather than creating a new one.
-- **ignore_index** (`bool`, default `False`), If `True`, the resulting axis will be labeled 0, 1, …, n - 1.
+- **axis** ({`0` or `index`, `1` or `columns`}, **default** 0), Determine if rows or columns which contain missing values are removed.
+- **how** ({`any`, `all`}, **default** `any`), Determine if row or column is removed from DataFrame, when we have at least one `NA` or all.
+- **thresh** (`int`, **optional**), Require that many non-NA values. Cannot be combined with how.
+- **subset** (column label or sequence of labels, **optional**), Labels along other axis to consider, e.g. if you are dropping rows these would be a list of columns to include.
+- **inplace** (`bool`, **default** False), Whether to modify the DataFrame rather than creating a new one.
+- **ignore_index** (`bool`, **default** `False`), If `True`, the resulting axis will be labeled 0, 1, …, n - 1.
 
 **Returns**
 - DataFrame or None
-- DataFrame with NA entries dropped from it or None if `inplace=True`.
+- DataFrame with `NA` entries dropped from it or None if `inplace=True`.
 
 ## Remove Duplicates
 
-# Advanced
-## Correlations
-## Plotting
+By taking a look at our test data set, we can assume that row 11 and 12 are duplicates.
+To discover duplicates, we can use the [`duplicated(_subset=None_, _keep='first'_)`](https://pandas.pydata.org/docs/reference/api/pandas.DataFrame.duplicated.html) method. 
 
+```python
+print(df.duplicated())
+```
+
+**Parameters**
+- **subset**: *column label or sequence of labels, optional*, only consider certain columns for identifying duplicates, by default use all of the columns.
+- **keep**: *{‘first’, ‘last’, False}, **default** ‘first’*, determines which duplicates (if any) to mark.
+
+The `duplicated()` method returns a Boolean Series: `True` for every row that is a duplicate, otherwise `False`.
+
+**To remove duplicates**, use the [`drop_duplicates(_subset=None_, _*_, _keep='first'_, _inplace=False_, _ignore_index=False_)`](https://pandas.pydata.org/docs/reference/api/pandas.DataFrame.drop_duplicates.html) method. 
+
+```python
+df.drop_duplicates(inplace = True)
+```
+
+**Parameters**
+- **subset**: *column label or sequence of labels, **optional***, only consider certain columns for identifying duplicates, by default use all of the columns.
+- **keep**: *{‘first’, ‘last’, `False`}, **default** ‘first’*, determines which duplicates (if any) to keep.
+- **inplace**: *`bool`, **default** `False`*, whether to modify the DataFrame rather than creating a new one.
+- **ignore_index**: *`bool`, **default** `False`*, if `True`, the resulting axis will be labeled 0, 1, …, n - 1.
+
+The method returns a DataFrame with duplicates removed or None if `inplace=True`.
+
+# Advanced
+
+## Correlations
+> The examples (from W3schools) uses a CSV file called: '[data.csv](https://www.w3schools.com/python/pandas/data.csv.txt)'.
+
+### Finding Relationships
+
+A great aspect of the Pandas module is the `corr()` method.
+The [`corr(_method='pearson'_, _min_periods=1_, _numeric_only=False_)`](https://pandas.pydata.org/docs/reference/api/pandas.DataFrame.corr.html) method calculates the relationship between each column in your data set and **returns a Correlation matrix.**
+
+**Parameters**
+- **method**: *{‘pearson’, ‘kendall’, ‘spearman’} or callable*
+- **min_periods**: *`int`, **optional***, minimum number of observations required per pair of columns to have a valid result. Currently only available for Pearson and Spearman correlation.
+- **numeric_only**: *`bool`, **default** False*, include only float, int or boolean data.
+
+```python
+df.corr()
+
+ #           Duration     Pulse  Maxpulse  Calories
+ # Duration  1.000000 -0.155408  0.009403  0.922721
+ # Pulse    -0.155408  1.000000  0.786535  0.025120
+ # Maxpulse  0.009403  0.786535  1.000000  0.203814
+ # Calories  0.922721  0.025120  0.203814  1.000000
+```
+> *The `corr()` method ignores "not numeric" columns.*
+
+The result  is a table with numbers (**from -1 to 1**) that represents how well the relationship is between two columns. 
+
+- `1` means that there is a 1 to 1 relationship (a perfect correlation), and for this data set, each time a value went up in the first column, the other one went up as well.
+- `0.9` is also a good relationship, and if you increase one value, the other will probably increase as well. 
+- `-0.9` would be just as good relationship as 0.9, but if you increase one value, the other will probably go down. 
+- `0.2` means NOT a good relationship, meaning that if one value goes up does not mean that the other will.
+
+> **What is a good correlation?** It depends on the use, but I think it is safe to say you have to have at least `0.6` (or `-0.6`) to call it a good correlation.
+
+### Perfect Correlation:
+
+We can see that "Duration" and "Duration" got the number `1.000000`, which makes sense, each column always has a perfect relationship with itself.
+
+### Good Correlation:
+
+"Duration" and "Calories" got a `0.922721` correlation, which is a very good correlation, and we can predict that the longer you work out, the more calories you burn, and the other way around: if you burned a lot of calories, you probably had a long work out.
+
+### Bad Correlation:
+
+"Duration" and "Maxpulse" got a `0.009403` correlation, which is a very bad correlation, meaning that we can not predict the max pulse by just looking at the duration of the work out, and vice versa.
+
+## Plotting
+> The examples uses a CSV file called: '[data.csv](https://www.w3schools.com/python/pandas/data.csv.txt)'.
+
+![plot|500](https://www.w3schools.com/python/pandas/img_pandas_plot.png)
+
+
+Pandas uses the [`plot(_*args_, _**kwargs_)`]() method to create diagrams. We can use **Pyplot**, a submodule of the **Matplotlib** library to visualize the diagram on the screen.
+> Read more about in [Matplotlib Tutorial](https://www.w3schools.com/python/matplotlib_intro.asp).
+
+**Parameters**
+- **data**: `Series` or `DataFrame`, the object for which the method is called.
+- there's a lot of parameters...
+
+```python
+import pandas as pd  
+import matplotlib.pyplot as plt  
+  
+df = pd.read_csv('data.csv')
+df.plot()  
+plt.show()
+```
+
+
+### Scatter Plot
+
+Specify that you want a scatter plot with the `kind` argument:
+
+`kind = 'scatter'`
+
+A scatter plot needs an x- and a y-axis.
+
+In the example below we will use "Duration" for the x-axis and "Calories" for the y-axis.
+
+Include the x and y arguments like this:
+
+`x = 'Duration', y = 'Calories'`
+
+```python
+import pandas as pd  
+import matplotlib.pyplot as plt  
+  
+df = pd.read\_csv('data.csv')  
+  
+df.plot(kind = 'scatter', x = 'Duration', y = 'Calories')  
+  
+plt.show()
+```
+
+![scatter|500](https://www.w3schools.com/python/pandas/img_pandas_plot_scatter.png)
+> **Remember:** In the previous example, we learned that the correlation between "Duration" and "Calories" was `0.922721`, and we concluded with the fact that higher duration means more calories burned.
+
+### Histogram
+
+Use the `kind` argument to specify that you want a histogram:
+
+`kind = 'hist'`
+
+A histogram needs only one column.
+
+A histogram shows us the frequency of each interval, e.g. how many workouts lasted between 50 and 60 minutes?
+
+In the example below we will use the "Duration" column to create the histogram:
+
+```python
+df["Duration"].plot(kind = 'hist')
+```
+
+![histogram|500](https://www.w3schools.com/python/pandas/img_pandas_plot_hist.png)
+> **Note:** The histogram tells us that there were over 100 workouts that lasted between 50 and 60 minutes.
 ---
 
 # References
 
 - [pydata](https://pandas.pydata.org/)
 - [w3schools](https://www.w3schools.com/python/pandas/default.asp)
-- []()
-- []()
-- []()
-- []()

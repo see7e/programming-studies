@@ -75,9 +75,6 @@ The algorithmic steps for implementing recursion in a function are as follows:
 4. Combine the solutions: Combine the solutions of the subproblems to solve the original problem.
 
 
-
-
-
 ## Recursion in Python
 
 When you call a function in Python, the interpreter creates a new [local namespace](https://realpython.com/python-namespaces-scope/) so that names defined within that function don’t [collide](https://en.wikipedia.org/wiki/Name_collision) with identical names defined elsewhere. One function can call another, and even if they both define objects with the same name, it all works out fine because those objects exist in separate **namespaces**.

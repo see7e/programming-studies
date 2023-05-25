@@ -20,7 +20,10 @@ dependences: NULL
     - Sphinx
 
 # [`C`](./C/)
-- CS50 - [Week 1](./CS50/week1/README.md)
+- CS50x 
+	- [Week 1](./cs50x/week1/README.md)
+	- [Week2](./cs50x/week2/README.md)
+
 
 # [Front End](./Front_End/)
 - [`HTML`](./Front_End/HTML/README.md)
@@ -58,4 +61,5 @@ dependences: NULL
     -   [Trees](./Other/ds_tree.md)
     -   [Heaps](./Other/ds_heap.md)
     -   [Graphs](./Other/ds_graph.md)
+- [Big O Notation](./Other/big_o_notation.md)
 - [Shell](./Other/shell.md)

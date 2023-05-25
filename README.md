@@ -6,7 +6,7 @@ languages: NULL
 dependences: NULL
 ---
 
-> [!] The links are built for the obsidian branch, i was workin in main but now i'll split correctly and after that update all the interdocument links 
+> [!] The links are built for the obsidian branch, i was working in main but now i'll split correctly and after that update all the inter document links 
 
 ---
 
@@ -24,7 +24,7 @@ dependences: NULL
     </p>
 </details>
 
-This repo is divided in two branches, [main](https://github.com/see7e/programing-studies) has common links and [obsidian]([#](https://github.com/see7e/programing-studies/tree/obsidian)) links follow a Zettelkasten adapted model along with Obisidian to map the network of documents. If you want to set up in you computer, [click here](./obisidian_init.md).
+This repo is divided in two branches, [main](https://github.com/see7e/programing-studies) has common links and [obsidian](https://github.com/see7e/programing-studies/tree/obsidian) links follow a Zettelkasten adapted model along with Obsidian to map the network of documents. If you want to set up in you computer, [click here](./obisidian_init.md).
 
 # [List of Documents](./DIRECTORY.md)
 
@@ -106,4 +106,5 @@ About the time, if you manage to reconcile between demands intervals, great, if 
 - pyqgis
 	- http://geospatialdesktop.com/2009/02/creating_a_standalone_gis_application_1/
 - [Python @dataclasses](https://www.youtube.com/watch?v=vBH6GRJ1REM)
+- [Python builtin functions](https://docs.python.org/3/library/functions.html)
 - [Dynamic Programming - Learn to Solve Algorithmic Problems & Coding Challenges](https://www.youtube.com/watch?v=oBt53YbR9Kk)
