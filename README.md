@@ -24,6 +24,14 @@ dependences: NULL
     </p>
 </details>
 
+</br>
+
+<p align="center">
+  <picture>
+    <img alt="List_logo" src="./src/img/prog-galaxy.png" style="width:500px">
+  </picture>
+</p>
+
 This repo is divided in two branches, [main](https://github.com/see7e/programing-studies) has common links and [obsidian](https://github.com/see7e/programing-studies/tree/obsidian) links follow a Zettelkasten adapted model along with Obsidian to map the network of documents. If you want to set up in you computer, [click here](./obisidian_init.md).
 
 # [List of Documents](./DIRECTORY.md)
