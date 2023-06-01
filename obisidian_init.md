@@ -16,7 +16,7 @@ dependences: NULL
 2.  Recreate the same structure (inside `studies/`)here:
 ```
 .
-├── CS50/                  # CS50 Repo
+├── cs50x/                 # CS50 Repo
 ├── 42/                    # 42 Repos
 │   ├── 42_Walkthrugh/      # Table of contents
 │   ├── 42-libft/           # Frequently asked questions

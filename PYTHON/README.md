@@ -483,6 +483,42 @@ Visit the following resources to learn more:
 
 # Advanced Topics
 
+## Object-oriented Programming - OOP
+
+### Classes 
+### Inheritance 
+### Methods, Dunder 
+
+## Iterators
+
+## RegEx
+
+## Decorators
+
+## Lambdas 
+
+## Modules 
+
+### Builtin 
+
+### Custom 
+
+## Package Managers
+
+### PyPi
+
+### Pip
+
+### Conda
+
+## Other
+
+### List Comprehensions
+
+### Generator Expressions 
+
+### Paradigms 
+
 # Learn a Framework
 
 # Testing your Apps

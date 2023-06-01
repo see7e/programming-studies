@@ -20,9 +20,10 @@ dependences: NULL
     - Sphinx
 
 # [`C`](./C/)
-- CS50x 
+- [CS50x](./cs50x/README.md) 
 	- [Week 1](./cs50x/week1/README.md)
 	- [Week2](./cs50x/week2/README.md)
+	- [Week3](./cs50x/week3/README.md)
 
 
 # [Front End](./Front_End/)
@@ -52,6 +53,7 @@ dependences: NULL
 
 # [Other](./Other)
 - [Techinical Project Documentation](./Other/project_documentation.md)
+- [Shell](./Other/shell.md)
 - [Data Structures](./Other/data_structure.md)
     -   [Arrays](./Other/ds_array.md)
     -   [Linked Lists](./Other/ds_linked_list.md)
@@ -62,4 +64,10 @@ dependences: NULL
     -   [Heaps](./Other/ds_heap.md)
     -   [Graphs](./Other/ds_graph.md)
 - [Big O Notation](./Other/big_o_notation.md)
-- [Shell](./Other/shell.md)
+- Algorithms
+  - [Sorting Algo](./Other/sorting_algo.md)
+    - Bubble Sort
+    - Insertion Sort
+    - Merging Sort
+    - TimSort
+    - Merge Sort

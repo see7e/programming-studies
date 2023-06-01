@@ -14,7 +14,7 @@ dependences: NULL
 
 # Big O
 
-## The Significance of Time Complexity[](https://realpython.com/sorting-algorithms-python//#the-significance-of-time-complexity "Permanent link")
+## The Significance of Time Complexity [#](https://realpython.com/sorting-algorithms-python//#the-significance-of-time-complexity "Permanent link")
 
 This tutorial covers two different ways to measure the **runtime** of sorting algorithms:
 
@@ -98,18 +98,18 @@ The time in seconds required to run different algorithms can be influenced by se
 
 Assuming that _n_ is the size of the input to an algorithm, the Big O notation represents the relationship between _n_ and the number of steps the algorithm takes to find a solution. Big O uses a capital letter “O” followed by this relationship inside parentheses. For example, **_O(n)_** represents algorithms that execute a number of steps proportional to the size of their input.
 
-Although this tutorial isn’t going to dive very deep into the details of Big O notation, here are five examples of the runtime complexity of different algorithms:
+Although this tutorial isn’t going to dive very deep into the details of Big O notation, here are five examples of the runtime complexity of different algorithms, **from lowest to fastest**:
 
-| Big O | Complexity | Description |
-| --- | --- | --- |
-| _O(1)_ | constant | The runtime is constant regardless of the size of the input. Finding an element in a [hash table](https://realpython.com/python-hash-table/) is an example of an operation that can be performed in **constant time**. |
-| _O(n)_ | linear | The runtime grows linearly with the size of the input. A function that checks a condition on every item of a list is an example of an _O(n)_ algorithm. |
-| _O(n<sup>2</sup>)_ | quadratic | The runtime is a quadratic function of the size of the input. A naive implementation of finding duplicate values in a list, in which each item has to be checked twice, is an example of a quadratic algorithm. |
-| _O(2<sup>n</sup>)_ | exponential | The runtime grows exponentially with the size of the input. These algorithms are considered extremely inefficient. An example of an exponential algorithm is the [three-coloring problem](https://en.wikipedia.org/wiki/Graph_coloring). |
-| _O(log n)_ | logarithmic | The runtime grows linearly while the size of the input grows exponentially. For example, if it takes one second to process one thousand elements, then it will take two seconds to process ten thousand, three seconds to process one hundred thousand, and so on. [Binary search](https://realpython.com/binary-search-python/) is an example of a logarithmic runtime algorithm. |
+| Big O              | Complexity  | Description                                                                                                                                                                                                                                                                                                                                                                        |
+| ------------------ | ----------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| _O(n<sup>2</sup>)_ | quadratic   | The runtime is a quadratic function of the size of the input. A naive implementation of finding duplicate values in a list, in which each item has to be checked twice, is an example of a quadratic algorithm.                                                                                                                                                                    |
+| _O(2<sup>n</sup>)_ | exponential | The runtime grows exponentially with the size of the input. These algorithms are considered extremely inefficient. An example of an exponential algorithm is the [three-coloring problem](https://en.wikipedia.org/wiki/Graph_coloring).                                                                                                                                           |
+| _O(n)_             | linear      | The runtime grows linearly with the size of the input. A function that checks a condition on every item of a list is an example of an _O(n)_ algorithm.                                                                                                                                                                                                                            |
+| _O(log n)_         | logarithmic | The runtime grows linearly while the size of the input grows exponentially. For example, if it takes one second to process one thousand elements, then it will take two seconds to process ten thousand, three seconds to process one hundred thousand, and so on. [Binary search](https://realpython.com/binary-search-python/) is an example of a logarithmic runtime algorithm. |
+| _O(1)_             | constant    | The runtime is constant regardless of the size of the input. Finding an element in a [hash table](https://realpython.com/python-hash-table/) is an example of an operation that can be performed in **constant time**.                                                                                                                                                             |
 
-This tutorial covers the Big O runtime complexity of each of the sorting algorithms discussed. It also includes a brief explanation of how to determine the runtime on each particular case. This will give you a better understanding of how to start using Big O to classify other algorithms.
-
+>This tutorial covers the Big O runtime complexity of each of the sorting algorithms discussed. It also includes a brief explanation of how to determine the runtime on each particular case. This will give you a better understanding of how to start using Big O to classify other algorithms.
+>
 > **Note:** For a deeper understanding of Big O, together with several practical examples in Python, check out [Big O Notation and Algorithm Analysis with Python Examples](https://stackabuse.com/big-o-notation-and-algorithm-analysis-with-python-examples/).
 
 ## Concept

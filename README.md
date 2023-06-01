@@ -108,3 +108,6 @@ About the time, if you manage to reconcile between demands intervals, great, if 
 - [Python @dataclasses](https://www.youtube.com/watch?v=vBH6GRJ1REM)
 - [Python builtin functions](https://docs.python.org/3/library/functions.html)
 - [Dynamic Programming - Learn to Solve Algorithmic Problems & Coding Challenges](https://www.youtube.com/watch?v=oBt53YbR9Kk)
+- [Git Guide (pt)](https://dev.to/leandronsp/pt-br-fundamentos-do-git-um-guia-completo-2djh)
+- [Comparison Sorting Algorithms](https://www.cs.usfca.edu/~galles/visualization/ComparisonSort.html)
+- [Data Structure Visualizations](https://www.cs.usfca.edu/~galles/visualization/Algorithms.html)
