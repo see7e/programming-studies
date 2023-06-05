@@ -1,0 +1,3 @@
+[submodule "cs50x"]
+	path = cs50x
+	url = https://github.com/see7e/cs50x
