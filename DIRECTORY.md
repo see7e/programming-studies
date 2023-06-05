@@ -20,11 +20,6 @@ dependences: NULL
     - Sphinx
 
 # [`C`](./C/)
-- [CS50x](./cs50x/README.md) 
-	- [Week 1](./cs50x/week1/README.md)
-	- [Week2](./cs50x/week2/README.md)
-	- [Week3](./cs50x/week3/README.md)
-
 
 # [Front End](./Front_End/)
 - [`HTML`](./Front_End/HTML/README.md)
@@ -50,6 +45,11 @@ dependences: NULL
     - App Pesquisa Endereço (Aprenda a realizar requisições HTTP via XMLHttpRequest para API's)
 - [`API` com Slim Framework](./Back_End/API/README.md)
     - Projeto API de Produtos
+
+# Courses
+- [CS50x](./cs50x/README.md)
+- [42 - Piscine](./42/42_Walkthrugh/README.md)
+- 42 Common Core
 
 # [Other](./Other)
 - [Techinical Project Documentation](./Other/project_documentation.md)

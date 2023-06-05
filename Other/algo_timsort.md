@@ -17,7 +17,7 @@ dependences: NULL
 
 ---
 
-# Implementing Timsort in Python [#](https://realpython.com/sorting-algorithms-python//#implementing-timsort-in-python "Permanent link")
+# Implementing Timsort [#](https://realpython.com/sorting-algorithms-python//#implementing-timsort-in-python "Permanent link")
 
 In this section, you’ll create a barebones Python implementation that illustrates all the pieces of the Timsort algorithm. If you’re interested, you can also check out the [original C implementation of Timsort](https://github.com/python/cpython/blob/master/Objects/listobject.c).
 

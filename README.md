@@ -15,22 +15,23 @@ dependences: NULL
 
 <details>
 	<summary>If you want to know the history, click here.</summary>
-	<p>I've started using Obsidian and found very userfull to see how my brain works, and all its connections. Sometime after stumbled with the Zettelkasten method, it fits right into the philosophy of the program.</p>
+	<p>
+		I've started using Obsidian and found very userfull to see how my brain works, and all its connections. Sometime after stumbled with the Zettelkasten method, it fits right into the philosophy of the program.</p>
     <p>
-    But the problem is that all my information was divided in a big folder structure, so I took my time and started thinking about how to conciliate both methods, PARA and Zettel.
+	    But the problem is that all my information was divided in a big folder structure, so I took my time and started thinking about how to conciliate both methods, PARA and Zettel.
     </p>
     <p>
-    The links, the special <code>[[]]</code> Obisidian type and the common <code>[](./path/to/file)</code>. The first one don't work in GitHub, and the second one if is a web url Obisian won't link the way we expect. So what I will do/did is put altoghether in one folder, and set <code>.gitignore</code> for exclude the independent subfolders wich are individual repositories, and with that Git won't create a mess during the commits and pushs.
+	    The links, the special <code>[[]]</code> Obsidian type and the common <code>[](./path/to/file)</code>. The first one don't work in GitHub, and the second one if is a web url Obsidian won't link the way we expect. So what I will do/did is put altogether in one folder, and set <code>.gitignore</code> for exclude the independent sub-folders which are individual repositories, and with that Git won't create a mess during the commits and pushes.
     </p>
 </details>
 
 </br>
 
-<p align="center">
+<div align="center">
   <picture>
-    <img alt="List_logo" src="./src/img/prog-galaxy.png" style="width:500px">
+    <img alt="Galaxy" src="./src/img/prog-galaxy.png" style="width:500px">
   </picture>
-</p>
+</div>
 
 This repo is divided in two branches, [main](https://github.com/see7e/programing-studies) has common links and [obsidian](https://github.com/see7e/programing-studies/tree/obsidian) links follow a Zettelkasten adapted model along with Obsidian to map the network of documents. If you want to set up in you computer, [click here](./obisidian_init.md).
 
@@ -38,38 +39,37 @@ This repo is divided in two branches, [main](https://github.com/see7e/programing
 
 ## Progress
 
-<table>
-    <thead>
-        <tr>
-            <th>HOURS</br>(18h ~ 19:30)</th>
-            <th>Monday</th>
-            <th>Tuesday</th>
-            <th>Wednesday</th>
-            <th>Thursday</th>
-            <th>Friday</th>
-        </tr>
-    </thead>
-    <tbody>
-        <tr>
-            <td>1ª Part</td>
-            <td rowspan=3>(C) CS50</td>
-            <td rowspan=2>(Python)</br>Roadmap</td>
-            <td rowspan=2>Revisão</td>
-            <td>(Python)</br>Libraries</td>
-            <td rowspan=3>(C) CS50</td>
-        </tr>
-        <tr>
-            <td>2ª Part</td>
-            <td rowspan=2>(Python)</br>Roadmap</td>
-        </tr>
-        <tr>
-            <td>3ª Part</td>
-            <td>(Python)</br>Libraries</td>
-            <td>PowerBI /</br>Powerapps</td>
-        </tr>
-    </tbody>
-</table>
-
+<div align="center">
+    <table>
+        <thead>
+            <tr>
+                <th>HOURS</br>(18h ~ 19:30)</th>
+                <th>Monday</th>
+                <th>Tuesday</th>
+                <th>Wednesday</th>
+                <th>Thursday</th>
+                <th>Friday</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>1ª Part</td>
+                <td rowspan=3>(C) CS50</td>
+                <td rowspan=3>(Python)</br>Roadmap / Libs</td>
+                <td rowspan=2>Revisão</td>
+                <td rowspan=3>(Python)</br>Roadmap / Libs</td>
+                <td rowspan=3>(C) CS50</td>
+            </tr>
+            <tr>
+                <td>2ª Part</td>
+            </tr>
+            <tr>
+                <td>3ª Part</td>
+                <td>PowerBI /</br>Powerapps</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
 
 ```mermaid
 gantt
@@ -83,11 +83,11 @@ gantt
     RoadMap                 :02-05-2023, 60d
     OpenPyXL                :10-05-2023, 5d
     Pandas                  :17-05-2023, 5d
-    Lib, No. 3              :24-05-2023, 5d
-    Lib, No. 4              :31-05-2023, 5d
+    Lib, No. 3              :04-07-2023, 5d
+    Lib, No. 4              :11-07-2023, 5d
 
     section SQL
-    SQL RoadMap             :06-06-2023, 30d
+    SQL RoadMap             :03-07-2023, 30d
     PostgreSQL              :30d
     PostGis                 :20d
 

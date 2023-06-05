@@ -8,7 +8,7 @@ dependences: NULL
 
 <details> <summary>Table of Contents</summary>
 
-- [Implementing Merge Sort in Python #](#implementing-merge-sort-in-python-)
+- [Implementing Merge Sort #](#implementing-merge-sort-)
 - [Measuring Merge Sort’s Big O Complexity #](#measuring-merge-sorts-big-o-complexity-)
 - [Timing Your Merge Sort Implementation #](#timing-your-merge-sort-implementation-)
 - [Analyzing the Strengths and Weaknesses of Merge Sort #](#analyzing-the-strengths-and-weaknesses-of-merge-sort-)
@@ -17,7 +17,7 @@ dependences: NULL
 
 ---
 
-# Implementing Merge Sort in Python [#](https://realpython.com/sorting-algorithms-python//#implementing-merge-sort-in-python "Permanent link")
+# Implementing Merge Sort [#](https://realpython.com/sorting-algorithms-python//#implementing-merge-sort-in-python "Permanent link")
 
 The implementation of the merge sort algorithm needs two different pieces:
 
@@ -26,48 +26,19 @@ The implementation of the merge sort algorithm needs two different pieces:
 
 Here’s the code to merge two different arrays:
 
-```python
- 1    def merge(left, right):
- 2    # If the first array is empty, then nothing needs
- 3    # to be merged, and you can return the second array as the result
- 4    if len(left) == 0:
- 5        return right
- 6
- 7    # If the second array is empty, then nothing needs
- 8    # to be merged, and you can return the first array as the result
- 9    if len(right) == 0:
-10        return left
-11
-12    result = []
-13    index_left = index_right = 0
-14
-15    # Now go through both arrays until all the elements
-16    # make it into the resultant array
-17    while len(result) < len(left) + len(right):
-18        # The elements need to be sorted to add them to the
-19        # resultant array, so you need to decide whether to get
-20        # the next element from the first or the second array
-21        if left[index_left] <= right[index_right]:
-22            result.append(left[index_left])
-23            index_left += 1
-24        else:
-25            result.append(right[index_right])
-26            index_right += 1
-27
-28        # If you reach the end of either array, then you can
-29        # add the remaining elements from the other array to
-30        # the result and break the loop
-31        if index_right == len(right):
-32            result += left[index_left:]
-33            break
-34
-35        if index_left == len(left):
-36            result += right[index_right:]
-37            break
-38
-39    return result
-
+```embed-cpp
+PATH: "vault://GAB/Estudos-Trabalhos/PROGRAMAÇÃO/programing-studies/PYTHON/code/algo_merge_sort.py"
+TITLE: Merge.py
 ```
+
+<details> <summary>Or if you like a bit more intricate one, an implementation in `C`:</summary>
+
+```embed-cpp
+PATH: "vault://GAB/Estudos-Trabalhos/PROGRAMAÇÃO/programing-studies/C/code/algo_merge_sort.c"
+TITLE: "Merge.c"
+```
+
+</details>
 
 `merge()` receives two different sorted arrays that need to be merged together. The process to accomplish this is straightforward:
 

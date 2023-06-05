@@ -8,51 +8,34 @@ dependences: NULL
 
 <details> <summary>Table of Contents</summary>
 
-- [Implementing Insertion Sort in Python #](#implementing-insertion-sort-in-python-)
+- [Implementing Insertion/Selection Sort #](#implementing-insertionselection-sort-)
 - [Measuring Insertion Sort’s Big O Runtime Complexity #](#measuring-insertion-sorts-big-o-runtime-complexity-)
 - [Timing Your Insertion Sort Implementation #](#timing-your-insertion-sort-implementation-)
 - [Analyzing the Strengths and Weaknesses of Insertion Sort #](#analyzing-the-strengths-and-weaknesses-of-insertion-sort-)
+- [References](#references)
 
 </details>
 
 ---
 
 
-# Implementing Insertion Sort in Python [#](https://realpython.com/sorting-algorithms-python//#implementing-insertion-sort-in-python "Permanent link")
+# Implementing Insertion/Selection Sort [#](https://realpython.com/sorting-algorithms-python//#implementing-insertion-sort-in-python "Permanent link")
 
 The insertion sort algorithm works exactly like the example with the deck of cards. Here’s the implementation in Python:
 
-```python
- 1    def insertion_sort(array):
- 2    # Loop from the second element of the array until
- 3    # the last element
- 4    for i in range(1, len(array)):
- 5        # This is the element we want to position in its
- 6        # correct place
- 7        key_item = array[i]
- 8
- 9        # Initialize the variable that will be used to
-10        # find the correct position of the element referenced
-11        # by `key_item`
-12        j = i - 1
-13
-14        # Run through the list of items (the left
-15        # portion of the array) and find the correct position
-16        # of the element referenced by `key_item`. Do this only
-17        # if `key_item` is smaller than its adjacent values.
-18        while j >= 0 and array[j] > key_item:
-19            # Shift the value one position to the left
-20            # and reposition j to point to the next element
-21            # (from right to left)
-22            array[j + 1] = array[j]
-23            j -= 1
-24
-25        # When you finish shifting the elements, you can position
-26        # `key_item` in its correct location
-27        array[j + 1] = key_item
-28
-29    return array
+```embed-cpp
+PATH: "vault://GAB/Estudos-Trabalhos/PROGRAMAÇÃO/programing-studies/PYTHON/code/algo_insertion_sort.py"
+TITLE: "Insertion.py"
 ```
+
+<details> <summary>Or if you like a bit more intricate one, an implementation in `C`:</summary>
+
+```embed-cpp
+PATH: "vault://GAB/Estudos-Trabalhos/PROGRAMAÇÃO/programing-studies/C/code/algo_insertion_sort.c"
+TITLE: "Insertion.c"
+```
+
+</details>
 
 Unlike bubble sort, this implementation of insertion sort constructs the sorted list by pushing smaller items to the left. Let’s break down `insertion_sort()` line by line:
 
@@ -130,3 +113,7 @@ Just like bubble sort, the insertion sort algorithm is very uncomplicated to imp
 There are more powerful algorithms, including merge sort and Quicksort, but these implementations are recursive and usually fail to beat insertion sort when working on small lists. Some Quicksort implementations even use insertion sort internally if the list is small enough to provide a faster overall implementation. [**Timsort**](https://en.wikipedia.org/wiki/Timsort) also uses insertion sort internally to sort small portions of the input array.
 
 That said, insertion sort is not practical for large arrays, opening the door to algorithms that can scale in more efficient ways.
+
+# References
+
+- https://www.geeksforgeeks.org/insertion-sort/

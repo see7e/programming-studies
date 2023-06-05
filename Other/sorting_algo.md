@@ -51,7 +51,7 @@ You can use `sorted()` to sort any list as long as the values inside are compara
 
 > **Note:** For a deeper dive into how Python’s built-in sorting functionality works, check out [How to Use sorted() and sort() in Python](https://realpython.com/python-sort/) and [Sorting Data With Python](https://realpython.com/courses/python-sorting-data/).
 
-## The [Bubble Sort Algorithm](./bubble_sort.md) [#](https://realpython.com/sorting-algorithms-python//#the-bubble-sort-algorithm-in-python "Permanent link")
+## The [Bubble Sort Algorithm](algo_bubble_sort.md) [#](https://realpython.com/sorting-algorithms-python//#the-bubble-sort-algorithm-in-python "Permanent link")
 
 **Bubble Sort** is one of the most straightforward sorting algorithms. Its name comes from the way the algorithm works: With every new pass, the largest element in the list “bubbles up” toward its correct position.
 
@@ -63,7 +63,7 @@ The main advantage of the bubble sort algorithm is its **simplicity**. It is str
 
 As you saw before, the disadvantage of bubble sort is that it is **slow**, with a runtime complexity of _O(n<sup>2</sup>)_. Unfortunately, this rules it out as a practical candidate for sorting large arrays.
 
-## The [Insertion Sort Algorithm](./insertion_sort.md) [#](https://realpython.com/sorting-algorithms-python//#the-insertion-sort-algorithm-in-python "Permanent link")
+## The [Insertion Sort Algorithm](algo_insertion_sort.md) [#](https://realpython.com/sorting-algorithms-python//#the-insertion-sort-algorithm-in-python "Permanent link")
 
 Like bubble sort, the **insertion sort** algorithm is straightforward to implement and understand. But unlike bubble sort, it builds the sorted list one element at a time by comparing each item with the rest of the list and inserting it into its correct position. This “insertion” procedure gives the algorithm its name.
 
@@ -77,7 +77,7 @@ There are more powerful algorithms, including merge sort and Quicksort, but thes
 
 That said, **insertion sort is not practical for large arrays, opening the door to algorithms that can scale in more efficient ways**.
 
-## The [Merge Sort Algorithm](./merge_sort.md) [#](https://realpython.com/sorting-algorithms-python//#the-merge-sort-algorithm-in-python "Permanent link")
+## The [Merge Sort Algorithm](algo_merge_sort.md) [#](https://realpython.com/sorting-algorithms-python//#the-merge-sort-algorithm-in-python "Permanent link")
 
 **Merge sort** is a very efficient sorting algorithm. It’s based on the [divide-and-conquer](https://en.wikipedia.org/wiki/Divide-and-conquer_algorithm) approach, a powerful algorithmic technique used to solve complex problems.
 
@@ -111,7 +111,7 @@ Another drawback of merge sort is that it creates copies of the array when calli
 
 Due to this limitation, you may not want to use merge sort to sort large lists in memory-constrained hardware.
 
-## The [Quicksort Algorithm](./quicksort.md) [#](https://realpython.com/sorting-algorithms-python//#the-quicksort-algorithm-in-python "Permanent link")
+## The [Quicksort Algorithm](algo_quicksort.md) [#](https://realpython.com/sorting-algorithms-python//#the-quicksort-algorithm-in-python "Permanent link")
 
 Just like merge sort, the **Quicksort** algorithm applies the divide-and-conquer principle to divide the input array into two lists, the first with small items and the second with large items. The algorithm then sorts both lists recursively until the resultant list is completely sorted.
 
@@ -137,7 +137,7 @@ Algorithm: quicksort. Minimum execution time: 0.0001319930000000004
 
 The results show that Quicksort also pays the price of recursion when the list is sufficiently small, taking longer to complete than both insertion sort and bubble sort.
 
-## The [Timsort Algorithm](timsort.md) [#](https://realpython.com/sorting-algorithms-python//#the-timsort-algorithm-in-python "Permanent link")
+## The [Timsort Algorithm](algo_timsort.md) [#](https://realpython.com/sorting-algorithms-python//#the-timsort-algorithm-in-python "Permanent link")
 
 The **Timsort** algorithm is considered a **hybrid** sorting algorithm because it employs a best-of-both-worlds combination of insertion sort and merge sort. Timsort is near and dear to the Python community because it was created by Tim Peters in 2002 to be used as the [standard sorting algorithm of the Python language](https://en.wikipedia.org/wiki/Timsort).
 
@@ -152,8 +152,10 @@ One of Timsort’s advantages is its ability to predictably perform in _O(n log<
 For real-world usage, in which it’s common to sort arrays that already have some preexisting order, Timsort is a great option. Its adaptability makes it an excellent choice for sorting arrays of any length.
 
 
-
-
 ---
 
 # References
+
+- https://realpython.com/sorting-algorithms-python 
+- CS50x 2023 - Week3
+- https://github.com/python/cpython

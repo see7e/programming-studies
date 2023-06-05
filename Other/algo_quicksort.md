@@ -8,50 +8,34 @@ dependences: NULL
 
 <details> <summary>Table of Contents</summary>
 
-- [Implementing Quicksort in Python #](#implementing-quicksort-in-python-)
+- [Implementing Quicksort #](#implementing-quicksort-)
   - [Selecting the `pivot` Element #](#selecting-the-pivot-element-)
 - [Measuring Quicksort’s Big O Complexity #](#measuring-quicksorts-big-o-complexity-)
 - [Timing Your Quicksort Implementation #](#timing-your-quicksort-implementation-)
 - [Analyzing the Strengths and Weaknesses of Quicksort #](#analyzing-the-strengths-and-weaknesses-of-quicksort-)
+- [References](#references)
 
 </details>
 
 ---
 
-# Implementing Quicksort in Python [#](https://realpython.com/sorting-algorithms-python//#implementing-quicksort-in-python "Permanent link")
+# Implementing Quicksort [#](https://realpython.com/sorting-algorithms-python//#implementing-quicksort-in-python "Permanent link")
 
 Here’s a fairly compact implementation of Quicksort:
 
-```python
- 1    from random import randint
- 2
- 3    def quicksort(array):
- 4    # If the input array contains fewer than two elements,
- 5    # then return it as the result of the function
- 6    if len(array) < 2:
- 7        return array
- 8
- 9    low, same, high = [], [], []
-10
-11    # Select your `pivot` element randomly
-12    pivot = array[randint(0, len(array) - 1)]
-13
-14    for item in array:
-15        # Elements that are smaller than the `pivot` go to
-16        # the `low` list. Elements that are larger than
-17        # `pivot` go to the `high` list. Elements that are
-18        # equal to `pivot` go to the `same` list.
-19        if item < pivot:
-20            low.append(item)
-21        elif item == pivot:
-22            same.append(item)
-23        elif item > pivot:
-24            high.append(item)
-25
-26    # The final result combines the sorted `low` list
-27    # with the `same` list and the sorted `high` list
-28    return quicksort(low) + same + quicksort(high)
+```embed-cpp
+PATH: "vault://GAB/Estudos-Trabalhos/PROGRAMAÇÃO/programing-studies/PYTHON/code/algo_quick_sort.py"
+TITLE: "QuickSort.py"
 ```
+
+<details> <summary>Or if you like a bit more intricate one, an implementation in `C`:</summary>
+
+```embed-cpp
+PATH: "vault://GAB/Estudos-Trabalhos/PROGRAMAÇÃO/programing-studies/C/code/algo_quick_sort.c"
+TITLE: "QuickSort.c"
+```
+
+</details>
 
 Here’s a summary of the code:
 
@@ -153,3 +137,7 @@ Algorithm: quicksort. Minimum execution time: 0.0001319930000000004
 ```
 
 The results show that Quicksort also pays the price of recursion when the list is sufficiently small, taking longer to complete than both insertion sort and bubble sort.
+
+# References
+
+- https://www.geeksforgeeks.org/quick-sort/

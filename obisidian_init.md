@@ -8,11 +8,11 @@ dependences: NULL
 
 # Follow This Steps
 
-1. Dowload the `obidian` branch from the linked repos below.
+1. Download the `obidian` branch from the linked repos below.
 > I need to create them, still...
 	1. [42_Walkthrugh]()
 	2. [42-libft]()
-	3. [CS50]()
+	3. [CS50x]()
 2.  Recreate the same structure (inside `studies/`)here:
 ```
 .
@@ -25,6 +25,11 @@ dependences: NULL
 ```
 1.  Pay attention to `.gitignore` files
 2. Install [Obisidian](https://help.obsidian.md/Getting+started/Download+and+install+Obsidian).
+	1. And [Plugins](#plugins)
 3. Be happy.
 
 Pay attention that new Pull Requests must be made to each individual repositories.
+
+## Plugins
+
+- 

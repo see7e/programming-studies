@@ -7,6 +7,7 @@ dependences: NULL
 ---
 
 # [**Ponteiros**](https://pt.wikipedia.org/wiki/Ponteiro_(programa%C3%A7%C3%A3o))
+
 são variáveis que armazenam endereços de memória em um programa. Um ponteiro pode ser utilizado para acessar o conteúdo da variável que está armazenada no endereço de memória apontado por ele, ou para modificar o conteúdo dessa variável.
 
 Em C, a declaração de um ponteiro é feita utilizando o operador `*`. Por exemplo, se quisermos declarar um ponteiro para um inteiro, podemos fazer da seguinte forma:
@@ -42,6 +43,7 @@ Neste exemplo, o valor da variável `n` é modificado para `20` utilizando o pon
 Os ponteiros são muito utilizados em C para acessar e modificar variáveis de forma eficiente, especialmente em funções que precisam manipular grandes quantidades de dados. Porém, eles também podem ser uma fonte de erros e bugs, especialmente quando utilizados de forma inadequada. É importante ter cuidado ao trabalhar com ponteiros e sempre verificar se os endereços de memória estão sendo manipulados de forma correta.
 
 ## Ponteiros duplos
+
 Um ponteiro duplo é um ponteiro que aponta para outro ponteiro. Em outras palavras, ele armazena o endereço de memória de outro ponteiro. Isso é útil em situações em que precisamos modificar o valor de um ponteiro por referência, ou seja, sem modificar o valor original da variável apontada pelo ponteiro.
 
 Exemplo:
@@ -108,9 +110,11 @@ int main() {
   return 0;
 }
 ```
+
 Nesse exemplo, estamos alocando dinamicamente (com o uso de [malloc](https://pt.wikipedia.org/wiki/Aloca%C3%A7%C3%A3o_din%C3%A2mica_de_mem%C3%B3ria_em_C)) uma matriz de dimensões 2x3 e preenchendo seus elementos com valores simples. Note que para acessar os elementos da matriz, estamos utilizando a notação de índice através do ponteiro duplo `matriz[i][j]`. No final do programa, estamos liberando a memória alocada utilizando a função `free`.
 
 ## Funções de ponteiros
+
 As funções em C podem receber ponteiros como argumentos e também podem retornar ponteiros. Isso é útil em situações em que precisamos passar uma grande quantidade de dados para uma função ou quando queremos alocar dinamicamente memória dentro de uma função e retornar um ponteiro para essa memória alocada.
 
 Exemplo:
@@ -138,6 +142,17 @@ int main() {
 }
 ```
 
+---
 
-```c
-```
+> Extra
+
+# Difference between Arrays and Pointers
+
+
+![](https://files.codingninjas.in/share-26616.svg) Share
+
+## Introduction
+
+Array and pointer have a close relationship. Still, both are different concepts in C programming. A set of items stored in contiguous [memory](https://www.codingninjas.com/codestudio/library/main-memory) locations is called an [array](https://www.codingninjas.com/codestudio/library/introduction-to-array). In comparison, a variable whose value is the address of another variable is referred to as a pointer. 
+
+This blog will show the concept of arrays and pointers and the difference between [arrays and pointers.](https://www.codingninjas.com/codestudio/library/array-and-pointers)

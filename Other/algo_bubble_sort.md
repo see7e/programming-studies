@@ -8,53 +8,35 @@ dependences: NULL
 
 <details> <summary>Table of Contents</summary>
 
-- [Implementing Bubble Sort in Python #](#implementing-bubble-sort-in-python-)
+- [Implementing Bubble Sort #](#implementing-bubble-sort-)
 - [Measuring Bubble Sort’s Big O Runtime Complexity #](#measuring-bubble-sorts-big-o-runtime-complexity-)
 - [Timing Your Bubble Sort Implementation #](#timing-your-bubble-sort-implementation-)
 - [Analyzing the Strengths and Weaknesses of Bubble Sort #](#analyzing-the-strengths-and-weaknesses-of-bubble-sort-)
+- [References](#references)
 
 </details>
 
 ---
 
-# Implementing Bubble Sort in Python [#](https://realpython.com/sorting-algorithms-python//#implementing-bubble-sort-in-python "Permanent link")
+# Implementing Bubble Sort [#](https://realpython.com/sorting-algorithms-python//#implementing-bubble-sort-in-python "Permanent link")
 
-Here’s an implementation of a bubble sort algorithm in Python:
+Here’s an implementation of a bubble sort algorithm in `Python`:
 
-```python
- 1    def bubble_sort(array):
- 2    n = len(array)
- 3
- 4    for i in range(n):
- 5        # Create a flag that will allow the function to
- 6        # terminate early if there's nothing left to sort
- 7        already_sorted = True
- 8
- 9        # Start looking at each item of the list one by one,
-10        # comparing it with its adjacent value. With each
-11        # iteration, the portion of the array that you look at
-12        # shrinks because the remaining items have already been
-13        # sorted.
-14        for j in range(n - i - 1):
-15            if array[j] > array[j + 1]:
-16                # If the item you're looking at is greater than its
-17                # adjacent value, then swap them
-18                array[j], array[j + 1] = array[j + 1], array[j]
-19
-20                # Since you had to swap two elements,
-21                # set the `already_sorted` flag to `False` so the
-22                # algorithm doesn't finish prematurely
-23                already_sorted = False
-24
-25        # If there were no swaps during the last iteration,
-26        # the array is already sorted, and you can terminate
-27        if already_sorted:
-28            break
-29
-30    return array
+```embed-cpp
+PATH: "vault://GAB/Estudos-Trabalhos/PROGRAMAÇÃO/programing-studies/PYTHON/code/algo_bubble_sort.py"
+TITLE: "Bubble.py"
 ```
 
-Since this implementation sorts the array in ascending order, each step “bubbles” the largest element to the end of the array. This means that each iteration takes fewer steps than the previous iteration because a continuously larger portion of the array is sorted.
+<details> <summary>Or if you like a bit more intricate one, an implementation in `C`:</summary>
+
+```embed-cpp
+PATH: "vault://GAB/Estudos-Trabalhos/PROGRAMAÇÃO/programing-studies/C/code/algo_bubble_sort.c"
+TITLE: "Bubble.c"
+```
+
+</details>
+
+Since this implementation sorts the array in ascending order, each step *“bubbles”* the largest element to the end of the array. This means that each iteration takes fewer steps than the previous iteration because a continuously larger portion of the array is sorted.
 
 The loops in **lines 4 and 10** determine the way the algorithm runs through the list. Notice how `j` initially goes from the first element in the list to the element immediately before the last. During the second iteration, `j` runs until two items from the last, then three items from the last, and so on. At the end of each iteration, the end portion of the list will be sorted.
 
@@ -126,3 +108,7 @@ It took `73` seconds to sort the array with ten thousand elements. This represen
 The main advantage of the bubble sort algorithm is its **simplicity**. It is straightforward to both implement and understand. This is probably the main reason why most computer science courses introduce the topic of sorting using bubble sort.
 
 As you saw before, the disadvantage of bubble sort is that it is **slow**, with a runtime complexity of _O(n<sup>2</sup>)_. Unfortunately, this rules it out as a practical candidate for sorting large arrays.
+
+# References
+
+- https://www.geeksforgeeks.org/bubble-sort/
