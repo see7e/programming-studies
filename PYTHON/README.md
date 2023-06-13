@@ -6,13 +6,15 @@ languages: Python
 dependences: NULL
 ---
 
+<details> <summary>Table of Contents</summary>
+
 - [RoadMap](#roadmap)
 - [Learn\_the\_Basics](#learn_the_basics)
 	- [Basic Syntax](#basic-syntax)
 	- [Variables and Data Types](#variables-and-data-types)
 	- [Conditionals](#conditionals)
 	- [Typecasting](#typecasting)
-		- [Errors and Exceptions#](#errors-and-exceptions)
+		- [Errors and Exceptions #](#errors-and-exceptions-)
 	- [Functions](#functions)
 		- [Argument x Parameter](#argument-x-parameter)
 		- [Return](#return)
@@ -25,11 +27,30 @@ dependences: NULL
 	- [Recursion](#recursion)
 	- [Sorting Algorithms](#sorting-algorithms)
 - [Advanced Topics](#advanced-topics)
+	- [Object-oriented Programming - OOP](#object-oriented-programming---oop)
+	- [Iterators](#iterators)
+	- [RegEx](#regex)
+	- [Decorators](#decorators)
+	- [Lambdas](#lambdas)
+	- [Modules](#modules)
+		- [Builtin](#builtin)
+		- [Custom](#custom)
+	- [Package Managers](#package-managers)
+		- [PyPi](#pypi)
+		- [Pip](#pip)
+		- [Conda](#conda)
+	- [Other](#other)
+		- [List Comprehensions](#listcomprehensions)
+		- [Generator Expressions](#generator-expressions)
+		- [Paradigms](#paradigms)
 - [Learn a Framework](#learn-a-framework)
 - [Testing your Apps](#testing-your-apps)
 - [Continue](#continue)
 	- [Libraries](#libraries)
 
+</details>
+
+---
 
 # RoadMap
 > Edited from [© roadmap.sh](https://roadmap.sh/python)
@@ -119,6 +140,9 @@ classDiagram
 	}
 	link Continue "#"
 ```
+
+---
+
 # Learn_the_Basics
 
 Python is a high-level, interpreted, general-purpose programming language. Its design philosophy emphasizes code readability with the use of significant indentation. Python is dynamically-typed and garbage-collected.
@@ -137,13 +161,12 @@ Visit the following resources to learn more:
 
 Variables are used to store information to be referenced and manipulated in a computer program. They also provide a way of labeling data with a descriptive name, so our programs can be understood more clearly by the reader and ourselves. It is helpful to think of variables as containers that hold information. Their sole purpose is to label and store data in memory. This data can then be used throughout your program.
 
-Visit the following resources to learn more:
--	[Variables in Python](https://realpython.com/python-variables)
--	[W3Schools — Python Variables](https://www.w3schools.com/python/python_variables.asp)
--	[Python Variables - Geeks for Geeks](https://www.geeksforgeeks.org/python-variables/)
--	[Python Data Types](https://www.w3schools.com/python/python_datatypes.asp)
--	[Basic Data Types in Python](https://realpython.com/python-data-types/)
--	[Python for Beginners: Data Types](https://thenewstack.io/python-for-beginners-data-types/)
+And a bit more intricate: each variable is an instance of a data type class (e.g. `<class 'int'>`)
+
+```python
+item = 7
+print(type(item))
+```
 
 ```mermaid
 graph TD
@@ -176,6 +199,14 @@ C --> J
 C --> K
 C --> L
 ```
+
+Visit the following resources to learn more:
+-	[Variables in Python](https://realpython.com/python-variables)
+-	[W3Schools — Python Variables](https://www.w3schools.com/python/python_variables.asp)
+-	[Python Variables - Geeks for Geeks](https://www.geeksforgeeks.org/python-variables/)
+-	[Python Data Types](https://www.w3schools.com/python/python_datatypes.asp)
+-	[Basic Data Types in Python](https://realpython.com/python-data-types/)
+-	[Python for Beginners: Data Types](https://thenewstack.io/python-for-beginners-data-types/)
 
 ## Conditionals
 
@@ -224,7 +255,7 @@ The process of converting the value of one data type (integer, string, float, et
 	-   **float():** [Python float()](https://www.geeksforgeeks.org/float-in-python/) function take int or string as an argument and return float type object.
 	-   **str():** [Python str()](https://www.geeksforgeeks.org/python-str-function/) function takes float or int as an argument and returns string type object.
 
-### Errors and Exceptions[#](https://docs.python.org/3/tutorial/errors.html)
+### Errors and Exceptions [#](https://docs.python.org/3/tutorial/errors.html)
 
 There are (at least) two distinguishable kinds of errors: **syntax errors** and **exceptions**.
 
@@ -242,7 +273,7 @@ In programming, a function is a reusable block of code that executes a certain f
 
 In Python, you *define* a function with the `def` keyword, then write the function identifier (*name*) followed by parentheses (*parameters*) and a colon, like:
 
-```py
+```python
 def function_name(parameter1, parameter2):
 	#do something
 	return something #optional
@@ -282,7 +313,7 @@ Visit the following resources to learn more:
 
 -	**Lists**: are just like dynamic sized arrays, declared in other languages (vector in C++ and ArrayList in Java).  *Represented with* `[]`.
 	They're non-homogeneous (allows multitype and duplicate elements) and ordered (*index* starts with `0`) data structure that stores the elements in single row and multiple rows and columns, is mutable.
-
+	
 	-	The `append()` method adds a single item at the end of the list without modifying the original list.
 	-	The `pop()` method removes the item at the given index (*defaut last*) from the list and returns it.
 	-	The `sort()` method sorts the elements of a given list in a specific ascending or descending order.
@@ -302,7 +333,7 @@ Visit the following resources to learn more:
 	#index/element
 	>>> print(lst.index('c'))
 	>>> print(lst[3])
-
+	
 	#can be modified
 	>>> lst.append('f')	#builtin add method
 	>>> print(lst)
@@ -345,7 +376,7 @@ Visit the following resources to learn more:
 	#example
 	>>> st = (1,1,2,'c',4,'e')
 	>>> print(st)
-
+	
 	#can be modified
 	>>> st.add('f')	#builtin add method
 	>>> print(st)
@@ -396,9 +427,9 @@ Visit the following resources to learn more:
 - [Python for Beginners: Lists](https://thenewstack.io/python-for-beginners-lists/)
 - [Python for Beginners: When and How to Use Tuples](https://thenewstack.io/python-for-beginners-when-and-how-to-use-tuples/)
 
-# [Datastructures and Algorithms](../Other/data_structure.md)
+# Data Structures and Algorithms
 
-A data structure is a named location that can be used to store and organize data. And, an algorithm is a collection of steps to solve a particular problem. Learning data structures and algorithms allow us to write efficient and optimized computer programs. There're a main division in the pathern:
+A [Data Structure](../Other/data_structure.md) is a named location that can be used to store and organize data. And, an algorithm is a collection of steps to solve a particular problem. Learning data structures and algorithms allow us to write efficient and optimized computer programs. There're a main division in the pattern:
 - **Linear** (Arrays, Linked Lists, Stacks, Queues and Hash Tables)
 - **Non-linear** (Binary Tree (hierarchical), Graphs)
 
@@ -461,18 +492,18 @@ Visit the following resources to learn more:
 -   [How to Implement Binary Search Tree in Python](https://www.section.io/engineering-education/implementing-binary-search-tree-using-python/)
 -   [Problem Set](https://www.geeksforgeeks.org/binary-search-tree-data-structure/?ref=gcse)
 
-## [Recursion](../Other/recursion.md)
+## Recursion
 
-Recursion is a method of solving a computational problem where the solution depends on solutions to smaller instances of the same problem. Recursion solves such recursive problems by using functions that call themselves from within their own code.
+[Recursion](../Other/recursion.md) is a method of solving a computational problem where the solution depends on solutions to smaller instances of the same problem. Recursion solves such recursive problems by using functions that call themselves from within their own code.
 
 Visit the following resources to learn more:
 
 -   [Recursion in Python](https://www.geeksforgeeks.org/recursion/)
 -   [Recursion in Python: An Introduction](https://realpython.com/python-recursion/)
 
-## [Sorting Algorithms](../Other/sorting_algo.md)
+## Sorting Algorithms
 
-Sorting refers to arranging data in a particular format. Sorting algorithm specifies the way to arrange data in a particular order. Most common orders are in numerical or lexicographical order.
+[Sorting](../Other/sorting_algo.md) refers to arranging data in a particular format. Sorting algorithm specifies the way to arrange data in a particular order. Most common orders are in numerical or lexicographical order.
 
 The importance of sorting lies in the fact that data searching can be optimized to a very high level, if data is stored in a sorted manner.
 
@@ -485,7 +516,23 @@ Visit the following resources to learn more:
 
 ## Object-oriented Programming - OOP
 
-In Python, object-oriented Programming (OOPs) is a programming paradigm that uses objects and classes in programming. It aims to implement real-world entities like inheritance, polymorphisms, encapsulation, etc. in the programming. The main concept of OOPs is to bind the data and the functions that work on that together as a single unit so that no other part of the code can access this data.
+In Python, [Object-oriented Programming (OOP)](../Other/OOP.md) is a programming paradigm that uses objects and classes in programming. It aims to implement real-world entities like inheritance, polymorphisms, encapsulation, etc. in the programming. The main concept of OOP is to bind the data and the functions that work on that together as a single unit so that no other part of the code can access this data.
+
+The classes are modules appended in `__main__`, **the environment where top-level code runs**.
+
+```python
+class Item:
+	def calculate_price(self): # method
+		pass
+
+item1 = Item() # create instance
+print(type(item)) # <class '__main__.Item'>
+```
+> in this case `<class '__main__.Item'>`
+
+`self` is a parameter in a method that is automatically passed and refers to the object itself (in this case, the instance of the class) when the method is called. If no parameter is passed, it will result in a `TypeError: calculate_price() takes 0 positional arguments but 1 was given`.
+
+> An alternative to OOP is [Function Programming](https://www.youtube.com/watch?v=ph2HjBQuI8Y)
 
 Visit the following resources to learn more:
 
@@ -494,15 +541,187 @@ Visit the following resources to learn more:
 -   [Object Oriented Programming (OOP) In Python - Beginner Crash Course](https://www.youtube.com/watch?v=-pEs-Bss8Wc/)
 -   [OOP in Python One Shot](https://www.youtube.com/watch?v=Ej_02ICOIgs)
 
-### Classes 
-### Inheritance 
-### Methods, Dunder 
+### Dunder Methods [#](https://mathspp.com/blog/pydonts/dunder-methods)
+
+Dunder methods, also known as magic methods, are special methods in Python classes that allow instances of a class to interact with built-in functions and operators of the language. The names of dunder methods start and end with two underscores, such as `__str__` or `__add__`. Dunder methods are not invoked directly by the programmer but are called implicitly by the language at specific times.
+
+One commonly used dunder method is `__init__`, which is responsible for initializing an instance of a class. It is similar to a constructor in other programming languages. For example:
+
+```python
+class Square:
+    def __init__(self, side_length):
+        self.side_length = side_length
+
+sq = Square(1)
+```
+
+In this example, the `__init__` method initializes the instance of the `Square` class with the provided `side_length` argument.
+
+Dunder methods can also be used to override the behavior of built-in functions and operators. For example, the `__str__` method can be defined to return a string representation of an object when `str()` is called on it:
+
+```python
+class Item:
+    def __init__(self, name, price, qtd=0):
+        self.name = name
+        self.price = price
+        self.qtd = qtd
+	
+    def __str__(self):
+        return f"Item: {self.name}, Price: {self.price}, Quantity: {self.qtd}"
+
+item = Item("pen", 1.5, 2)
+print(str(item))  # Output: Item: pen, Price: 1.5, Quantity: 2
+```
+
+By defining the `__str__` method, we can control the string representation of the object.
+
+Regarding class attributes, they are variables defined within a class and can be accessed through instances of the class. Class attributes are shared among all instances of the class. To access a class attribute, you can use the class name followed by a dot (`.`) notation or `self` within an instance method. Modifying the value of a class attribute for a specific instance will only affect that instance. Here's an example:
+
+```python
+class Item:
+    discount = 0.8  # 20% discount
+	
+    def __init__(self, name, price, qtd=0):
+        self.name = name
+        self.price = price
+        self.qtd = qtd
+	
+    def apply_discount(self):
+        self.price = self.price * self.discount
+
+item1 = Item("pen", 1.5, 2)
+item2 = Item("rubber", 0.5, 1)
+item2.discount = 0.9
+item2.apply_discount()
+print(item1.price)  # Output: 1.2
+print(item2.price)  # Output: 0.45
+```
+
+In this example, the `discount` attribute is a class attribute shared among all instances of the `Item` class. However, when we modify the `discount` attribute for the `item2` instance, it only affects that instance.
+
+You can also use the `__dict__` attribute to list all the attributes of an object, whether it's a class or an instance.
+
+The `assert` statement is used to perform a runtime check on a condition. If the condition is `False`, it raises an `AssertionError` with an optional error message. It's a way to validate inputs or ensure certain conditions are met. For example:
+
+```python
+class Item:
+    def __init__(self, name, price, qtd=0):
+        assert price >= 0, f"Price {price} is less than zero."
+        assert qtd >= 0, f"Quantity {qtd} is less than zero."
+		
+        self.name = name
+        self.price = price
+        self.qtd = qtd
+
+item = Item("pen", -1.5, 2)  # Raises AssertionError with the error message
+```
+
+In this example, the `assert` statements check if the price and quantity are greater than or equal to zero. If any of these conditions are `False`, an `AssertionError` is raised with the specified error message.
+
+Finally, the concept of instance list refers to a list that keeps track of all instances created from a class. This can be achieved by adding a class attribute that is a list and appending each new instance to that list within the `__init__` method. Here's an example:
+
+```python
+class Item:
+    all_instances = []
+	
+    def __init__(self, name, price, qtd=0):
+        self.name = name
+        self.price = price
+        self.qtd = qtd
+        Item.all_instances.append(self)
+
+item1 = Item("pen", 1.5, 2)
+item2 = Item("notebook", 10, 1)
+print(Item.all_instances)  # Output: [item1, item2]
+```
+
+In this example, the `all_instances` class attribute is a list that keeps track of all instances created from the `Item` class. Each instance is appended to the list within the `__init__` method.
+
+Inheritance is a fundamental concept in object-oriented programming (OOP) that allows classes to inherit attributes and methods from other classes. It enables the creation of a hierarchy of classes, where a subclass can inherit and extend the functionality of a superclass.
+
+Here's an example to illustrate inheritance:
+
+```python
+class Shape:
+    def __init__(self, color):
+        self.color = color
+	
+    def display_color(self):
+        print(f"The color of the shape is {self.color}.")
+
+class Circle(Shape):
+    def __init__(self, color, radius):
+        super().__init__(color)
+        self.radius = radius
+	
+    def calculate_area(self):
+        return 3.14 * self.radius ** 2
+
+circle = Circle("red", 5)
+circle.display_color()  # Output: The color of the shape is red.
+print(circle.calculate_area())  # Output: 78.5
+```
+
+In this example, we have a `Shape` superclass with an `__init__` method and a `display_color` method. The `Circle` class is a subclass of `Shape` and inherits its `color` attribute and `display_color` method. The `Circle` class also defines its own `__init__` method to initialize the `radius` attribute and a `calculate_area` method to calculate the area of the circle.
+
+The `super()` function is used in the `__init__` method of the `Circle` class to call the superclass's `__init__` method and initialize the `color` attribute. This allows us to reuse code from the superclass while adding specific attributes and behavior in the subclass.
+
+Polymorphism is another key concept in OOP that allows objects of different classes to be treated as objects of a common superclass. Polymorphism enables code to be written that can work with objects of different types, as long as they share a common interface or inherit from the same superclass.
+
+Here's an example to illustrate polymorphism:
+
+```python
+class Animal:
+    def speak(self):
+        pass
+
+class Dog(Animal):
+    def speak(self):
+        return "Woof!"
+
+class Cat(Animal):
+    def speak(self):
+        return "Meow!"
+
+def make_animal_speak(animal):
+    print(animal.speak())
+
+dog = Dog()
+cat = Cat()
+
+make_animal_speak(dog)  # Output: Woof!
+make_animal_speak(cat)  # Output: Meow!
+```
+
+In this example, we have an `Animal` superclass with a `speak` method. The `Dog` and `Cat` classes are subclasses of `Animal` and override the `speak` method with their own implementation. The `make_animal_speak` function accepts an `Animal` object as a parameter and calls its `speak` method. Since `Dog` and `Cat` are subclasses of `Animal`, they can be passed to `make_animal_speak` and their respective `speak` methods will be invoked polymorphically.
+
+Polymorphism allows us to write more flexible and reusable code by treating objects of different classes in a uniform way, as long as they adhere to a common interface or superclass.
 
 ## Iterators
+
+An iterator is an object that contains a countable number of values. An iterator is an object that can be iterated upon, meaning that you can traverse through all the values. Technically, in Python, an iterator is an object which implements the iterator protocol, which consist of the methods `iter()` and `next()`.
+This Objects can be elevated to a god level using the [Itertools]() package.
+
+- iterables, allows to restart the iterators,
+- iterators, the actual `iter()` object
+- sentinels
+	```python
+	with open("file.txt") as fille:
+		for line in iter(fill. readline, "")
+			print(line, end="")
+	```
+
+> Replacing loops with combinations of iterators is where they really shine. 
+
+Visit the following resources to learn more:
+-   [Iterators in Python](https://www.w3schools.com/python/python_iterators.asp)
+-   [Python Iterators](https://www.geeksforgeeks.org/iterators-in-python/)
+- [A Deep Dive Into Iterators and Itertools in Python](https://www.youtube.com/watch?v=aumxFs2DO5o)
 
 ## RegEx
 
 ## Decorators
+> trazer de [OOP](OOP.md)
 
 ## Lambdas 
 

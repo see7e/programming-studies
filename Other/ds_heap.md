@@ -70,14 +70,15 @@ Heap data structure is [a complete binary tree](#binary-tree) [#](https://www.pr
 Heapify is the process of creating a heap data structure from a binary tree. It is used to create a Min-Heap or a Max-Heap.
 
 1. Let the input array be
-	
-	|0|1|2|3|4|5|
-	|-|-|-|-|-|-|
-	|3|9|2|1|4|5|
 
-2. Create a complete binary tree from the array
+| 0   | 1   | 2   | 3   | 4   | 5   |
+| --- | --- | --- | --- | --- | --- |
+| 3   | 9   | 2   | 1   | 4   | 5   |
+
+1. Create a complete binary tree from the array
 	<img src="https://www.programiz.com/sites/tutorial2program/files/completebt-1_0.png" alt="Complete binary tree" style="background-color:white" width="300">
-3. Start from the first index of non-leaf node whose index is given by n/2 - 1.
+	
+2. Start from the first index of non-leaf node whose index is given by n/2 - 1.
 	<img src="https://www.programiz.com/sites/tutorial2program/files/start_1.png" alt="start from the first on leaf node" style="background-color:white" width="300">
 
 4.   Set current element `i` as `largest`.

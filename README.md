@@ -13,6 +13,8 @@ dependences: NULL
 > This is a list of interesting documents gathered during development studies
 # The Big Picture
 
+This repo is divided in two branches, [main](https://github.com/see7e/programing-studies) has common links and [obsidian](https://github.com/see7e/programing-studies/tree/obsidian) links follow a Zettelkasten adapted model along with Obsidian to map the network of documents. If you want to set up in you computer, [click here](./obisidian_init.md).
+
 <details>
 	<summary>If you want to know the history, click here.</summary>
 	<p>
@@ -33,7 +35,6 @@ dependences: NULL
   </picture>
 </div>
 
-This repo is divided in two branches, [main](https://github.com/see7e/programing-studies) has common links and [obsidian](https://github.com/see7e/programing-studies/tree/obsidian) links follow a Zettelkasten adapted model along with Obsidian to map the network of documents. If you want to set up in you computer, [click here](./obisidian_init.md).
 
 # [List of Documents](./DIRECTORY.md)
 
@@ -119,3 +120,7 @@ About the time, if you manage to reconcile between demands intervals, great, if 
 - [Git Guide (pt)](https://dev.to/leandronsp/pt-br-fundamentos-do-git-um-guia-completo-2djh)
 - [Comparison Sorting Algorithms](https://www.cs.usfca.edu/~galles/visualization/ComparisonSort.html)
 - [Data Structure Visualizations](https://www.cs.usfca.edu/~galles/visualization/Algorithms.html)
+-  [Naming things in code](https://www.youtube.com/watch?v=-J3wNP6u5YU)
+- [Learn PostgreSQL Tutorial - Full Course for Beginners](https://www.youtube.com/watch?v=qw--VYLpxG4)
+- [Docker (Docker-in-Docker) (docker-in-docker)](https://github.com/devcontainers/features/tree/main/src/docker-in-docker)
+- https://www.arjancodes.com/diagnosis

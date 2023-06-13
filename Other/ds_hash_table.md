@@ -99,12 +99,12 @@ We can resolve the hash collision using one of the following techniques.
 1. Collision resolution by chaining
 
 	In chaining, if a hash function produces the same index for multiple elements, these elements are stored in the same index by using a doubly-linked list.
-
+	
 	If `j` is the slot for multiple elements, it contains a pointer to the head of the list of elements. If no element is present, `j` contains `NIL`.
 
 	<img src="https://cdn.programiz.com/sites/tutorial2program/files/Hash-3_1.png" alt="chaining method used to resolve collision in hash table" style="background-color:white" width="500">
 	> Collision Resolution using chaining
-
+	
 	**Pseudocode for operations**
 	```
 	chainedHashSearch(T, k)
@@ -118,28 +118,28 @@ We can resolve the hash collision using one of the following techniques.
 2. Open Addressing
 
 	Unlike chaining, open addressing doesn't store multiple elements into the same slot. Here, each slot is either filled with a single key or left `NIL`.
-
+	
 	Different techniques used in open addressing are:
-
+	
    1. Linear Probing
 		In linear probing, collision is resolved by checking the next slot.
-		`h(k, i) = (h′(k) + i) mod m`
+		$h(k, i) = (h′(k) + i) mod m$
 		where:
-		-   `i = {0, 1, ….}`
-		-   `h'(k)` is a new hash function
-		If a collision occurs at `h(k, 0)`, then `h(k, 1)` is checked. In this way, the value of `i` is incremented linearly.
+		-   $i = {0, 1, ...}$
+		-   $h'(k)$ is a new hash function
+		If a collision occurs at $h(k, 0)$, then $h(k, 1)$ is checked. In this way, the value of `i` is incremented linearly.
 		The problem with linear probing is that a cluster of adjacent slots is filled. When inserting a new element, the entire cluster must be traversed. This adds to the time required to perform operations on the hash table. 
 	
 	2. Quadratic Probing
 		It works similar to linear probing but the spacing between the slots is increased (greater than one) by using the following relation.
-		`h(k, i) = (h′(k) + c``<sub>1</sub>``i + c``<sub>2</sub>``i``<sup>2</sup>``) mod m`
+		$h(k, i) = (h'(k) + c_1i + c_2i^2) mod (m)$
 		where:
-		-   `c``<sub>1</sub>` and `c``<sub>2</sub>` are positive auxiliary constants,
-		-   `i = {0, 1, ….}`
+		-   $c_1$ and $c^2$ are positive auxiliary constants,
+		-   $i = {0, 1, ...}$
 
 	3. Double hashing
-		If a collision occurs after applying a hash function `h(k)`, then another hash function is calculated for finding the next slot.
-		`h(k, i) = (h``<sub>1</sub>``(k) + ih``<sub>2</sub>``(k)) mod m`
+		If a collision occurs after applying a hash function $h(k)$, then another hash function is calculated for finding the next slot.
+		$h(k, i) = (h_1(k) + ih_2(k)) mod (m)$
 
 # A **real-world** example is...
 - phone books or dictionaries.

@@ -5,5 +5,6 @@ use: Documentation
 languages: C
 dependences: NULL
 ---
+> Focused in the python roadmap and cs50x course (c)
 
 - Struct

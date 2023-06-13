@@ -9,10 +9,9 @@ dependences: NULL
 # Follow This Steps
 
 1. Download the `obidian` branch from the linked repos below.
-> I need to create them, still...
 	1. [42_Walkthrugh]()
 	2. [42-libft]()
-	3. [CS50x]()
+	3. [CS50x](https://github.com/see7e/cs50x/tree/obsidian)
 2.  Recreate the same structure (inside `studies/`)here:
 ```
 .
@@ -32,4 +31,20 @@ Pay attention that new Pull Requests must be made to each individual repositorie
 
 ## Plugins
 
-- 
+- calendar
+- cm-editor-syntax-highlight-obsidian
+- dataview
+- embed-code-file
+- execute-code
+- metadata-menu
+- obsidian-book-search-plugin
+- obsidian-charts
+- obsidian-daily-stats
+- obsidian-day-planner
+- obsidian-front-matter-title-plugin
+- bsidian-outliner
+- obsidian-reading-time
+- table-editor-obsidian
+- templater-obsidian
+- various-complements
+

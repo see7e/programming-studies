@@ -5,23 +5,13 @@ use: Documentation
 languages: NULL
 dependences: NULL
 ---
-
 > [root](./README.md)
 
-# [`Python`](./PYTHON/README.md)
-- [`PyQGis`](./PYTHON/PYQGIS/README.md)
-- Libraries
-    - [OpenPyXL](./PYTHON/openpyxl.md)
-    - [Pandas e GeoPandas](./PYTHON/geo-pandas.md)
-    - [NumPy](./PYTHON/numpy.md)
-    - PyInstaller
-    - PySimpleGUI
-    - Virtual Environments [#](https://docs.python.org/3/tutorial/venv.html)
-    - Sphinx
+---
 
-# [`C`](./C/)
+# Areas
 
-# [Front End](./Front_End/)
+## [Front End](./Front_End/)
 - [`HTML`](./Front_End/HTML/README.md)
 - [`CSS`](./Front_End/CSS/README.md)
 - [`JS`](./Front_End/JS/README.md)  
@@ -31,7 +21,7 @@ dependences: NULL
 - [`IONIC`](./Front_End/IONIC/README.md)
     - Projeto Gasolina ou Álcool
 
-# [Back End](./Back_End/)
+## [Back End](./Back_End/)
 - [`PHP 7`](./Back_End/PHP/README.md)
     - App Help Desk (App para abertura e acompanhamento de suportes técnicos)
     - App Send Mail (App para criação e envio de e-mails)
@@ -45,6 +35,26 @@ dependences: NULL
     - App Pesquisa Endereço (Aprenda a realizar requisições HTTP via XMLHttpRequest para API's)
 - [`API` com Slim Framework](./Back_End/API/README.md)
     - Projeto API de Produtos
+
+---
+
+# Languages 
+
+## [`Python`](./PYTHON/README.md)
+- [`PyQGis`](./PYTHON/PYQGIS/README.md)
+- Libraries
+    - [OpenPyXL](./PYTHON/openpyxl.md)
+    - [Pandas e GeoPandas](./PYTHON/geo-pandas.md)
+    - [NumPy](./PYTHON/numpy.md)
+    - PyInstaller
+    - Itertools
+    - PySimpleGUI
+    - Virtual Environments [#](https://docs.python.org/3/tutorial/venv.html)
+    - Sphinx
+
+## [`C`](./C/README.md)
+
+---
 
 # Courses
 - [CS50x](./cs50x/README.md)
