@@ -8,3 +8,4 @@ dependences: NULL
 > Focused in the python roadmap and cs50x course (c)
 
 - Struct
+- Nul (`nil`) x `NULL`

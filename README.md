@@ -73,28 +73,35 @@ This repo is divided in two branches, [main](https://github.com/see7e/programing
 </div>
 
 ```mermaid
+%%{
+  init: {
+    'theme': 'base',
+    'themeVariables': {
+      'primaryColor': '#23375E',
+      'primaryTextColor': '#FFF',
+      'primaryBorderColor': '#7C0000',
+      'lineColor': '#F8B229'
+    }
+  }
+}%%
+
 gantt
 	title My Roadmap
     dateFormat  DD-MM-YYYY
-    section C
-    CS50                    :a1, 02-05-2023, 90d
-    42-Common Core          :a2, 02-10-2023, 10d
 
-    section Python
-    RoadMap                 :02-05-2023, 60d
-    OpenPyXL                :10-05-2023, 5d
-    Pandas                  :17-05-2023, 5d
-    Lib, No. 3              :04-07-2023, 5d
-    Lib, No. 4              :11-07-2023, 5d
-
-    section SQL
-    SQL RoadMap             :03-07-2023, 30d
-    PostgreSQL              :30d
-    PostGis                 :20d
+    section Courses
+    CS50 - C                    :done, c1, 02-05-2023, 28-06-2023
+    CS50 - Python               :active, c2, after c1, 7d
+    CS50 - SQL                  :c3, after c2, 7d
+    42-Common Core              :milestone, 42, 02-10-2023, 0d
 
     section Other
-    PowerBI (not started)   :02-05-2023, 30d
-    PowerApps               :10d
+    Python RoadMap              :active, a1, 02-05-2023, 80d
+    SQL RoadMap|PSQL|PostGIS    :after a1, 60d
+    OpenPyXL                    :done, a5, 10-05-2023, 7d 
+    Pandas                      :done, after a5, 7d
+    PowerBI (not started)       :milestone, 02-05-2023, 0d
+    PowerApps (not started)     :milestone, 0d
 ```
 
 Basically, I set aside the days when I have more time to study C and Python, which are the biggest demands. Then comes SQL (Postgre and PostGis) along with PowerBI and PowerApps, for application in the company.
@@ -112,15 +119,21 @@ About the time, if you manage to reconcile between demands intervals, great, if 
 - https://my-learning.w3schools.com
 - https://leetcode.com/problemset/all
 - https://www.codewars.com
-- pyqgis
+- Python
+	- [Python @dataclasses](https://www.youtube.com/watch?v=vBH6GRJ1REM)
+	- [Python builtin functions](https://docs.python.org/3/library/functions.html)
+	- 
+- PyQGis
 	- http://geospatialdesktop.com/2009/02/creating_a_standalone_gis_application_1/
-- [Python @dataclasses](https://www.youtube.com/watch?v=vBH6GRJ1REM)
-- [Python builtin functions](https://docs.python.org/3/library/functions.html)
+	- https://aneto.pt/posts/tutorials/
+	- https://lunageo.com/webinars/ and /multiuser-editing-with-qgis-and-postgis-in-an-enterprise-environment/
 - [Dynamic Programming - Learn to Solve Algorithmic Problems & Coding Challenges](https://www.youtube.com/watch?v=oBt53YbR9Kk)
 - [Git Guide (pt)](https://dev.to/leandronsp/pt-br-fundamentos-do-git-um-guia-completo-2djh)
 - [Comparison Sorting Algorithms](https://www.cs.usfca.edu/~galles/visualization/ComparisonSort.html)
 - [Data Structure Visualizations](https://www.cs.usfca.edu/~galles/visualization/Algorithms.html)
 -  [Naming things in code](https://www.youtube.com/watch?v=-J3wNP6u5YU)
-- [Learn PostgreSQL Tutorial - Full Course for Beginners](https://www.youtube.com/watch?v=qw--VYLpxG4)
 - [Docker (Docker-in-Docker) (docker-in-docker)](https://github.com/devcontainers/features/tree/main/src/docker-in-docker)
 - https://www.arjancodes.com/diagnosis
+- Postgre
+	- [Learn PostgreSQL Tutorial - Full Course for Beginners](https://www.youtube.com/watch?v=qw--VYLpxG4)
+	- https://postgis.net/workshops/postgis-intro/history_tracking.html
