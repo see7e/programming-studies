@@ -338,7 +338,7 @@ print(item.calculate_price())
         #[...]
     ```
 
-   `@classmethod` (`decorator` [ver também](https://docs.python.org/3/library/dataclasses.html))modifica o contexto do metodo, de forma que seu parametro não é mais `self` e sim `cls` que representa a propria classe a ser recebida como argumento.
+   `@classmethod` ([`decorator`](../PYTHON/README.md#decorators) [ver também](https://docs.python.org/3/library/dataclasses.html))modifica o contexto do metodo, de forma que seu parametro não é mais `self` e sim `cls` que representa a propria classe a ser recebida como argumento.
    Porem esse metodo especifico sera acessado a partir da propria classe
 
    ```python
@@ -349,37 +349,37 @@ print(item.calculate_price())
 
     ```python
     import csv
-
+	
     class Item:
         discount: 0.8 # 20%
         all = []
-
+		
         def __init__(self, name: str, price: float, qtd=0):
             # validations
             assert price >= 0, F"Price {price} lesser than zero."
             assert qtd >= 0,  F"Quantity {qtd} lesser than zero."
-
+			
             # atributes
             self.name = name
             self.price = price
             self.qtd = qtd
-
+			
             # actions
             Item.all.append(self) # record created instances
         
         def calculate_price(self): # method
             return self.price * self.qtd
-
+		
         def apply_discount(self):
             self.price = self.price * self.discount
-
+		
         @classmethod
         def import_csv(cls): # this uses csv lib
             # get the info
             with open('items.csv', 'r') as file:
                 reader = csv.DictReader(file)
                 items = list(reader)
-
+			
             # create new instances
             for item in items:
                 Item(
@@ -387,10 +387,10 @@ print(item.calculate_price())
                     price = float(item.get('price')),
                     qtd = int(item.get('qtd'))
                 )
-
+		
         def __repr__(self):
             return F"Item('{self.name}', {self.price}, {self.qtd})"
-
+	
     #print(Item.all)
     for instance in Item.all:
         print(instance.name)
