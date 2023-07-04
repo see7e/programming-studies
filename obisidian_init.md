@@ -9,8 +9,8 @@ dependences: NULL
 # Follow This Steps
 
 1. Download the `obidian` branch from the linked repos below.
-	1. [42_Walkthrugh]()
-	2. [42-libft]()
+	1. [42_Walkthrugh](https://github.com/the-8-bits/42_Walkthrugh)
+	2. [42-libft](https://github.com/the-8-bits/42-libft)
 	3. [CS50x](https://github.com/see7e/cs50x/tree/obsidian)
 2.  Recreate the same structure (inside `studies/`)here:
 ```
@@ -22,12 +22,18 @@ dependences: NULL
 │   └── ...                 # etc.
 └── ...                    # Current studies files
 ```
-1.  Pay attention to `.gitignore` files
-2. Install [Obisidian](https://help.obsidian.md/Getting+started/Download+and+install+Obsidian).
+3. Pay attention to `.gitignore` files
+4. Install [Obisidian](https://help.obsidian.md/Getting+started/Download+and+install+Obsidian).
 	1. And [Plugins](#plugins)
-3. Be happy.
+5. Be happy.
 
 Pay attention that new Pull Requests must be made to each individual repositories.
+
+## First time with Markdown?
+
+Enter [here](./src/first-time.md)
+
+---
 
 ## Plugins
 

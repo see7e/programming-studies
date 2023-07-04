@@ -1,6 +1,6 @@
 ---
 title: Shell
-tags: programação
+tags: programação, studies
 use: Documentation
 languages: Shell
 dependences: NULL

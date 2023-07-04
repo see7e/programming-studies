@@ -91,7 +91,7 @@ gantt
 
     section Courses
     CS50 - C                    :done, c1, 02-05-2023, 28-06-2023
-    CS50 - Python               :active, c2, after c1, 7d
+    CS50 - Python               :active, c2, after c1, 03-07-2023
     CS50 - SQL                  :c3, after c2, 7d
     42-Common Core              :milestone, 42, 02-10-2023, 0d
 
@@ -107,6 +107,10 @@ gantt
 Basically, I set aside the days when I have more time to study C and Python, which are the biggest demands. Then comes SQL (Postgre and PostGis) along with PowerBI and PowerApps, for application in the company.
 
 About the time, if you manage to reconcile between demands intervals, great, if not... Use the reserved time per day.
+
+## First time with Markdown?
+
+Enter [here](./src/first-time.md)
 
 ---
 
