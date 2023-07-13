@@ -93,6 +93,8 @@ gantt
     CS50 - C                    :done, c1, 02-05-2023, 28-06-2023
     CS50 - Python               :active, c2, after c1, 03-07-2023
     CS50 - SQL                  :c3, after c2, 7d
+    CS50 - HTML, CSS, JS        :c4, after c3, 7d
+    CS50 - Flask                :c5, after c4, 7d
     42-Common Core              :milestone, 42, 02-10-2023, 0d
 
     section Other
@@ -141,3 +143,4 @@ Enter [here](./src/first-time.md)
 - Postgre
 	- [Learn PostgreSQL Tutorial - Full Course for Beginners](https://www.youtube.com/watch?v=qw--VYLpxG4)
 	- https://postgis.net/workshops/postgis-intro/history_tracking.html
+- [Branchless Programming](https://www.youtube.com/watch?v=bVJ-mWWL7cE)
