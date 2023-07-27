@@ -116,7 +116,7 @@ Enter [here](./src/first-time.md)
 
 ---
 
-**LINKS** (need remember to filter after when I have the time #REVISAR )
+**LINKS** ( remember to filter after when I have the time #REVISAR )
 - https://roadmap.sh
 - cs50
 	- https://cs50.me/cs50x
