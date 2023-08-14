@@ -6,13 +6,12 @@ languages: NULL
 dependences: NULL
 ---
 
-> [.root](./README.md)
-
----
+> [..](./README.md)
 
 # Areas
 
 ## [Front End](./Front_End/)
+
 - [`HTML`](./Front_End/HTML/README.md)
 - [`CSS`](./Front_End/CSS/README.md)
 - [`JS`](./Front_End/JS/README.md)  
@@ -23,6 +22,7 @@ dependences: NULL
     - Projeto Gasolina ou Álcool
 
 ## [Back End](./Back_End/)
+
 - [`PHP 7`](./Back_End/PHP/README.md)
     - App Help Desk (App para abertura e acompanhamento de suportes técnicos)
     - App Send Mail (App para criação e envio de e-mails)
@@ -42,6 +42,7 @@ dependences: NULL
 # Languages 
 
 ## [`Python`](./PYTHON/README.md)
+
 - [`PyQGis`](./PYTHON/PYQGIS/README.md)
 - Libraries
     - [OpenPyXL](./PYTHON/openpyxl.md)
@@ -58,11 +59,13 @@ dependences: NULL
 ---
 
 # Courses
+
 - [CS50x](./cs50x/README.md)
 - [42 - Piscine](./42/42_Walkthrugh/README.md)
 - 42 Common Core
 
 # [Other](./Other)
+
 - [Techinical Project Documentation](./Other/project_documentation.md)
 - [Shell](./Other/shell.md)
 - [Data Structures](./Other/data_structure.md)
@@ -84,4 +87,5 @@ dependences: NULL
     - Merge Sort
 
 # Programs
+
 - [QGIS](GAB/Estudos-Trabalhos/PROGRAMAÇÃO/programing-studies/Programs/QGIS/README.md) 

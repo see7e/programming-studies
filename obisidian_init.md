@@ -37,20 +37,26 @@ Enter [here](./src/first-time.md)
 
 ## Plugins
 
-- calendar
-- cm-editor-syntax-highlight-obsidian
-- dataview
-- embed-code-file
-- execute-code
-- metadata-menu
-- obsidian-book-search-plugin
-- obsidian-charts
-- obsidian-daily-stats
-- obsidian-day-planner
-- obsidian-front-matter-title-plugin
-- bsidian-outliner
-- obsidian-reading-time
-- table-editor-obsidian
-- templater-obsidian
-- various-complements
-
+- Advanced Tables
+- Book Search
+- Calendar
+- Commander
+- Dataview
+- Day Planner
+- DB Folder
+- Embed Code File
+- Emoji Toolbar
+- Execute Code
+- Front Matter Title
+- Metadata Menu
+- Natural Language Dates
+- Obsidian Charts
+- Outliner
+- Periodic Notes
+- QuickAdd
+- Reading Time
+- Recent Files
+- Tasks
+- Templater
+- Tracker
+- Various Complements

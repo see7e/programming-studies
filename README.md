@@ -30,48 +30,13 @@ This repo is divided in two branches, [main](https://github.com/see7e/programing
 
 </br>
 
-<div align="center">
-  <picture>
-    <img alt="Galaxy" src="./src/img/prog-galaxy.png" style="width:500px">
-  </picture>
-</div>
+![Galaxy|500](./src/img/prog-galaxy.png)
 
 
 # [List of Documents](./DIRECTORY.md)
 
 ## Progress
 
-<div align="center">
-    <table>
-        <thead>
-            <tr>
-                <th>HOURS</br>(18h ~ 19:30)</th>
-                <th>Monday</th>
-                <th>Tuesday</th>
-                <th>Wednesday</th>
-                <th>Thursday</th>
-                <th>Friday</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr>
-                <td>1ª Part</td>
-                <td rowspan=3>(C) CS50</td>
-                <td rowspan=3>(Python)</br>Roadmap / Libs</td>
-                <td rowspan=2>Revisão</td>
-                <td rowspan=3>(Python)</br>Roadmap / Libs</td>
-                <td rowspan=3>(C) CS50</td>
-            </tr>
-            <tr>
-                <td>2ª Part</td>
-            </tr>
-            <tr>
-                <td>3ª Part</td>
-                <td>PowerBI /</br>Powerapps</td>
-            </tr>
-        </tbody>
-    </table>
-</div>
 
 ```mermaid
 %%{
@@ -92,15 +57,16 @@ gantt
 
     section Courses
     CS50 - C                    :done, c1, 02-05-2023, 28-06-2023
-    CS50 - Python               :active, c2, after c1, 03-07-2023
-    CS50 - SQL                  :c3, after c2, 7d
-    CS50 - HTML, CSS, JS        :c4, after c3, 7d
-    CS50 - Flask                :c5, after c4, 7d
+    CS50 - Python               :done, c2, after c1, 03-07-2023
+    CS50 - SQL                  :done, c3, after c2, 7d
+    CS50 - HTML, CSS, JS        :done, c4, after c3, 7d
+    CS50 - Flask                :done, c5, after c4, 7d
+    CS50 - Final Project        :done, c6, after c5, 14-08-2023
     42-Common Core              :milestone, 42, 02-10-2023, 0d
 
     section Other
     Python RoadMap              :active, a1, 02-05-2023, 80d
-    SQL RoadMap|PSQL|PostGIS    :after a1, 60d
+    SQL RoadMap|PSQL|PostGIS    :active, after a1, 60d
     OpenPyXL                    :done, a5, 10-05-2023, 7d 
     Pandas                      :done, after a5, 7d
     PowerBI (not started)       :milestone, 02-05-2023, 0d
@@ -114,4 +80,4 @@ About the time, if you manage to reconcile between demands intervals, great, if 
 ## First time with Markdown?
 > Enter [here](./src/first-time.md)
 
-## Some userfull [links](links.md) 
+## Some useful [links](links.md) 
