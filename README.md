@@ -6,7 +6,8 @@ languages: NULL
 dependences: NULL
 ---
 
-> [!] The links are built for the obsidian branch, i was working in main but now i'll split correctly and after that update all the inter document links 
+> [!INFO] 
+> The links are built for the obsidian branch, i was working in main but now i'll split correctly and after that update all the inter document links 
 
 ---
 
@@ -111,36 +112,6 @@ Basically, I set aside the days when I have more time to study C and Python, whi
 About the time, if you manage to reconcile between demands intervals, great, if not... Use the reserved time per day.
 
 ## First time with Markdown?
+> Enter [here](./src/first-time.md)
 
-Enter [here](./src/first-time.md)
-
----
-
-**LINKS** ( remember to filter after when I have the time #REVISAR )
-- https://roadmap.sh
-- cs50
-	- https://cs50.me/cs50x
-	- https://learning.edx.org/course/course-v1:HarvardX+CS50+X/home
-- https://egghead.io/q?access_state=free
-- https://my-learning.w3schools.com
-- https://leetcode.com/problemset/all
-- https://www.codewars.com
-- Python
-	- [Python @dataclasses](https://www.youtube.com/watch?v=vBH6GRJ1REM)
-	- [Python builtin functions](https://docs.python.org/3/library/functions.html)
-	- 
-- PyQGis
-	- http://geospatialdesktop.com/2009/02/creating_a_standalone_gis_application_1/
-	- https://aneto.pt/posts/tutorials/
-	- https://lunageo.com/webinars/ and /multiuser-editing-with-qgis-and-postgis-in-an-enterprise-environment/
-- [Dynamic Programming - Learn to Solve Algorithmic Problems & Coding Challenges](https://www.youtube.com/watch?v=oBt53YbR9Kk)
-- [Git Guide (pt)](https://dev.to/leandronsp/pt-br-fundamentos-do-git-um-guia-completo-2djh)
-- [Comparison Sorting Algorithms](https://www.cs.usfca.edu/~galles/visualization/ComparisonSort.html)
-- [Data Structure Visualizations](https://www.cs.usfca.edu/~galles/visualization/Algorithms.html)
--  [Naming things in code](https://www.youtube.com/watch?v=-J3wNP6u5YU)
-- [Docker (Docker-in-Docker) (docker-in-docker)](https://github.com/devcontainers/features/tree/main/src/docker-in-docker)
-- https://www.arjancodes.com/diagnosis
-- Postgre
-	- [Learn PostgreSQL Tutorial - Full Course for Beginners](https://www.youtube.com/watch?v=qw--VYLpxG4)
-	- https://postgis.net/workshops/postgis-intro/history_tracking.html
-- [Branchless Programming](https://www.youtube.com/watch?v=bVJ-mWWL7cE)
+## Some userfull [links](links.md) 
