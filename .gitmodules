@@ -1,6 +1,3 @@
-[submodule "cs50x"]
-	path = cs50x/
-	url = https://github.com/see7e/cs50x
 [submodule "Courses/CS50x"]
 	path = Courses/CS50x
 	url = https://github.com/see7e/cs50x

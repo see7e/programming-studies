@@ -8,20 +8,25 @@ dependences: NULL
 
 # Follow This Steps
 
+> I'll develop some bash script to do this for you in the future
+
 1. Download the `obidian` branch from the linked repos below.
 	1. [42_Walkthrugh](https://github.com/the-8-bits/42_Walkthrugh)
 	2. [42-libft](https://github.com/the-8-bits/42-libft)
 	3. [CS50x](https://github.com/see7e/cs50x/tree/obsidian)
 2.  Recreate the same structure (inside `studies/`)here:
-```
-.
-├── cs50x/                 # CS50 Repo
-├── 42/                    # 42 Repos
-│   ├── 42_Walkthrugh/      # Table of contents
-│   ├── 42-libft/           # Frequently asked questions
-│   └── ...                 # etc.
-└── ...                    # Current studies files
-```
+	```
+	.root
+	├── ./Courses/                 	# Courses
+	│	├── CS50x/                 	# CS50 Repo
+	│	├── ./42/                   # 42 Repos
+	│	│   ├── 42_Walkthrugh/     	# Piscine Projects
+	│	│   └── ./Common Core/      # CC Projects
+	│	│   	├── 42-libft/      	# Each project is a repo
+	│	│   	└── ...            	# Other projects
+	│	└── ...		            	# Other Courses
+	└── ...                    		# Current programing-studies files
+	```
 3. Pay attention to `.gitignore` files
 4. Install [Obisidian](https://help.obsidian.md/Getting+started/Download+and+install+Obsidian).
 	1. And [Plugins](#plugins)
@@ -31,11 +36,13 @@ Pay attention that new Pull Requests must be made to each individual repositorie
 
 ## First time with Markdown?
 
-Enter [here](./src/first-time.md)
+Enter [here](first-time.md)
 
 ---
 
 ## Plugins
+
+I use a not so small list of Plugins, but they're not necessarily related to this repository.
 
 - Advanced Tables
 - Book Search

@@ -7,14 +7,14 @@ dependences: NULL
 ---
 
 > [!INFO] 
-> The links are built for the obsidian branch, i was working in main but now i'll split correctly and after that update all the inter document links 
+> The links are built for the obsidian branch, i was working in main but now i'll split correctly and after that update all the inter document links over the main branch
 
 ---
 
 > This is a list of interesting documents gathered during development studies
-# The Big Picture
+# The Big Picture 🌌
 
-This repo is divided in two branches, [main](https://github.com/see7e/programing-studies) has common links and [obsidian](https://github.com/see7e/programing-studies/tree/obsidian) links follow a Zettelkasten adapted model along with Obsidian to map the network of documents. If you want to set up in you computer, [click here](./obisidian_init.md).
+This repo is divided in two branches, [main](https://github.com/see7e/programing-studies) has common links and [obsidian](https://github.com/see7e/programing-studies/tree/obsidian) links follow a Zettelkasten adapted model along with Obsidian to map the network of documents. If you want to set up in you computer, [click here](obisidian_init.md).
 
 <details>
 	<summary>If you want to know the history, click here.</summary>
@@ -33,9 +33,13 @@ This repo is divided in two branches, [main](https://github.com/see7e/programing
 ![Galaxy|500](./src/img/prog-galaxy.png)
 
 
-# [List of Documents](./DIRECTORY.md)
+# [List of Documents](DIRECTORY.md) 📜
 
-## Progress
+> [!QUOTE] 
+> If I have seen further, it is by standing on the shoulders of giants.
+> *Isaac Newton*
+
+## Progress 🏗️
 
 
 ```mermaid
@@ -77,7 +81,13 @@ Basically, I set aside the days when I have more time to study C and Python, whi
 
 About the time, if you manage to reconcile between demands intervals, great, if not... Use the reserved time per day.
 
-## First time with Markdown?
-> Enter [here](./src/first-time.md)
+## First time with Markdown? 📑
+> Enter [here](first-time.md)
 
-## Some useful [links](links.md) 
+## Some useful links [🔗](links.md) 
+
+## Readings 📚
+
+- make it stick - The Science of Successful Learning - Peter Brown, Henry L. Roediger III, Mark A. McDaniel
+- Statistical Learning - Trevor Hastie, Robert Tibshirani
+- Design Patterns: Elements of Reusable Object-Oriented Software - Gang of Four

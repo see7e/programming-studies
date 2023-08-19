@@ -10,7 +10,7 @@ dependences: NULL
 
 > [User Guide](https://help.obsidian.md/Home)
 
-![user-guide-network|400](./img/user-guide-net.png)
+![user-guide-network|400](user-guide-net.png)
 
 ## Getting started
 
@@ -54,11 +54,11 @@ To create paragraphs, use a blank line to separate one or more lines of text. Un
 
 To bold text, add two asterisks or underscores before and after a word or phrase. To bold the middle of a word for emphasis, add two asterisks without spaces around the letters.
 
-| Markdown | HTML | Rendered Output |
-| --- | --- | --- |
+| Markdown                     | HTML                                      | Rendered Output            |
+| ---------------------------- | ----------------------------------------- | -------------------------- |
 | `I just love **bold text**.` | `I just love <strong>bold text</strong>.` | I just love **bold text**. |
 | `I just love __bold text__.` | `I just love <strong>bold text</strong>.` | I just love **bold text**. |
-| `Love**is**bold` | `Love<strong>is</strong>bold` | Love**is**bold |
+| `Love**is**bold`             | `Love<strong>is</strong>bold`             | Love**is**bold             |
 
 Markdown applications don’t agree on how to handle underscores in the middle of a word. For compatibility, use asterisks to bold the middle of a word for emphasis.
 
@@ -66,11 +66,11 @@ Markdown applications don’t agree on how to handle underscores in the middle o
 
 To italicize text, add one asterisk or underscore before and after a word or phrase. To italicize the middle of a word for emphasis, add one asterisk without spaces around the letters.
 
-| Markdown | HTML | Rendered Output |
-| --- | --- | --- |
+| Markdown                               | HTML                                          | Rendered Output                      |
+| -------------------------------------- | --------------------------------------------- | ------------------------------------ |
 | `Italicized text is the *cat's meow*.` | `Italicized text is the <em>cat's meow</em>.` | Italicized text is the _cat’s meow_. |
 | `Italicized text is the _cat's meow_.` | `Italicized text is the <em>cat's meow</em>.` | Italicized text is the _cat’s meow_. |
-| `A*cat*meow` | `A<em>cat</em>meow` | A*cat*meow |
+| `A*cat*meow`                           | `A<em>cat</em>meow`                           | A*cat*meow                           |
 
 Markdown applications don’t agree on how to handle underscores in the middle of a word. For compatibility, use asterisks to italicize the middle of a word for emphasis.
 
@@ -113,9 +113,9 @@ To create an ordered list, add line items with numbers followed by periods. The 
 
 CommonMark and a few other lightweight markup languages let you use a parenthesis (`)`) as a delimiter (e.g., `1) First item`), but not all Markdown applications support this, so it isn’t a great option from a compatibility perspective. For compatibility, use periods only.
 
-| ✅  Do this | ❌  Don't do this |
-| --- | --- |
-| `1. First item   2. Second item` | `1) First item   2) Second item` |
+| ✅  Do this                          | ❌  Don't do this                    |
+| ------------------------------------ | ------------------------------------ |
+| `1. First item`</br>`2. Second item` | `1) First item`</br>`2) Second item` |
 
 ### Unordered Lists
 

@@ -8,7 +8,7 @@ dependences: QGIS
 
 > [!] Is important to know that I've only copied some points of the original documentation, I'll update the informations only with free time
 
-<details> <summary>Full website root</summary>
+<details> <summary>Full website index</summary>
 
 - [1. Course Introduction](https://docs.qgis.org/3.28/en/docs/training_manual/foreword/index.html)
     - [1.1. Foreword](https://docs.qgis.org/3.28/en/docs/training_manual/foreword/foreword.html)
