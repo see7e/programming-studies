@@ -6,9 +6,13 @@ languages: NULL
 dependences: NULL
 ---
 
-<details> <summary>Table of Contents</summary>
+<details> <summary>Table of Contents 🔖</summary>
 
-- [](#)
+- [Big O](#big-o)
+  - [The Significance of Time Complexity #](#the-significance-of-time-complexity-)
+    - [Timing Your Code #](#timing-your-code-)
+    - [Measuring Efficiency With Big O Notation #](#measuring-efficiency-with-big-o-notation-)
+  - [Concept](#concept)
 
 </details>
 

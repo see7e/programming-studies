@@ -6,7 +6,7 @@ languages: NULL
 dependences: NULL
 ---
 
-<details> <summary>Table of Contents</summary>
+<details> <summary>Table of Contents 🔖</summary>
 
 - [Sorting](#sorting)
   - [Python’s Built-In Sorting Algorithm #](#pythons-built-in-sorting-algorithm-)

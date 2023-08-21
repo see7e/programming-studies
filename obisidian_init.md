@@ -25,7 +25,7 @@ dependences: NULL
 	│	│   	├── 42-libft/      	# Each project is a repo
 	│	│   	└── ...            	# Other projects
 	│	└── ...		            	# Other Courses
-	└── ...                    		# Current programing-studies files
+	└── ...                    		# Current programming-studies files
 	```
 3. Pay attention to `.gitignore` files
 4. Install [Obisidian](https://help.obsidian.md/Getting+started/Download+and+install+Obsidian).

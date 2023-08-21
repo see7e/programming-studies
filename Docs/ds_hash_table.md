@@ -6,9 +6,13 @@ languages: NULL
 dependences: NULL
 ---
 
-<details> <summary>Table of Contents</summary>
+<details> <summary>Table of Contents 🔖</summary>
 
 - [Intro](#intro)
+- [Hashing (Hash Function)](#hashing-hash-function)
+	- [Good Hash Functions](#good-hash-functions)
+- [Hash Collision](#hash-collision)
+- [A **real-world** example is...](#a-real-world-example-is)
 
 </details>
 

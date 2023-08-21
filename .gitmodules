@@ -1,3 +1,12 @@
+# Harvard
 [submodule "Courses/CS50x"]
 	path = Courses/CS50x
 	url = https://github.com/see7e/cs50x
+
+# 42
+[submodule "Courses/42/42_Walkthrugh"]
+	path = Courses/42/42_Walkthrugh
+	url = https://github.com/see7e/42_Walkthrugh
+[submodule "Courses/42/Common Core/libft"]
+	path = Courses/42/Common Core/libft
+	url = https://github.com/see7e/42-libft

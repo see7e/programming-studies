@@ -6,7 +6,7 @@ languages: NULL
 dependences: NULL
 ---
 
-<details> <summary>Table of Contents</summary>
+<details> <summary>Table of Contents 🔖</summary>
 
 - [Implementing Timsort in Python #](#implementing-timsort-in-python-)
 - [Measuring Timsort’s Big O Complexity #](#measuring-timsorts-big-o-complexity-)

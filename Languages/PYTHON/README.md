@@ -6,7 +6,7 @@ languages: Python
 dependences: NULL
 ---
 
-<details> <summary>Table of Contents</summary>
+<details> <summary>Table of Contents 🔖</summary>
 
 - [RoadMap](#roadmap)
 - [Learn\_the\_Basics](#learn_the_basics)

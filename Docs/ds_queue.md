@@ -6,9 +6,17 @@ languages: NULL
 dependences: NULL
 ---
 
-<details> <summary>Table of Contents</summary>
+<details> <summary>Table of Contents 🔖</summary>
 
-- [](#)
+- [Intro #](#intro-)
+- [Operations](#operations)
+- [Types](#types)
+	- [Simple Queue](#simple-queue)
+	- [Circular Queue](#circular-queue)
+	- [Priority Queue](#priority-queue)
+	- [Double Ended Queue](#double-ended-queue)
+- [Code](#code)
+- [A **real-world** example is...](#a-real-world-example-is)
 
 </details>
 

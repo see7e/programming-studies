@@ -6,7 +6,7 @@ languages: NULL
 dependences: NULL
 ---
 
-<details> <summary>Table of Contents</summary>
+<details> <summary>Table of Contents 🔖</summary>
 
 - [Intro #](#intro-)
 - [Opearations](#opearations)
@@ -26,7 +26,7 @@ dependences: NULL
 
 <details> <summary>Implementations</summary>
 
-[`C`](GAB/Estudos-Trabalhos/PROGRAMAÇÃO/programing-studies/Languages/C/heap_implementation.md) | [`Python`](GAB/Estudos-Trabalhos/PROGRAMAÇÃO/programing-studies/Languages/PYTHON/heap_implementation.md) | [`JavaScript`](../Front_End/JS/heap_implementation.md)
+[`C`](GAB/Estudos-Trabalhos/PROGRAMAÇÃO/programming-studies/Languages/C/heap_implementation.md) | [`Python`](GAB/Estudos-Trabalhos/PROGRAMAÇÃO/programming-studies/Languages/PYTHON/heap_implementation.md) | [`JavaScript`](../Front_End/JS/heap_implementation.md)
 
 </details>
 

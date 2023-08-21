@@ -6,7 +6,7 @@ languages: Python
 dependences: NULL
 ---
 
-<details> <summary>Table of Contents</summary>
+<details> <summary>Table of Contents 🔖</summary>
 
 - [Object-oriented Programming - OOP #](#object-oriented-programming---oop-)
   - [Concepts](#concepts)

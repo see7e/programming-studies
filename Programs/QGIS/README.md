@@ -144,7 +144,7 @@ dependences: QGIS
 
 ---
 
-<details> <summary> Actual Table of Contents </summary>
+<details> <summary> Actual Table of Contents 🔖 </summary>
 
 - [5.4. Lesson: Actions #](#54-lesson-actions-)
   - [5.4.1.  Follow Along: Add a Field for Images #](#541--follow-along-add-a-field-for-images-)

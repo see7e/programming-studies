@@ -6,7 +6,7 @@ languages: NULL
 dependences: NULL
 ---
 
-<details> <summary>Table of Contents</summary>
+<details> <summary>Table of Contents 🔖</summary>
 
 - [Definition](#definition)
 - [Characteristics of data structures](#characteristics-of-data-structures)

@@ -7,7 +7,7 @@ dependences: Python, openpyxl
 ---
 > [Python Roadmap](./README.md)
 
-<details> <summary>Table of Contents</summary>
+<details> <summary>Table of Contents 🔖</summary>
 
 - [Installation](#installation)
 - [Workbook](#workbook)

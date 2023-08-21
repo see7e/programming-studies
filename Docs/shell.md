@@ -6,6 +6,29 @@ languages: Shell
 dependences: NULL
 ---
 
+<details><summary>Table of Contents 🔖</summary>
+
+- [Shell](#shell)
+  - [Comandos shell](#comandos-shell)
+  - [Atalhos](#atalhos)
+  - [COMANDOS PARA MANIPULAÇÃO DE ARQUIVOS E TEXTOS E COMANDOS DE REDIRECIONAMENTO](#comandos-para-manipulação-de-arquivos-e-textos-e-comandos-de-redirecionamento)
+  - [Obtendo as informações de um arquivo em outro arquivo:](#obtendo-as-informações-de-um-arquivo-em-outro-arquivo)
+  - [DIRETÓRIOS DO LINUX E COMANDOS DE SISTEMA](#diretórios-do-linux-e-comandos-de-sistema)
+  - [Fundamentos de Rede e Comandos Avançados:](#fundamentos-de-rede-e-comandos-avançados)
+  - [COMANDOS TRACEROUTE E FINGER](#comandos-traceroute-e-finger)
+  - [COMANDOS DIVERSOS DO LINUX](#comandos-diversos-do-linux)
+  - [FAZER EXERCÍCIOS E COLOCAR NUM ARQUIVO PARA EXECUTAR AUTOMATICAMENTE. ](#fazer-exercícios-e-colocar-num-arquivo-para-executar-automaticamente)
+  - [Controle de Usuários](#controle-de-usuários)
+  - [COMO EXIBIR INFORMAÇÕES DE LOGIN E EXCLUIR USER](#como-exibir-informações-de-login-e-excluir-user)
+  - [CONTROLE DE USUÁRIOS - Como criar grupos e gerenciar usuários](#controle-de-usuários---como-criar-grupos-e-gerenciar-usuários)
+  - [PERMISSÕES](#permissões)
+    - [Servidor para dono|grupo|outros users](#servidor-para-donogrupooutros-users)
+  - [(Des)Compactação de Arquivos](#descompactação-de-arquivos)
+- [APACHE](#apache)
+
+</details>
+
+
 # Shell
 ## Comandos shell
   > Autor: Luciano Hugo

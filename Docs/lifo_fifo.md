@@ -7,7 +7,11 @@ dependences: NULL
 ---
 
 - [LIFO - Last in / First Out](#lifo---last-in--first-out)
+  - [Where is LIFO used:](#where-is-lifo-used)
+  - [Complexity Analysis:](#complexity-analysis)
 - [FIFO - First in / First Out](#fifo---first-in--first-out)
+  - [Where is FIFO used:](#where-is-fifo-used)
+  - [Complexities Analysis:](#complexities-analysis)
 
 # LIFO - Last in / First Out
 Which means that the last element added to the stack is the first element to be removed. Therefore, the first element to be entered in this approach, gets out Last.

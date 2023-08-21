@@ -6,7 +6,7 @@ languages: NULL
 dependences: NULL
 ---
 
-<details> <summary>Table of Contents</summary>
+<details> <summary>Table of Contents 🔖</summary>
 
 - [Implementing Insertion/Selection Sort #](#implementing-insertionselection-sort-)
 - [Measuring Insertion Sort’s Big O Runtime Complexity #](#measuring-insertion-sorts-big-o-runtime-complexity-)
@@ -24,14 +24,14 @@ dependences: NULL
 The insertion sort algorithm works exactly like the example with the deck of cards. Here’s the implementation in Python:
 
 ```embed-cpp
-PATH: "vault://GAB/Estudos-Trabalhos/PROGRAMAÇÃO/programing-studies/Languages/PYTHON/code/algo_insertion_sort.py"
+PATH: "vault://GAB/Estudos-Trabalhos/PROGRAMAÇÃO/programming-studies/Languages/PYTHON/code/algo_insertion_sort.py"
 TITLE: "Insertion.py"
 ```
 
 <details> <summary>Or if you like a bit more intricate one, an implementation in `C`:</summary>
 
 ```embed-cpp
-PATH: "vault://GAB/Estudos-Trabalhos/PROGRAMAÇÃO/programing-studies/Languages/C/code/algo_insertion_sort.c"
+PATH: "vault://GAB/Estudos-Trabalhos/PROGRAMAÇÃO/programming-studies/Languages/C/code/algo_insertion_sort.c"
 TITLE: "Insertion.c"
 ```
 

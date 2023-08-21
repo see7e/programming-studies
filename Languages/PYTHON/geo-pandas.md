@@ -7,7 +7,7 @@ dependences: Python, pandas
 ---
 > [Python Roadmap](./README.md)
 
-<details> <summary>Table of Contents</summary>
+<details> <summary>Table of Contents 🔖</summary>
 
 - [Introduction](#introduction)
   - [Geting Started](#geting-started)

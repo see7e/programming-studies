@@ -6,7 +6,7 @@ languages: NULL
 dependences: NULL
 ---
 
-<details> <summary>Table of Contents</summary>
+<details> <summary>Table of Contents 🔖</summary>
 
 - [What is software architecture?](#what-is-software-architecture)
 - [Some software srchitecture concepts](#some-software-srchitecture-concepts)

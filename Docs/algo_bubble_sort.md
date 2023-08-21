@@ -6,7 +6,7 @@ languages: NULL
 dependences: NULL
 ---
 
-<details> <summary>Table of Contents</summary>
+<details> <summary>Table of Contents 🔖</summary>
 
 - [Implementing Bubble Sort #](#implementing-bubble-sort-)
 - [Measuring Bubble Sort’s Big O Runtime Complexity #](#measuring-bubble-sorts-big-o-runtime-complexity-)
@@ -23,14 +23,14 @@ dependences: NULL
 Here’s an implementation of a bubble sort algorithm in `Python`:
 
 ```embed-cpp
-PATH: "vault://GAB/Estudos-Trabalhos/PROGRAMAÇÃO/programing-studies/Languages/PYTHON/code/algo_bubble_sort.py"
+PATH: "vault://GAB/Estudos-Trabalhos/PROGRAMAÇÃO/programming-studies/Languages/PYTHON/code/algo_bubble_sort.py"
 TITLE: "Bubble.py"
 ```
 
 <details> <summary>Or if you like a bit more intricate one, an implementation in `C`:</summary>
 
 ```embed-cpp
-PATH: "vault://GAB/Estudos-Trabalhos/PROGRAMAÇÃO/programing-studies/Languages/C/code/algo_bubble_sort.c"
+PATH: "vault://GAB/Estudos-Trabalhos/PROGRAMAÇÃO/programming-studies/Languages/C/code/algo_bubble_sort.c"
 TITLE: "Bubble.c"
 ```
 

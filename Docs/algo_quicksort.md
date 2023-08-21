@@ -6,7 +6,7 @@ languages: NULL
 dependences: NULL
 ---
 
-<details> <summary>Table of Contents</summary>
+<details> <summary>Table of Contents 🔖</summary>
 
 - [Implementing Quicksort #](#implementing-quicksort-)
   - [Selecting the `pivot` Element #](#selecting-the-pivot-element-)
@@ -24,14 +24,14 @@ dependences: NULL
 Here’s a fairly compact implementation of Quicksort:
 
 ```embed-cpp
-PATH: "vault://GAB/Estudos-Trabalhos/PROGRAMAÇÃO/programing-studies/Languages/PYTHON/code/algo_quick_sort.py"
+PATH: "vault://GAB/Estudos-Trabalhos/PROGRAMAÇÃO/programming-studies/Languages/PYTHON/code/algo_quick_sort.py"
 TITLE: "QuickSort.py"
 ```
 
 <details> <summary>Or if you like a bit more intricate one, an implementation in `C`:</summary>
 
 ```embed-cpp
-PATH: "vault://GAB/Estudos-Trabalhos/PROGRAMAÇÃO/programing-studies/Languages/C/code/algo_quick_sort.c"
+PATH: "vault://GAB/Estudos-Trabalhos/PROGRAMAÇÃO/programming-studies/Languages/C/code/algo_quick_sort.c"
 TITLE: "QuickSort.c"
 ```
 

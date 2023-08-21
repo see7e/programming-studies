@@ -6,7 +6,7 @@ languages: Python
 dependences: NULL
 ---
 
-<details> <summary>Table of Contents</summary>
+<details> <summary>Table of Contents 🔖</summary>
 
 - [Code File #](#code-file-)
 - [Explanation](#explanation)

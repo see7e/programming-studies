@@ -6,7 +6,7 @@ languages: NULL
 dependences: NULL
 ---
 
-<details> <summary>Table of Contents</summary>
+<details> <summary>Table of Contents 🔖</summary>
 
 - [Implementing Merge Sort #](#implementing-merge-sort-)
 - [Measuring Merge Sort’s Big O Complexity #](#measuring-merge-sorts-big-o-complexity-)
@@ -27,14 +27,14 @@ The implementation of the merge sort algorithm needs two different pieces:
 Here’s the code to merge two different arrays:
 
 ```embed-cpp
-PATH: "vault://GAB/Estudos-Trabalhos/PROGRAMAÇÃO/programing-studies/Languages/PYTHON/code/algo_merge_sort.py"
+PATH: "vault://GAB/Estudos-Trabalhos/PROGRAMAÇÃO/programming-studies/Languages/PYTHON/code/algo_merge_sort.py"
 TITLE: Merge.py
 ```
 
 <details> <summary>Or if you like a bit more intricate one, an implementation in `C`:</summary>
 
 ```embed-cpp
-PATH: "vault://GAB/Estudos-Trabalhos/PROGRAMAÇÃO/programing-studies/Languages/C/code/algo_merge_sort.c"
+PATH: "vault://GAB/Estudos-Trabalhos/PROGRAMAÇÃO/programming-studies/Languages/C/code/algo_merge_sort.c"
 TITLE: "Merge.c"
 ```
 
