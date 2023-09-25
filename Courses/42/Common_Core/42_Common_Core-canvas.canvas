@@ -1,0 +1,20 @@
+{
+	"nodes":[
+		{"id":"8d3239010d7a5888","type":"group","x":-720,"y":-40,"width":1360,"height":1040,"label":"01"},
+		{"id":"a498376610b00f32","type":"file","file":"GAB/Estudos-Trabalhos/PROGRAMAÇÃO/programming-studies/Courses/42/Common_Core/ft_printf/README.md","x":-680,"y":520,"width":400,"height":400},
+		{"id":"8da439f8dd800ad2","type":"file","file":"GAB/Estudos-Trabalhos/PROGRAMAÇÃO/programming-studies/Courses/42/Common_Core/get_next_line/README.md","x":200,"y":520,"width":400,"height":400},
+		{"id":"3b90e9d7233bb762","type":"file","file":"GAB/Estudos-Trabalhos/PROGRAMAÇÃO/programming-studies/Courses/42/Common_Core/libft/README.md","x":-240,"y":280,"width":400,"height":400},
+		{"id":"c2b3b037269e17ab","type":"file","file":"GAB/Estudos-Trabalhos/PROGRAMAÇÃO/programming-studies/Courses/42/Common_Core/Born2beroot/README.md","x":-680,"y":40,"width":400,"height":400},
+		{"id":"5fa0ccff5ad8ac8e","type":"text","text":"Variadic Functions","x":-230,"y":840,"width":210,"height":60},
+		{"id":"cfc69ca4c800d18f","type":"text","text":"Header files","x":0,"y":180,"width":160,"height":60},
+		{"id":"9a21d2d96d2fbe06","type":"file","file":"GAB/Estudos-Trabalhos/PROGRAMAÇÃO/programming-studies/Docs/file_descriptor.md","x":340,"y":40,"width":260,"height":400},
+		{"id":"3bcfe07d0ffe98d7","type":"text","text":"Linux server","x":-240,"y":40,"width":125,"height":90},
+		{"id":"9a759a6d17174c16","x":-80,"y":40,"width":367,"height":50,"type":"text","text":"#programação  #common_core #42"}
+	],
+	"edges":[
+		{"id":"9ec517a32700bd01","fromNode":"3b90e9d7233bb762","fromSide":"top","toNode":"cfc69ca4c800d18f","toSide":"left"},
+		{"id":"6c714b27a6564078","fromNode":"8da439f8dd800ad2","fromSide":"top","toNode":"9a21d2d96d2fbe06","toSide":"bottom"},
+		{"id":"0912513944208a3f","fromNode":"a498376610b00f32","fromSide":"right","toNode":"5fa0ccff5ad8ac8e","toSide":"top"},
+		{"id":"ecc541ad6f4ec7b7","fromNode":"c2b3b037269e17ab","fromSide":"right","toNode":"3bcfe07d0ffe98d7","toSide":"bottom"}
+	]
+}

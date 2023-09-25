@@ -8,8 +8,9 @@
 [submodule "Courses/42/42_Walkthrugh"]
 	path = Courses/42/42_Walkthrugh
 	url = https://github.com/see7e/42_Walkthrugh
-[submodule "Courses/42/Common Core/libft"]
-	path = Courses/42/Common Core/libft
+
+[submodule "Libft"]
+	path = Courses/42/Common_Core/Libft
 	url = https://github.com/see7e/42-libft
 
 # Projects

@@ -1,6 +1,6 @@
 ---
 title: 42 invites Joe Grand aka Kingpin!
-tags: 42, Hacking, programação 
+tags: programação, 42, cybersecurity, hacking
 use: Documentation
 languages: NULL
 dependences: NULL
@@ -8,6 +8,7 @@ dependences: NULL
 
 # 42 invites Joe Grand aka Kingpin
 > @42TheNetwork | 24 de abr. de 2023
+
 ## ABSTRACT:
 
 Hacking can be unpredictable, exciting, and educational, no matter how long you’ve been doing it. In this session, Joe shares his journey of experimentation, failures, successes, and heart-stopping moments as he attempted to recover $2 million worth of cryptocurrency from a Trezor One hardware wallet.

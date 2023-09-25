@@ -351,6 +351,7 @@ Visit the following resources to learn more:
 	>>> lst.pop()	#builtin remove method
 	>>> print(lst)
 	```
+	
 	Aplications:
 	-   Used in `JSON` format
 	-   Useful for Array operations

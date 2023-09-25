@@ -39,19 +39,23 @@ dependences: NULL
 	-  [SOLID](https://www.udemy.com/course/solid-design/?ranMID=39197&ranEAID=byQ1B*3xS1w&ranSiteID=byQ1B.3xS1w-FJQ7sEBLL0S10dqIHaeFKw&utm_source=aff-campaign&utm_medium=udemyads&LSNPUBID=byQ1B*3xS1w) `udemy`
 	- CompTIA
 		-  A+ ( Core [1](https://www.udemy.com/course/comptia-a-core-1/?ranMID=39197&ranEAID=byQ1B*3xS1w&ranSiteID=byQ1B.3xS1w-vCXn_HqKNmDcRnfj0DcaeA&LSNPUBID=byQ1B*3xS1w&utm_source=aff-campaign&utm_medium=udemyads) | [2](https://www.udemy.com/course/comptia-a-core-2/?ranMID=39197&ranEAID=byQ1B*3xS1w&ranSiteID=byQ1B.3xS1w-xXQJYe.8g8zFjvy5jVqU2A&LSNPUBID=byQ1B*3xS1w&utm_source=aff-campaign&utm_medium=udemyads) ) `udemy`
+	- UML (Unified Modeling Language)
+		- [UML Diagrams Full Course](https://www.youtube.com/watch?v=WnMQ8HlmeXc) `free`
 
 - Python
 	- [Python @dataclasses](https://www.youtube.com/watch?v=vBH6GRJ1REM)
 	- [Python builtin functions](https://docs.python.org/3/library/functions.html)
 
-- PyQGis
-	- http://geospatialdesktop.com/2009/02/creating_a_standalone_gis_application_1/
-	- https://aneto.pt/posts/tutorials/
-	- https://lunageo.com/webinars/ and /multiuser-editing-with-qgis-and-postgis-in-an-enterprise-environment/
+- SQL
+	- PyQGis
+		- http://geospatialdesktop.com/2009/02/creating_a_standalone_gis_application_1/
+		- https://aneto.pt/posts/tutorials/
+		- https://lunageo.com/webinars/ and /multiuser-editing-with-qgis-and-postgis-in-an-enterprise-environment/
+	- Postgre
+		- [Learn PostgreSQL Tutorial - Full Course for Beginners](https://www.youtube.com/watch?v=qw--VYLpxG4)
+		- https://postgis.net/workshops/postgis-intro/history_tracking.html
 
-- Postgre
-	- [Learn PostgreSQL Tutorial - Full Course for Beginners](https://www.youtube.com/watch?v=qw--VYLpxG4)
-	- https://postgis.net/workshops/postgis-intro/history_tracking.html
+- Containers: [Never install locally](https://www.youtube.com/watch?v=J0NuOlA2xDc)
 
 - Other
 	- Git/Github
@@ -69,6 +73,9 @@ dependences: NULL
 	- [Creating and Configuring a Model](https://learn.microsoft.com/en-us/ef/core/modeling/)
 	- [DevOps CI/CD Explained in 100 Seconds](https://www.youtube.com/watch?v=scEDHsr3APg)
 	- [20 System Design Concepts](https://youtu.be/i53Gi_K3o7I?t=21)
+	- [Open-Source Intelligence (OSINT)](https://www.youtube.com/watch?v=qwA6MmbeGNo)
+	- `PT` [Tudo que Você Queria Saber Sobre Dispositivos de Armazenamento](https://www.youtube.com/watch?v=c3hOS8BGbZo)
+	- [Military Grade Build Tool for C *YT*](https://www.youtube.com/watch?v=l9_TUMZSewo) / [nobuild](https://github.com/tsoding/nobuild)
 	- 
 
 

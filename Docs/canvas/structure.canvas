@@ -1,0 +1,12 @@
+{
+	"nodes":[
+		{"id":"d10d4fafe4c922bd","type":"file","file":"GAB/Estudos-Trabalhos/PROGRAMAÇÃO/programming-studies/DIRECTORY.md","x":-580,"y":-160,"width":400,"height":1000},
+		{"id":"a1be2e33eea97de1","type":"file","file":"GAB/Estudos-Trabalhos/PROGRAMAÇÃO/programming-studies/links.md","x":-140,"y":-160,"width":400,"height":1000},
+		{"id":"a24b20c462aed862","type":"file","file":"GAB/Estudos-Trabalhos/PROGRAMAÇÃO/programming-studies/README.md","x":-540,"y":-580,"width":400,"height":266},
+		{"id":"4077d75330c65ac4","type":"file","file":"GAB/Estudos-Trabalhos/PROGRAMAÇÃO/programming-studies/src/img/prog-galaxy.png","x":-40,"y":-580,"width":300,"height":309}
+	],
+	"edges":[
+		{"id":"8ceee46eec121bd6","fromNode":"a24b20c462aed862","fromSide":"bottom","toNode":"d10d4fafe4c922bd","toSide":"top"},
+		{"id":"2989473b2fb3b2b7","fromNode":"a24b20c462aed862","fromSide":"bottom","toNode":"a1be2e33eea97de1","toSide":"top"}
+	]
+}

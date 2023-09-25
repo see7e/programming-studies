@@ -4,6 +4,7 @@ tags: studies, programação
 use: Documentation
 languages: NULL
 dependences: NULL
+banner_icon: 📂
 ---
 
 > [`root`](./README.md)
@@ -44,9 +45,8 @@ dependences: NULL
 
 - [`SASS`](./Languages/README.md)
 
-## [`JS`](./Languages/JS/README.md)  
+## [`JS`](./Languages/JS/README.md)
 
--
 ## [`C`](./Languages/C/README.md)
 
 ## [`Python`](./Languages/PYTHON/README.md)
@@ -72,9 +72,10 @@ dependences: NULL
 
 # Courses
 
-- [CS50x](./cs50x/README.md)
+- [CS50x](./Courses/CS50x/README.md)
 - [42 - Piscine](./Courses/42/42_Walkthrugh/README.md)
-- 42 Common Core
+- [42 Common Core](./Courses/42/Common_Core/README.md)
+- [Cybersecurity Essentials - Cisco](./Courses/Cybersecurity_Essentials-Cisco/README.md)
 
 # Other
 
@@ -83,14 +84,6 @@ dependences: NULL
 - [Techinical Project Documentation](./Docs/project_documentation.md)
 - [Shell](./Docs/shell.md)
 - [Data Structures](./Docs/data_structure.md)
-    -   [Arrays](./Docs/ds_array.md)
-    -   [Linked Lists](./Docs/ds_linked_list.md)
-    -   [Stacks](./Docs/ds_stack.md)
-    -   [Queues](./Docs/ds_queue.md)
-    -   [Hash Tables](./Docs/ds_hash_table.md)
-    -   [Trees](./Docs/ds_tree.md)
-    -   [Heaps](./Docs/ds_heap.md)
-    -   [Graphs](./Docs/ds_graph.md)
 - [Big O Notation](./Docs/big_o_notation.md)
 - Algorithms
   - [Sorting Algo](./Docs/sorting_algo.md)
@@ -99,6 +92,7 @@ dependences: NULL
     - Merging Sort
     - TimSort
     - Merge Sort
+- [UML](./Docs/uml.md)
 
 # Programs
 

@@ -121,7 +121,7 @@ Ultimately these characters get stored in a *memory address* somewhere but they 
 
 When it comes to practical software engineering one of the most fundamental things we do is organize data into `data structures`.
 
-### Array
+### Arrays
 
 The most useful data structure is probably the `array` or list just like a shopping list it organizes multiple data points in order however it also maintains an index of integers that starts at zero and goes up for every new item in the list that can be useful but you don't actually need an index to create a list of items.
 
