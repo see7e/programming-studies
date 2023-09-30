@@ -9,33 +9,10 @@ banner_icon: 📂
 
 > [`root`](./README.md)
 
-# Projects
+# Roadmaps
 
-## Front End
-
-- App Game [Mosquitoes](https://github.com/see7e/Mosquitoes-WebGame)
-- Project [YourFinance](https://github.com/see7e/YourFinance) - A Financial Application
-- [`IONIC`](./Languages/IONIC/README.md)
-    - Projeto Gasolina ou Álcool
-
-## Back End
-
-- App Help Desk (App para abertura e acompanhamento de suportes técnicos) `php`
-- App Send Mail (App para criação e envio de e-mails) `php`
-- App Lista de Tarefas (`PHP` com `PDO` e `MySQL`) `php`
-- Projeto miniframework (Criação de um miniframework baseado na arquitetura **MVC**) `php`
-- [`MySQL`](./Languages/SQL/MySQL/README.md) (`MariaDB`)
-    - Projeto Banco de Dados Loja Virtual (Implementação do banco de dados de uma loja virtual)
-    - Publicação de aplicações web (`PHP` e `MySQL`) utilizando o InfintyFree
-
-
-## APIs
-
-- [`API` com Slim Framework](./API/README.md) Projeto API de Produtos
-- [`Ajax`](./Languages/Ajax/README.md)
-    - App Pesquisa Endereço (Aprenda a realizar requisições HTTP via XMLHttpRequest para API's)
-
----
+- [A Fresh Start](./Docs/fresh_start.md)
+- 
 
 # "Languages" 
 
@@ -79,7 +56,7 @@ banner_icon: 📂
 
 # Other
 
-- [Code Concepts](./Docs/code_concepts.md)
+- [101 Code Concepts](./Docs/101_code_concepts.md)
 - [Software Architeture](./Docs/software_architecture.md)
 - [Techinical Project Documentation](./Docs/project_documentation.md)
 - [Shell](./Docs/shell.md)
@@ -97,3 +74,31 @@ banner_icon: 📂
 # Programs
 
 - [QGIS](./Programs/QGIS/README.md) 
+
+---
+
+# Projects
+
+## Front End
+
+- App Game [Mosquitoes](https://github.com/see7e/Mosquitoes-WebGame)
+- Project [YourFinance](https://github.com/see7e/YourFinance) - A Financial Application
+- [`IONIC`](./Languages/IONIC/README.md)
+    - Projeto Gasolina ou Álcool
+
+## Back End
+
+- App Help Desk (App para abertura e acompanhamento de suportes técnicos) `php`
+- App Send Mail (App para criação e envio de e-mails) `php`
+- App Lista de Tarefas (`PHP` com `PDO` e `MySQL`) `php`
+- Projeto miniframework (Criação de um miniframework baseado na arquitetura **MVC**) `php`
+- [`MySQL`](./Languages/SQL/MySQL/README.md) (`MariaDB`)
+    - Projeto Banco de Dados Loja Virtual (Implementação do banco de dados de uma loja virtual)
+    - Publicação de aplicações web (`PHP` e `MySQL`) utilizando o InfintyFree
+
+
+## APIs
+
+- [`API` com Slim Framework](./API/README.md) Projeto API de Produtos
+- [`Ajax`](./Languages/Ajax/README.md)
+    - App Pesquisa Endereço (Aprenda a realizar requisições HTTP via XMLHttpRequest para API's)

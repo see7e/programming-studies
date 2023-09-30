@@ -26,7 +26,7 @@ dependences: NULL
 
 <details> <summary>Implementations</summary>
 
-[`C`](GAB/Estudos-Trabalhos/PROGRAMAÇÃO/programming-studies/Languages/C/heap_implementation.md) | [`Python`](GAB/Estudos-Trabalhos/PROGRAMAÇÃO/programming-studies/Languages/PYTHON/heap_implementation.md) | [`JavaScript`](../Front_End/JS/heap_implementation.md)
+[`C`](../Languages/C/heap_implementation.md) | [`Python`](../Languages/PYTHON/heap_implementation.md) | [`JavaScript`](../Languages/JS/heap_implementation.md)
 
 </details>
 

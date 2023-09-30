@@ -8,48 +8,45 @@ dependences: NULL
 
 <details> <summary>Table of Contents 🔖</summary>
 
-- [Intro](#intro)
 - [101](#101)
+  - [The Computer](#the-computer)
+    - [`Binary`](#binary)
+    - [`Hexadecimal`](#hexadecimal)
+    - [`Machine Code`](#machine-code)
+    - [`RAM`](#ram)
+    - [Input and Output (I/O)](#input-and-output-io)
+    - [`Kernel` - `Shell`](#kernel---shell)
+  - [Programming Languages](#programming-languages)
+  - [Data Types / Variables](#data-types--variables)
+  - [Data Structures](#data-structures)
+    - [Arrays](#arrays)
+    - [Linked List](#linked-list)
+    - [Stack](#stack)
+    - [Queue](#queue)
+    - [Hash](#hash)
+    - [Tree](#tree)
+    - [Graph](#graph)
+  - [Algorithms](#algorithms)
+    - [Functions](#functions)
+    - [Loops](#loops)
+    - [Recursion - Memory](#recursion---memory)
+    - [Performance](#performance)
+    - [Dynamic Programming](#dynamic-programming)
+  - [Paradigms](#paradigms)
+    - [Declarative](#declarative)
+    - [Imperative](#imperative)
+    - [Object-oriented programming](#object-oriented-programming)
+  - [Threads](#threads)
+  - [Network](#network)
 
 </details>
 
-# Intro
-
-> Currently listing all that I want to read before writing
-
-- code cohesion
-- code coupling
-- project documentation
-	- Code should be written in a way that promotes `readability` and is easy to understand for other developers.
-	- Good documentation can take different forms such as comments, documentation sites, and API documentation.
-	- Comments should provide meaningful explanations and not simply describe the syntax of the code.
-	- Using `type-hints` in Python code improves clarity and understanding.
-	- `docstrings` can be used to document functions, methods, classes, and modules, and tools like Auto `docstring` can assist in generating them.
-	- use of `mkdocs` alongside of `docstrings`
-- code diagnosis
-- UML
-- SOLID
-- CRUD
-- Programming Patterns
-	- Collection Classes 
-	- Junction Classes 
-- Object structure
-	- Service
-	- Interface
-	- Implementation (data and code)
-- OOD Object Oriented Design
-- OOA Object Oriented Analysis
-
-
-
-> [!INFO] 
-> [Usefull links ](links.md) 
-
+---
 # 101
 
 ## The Computer
 
-`The computer` it's just a piece of tape that holds ones and zeros along with a device that can read and write to it it's called a `turing machine` and in theory it can compute anything. 
+The computer it's just a piece of tape that holds ones and zeros along with a device that can read and write to it it's called a Turing machine and in theory it can compute anything. 
 
 At the core of modern computers we have the central processing unit if we crack it open we find a piece of silicon that contains billions of tiny `transistors` which are like microscopic on off switches the value at one of these switches is called a `bit` and is the smallest piece of information a computer can use however one bit by itself is not very useful so they come in a package of eight called a `byte`
 
@@ -65,11 +62,11 @@ So most often it's represented in a base 16 format where ten numbers and six let
 
 ### `Machine Code`
 
-As a developer when you write code in a `programming language` it will eventually be converted into *machine code* which is a *binary* format that can be decoded and executed by the `CPU` the Command Proccessing Unit.
+As a developer when you write code in a `programming language` it will eventually be converted into *machine code* which is a *binary* format that can be decoded and executed by the `CPU` the Command Processing Unit.
 
 ### `RAM`
 
-What it doesn't do though is store data for your applications for that computers have Random Access Memory or *RAM* it's like a neighborhood and inside of every house lives a *byte* every location has a `memory address` which the *CPU* can read and write to.
+What it doesn't do though is store data for your applications for that computers have Random Access Memory or *RAM* it's like a neighbourhood and inside of every house lives a *byte* every location has a `memory address` which the *CPU* can read and write to.
 
 You can think of the *CPU* and *RAM* as the brain of the computer.
 
@@ -86,10 +83,10 @@ It takes a line of text as input and produces an output this is called a `comman
 
 ## Programming Languages
 
-It's time to pick a `programming language` which is a tool that uses the `abstraction principle` to make computers practical to work with for humans by simplifying different systems layer by layer.
+It's time to pick a programming language which is a tool that uses the `abstraction principle` to make computers practical to work with for humans by simplifying different systems layer by layer.
 
 Some languages like **Python** are `interpreted` that means there's a program called an interpreter that will execute each line of code one by one other languages like **C+** are `compiled` they use a compiler to convert the entire program into *machine code*.
-
+22
 In advance before the *CPU* attempts to execute it this results in an `executable` file that can be run by the operating system without any extra dependencies.
 
 ## Data Types / Variables
@@ -204,7 +201,7 @@ When it comes to implementing your code there are always multiple ways to get th
 
 Other paradigm is `imperative` programming where your code uses statements like if and while providing explicit instructions about how to produce an outcome it's associated with `procedural` languages like C today most general purpose languages like Python, Javascript, Kotlin, Swift and so on are `multi-paradigm` which means they support all these options at the same time in addition to `object-oriented programming`.
 
-### `Object-oriented programming`
+### Object-oriented programming
 
 The idea behind **OOP** is that you use classes to write a blueprint for the data or objects in your code.  
 A `class` can encapsulate variables which are commonly called properties as well as functions which are usually called methods in this context it's a common way to organize and reuse code because classes can share behaviors between each other through `inheritance` where a subclass can extend and override the behaviors of the parent class and it opens the door to all kinds of other ideas called `design patterns`.
@@ -232,5 +229,3 @@ To establish a connection the two computers will perform a `TCP` handshake which
 Now the two computers can securely share data with the HyperText Transfer Protocol (`HTTP`) the client may request a web page then the server will respond with some html.
 
 Modern servers provide a standardized way for a client to request data which is called an Application Programming Interface (`API`) the most common architecture is `REST` where URLs are mapped to different data entities available on the server.
-
-> 108

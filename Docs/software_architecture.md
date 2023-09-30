@@ -40,8 +40,11 @@ dependences: NULL
 
 </details>
 
+---
+
+> [!QUOTE]
 > If you 're a software architect who was never programmed is kinda like a priest in a wedding, he performs the service but he can only imagine what comes next.
-> *Ron Kleinman*
+> -*Ron Kleinman*
 
 # What is software architecture?
 

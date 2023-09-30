@@ -4,6 +4,9 @@ tags: studies, programação
 use: Documentation
 languages: NULL
 dependences: NULL
+banner: "![[proggramming_banner.jpg]]"
+banner_y: 0.5
+banner_lock: true
 ---
 
 > [!INFO] 
@@ -39,8 +42,11 @@ This repo is divided in two branches, [main](https://github.com/see7e/programmin
 > If I have seen further, it is by standing on the shoulders of giants.
 > *Isaac Newton*
 
-## Progress 🏗️
+## [A Fresh start](./Docs/fresh_start.md) 🛣️
 
+Sometimes in the rush to resolve the problems that we face, the learn only to fill the gap that is presented by the obstacle. So I'll try to visit the core/basic concepts of CS, using some guidelines.
+
+## Progress 🏗️
 
 ```mermaid
 %%{
@@ -60,17 +66,13 @@ gantt
     dateFormat  DD-MM-YYYY
 
     section Courses
-    CS50 - C                    :done, c1, 02-05-2023, 28-06-2023
-    CS50 - Python               :done, c2, after c1, 03-07-2023
-    CS50 - SQL                  :done, c3, after c2, 7d
-    CS50 - HTML, CSS, JS        :done, c4, after c3, 7d
-    CS50 - Flask                :done, c5, after c4, 7d
-    CS50 - Final Project        :done, c6, after c5, 14-08-2023
+    CS50x                       :done, c1, 02-05-2023, 14-08-2023
+    Cybersecurity - Cisco       :done, c7, 25-08-2023, 11-09-2023
     42-Common Core              :milestone, 42, 02-10-2023, 0d
 
     section Other
     Python RoadMap              :active, a1, 02-05-2023, 80d
-    SQL RoadMap|PSQL|PostGIS    :active, after a1, 60d
+    SQL RoadMap|PSQL|PostGIS    :milestone, after a1, 0d
     OpenPyXL                    :done, a5, 10-05-2023, 7d 
     Pandas                      :done, after a5, 7d
     PowerBI (not started)       :milestone, 02-05-2023, 0d
@@ -91,3 +93,57 @@ About the time, if you manage to reconcile between demands intervals, great, if 
 - make it stick - The Science of Successful Learning - Peter Brown, Henry L. Roediger III, Mark A. McDaniel
 - Statistical Learning - Trevor Hastie, Robert Tibshirani
 - Design Patterns: Elements of Reusable Object-Oriented Software - Gang of Four
+
+
+> [!NOTE]
+> Currently listing all that I want to read before writing
+> - code cohesion
+> - code coupling
+> - project documentation
+> 	- Code should be written in a way that promotes `readability` and is easy to understand for > other developers.
+> 	- Good documentation can take different forms such as comments, documentation sites, and API > documentation.
+> 	- Comments should provide meaningful explanations and not simply describe the syntax of the code.
+> 	- Using `type-hints` in Python code improves clarity and understanding.
+> 	- `docstrings` can be used to document functions, methods, classes, and modules, and tools like > Auto `docstring` can assist in generating them.
+> 	- use of `mkdocs` alongside of `docstrings`
+> - code diagnosis
+> - UML
+> - SOLID
+> - CRUD
+> - Programming Patterns
+> 	- Collection Classes 
+> 	- Junction Classes 
+> - Object structure
+> 	- Service
+> 	- Interface
+> 	- Implementation (data and code)
+> - OOD Object Oriented Design
+> - OOA Object Oriented Analysis
+> - pcre [re(oniguruma), re2] / icu - regex
+> - .strftime() `C`
+> - numpy - scipy
+> - tensorflow - machine learning
+> - pytorch
+> - cpython q= `ifdef MS_WINDOWS` > `PYErr_SetFromWindosErr(err.ws);`
+> - preprocessamento em C
+> - libuv (node.js)
+> - deno x node.js
+> - openjdk/jdk(java/c)
+> - openssl
+> - elixir
+> - sistemas distribuídos
+> - kernel, driver de dispositivos
+> - userland
+> - entender a compilação em C
+> - abi - applcation bin interface
+> - xml <-> jsn (marcheling / unmarsh)
+> - estudar duplicação de memória
+> - jni
+> - cyton (.pyx) - FFI function interface
+> - PONTOS FORTES LIGUAGES
+>   - lowlevel/tcp/... - C/Rust/Nin/D
+>   - construção de ferramentas de adm/infra - C++/Py/Go/Rust
+>   - Alacritty
+> -  SISTEMAS DISTRIBUÍDOS
+>  - ffi
+>  - avx / ssi

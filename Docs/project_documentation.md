@@ -1,6 +1,8 @@
 ---
-title: Gestão Documental
-tags: studies, programação
+title: Project Documentation
+tags:
+  - studies
+  - programação
 use: Documentation
 languages: NULL
 dependences: NULL
