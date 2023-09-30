@@ -15,6 +15,7 @@ dependences:
   - [Libft](#libft)
   - [get\_next\_line](#get_next_line)
   - [ft\_printf](#ft_printf)
+  - [Born2beroot](#born2beroot)
 
 </details>
 
@@ -22,7 +23,7 @@ dependences:
 
 # Common Core
 
-## [Libft](./libft/README.md)
+## [Libft](./Libft/README.md)
 
 ## [get_next_line](./get_next_line/README.md)
 
