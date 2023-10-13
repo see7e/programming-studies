@@ -26,7 +26,10 @@
 	url = https://github.com/see7e/42-Born2beroot
 
 # Projects
-## TranslateGPT
 [submodule "TranslateGPT"]
 	path = Projects/TranslateGPT
 	url = https://github.com/see7e/TranslateGPT
+
+[submodule "42-codespace-builder"]
+	path = Projects/42-codespace-builder
+	url = https://github.com/see7e/42-codespace-builder
