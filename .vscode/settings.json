@@ -1,0 +1,11 @@
+{
+    "files.associations": {
+        "libft.h": "c",
+        "get_next_line.h": "c",
+        "get_next_line_bonus.h": "c",
+        "ft_printf_bonus.h": "c",
+        "ft_printf.h": "c"
+    },
+    "editor.rulers": [80],
+    "editor.tabSize": 4,
+}

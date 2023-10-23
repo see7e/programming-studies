@@ -1,6 +1,7 @@
 ---
 title: Maratona CiberEducação Cisco Brasil - 7ª Onda - 2023
-alias: Cybersecurity Essentials - Cisco
+aliases:
+- Cybersecurity Essentials - Cisco
 tags: programação, cybersecurity, cisco
 use: Documentation
 languages: NULL
@@ -8,6 +9,7 @@ dependences: NULL
 ---
 [![cisco-badge|100](https://images.credly.com/size/340x340/images/054913b2-e271-49a2-a1a4-9bf1c1f9a404/CyberEssentials.png)](https://www.credly.com/badges/83606b51-352e-4481-b727-776615cee802/public_url)
 
+#to_translate 
 # [Course Homepage](https://lms.netacad.com/course/view.php?id=2049804)
 > [Maratona CiberEducação Cisco Brasil - 7ª Onda - 2023](https://community.cisco.com/t5/programa-cibereduca%C3%A7%C3%A3o-cisco-do-brasil/maratona-cibereduca%C3%A7%C3%A3o-cisco-brasil-7%C2%AA-onda-2023/ba-p/4891262)
 

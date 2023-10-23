@@ -1,6 +1,7 @@
 ---
 title: Capítulo 1 - Cibersegurança
-alias: Cibersegurança - Um Mundo de Especialistas e Criminosos
+aliases:
+- Cibersegurança - Um Mundo de Especialistas e Criminosos
 tags: programação, cisco, cybersecurity
 use: Documentation
 languages: NULL
