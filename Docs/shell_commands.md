@@ -1,10 +1,13 @@
 ---
 title: Shell
-tags: programação, studies
+tags:
+  - programação
+  - studies
 use: Documentation
-languages: Shell
-dependences: NULL
+languages: Bash, Shell
+dependences:
 ---
+#to_review  #to_translate 
 
 <details><summary>Table of Contents 🔖</summary>
 
@@ -28,10 +31,12 @@ dependences: NULL
 
 </details>
 
+---
 
 # Shell
 ## Comandos shell
   > Autor: Luciano Hugo
+
 
 `~$ man ls` : Neste caso estamos requisitando o manual do comando ls. Será mostrado informações a respeito do comando ls, e man pode ser utilizado para invocar qualquer outro manual de algum outro comando. </br>
 `~$ cd [caminho_para_diretorio]`: Acessa pasta de arquivos de acordo com o caminho passado. </br>
