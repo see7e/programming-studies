@@ -48,6 +48,9 @@ Sometimes in the rush to resolve the problems that we face, the learn only to fi
 
 ## Progress 🏗️
 
+This graph reflects the themes that I'm studying, and the progress of each one. The tree divisions will follow the three different contexts (work, 42 and personal).
+
+
 ```mermaid
 %%{
   init: {
@@ -62,26 +65,46 @@ Sometimes in the rush to resolve the problems that we face, the learn only to fi
 }%%
 
 gantt
-	title My Roadmap
-    dateFormat  DD-MM-YYYY
+  title My Roadmap
+  dateFormat DD-MM-YYYY
+  tickInterval 1month
 
-    section Courses
-    CS50x                       :done, c1, 02-05-2023, 14-08-2023
-    Cybersecurity - Cisco       :done, c7, 25-08-2023, 11-09-2023
-    42-Common Core              :milestone, 42, 02-10-2023, 0d
+  section Work
+    %% October
+    Networking              :active, 02-10-2023, 30d
+    Authentication Systems  :active, 02-10-2023, 01-11-2023
+    %% November
+    Backend                 :20d
 
-    section Other
-    Python RoadMap              :active, a1, 02-05-2023, 80d
-    SQL RoadMap|PSQL|PostGIS    :milestone, after a1, 0d
-    OpenPyXL                    :done, a5, 10-05-2023, 7d 
-    Pandas                      :done, after a5, 7d
-    PowerBI (not started)       :milestone, 02-05-2023, 0d
-    PowerApps (not started)     :milestone, 0d
+  section 42
+    %% October
+    Libft                   :active, 02-10-2023, 16-10-2023
+    ft_printf               :17-10-2023, 15d
+    %% November
+    Get_Next_Line           :15d
+    Born2beroot             :5d
+    %% December
+
+  section Personal
+    %% October
+    Operating Systems       :active, 02-10-2023, 30d
+    Sockets                 :milestone, 16-10-2023, 0d
+    Processos e threads     :milestone, 17-10-2023, 0d
+    %% November
+    Competitive Programming :01-11-2023, 30d
+    Code cohesion           :01-11-2023, 7d
+    Code coupling           :7d
+    Memory Management       :15d
+    %% December
+    Framewok implementation :01-12-2023, 30d
+    C Compilation           :01-12-2023, 7d
+    Code Diagnosis          :7d
+
+  section TimeLine
+    timespan=thee months :active, 01-10-2023, 31-12-2023
+
 ```
-
-Basically, I set aside the days when I have more time to study C and Python, which are the biggest demands. Then comes SQL (Postgre and PostGis) along with PowerBI and PowerApps, for application in the company.
-
-About the time, if you manage to reconcile between demands intervals, great, if not... Use the reserved time per day.
+> Here's the [archive](progress_archive.md). 
 
 ## First time with Markdown? 📑
 > Enter [here](first-time.md)
@@ -90,60 +113,14 @@ About the time, if you manage to reconcile between demands intervals, great, if 
 
 ## Readings 📚
 
-- make it stick - The Science of Successful Learning - Peter Brown, Henry L. Roediger III, Mark A. McDaniel
+- Modern Operating Systems - Andrew S. Tanenbaum, Herbert Bos
 - Statistical Learning - Trevor Hastie, Robert Tibshirani
-- Design Patterns: Elements of Reusable Object-Oriented Software - Gang of Four
+- Design Patterns: Elements of Reusable Object-Oriented Software - Erich Gamma, Richard Helm, Ralph Johnson, John Vlissides
+- Compilers - Alfred V. Aho, Monica S. Lam, Ravi Sethi, Jeffrey D. Ullman
+- Clean Code - Robert C. Martin
+- Refactoring - Martin Fowler, Kent Beck, John Brant, William Opdyke, Don Roberts
+- Pragmatic Programmer - From Journeyman to Master - Andrew Hunt, David Thomas
+- Make it stick - The Science of Successful Learning - Peter Brown, Henry L. Roediger III, Mark A. McDaniel
+- Computer Networking - Andrew S. Tanenbaum, David J. Wetherall
 
-
-> [!NOTE]
-> Currently listing all that I want to read before writing
-> - code cohesion
-> - code coupling
-> - project documentation
-> 	- Code should be written in a way that promotes `readability` and is easy to understand for > other developers.
-> 	- Good documentation can take different forms such as comments, documentation sites, and API > documentation.
-> 	- Comments should provide meaningful explanations and not simply describe the syntax of the code.
-> 	- Using `type-hints` in Python code improves clarity and understanding.
-> 	- `docstrings` can be used to document functions, methods, classes, and modules, and tools like > Auto `docstring` can assist in generating them.
-> 	- use of `mkdocs` alongside of `docstrings`
-> - code diagnosis
-> - UML
-> - SOLID
-> - CRUD
-> - Programming Patterns
-> 	- Collection Classes 
-> 	- Junction Classes 
-> - Object structure
-> 	- Service
-> 	- Interface
-> 	- Implementation (data and code)
-> - OOD Object Oriented Design
-> - OOA Object Oriented Analysis
-> - pcre [re(oniguruma), re2] / icu - regex
-> - .strftime() `C`
-> - numpy - scipy
-> - tensorflow - machine learning
-> - pytorch
-> - cpython q= `ifdef MS_WINDOWS` > `PYErr_SetFromWindosErr(err.ws);`
-> - preprocessamento em C
-> - libuv (node.js)
-> - deno x node.js
-> - openjdk/jdk(java/c)
-> - openssl
-> - elixir
-> - sistemas distribuídos
-> - kernel, driver de dispositivos
-> - userland
-> - entender a compilação em C
-> - abi - applcation bin interface
-> - xml <-> jsn (marcheling / unmarsh)
-> - estudar duplicação de memória
-> - jni
-> - cyton (.pyx) - FFI function interface
-> - PONTOS FORTES LIGUAGES
->   - lowlevel/tcp/... - C/Rust/Nin/D
->   - construção de ferramentas de adm/infra - C++/Py/Go/Rust
->   - Alacritty
-> -  SISTEMAS DISTRIBUÍDOS
->  - ffi
->  - avx / ssi
+---

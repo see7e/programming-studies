@@ -20,7 +20,7 @@ banner_icon: 📂
 
 ## [`CSS`](./Languages/CSS/README.md)
 
-- [`SASS`](./Languages/README.md)
+- [`SASS`](./Languages/CSS/SASS.md)
 
 ## [`JS`](./Languages/JS/README.md)
 
@@ -59,7 +59,7 @@ banner_icon: 📂
 - [101 Code Concepts](./Docs/101_code_concepts.md)
 - [Software Architeture](./Docs/software_architecture.md)
 - [Techinical Project Documentation](./Docs/project_documentation.md)
-- [Shell](./Docs/shell.md)
+- [Shell Commands](./Docs/shell_commands.md)
 - [Data Structures](./Docs/data_structure.md)
 - [Big O Notation](./Docs/big_o_notation.md)
 - Algorithms
@@ -95,7 +95,6 @@ banner_icon: 📂
 - [`MySQL`](./Languages/SQL/MySQL/README.md) (`MariaDB`)
     - Projeto Banco de Dados Loja Virtual (Implementação do banco de dados de uma loja virtual)
     - Publicação de aplicações web (`PHP` e `MySQL`) utilizando o InfintyFree
-
 
 ## APIs
 

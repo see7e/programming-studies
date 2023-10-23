@@ -10,10 +10,11 @@ dependences: NULL
 
 > I'll develop some bash script to do this for you in the future
 
-1. Download the `obidian` branch from the linked repos below.
+1. Download the `obidian` branch from the linked repos below you can follow the [submodules file](./.gitmodules).
 	1. [42_Walkthrugh](https://github.com/the-8-bits/42_Walkthrugh)
 	2. [42-libft](https://github.com/the-8-bits/42-libft)
 	3. [CS50x](https://github.com/see7e/cs50x/tree/obsidian)
+	4. ...
 2.  Recreate the same structure (inside `studies/`)here:
 	```
 	.root
