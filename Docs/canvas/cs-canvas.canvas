@@ -58,12 +58,15 @@
 		{"id":"08e96da56bcc83d5","type":"text","text":"CPU","x":-306,"y":-1200,"width":96,"height":60},
 		{"id":"5117ed4da0f0a3ff","type":"text","text":"# Hardware","x":4,"y":-1120,"width":186,"height":60},
 		{"id":"4e2c6f1a74d7e863","type":"text","text":"#to_review \n\nFirst I will \"structure\" the nodes and in each one there will be a file listing the sub information, to later distribute into more specific topic files\n`RM` = Roadmap\n","x":-65,"y":-1540,"width":250,"height":340,"color":"2"},
-		{"id":"c7531f6681043046","type":"text","text":"keywords\n- operands\n\t- memory\n\t- reisters\n- registers\n\t- base \n\t- limit\n\t- special registers\n\t\t- Program Counter (a pointer?)\n\t\t- stack pointer\n\t\t- Program Status Word\n- Calls\n\t- system\n\t- routine\n- Caching\n- vitrual memory\n- MMU\n- context switching\n- common memory word\n- busy waiting\n- interruptions\n\t- vectors \n- Process (as an abstraction)\n\t- address spaces\n\t\t- management, memory protection\n\t\t- space management\n\t\t- virtual memory\n\t- process table\n\t- kernel image\n\t- child\n\t- intercommunication\n\t- alarm signals\n* file system\n* hierarquia de processos\n- nome de caminho\n- diretorio-raiz\n- caminho absoluto\n* file descriptor\n* montagem do sistema de arquivos\n* pipe (file, process)\n* chamada de sistema especial\n* subsistema (do OS) de I/O\n* ","x":212,"y":-1540,"width":308,"height":340,"color":"2"},
+		{"id":"c7531f6681043046","type":"text","text":"keywords\n- operands\n\t- memory\n\t- reisters\n- registers\n\t- base \n\t- limit\n\t- special registers\n\t\t- Program Counter (a pointer?)\n\t\t- stack pointer\n\t\t- Program Status Word\n- Calls\n\t- system\n\t- routine\n- Caching\n- vitrual memory\n- MMU\n- context switching\n- common memory word\n- busy waiting \n- interruptions\n\t- vectors \n- Process (as an abstraction)\n\t- address spaces\n\t\t- management, memory protection\n\t\t- space management\n\t\t- virtual memory\n\t- process table\n\t- kernel image\n\t- child\n\t- intercommunication\n\t- alarm signals\n\t- identifier\n* file system\n* hierarquia de processos\n- nome de caminho\n- diretorio-raiz\n- caminho absoluto\n* file descriptor\n* montagem do sistema de arquivos\n* pipe (file, process)\n* subsistema (do OS) de I/O\n* chamadas de sistema\n\t* chamada de sistema especial\n\t* fork / forkbomb\n\t* waitpid\n\t* statloc\n\t* exec\n\t\t* execl\n\t\t* execv\n\t\t* execle\n\t\t* execve\n\t* lseek -> FILE*\n\t* stat / fstat\n\t* chmod\n\t* ","x":212,"y":-1540,"width":308,"height":340,"color":"2"},
 		{"id":"3994a832b8a5ab1f","type":"text","text":"Basic cycle","x":-524,"y":-1200,"width":144,"height":60},
 		{"id":"fef1069c6086289a","type":"text","text":"MMU","x":-511,"y":-1090,"width":107,"height":60},
 		{"id":"d42572e85a3980c2","type":"text","text":"![data_structure](../data_structure.md#definition) ","x":360,"y":-365,"width":620,"height":320},
 		{"id":"198aebb7f09d987a","type":"text","text":"Linux\n\n- File / Folder Sys Structure\n- `tempfs`\n- virtual HD\n- `.vdi`\n- `SCSI1`\n- `pri/log`\n- primary x logical\n- mountpoint\n- `Ext4`, `journal.sys`\n- swap areas\n- `debian.org`\n- HTTP proxy\n- `GRUB`\n- KDE","x":340,"y":-660,"width":222,"height":150},
-		{"id":"99a526bc3cd1a049","type":"text","text":"Interfaces\n- Gráfica\n\t- Gnome\n\t- KDE\n- Terminal\n\t- X11","x":363,"y":-473,"width":176,"height":50}
+		{"id":"99a526bc3cd1a049","type":"text","text":"Interfaces\n- Gráfica\n\t- Gnome\n\t- KDE\n- Terminal\n\t- X11","x":363,"y":-473,"width":176,"height":50},
+		{"id":"ceb0d26686d6eddd","type":"text","text":"Directory/File management","x":1300,"y":-852,"width":250,"height":60},
+		{"id":"ceb812cee8c2dbe4","type":"text","text":"Misc","x":1300,"y":-780,"width":250,"height":60},
+		{"id":"b6fda8cdd04a9430","type":"text","text":"Process management","x":1300,"y":-920,"width":250,"height":60}
 	],
 	"edges":[
 		{"id":"34e03dfaf8411d57","fromNode":"bfe7490e4e82751e","fromSide":"bottom","toNode":"b8c7c8c19974227b","toSide":"top","color":"1"},
@@ -128,6 +131,9 @@
 		{"id":"608d10ba51c5d64d","fromNode":"d7905b7ff9c91ce2","fromSide":"left","toNode":"fef1069c6086289a","toSide":"right"},
 		{"id":"70a2f630f933ea9b","fromNode":"08e96da56bcc83d5","fromSide":"left","toNode":"fef1069c6086289a","toSide":"right"},
 		{"id":"1ce3bd4ce53ffe22","fromNode":"7d51dfd31c35eb57","fromSide":"right","toNode":"507d85d82730618d","toSide":"right","fromEnd":"arrow","label":"create\nremove\nread\nwrite"},
-		{"id":"30dd77d849b5c451","fromNode":"198aebb7f09d987a","fromSide":"bottom","toNode":"99a526bc3cd1a049","toSide":"top"}
+		{"id":"30dd77d849b5c451","fromNode":"198aebb7f09d987a","fromSide":"bottom","toNode":"99a526bc3cd1a049","toSide":"top"},
+		{"id":"67d8ed65ece6fcc3","fromNode":"7d51dfd31c35eb57","fromSide":"right","toNode":"b6fda8cdd04a9430","toSide":"left"},
+		{"id":"5daf064889cae29b","fromNode":"7d51dfd31c35eb57","fromSide":"right","toNode":"ceb0d26686d6eddd","toSide":"left"},
+		{"id":"599d8b5bf8e824a2","fromNode":"7d51dfd31c35eb57","fromSide":"right","toNode":"ceb812cee8c2dbe4","toSide":"left"}
 	]
 }

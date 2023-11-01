@@ -35,8 +35,31 @@ This repo is divided in two branches, [main](https://github.com/see7e/programmin
 
 ![Galaxy|500](./src/img/prog-galaxy.png)
 
+# Process 🧩
 
-# [List of Documents](DIRECTORY.md) 📜
+As any (very) systematic person and with a great chance of my mind to escape the focus state, that is to me a very challenging task, I need a flow to guide me through the process of learning.
+
+```mermaid
+flowchart TD
+    A(Topic \n Question \n fa:fa-question) -->|Inputs| B
+    B[Catch] --> C{Screening \n fa:fa-filter}
+    C -->|blurting \n method| D[Synthesize]
+    C -->|meshing \n information| D[Synthesize]
+    D --> E[Store]
+    E -->|Review| D
+    E -.->|Expand| A
+```
+
+When a question or topic of interest shows up, they're added in a list, during the *Catch* process. This is just a big queue of elements that will be analysed (*Screening*) later. When this time commes a element (or group of elements), will be selected, to be studied this can be divided into two groups depending on the available time to be spent:
+
+- Using the Blurting method: The element will be studied, and a draft will be created in a sketchbook using only the recalled information.
+- Using the directly information of the gathered articles creating a mesh of information, and a draft will be created.
+
+With the draft created, the information will be translated to a document located in this vault, and the information will be stored in a way that can be easily retrieved. Here the process can run in a loop, until the document has a good quality, there's a possibility of the document receive a `#toreview` tag, and the review process will be triggered later.
+
+Other possibility is the *Expand* process, where the previous steps may revialed and unlisted topic, and the process will start again.
+
+## [List of Documents](DIRECTORY.md) 📜
 
 > [!QUOTE] 
 > If I have seen further, it is by standing on the shoulders of giants.
@@ -74,11 +97,11 @@ gantt
     Networking              :active, 02-10-2023, 30d
     Authentication Systems  :active, 02-10-2023, 01-11-2023
     %% November
-    Backend                 :20d
+    Backend                 :30d
 
   section 42
     %% October
-    Libft                   :active, 02-10-2023, 16-10-2023
+    Libft                   :done, 02-10-2023, 25-10-2023
     ft_printf               :17-10-2023, 15d
     %% November
     Get_Next_Line           :15d
@@ -87,7 +110,7 @@ gantt
 
   section Personal
     %% October
-    Operating Systems       :active, 02-10-2023, 30d
+    Operating Systems       :active, 02-10-2023, 31-12-2023
     Sockets                 :milestone, 16-10-2023, 0d
     Processos e threads     :milestone, 17-10-2023, 0d
     %% November

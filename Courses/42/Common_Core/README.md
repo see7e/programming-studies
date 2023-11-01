@@ -12,7 +12,7 @@ dependences:
 <details><summary>Table of Contents 🔖</summary>
 
 - [Common Core](#common-core)
-  - [Libft](#libft)
+  - [](#)
   - [ft\_printf](#ft_printf)
   - [get\_next\_line](#get_next_line)
   - [Born2beroot](#born2beroot)
@@ -27,7 +27,7 @@ dependences:
 
 ![42 Common Core - canvas](./42_Common_Core-canvas.canvas)
 
-## [Libft](./Libft/README.md)
+## [![Libft|150](https://raw.githubusercontent.com/byaliego/42-project-badges/main/badges/libftm.png)](./Libft/README.md)
 
 This is the first project of the 42 Common Core. It consists of re-writing some of the functions of the C standard library, as well as some other useful functions.
 

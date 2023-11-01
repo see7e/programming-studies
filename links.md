@@ -16,9 +16,10 @@ dependences: NULL
 
 <details><summary>Table of Contents 🔖</summary>
 
-- [Certifications](#certifications)
+- [Certifications/Courses](#certificationscourses)
   - [CS50x `free`](#cs50x-free)
   - [42 `free`](#42-free)
+  - [CS360/367 -- Systems Programming `free`](#cs360367----systems-programming-free)
   - [AWS](#aws)
   - [Azure](#azure)
   - [Google](#google)
@@ -35,7 +36,7 @@ dependences: NULL
   - [Python](#python)
   - [SQL](#sql)
 - [Other](#other)
-  - [Git](#git)
+  - [Git / Github](#git--github)
   - [...](#)
 
 </details>
@@ -48,7 +49,7 @@ dependences: NULL
 - [CodeWars](https://www.codewars.com) 
 - [EggHead](https://egghead.io/q?access_state=free) 
 
-# Certifications
+# Certifications/Courses
 
 ## CS50x `free`
 
@@ -70,6 +71,15 @@ dependences: NULL
 - [RP 42](https://github.com/alexandregv/RP42) - Discord: Indicate to your discord friend your location at the Cluster
 - [Better Black Hole (42 Intra)](https://chrome.google.com/webstore/detail/better-black-hole-42-intr/oimhggembfdoaimpkppcpdjnfejiakbf) 
 - [42_CheatSheet](https://github.com/agavrel/42_CheatSheet) 
+
+
+## CS360/367 -- Systems Programming `free`
+
+- [CS360/367 -- Systems Programming](http://web.eecs.utk.edu/~jplank/plank/classes/cs360/) 
+- [Index of /~jplank/plank/classes/cs360/360](http://web.eecs.utk.edu/~jplank/plank/classes/cs360/360/) 
+- [Lecture Notes](http://web.eecs.utk.edu/~jplank/plank/classes/cs360/lecture_notes.html) 
+- [Labs](http://web.eecs.utk.edu/~jplank/plank/classes/cs360/labs.html)
+- [Tests](http://web.eecs.utk.edu/~jplank/plank/classes/cs360/tests.html) 
 
 ## AWS
 
@@ -113,6 +123,7 @@ dependences: NULL
 
 - [Cyber Security Best Practices for Developers](https://www.educative.io/courses/cyber-security-best-practices-for-developers) <img src="https://images.crunchbase.com/image/upload/c_lpad,f_auto,q_auto:eco,dpr_1/mlntuhwmyfm4wbiecuiv" width="61"> 
 - [Web Application Security for the Everyday Software Engineer](https://www.educative.io/courses/web-application-security-everyday-software-engineer) <img src="https://images.crunchbase.com/image/upload/c_lpad,f_auto,q_auto:eco,dpr_1/mlntuhwmyfm4wbiecuiv" width="61"> 
+- [Malware Development: Processes, Threads, and Handles](https://www.youtube.com/watch?v=aNEqC-U5tHM) <img src="https://img.shields.io/badge/YouTube-%23FF0000.svg?style=for-the-badge&logo=YouTube&logoColor=white" width="61"> 
 
 # System Design
 
@@ -142,6 +153,7 @@ dependences: NULL
 - [why do void pointers even exist?](https://www.youtube.com/watch?v=t7CUti_7d7c) <img src="https://img.shields.io/badge/YouTube-%23FF0000.svg?style=for-the-badge&logo=YouTube&logoColor=white" width="61"> 
 - [Learn C from Scratch](https://www.educative.io/courses/learn-c-from-scratch) <img src="https://images.crunchbase.com/image/upload/c_lpad,f_auto,q_auto:eco,dpr_1/mlntuhwmyfm4wbiecuiv" width="61">`*` 
 - [C Programming for Experienced Engineers](https://www.educative.io/courses/c-programming-experienced-devs) <img src="https://images.crunchbase.com/image/upload/c_lpad,f_auto,q_auto:eco,dpr_1/mlntuhwmyfm4wbiecuiv" width="61">`*` 
+- [Unix Processes in C](https://www.youtube.com/playlist?list=PLfqABt5AS4FkW5mOn2Tn9ZZLLDwA3kZUY) <img src="https://img.shields.io/badge/YouTube-%23FF0000.svg?style=for-the-badge&logo=YouTube&logoColor=white" width="61"> 
 - [Advanced Programming Techniques in C](https://www.educative.io/courses/advanced-programming-techniques-in-c) <img src="https://images.crunchbase.com/image/upload/c_lpad,f_auto,q_auto:eco,dpr_1/mlntuhwmyfm4wbiecuiv" width="61">`*` 
 - Makefiles
 	- [w/ examples](https://makefiletutorial.com/) 
