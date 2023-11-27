@@ -154,6 +154,17 @@ classDiagram
 
 ---
 
+
+> [!TIP]
+> To implement
+> - Using `type-hints` in Python code improves clarity and understanding.
+>   ```python
+>   def greeting(name: str) -> str:
+>     return 'Hello ' + name
+>   ```
+> 	- `docstrings` can be used to document functions, methods, classes, and modules, and tools like > Auto `docstring` can assist in generating them.
+> 	- use of `mkdocs` alongside of `docstrings`
+
 # Learn_the_Basics
 
 Python is a high-level, interpreted, general-purpose programming language. Its design philosophy emphasizes code readability with the use of significant indentation. Python is dynamically-typed and garbage-collected.

@@ -14,6 +14,7 @@ dependences:
 - [Roadmap Mind Map](#roadmap-mind-map)
 - [Studies List](#studies-list)
   - [42 related topics](#42-related-topics)
+- [Queue Topic List](#queue-topic-list)
 
 </details>
 
@@ -35,17 +36,33 @@ dependences:
 
 # Studies List 
 
-Here's an updated table that includes the additional topics and breaks down your schedule for each day of the week:
-
-| Day of the Week | Morning                             | Afternoon                                      | Evening                         |
-|-----------------|-------------------------------------|------------------------------------------------|---------------------------------|
-| Monday          | Software Architecture                | Virtualization                                | Low-Level Programming (C - 42) |
-| Tuesday         | APIs                                | GitHub Actions and Docker                     | Memory Management and Garbage Collection |
-| Wednesday       | Authentication Systems (LDAP, OAuth, SAML) | Low-Level Programming (C - 42)          | Sockets and Networking         |
-| Thursday        | Backend Development (Go, Python)    | Virtualization                                | Operating Systems (Kernel, Userland) |
-| Friday          | Virtualization                       | GitHub Actions and Docker                     | Code Cohesion and Coupling     |
-| Saturday        | Low-Level Programming (C - 42)       | Code Diagnosis (Debugging)    | -    |
-| Sunday (Relax)  | -                   | -                            | -            |
+> [!NOTE]
+> Currently listing all that I want to read/study before writing
+> **Work**:
+> - APIs
+> - Backend (Python, Go, ~~Rust~~) [focusing]
+> - Systems Architecture
+> - ~~Authentication Systems (LDAP, OAuth, SAML)~~
+> - Azure Cloud
+> 
+> **42**:
+> - Algorithms (C)
+> - Data Structures
+> - Linux / Unix / Shell / POSIX
+> - Understanding C Compilation
+> - Memory Management, Garbage Collection
+> 
+> **Myself**:
+> - Threads
+> - Time to Live (TTL)
+> - Networking (TCP/IP, UDP, HTTP, HTTPS, WebSocket, REST, SOAP, RPC)
+> - Operating Systems
+>   - Kernel, Device Drivers
+>   - Userland
+> - Code Cohesion
+> - Code Coupling
+> - Code Diagnosis (Debugging)
+>   - Log Levels: Debug, Info, Warning, Error, Critical
 
 
 ## 42 related topics 
@@ -78,49 +95,9 @@ Here's an updated table that includes the additional topics and breaks down your
 
 14. **Low-Level Libraries:** Get to know low-level libraries like the Standard C Library (libc) and system-specific libraries (e.g., the Linux API) that can help in your projects.
 
-
-> [!NOTE]
-> Currently listing all that I want to read/study before writing
-> Work:
-> - APIs
-> - Backend (Go, Python)
-> - Systems Architecture
-> - Authentication Systems (LDAP, OAuth, SAML)
-> - Azure Cloud
-> 
-> 42:
-> - Algorithms (C)
-> - Data Structures
-> - Linux / Unix / Shell / POSIX
-> - Understanding C Compilation
-> - Memory Management, Garbage Collection
-> 
-> Myself:
-> - Sockets
-> - Threads
-> - Time to Live (TTL)
-> - Networking (TCP/IP, UDP, HTTP, HTTPS, WebSocket, REST, SOAP, RPC)
-> - Operating Systems
->   - Kernel, Device Drivers
->   - Userland
-> - Code Cohesion
-> - Code Coupling
-> - Code Diagnosis (Debugging)
->   - Log Levels: Debug, Info, Warning, Error, Critical
-
 ---
 
-> [!TIP]
-> to implement
-> - Using `type-hints` in Python code improves clarity and understanding.
->   ```python
->   def greeting(name: str) -> str:
->     return 'Hello ' + name
->   ```
-> 	- `docstrings` can be used to document functions, methods, classes, and modules, and tools like > Auto `docstring` can assist in generating them.
-> 	- use of `mkdocs` alongside of `docstrings`
-
----
+# Queue Topic List
 
 > - SOLID
 > - CRUD

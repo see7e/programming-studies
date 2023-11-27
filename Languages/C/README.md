@@ -13,6 +13,54 @@ dependences: NULL
 
 ---
 
+# Variables
+
+C language helps you with providing a wide range of variable varieties for different programming purposes, as described below.
+
+- Local variables
+- Global variables
+- Static variables
+- External variables
+- Automatic variables
+
+
+## Local Variables
+
+Variables that are declared inside the functions with the keyword local are called local variables. The local variable's scope is inside the function in which it is declared.
+
+```c
+#include <stdio.h>
+
+int main()
+{ // scope of main function
+	int a = 5;
+	printf("%d", a);
+	return 0;
+} // scope of main function
+```
+
+## Global variables 
+
+Variables declared outside the functions with the keyword global are called global variables. Global variables can be accessed by multiple functions defined in the program.
+
+```c
+#include <stdio.h>
+
+float PI = 3.14; // global variable
+
+int area_of_circle()
+{
+	int r = 5; // local variable
+	return (PI*r*r);
+}
+
+int main()
+{
+	printf("Area of circle (r=5): %d,"circle());
+	return 0;
+}
+```
+
 ## Static Variables
 
 **What are Static Variables?**
@@ -38,7 +86,6 @@ int main() {
     countCalls();  // Output: Function has been called 1 times.
     countCalls();  // Output: Function has been called 2 times.
     countCalls();  // Output: Function has been called 3 times.
-
     return 0;
 }
 ```
@@ -55,6 +102,17 @@ Static variables are beneficial in various scenarios, such as:
 
 Static variables are a powerful feature in programming that allows data to persist across function calls or throughout a program's execution. They are particularly useful for scenarios where you need to maintain state, count events, or cache data efficiently. However, it's essential to use them judiciously and understand their scope to avoid unexpected behavior in your code. When employed correctly, static variables can enhance the clarity and efficiency of your programs.
 
+
+## External Variables
+
+External variables share the variables among the multiple C files. The `extern` keyword is used in the C programming language to declare external variables.
+
+## Automatic Variables
+
+Variables declared with `auto` keywords are known as automatic variables. The variables declared inside the block of functions are automatic variables by default. The scope of automatic variables is inside the block in which it is declared.
+
+
+# Functions
 ## Variadic Functions
 
 [Variadic functions](https://www.geeksforgeeks.org/variadic-function-templates-c/) are [functions](https://www.geeksforgeeks.org/functions-in-c/) that can take a variable number of [arguments](https://www.geeksforgeeks.org/command-line-arguments-in-c-cpp/). In [C programming](https://www.geeksforgeeks.org/c/), a variadic function adds flexibility to the program. It takes one fixed argument and then any number of arguments can be passed. The variadic function consists of at least one fixed variable and then an ellipsis(…) as the last parameter.
@@ -113,24 +171,18 @@ The following simple [C program](https://www.geeksforgeeks.org/c/) will demonstr
 int AddNumbers(int n, ...)
 {
 	int Sum = 0;
-
 	// Declaring pointer to the
 	// argument list
 	va_list ptr;
-
 	// Initializing argument to the
 	// list pointer
 	va_start(ptr, n);
-
 	for (int i = 0; i < n; i++)
-
 		// Accessing current variable
 		// and pointing to next one
 		Sum += va_arg(ptr, int);
-
 	// Ending argument list traversal
 	va_end(ptr);
-
 	return Sum;
 }
 
@@ -138,19 +190,14 @@ int AddNumbers(int n, ...)
 int main()
 {
 	printf("\n\n Variadic functions: \n");
-
 	// Variable number of arguments
 	printf("\n 1 + 2 = %d ",
 		AddNumbers(2, 1, 2));
-
 	printf("\n 3 + 4 + 5 = %d ",
 		AddNumbers(3, 3, 4, 5));
-
 	printf("\n 6 + 7 + 8 + 9 = %d ",
 		AddNumbers(4, 6, 7, 8, 9));
-
 	printf("\n");
-
 	return 0;
 }
 
@@ -179,24 +226,18 @@ int LargestNumber(int n, ...)
 	// Declaring pointer to the
 	// argument list
 	va_list ptr;
-
 	// Initializing argument to the
 	// list pointer
 	va_start(ptr, n);
-
 	int max = va_arg(ptr, int);
-
 	for (int i = 0; i < n-1; i++) {
-
 		// Accessing current variable
 		// and pointing to next
 		int temp = va_arg(ptr, int);
 		max = temp > max ? temp : max;
 	}
-
 	// End of argument list traversal
 	va_end(ptr);
-
 	return max;
 }
 
@@ -204,19 +245,14 @@ int LargestNumber(int n, ...)
 int main()
 {
 	printf("\n\n Variadic functions: \n");
-
 	// Variable number of arguments
 	printf("\n %d ",
 		LargestNumber(2, 1, 2));
-
 	printf("\n %d ",
 		LargestNumber(3, 3, 4, 5));
-
 	printf("\n %d ",
 		LargestNumber(4, 6, 7, 8, 9));
-
 	printf("\n");
-
 	return 0;
 }
 
@@ -233,7 +269,7 @@ Variadic functions:
 ```
 
 
-## Libraries
+# Libraries
 
 ### Static x Dynamic
 

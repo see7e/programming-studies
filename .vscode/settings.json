@@ -12,6 +12,13 @@
         "editor.rulers": [80]
     },
 
+    "[go]": {
+        "editor.formatOnSave": false,
+        "editor.codeActionsOnSave": {
+            "source.organizeImports": true
+        },        
+    },
+
     // General settings
     "files.associations": {
         "libft.h": "c",
@@ -20,10 +27,35 @@
         "ft_printf_bonus.h": "c",
         "ft_printf.h": "c"
     },
+    "editor.useTabStops": true,
     "editor.tabSize": 4,
     "editor.renderWhitespace": "selection",
     
+    // Extensions settings
+    
     // 42: Header extension
     "42header.username": "gabrodri",
-    "42header.email": "gabrodri@student.42.fr"
+    "42header.email": "gabrodri@student.42.fr",
+
+    // Go extensions
+    "go.inferGopath": false,
+    //"go.buildOnSave": "workspace",
+    "go.lintOnSave": "package",
+    "go.vetOnSave": "package",
+    "go.buildTags": "",
+    "go.buildFlags": [],
+    "go.lintFlags": [],
+    "go.vetFlags": [],
+    "go.coverOnSave": false,
+    "go.useCodeSnippetsOnFunctionSuggest": false,
+    // "go.formatTool": "goreturns",
+    "go.gocodeAutoBuild": false,
+    "go.useLanguageServer": true,
+    "go.alternateTools": {
+      "go-langserver": "gopls", 
+    },
+    "go.languageServerExperimentalFeatures": {
+      "format": true,
+      "autoComplete": true
+    },
 }

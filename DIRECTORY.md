@@ -26,6 +26,8 @@ banner_icon: 📂
 
 ## [`C`](./Languages/C/README.md)
 
+## [`Go`](./Languages/Go/README.md)
+
 ## [`Python`](./Languages/PYTHON/README.md)
 
 - [`PyQGis`](./Languages/PYTHON/PYQGIS/README.md)
