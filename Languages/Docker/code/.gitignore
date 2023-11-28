@@ -1,0 +1,10 @@
+# Supress the Django project / application
+/setup/
+/myapp/
+/manage.py
+/db.sqlite3
+
+# Override / supress the Python virtual environment
+**/myvenv/
+**/.venv/
+**/venv/
