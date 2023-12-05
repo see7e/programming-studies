@@ -24,7 +24,7 @@ dependences: NULL
 Here’s a fairly compact implementation of Quicksort:
 
 ```embed-cpp
-PATH: "vault://GAB/Estudos-Trabalhos/PROGRAMAÇÃO/programming-studies/Languages/PYTHON/code/algo_quick_sort.py"
+PATH: "vault://GAB/Estudos-Trabalhos/PROGRAMAÇÃO/programming-studies/Languages/Python/code/algo_quick_sort.py"
 TITLE: "QuickSort.py"
 ```
 

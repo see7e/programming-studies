@@ -51,7 +51,7 @@ A Tree, is a data structure that stores strings as data items that can be organi
 
 <details> <summary>Implementations</summary>
 
-[`C`](../Languages/C/binary_tree_implementation.md) | [`Python`](../Languages/PYTHON/binary_tree_implementation.md) | [`JavaScript`](../Front_End/JS/binary_tree_implementation.md)
+[`C`](../Languages/C/binary_tree_implementation.md) | [`Python`](../Languages/Python/binary_tree_implementation.md) | [`JavaScript`](../Front_End/JS/binary_tree_implementation.md)
 
 </details>
 
@@ -70,7 +70,7 @@ The Tree is Binary if each Node has a maximum of two children, as shown in the i
 
 <details> <summary>Implementations</summary>
 
-[`C`](../C/bst_implementation.md) | [`Python`](../PYTHON/bst_implementation.md) | [`JavaScript`](../Front_End/JS/bst_implementation.md)
+[`C`](../C/bst_implementation.md) | [`Python`](../Python/bst_implementation.md) | [`JavaScript`](../Front_End/JS/bst_implementation.md)
 
 </details>
 

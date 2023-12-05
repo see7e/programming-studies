@@ -27,7 +27,7 @@ The implementation of the merge sort algorithm needs two different pieces:
 Here’s the code to merge two different arrays:
 
 ```embed-cpp
-PATH: "vault://GAB/Estudos-Trabalhos/PROGRAMAÇÃO/programming-studies/Languages/PYTHON/code/algo_merge_sort.py"
+PATH: "vault://GAB/Estudos-Trabalhos/PROGRAMAÇÃO/programming-studies/Languages/Python/code/algo_merge_sort.py"
 TITLE: Merge.py
 ```
 

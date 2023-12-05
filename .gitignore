@@ -4,3 +4,9 @@
 # Big Picture
 ## this will exclude som folders that have its own repositories to see the complete structure just
 ## follow the README instructions.
+
+# Supress the Python virtual environment
+**/myvenv/
+**/.venv/
+**/venv/
+**/env/

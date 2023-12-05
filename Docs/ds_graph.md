@@ -33,7 +33,7 @@ A graph stores a collection of items in a nonlinear fashion. Graphs are made up 
 
 <details> <summary>Implementations</summary>
 
-[`C`](../Languages/C/heap_implementation.md) | [`Python`](../Languages/PYTHON/heap_implementation.md) | [`JavaScript`](../Front_End/JS/heap_implementation.md)
+[`C`](../Languages/C/heap_implementation.md) | [`Python`](../Languages/Python/heap_implementation.md) | [`JavaScript`](../Front_End/JS/heap_implementation.md)
 
 </details>
 

@@ -33,3 +33,8 @@
 [submodule "42-codespace-builder"]
 	path = Projects/42-codespace-builder
 	url = https://github.com/see7e/42-codespace-builder
+
+[submodule "aoc_2023"]
+	path = Projects/aoc-2023
+	url = https://github.com/see7e/aoc-2023.git
+	branch = main

@@ -23,7 +23,7 @@ dependences: NULL
 Here’s an implementation of a bubble sort algorithm in `Python`:
 
 ```embed-cpp
-PATH: "vault://GAB/Estudos-Trabalhos/PROGRAMAÇÃO/programming-studies/Languages/PYTHON/code/algo_bubble_sort.py"
+PATH: "vault://GAB/Estudos-Trabalhos/PROGRAMAÇÃO/programming-studies/Languages/Python/code/algo_bubble_sort.py"
 TITLE: "Bubble.py"
 ```
 

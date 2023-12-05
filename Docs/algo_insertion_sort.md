@@ -24,7 +24,7 @@ dependences: NULL
 The insertion sort algorithm works exactly like the example with the deck of cards. Here’s the implementation in Python:
 
 ```embed-cpp
-PATH: "vault://GAB/Estudos-Trabalhos/PROGRAMAÇÃO/programming-studies/Languages/PYTHON/code/algo_insertion_sort.py"
+PATH: "vault://GAB/Estudos-Trabalhos/PROGRAMAÇÃO/programming-studies/Languages/Python/code/algo_insertion_sort.py"
 TITLE: "Insertion.py"
 ```
 

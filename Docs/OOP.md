@@ -336,7 +336,7 @@ print(item.calculate_price())
         #[...]
     ```
 
-   `@classmethod` ([`decorator`](../Languages/PYTHON/README.md#decorators) [ver também](https://docs.python.org/3/library/dataclasses.html))modifica o contexto do metodo, de forma que seu parametro não é mais `self` e sim `cls` que representa a propria classe a ser recebida como argumento.
+   `@classmethod` ([`decorator`](../Languages/Python/README.md#decorators) [ver também](https://docs.python.org/3/library/dataclasses.html))modifica o contexto do metodo, de forma que seu parametro não é mais `self` e sim `cls` que representa a propria classe a ser recebida como argumento.
    Porem esse metodo especifico sera acessado a partir da propria classe
 
    ```python
