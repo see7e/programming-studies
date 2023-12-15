@@ -34,6 +34,7 @@ dependences: NULL
   - [Multiple return values](#multiple-return-values)
   - [Named return values](#named-return-values)
   - [Early returns / Guard clauses](#early-returns--guard-clauses)
+  - [Error return](#error-return)
 - [Loops](#loops)
   - [1. `for` Loop](#1-for-loop)
   - [2. `range` Loop](#2-range-loop)
@@ -41,6 +42,8 @@ dependences: NULL
   - [Breaking and Continuing](#breaking-and-continuing)
   - [Nested Loops](#nested-loops)
 - [Data Structures](#data-structures)
+  - [Arrays](#arrays)
+  - [Maps](#maps)
   - [Structs](#structs)
     - [Anonymous Structs](#anonymous-structs)
   - [Nested Structs](#nested-structs)
@@ -49,6 +52,8 @@ dependences: NULL
 - [(Struct) Methods](#struct-methods)
 - [Interfaces](#interfaces)
   - [Key points about Go interfaces](#key-points-about-go-interfaces)
+- [Error Handling](#error-handling)
+  - [Custom Errors](#custom-errors)
 
 </details>
 
@@ -649,6 +654,43 @@ func divide(x, y float64) (float64, error) {
 }
 ```
 
+## Error return
+
+A function can return an error value to indicate that something went wrong. The error value is `nil` by default, which indicates that the function executed successfully. If the function encounters an error, it returns a non-`nil` error value.
+
+```go
+package main
+
+import (
+    "errors"
+    "fmt"
+)
+
+// divide divides x by y and returns an error on division by zero
+func divide(x, y float64) (float64, error) {
+    if y == 0 {
+        return 0, errors.New("Can't divide by zero")
+    }
+    return x / y, nil
+}
+
+func main() {
+    // Call the divide function
+    result, err := divide(3, 0)
+
+    // Check if an error occurred
+    if err != nil {
+        fmt.Println(err)
+        return
+    }
+
+    // Print the result if no error occurred
+    fmt.Println(result)
+}
+```
+
+Different from Python or JS where we generally use `try` and `catch` to handle errors, in Go we use a conditional based on the returns of the function.
+
 ---
 
 # Loops
@@ -801,6 +843,74 @@ func main() {
 > 3. **Interfaces**
 
 # Data Structures
+
+## Arrays
+
+Arrays are a collection of elements of the same type. They are fixed in size and can't be resized. They are declared using brackets `[]` and the type of the elements inside the brackets. For example, to create an array of integers, you would write:
+
+```go
+[int]
+```
+
+The size of the array is part of the type, this means that you can't add or remove elements from an array. In this case, you can use the concept of slices and the built in `append` function.
+
+```go
+// Declare a slice
+var mySlice []int
+
+// Append elements to the slice
+mySlice = append(mySlice, 1)
+mySlice = append(mySlice, 2, 3, 4)
+```
+
+If you want to create an array with a specific size, you can use the `make` function:
+
+```go
+// Create an array with a size of 5
+myArray := make([]int, 5)
+```
+
+You can also initialize an array with values:
+
+```go
+// Create an array with a size of 5 and initialize it with values
+myArray := []int{1, 2, 3, 4, 5}
+```
+
+
+## Maps
+
+Maps are a data structure that store key/value pairs. They are similar to objects in JavaScript or dictionaries in Python. They are declared using the `map` keyword, followed by the key type in brackets `[keyType]`, followed by the value type in brackets `[valueType]`.  
+For example, in order to create a map, you'll need the `make()` function:
+
+```go
+myMap := make(map[string]int)
+```
+
+The key type can be any type that is comparable. This includes all the basic types we've covered so far, such as `int`, `string`, `float64`, `bool`, and so on. It also includes pointers, structs, and arrays. The value type can be any type, including other maps.
+
+In Go, you can add elements to a map using the following syntax:
+
+```go
+// Add key-value pairs to the map
+myMap["one"] = 1
+myMap["two"] = 2
+myMap["three"] = 3
+```
+
+In this example, `myMap` is a map with keys of type `string` and values of type `int`. You can use the square bracket notation to add or update key-value pairs in the map.
+
+If the key already exists in the map, the corresponding value will be updated. If the key does not exist, a new key-value pair will be added to the map.
+
+Additionally, you can use the `delete` function to remove a key-value pair from the map:
+
+```go
+// Delete a key-value pair from the map
+delete(myMap, "two")
+```
+
+> Remember that maps in Go are unordered collections, so the order in which elements are printed might not be the same as the order in which you added them.
+
 
 ## Structs
 
@@ -1186,7 +1296,15 @@ In this example, the `Scale` method has a pointer receiver (`(r *Rectangle)`), a
 
 # Interfaces
 
-In Go, an interface is a type that specifies a set of method signatures. A type in Go is said to satisfy an interface if it implements all the methods declared by that interface. Unlike some other languages, Go interfaces are implicitly satisfied, meaning that you don't need to explicitly declare that a type implements an interface.
+In Go, an interface is a type that **specifies a set of method signatures**. A type in Go is said to satisfy an interface if it **implements all the methods declared by that interface**. Unlike some other languages, Go interfaces are implicitly satisfied, meaning that you don't need to explicitly declare that a type implements an interface.
+
+For me is a bit confusing to understand at first beacuse I'm used to work with Python (OOP) but there's some points that I think are important to understand:
+
+- They don't have hyerarchy by nature, but you can create a hierarchy by embedding interfaces in other interfaces.
+- As the implementation is implicit, there's no need to declare that a type implements an interface (that's the most difficult part for my little brain to understand).
+- They don't have constructors, but you can use a function that returns an interface type (like a factory function
+- They can be used as a function parameter, so you can pass any type that satisfies the interface (like a duck type)
+- They define only the signature, not the behavior (like an abstract class)
 
 Here's a basic example of an interface:
 
@@ -1312,6 +1430,138 @@ type File interface {
 }
 ```
 
-Go interfaces provide a powerful mechanism for achieving polymorphism and abstraction while maintaining simplicity and flexibility. They play a central role in enabling decoupling between components in Go programs.
-
 ---
+
+# Error Handling
+
+The error is nothing more than a type instance that implements the `error` interface. The `error` interface is defined as follows:
+
+```go
+type error interface {
+    Error() string
+}
+```
+
+The `error` interface has a single method called `Error` that returns a string. Any type that implements this method is said to satisfy the `error` interface.
+
+As the interface encapsulates a string, it's possible to manipulate the error message. For example, you can add a timestamp to the error message, or you can add a stack trace to the error message.
+
+## Custom Errors
+
+You can create custom errors by implementing the `Error` method on a custom type. For example:
+
+```go
+package main
+
+import (
+    "fmt"
+    "time"
+)
+
+// CustomError struct
+type CustomError struct {
+    timestamp time.Time
+    message   string
+}
+
+// Error method for the CustomError struct
+func (e CustomError) Error() string {
+    return fmt.Sprintf("[%v] %s", e.timestamp, e.message)
+}
+
+func main() {
+    // Create a new instance of CustomError
+    err := CustomError{
+        timestamp: time.Now(),
+        message:   "Something went wrong",
+    }
+
+    // Print the error
+    fmt.Println(err)
+}
+```
+
+The `Error()` method in someway extends the `error` interface, so you can link the method with the `CustomError` struct. In other words, **the `CustomError` struct lists the elements that the `Error()` method will format and return**.
+
+In the above case the method returns a string, but a custom error can return any type that is required by the application. For example, the following method returns an error:
+
+```go
+/* ... */
+// Error method for the CustomError struct
+func (e CustomError) Error() error {
+    return fmt.Errorf("[%v] %s", e.timestamp, e.message)
+}
+/* ... */
+```
+
+The difference between a `string` return and an `error` return is that the `error` return allows you to chain errors. For example:
+
+```go
+/* Previous code examples of errors */
+func main() {
+    // Create a new instance of CustomError
+    err := CustomError{
+        timestamp: time.Now(),
+        message:   "Something went wrong",
+    }
+
+    // Print the error
+    fmt.Println(err)
+
+    // Create a new error
+    err2 := fmt.Errorf("Another error")
+
+    // Chain the errors
+    err = fmt.Errorf("%w: %v", err, err2)
+
+    // Print the error
+    fmt.Println(err)
+}
+```
+
+
+A type can be an `error` and in the same time fulfill another interface. This means that a type can satisfy an `error` interface and also implement another interface. The `error` interface in Go is quite simple; it only requires the implementation of the `Error()` method, which returns a string.
+
+```go
+package main
+
+import (
+	"fmt"
+)
+
+// CustomType implements the error interface
+// by providing the Error() method.
+type CustomType struct {
+	Message string
+}
+
+func (c *CustomType) Error() string {
+	return c.Message
+}
+
+// AnotherInterface is another custom interface.
+type AnotherInterface interface {
+	AnotherMethod() string
+}
+
+// CustomType also implements AnotherInterface
+// by providing the AnotherMethod() method.
+func (c *CustomType) AnotherMethod() string {
+	return "Another method implementation"
+}
+
+func main() {
+	// Create an instance of CustomType.
+	customInstance := &CustomType{Message: "This is an error message."}
+
+	// CustomType satisfies the error interface.
+	var err error = customInstance
+	fmt.Println(err.Error())
+
+	// CustomType also satisfies AnotherInterface.
+	var anotherInterface AnotherInterface = customInstance
+	fmt.Println(anotherInterface.AnotherMethod())
+}
+```
+
+> [2:19:56](https://youtu.be/un6ZyFkqFKo?si=c-h3DxiHhg_LfpRj&t=8396)
