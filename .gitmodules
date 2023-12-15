@@ -38,3 +38,8 @@
 	path = Projects/aoc-2023
 	url = https://github.com/see7e/aoc-2023.git
 	branch = main
+
+# anthdm/slick
+[submodule "slick"]
+	path = Projects/slick
+	url = https://github.com/see7e/slick.git
