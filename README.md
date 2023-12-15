@@ -73,61 +73,14 @@ Sometimes in the rush to resolve the problems that we face, the learn only to fi
 
 This graph reflects the themes that I'm studying, and the progress of each one. The tree divisions will follow the three different contexts (work, 42 and personal).
 
-
-```mermaid
-%%{
-  init: {
-    'theme': 'base',
-    'themeVariables': {
-      'primaryColor': '#23375E',
-      'primaryTextColor': '#FFF',
-      'primaryBorderColor': '#7C0000',
-      'lineColor': '#F8B229'
-    }
-  }
-}%%
-
-gantt
-  title My Roadmap
-  dateFormat DD-MM-YYYY
-  tickInterval 1month
-
-  section Work
-    %% October
-    Networking              :active, 02-10-2023, 30d
-    Authentication Systems  :active, 02-10-2023, 01-11-2023
-    %% November
-    Backend                 :30d
-
-  section 42
-    %% October
-    Libft                   :done, 02-10-2023, 25-10-2023
-    ft_printf               :17-10-2023, 15d
-    %% November
-    Get_Next_Line           :15d
-    Born2beroot             :5d
-    %% December
-
-  section Personal
-    %% October
-    Operating Systems       :active, 02-10-2023, 31-12-2023
-    Sockets                 :milestone, 16-10-2023, 0d
-    Processos e threads     :milestone, 17-10-2023, 0d
-    %% November
-    Competitive Programming :01-11-2023, 30d
-    Code cohesion           :01-11-2023, 7d
-    Code coupling           :7d
-    Memory Management       :15d
-    %% December
-    Framewok implementation :01-12-2023, 30d
-    C Compilation           :01-12-2023, 7d
-    Code Diagnosis          :7d
-
-  section TimeLine
-    timespan=thee months :active, 01-10-2023, 31-12-2023
-
-```
-> Here's the [archive](progress_archive.md). 
+> [!NOTE]
+> The priorities are changing quickly, and in the moment i cannot follow the original plan, so i'll just put a list of the topics that i'm studying.
+> - Backend (webserver, database, authentication)
+>   - Django [work]
+>   - Go [personal]
+> - C [42] is currently paused
+> - Teorical topics (Fresh start roadmap) [personal] is currently paused
+> Here's the [archive](./src/progress_archive.md) of Gannt charts. 
 
 ## First time with Markdown? 📑
 > Enter [here](first-time.md)

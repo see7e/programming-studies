@@ -118,6 +118,7 @@ dependences: NULL
 - [A Practical Guide to Kubernetes](https://www.educative.io/courses/practical-guide-to-kubernetes) <img src="https://images.crunchbase.com/image/upload/c_lpad,f_auto,q_auto:eco,dpr_1/mlntuhwmyfm4wbiecuiv" width="61"> 
 - [Dev Container metadata reference](https://containers.dev/implementors/json_reference/#general-properties) 
 - [Virtual Machines vs Containers](https://www.youtube.com/watch?v=eyNBf1sqdBQ) <img src="https://img.shields.io/badge/YouTube-%23FF0000.svg?style=for-the-badge&logo=YouTube&logoColor=white" width="61"> 
+- [Do NOT Learn Kubernetes Without Knowing These Concepts...](https://www.youtube.com/watch?v=wXuSqFJVNQA) <img src="https://img.shields.io/badge/YouTube-%23FF0000.svg?style=for-the-badge&logo=YouTube&logoColor=white" width="61"> 
 
 # Security
 
@@ -217,6 +218,7 @@ dependences: NULL
 - [How Web Sockets work](https://www.youtube.com/watch?v=pnj3Jbho5Ck) <img src="https://img.shields.io/badge/YouTube-%23FF0000.svg?style=for-the-badge&logo=YouTube&logoColor=white" width="61"> 
 - [Operating Systems: Virtualization, Concurrency & Persistence](https://www.educative.io/courses/operating-systems-virtualization-concurrency-persistence) <img src="https://images.crunchbase.com/image/upload/c_lpad,f_auto,q_auto:eco,dpr_1/mlntuhwmyfm4wbiecuiv" width="61"> 
 - [Cloud Computing Fundamentals](https://www.educative.io/courses/cloud-computing-fundamentals) <img src="https://images.crunchbase.com/image/upload/c_lpad,f_auto,q_auto:eco,dpr_1/mlntuhwmyfm4wbiecuiv" width="61"> 
+- [Windows Subsystem For Linux | WSL Explained](https://www.youtube.com/watch?v=kZ2SNBY2FPw) <img src="https://img.shields.io/badge/YouTube-%23FF0000.svg?style=for-the-badge&logo=YouTube&logoColor=white" width="61"> 
 
 ---
 

@@ -6,7 +6,7 @@
     },
     "[c]": {
         "editor.renderWhitespace": "all",
-        "editor.wordBasedSuggestions": false,
+        "editor.wordBasedSuggestions": "off",
         "editor.suggest.insertMode": "replace",
         "editor.semanticHighlighting.enabled": true,
         "editor.rulers": [80]
@@ -15,7 +15,7 @@
     "[go]": {
         "editor.formatOnSave": false,
         "editor.codeActionsOnSave": {
-            "source.organizeImports": true
+            "source.organizeImports": "explicit"
         },        
     },
 

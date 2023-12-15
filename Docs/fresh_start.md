@@ -42,7 +42,7 @@ dependences:
 > - APIs
 > - Backend (Python, Go, ~~Rust~~) [focusing]
 > - Systems Architecture
-> - ~~Authentication Systems (LDAP, OAuth, SAML)~~
+> - Authentication Systems (~~LDAP~~, OAuth, SAML)
 > - Azure Cloud
 > 
 > **42**:

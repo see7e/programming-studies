@@ -10,16 +10,14 @@ banner_icon: 📂
 > [`root`](./README.md)
 
 # Roadmaps
-
 - [A Fresh Start](./Docs/fresh_start.md)
-- 
 
 # "Languages" 
 
 ## [`HTML`](./Languages/HTML/README.md)
+- [`HTMX`](./Languages/HTML/HTMX.md)
 
 ## [`CSS`](./Languages/CSS/README.md)
-
 - [`SASS`](./Languages/CSS/SASS.md)
 
 ## [`JS`](./Languages/JS/README.md)
@@ -28,9 +26,10 @@ banner_icon: 📂
 
 ## [`Go`](./Languages/Go/README.md)
 
-## [`Python`](./Languages/PYTHON/README.md)
-
-- [`PyQGis`](./Languages/PYTHON/PYQGIS/README.md)
+## [`Python`](./Languages/Python/README.md)
+- [`Django`](./Languages/Python/Django/README.md)
+- [`Flask`](./Languages/Python/Flask/README.md)
+- [`PyQGis`](./Languages/Python/PYQGIS/README.md)
 - Libraries
     - [OpenPyXL](openpyxl.md)
     - [Pandas e GeoPandas](geo-pandas.md)
@@ -42,10 +41,13 @@ banner_icon: 📂
     - Sphinx
 
 ## SQL
-
 - [`PostgreSQL`](./Languages/SQL/PSQL/README.md)
 
 ## [`PHP 7`](./Languages/PHP/README.md)
+
+## Containers
+- [`Docker`](./Languages/Docker/README.md)
+- `Kuernetes`
 
 ---
 
@@ -85,7 +87,7 @@ banner_icon: 📂
 
 - App Game [Mosquitoes](https://github.com/see7e/Mosquitoes-WebGame)
 - Project [YourFinance](https://github.com/see7e/YourFinance) - A Financial Application
-- [`IONIC`](./Languages/IONIC/README.md)
+- [`IONIC`](./Languages/Ionic/README.md)
     - Projeto Gasolina ou Álcool
 
 ## Back End
@@ -103,3 +105,9 @@ banner_icon: 📂
 - [`API` com Slim Framework](./API/README.md) Projeto API de Produtos
 - [`Ajax`](./Languages/Ajax/README.md)
     - App Pesquisa Endereço (Aprenda a realizar requisições HTTP via XMLHttpRequest para API's)
+
+## Other
+
+- [42-codespace-builder](./Projects/42-codespace-builder/README.md)
+- [TranslateGPT](./Projects/TranslateGPT/README.md)
+- [Advent of Code](./Projects/aoc_2023/README.md)
