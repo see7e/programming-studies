@@ -43,3 +43,4 @@
 [submodule "slick"]
 	path = Projects/slick
 	url = https://github.com/see7e/slick.git
+	branch = gote

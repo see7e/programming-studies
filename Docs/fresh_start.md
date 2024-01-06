@@ -40,10 +40,11 @@ dependences:
 > Currently listing all that I want to read/study before writing
 > **Work**:
 > - APIs
-> - Backend (Python, Go, ~~Rust~~) [focusing]
+> - Backend (Python, ~~Go~~, ~~Rust~~) [focusing]
 > - Systems Architecture
 > - Authentication Systems (~~LDAP~~, OAuth, SAML)
 > - Azure Cloud
+> - xml <-> jsn (marcheling / unmarsh)
 > 
 > **42**:
 > - Algorithms (C)
@@ -55,7 +56,7 @@ dependences:
 > **Myself**:
 > - Threads
 > - Time to Live (TTL)
-> - Networking (TCP/IP, UDP, HTTP, HTTPS, WebSocket, REST, SOAP, RPC)
+> - ~~Networking (TCP/IP, UDP, HTTP, HTTPS, WebSocket, REST, SOAP, RPC)~~
 > - Operating Systems
 >   - Kernel, Device Drivers
 >   - Userland
@@ -100,15 +101,14 @@ dependences:
 # Queue Topic List
 
 > - SOLID
-> - CRUD
+> - ~~CRUD~~
 > - pcre [re(oniguruma), re2] / icu - regex
 > - cpython q= `ifdef MS_WINDOWS` > `PYErr_SetFromWindosErr(err.ws);`
 > - preprocessamento em C
-> - libuv (node.js)
-> - deno x node.js
+> - ~~libuv (node.js)~~
+> - ~~deno x node.~~
 > - openssl
 > - abi - applcation bin interface
-> - xml <-> jsn (marcheling / unmarsh)
 > - cyton (.pyx) - FFI function interface
 > - PONTOS FORTES LIGUAGES
 >   - construção de ferramentas de adm/infra (cli, scripts, automação)

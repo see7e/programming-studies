@@ -5,6 +5,18 @@
 *                                                                         *
 *                      Used for side processing                           *
 *                                                                         *
+*  FUNCTIONS:                                                             *
+*  - titleDialog                                                          *
+*  - custom_variable_dialog                                               *
+*  - PathFinder                                                           *
+*  - AddLayers                                                            *
+*  - CopyFeatures                                                         *
+*  - join_lyrs                                                            *
+*  - update_values                                                        *
+*  - ClearSelection                                                       *
+*  - verify_spatial_index                                                 *
+*  - layer_to_file                                                        *
+*                                                                         *
 ***************************************************************************
 """
 ############################################
