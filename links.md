@@ -138,6 +138,8 @@ dependences: NULL
 - [Grokking Modern System Design Interview for Engineers & Managers](https://www.educative.io/courses/grokking-modern-system-design-interview-for-engineers-managers) <img src="https://images.crunchbase.com/image/upload/c_lpad,f_auto,q_auto:eco,dpr_1/mlntuhwmyfm4wbiecuiv" width="61">`*` 
 - [Dynamic Programming - Learn to Solve Algorithmic Problems & Coding Challenges](https://www.youtube.com/watch?v=oBt53YbR9Kk) `free` <img src="https://img.shields.io/badge/YouTube-%23FF0000.svg?style=for-the-badge&logo=YouTube&logoColor=white" width="61"> 
 - `PT` [Modelagem de Software é Difícil? | "Ver" vs "Enxergar"](https://www.youtube.com/watch?v=SmYQcaP1Jgw) <img src="https://img.shields.io/badge/YouTube-%23FF0000.svg?style=for-the-badge&logo=YouTube&logoColor=white" width="61"> 
+- [Everything You NEED to Know About Client Architecture Patterns](https://www.youtube.com/watch?v=I5c7fBgvkNY) <img src="https://img.shields.io/badge/YouTube-%23FF0000.svg?style=for-the-badge&logo=YouTube&logoColor=white" width="61"> 
+- [System Design: Design a URL Shortener like TinyURL](https://www.youtube.com/watch?v=zgIyzEEXfiA) <img src="https://img.shields.io/badge/YouTube-%23FF0000.svg?style=for-the-badge&logo=YouTube&logoColor=white" width="61"> 
 
 ## UML (Unified Modeling Language)
 
@@ -175,6 +177,7 @@ dependences: NULL
 - [Matplotlib for Python: Visually Represent Data with Plots](https://www.educative.io/courses/matplotlib-for-python-visually-represent-data-with-plots) <img src="https://images.crunchbase.com/image/upload/c_lpad,f_auto,q_auto:eco,dpr_1/mlntuhwmyfm4wbiecuiv" width="61"> 
 - [Machine Learning with NumPy, pandas, scikit-learn, and More](https://www.educative.io/courses/machine-learning-numpy-pandas-scikit-learn) <img src="https://images.crunchbase.com/image/upload/c_lpad,f_auto,q_auto:eco,dpr_1/mlntuhwmyfm4wbiecuiv" width="61"> 
 - [Make Your Own Neural Network in Python](https://www.educative.io/courses/make-your-own-neural-network-in-python) <img src="https://images.crunchbase.com/image/upload/c_lpad,f_auto,q_auto:eco,dpr_1/mlntuhwmyfm4wbiecuiv" width="61"> 
+- [Simple Browser Automation with Playright](https://www.youtube.com/watch?v=qYSWWGz9Z6s) <img src="https://img.shields.io/badge/YouTube-%23FF0000.svg?style=for-the-badge&logo=YouTube&logoColor=white" width="61"> 
 
 ## SQL
 
@@ -219,6 +222,8 @@ dependences: NULL
 - [Operating Systems: Virtualization, Concurrency & Persistence](https://www.educative.io/courses/operating-systems-virtualization-concurrency-persistence) <img src="https://images.crunchbase.com/image/upload/c_lpad,f_auto,q_auto:eco,dpr_1/mlntuhwmyfm4wbiecuiv" width="61"> 
 - [Cloud Computing Fundamentals](https://www.educative.io/courses/cloud-computing-fundamentals) <img src="https://images.crunchbase.com/image/upload/c_lpad,f_auto,q_auto:eco,dpr_1/mlntuhwmyfm4wbiecuiv" width="61"> 
 - [Windows Subsystem For Linux | WSL Explained](https://www.youtube.com/watch?v=kZ2SNBY2FPw) <img src="https://img.shields.io/badge/YouTube-%23FF0000.svg?style=for-the-badge&logo=YouTube&logoColor=white" width="61"> 
+- [Solving the Dotfiles Problem (And Learning Bash)](https://youtu.be/mSXOYhfDFYo?si=aPrzjrSGUyeJzXhi) <img src="https://img.shields.io/badge/YouTube-%23FF0000.svg?style=for-the-badge&logo=YouTube&logoColor=white" width="61"> 
+- [How to Properly Layout A Website (For Beginners)](https://www.youtube.com/watch?v=3C_22eBWpjg) <img src="https://img.shields.io/badge/YouTube-%23FF0000.svg?style=for-the-badge&logo=YouTube&logoColor=white" width="61"> 
 
 ---
 

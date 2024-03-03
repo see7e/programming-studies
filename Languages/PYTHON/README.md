@@ -1012,6 +1012,21 @@ Generator comprehensions are a useful tool for creating generators that generate
 
 **Generators expressions yield back elements one by one, i.e., are lazily evaluated** hence using generator functions using generators does leads to efficient memory management.
 
+> [!INFO]
+> We can use `yeild` to create a generator function, which is a function that returns an iterator. It looks like a normal function except that it contains `yield` expressions for producing a series of values usable in a for-loop or that can be retrieved one at a time with the `next()` function. One fun fact is that `yeld` returns one value at a time, and the function is paused and the state is saved. The function can be resumed later, and the generator function can be resumed from where it was paused, this means we could have a infinite loop and this function will never crash because it will only return the requested values.
+> 
+> ```python
+> def infinite_sequence():
+>     num = 0
+>     while True:
+>         yield num
+>         num += 1
+> 
+> # Calling only the first 5 values
+> print(*[i for i in infinite_sequence() if i <= 5], end=" ")
+> ```
+
+
 Visit the following resources to learn more:
 
 -   [Python Generator Expressions](https://www.pythontutorial.net/advanced-python/python-generator-expressions/)

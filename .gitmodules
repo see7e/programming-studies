@@ -1,3 +1,6 @@
+# git submodule add [-b <branch>] [--name <name>] <repository> [<path>]
+# git submodule update --init --recursive
+
 # Courses
 ## Harvard
 [submodule "Courses/CS50x"]
@@ -39,8 +42,17 @@
 	url = https://github.com/see7e/aoc-2023.git
 	branch = main
 
-# anthdm/slick
-[submodule "slick"]
+[submodule "slick"] # anthdm/slick
 	path = Projects/slick
 	url = https://github.com/see7e/slick.git
 	branch = gote
+
+[submodule "django_company-modules"]
+	path = Projects/django_company-modules
+	url = https://github.com/see7e/django_company-modules
+	branch = main
+
+[submodule ".Dotfiles"]
+	path = Projects/.dotfiles
+	url = https://github.com/see7e/.dotfiles
+	branch = main
