@@ -23,6 +23,11 @@ dependences:
 
 ---
 
+> [!NOTE]
+> Recently I've decided to drop the 42 program, I'll keep the projects here as a reference, but I won't continue with the course, at least for now, was a hard decision because beeing there is a great experience, but in the current moment my focus is needed in other areas.
+> Slowly my attention is being pointed towards low level, but a deep dive required by the School and other personal points led me to this decision.
+
+
 # Common Core
 
 ![42 Common Core - canvas](./42_Common_Core-canvas.canvas)

@@ -78,6 +78,7 @@ banner_icon: 📂
 # Programs
 
 - [QGIS](./Programs/QGIS/README.md) 
+  - [light-QGIS-plugin-repo](./Projects/light-QGIS-plugin-repo/README.md) (*project*)
 
 ---
 
@@ -111,3 +112,4 @@ banner_icon: 📂
 - [42-codespace-builder](./Projects/42-codespace-builder/README.md)
 - [TranslateGPT](./Projects/TranslateGPT/README.md)
 - [Advent of Code](./Projects/aoc_2023/README.md)
+- [.dotfiles](./Projects/.dotfiles/README.md)

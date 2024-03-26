@@ -71,15 +71,15 @@ Sometimes in the rush to resolve the problems that we face, the learn only to fi
 
 ## Progress 🏗️
 
-This graph reflects the themes that I'm studying, and the progress of each one. The tree divisions will follow the three different contexts (work, 42 and personal).
+This graph reflects the themes that I'm studying, and the progress of each one. The tree divisions will follow the three different contexts (work and personal).
 
 > [!NOTE]
 > The priorities are changing quickly, and in the moment i cannot follow the original plan, so i'll just put a list of the topics that i'm studying.
 > - Backend (webserver, database, authentication)
 >   - Django [work]
 >   - Go [personal]
-> - C [42] is currently paused
-> - Teorical topics (Fresh start roadmap) [personal] is currently paused
+> - Homelab (networking, security, services) [personal]
+> - Teorical topics (Fresh start roadmap) [personal] *is currently paused*
 > Here's the [archive](./src/progress_archive.md) of Gannt charts. 
 
 ## First time with Markdown? 📑
