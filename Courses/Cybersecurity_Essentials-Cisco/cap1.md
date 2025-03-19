@@ -2,7 +2,7 @@
 title: Capítulo 1 - Cibersegurança
 aliases:
 - Cibersegurança - Um Mundo de Especialistas e Criminosos
-tags: programação, cisco, cybersecurity
+tags: programming, cisco, cybersecurity
 use: Documentation
 languages: NULL
 dependences: NULL

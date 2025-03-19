@@ -1,6 +1,6 @@
 ---
 title: Capítulo 3 - Ameaças, Vulnerabilidades e Ataques de Cibersegurança
-tags: programação, cisco, cybersecurity
+tags: programming, cisco, cybersecurity
 use: Documentation
 languages: NULL
 dependences: NULL

@@ -1,7 +1,7 @@
 ---
 title: Capítulo 7 - Proteção de um Domínio de Cibersegurança
 tags:
-  - programação
+  - programming
   - cisco
   - cybersecurity
 use: Documentation

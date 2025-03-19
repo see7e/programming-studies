@@ -1,6 +1,6 @@
 ---
 title: Notas - Maratona Cisco
-tags: programação, cisco, cybersecurity
+tags: programming, cisco, cybersecurity
 use: Documentation
 languages: NULL
 dependences: NULL

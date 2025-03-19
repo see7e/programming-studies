@@ -1,7 +1,7 @@
 ---
 title: Capítulo 6 - O Conceito de Cinco Noves
 tags:
-  - programação
+  - programming
   - cisco
   - cybersecurity
 use: Documentation

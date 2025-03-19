@@ -1,6 +1,6 @@
 ---
 title: Capítulo 4 - A Arte de Proteger Segredos
-tags: programação, cisco, cybersecurity
+tags: programming, cisco, cybersecurity
 use: Documentation
 languages: NULL
 dependences: NULL

@@ -60,7 +60,7 @@ banner_icon: 📂
 
 # Other
 
-- [101 Code Concepts](./Docs/101_code_concepts.md)
+- [101 Code Concepts](101_code_concepts.md)
 - [Software Architeture](./Docs/software_architecture.md)
 - [Techinical Project Documentation](./Docs/project_documentation.md)
 - [Shell Commands](./Docs/shell_commands.md)

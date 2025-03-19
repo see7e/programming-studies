@@ -2,7 +2,7 @@
 title: Maratona CiberEducação Cisco Brasil - 7ª Onda - 2023
 aliases:
 - Cybersecurity Essentials - Cisco
-tags: programação, cybersecurity, cisco
+tags: programming, cybersecurity, cisco
 use: Documentation
 languages: NULL
 dependences: NULL

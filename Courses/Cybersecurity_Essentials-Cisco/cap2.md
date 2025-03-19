@@ -1,6 +1,6 @@
 ---
 title: Capítulo 2 - O Cubo de Segurança Cibersegurança
-tags: programação, cisco, cybersecurity
+tags: programming, cisco, cybersecurity
 use: Documentation
 languages: NULL
 dependences: NULL

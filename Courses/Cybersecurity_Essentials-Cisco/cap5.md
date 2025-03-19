@@ -1,6 +1,6 @@
 ---
 title: Capítulo 5 - A Arte de Garantir a Integridade
-tags: programação, cisco, cybersecurity
+tags: programming, cisco, cybersecurity
 use: Documentation
 languages: NULL
 dependences: NULL

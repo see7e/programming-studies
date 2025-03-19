@@ -1,7 +1,7 @@
 ---
 title: Capítulo 8 - Tornar-se um Especialista em Cibersegurança
 tags:
-  - programação
+  - programming
   - cisco
   - cybersecurity
 use: Documentation

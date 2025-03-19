@@ -1,6 +1,6 @@
 ---
 title: INDEX - Maratona Cisco
-tags: programação, cisco, cybersecurity
+tags: programming, cisco, cybersecurity
 use: Index
 languages: NULL
 dependences: NULL
