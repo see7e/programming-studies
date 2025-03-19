@@ -8,7 +8,7 @@ banner: "![[proggramming_banner.jpg]]"
 banner_y: 0.5
 banner_lock: true
 ---
-
+****
 > [!INFO] 
 > The links are built for the obsidian branch, i was working in main but now i'll split correctly and after that update all the inter document links over the main branch
 
@@ -75,10 +75,10 @@ This graph reflects the themes that I'm studying, and the progress of each one. 
 
 > [!NOTE]
 > The priorities are changing quickly, and in the moment i cannot follow the original plan, so i'll just put a list of the topics that i'm studying.
-> - Backend (webserver, database, authentication)
+> - Backend (webserver, testings)
 >   - Django [work]
->   - Go [personal]
-> - Homelab (networking, security, services) [personal]
+>   - ~~Go [personal]~~
+> - Homelab (networking, services) [personal]
 > - Teorical topics (Fresh start roadmap) [personal] *is currently paused*
 > Here's the [archive](./src/progress_archive.md) of Gannt charts. 
 
@@ -89,14 +89,30 @@ This graph reflects the themes that I'm studying, and the progress of each one. 
 
 ## Readings 📚
 
-- Modern Operating Systems - Andrew S. Tanenbaum, Herbert Bos
-- Statistical Learning - Trevor Hastie, Robert Tibshirani
-- Design Patterns: Elements of Reusable Object-Oriented Software - Erich Gamma, Richard Helm, Ralph Johnson, John Vlissides
-- Compilers - Alfred V. Aho, Monica S. Lam, Ravi Sethi, Jeffrey D. Ullman
-- Clean Code - Robert C. Martin
-- Refactoring - Martin Fowler, Kent Beck, John Brant, William Opdyke, Don Roberts
 - Pragmatic Programmer - From Journeyman to Master - Andrew Hunt, David Thomas
 - Make it stick - The Science of Successful Learning - Peter Brown, Henry L. Roediger III, Mark A. McDaniel
+- Modern Operating Systems - Andrew S. Tanenbaum, Herbert Bos
+- Code Complete 2nd Edition - Steve McConnell
+- Competitive Programming - Steven Halim, Felix Halim, Suhendry Effendy
+- Software Engineering at Google - Titus Winters, Tom Manshreck, Hyrum Wright
+- Refactoring - Martin Fowler, Kent Beck, John Brant, William Opdyke, Don Roberts
+- Groking Algorithms - Aditya Y. Bhargava
+- Intro to Algorithms - Thomas H. Cormen, Charles E. Leiserson, Ronald L. Rivest, Clifford Stein
+- Designing Data-Intensive Applications - Martin Kleppmann
+- Growing Object-Oriented Software, Guided by Tests - Steve Freeman, Nat Pryce
+- Unit Testing Principles, Practices, and Patterns - Vladimir Khorikov
+- Art of Unit Testing - Roy Osherove
+- Fundamentals of Software Architecture - Mark Richards, Neal Ford
+- Software Architecture - The Hard Parts - Neal Ford, Mark Richards
+- Domain Driven Design Quickly - Abel Avram, Floyd Marinescu
+- A Philosophy of Software Design - John Ousterhout
+- C4 Model - Simon Brown
+- Design Patterns: Elements of Reusable Object-Oriented Software - Erich Gamma, Richard Helm, Ralph Johnson, John Vlissides
+--
+- Learning SQL - Alan Beaulieu
+- Statistical Learning - Trevor Hastie, Robert Tibshirani
 - Computer Networking - Andrew S. Tanenbaum, David J. Wetherall
+- Compilers - Alfred V. Aho, Monica S. Lam, Ravi Sethi, Jeffrey D. Ullman
+- Clean Code - Robert C. Martin
 
 ---
