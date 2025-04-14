@@ -6,7 +6,21 @@ languages: Python
 dependencies: Django
 ---
 
-> toc
+- [Intoduction](#intoduction)
+  - [What is a Service Layer?](#what-is-a-service-layer)
+  - [Why Use a Service Layer?](#why-use-a-service-layer)
+  - [Example Scenario](#example-scenario)
+    - [Without Service Layer (logic inside the view):](#without-service-layer-logic-inside-the-view)
+    - [With Service Layer (clean version):](#with-service-layer-clean-version)
+      - [`services/questionnaire_service.py`](#servicesquestionnaire_servicepy)
+      - [`views.py`](#viewspy)
+  - [Helpers `vs` Service Layer](#helpers-vs-service-layer)
+    - [Service Layer vs Helper](#service-layer-vs-helper)
+    - [Example to Differentiate](#example-to-differentiate)
+      - [Helper:](#helper)
+      - [Service:](#service)
+  - [Related Architectural Terms and Topics](#related-architectural-terms-and-topics)
+- [References](#references)
 
 ---
 

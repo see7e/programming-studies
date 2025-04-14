@@ -35,6 +35,19 @@
 # 	url = https://github.com/see7e/42-Born2beroot
 # 	branch = main
 
+## Tic Em Trilhas - 5G
+[submodule "TicEmTrilhas-5G"]
+	path = Courses/tic-em-trilhas_5G
+	url = https://github.com/see7e/5g-ticemtrilhas
+	branch = main
+
+## CPQD
+[submodule "CPQD_private-networks-5g"]
+	path = Courses/CPQD_private-networks-5G
+	url = https://github.com/see7e/CPQD_private-networks-5g
+	branch = main
+
+
 # Projects
 [submodule "TranslateGPT"]
 	path = Projects/TranslateGPT
