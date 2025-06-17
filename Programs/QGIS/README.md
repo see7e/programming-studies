@@ -1,6 +1,6 @@
 ---
 title: QGIS
-tags: studies, program
+tags: studies, programming, QGis
 use: Documentation
 languages: NULL
 dependences: QGIS

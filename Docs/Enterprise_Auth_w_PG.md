@@ -2,8 +2,12 @@
 title: Enterprise Authentication with PostgreSQL
 aliases:
   - PG Auth with Kerberos
-tags: studies, programming
-use: Documentation
+tags:
+  - studies
+  - programming
+  - database
+  - security
+use: Databases, Authentication
 languages: SQL
 dependences: PostgreSQL
 ---

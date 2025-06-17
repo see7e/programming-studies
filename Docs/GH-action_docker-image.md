@@ -4,8 +4,9 @@ tags:
   - studies
   - common_core
   - programming
-use: DevOps, Docker, Dockerfile, GitHub, GitHub Actions
-languages: Yamel, Dockerfile, Shell
+  - "42"
+use: DevOps, GitHub Actions
+languages: YAML, Dockerfile, Shell
 dependences: GitHub, Docker, GitHub Actions
 ---
 

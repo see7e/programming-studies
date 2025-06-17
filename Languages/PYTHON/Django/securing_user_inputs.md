@@ -1,4 +1,9 @@
 ---
+title: Django - Securing User Inputs
+tags: studies, programming, python, django, security
+use: Documentation
+languages: Python
+dependences: Django
 ---
 
 # Securing User Inputs in Django

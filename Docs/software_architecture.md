@@ -1,10 +1,14 @@
 ---
 title: Software Architecture
-tags: studies, programming
+tags:
+  - studies
+  - programming
+  - architecture
 use: Documentation
-languages: NULL
-dependences: NULL
+languages: 
+dependences:
 ---
+#to_review
 
 <details> <summary>Table of Contents 🔖</summary>
 
@@ -53,7 +57,7 @@ dependences: NULL
 > If you 're a software architect who was never programmed is kinda like a priest in a wedding, he performs the service but he can only imagine what comes next.
 > -*Ron Kleinman*
 
-# NEW INFO (#to_review) # Application Architecture
+# Application Architecture
 
 In this high-level overview, we'll explore the architecture of a production-grade application. This will serve as a foundation for the rest of the course, allowing us to delve into each component in more detail later on.
 

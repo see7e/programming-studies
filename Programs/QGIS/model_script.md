@@ -1,3 +1,11 @@
+---
+title: QGIS
+tags: programming, QGis
+use: Reference
+languages: Python
+dependences: QGis
+---
+
 https://docs.qgis.org/3.28/en/docs/user_manual/processing/scripts.html#scripts-alg
 https://docs.qgis.org/3.28/en/docs/user_manual/processing_algs/index.html
 https://qgis.org/pyqgis/3.0/core/Processing/QgsProcessingContext.html#qgis.core.QgsProcessingContext.addLayerToLoadOnCompletion

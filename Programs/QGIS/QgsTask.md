@@ -1,6 +1,10 @@
 ---
-title: Tasks
+title: Qgis - Tasks
 description: "Doing the heavy work in the background"
+tags: programming, QGis
+use: Transcript
+languages: Python
+dependences: QGis
 ---
 
 > [!NOTE]

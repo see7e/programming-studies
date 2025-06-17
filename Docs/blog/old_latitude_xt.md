@@ -1,9 +1,15 @@
 ---
 title: Old Dell Latitude XT
-tags: linux, old pc, dell, latitude_xt 
+tags:
+  - linux
+  - old
+  - pc
+  - dell
+  - latitude_xt
+  - programming
 use: Blog
-languages: NULL
-dependences: NULL
+languages: 
+dependences:
 ---
 
 # Installing Linux on an old PC

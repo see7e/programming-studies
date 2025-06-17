@@ -1,9 +1,12 @@
 ---
 title: Linux Directory System
-tags: studies, programming
+tags:
+  - studies
+  - programming
+  - linux
 use: Documentation
-languages: NULL
-dependences: NULL
+languages: 
+dependences:
 ---
 
 <details> <summary>Table of Contents 🔖</summary>

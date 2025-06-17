@@ -1,9 +1,16 @@
 ---
 title: Installing Linux on an old PC
-tags: linux, old pc, dell latitude xt 
+tags:
+  - linux
+  - old
+  - pc
+  - dell
+  - latitude
+  - xt
+  - programming
 use: Blog
-languages: NULL
-dependences: NULL
+languages: 
+dependences:
 ---
 
 # Installing Linux on an old PC

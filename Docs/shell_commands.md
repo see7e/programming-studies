@@ -3,6 +3,7 @@ title: Shell
 tags:
   - programming
   - studies
+  - linux
 use: Documentation
 languages: Bash, Shell
 dependences:

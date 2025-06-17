@@ -1,5 +1,12 @@
-> https://qgis.org/pyqgis/3.4/core/QgsSettings.html
+---
+title: QGIS - Settings
+tags: programming, QGis
+use: Reference
+languages: Python
+dependences: QGis
+---
 
+> https://qgis.org/pyqgis/3.4/core/QgsSettings.html
 
 
 ```python
