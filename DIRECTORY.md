@@ -10,7 +10,8 @@ banner_icon: 📂
 > [`root`](./README.md)
 
 # Roadmaps
-- [A Fresh Start](./Docs/fresh_start.md)
+- [A Fresh Start](Docs/roadmaps/fresh_start.md)
+- [DevOps](Docs/roadmaps/devops.md)
 
 # "Languages" 
 
@@ -52,14 +53,14 @@ banner_icon: 📂
 ---
 
 # Courses
-
 - [CS50x](./Courses/CS50x/README.md)
 - [42 - Piscine](./Courses/42/42_Walkthrugh/README.md)
 - [42 Common Core](./Courses/42/Common_Core/README.md)
 - [Cybersecurity Essentials - Cisco](./Courses/Cybersecurity_Essentials-Cisco/README.md)
+- [CPQD: Private Networks](./Courses/CPQD_private-networks-5G/README.md)
+- [Tic em Trilhas: Basic 5G](./Courses/tic-em-trilhas_5G/README.md)
 
 # Other
-
 - [101 Code Concepts](101_code_concepts.md)
 - [Software Architeture](./Docs/software_architecture.md)
 - [Techinical Project Documentation](./Docs/project_documentation.md)
@@ -68,15 +69,9 @@ banner_icon: 📂
 - [Big O Notation](./Docs/big_o_notation.md)
 - Algorithms
   - [Sorting Algo](./Docs/sorting_algo.md)
-    - Bubble Sort
-    - Insertion Sort
-    - Merging Sort
-    - TimSort
-    - Merge Sort
 - [UML](./Docs/uml.md)
 
 # Programs
-
 - [QGIS](./Programs/QGIS/README.md) 
   - [light-QGIS-plugin-repo](./Projects/light-QGIS-plugin-repo/README.md) (*project*)
 
@@ -85,14 +80,12 @@ banner_icon: 📂
 # Projects
 
 ## Front End
-
 - App Game [Mosquitoes](https://github.com/see7e/Mosquitoes-WebGame)
 - Project [YourFinance](https://github.com/see7e/YourFinance) - A Financial Application
 - [`IONIC`](./Languages/Ionic/README.md)
     - Projeto Gasolina ou Álcool
 
 ## Back End
-
 - App Help Desk (App para abertura e acompanhamento de suportes técnicos) `php`
 - App Send Mail (App para criação e envio de e-mails) `php`
 - App Lista de Tarefas (`PHP` com `PDO` e `MySQL`) `php`
@@ -102,13 +95,11 @@ banner_icon: 📂
     - Publicação de aplicações web (`PHP` e `MySQL`) utilizando o InfintyFree
 
 ## APIs
-
 - [`API` com Slim Framework](./API/README.md) Projeto API de Produtos
 - [`Ajax`](./Languages/Ajax/README.md)
     - App Pesquisa Endereço (Aprenda a realizar requisições HTTP via XMLHttpRequest para API's)
 
 ## Other
-
 - [42-codespace-builder](./Projects/42-codespace-builder/README.md)
 - [TranslateGPT](./Projects/TranslateGPT/README.md)
 - [Advent of Code](./Projects/aoc_2023/README.md)

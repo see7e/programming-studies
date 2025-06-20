@@ -50,9 +50,9 @@ flowchart TD
     E -.->|Expand| A
 ```
 
-When a question or topic of interest shows up, they're added in a list, during the *Catch* process. This is just a big queue of elements that will be analysed (*Screening*) later. When this time commes a element (or group of elements), will be selected, to be studied this can be divided into two groups depending on the available time to be spent:
+When a question or topic of interest shows up, they're added in a list, during the *Catch* process. This is just a big queue of elements that will be analysed (*Screening*) later. When this time comes a element (or group of elements), will be selected, to be studied this can be divided into two groups depending on the available time to be spent:
 
-- Using the Blurting method: The element will be studied, and a draft will be created in a sketchbook using only the recalled information.
+- Using the Blurting method: The element will be studied, and a draft will be created in a sketchbook using only the recalled information. This is similar to the [Feynman techniche](feynman_techniche.md).
 - Using the directly information of the gathered articles creating a mesh of information, and a draft will be created.
 
 With the draft created, the information will be translated to a document located in this vault, and the information will be stored in a way that can be easily retrieved. Here the process can run in a loop, until the document has a good quality, there's a possibility of the document receive a `#toreview` tag, and the review process will be triggered later.
@@ -65,7 +65,7 @@ Other possibility is the *Expand* process, where the previous steps may revialed
 > If I have seen further, it is by standing on the shoulders of giants.
 > *Isaac Newton*
 
-## [A Fresh start](./Docs/fresh_start.md) 🛣️
+## [A Fresh start](Docs/roadmaps/fresh_start.md) 🛣️
 
 Sometimes in the rush to resolve the problems that we face, the learn only to fill the gap that is presented by the obstacle. So I'll try to visit the core/basic concepts of CS, using some guidelines.
 
@@ -81,6 +81,8 @@ This graph reflects the themes that I'm studying, and the progress of each one. 
 > - Homelab (networking, services) [personal]
 > - Teorical topics (Fresh start roadmap) [personal] *is currently paused*
 > Here's the [archive](./src/progress_archive.md) of Gannt charts. 
+
+Also I'm now tracking the "TODOs" and implementation ideas with `- [i]` this uses [Tasks Plugin](https://publish.obsidian.md/tasks/Introduction) and some theming ([Status Collections](https://publish.obsidian.md/tasks/Reference/Status+Collections/About+Status+Collections)) to format, query and sort the needed changes at the Vault.
 
 ## First time with Markdown? 📑
 > Enter [here](first-time.md)
