@@ -1,9 +1,12 @@
 ---
 title: Timsort - Algorithm
-tags: studies, programming
+tags:
+  - studies
+  - programming
+  - algorithm
 use: Documentation, Algorithms
-languages: NULL
-dependences: NULL
+languages: 
+dependences:
 ---
 
 <details> <summary>Table of Contents 🔖</summary>
@@ -19,7 +22,8 @@ dependences: NULL
 
 # Implementing Timsort [#](https://realpython.com/sorting-algorithms-python//#implementing-timsort-in-python "Permanent link")
 
-In this section, you’ll create a barebones Python implementation that illustrates all the pieces of the Timsort algorithm. If you’re interested, you can also check out the [original C implementation of Timsort](https://github.com/python/cpython/blob/master/Objects/listobject.c).
+In this section, you’ll create a barebones Python implementation that illustrates all the pieces of the Timsort [sorting algorithm](sorting_algo.md). If you’re interested, you can also check out the [original C implementation of Timsort](https://github.com/python/cpython/blob/master/Objects/listobject.c).
+
 
 The first step in implementing Timsort is modifying the implementation of `insertion_sort()` from before:
 

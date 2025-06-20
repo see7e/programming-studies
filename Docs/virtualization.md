@@ -41,7 +41,7 @@ Is the actual physical components of the computer, like the CPU, RAM, HDD, etc. 
 
 ### Software Virtualization
 
-Is the virtualization of the software, like the OS, applications, etc. The virtualization is done by an element called **Virtual Machine** (i.e. VirtualBox, VMWare Workstation, etc). The virtualization is done by the virtual machine, which is a software that runs on the OS and allows the creation of virtual machines.
+Is the virtualization of the software, like the OS, applications, etc. The virtualization is done by an element called **Virtual Machine** (i.e. VirtualBox, VMWare Workstation, etc). The virtualization is done by the virtual machine, which is a software that runs on the OS and allows the creation of virtual machines. One example is the [Network Function Virtualization (NFV)](nfv.md) that replaces traditional hardware-based network devices like routers and firewalls with software running on virtual machines.
 
 ## Virtualization Benefits
 

@@ -7,8 +7,6 @@ use: Documentation
 languages: Bash, Shell
 dependences:
 ---
-#to_review
-
 <details> <summary>Table of Contents 🔖</summary>
 
 - [Intro](#intro)

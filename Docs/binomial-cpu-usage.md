@@ -1,6 +1,10 @@
 ---
-title: Corretalation between Binomiial Distribution and CPU Usage - Algorithm
-tags: studies, programming
+title: Corretalation between Binomial Distribution and CPU Usage - Algorithm
+tags:
+  - studies
+  - programming
+  - algorithm
+  - multiprogramming
 use: Documentation, Algorithms
 languages: C
 dependences: math.h, stdio.h, stdlib.h, string.h, dirent.h
@@ -8,7 +12,7 @@ dependences: math.h, stdio.h, stdlib.h, string.h, dirent.h
 
 # Prof of concept
 
-Stumbled accros this function when reading Tanembaum's [Modern Operating Systems](https://www.amazon.com/Modern-Operating-Systems-Andrew-Tanenbaum/dp/013359162X) and wanted to test out the function creating a program to retrieve the information and calculate the value describled in the section 2.1.7 Modeling the Multiprogramming.
+Stumbled across this function when reading Tanembaum's [Modern Operating Systems](https://www.amazon.com/Modern-Operating-Systems-Andrew-Tanenbaum/dp/013359162X) and wanted to test out the function creating a program to retrieve the information and calculate the value described in the section 2.1.7 Modeling the [[Multiprogramming]].
 
 The formula $CPU Usage = 1 - p^n$, where `p` is the fraction of time the CPU is idle and `n` is the number of processes in the system. So the program retrieves the system's CPU and RAM information, counts the number of running processes, and computes CPU usage.
 
@@ -16,7 +20,7 @@ Researching about the topic I found this [article](https://en.wikipedia.org/wiki
 
 I found interesting that the formula, presented above looks like a simplification of the binomial distribution formula, where `p` is the probability of success and `n` is the number of trials.
 
-Rather the similarity between the two formulas, the CPU usage formula takes a more deterministic approach, assuming that the CPU is either idle or busy, and the number of processes is fixed. In contrast, the binomial distribution considers the probability of success in each trial and allows for a range of possible outcomes.
+Rather the similarity between the two formulas, the #CPU_usage formula takes a more deterministic approach, assuming that the CPU is either idle or busy, and the number of processes is fixed. In contrast, the binomial distribution considers the probability of success in each trial and allows for a range of possible outcomes.
 
 The CPU usage formula although simplified, assumes idle time behavior in a way that mirrors, but does not replicate, the assumptions underlying the binomial distribution.
 

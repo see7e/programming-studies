@@ -214,7 +214,7 @@ Often you'll want to `reference` the same object over and over again in your cod
 
 ## Threads
 
-If we go back to the CPU that we talked about in the beginning you'll notice that it contains multiple `threads` a thread takes the physical CPU core and breaks it into virtual cores that allow it to run code simultaneously there are some programming languages that support `parallelism` where you can write code that literally executes on two different threads at the same time.
+If we go back to the CPU that we talked about in the beginning you'll notice that it contains multiple `threads` a thread takes the physical CPU core and breaks it into virtual cores that allow it to run code simultaneously there are some programming languages that support `parallelism` where you can write code that literally executes on two different threads at the same time. Refer to [[Multiprogramming]] models.
 
 However many languages out there are only single threaded but that doesn't mean they can't do two things at the same time instead they implement `concurrency` models like an event loop or co-routines that can pause or delay the normal execution of code to handle multiple jobs on a single thread at the same time,
 

@@ -3,9 +3,11 @@ title: Project Documentation
 tags:
   - studies
   - programming
+  - agile
+  - project_documentation
 use: Documentation
-languages: NULL
-dependences: NULL
+languages: 
+dependences:
 ---
 # 12 Principles of the Agile Manifesto
 
@@ -99,7 +101,7 @@ flowchart TD
         1.	Functional (user capabilities)
         2.	Non-Functional (product capabilities)
     2.	User Experience (UX - User profile and needs)
-    3.	Architecture
+    3.	[Architecture](software_architecture.md)
         1.	Interface
         2.	Business Logic
         3.	Database

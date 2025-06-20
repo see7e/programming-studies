@@ -1,9 +1,12 @@
 ---
-title: Object-oriented Programming - OOP 
-tags: studies, programming
+title: Object-oriented Programming - OOP
+tags:
+  - studies
+  - programming
+  - paradigm
 use: Documentation
-languages: Python
-dependences: NULL
+languages: 
+dependences:
 ---
 
 <details> <summary>Table of Contents 🔖</summary>
@@ -26,7 +29,6 @@ dependences: NULL
 # Object-oriented Programming - OOP [#](https://www.youtube.com/watch?v=Ej_02ICOIgs)
 
 ## Concepts
-
 There's two big branches in programming, they're called Programming Paradigms.
 > Paradigm is a way/method to do some task. A programming paradigm is a style/way of programming and not referring to a specific language.
 > by [Gopi Gorantala](https://dev.to/ggorantala/functional-programming-and-programming-paradigms-in-java-323f)
@@ -34,20 +36,23 @@ There's two big branches in programming, they're called Programming Paradigms.
 ![graph](https://res.cloudinary.com/practicaldev/image/fetch/s--NoymT3CM--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/1r3e3w4xgj30b81zb4yu.png)
 
 And as you can see (*if the image was not removed*) OOP belongs to the Imperative Paradigm, but what does it mean?
->  **imperative programming** is a [programming paradigm](https://en.wikipedia.org/wiki/Programming_paradigm "Programming paradigm") of software that uses statements that change a program's state. In much the same way that the imperative mood in natural languages expresses commands, an imperative program consists of commands for the computer to perform. Imperative programming focuses on describing _how_ a program operates step by step.
+>  **Imperative programming** is a [programming paradigm](https://en.wikipedia.org/wiki/Programming_paradigm "Programming paradigm") of software that uses statements that change a program's state. In much the same way that the imperative mood in natural languages expresses commands, an imperative program consists of commands for the computer to perform. Imperative programming focuses on describing _how_ a program operates step by step.
 >  *Jain, Anisha (2022-12-10). ["Javascript Promises— Is There a Better Approach?"](https://medium.datadriveninvestor.com/javascript-promises-is-there-a-better-approach-dd6a0a329131). Medium. Retrieved 2022-12-20.*
 
----
+Object-Oriented Programming (OOP) ==is designed around **objects** – self-contained entities that bundle data and behaviour==. Instead of writing one long list of instructions, developers define **classes** (blueprints) and create **objects** (instances) that interact to perform the program's tasks. These objects mirrors real-world systems by breaking complex problems into smaller pieces and blocks.
 
-The pillars, or main principles, of OOP are:
-- **Abstraction**
-- **Encapsulation**
-- **Inheritance**
-- **Polymorphism**
+Throughout, we'll highlight *why* OOP is so widely used in modern software development by correlating its principles with real-world development practices such as code reuse, modular design, and adaptability to change.
+### Language Support
+OOP is supported (to varying degrees) by many popular programming languages such as Python, Java, C++, C#, Ruby, and JavaScript.
+
+### Benefits and Advantages
+Improved code organization, reuse, and maintainability. By following OOP principles, teams can build modular programs that are easier to extend and reason about, which is crucial for large or evolving codebases.
+
+## Core OOP Principles
+At its core, OOP revolves around a few **basic principles** – commonly listed as **abstraction, encapsulation, inheritance,** and **polymorphism**.
 
 ### Abstraction 
-
-The Objects translate to a imaginable entity that have an Identity, Characteristics and can perform actions.
+The Objects translate to a imaginable entity that have an Identity, Characteristics and can perform actions. With this is possible to (*“ignore the details”*) ==**hide the complexity by focusing on the essential features of an object** relevant to the context==.
 The first one gives the recognition of a unique element in the code. The characteristics are the atributes of the Object and, the actions are the methods of the Object.
 > e.g. a bank account
 ```js
@@ -57,23 +62,23 @@ class Account {
 		this.id = 001;
 		this.user = '...';
 		this.agency = '...';
-		this.balance = 1000.0;
+		this.balance = 1000.0; // private attribute
 	}
-	// methods
+	// public methods
 	deposit(...) {...}
 	withdraw(...) {...}
 }
 ```
 
-This `constructor` element (*the syntax changes from each programming language*) has the builtin attributes that define the object, it can receive methods too, but this is just a representation.
+This `constructor` element (*the syntax changes from each programming language*) has the built-in attributes that define the object, it can receive methods too, but this is just a representation.
 
-### Encapsulation 
-
-This principle states that all important information is contained inside an object and only select information is exposed. The implementation and state of each object are privately held inside a defined class. Other objects do not have access to this class or the authority to make changes. They are only able to call a list of public functions or methods.
+### Encapsulation
+This principle refers to bundling data with the methods that operate on that data, this means that ==**all important information is contained inside an object and only select information is exposed**==.
+The implementation and state (fields/properties/attributes) of each object are privately held inside a defined class. Other objects do not have access to this class or the authority to make changes. They are only able to call a list of public functions or methods, the behaviour.
+This leads to better data integrity, when the object acts as a single unit with clear role, relating with the **S** letter – Single Responsibility Principle (SRP), of the [SOLID](solid.md) acronym.
 
 ### Inheritance 
-
-A class can be created from another, thus receiving its information. When this happens, we say that the new Object is a child of the previous one, receiving the characteristics of the "parent" by inheritance. Note that this newly attributes belongs now to the "child", so it may have be different from other "brothers" and even the "parent".
+==A class can be created from another, thus receiving its information==. When this happens, we say that the new Object is a child of the previous one, receiving the characteristics of the "parent" by inheritance. Note that this newly attributes belongs now to the "child", so it may have be different from other "brothers" and even the "parent".
 
 ```mermaid
 classDiagram
@@ -100,28 +105,112 @@ classDiagram
 ```
 
 In this example:
-
 ```js
 class Duck extends Animal {...}
 class Fish extends Animal {...}
 ```
 
-### Polymorphism 
+This makes reusing and organizing code by establishing an “is-a” relationship between classes more easy, by promoting codebase reuse – common functionality is defined once in the base class and shared with all derived classes.
 
-Allows different types of objects to pass through the same interface. This grants the possibility that "child's" can have different behaviours of the "parents".
+>[!NOTE]
+> In languages like Java and C#, inheritance is **single-root** (each class has one parent, ultimately inheriting from a common base like Java’s `Object`[docs.oracle.com](https://docs.oracle.com/javase/specs/jls/se12/html/jls-1.html#:~:text=Reference%20types%20are%20the%20class,which)). **C++ allows multiple inheritance** (a class can inherit from several classes), though this adds complexity and potential pitfalls like the **“diamond problem”.**
+
+Also many languages mitigate this by offering *interfaces or mixins* – allowing a class to implement multiple sets of behaviors without multiple concrete inheritance. **Proper use of inheritance can make code more extensible:** new subclasses can be added to extend behavior with minimal changes to existing code (an application of the *Open-Closed Principle - OCP*, refer to [SOLID](solid.md)).
+
+> [!WARNING]
+> The misuse of inheritance (e.g. deep inheritance chains or inheriting just to reuse code where a different relationship is more appropriate) can lead to brittle designs. Modern best practices often advise to **favor composition over inheritance** for greater flexibility.
+
+### Polymorphism 
+ Means exactly "many forms" and allows different types of objects to pass through the same (and uniform) interface. This ==**grants the possibility that "child's" can have different behaviours of the "parents"**== typically via subclassing or interface implementation.
 
 ![polymorph](https://media.geeksforgeeks.org/wp-content/uploads/20200911171857/PolymorphisminObjectOrientedProgramming.png)
 
-### Methods 
+For example, if `Car` and `Bicycle` both inherit from `Vehicle` (or implement a `VehicleInterface`), you can write a function that takes a `Vehicle` reference and calls `vehicle.drive()` without caring whether it’s a Car or Bicycle. Each class implements `drive()` in its own way – this is called *dynamic dispatch* or *method overriding*. The correct method is called based on the actual object’s class at runtime (this is *subtype polymorphism*).
 
+Another form is *parametric polymorphism* (generics or templates) where the same class or function can operate on many types. The key benefit is **flexibility and extensibility**: polymorphism, especially via interfaces/abstract classes.
+
+#### Compile-time Polymorphism
+This is resolved during compilation and includes:
+- **Function Overloading**: Multiple functions with the same name but different parameter types or counts.
+```cpp
+class Printer {
+public:
+    void print(int i) { std::cout << "Printing int: " << i << std::endl; }
+    void print(double d) { std::cout << "Printing double: " << d << std::endl; }
+};
+```
+
+- **Operator Overloading**: Defining custom behavior for operators with user-defined types
+```cpp
+class Complex {
+public:
+    double real, imag;
+    Complex(double r, double i) : real(r), imag(i) {}
+	
+    Complex operator+(const Complex& other) {
+        return Complex(real + other.real, imag + other.imag);
+    }
+};
+```
+
+> [!NOTE]
+> Not all languages support compile-time polymorphism directly. For example, Python and JavaScript do not support true function overloading.
+
+#### Runtime Polymorphism
+Resolved during execution, typically via:
+- **Virtual Functions**: In C++, a base class can declare a function as `virtual`, allowing derived classes to override it. Calls to the function on base class pointers will invoke the derived class implementation if overridden.
+```cpp
+class Animal {
+public:
+    virtual void speak() { std::cout << "Animal sound" << std::endl; }
+};
+
+class Dog : public Animal {
+public:
+    void speak() override { std::cout << "Bark" << std::endl; }
+};
+
+void makeSound(Animal* a) {
+    a->speak(); // will call Dog::speak if a is Dog*
+}
+```
+
+- **Method Overriding**: In Java, Python, C#, and others, a child class can override methods defined in a parent class to change behavior.
+```python
+# Parent class
+class Animal:
+    def speak(self):
+        print("The animal makes a sound")
+
+# Child class
+class Dog(Animal):
+    # Overriding the speak method
+    def speak(self):
+        print("The dog barks")
+
+# Another child class
+class Cat(Animal):
+    # Overriding the speak method
+    def speak(self):
+        print("The cat meows")
+
+# Usage
+animal = Animal()
+dog = Dog()
+cat = Cat()
+
+animal.speak()  # Output: The animal makes a sound
+dog.speak()     # Output: The dog barks
+cat.speak()     # Output: The cat meows
+```
+
+### Methods 
 Are functions that are defined inside a class that describe the behaviors of an object. Each method contained in class definitions starts with a reference to an instance object. Additionally, the subroutines contained in an object are called instance methods. Programmers use methods for reusability or keeping functionality encapsulated inside one object at a time.
 
 ### Classes
-
 A class is a user-defined blueprint or prototype from which objects are created. Classes provide a means of bundling data and functionality together. Creating a new class creates a new type of object, allowing new instances of that type to be made. Each class instance can have attributes attached to it for maintaining its state. Class instances can also have methods (defined by their class) for modifying their state.
 
 Visit the following resources to learn more:
-
 -   [Classes in Python](https://docs.python.org/3/tutorial/classes.html)
 -   [Python Classes and Objects](https://www.geeksforgeeks.org/python-classes-and-objects/)
 -   [Python Classes and Objects](https://www.w3schools.com/python/python_classes.asp)
@@ -151,181 +240,7 @@ Visit the following resources to learn more:
     Se nenhum parametro for passado `TypeError: calculate_ price() takes 0 positional arguments but 1 was given`
 
 
-### Dunder Method 
-
-**Are methods that allow instances of a class to interact with the built-in functions and operators** of the language. The word “dunder” comes from “double underscore”, because the names of dunder methods start and end with two underscores, for example `__str__` or `__add__`. Typically, dunder methods are not invoked directly by the programmer, making it look like they are called by magic. That is why dunder methods are also referred to as “magic methods” *sometimes*.
-
-Dunder methods are not called magically, though. They are just called implicitly by the language, at specific times that are well-defined, and that depend on the dunder method in question.
-
-> The dunder method everyone knows
-
-If you have defined classes in Python, you are bound to have crossed paths with a dunder method: `__init__`. **It's responsible for initialising your instance of the class** (like the `constructor` in JS, which is why it is in there that you usually set a bunch of attributes related to arguments the class received.
-
-For example, if you were creating an instance of a class `Square`, you would create the attribute for the side length in `__init__`:
-
-```python
->>> class Square:
-	    def __init__(self, side_length):
-	        """__init__ is the dunder method that INITialises the instance.
-
-	        To create a square, we need to know the length of its side,
-	        so that will be passed as an argument later, e.g. with Square(1).
-	        To make sure the instance knows its own side length,
-	        we save it with self.side_length = side_length.
-	        """
-	        print("Inside init!")
-	        self.side_length = side_length
-
->>> sq = Square(1)
-# Inside init!
-```
-
-Like any other constructor it receives the argument (if needed), at the creation of their instance, including `self`.
-> como qualquer função pode ser definido um valor `defaut` para algum parâmetro recebido
-
-```python
-class Item:
-    def __init__(self, name, price, qtd=0):
-        print(F"Instance created - {name}")
-        self.name = name
-        self.price = price
-        self.qtd = qtd
-        
-    def calculate_price(self): # method
-        return self.price * self.qtd
-
-item = Item("pen", 1.5, 2) # create instance and recieve arguments
-print(item.name, item.price, item.qtd)
-print(item.calculate_price())
-```
-
-- para restringir o argumento recebido pelo metodo, pode ser tipando o parametro na definição do metodo
-    `def __init__(self, name: str, price: float, qtd=0):`
-    caso o parametro tenha um valor defaut python ja reconhece o tipo daquele atributo
-
-- `assert` statement
-    é outra forma de restingir a entrada de dados através dos parametros `assert price >= 0`
-
-    caso a determinação nao seja atendida sera retornado `AssertionError` por defaut, mas essa mensagem pode ser editada
-    
-    ```python
-    class Item:
-        def __init__(self, name: str, price: float, qtd=0):
-            # validations
-            assert price >= 0, F"Price {price} lesser than zero."
-            assert qtd >= 0,  F"Quantity {qtd} lesser than zero."
-
-            # atributes
-            self.name = name
-            self.price = price
-            self.qtd = qtd
-        
-        def calculate_price(self): # method
-            return self.price * self.qtd
-    ```
-
-- Class Atributes, funciona como uma variável local que pode ser acessada através da instancia de um objeto (lembra a ligação `__proto__` em JS)
-
-    ```python
-    class Item:
-        discount: 0.8 # 20%
-
-        def __init__(self, name: str, price: float, qtd=0):
-            # validations
-            assert price >= 0, F"Price {price} lesser than zero."
-            assert qtd >= 0,  F"Quantity {qtd} lesser than zero."
-
-            # atributes
-            self.name = name
-            self.price = price
-            self.qtd = qtd
-        
-        def calculate_price(self): # method
-            return self.price * self.qtd
-    ```
-
-    - `__dict__` (dictionary) lista todos os atributos do objeto seja ele uma classe ou uma instancia da classe
-
-- chamando a própria classe (`Item.`) pode-se acessar os atibutos que pertencem somente a ela, porem, como boa pratica aconselha-se usilizar `self` para se referir ao atributo pertencido pela propria instancia
-
-    ```python
-    class Item:
-        discount: 0.8 # 20%
-
-        def __init__(self, name: str, price: float, qtd=0):
-            # validations
-            assert price >= 0, F"Price {price} lesser than zero."
-            assert qtd >= 0,  F"Quantity {qtd} lesser than zero."
-
-            # atributes
-            self.name = name
-            self.price = price
-            self.qtd = qtd
-        
-        def calculate_price(self): # method
-            return self.price * self.qtd
-
-        def apply_discount(self):
-            self.price = self.price * self.discount
-
-    item = Item("pen", 1.5, 2) # instance
-    item.apply_discount()
-    print(item.price())
-    ```
-
-    porem se chamarmos o atributo da classe e modificar seu valor, esse novo valor será aplicado somente para aquela instancia
-
-    ```python
-    # [...]
-    item2 = Item("rubber", 0.5, 1) # instance
-    item2.discount = 0.9
-    item2.apply_discount()
-    print(item2.price)
-    ```
-
-### Instances list
-
-```python
-    class Item:
-        discount: 0.8 # 20%
-        all = []
-        
-        def __init__(self, name: str, price: float, qtd=0):
-            # validations
-            assert price >= 0, F"Price {price} lesser than zero."
-            assert qtd >= 0,  F"Quantity {qtd} lesser than zero."
-            
-            # atributes
-            self.name = name
-            self.price = price
-            self.qtd = qtd
-            
-            # actions
-            Item.all.append(self) # record created instances
-        
-        def calculate_price(self): # method
-            return self.price * self.qtd
-		
-        def apply_discount(self):
-            self.price = self.price * self.discount
-		
-    item1 = Item("Phone", 100, 1)
-    item2 = Item("Notebook", 1000, 3)
-    item3 = Item("Mouse", 10, 5)
-    item4 = Item("Keyboard", 75, 5)
-	
-    #print(Item.all)
-    for instance in Item.all:
-        print(instance.name)
-```
-
-- `__repr__` (represent) retorna o objeto com a formatação desejada
-    uma boa prática é retornar da forma mais parecedia com a que foi criada:
-    ```python
-    def __repr__(self):
-        return F"Item('{self.name}', {self.price}, {self.qtd})"
-    ```
-
+### 
 - instanciar a partir de um `.csv` (usando `decorators`)
 
     ```python
