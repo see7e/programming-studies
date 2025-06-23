@@ -3,8 +3,9 @@ title: Time to Live
 tags:
   - studies
   - programming
-  - architecture
-  - system design
+  - system
+  - design
+  - software-architecture
 use: Documentation
 languages: 
 dependences:

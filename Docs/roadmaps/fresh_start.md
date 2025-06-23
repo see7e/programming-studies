@@ -20,7 +20,7 @@ dependences:
 
 ---
 
-#to_review #to_translate
+#to_review
 
 > [!INFO] 
 > [101 Code Concepts](101_code_concepts.md)
@@ -29,7 +29,10 @@ dependences:
 # Introduction
 Welcome to your self-learning roadmap in **software engineering**! This guide is organized as an article-style walkthrough of fundamental concepts, presented in a beginner-friendly way. Each section introduces a topic at a high level, and you’ll find references for further reading. We’ll cover programming paradigms, essential design principles (like SOLID, DRY, KISS, YAGNI), design patterns, software architecture styles, and key system design topics (from microservices to cloud scalability). The goal is to provide a clear, concise roadmap – you’ll get the big picture here and dive deeper into each topic through separate detailed studies later. Let’s get started!
 
+> [!TIP]
 > **How to Use This Roadmap:** The topics are arranged in a logical learning order. Many later concepts build on earlier ones. For example, understanding programming paradigms helps in grasping design principles, which in turn prepare you for design patterns and architectural styles. Follow the sections in order, and use the quote blocks (like this one) to see how concepts connect or depend on each other.
+> 
+> Keep in mind that a solid [mathematical background](math-for-software-engineer.md) in this path will be quite helpful to not only understand better but to enhance the applications of the developed programs.
 
 ## Roadmap Mind Map
 The canvas below is just based on [Programação para Iniciantes](https://www.youtube.com/playlist?list=PLdsnXVqbHDUc7htGFobbZoNen3r_wm3ki) (pt-br) and and [Roadma.sh CS](https://roadmap.sh/computer-science) this can be used as a visual reference for the files and, gradually will add some elements that correlates with a beginner/entry level steps to start/review some core elements of the Computer Science theory.
@@ -137,7 +140,7 @@ Beyond high-level design principles like SOLID, there are general coding maxims 
 - **KISS – Keep It Simple, Stupid:** KISS reminds developers to strive for simplicity in design. Systems should be as simple as possible, avoiding unnecessary complexity. A straightforward solution that meets requirements is preferred over a clever but convoluted one. Simpler code is easier to understand, maintain, and less prone to bugs. This might mean, for instance, not over-engineering a feature or avoiding deep nesting of logic when a flat structure would do. In practice, applying KISS could be as simple as using clear variable names and straightforward logic rather than overly terse or “smart” code.
 
 - **YAGNI – You Aren’t Gonna Need It:** YAGNI is a mantra from Extreme Programming that advises against adding functionality _until it is necessary_. In other words, don’t write code for features you _think_ you might need in the future – implement things only once you actually need them. This prevents wasting effort on speculative features and keeps the codebase simpler. For example, if you’re building a small app and think “someday we might support multiple databases,” YAGNI would say: don’t build an abstraction for database switching now; stick to one database. If the day comes that a second database must be supported, then you refactor. Often, those extra features never become needed, so YAGNI saves you from doing extra work and introduces less code (hence fewer bugs).
-    
+
 
 Following these best practices leads to cleaner code. They often complement each other – for instance, YAGNI and KISS both discourage adding complexity “just in case.” DRY, meanwhile, ensures you don’t have the same bug in two places or diverging behaviors when you intended them to be the same. Keep these principles in mind as a checklist when writing and refactoring code.
 
@@ -149,11 +152,11 @@ Once you understand core principles, the next step is learning **design patterns
 Classic design patterns were popularized by the “Gang of Four” (GoF) book, which catalogs 23 OOP-based patterns. These patterns are often grouped into categories:
 
 - **Creational Patterns:** How to instantiate objects in a way that suits your situation. Examples: Singleton, Factory Method, Builder, Prototype. (e.g., a _Factory Method_ provides an interface for creating objects in a superclass, but allows subclasses to alter the type of objects that will be created.)
-    
+
 - **Structural Patterns:** How to compose classes and objects into larger structures, while keeping these structures flexible and efficient. Examples: Adapter, Decorator, Facade, Composite, Proxy. (e.g., a _Decorator_ can add responsibilities to objects at runtime without changing their class, by wrapping them.)
-    
+
 - **Behavioral Patterns:** How classes and objects interact and distribute responsibility. Examples: Observer, Strategy, Command, Iterator, State. (e.g., the _Observer_ pattern defines a one-to-many dependency so that when one object’s state changes, all its dependents are notified automatically – useful for event handling systems.)
-    
+
 
 Why use design patterns? They **provide a shared vocabulary and best practice solutions**. If you tell another developer “we should use a Singleton here,” they’ll understand you mean one instance of a class should be globally accessible. Patterns can speed up design by providing an outline for solutions and help avoid subtle issues that can occur with naive implementations.
 

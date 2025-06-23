@@ -3,7 +3,7 @@ title: Architecture Principles
 tags:
   - studies
   - programming
-  - architecture
+  - software-architecture
 use: Documentation
 languages: 
 dependences:

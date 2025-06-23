@@ -1,10 +1,10 @@
 ---
-title: Active Record Pattern 
+title: Active Record Pattern
 tags:
   - studies
   - programming
   - design-patterns
-  - architecture
+  - software-architecture
 use: Documentation, Reference
 languages: 
 dependences:

@@ -19,6 +19,7 @@ dependences:
       - [Broader Implications](#broader-implications)
   - [O – Open/Closed Principle (OCP)](#o--openclosed-principle-ocp)
   - [L – Liskov Substitution Principle (LSP)](#l--liskov-substitution-principle-lsp)
+    - [Supporting Points](#supporting-points)
   - [I – Interface Segregation Principle (ISP)](#i--interface-segregation-principle-isp)
   - [D – Dependency Inversion Principle (DIP)](#d--dependency-inversion-principle-dip)
 - [References](#references)
@@ -35,6 +36,8 @@ A class should have one, and only one, reason to change [2](#references). In oth
 
 > [!TIP]
 > The point about "only one reason to change" is related with the [coupling](to_review/coupling.md) of the logic ("responsibility") that is expected for that class/method to perform. If more than one performed tasks changes (Robert also refers to *stakeholders*) and this triggers a change in the class, than this principle is broken.
+
+![srp](https://miro.medium.com/v2/resize:fit:1100/format:webp/1*P3oONz9Da3Tc1w97fMV73Q.png)
 
 > For example, a class `ReportGenerator` might have the sole job of generating reports – it shouldn’t also be handling database connections or logging, because those are separate concerns. Following SRP makes classes "smaller" and more maintainable.
 
@@ -81,32 +84,94 @@ If you notice any of these signs, it's a good indication that your class may nee
 
 ---
 ## O – Open/Closed Principle (OCP)
- _“Software entities (classes, modules, functions) should be open for extension, but closed for modification.”_[en.wikipedia.org](https://en.wikipedia.org/wiki/SOLID#:~:text=The%20open%E2%80%93closed%20principle%20,8) This means you should design classes in a way that new functionality can be added by writing new code (e.g., new subclasses, new methods) rather than changing the existing class code. If you find yourself frequently editing the internals of a class to accommodate new needs, that class might violate OCP. A classic example is using inheritance or interfaces: Suppose you have a class that calculates area for shapes – rather than writing a big `if` or switch that checks shape type (circle, square, etc.), you make it open for extension by having a base class `Shape` with a method `area()`. Each new shape subclass implements `area()` accordingly. The code that uses `Shape.area()` doesn’t need to change when a new shape is added – you just add a new subclass. This principle ties closely to polymorphism and to using abstraction to insulate high-level code from changes in low-level concrete implementations[en.wikipedia.org](https://en.wikipedia.org/wiki/SOLID#:~:text=In%20software%20programming%20%2C%20SOLID,1)[en.wikipedia.org](https://en.wikipedia.org/wiki/SOLID#:~:text=The%20open%E2%80%93closed%20principle%20,8). **The benefit is reduced risk when adding features** – you add new code without breaking existing code (which presumably already works and is tested). This leads to more stable systems as they evolve[en.wikipedia.org](https://en.wikipedia.org/wiki/SOLID#:~:text=,to%20changing%20requirements%20more%20easily).
- > Software entities (classes, modules, functions) should be **open for extension** but **closed for modification**. You achieve this by writing code that allows new functionality via extension (e.g., subclassing or composition) without altering existing code, thus avoiding bugs in tested code.
+ ==**“'Software entities (classes, modules, functions) should be open for extension, but closed for modification'**==. This means you should design classes in a way that new functionality can be added by writing new code (e.g., new subclasses, new methods) rather than changing the existing class code".
+
+> [!TIP]
+> If you find yourself frequently editing the internals of a class to accommodate new needs, that class might violate OCP.
+ 
+> Using inheritance or interfaces, suppose you have a class that calculates area for shapes – rather than writing a big `if` or `switch` that checks shape type (circle, square, etc.), you make it open for extension by having a base class `Shape` with a method `area()`. Each new shape subclass implements `area()` accordingly. The code that uses `Shape.area()` doesn’t need to change when a new shape is added – you just add a new subclass.
+  
+  > [!NOTE]
+  > *This principle ties closely to Polymorphism ([OOP](OOP.md)) and Law of Demeter ([LOD](lod.md))*.
+  
+  **The benefit is reduced risk when adding features** – you add new code without breaking existing code (which presumably already works and is tested). This leads to more stable systems as they evolve.
+
+![ocp](https://miro.medium.com/v2/resize:fit:1100/format:webp/1*0MtFBmm6L2WVM04qCJOZPQ.png)
+
+At first glance this principle may look opposite as SRP, as the need changes, the class would have new responsibilities or perform multiple actions. But to overcome this misunderstanding, just imagine/create a new abstraction layer between the current class and the operations that need to be performed. As I've mentioned this problem is overcomed when you relate with the Law of Demeter.
 
 ## L – Liskov Substitution Principle (LSP)
-Introduced by Barbara Liskov, LSP states that _subtypes must be substitutable for their base types_[en.wikipedia.org](https://en.wikipedia.org/wiki/SOLID#:~:text=). More formally: if `S` is a subtype of `T`, then objects of type `T` in a program may be replaced with objects of type `S` without altering any desirable properties of the program (correctness, task performed, etc.). In practice, this means derived classes should extend the base class’s behavior without contradicting its expected behavior. For example, if you have a class `Bird` with a method `fly()`, and a subclass `Penguin` that cannot actually fly, making `Penguin.fly()` throw an exception would violate LSP because wherever a `Bird` is expected to fly, a `Penguin` would break the behavior assumptions. Violating LSP often indicates a design problem in your inheritance hierarchy. Adhering to LSP ensures **polymorphism works correctly** – any code using the base class should not need special case handling for subclasses[en.wikipedia.org](https://en.wikipedia.org/wiki/SOLID#:~:text=)[en.wikipedia.org](https://en.wikipedia.org/wiki/SOLID#:~:text=,9). It also implies you should not strengthen preconditions or weaken postconditions when overriding methods. The result is **reliable interchangeability**, which is the whole point of polymorphism. LSP encourages careful hierarchy design and often pushes designs toward using composition or interfaces when inheritance doesn’t truly model an “is-a” relationship.
->  Subtypes must be substitutable for their base types. Any class inheriting from a base class should be usable wherever the base class is expected, without breaking the program. This encourages proper inheritance hierarchies (no surprising side-effects when using a subclass in place of a parent class).
+Introduced by Barbara Liskov, LSP states that ==**subtypes must be substitutable for their base types**==. More formally: *if S is a subtype of T, then objects of type T in a program may be replaced with objects of type S without altering any desirable properties of the program (correctness, task performed, etc.)*.
+
+In practice, the paragraph above means that ==**the derived classes should extend the base class’s behavior without contradicting its expected behavior**==.
+
+> If you have a class `Bird` with a method `fly()`, and a subclass `Penguin` that cannot actually fly, making `Penguin.fly()` throw an exception would violate LSP because *wherever a Bird is expected to fly, a Penguin would break the behavior assumptions*.
+
+> [!TIP]
+> *Violating LSP often indicates a design problem in your inheritance hierarchy*. So pay close attention when implement an overide of a method that comes from the parent class.
+
+Adhering to LSP ensures polymorphism ([OOP](OOP.md)) works correctly – any code using the base class should not need special case handling for subclasses. The result is reliable interchangeability, which is the whole point of polymorphism and interfaces. LSP encourages careful hierarchy design and often pushes designs toward using composition or interfaces when inheritance doesn’t truly model an “is-a” relationship.
+
+![lsp](https://miro.medium.com/v2/resize:fit:1100/format:webp/1*yKk2XKJaCLNlDxQMx1r55Q.png)
+
+### Supporting Points
+- **Design Contradictions:** Violating LSP means there is a contradiction in your design—you are defining categories (via inheritance) but not respecting their contracts (check out [design by contract](design-by-contract.md)) in implementation, which signals a design issue.
+- **Method Overrides:** Overriding a method from a parent class is a common place where LSP violations occur, especially if the override changes the expected behavior, strengthens preconditions, weakens postconditions, or breaks invariants of the base class.
+- **Substitutability:** LSP requires that derived classes can be substituted for their base classes without altering the correctness of the program. If overriding a method breaks client expectations, it undermines substitutability and exposes flaws in the hierarchy.
+- **Practical Advice:** Paying close attention when overriding methods is good practice, as it helps ensure that subclasses remain consistent with the contract established by the superclass and do not introduce unexpected behavior.
+
+> [!TIP]
+> If you want another point of view, checkout [inheritance vs composition](inheritance-vs-composition.md).
 
 ## I – Interface Segregation Principle (ISP)
-_“Clients should not be forced to depend on interfaces they do not use.”_[en.wikipedia.org](https://en.wikipedia.org/wiki/SOLID#:~:text=) This principle is about the granularity of interfaces. It’s better to have many small, specific interfaces than a single large interface with many methods that different clients only partly use. If an interface is too broad, any class implementing it might have to stub out unused methods, and any client using it will be aware of more than it needs. For example, instead of one giant `IMonster` interface that has methods `stalkPrey()`, `fly()`, `spitFire()`, etc. (many monsters may not do all those things), it’s better to have smaller interfaces like `IPredator`, `IFlyer`, `IFireBreather` and have classes implement the ones that are applicable. ISP leads to more **decoupled and modular code**[en.wikipedia.org](https://en.wikipedia.org/wiki/SOLID#:~:text=). It also makes the impact of changes smaller – if you need to change one method of an interface, ideally only a few classes implementing that small interface are affected, rather than a huge number of classes implementing a bloated interface. Following ISP often means using **multiple interfaces to model different aspects of an object’s capabilities**, which is common in OOP design (especially in languages like Java and C# that support multiple interfaces). The end result is that **clients (code that uses an interface) are simpler** because they know only about the methods they actually need, and **implementers are not overly burdened** by requirements that don’t make sense for them.
-> No client should be forced to depend on methods it does not use. It’s better to have many small, specific interfaces than one large “god” interface. This way, implementing classes only need to worry about the methods that are relevant to them.
+**“Clients (read callers) should not be forced to depend on interfaces they do not use”**.
+This principle is about the ==granularity of interfaces==. *It’s better to have many small, specific interfaces than a single large interface with many methods that different clients only partly use*.
+
+If an interface is too broad, any class implementing it might have to stub out unused methods, and any client using it will be aware of more than it needs.
+
+> Instead of one giant `IMonster` interface that has methods `stalkPrey()`, `fly()`, `spitFire()`, etc. (many monsters may not do all those things), it’s better to have smaller interfaces like `IPredator`, `IFlyer`, `IFireBreather` and have classes implement the ones that are applicable.
+
+ISP leads to more **decoupled ([coupling](to_review/coupling.md)) and modular code**. It also makes the impact of changes smaller – if you need to change one method of an interface, ideally only a few classes implementing that small interface are affected, rather than a huge number of classes implementing a bloated interface.
+
+Following ISP often means using **multiple interfaces to model different aspects of an object’s capabilities**, which is common in [OOP](OOP.md) design (especially in languages like Java and C# that support multiple interfaces). The end result is that **clients (code that uses an interface) are simpler** because they know only about the methods they actually need, and **implementers are not overly burdened** by requirements that don’t make sense for them.
+
+![isp](https://miro.medium.com/v2/resize:fit:4800/format:webp/1*2hmyR9L43Vm64MYxj4Y89w.png)
+
+> [!TIP]
+> Is important to track the unused arguments/methods (specially when working with [dependency-injection](to_review/dependency-injection.md)).
 
 ## D – Dependency Inversion Principle (DIP)
-_“Depend upon abstractions, [not] concretions.”_[en.wikipedia.org](https://en.wikipedia.org/wiki/SOLID#:~:text=) In essence, high-level modules (overall policy/logic) should not depend on low-level modules (details); both should depend on abstractions (e.g., interfaces). Additionally, abstractions should not depend on details; details should depend on abstractions. This principle helps decouple software layers. For example, if you have a class `DatabaseSaver` that saves data to a database, a high-level class `UserService` might need to save user info. Without DIP, `UserService` might directly instantiate a `DatabaseSaver` and call its method. This creates a concrete dependency – if you later want to save data to a file instead, you’d have to change `UserService`. With DIP, you would define an interface `IDataStore` with a method `save(data)`, and `DatabaseSaver` would implement this interface. `UserService` would depend only on `IDataStore` abstraction, and at runtime you can provide it with any concrete implementation (database, file, in-memory, etc.). This is often implemented via **dependency injection frameworks or factory patterns** to supply the desired implementation. DIP leads to **looser coupling**, making code more flexible and testable (you can provide a mock implementation of `IDataStore` to test `UserService` easily, for instance)[en.wikipedia.org](https://en.wikipedia.org/wiki/SOLID#:~:text=Dependency%20inversion%20principle). It’s a key principle behind many architectural patterns (like hexagonal architecture, clean architecture, etc.), ensuring that high-level logic remains agnostic of low-level implementation details. By inverting dependencies, changes in low-level modules (like switching database library, or changing how logging works) have minimal impact on higher-level logic.
-> High-level modules should not depend on low-level modules; both should depend on abstractions. Also, abstractions (interfaces) should not depend on details; details (implementations) should depend on abstractions. This principle inverts the typical dependency direction to reduce coupling. For example, instead of a class directly instantiating a database object, it would depend on an interface; a concrete database implementation then fulfills that interface. This makes swapping out components (like using a different database) much easier.
+**“Depend upon abstractions, (not) concretions”**. In essence, high-level modules (overall policy/logic) should not depend on low-level modules (details); both should depend on abstractions (e.g., **interfaces**). Additionally, abstractions should not depend on details; details should depend on abstractions.
 
+This principle helps decouple software layers.
 
-Each SOLID principle addresses a specific aspect of software design, but they complement each other. Together they guide us to write **code that has high cohesion (related functionality in one place) and low coupling (minimal dependencies between modules)**[en.wikipedia.org](https://en.wikipedia.org/wiki/SOLID#:~:text=)[en.wikipedia.org](https://en.wikipedia.org/wiki/SOLID#:~:text=,on%20methods%20they%20don%27t%20use). Adhering to SOLID tends to produce systems that are easier to maintain and extend – which directly ties to why OOP is valued. For instance, a class following SRP and DIP is likely easier to modify without side effects, and you can substitute implementations thanks to LSP and ISP, enabling flexible architectures and even **plug-in-like designs**.
+> If you have a class `DatabaseSaver` that saves data to a database, a high-level class `UserService` might need to save user info. Without DIP, `UserService` might directly instantiate a `DatabaseSaver` and call its method. *This creates a concrete dependency* – if you later want to save data to a file instead, you’d have to change `UserService`. 
+>
+> With DIP, you would define an interface `IDataStore` with a method `save(data)`, and `DatabaseSaver` would implement this interface. `UserService` would depend only on `IDataStore` abstraction, and at runtime you can provide it with any concrete implementation (database, file, in-memory, etc.).
 
-It’s worth noting that SOLID principles are guidelines, not iron-clad laws. Sometimes overzealous application can lead to too many layers of abstraction (e.g., making an interface for every single class even when not needed, or splitting responsibilities too finely). The key is balance – use SOLID to eliminate blatant design smells (like classes that do too much, or brittle interdependencies) but keep the code as simple as possible. As a rule of thumb, if following a principle makes the design _more_ complex with no clear benefit, reconsider the approach. Properly applied, SOLID helps manage complexity in large codebases and is almost a checklist for good OO design. In fact, many modern **agile and clean coding practices** build on these principles – for example, many of Clean Code’s class design recommendations echo SRP and ISP (keep classes small, focused, and interfaces narrowly tailored to clients)
+This is often implemented via **[dependency injection](to_review/dependency-injection.md) frameworks or factory patterns** to supply the desired implementation. DIP leads to **looser [coupling](to_review/coupling.md)**, making code more flexible and testable (*you can provide a mock implementation of `IDataStore` to test `UserService` easily, for instance*).
 
+It’s a key principle behind many architectural patterns (like [hexagonal architecture](hexagonal-architecture.md), [clean architecture](clean-architecture.md), etc.), ensuring that high-level logic remains agnostic of low-level implementation details. By inverting dependencies, changes in low-level modules (like switching database library, or changing how logging works) have minimal impact on higher-level logic.
 
+![dip](https://miro.medium.com/v2/resize:fit:1100/format:webp/1*Qk8tDmjQlyvwKxNTfXIo0Q.png)
+
+---
+
+Each SOLID principle addresses a specific aspect of software design, but **they complement each other**. Together they guide us to write code that has **high cohesion** (related functionality in one place) and **low coupling** (minimal dependencies between modules). Adhering to SOLID tends to produce systems that are easier to maintain and extend – which directly ties to why OOP is valued.
+
+For instance, a class following SRP and DIP is likely easier to modify without side effects, and you can substitute implementations thanks to LSP and ISP, enabling flexible architectures and even **plug-in-like designs**.
+
+It’s worth noting that SOLID principles are **guidelines**, not iron-clad laws. Sometimes overzealous application can lead to too many layers of abstraction (e.g., making an interface for every single class even when not needed, or splitting responsibilities too finely). The key here is balance – use SOLID to eliminate blatant design smells (like classes that do too much, or brittle interdependencies) but ==**keep the code as simple as possible**==.
+
+> [!TIP]
+> As a rule of thumb, if following a principle makes the design _more_ complex with no clear benefit, reconsider the approach.
+
+Properly applied, SOLID helps manage complexity in large codebases and is almost a checklist for good OO design. In fact, many modern **agile and clean coding practices** build on these principles – for example, many of Clean Code’s class design recommendations echo SRP and ISP (keep classes small, focused, and interfaces narrowly tailored to clients)
 
 ---
 
 # References
-
+- Pictures from: [The S.O.L.I.D Principles in Pictures | by Ugonna Thelma | Backticks & Tildes | Medium](https://medium.com/backticks-tildes/the-s-o-l-i-d-principles-in-pictures-b34ce2f1e898)
 1. [`en.wikipedia.org`](https://en.wikipedia.org/wiki/SOLID#:~:text=Software%20engineer%20and%20instructor%20Robert,5)
 2. ["Single Responsibility Principle"](https://web.archive.org/web/20150202200348/http://www.objectmentor.com/resources/articles/srp.pdf) (PDF). `objectmentor.com`. Archived from the original on 2 February 2015.
 3. [Martin, Robert C.](https://en.wikipedia.org/wiki/Robert_Cecil_Martin) (2003). [_Agile Software Development, Principles, Patterns, and Practices_](https://books.google.com/books?id=0HYhAQAAIAAJ). Prentice Hall. p. 95. [ISBN](https://en.wikipedia.org/wiki/ISBN_\(identifier\) "ISBN (identifier)") [978-0135974445](https://en.wikipedia.org/wiki/Special:BookSources/978-0135974445 "Special:BookSources/978-0135974445").
@@ -116,4 +181,9 @@ It’s worth noting that SOLID principles are guidelines, not iron-clad laws. So
 7. [TutorialsTeacher: Real-world SRP examples](https://www.tutorialsteacher.com/csharp/single-responsibility-principle)
 8. [Reddit: Practical implications of SRP](https://www.reddit.com/r/learnprogramming/comments/wla9pg/there_should_never_be_more_than_one_reason_for_a/)
 9. [Duke University: SRP and coupling](https://courses.cs.duke.edu/fall22/compsci307d/readings/srp.pdf)
-10. 
+10. [object oriented - what can go wrong if the liskov substitution principle is violated? - software engineering stack exchange](https://softwareengineering.stackexchange.com/questions/170221/what-can-go-wrong-if-the-liskov-substitution-principle-is-violated)
+11. [solid class design: the liskov substitution principle — tom dalling](https://www.tomdalling.com/blog/software-design/solid-class-design-the-liskov-substitution-principle/)
+12. [oop - what is an example of the liskov substitution principle? - stack overflow](https://stackoverflow.com/questions/56860/what-is-an-example-of-the-liskov-substitution-principle)
+13. [liskov substitution principle - no overriding/virtual methods? - stack overflow](https://stackoverflow.com/questions/1735137/liskov-substitution-principle-no-overriding-virtual-methods)
+14. [how to avoid violating the liskov substitution principle (lsp) in object-oriented programming? - codingtechroom](https://codingtechroom.com/question/liskov-substitution-principle-avoid-violation)
+15. [object oriented - how to verify the liskov substitution principle in an inheritance hierarchy? - software engineering stack exchange](https://softwareengineering.stackexchange.com/questions/170189/how-to-verify-the-liskov-substitution-principle-in-an-inheritance-hierarchy)

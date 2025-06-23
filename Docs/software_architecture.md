@@ -3,7 +3,7 @@ title: Software Architecture
 tags:
   - studies
   - programming
-  - architecture
+  - software-architecture
 use: Documentation
 languages: 
 dependences:
