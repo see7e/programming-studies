@@ -45,7 +45,7 @@ author: Anirudh Rowjee
 
 ---
 
-#to_review 
+- [i] #to_review : formatar texto, conectar com artigo de conceito, transcrever exemplo para `gc.c` 🔽
 # Garbage Collector Documentation
 
 ## Introduction
