@@ -1,23 +1,23 @@
 ---
 title: Studies - Root
-tags: studies, programming
-use: Documentation
-languages: NULL
-dependences: NULL
+tags:
+  - studies
+  - programming
+use: Management
 banner: "![[proggramming_banner.jpg]]"
 banner_y: 0.5
 banner_lock: true
 ---
 ****
 > [!INFO] 
-> The links are built for the obsidian branch, i was working in main but now i'll split correctly and after that update all the inter document links over the main branch
+> - If you're coming from the [GitHub repo](https://github.com/see7e/programming-studies), some of the links are built for Obsidian, this means that you'll either have to access the [Page implementation]() or store everything locally.
+> - If you like the information and want to add/update with yours insights go to the [CONTRIBUTING](Courses/CPQD_private-networks-5G/CONTRIBUTING.md) document.
 
 ---
 
 > This is a list of interesting documents gathered during development studies
 # The Big Picture 🌌
-
-This repo is divided in two branches, [main](https://github.com/see7e/programming-studies) has common links and [obsidian](https://github.com/see7e/programming-studies/tree/obsidian) links follow a Zettelkasten adapted model along with Obsidian to map the network of documents. If you want to set up in you computer, [click here](obisidian_init.md).
+Links follow a Zettelkasten adapted model along with Obsidian to map the network of documents.
 
 <details>
 	<summary>If you want to know the history, click here.</summary>
@@ -36,7 +36,6 @@ This repo is divided in two branches, [main](https://github.com/see7e/programmin
 ![Galaxy|500](./src/img/prog-galaxy.png)
 
 # Process 🧩
-
 As any (very) systematic person and with a great chance of my mind to escape the focus state, that is to me a very challenging task, I need a flow to guide me through the process of learning.
 
 ```mermaid
@@ -66,31 +65,27 @@ Other possibility is the *Expand* process, where the previous steps may revialed
 > *Isaac Newton*
 
 ## [A Fresh start](Docs/roadmaps/fresh_start.md) 🛣️
-
 Sometimes in the rush to resolve the problems that we face, the learn only to fill the gap that is presented by the obstacle. So I'll try to visit the core/basic concepts of CS, using some guidelines.
 
 ## Progress 🏗️
-
 This graph reflects the themes that I'm studying, and the progress of each one. The tree divisions will follow the three different contexts (work and personal).
 
 > [!NOTE]
-> The priorities are changing quickly, and in the moment i cannot follow the original plan, so i'll just put a list of the topics that i'm studying.
+> The priorities are changing quickly, and in the moment i cannot follow the original plan, so I'll just put a list of the topics that i'm studying.
 > - Backend (webserver, testings)
 >   - Django [work]
 >   - ~~Go [personal]~~
 > - Homelab (networking, services) [personal]
-> - Teorical topics (Fresh start roadmap) [personal] *is currently paused*
+> - Theorical topics (Fresh start roadmap) [personal]
 > Here's the [archive](./src/progress_archive.md) of Gannt charts. 
 
 Also I'm now tracking the "TODOs" and implementation ideas with `- [i]` this uses [Tasks Plugin](https://publish.obsidian.md/tasks/Introduction) and some theming ([Status Collections](https://publish.obsidian.md/tasks/Reference/Status+Collections/About+Status+Collections)) to format, query and sort the needed changes at the Vault.
 
-## First time with Markdown? 📑
-> Enter [here](first-time.md)
+## [First time with Markdown? 📑](first-time.md)
 
-## Some useful links [🔗](links.md) 
+## [Some useful links🔗](links.md) 
 
 ## Readings 📚
-
 - Pragmatic Programmer - From Journeyman to Master - Andrew Hunt, David Thomas
 - Make it stick - The Science of Successful Learning - Peter Brown, Henry L. Roediger III, Mark A. McDaniel
 - Modern Operating Systems - Andrew S. Tanenbaum, Herbert Bos

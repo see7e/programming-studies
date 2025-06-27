@@ -9,26 +9,26 @@
 	url = https://github.com/see7e/cs50x
 	branch = main
 
-# ## 42 # archived
-# [submodule "Courses/42/42_Walkthrugh"]
-# 	path = Courses/42/42_Walkthrugh
-# 	url = https://github.com/see7e/42_Walkthrugh
-# 	branch = main
+## 42 # archived
+[submodule "Courses/42/42_Walkthrugh"]
+	path = Courses/42/42_Walkthrugh
+	url = https://github.com/see7e/42_Walkthrugh
+	branch = main
 
-# [submodule "Libft"]
-# 	path = Courses/42/Common_Core/Libft
-# 	url = https://github.com/see7e/42-libft
-# 	branch = main
+[submodule "Libft"]
+	path = Courses/42/Common_Core/Libft
+	url = https://github.com/see7e/42-libft
+	branch = main
 
-# [submodule "get_next_line"]
-# 	path = Courses/42/Common_Core/get_next_line
-# 	url = https://github.com/see7e/get_next_line
-# 	branch = main
+[submodule "get_next_line"]
+	path = Courses/42/Common_Core/get_next_line
+	url = https://github.com/see7e/get_next_line
+	branch = main
 
-# [submodule "ft_printf"]
-# 	path = Courses/42/Common_Core/ft_printf
-# 	url = https://github.com/see7e/42-ft_printf
-# 	branch = main
+[submodule "ft_printf"]
+	path = Courses/42/Common_Core/ft_printf
+	url = https://github.com/see7e/42-ft_printf
+	branch = main
 
 # [submodule "Born2beroot"]
 # 	path = Courses/42/Common_Core/Born2beroot

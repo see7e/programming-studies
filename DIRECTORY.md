@@ -1,9 +1,11 @@
 ---
 title: Studies - DIRECTORY
-tags: studies, programming
-use: Documentation
-languages: NULL
-dependences: NULL
+tags:
+  - studies
+  - programming
+use: Management
+languages: 
+dependences: 
 banner_icon: 📂
 ---
 
@@ -14,41 +16,18 @@ banner_icon: 📂
 - [DevOps](Docs/roadmaps/devops.md)
 
 # "Languages" 
-
-## [`HTML`](./Languages/HTML/README.md)
-- [`HTMX`](./Languages/HTML/HTMX.md)
-
-## [`CSS`](./Languages/CSS/README.md)
-- [`SASS`](./Languages/CSS/SASS.md)
-
-## [`JS`](./Languages/JS/README.md)
-
-## [`C`](./Languages/C/README.md)
-
-## [`Go`](./Languages/Go/README.md)
-
-## [`Python`](./Languages/Python/README.md)
-- [`Django`](./Languages/Python/Django/README.md)
-- [`Flask`](./Languages/Python/Flask/README.md)
-- [`PyQGis`](./Languages/Python/PYQGIS/README.md)
-- Libraries
-    - [OpenPyXL](openpyxl.md)
-    - [Pandas e GeoPandas](geo-pandas.md)
-    - [NumPy](numpy.md)
-    - PyInstaller
-    - Itertools
-    - PySimpleGUI
-    - Virtual Environments [#](https://docs.python.org/3/tutorial/venv.html)
-    - Sphinx
-
-## SQL
-- [`PostgreSQL`](./Languages/SQL/PSQL/README.md)
-
-## [`PHP 7`](./Languages/PHP/README.md)
-
-## Containers
-- [`Docker`](./Languages/Docker/README.md)
-- `Kuernetes`
+- [`HTML`](./Languages/HTML/README.md)
+- [`CSS`](./Languages/CSS/README.md)
+- [`JS`](./Languages/JS/README.md)
+- [`C`](./Languages/C/README.md)
+- [`Go`](./Languages/Go/README.md)
+- [`Python`](./Languages/Python/README.md)
+-  SQL
+	- [`PostgreSQL`](./Languages/SQL/PSQL/README.md)
+- [`PHP 7`](./Languages/PHP/README.md)
+- Containers
+	- [`Docker`](./Languages/Docker/README.md)
+	- `Kuernetes`
 
 ---
 
@@ -62,14 +41,7 @@ banner_icon: 📂
 
 # Other
 - [101 Code Concepts](101_code_concepts.md)
-- [Software Architeture](./Docs/software_architecture.md)
 - [Techinical Project Documentation](./Docs/project_documentation.md)
-- [Shell Commands](./Docs/shell_commands.md)
-- [Data Structures](./Docs/data_structure.md)
-- [Big O Notation](./Docs/big_o_notation.md)
-- Algorithms
-  - [Sorting Algo](./Docs/sorting_algo.md)
-- [UML](./Docs/uml.md)
 
 # Programs
 - [QGIS](./Programs/QGIS/README.md) 
