@@ -20,7 +20,7 @@ dependences:
 
 ---
 
-#to_review
+- [i] #to_review : marcar pontos importantes, escrever artigos dedicados e conectar, tags e toc ⏫  
 
 > [!INFO] 
 > [101 Code Concepts](101_code_concepts.md)
@@ -133,14 +133,14 @@ By following SOLID, you tend to get classes that are "smaller" and more focused,
 > **Prerequisite:** These SOLID principles assume you’re working in an OOP context. ==**Ensure you understand classes, inheritance, and interfaces**==. For example, DIP often involves using interfaces or abstract classes – a concept from OOP. Mastering OOP basics will make it easier to grasp SOLID and apply it effectively in your projects.
 
 ### Coding Best Practices (DRY, KISS, YAGNI)
-Beyond high-level design principles like SOLID, there are general coding maxims that every developer should follow. These help keep code clean and avoid common pitfalls. Three of the most famous ones are [**DRY**](../dry.md), **KISS**, and **YAGNI**:
+Beyond high-level design principles like SOLID, there are general coding maxims that every developer should follow. These help keep code clean and avoid common pitfalls. Three of the most famous ones are **DRY**, **KISS**, and **YAGNI**:
 
-- **DRY – Don’t Repeat Yourself:** This principle aims to eliminate duplicate knowledge in code. Every piece of information or logic should have a single, unambiguous representation in your system. In practice, this means avoiding copy-pasting code and instead abstracting common functionality into a single function or module. Following DRY makes code easier to maintain – if a requirement changes, you update logic in one place rather than many. For example, if two parts of an application format a date the same way, DRY suggests having one date formatting function that both use, rather than two separate implementations.
+- **[DRY – Don’t Repeat Yourself](../dry.md):** This principle *aims to eliminate duplicate knowledge in code*. Every piece of information or logic should have a single, unambiguous representation in your system. In practice, this *means avoiding copy-pasting code and instead abstracting common functionality into a single function or module*. Following DRY makes code easier to maintain – if a requirement changes, you update logic in one place rather than many.
+  > For example, if two parts of an application format a date the same way, DRY suggests having one date formatting function that both use, rather than two separate implementations.
 
-- **KISS – Keep It Simple, Stupid:** KISS reminds developers to strive for simplicity in design. Systems should be as simple as possible, avoiding unnecessary complexity. A straightforward solution that meets requirements is preferred over a clever but convoluted one. Simpler code is easier to understand, maintain, and less prone to bugs. This might mean, for instance, not over-engineering a feature or avoiding deep nesting of logic when a flat structure would do. In practice, applying KISS could be as simple as using clear variable names and straightforward logic rather than overly terse or “smart” code.
+- **[KISS – Keep It Simple, Stupid](../kiss.md):** KISS reminds developers to strive for simplicity in design. Systems should be as simple as possible, avoiding unnecessary complexity. A straightforward solution that meets requirements is preferred over a clever but convoluted one. Simpler code is easier to understand, maintain, and less prone to bugs. This might mean, for instance, not over-engineering a feature or avoiding deep nesting of logic when a flat structure would do. In practice, applying KISS could be as simple as using clear variable names and straightforward logic rather than overly terse or “smart” code.
 
-- **YAGNI – You Aren’t Gonna Need It:** YAGNI is a mantra from Extreme Programming that advises against adding functionality _until it is necessary_. In other words, don’t write code for features you _think_ you might need in the future – implement things only once you actually need them. This prevents wasting effort on speculative features and keeps the codebase simpler. For example, if you’re building a small app and think “someday we might support multiple databases,” YAGNI would say: don’t build an abstraction for database switching now; stick to one database. If the day comes that a second database must be supported, then you refactor. Often, those extra features never become needed, so YAGNI saves you from doing extra work and introduces less code (hence fewer bugs).
-
+- **[YAGNI – You Aren’t Gonna Need It](../yagni.md):** YAGNI is a mantra from Extreme Programming that advises against adding functionality _until it is necessary_. In other words, don’t write code for features you _think_ you might need in the future – implement things only once you actually need them. This prevents wasting effort on speculative features and keeps the codebase simpler. For example, if you’re building a small app and think “someday we might support multiple databases,” YAGNI would say: don’t build an abstraction for database switching now; stick to one database. If the day comes that a second database must be supported, then you refactor. Often, those extra features never become needed, so YAGNI saves you from doing extra work and introduces less code (hence fewer bugs).
 
 Following these best practices leads to cleaner code. They often complement each other – for instance, YAGNI and KISS both discourage adding complexity “just in case.” DRY, meanwhile, ensures you don’t have the same bug in two places or diverging behaviors when you intended them to be the same. Keep these principles in mind as a checklist when writing and refactoring code.
 
@@ -173,15 +173,10 @@ As your projects grow, you move from thinking about individual classes or compon
 **Clean Architecture** is a software design philosophy introduced by Uncle Bob Martin. It emphasizes separation of concerns and independent layers, such that the core business logic is isolated from outer layers like UI, database, frameworks, etc.. In Clean Architecture, dependencies point **inward** – only inner layers (with business rules) define interfaces, and outer layers implement those interfaces. This way, you can change details (like a database or web framework) without impacting your core logic.
 
 A common layout for Clean Architecture has at least these layers:
-
 - **Entities (Enterprise Business Rules):** The innermost circle – contains data structures and business logic specific to the core domain. Entities are independent of anything external.
-    
 - **Use Cases (Application Business Rules):** Coordinators of application-specific logic. Each use case (or interactor) orchestrates the flow for a specific operation (for example, “Process Order” or “Calculate Interest”). They use entities to perform business rules. This layer defines application-specific interfaces (e.g., a `Repository` interface to retrieve/save entities).
-    
 - **Interface Adapters:** This layer is responsible for converting data from the format most convenient for use cases and entities to the format provided by external agencies (UI, databases, external services). For instance, a controller that takes web input (JSON) and turns it into a business entity, or presenters that format data for the UI. Repositories that implement data access also live here, **implementing** the interfaces defined in the use case layer.
-    
 - **Frameworks & Drivers (External layer):** The outermost layer – devices, web frameworks, database implementations, UI frameworks. These details plug into the interface adapter layer. For example, an SQL database or a web framework like ASP.NET is in this outer ring. They are kept at arms length; your business logic is not directly dependent on them.
-    
 
 The key rule is often called the **Dependency Rule**: nothing in an inner circle knows anything about something in an outer circle. For example, your core logic doesn’t import GUI classes or SQL libraries – instead, those outer parts interact through interfaces/boundaries.
 
@@ -581,7 +576,7 @@ To summarize from a reference: _High-Level Design focuses on the overall system 
 
 Why are both needed? HLD ensures you’ve got the right _architecture_ to meet the requirements (e.g., you included a cache for performance, you split components for clarity or team ownership, etc.). LLD ensures your _implementation_ will meet the requirements (e.g., your class design follows SOLID, your database is structured for required queries, etc.). Skipping HLD can lead to a big-picture mistake (like choosing the wrong type of database, or missing an integration). Skipping LLD can lead to messy code or rework when coding reveals missing pieces.
 
-> **Tips:** When learning, try drawing an HLD for projects you built or plan to build – identify user interactions, major systems, and how data flows. For LLD, practice making class diagrams for problems (even just sketching on paper how classes relate). It’s a way of thinking that pays off in clarity. In real-world teams, don’t go overboard on documentation but enough design discussion (with some diagrams) saves time in coding.  
+> **Tips:** When learning, try drawing an HLD for projects you built or plan to build – identify user interactions, major systems, and how data flows. For LLD, practice making class diagrams for problems (even just sketching on paper how classes relate). It’s a way of thinking that pays off in clarity. In real-world teams, don’t go overboard on [documentation](../project_documentation.md) but enough design discussion (with some diagrams) saves time in coding.  
 > **Dependency:** Knowing design patterns and principles helps a lot in LLD. For example, your LLD might explicitly incorporate a pattern (“here we’ll use a Strategy pattern for this part”). Meanwhile, understanding architecture (like the patterns we discussed: microservices vs monolith, layering) informs your HLD. So everything ties together: paradigms -> principles -> patterns -> architecture -> and all of those are conveyed through HLD/LLD documentation.
 
 ## Conclusion & Next Steps

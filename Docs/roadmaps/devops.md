@@ -15,8 +15,7 @@ dependences:
 
 ---
 
-#to_review
-
+- [i] Transformar nós em documentos ⏬
 # Intro
 > based on [Roadmap.sh Devops](https://roadmap.sh/devops)
 
