@@ -8,7 +8,8 @@ use: Documentation
 languages: 
 dependences:
 ---
-#to_translate #to_review
+- [i] #to_translate #to_review
+
 <datails><summary>Table of Contents 🔖</summary>
 
 - [Capítulo 8: Tornar-se um Especialista em Cibersegurança](#capítulo-8-tornar-se-um-especialista-em-cibersegurança)
