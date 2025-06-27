@@ -5,7 +5,7 @@ use: Documentation
 languages: Python
 dependences: Python, pandas
 ---
-> [Python Roadmap](./README.md)
+> [Python Roadmap](../README.md)
 
 <details> <summary>Table of Contents 🔖</summary>
 

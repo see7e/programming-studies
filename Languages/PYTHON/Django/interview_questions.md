@@ -6,23 +6,23 @@ languages: Python
 dependences: Django
 ---
 
-## **1\. What is Django and how does it differ from other web frameworks?**
+## **1. What is Django and how does it differ from other web frameworks?**
 
 **Answer:** Django is a high-level Python web framework that enables developers to create robust and scalable web applications quickly. It differs from other frameworks in that it provides a complete set of tools and components for web development, including an ORM, templating engine, and admin interface, among others.
 
-## **2\. What is the Model-View-Template (MVT) pattern and how does it apply to Django?**
+## **2. What is the Model-View-Template (MVT) pattern and how does it apply to Django?**
 
 **Answer:** The MVT pattern is a common design pattern in web development that separates the presentation, data, and logic layers of a web application. In Django, the Model corresponds to the data layer, the View corresponds to the presentation layer, and the Template corresponds to the logic layer.
 
-## **3\. How does Django handle URL routing?**
+## **3. How does Django handle URL routing?**
 
 **Answer:** In Django, URL routing is handled by the URL dispatcher, which maps URLs to specific views in the application. URL patterns are defined in the urls.py file and are used by the URL dispatcher to match incoming requests to the correct view.
 
-## **4\. What is the Django ORM and how does it work?**
+## **4. What is the Django ORM and how does it work?**
 
-**Answer:** The Django ORM is an Object-Relational Mapping system that provides a high-level interface for interacting with databases in Django. It enables developers to interact with databases using Python instead of writing raw SQL queries, providing a simpler and more convenient way to work with databases.
+**Answer:** The Django ORM is an Object-Relational Mapping system that provides a high-level interface for interacting with databases in Django. It enables developers to interact with databases using Python instead of writing raw SQL queries, providing a simpler and more convenient way to work with databases. Make correlation about [Models and static dicts](models_x_dicts.md).
 
-## **5\. Can you explain Django's template system and how it works?**
+## **5. Can you explain Django's template system and how it works?**
 
 **Answer:** Django's template system is a flexible and powerful way to create dynamic HTML templates. It allows developers to separate HTML code from the logic that generates it, making it easier to maintain and update. The template system uses a syntax for embedding variables, loops, and conditionals in HTML, making it possible to generate dynamic content.
 
@@ -32,7 +32,7 @@ dependences: Django
 
 ## **7\. Can you explain how Django handles security and what security features it provides?**
 
-**Answer:** Django provides a range of security features that protect against common web security threats, such as SQL injection, cross-site scripting (XSS), and cross-site request forgery (CSRF). Django also provides features for protecting sensitive data, such as password hashing and secure cookie handling.
+**Answer:** Django provides a range of security features that protect against common web security threats, such as SQL injection, cross-site scripting (XSS), and cross-site request forgery (CSRF). Django also provides features for protecting sensitive data, such as password hashing and secure cookie handling. Some of these checks are performed by [Form cleaning mechanisms](securing_user_inputs.md).
 
 ## **8\. What is Django's cache framework and how is it used?**
 

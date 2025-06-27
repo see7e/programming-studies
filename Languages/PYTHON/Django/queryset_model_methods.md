@@ -6,6 +6,27 @@ languages: Python
 dependences: Django
 ---
 
+<details> <summary>Table of Contents 🔖</summary>
+
+- [Reflection about **separation of concerns**, **testability**, and **maintainability**](#reflection-about-separation-of-concerns-testability-and-maintainability)
+    - [✅ TL;DR (short summary)](#-tldr-short-summary)
+    - [📦 Options \& Best Practices](#-options--best-practices)
+      - [1. **Model Methods**](#1-model-methods)
+      - [2. **Custom Managers**](#2-custom-managers)
+      - [3. **Services or Repositories (an extra layer)**](#3-services-or-repositories-an-extra-layer)
+    - [Testing 🧪](#testing-)
+    - [Practical Recommendations](#practical-recommendations)
+- [Integrating Service Layer with Django Models Managers](#integrating-service-layer-with-django-models-managers)
+  - [What Changes vs What Stays the Same](#what-changes-vs-what-stays-the-same)
+    - [Stays the Same](#stays-the-same)
+    - [What Changes](#what-changes)
+  - [Example to Illustrate](#example-to-illustrate)
+  - [If You Want Default Optimizations](#if-you-want-default-optimizations)
+
+</details>
+
+---
+
 # Reflection about **separation of concerns**, **testability**, and **maintainability**
 > all solid design principles in Django (and software development in general).
 
@@ -88,9 +109,8 @@ def get_orders_for_dashboard():
 
 ---
 
-### 🧪 Testing
-
-Separating QuerySets makes testing easier. Example:
+### Testing 🧪
+Separating `QuerySets` makes testing easier. Example:
 
 ```python
 def test_pending_orders_returns_only_pending():
@@ -103,20 +123,85 @@ def test_pending_orders_returns_only_pending():
 
 ---
 
-### 📌 Practical Recommendations
+### Practical Recommendations
 
-| Case | Where to put it |
-|------|------------------|
-| Simple filter used once | `views.py` |
+| Case                         | Where to put it                 |
+| ---------------------------- | ------------------------------- |
+| Simple filter used once      | `views.py`                      |
 | Medium complexity & reusable | model class method or `Manager` |
-| Complex & chainable filters | Custom `QuerySet` / `Manager` |
-| View-specific query | Separate `services.py` file |
+| Complex & chainable filters  | Custom `QuerySet` / `Manager`   |
+| View-specific query          | Separate `services.py` file     |
 
----
+# Impact over the default Model.Manager()
+In Django, the lines are often blurred because:
+- `Managers` are convenient and "feel" Pythonic
+- `QuerySets` are lazy and composable
+- The [Active Record Pattern](../../../Docs/django-active_record-pattern.md) encourages putting logic on models
 
-### 💡 Final Tip
+**My recommendation**: Start with managers for simple cases, but don't hesitate to introduce services when complexity grows. The hybrid approach often works well in Django projects.
 
-If you’re ending up with **too many methods** in `models.py`, it might be time to:
+But what about the default methods of the past `models.Manager()`? Are they lost when a custom Manager is implemented?
 
-1. Use `managers` or custom `querysets`;
-2. Start modularizing your app (`apps`, `services`, etc).
+## What Changes vs What Stays the Same
+
+### Stays the Same
+- `Model.objects.all()` - works normally
+- `Model.objects.filter(...)` - works normally
+- `Model.objects.exclude(...)` - works normally
+- `Model.objects.get(...)` - works normally
+- All other standard `QuerySet` methods work normally
+
+### What Changes
+- **New custom methods**: `Ticket.objects.assigned_to_user(user)` becomes available
+- **Query optimization**: If your custom `QuerySet` overrides `get_queryset()` to add default `select_related()` or `prefetch_related()`, those optimizations apply to ALL queries
+- **Default filtering**: If you add default filters in `get_queryset()`, they apply to all queries
+
+## Example to Illustrate
+
+```python
+class TicketQuerySet(models.QuerySet["Ticket"]):
+    def assigned_to_user(self, user: AbstractBaseUser) -> QuerySet:
+        return self.filter(stage_tracking__assigned_to=user)
+
+class TicketManager(models.Manager["Ticket"]):
+    def get_queryset(self) -> TicketQuerySet:
+        return TicketQuerySet(self.model, using=self._db)
+    
+    def assigned_to_user(self, user: AbstractBaseUser) -> QuerySet:
+        return self.get_queryset().assigned_to_user(user)
+
+class Ticket(models.Model):
+    objects = TicketManager()
+	# model fields ...
+```
+
+**These all work exactly the same as before:**
+
+```python
+Ticket.objects.all()                    # Works
+Ticket.objects.filter(title="Test")     # Works  
+Ticket.objects.exclude(status="DONE")   # Works
+Ticket.objects.get(id=1)                # Works
+```
+
+**This is new:**
+
+```python
+Ticket.objects.assigned_to_user(some_user)  # New custom method
+```
+
+## If You Want Default Optimizations
+
+If you want **ALL** queries to have certain optimizations by default, you can override `get_queryset()`:
+
+```python
+class TicketManager(models.Manager["Ticket"]):
+    def get_queryset(self) -> TicketQuerySet:
+        return TicketQuerySet(
+	        self.model, using=self._db
+		).select_related(
+			'user', 'category'
+		)
+```
+
+Then even `Ticket.objects.all()` would include those `select_related()` optimizations automatically.

@@ -66,13 +66,14 @@ project_name/
 
 
 ## Django configurations (`setup/`)
+> Look here for more [advanced configuration topics](./advanced_configurations.md). 
 
 ### `settings.py`
 
 This file is the main configuration file for the Django project. It contains the settings for the project, such as the database configuration, the installed apps, the middleware, the static and media files, the internationalization, the authentication, the logging, and so on.
 
 > [!INFO]
-> For the full list of settings and their values, see https://docs.djangoproject.com/en/4.2/ref/settings/
+> For the full list of settings and their values, see https://docs.djangoproject.com/en/dev/ref/settings/
 
 ```python
 # Django Application definitions
@@ -91,15 +92,12 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-
     # third party modules
     'debug_toolbar',
     'crispy_forms',
     'crispy_bootstrap5',
     'widget_tweaks',
-
-    # internal modules
-    # ...
+    # internal modules...
 ]
 
 MIDDLEWARE = [
@@ -142,7 +140,6 @@ WSGI_APPLICATION = 'setup.wsgi.application'
 ```
 
 For the static files it will depend on how we build the url calls in the templates we can point the to a single direction, using `python manage.py collectstatic` to join all the statics in a single folder before the deployment.
-
 ```python
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/4.2/howto/static-files/
@@ -158,7 +155,6 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 ```
 
 In most cases we used PostgreSQL as the database provider, so the database settings are usually like this:
-
 ```python
 # Database
 # https://docs.djangoproject.com/en/4.2/ref/settings/#databases
@@ -196,8 +192,8 @@ AUTH_PASSWORD_VALIDATORS = [
     },
 ]
 ```
-For authentication, had some experience with LDAP Auth because of the company's policy, due to the usage of the Active Directory.
 
+For authentication, had some experience with LDAP Auth because of the company's policy, due to the usage of the Active Directory.
 ```python
 import ldap
 from django_auth_ldap.config import LDAPSearch
@@ -225,7 +221,6 @@ AUTHENTICATION_BACKENDS = [
 ```
 
 In case of Language settings there's no mistry, just some default settings for the date and time formats, and the range of years for the date pickers.
-
 ```python
 from datetime import datetime
 
@@ -483,29 +478,29 @@ def update_obj_data(request, *args, **kwargs) -> JsonResponse:
 
 
 ### App `models.py`
+This is one of the most important files in the application, because it *contains the models of the application* (refer to [ORM](../../../Docs/orm.md)). The models are the classes that represent **the database tables**, and they are the ones that **make the application persistent** (the ones that make possible to store the data in the database). I'll use as example the `CustomUser` model, that I used as example to handle the LDAP authentication:
 
-This is one of the most important files in the application, because it contains the models of the application. The models are the classes that represent the database tables, and they are the ones that make the application persistent (the ones that make possible to store the data in the database). I'll use as example the `CustomUser` model, that I used as example to handle the LDAP authentication.
-
-```python
-from django.db import models
-from django.contrib.auth.models import AbstractUser
-
-class CustomUser(AbstractUser):
-    email = models.EmailField(unique=True)
-    first_name = models.CharField(max_length=30)
-    last_name = models.CharField(max_length=30)
-    is_active = models.BooleanField(default=True)
-    supervisor = models.ForeignKey('self', on_delete=models.CASCADE, null=True, blank=True, related_name='supervised')
-
-    USERNAME_FIELD = 'email'
-    REQUIRED_FIELDS = ['username', 'first_name', 'last_name']
-
-    def __str__(self):
-        return f"{self.first_name}-{self.last_name}-{self.email}"
-```
-
-In this example, we have a class that inherits from (django's) `AbstractUser` class, and we have some fields that are specific to the application.
-But why use the `AbstractUser` and not the `User` class? Because the first one  is a class that contains the basic fields that we need to create a user, and it's a class that we can customize. The `User` class is a class that contains the basic fields that we need to create a user, but it's a class that we can't customize. So, if we want to create a user with some specific fields, we have to create a class that inherits from the `AbstractUser` class.
+> [!TIP]
+> ```python
+> from django.db import models
+> from django.contrib.auth.models import AbstractUser
+> 
+> class CustomUser(AbstractUser):
+>     email = models.EmailField(unique=True)
+>     first_name = models.CharField(max_length=30)
+>     last_name = models.CharField(max_length=30)
+>     is_active = models.BooleanField(default=True)
+>     supervisor = models.ForeignKey('self', on_delete=models.CASCADE, null=True, blank=True, related_name='supervised')
+> 
+>     USERNAME_FIELD = 'email'
+>     REQUIRED_FIELDS = ['username', 'first_name', 'last_name']
+> 
+>     def __str__(self):
+>         return f"{self.first_name}-{self.last_name}-{self.email}"
+> ```
+> 
+> In this example, we have a class that inherits from (Django's) `AbstractUser` class, and we have some fields that are specific to the application.
+> But why use the `AbstractUser` and not the `User` class? Because the first one  is a class that contains the basic fields that we need to create a user, and it's a class that we can customize. The `User` class is a class that contains the basic fields that we need to create a user, but it's a class that we can't customize. So, if we want to create a user with some specific fields, we have to create a class that inherits from the `AbstractUser` class.
 
 Following this principle we can add as many fields as we want, and we can create as many models as we want. The fields can be of different types, such as `CharField`, `IntegerField`, `BooleanField`, `DateField`, `DateTimeField`, `ForeignKey`, `ManyToManyField`, and so on. We can also add some methods to the class, and we can override some methods of the class.
 
@@ -514,6 +509,8 @@ Following this principle we can add as many fields as we want, and we can create
 
 Talking about **Methods**, one that we already saw is the `__str__` method, that is used to return a string representation of the object. This is a good practice to use, because it makes the object more readable in the admin pages, and it makes the object more readable in the templates. Also, when filtering (querying) the objects, the `__str__` method is used to return the string representation of the object.
 
+> [!TIP]
+> Additionally (in a more advanced approach) **is possible to combine multiple base classes using [mixins](django-mixins.md)**, this prevents creating complex inheritance chains.
 
 ### App `admin.py`
 
