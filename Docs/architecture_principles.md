@@ -19,7 +19,8 @@ dependences:
 </details>
 
 ---
-# NEW INFO (#to_review) # Application Architecture
+- [i] #to_review : Conectar com outros artigos, adicionar "informações novas", add tags
+# Application Architecture
 
 ## Service Layer
 A **Service Layer** is an architectural pattern that encapsulates business logic into discrete services. Each service handles a specific operation or use case, such as processing reservations or managing user notifications. This separation ensures that models focus solely on data representation and persistence, while views handle HTTP requests and responses.

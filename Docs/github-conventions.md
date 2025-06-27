@@ -15,7 +15,7 @@ dependences: GitHub
 </details>
 
 ---
-#to_review
+- [i] #to_review : conectar com artigo de conceito, toc, tags
 ## GitHub Secrets naming convention
 
 |Area|Prefix|Example secret name|Scope|

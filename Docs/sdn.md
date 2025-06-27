@@ -7,7 +7,6 @@ use: Documentation
 languages: 
 dependences:
 ---
-#to_review
 
 <details> <summary>Table of Contents 🔖</summary>
 
@@ -15,6 +14,8 @@ dependences:
 
 </details>
 
+---
+- [i] #to_review : Escrever, conectar, toc, tags
 # Software-defined networking (SDN)
 
 > [!NOTE]

@@ -17,5 +17,5 @@ dependences:
 </details>
 
 ---
-
-# Clean Architecture #to_review 
+- [i] #to_review : escrever, conectar, ToC
+# Clean Architecture

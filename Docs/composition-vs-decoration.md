@@ -1,9 +1,8 @@
 ---
-title: Hexagonal Architecture
+title: Composition vs Decoration
 tags:
   - studies
   - programming
-  - software-architecture
   - design
 use: Documentation
 languages: 
@@ -18,4 +17,4 @@ dependences:
 
 ---
 - [i] #to_review : Escrever, conectar, toc, tags
-# Hexagonal Architecture
+# Composition vs Decoration

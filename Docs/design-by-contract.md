@@ -18,7 +18,8 @@ dependences:
 
 ---
 
-# Design by Contract #to_review 
+- [i] #to_review : reler texto extraído, reescrever, conectar, tags e toc
+# Design by Contract
 > Reference to the 4th chapter of Pragmatic Programmer [#](https://gist.github.com/briankung/7611434#design-by-contract).
 This confused the shit out of me. I wasn't entirely sure what the difference was between a contract and a unit test.
 Contracts are introduced in the context of employment contracts. That is, before any work is done, the responsibilities of both parties are defined, as well as the consequences of failing. Contracts in programming are similar. As I mentioned before, I wasn't able to make a strong distinction between contracts and unit tests (given some condition, when some event, then this should happen, though I may be confusing this with [BDD](http://en.wikipedia.org/wiki/Behavior-driven_development#Behavioral_specifications)). It's all a bit jumbled in my head.

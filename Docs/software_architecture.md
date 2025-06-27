@@ -8,7 +8,6 @@ use: Documentation
 languages: 
 dependences:
 ---
-#to_review
 
 <details> <summary>Table of Contents 🔖</summary>
 
@@ -52,13 +51,13 @@ dependences:
 </details>
 
 ---
+- [i] #to_review : conectar, tags
 
 > [!QUOTE]
-> If you 're a software architect who was never programmed is kinda like a priest in a wedding, he performs the service but he can only imagine what comes next.
+> If you're a software architect who was never programmed is kinda like a priest in a wedding, he performs the service but he can only imagine what comes next.
 > -*Ron Kleinman*
 
 # Application Architecture
-
 In this high-level overview, we'll explore the architecture of a production-grade application. This will serve as a foundation for the rest of the course, allowing us to delve into each component in more detail later on.
 
 Within a production application architecture, various components work together to create a robust system. While we'll provide a brief introduction to these components here, we'll cover each one extensively in separate chapters throughout the course.
@@ -66,17 +65,14 @@ Within a production application architecture, various components work together t
 ___
 
 ### A developer's perspective
-
 We can start viewing this application architecture from the perspective of a developer, which will be familiar to most of you. Developers write code that is **deployed** to a **server**. For now, let's define a **server** as a computer that handles requests from another computer. This server also requires **persistent storage** to store the application's data. A server may have built-in storage, but that has its limitations in terms of size. As such, a server may talk to an external storage system (database, cloud etc). This storage may not be part of the same server, and is instead connected through a **network**.
 
 ### A user's perspective
-
 A user is someone who makes a request from the server, usually through a web browser. In this case, the web browser is the **client** to whom the server responds to.
 
 If a user wanted to use a front-end feature, the server will respond with the necessary JavaScript/HTML/CSS code, compiled to display what the user requested. But, what if we have a lot of users and the single server cannot handle all of the requests on its own? There is bound to be a bottleneck, either through our RAM or our CPU. To maintain performance while dealing with multiple users, we will need to scale our server.
 
 ### Scaling our server
-
 To handle multiple requests, it might be a good idea to add more RAM or upgrade to a CPU with more cores and higher clocking speed. However, every computer has a limitation in terms of upgrades. Upgrading components _within_ the same computer is referred to as **vertical scaling**.
 
 We can also have multiple servers running our code, and we can distribute the user requests among these servers. This way, not all users are talking to one server, which ensures that the speed of each server remains intact. This also ensures that if one server were to go down, we can direct our traffic to one of our other servers. This is known as **horizontal scaling**.
@@ -90,13 +86,11 @@ For simple applications however, vertical scaling may be sufficient and the easi
 It's also important to remember that servers don't exist in isolation. It is highly likely that servers are interacting with external servers, through APIs. For example, the neetcode.io website interacts with other services like Stripe, through an API.
 
 ### Logging and Metrics
-
 Servers also have **logging** services, which gives the developer a log of all the activity that happened. Logs can be written to the same server, but for better reliability they are commonly written to _another_ external server.
 
 This gives developers insight into how the requests went, if any errors occured, or what happened before a server crashed. However, logs don't provide the complete picture. If our RAM has become the bottleneck of our server, or our CPU resources are restricting the requests being handled efficiently, we require a **metrics** service. A metric service will collect data from different sources within our server environment, such as CPU usage, network traffic etc. This allows developers to gain insights into server's behavior and identify potential bottlenecks.
 
 ### Alerts
-
 As developers, we wouldn't want to keep checking metrics to see if any unexpected behavior exhibits itself. This would be like checking your phone every 555 minutes for a notification. It is more ideal to receive a push notification. We can program alerts so that whenever a certain metric fails to meet the target, the developers receive a push notification. For example, if 100%100\\%100% of the user requests receive successful responses, we could set an alert to be notified if this metric dips under 95%95\\%95%.
 
 ![image](https://imagedelivery.net/CLfkmk9Wzy8_9HRyug4EVA/f54abb89-ab9b-4713-874b-7568651b2800/sharpen=1)
@@ -104,13 +98,11 @@ As developers, we wouldn't want to keep checking metrics to see if any unexpecte
 > The visual above demonstrates (on a very high level) how the components interact with each other, and what components the users interacts with and what components the developer interacts with.
 
 ## Closing Notes
-
 What we discussed above is a gentle introduction, and there is a lot more that goes into application architecture than what we just talked about. For example, how do all of these components communicate with each other. What protocols do they need to abide by? Are there ways to optimize these protocols? These components could very well be scattered across different computers, so networking is required. We will discuss all this in detail in the upcoming chapters.
 
 ---
 
 # What is software architecture?
-
 According to [this source](https://www.sei.cmu.edu/our-work/software-architecture/):
 
 > The software architecture of a system represents the design decisions related to overall system structure and behaviour.
@@ -154,7 +146,6 @@ Another important concept to know is that clients and servers are part of the sa
 > If you're not familiar with the difference between front and back ends, [here's a cool article that explains it](https://www.freecodecamp.org/news/frontend-vs-backend-whats-the-difference/). And here's [another article](https://www.freecodecamp.org/news/how-the-web-works-part-ii-client-server-model-the-structure-of-a-web-application-735b4b6d76e3/) that expands upon the concept of client-server.
 
 ## What are APIs?
-
 We just mentioned that clients and servers are entities that communicate with each other to request things and respond to things. The way in which these two parts usually communicate is through an API (application programming interface).
 
 An API is nothing more than a set of defined rules that establishes how an application can communicate with another. It's like a contract between the two parts that says "If you send A, I'll always respond B. If you send C, I'll always respond D..." and so on.
@@ -195,7 +186,6 @@ Regarding how APIs communicate, most often the HTTP protocol or [HTTP Requests](
 > If you'd like to expand upon this topic, [here's a nice article](https://www.freecodecamp.org/news/http-request-methods-explained/) for you to read.
 
 ## What is Modularity?
-
 When we talk about "modularity" in software architecture, we refer to the practice of dividing big things into smaller pieces. This practice of breaking things down is performed to simplify big applications or codebases.
 
 Modularity has the following advantages:
@@ -210,7 +200,6 @@ If you'd like a bit more info about this topic, I recently wrote [an article abo
 
 
 # Structuring a new software application
-
 Following the Feature Driven Design model, this are the main roles that will come in place during the development of an system:
 
 - Domain Expert, the person or group that has the understanding the area that the program will be designed for.
@@ -221,11 +210,9 @@ Following the Feature Driven Design model, this are the main roles that will com
 The first step is to require direct interaction with the "Domain Expert" to identify and document the problem (requirements & constraints) that must be solved by the new system, i.e. define the project scope.
 
 ## Abstractions
-
 With this information we can start to abstract the core elements, an academic schedule application will have *Students*, *Courses*, *Teachers* and so on. An important point is that the names of these abstractions have to be as clear as possible, in terms of referring to the project spec.
 
 ## Behaviour 
-
 With the Objects, created after the abstractions, is time to study the relationship between them, and like a road that links a point A to point B, we need to specify the attributes of the elements (in the road example, the pavement type, the number of cars, the direction, etc). To jump into examples for different kinds of relationships, see:
 
 - [_One-to-many relationships_](https://learn.microsoft.com/en-us/ef/core/modeling/relationships/one-to-many) (`1:N`), in which a single entity is associated with any number of other entities.
@@ -247,7 +234,6 @@ If you face objects that have similar concepts, common in a many-to-many relatio
 
 
 # What's Your Infrastructure Like?
-
 Ok, let's get to the good stuff now. We'll start talking about the many different ways in which you can organize a software application, starting with how can you organize the infrastructure behind your project.
 
 To make all this less abstract, we'll use an hypothetical app we'll call Notflix.🤔🤫🥸
@@ -255,7 +241,6 @@ To make all this less abstract, we'll use an hypothetical app we'll call Notflix
 Side comment: keep in mind this example might not be the most realistic one and that I'll be assuming/forcing situations in order to present certain concepts. The idea here is to help you understand core architecture concepts through an example, not to perform a real world analysis.
 
 ## Monolithic Architecture
-
 So Notflix will be a typical video streaming application, in which the user will be able to watch movies, series, documentaries and so on. The user will be able to use the app in web browsers, in a mobile app, and on a TV app, too.
 
 The main services included in our app will be **authentication** (so people can create accounts, login, and so on), **payments** (so people can subscribe and access the content... cause you didn't think this was all for free, right? 😑) and **streaming** of course (so people can actually watch what they're paying for).
@@ -275,7 +260,6 @@ This kind of architecture is called a **monolith** because there's a single serv
 The main benefit of a monolithic design is its simplicity. The functioning of it and the set up required is simple and easy to follow, and this is why most applications start out in this way.
 
 ## Microservices Architecture
-
 So turns out Notflix is totally rocking it. We just released the latest season of "Stranger thugs", which is an awesome science fiction series about teenage rappers, and our movie "Agent 404" (about a secret agent that infiltrates in a company simulating being a senior programmer but actually doesn't know a thing about code) is breaking all records...
 
 We're getting tens of thousands of new users every month from all over the world, which is great for our business but not so much for our monolithic app.
@@ -311,7 +295,6 @@ Microservices is an architecture that is more complex to set up and manage, whic
 If you'd like to know more about microservices, [here's a very nice explanation](https://www.youtube.com/watch?v=CdBtNQZH8a4).
 
 ### What is back-end for front-end (BFF)?
-
 One problem that comes up when implementing microservices is that the communication with front-end apps gets more complex. Now we have many servers responsible for different things, which means front-end apps would need to keep track of that info to know who to make requests to.
 
 Normally this problem gets solved by implementing an intermediary layer between the front-end apps and the microservices. This layer will receive all the front-end requests, redirect them to the corresponding microservice, receive the microservice response, and then redirect the response to the corresponding front-end app.
@@ -325,7 +308,6 @@ Our BFF implementation
 Here's a [video explaining the BFF pattern](https://www.youtube.com/watch?v=SSo-z16wEnc) if you'd like to know more about it.
 
 ### How to use load balancers and horizontal scaling
-
 So our streaming app keeps growing and growing at an exponential rate. We have millions of users around the world watching our movies 24/7, and sooner than we expected we start experiencing performance issues again.
 
 Once again we've found that the streaming service is the one under most stress, and we've **vertically scaled** that server all we could. Further subdividing that service into more microservices doesn't make sense, so we've decided to **horizontally scale** that service.
@@ -366,13 +348,11 @@ Here's [an awesome video explanation of load balancers](https://www.youtube.com/
 Side comment: when we talk about microservices, load balancers, and scaling we're likely always talking about back-end apps. For front-end apps, they're mostly always developed as monoliths, though there's also a weird interesting thing called [micro-frontends](https://www.youtube.com/watch?v=w58aZjACETQ) as well.🧐
 
 # Where Your Infrastructure Lives
-
 Now that we have a basic idea of how an application infrastructure might be organized, the next thing to think about is where we're going to put all this stuff.
 
 As we're going to see, there're mainly three options when deciding where and how to host an application: on premise, on traditional server providers, or on the cloud.
 
 ## On-Premise Hosting
-
 On premise means you own the hardware in which your app is running. In the past this used to be the most traditional way of hosting applications. Companies used to have dedicated rooms for servers to be in and teams dedicated to the set up and maintenance of the hardware.
 
 The good thing about this option is that the company gets total control over the hardware. The bad thing is it requires space, time, and money.
@@ -392,7 +372,6 @@ How it ended up
 One situation in which on premise servers still make sense is when dealing with very delicate or private information. Think about the software that runs a power plant, or private banking information, for example. Many of these organizations decide to have on premise servers as a way to have complete control over their software and hardware.
 
 ## Traditional Server Providers
-
 A more comfortable option for most companies are traditional server providers. These are companies that have servers of their own and they just rent them. You decide what kind of hardware you'll need for your project and pay a monthly fee for it (or some amount based on other conditions).
 
 What's great about this option is that you don't need to worry about anything hardware-related anymore. The provider takes care of it, and as a software company you only worry about your main goal, the software.
@@ -402,7 +381,6 @@ Another cool thing is that scaling up or down is easy and risk free. If you need
 An example of a well known server provider is [hostinger](https://www.hostinger.com).
 
 ## Hosting on the Cloud
-
 If you've been around technology for a little while you've probably heard the word "cloud" more than once. At first it sounds as something abstract and kind of magical, but actually what's behind it is nothing more than huge data centers owned by companies like Amazon, Google, and Microsoft.
 
 At some point these companies found out they had huuuuuuuuge computing power they weren't using all of the time. And as all this hardware still represents a cost whether you're using it or not, the clever thing to do is to commercialize that computing power to others.
@@ -416,11 +394,9 @@ What a "cloud" might actually look like
 When getting to know cloud services, it's important to notice that there are many different ways in which you can use them:
 
 ### Traditional
-
 The first way is to use them in a similar way you'd use a traditional server provider. You select the kind of hardware you want and pay exactly for that on a monthly basis.
 
 ### Elastic
-
 The second way is to take advantage of the "elastic" computing offered by most providers. "Elastic" means that the hardware capacity of your application will automatically grow or shrink depending on the usage your app has.
 
 For example, you could start out with a server that has 8gb of RAM and 500gb of disk space. If your server starts getting more and more request and these capacities are no longer enough to provide good performance, the system can automatically perform vertical or horizontal scaling.
@@ -428,7 +404,6 @@ For example, you could start out with a server that has 8gb of RAM and 500gb of 
 The awesome thing about this is you can configure all this beforehand and not have to worry about it again. As the servers scale up and down automatically, you pay only for the resources you consume.
 
 ### Serverless
-
 Another way in which you can use cloud computing is with a serverless architecture.
 
 Following this pattern, you wont have a server that receives all requests and responds to them. Instead you'll have individual functions mapped to an access point (similar to an API endpoint).
@@ -442,7 +417,6 @@ As a costumer, you pay only for the amount of times the function gets executed a
 If you'd like to learn more, here's an [explanation of the serverless pattern.](https://www.youtube.com/watch?v=vxJobGtqKVM)
 
 ### Lots of other services
-
 You can probably see how elastic and serverless services offer a very simple and convenient alternative for setting up software infrastructure.
 
 And besides server-related services, cloud providers offer tons of other solutions such as relational and non-relational databases, file storage services, caching services, authentication services, machine learning and data processing services, monitoring and performance analysis, and more. With everything hosted in the cloud.
@@ -456,11 +430,9 @@ As previously mentioned, the most used and well known cloud providers are [AWS](
 Most of these providers offer the same kind of services, though they might have different names. For example, serverless functions are called "lambdas" on AWS and "cloud functions" on Google cloud.
 
 # Different Folder Structures to Know
-
 Ok, so far we've seen how architecture can refer to infrastructure organization and hosting. Now let's see some code and how architecture can refer to folder structures and code modularity.
 
 ## All in One Place Folder Structure
-
 To illustrate why folder structures are important, let's build a dummy example API. We'll have a mock database of rabbits 🐰🐰 and the API will perform [CRUD](https://www.freecodecamp.org/news/crud-operations-explained/) actions on it. We'll build this with Node and Express.
 
 Here's our first approach, with no folder structure at all. Our repo will be composed of the `node modules` folder, and the `app.js`, `package-lock.json` and `package.json` files.
@@ -542,7 +514,6 @@ Following the modularity principle, a better idea is to have different folders a
 To better illustrate this, let's add new features to our API and see how we can take a modular approach with the help of a layers architecture.
 
 ## Layers Folder Structure
-
 Layers architecture is about dividing concerns and responsibilities into different folders and files, and allowing direct communication only between certain folders and files.
 
 The matter of how many layers should your project have, what names should each layer have, and what actions should it handle is all a matter of discussion. So let's see what I think is a good approach for our example.
@@ -577,7 +548,7 @@ Let's see some code now. Using the layers architecture, our folder structure mig
 -   And another folder called `rabbits` that will hold the routes, controllers and models related to that entity.
 -   `app.js` sets up our server and connects to the routes.
 
-```
+```js
 // App.js
 const express = require('express');
 
@@ -594,7 +565,7 @@ app.listen(port, () => console.log(`⚡️[server]: Server is running at http://
 
 -   `rabbits.routes.js` holds each of the endpoints related to this entity and links them to the corresponding controller (the function we want to execute when the request hits that endpoint).
 
-```
+```js
 // rabbits.routes.js
 const express = require('express')
 const bodyParser = require('body-parser')
@@ -620,7 +591,7 @@ module.exports = router
 
 -   `rabbits.controllers.js` holds the logic corresponding to each endpoint. Here is where we program what the function should take as input, what process should it perform and what should it return. 😉 Moreover, each controller links to the corresponding model function (which will perform database related operations).
 
-```
+```js
 // rabbits.controllers.js
 const { getAllItems, getItem, editItem, addItem, deleteItem } = require('../models/rabbits.models')
 
@@ -677,7 +648,7 @@ module.exports = { listRabbits, getRabbit, editRabbit, addRabbit, deleteRabbit }
 
 -   `rabbits.models.js` is where we define the functions that will perform CRUD actions on our database. Each function represents a different type of action (reading one, reading all, editing, deleting, and so on). This file is the one that connects to our DB.
 
-```
+```js
 // rabbits.models.js
 const db = require('../../db/db')
 
@@ -732,7 +703,7 @@ module.exports = { getAllItems, getItem, editItem, addItem, deleteItem }
 
 -   Finally, `db.js` hosts our mock database. In a real project, this is where your actual database connection might be.
 
-```
+```js
 // db.js
 const db = [
     { id: 1, name: 'John' },
@@ -793,7 +764,7 @@ Our folder structure will look like this:
 -   `db.js` and `models.js` files stay exactly the same.
 -   Our `app.js` would look like this:
 
-```
+```js
 // App.js
 const express = require("express");
 var path = require('path');
@@ -815,7 +786,7 @@ app.listen(port, () => console.log(`⚡️[server]: Server is running at http://
 
 -   `rabbits.controllers.js` changes to define the routes, connect to the corresponding model function, and render the corresponding view for each request. See that in the render method we're passing the request response as a parameter to the view. 😉
 
-```
+```js
 // rabbits.controllers.js
 const express = require('express')
 const bodyParser = require('body-parser')
@@ -881,7 +852,7 @@ module.exports = router
 
 -   Finally, in the view files we take the variable received as parameter and render it as HTML.
 
-```
+```html
 <!-- Rabbits view -->
 <!DOCTYPE html>
 <html lang="en">
@@ -901,7 +872,7 @@ module.exports = router
 </html>
 ```
 
-```
+```html
 <!-- Rabbit view -->
 <!DOCTYPE html>
 <html lang="en">
@@ -930,7 +901,6 @@ And that's MVC!
 ---
 
 # References
-
 - https://www.freecodecamp.org/news/an-introduction-to-software-architecture-patterns/ by [Germán Cocca](https://www.freecodecamp.org/news/author/gercocca/)
 - https://www.youtube.com/watch?v=mCM6QVHD08c by Ron Kleinman
 - https://neetcode.io/courses/system-design-for-beginners/1

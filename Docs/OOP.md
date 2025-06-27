@@ -4,6 +4,15 @@ tags:
   - studies
   - programming
   - paradigm
+  - design
+  - implementation
+  - testing
+  - development
+  - software
+  - engineering
+  - oop
+  - principles
+  - abstraction
 use: Documentation
 languages: 
 dependences:
@@ -13,14 +22,15 @@ dependences:
 
 - [Object-oriented Programming - OOP #](#object-oriented-programming---oop-)
   - [Concepts](#concepts)
+    - [Language Support](#language-support)
+    - [Benefits and Advantages](#benefits-and-advantages)
+  - [Core OOP Principles](#core-oop-principles)
     - [Abstraction](#abstraction)
     - [Encapsulation](#encapsulation)
     - [Inheritance](#inheritance)
     - [Polymorphism](#polymorphism)
-    - [Methods](#methods)
-    - [Classes](#classes)
-    - [Dunder Method](#dunder-method)
-    - [Instances list](#instances-list)
+      - [Compile-time Polymorphism](#compile-time-polymorphism)
+      - [Runtime Polymorphism](#runtime-polymorphism)
 
 </details>
 
@@ -115,7 +125,7 @@ This makes reusing and organizing code by establishing an “is-a” relationshi
 >[!NOTE]
 > In languages like Java and C#, inheritance is **single-root** (each class has one parent, ultimately inheriting from a common base like Java’s `Object`[docs.oracle.com](https://docs.oracle.com/javase/specs/jls/se12/html/jls-1.html#:~:text=Reference%20types%20are%20the%20class,which)). **C++ allows multiple inheritance** (a class can inherit from several classes), though this adds complexity and potential pitfalls like the **“diamond problem”.**
 
-Also many languages mitigate this by offering *interfaces or mixins* – allowing a class to implement multiple sets of behaviors without multiple concrete inheritance. **Proper use of inheritance can make code more extensible:** new subclasses can be added to extend behavior with minimal changes to existing code (an application of the *Open-Closed Principle - OCP*, refer to [SOLID](solid.md)).
+Also many languages mitigate this by offering *interfaces or mixins* ([django-mixins](../Languages/Python/Django/django-mixins.md)) – allowing a class to implement multiple sets of behaviors without multiple concrete inheritance. **Proper use of inheritance can make code more extensible:** new subclasses can be added to extend behavior with minimal changes to existing code (an application of the *Open-Closed Principle - OCP*, refer to [SOLID](solid.md)).
 
 > [!WARNING]
 > The misuse of inheritance (e.g. deep inheritance chains or inheriting just to reuse code where a different relationship is more appropriate) can lead to brittle designs. Modern best practices often advise to **favor composition over inheritance** for greater flexibility.
@@ -203,109 +213,3 @@ animal.speak()  # Output: The animal makes a sound
 dog.speak()     # Output: The dog barks
 cat.speak()     # Output: The cat meows
 ```
-
-### Methods 
-Are functions that are defined inside a class that describe the behaviors of an object. Each method contained in class definitions starts with a reference to an instance object. Additionally, the subroutines contained in an object are called instance methods. Programmers use methods for reusability or keeping functionality encapsulated inside one object at a time.
-
-### Classes
-A class is a user-defined blueprint or prototype from which objects are created. Classes provide a means of bundling data and functionality together. Creating a new class creates a new type of object, allowing new instances of that type to be made. Each class instance can have attributes attached to it for maintaining its state. Class instances can also have methods (defined by their class) for modifying their state.
-
-Visit the following resources to learn more:
--   [Classes in Python](https://docs.python.org/3/tutorial/classes.html)
--   [Python Classes and Objects](https://www.geeksforgeeks.org/python-classes-and-objects/)
--   [Python Classes and Objects](https://www.w3schools.com/python/python_classes.asp)
-
----
-
-
-- `<class 'int'>` cada variável é uma instancia de uma classe de data type, esse é o resultado de
-
-    ```python
-    item = 7
-    print(type(item))
-    ```
-
-
-    ```python
-    class Item:
-        def calculate_price(): # method
-            pass
-
-    item1 = Item() # create instance
-    print(type(item)) # <class '__main__.Item'>
-    ```
-
-- `<class '__main__.Item'>`
-- `self` parametro de um metodo que é autogerado, ele passa o próprio objeto (no caso a instancia da classe) como argumento quando o método é chamado.
-    Se nenhum parametro for passado `TypeError: calculate_ price() takes 0 positional arguments but 1 was given`
-
-
-### 
-- instanciar a partir de um `.csv` (usando `decorators`)
-
-    ```python
-    import csv
-    #[...]
-    @classmethod
-    def import_csv(cls):
-        #[...]
-    ```
-
-   `@classmethod` ([`decorator`](../Languages/Python/README.md#decorators) [ver também](https://docs.python.org/3/library/dataclasses.html))modifica o contexto do metodo, de forma que seu parametro não é mais `self` e sim `cls` que representa a propria classe a ser recebida como argumento.
-   Porem esse metodo especifico sera acessado a partir da propria classe
-
-   ```python
-   Item.import_csv()
-   ```
-
-   dessa forma, o codigo ficara assim:
-
-    ```python
-    import csv
-	
-    class Item:
-        discount: 0.8 # 20%
-        all = []
-		
-        def __init__(self, name: str, price: float, qtd=0):
-            # validations
-            assert price >= 0, F"Price {price} lesser than zero."
-            assert qtd >= 0,  F"Quantity {qtd} lesser than zero."
-			
-            # atributes
-            self.name = name
-            self.price = price
-            self.qtd = qtd
-			
-            # actions
-            Item.all.append(self) # record created instances
-        
-        def calculate_price(self): # method
-            return self.price * self.qtd
-		
-        def apply_discount(self):
-            self.price = self.price * self.discount
-		
-        @classmethod
-        def import_csv(cls): # this uses csv lib
-            # get the info
-            with open('items.csv', 'r') as file:
-                reader = csv.DictReader(file)
-                items = list(reader)
-			
-            # create new instances
-            for item in items:
-                Item(
-                    name = item.get('name'),
-                    price = float(item.get('price')),
-                    qtd = int(item.get('qtd'))
-                )
-		
-        def __repr__(self):
-            return F"Item('{self.name}', {self.price}, {self.qtd})"
-	
-    #print(Item.all)
-    for instance in Item.all:
-        print(instance.name)
-    
-    ```

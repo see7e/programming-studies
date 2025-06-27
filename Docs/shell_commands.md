@@ -8,7 +8,6 @@ use: Documentation
 languages: Bash, Shell
 dependences:
 ---
-#to_review  #to_translate 
 
 <details><summary>Table of Contents 🔖</summary>
 
@@ -33,6 +32,7 @@ dependences:
 </details>
 
 ---
+- [i] #to_review : rescrever #to_translate , conectar, toc, tags 
 
 # Shell
 ## Comandos shell

@@ -16,5 +16,5 @@ dependences:
 </details>
 
 ---
-
-# LOD #to_review 
+- [i] #to_review : Escrever, conectar, toc, tags
+# LOD

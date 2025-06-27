@@ -1,9 +1,12 @@
 ---
 title: UML
-tags: studies, programming
+tags:
+  - studies
+  - programming
+  - design
 use: Documentation
-languages: NULL
-dependences: NULL
+languages: UML
+dependences:
 ---
 
 <details> <summary>Table of Contents 🔖</summary>
@@ -57,6 +60,8 @@ dependences: NULL
 
 </details>
 
+---
+- [i] #to_review : Review video and write article, connect, add tags and toc
 # UML
 
 

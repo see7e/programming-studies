@@ -82,7 +82,7 @@ Kanban implements visual workflow management using boards with work-in-progress 
 
 ### Agile Practices
 
-Scrum and other agile methodologies share the concept of making work visible and incremental:
+Scrum and other agile methodologies ([project_documentation](project_documentation.md)) share the concept of making work visible and incremental:
 
 - **Sprint planning**: Teams use boards to plan and track sprint work
 - **Daily standups**: Progress is coordinated around shared visual representations

@@ -12,8 +12,6 @@ languages: SQL
 dependences: PostgreSQL
 ---
 
-#to_review
-
 <details> <summary>Table of Contents</summary>
 
 - [Intro](#intro)
@@ -53,7 +51,7 @@ dependences: PostgreSQL
 </details>
 
 ---
-
+- [i] #to_review : Sintetizar, dividir em artigos menores por tópicos, tags, conectar, toc, rever vídeo
 # Intro
 > https://www.youtube.com/watch?v=puOdjchhEa0
 

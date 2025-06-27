@@ -5,7 +5,6 @@ use: Documentation
 languages: NULL
 dependences: NULL
 ---
-#to_review
 
 <details> <summary>Table of Contents 🔖</summary>
 
@@ -14,6 +13,8 @@ dependences: NULL
 </details>
 
 ---
+
+- [i] #to_review : Escrever sobre introdução ao core de 5g, ler links marcados
 
 > [!NOTE]
 > Important links:

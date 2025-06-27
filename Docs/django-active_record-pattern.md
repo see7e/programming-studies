@@ -6,8 +6,8 @@ tags:
   - design-patterns
   - software-architecture
 use: Documentation, Reference
-languages: 
-dependences:
+languages: Python
+dependences: Django
 ---
 
 <details> <summary>Table of Contents 🔖</summary>
@@ -18,19 +18,8 @@ dependences:
 
 # The Active Record Pattern: Understanding Django's Design Philosophy
 
-## Introduction
-The Active Record pattern is one of the most influential and controversial architectural patterns in modern web development. At its core, it combines data access logic with domain logic in a single object, making database records "active" by giving them the ability to perform operations on themselves. Django, one of Python's most popular web frameworks, is built around this pattern, making it essential for developers to understand both its power and its limitations.
-
-## What is the Active Record Pattern?
-The Active Record pattern, first coined by Martin Fowler in his seminal work "Patterns of Enterprise Application Architecture" (2002), describes an approach where a database record is wrapped in an object that contains both the data and the behavior that operates on that data. In essence, each row in a database table corresponds to an object that knows how to:
-
-- Insert itself into the database
-- Update its own data
-- Delete itself
-- Find other records
-- Perform validations on its data
-
-### Simple Illustration
+> [!NOTE]
+> For the concept of the Pattern refer to [this article](active-record-pattern.md).
 
 ```python
 # Active Record style (Django)
@@ -56,21 +45,8 @@ user = User(name="John", email="john@example.com")
 user.save()  # Object saves itself
 user.delete()  # Object deletes itself
 ```
+> Simple Illustration
 
-## Historical Context and Evolution
-The Active Record pattern emerged from the Ruby on Rails framework, where it became the dominant paradigm for web development in the mid-2000s. Rails' motto "Convention over Configuration" paired perfectly with Active Record's straightforward approach: one class per database table, with all related functionality bundled together.
-
-Django, influenced by Rails but developed independently, adopted similar principles while adding its own Python-centric innovations. The pattern's popularity coincided with the rise of rapid web development frameworks that prioritized developer productivity over architectural purity.
-
-### Timeline of Influence
-
-- **2004**: Ruby on Rails popularizes Active Record
-- **2005**: Django adopts similar patterns with Python idioms
-- **2006-2010**: Active Record becomes dominant in web frameworks
-- **2010+**: Domain-Driven Design advocates challenge the pattern
-- **2015+**: Microservices and clean architecture movements promote alternatives
-
-## Active Record in Django: Deep Dive
 Django's implementation of Active Record extends beyond simple CRUD operations to include sophisticated query building, relationships, and validation logic.
 
 ### Core Components
