@@ -199,7 +199,7 @@ These patterns make the _“composition over inheritance”_ principle actionabl
 ## Beyond Classical OO
 
 ### 6.1 Mixins & Traits
-Languages like **Scala**, **Rust**, and **Swift** or even frameworks like [Django](../Languages/Python/Django/django-mixins.md) allow code reuse through **traits** or **mixins**. These offer composition-like granularity within an inheritance-based model, often resolving the diamond problem via linearization.
+Languages like **Scala**, **Rust**, and **Swift** or even frameworks like [Django](../Languages/Python/Django/dj-mixins.md) allow code reuse through **traits** or **mixins**. These offer composition-like granularity within an inheritance-based model, often resolving the diamond problem via linearization.
 
 ### 6.2 Entity-Component Systems (ECS)
 Game engines such as Unity use **ECS**, where entities are just IDs and *all behavior is implemented via systems acting on data-only components*. This is **extreme composition**, optimized for modularity and performance.

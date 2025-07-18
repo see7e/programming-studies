@@ -125,7 +125,7 @@ This makes reusing and organizing code by establishing an “is-a” relationshi
 >[!NOTE]
 > In languages like Java and C#, inheritance is **single-root** (each class has one parent, ultimately inheriting from a common base like Java’s `Object`[docs.oracle.com](https://docs.oracle.com/javase/specs/jls/se12/html/jls-1.html#:~:text=Reference%20types%20are%20the%20class,which)). **C++ allows multiple inheritance** (a class can inherit from several classes), though this adds complexity and potential pitfalls like the **“diamond problem”.**
 
-Also many languages mitigate this by offering *interfaces or mixins* ([django-mixins](../Languages/Python/Django/django-mixins.md)) – allowing a class to implement multiple sets of behaviors without multiple concrete inheritance. **Proper use of inheritance can make code more extensible:** new subclasses can be added to extend behavior with minimal changes to existing code (an application of the *Open-Closed Principle - OCP*, refer to [SOLID](solid.md)).
+Also many languages mitigate this by offering *interfaces or mixins* ([dj-mixins](../Languages/Python/Django/dj-mixins.md)) – allowing a class to implement multiple sets of behaviors without multiple concrete inheritance. **Proper use of inheritance can make code more extensible:** new subclasses can be added to extend behavior with minimal changes to existing code (an application of the *Open-Closed Principle - OCP*, refer to [SOLID](solid.md)).
 
 > [!WARNING]
 > The misuse of inheritance (e.g. deep inheritance chains or inheriting just to reuse code where a different relationship is more appropriate) can lead to brittle designs. Modern best practices often advise to **favor composition over inheritance** for greater flexibility.
