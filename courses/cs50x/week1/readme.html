@@ -1,0 +1,860 @@
+<!DOCTYPE html> <html><head>
+		<title>CS50 - Week 1</title>
+		<base href="..\..\..\..\..\..\../">
+		<meta id="root-path" root-path="..\..\..\..\..\..\../">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes, minimum-scale=1.0, maximum-scale=5.0">
+		<meta charset="UTF-8">
+		<meta name="description" content="DRIVE - CS50 - Week 1">
+		<meta property="og:title" content="CS50 - Week 1">
+		<meta property="og:description" content="DRIVE - CS50 - Week 1">
+		<meta property="og:type" content="website">
+		<meta property="og:url" content="courses/cs50x/week1/readme.html">
+		<meta property="og:image" content="gab\estudos-trabalhos\programação\programming-studies\courses\cs50x\week1\src\img\vscode_login.png">
+		<meta property="og:site_name" content="DRIVE">
+		<meta name="author" content="Gabryel Nóbrega"><link rel="alternate" type="application/rss+xml" title="RSS Feed" href="lib/rss.xml"><script async="" id="webpage-script" src="lib/scripts/webpage.js" onload="this.onload=null;this.setAttribute(&quot;loaded&quot;, &quot;true&quot;)"></script><script type="module" async="" id="graph-view-script" src="lib/scripts/graph-view.js"></script><script async="" id="graph-wasm-script" src="lib/scripts/graph-wasm.js" onload="this.onload=null;this.setAttribute(&quot;loaded&quot;, &quot;true&quot;)"></script><script async="" id="graph-render-worker-script" src="lib/scripts/graph-render-worker.js" onload="this.onload=null;this.setAttribute(&quot;loaded&quot;, &quot;true&quot;)"></script><script async="" id="tinycolor-script" src="lib/scripts/tinycolor.js" onload="this.onload=null;this.setAttribute(&quot;loaded&quot;, &quot;true&quot;)"></script><script async="" id="pixi-script" src="https://cdnjs.cloudflare.com/ajax/libs/pixi.js/7.4.0/pixi.min.js" onload="this.onload=null;this.setAttribute(&quot;loaded&quot;, &quot;true&quot;)"></script><script async="" id="minisearch-script" src="https://cdn.jsdelivr.net/npm/minisearch@6.3.0/dist/umd/index.min.js" onload="this.onload=null;this.setAttribute(&quot;loaded&quot;, &quot;true&quot;)"></script><link rel="icon" href="lib/media/favicon.png"><script async="" id="graph-data-script" src="lib/scripts/graph-data.js" onload="this.onload=null;this.setAttribute(&quot;loaded&quot;, &quot;true&quot;)"></script><style>body{--line-width:40em;--line-width-adaptive:40em;--file-line-width:40em;--sidebar-width:min(20em, 80vw);--collapse-arrow-size:11px;--tree-horizontal-spacing:0.6em;--tree-vertical-spacing:0.6em;--sidebar-margin:12px}.sidebar{height:100%;min-width:calc(var(--sidebar-width) + var(--divider-width-hover));max-width:calc(var(--sidebar-width) + var(--divider-width-hover));font-size:14px;z-index:10;position:relative;overflow:hidden;transition:min-width ease-in-out,max-width ease-in-out;transition-duration:.2s;contain:size}.sidebar-left{left:0}.sidebar-right{right:0}.sidebar.is-collapsed{min-width:0;max-width:0}body.floating-sidebars .sidebar{position:absolute}.sidebar-content{height:100%;min-width:calc(var(--sidebar-width) - var(--divider-width-hover));top:0;padding:var(--sidebar-margin);padding-top:4em;line-height:var(--line-height-tight);background-color:var(--background-secondary);transition:background-color,border-right,border-left,box-shadow;transition-duration:var(--color-fade-speed);transition-timing-function:ease-in-out;position:absolute;display:flex;flex-direction:column}.sidebar:not(.is-collapsed) .sidebar-content{min-width:calc(max(100%,var(--sidebar-width)) - 3px);max-width:calc(max(100%,var(--sidebar-width)) - 3px)}.sidebar-left .sidebar-content{left:0;border-top-right-radius:var(--radius-l);border-bottom-right-radius:var(--radius-l)}.sidebar-right .sidebar-content{right:0;border-top-left-radius:var(--radius-l);border-bottom-left-radius:var(--radius-l)}.sidebar:has(.sidebar-content:empty):has(.topbar-content:empty){display:none}.sidebar-topbar{height:2em;width:var(--sidebar-width);top:var(--sidebar-margin);padding-inline:var(--sidebar-margin);z-index:1;position:fixed;display:flex;align-items:center;transition:width ease-in-out;transition-duration:inherit}.sidebar.is-collapsed .sidebar-topbar{width:calc(2.3em + var(--sidebar-margin) * 2)}.sidebar .sidebar-topbar.is-collapsed{width:0}.sidebar-left .sidebar-topbar{left:0}.sidebar-right .sidebar-topbar{right:0}.topbar-content{overflow:hidden;overflow:clip;width:100%;height:100%;display:flex;align-items:center;transition:inherit}.sidebar.is-collapsed .topbar-content{width:0;transition:inherit}.clickable-icon.sidebar-collapse-icon{background-color:transparent;color:var(--icon-color-focused);padding:0!important;margin:0!important;height:100%!important;width:2.3em!important;margin-inline:0.14em!important;position:absolute}.sidebar-left .clickable-icon.sidebar-collapse-icon{transform:rotateY(180deg);right:var(--sidebar-margin)}.sidebar-right .clickable-icon.sidebar-collapse-icon{transform:rotateY(180deg);left:var(--sidebar-margin)}.clickable-icon.sidebar-collapse-icon svg.svg-icon{width:100%;height:100%}.sidebar-section-header{margin:0 0 1em 0;text-transform:uppercase;letter-spacing:.06em;font-weight:600}body{transition:background-color var(--color-fade-speed) ease-in-out}.webpage-container{display:flex;flex-direction:row;height:100%;width:100%;align-items:stretch;justify-content:center}.document-container{opacity:1;flex-basis:100%;max-width:100%;width:100%;height:100%;display:flex;flex-direction:column;align-items:center;transition:opacity .2s ease-in-out;contain:inline-size}.hide{opacity:0;transition:opacity .2s ease-in-out}.document-container>.markdown-preview-view{margin:var(--sidebar-margin);margin-bottom:0;width:100%;width:-webkit-fill-available;width:-moz-available;width:fill-available;background-color:var(--background-primary);transition:background-color var(--color-fade-speed) ease-in-out;border-top-right-radius:var(--window-radius,var(--radius-m));border-top-left-radius:var(--window-radius,var(--radius-m));overflow-x:hidden!important;overflow-y:auto!important;display:flex!important;flex-direction:column!important;align-items:center!important;contain:inline-size}.document-container>.markdown-preview-view>.markdown-preview-sizer{padding-bottom:80vh!important;width:100%!important;max-width:var(--line-width)!important;flex-basis:var(--line-width)!important;transition:background-color var(--color-fade-speed) ease-in-out;contain:inline-size}.markdown-rendered img:not([width]),.view-content img:not([width]){max-width:100%;outline:0}.document-container>.view-content.embed{display:flex;padding:1em;height:100%;width:100%;align-items:center;justify-content:center}.document-container>.view-content.embed>*{max-width:100%;max-height:100%;object-fit:contain}:has(> :is(.math,table)){overflow-x:auto!important}.document-container>.view-content{overflow-x:auto;contain:content;padding:0;margin:0;height:100%}.scroll-highlight{position:absolute;width:100%;height:100%;pointer-events:none;z-index:1000;background-color:hsla(var(--color-accent-hsl),.25);opacity:0;padding:1em;inset:50%;translate:-50% -50%;border-radius:var(--radius-s)}</style><script defer="">async function loadIncludes(){if("file:"!=location.protocol){let e=document.querySelectorAll("include");for(let t=0;t<e.length;t++){let o=e[t],l=o.getAttribute("src");try{const e=await fetch(l);if(!e.ok){console.log("Could not include file: "+l),o?.remove();continue}let t=await e.text(),n=document.createRange().createContextualFragment(t),i=Array.from(n.children);for(let e of i)e.classList.add("hide"),e.style.transition="opacity 0.5s ease-in-out",setTimeout((()=>{e.classList.remove("hide")}),10);o.before(n),o.remove(),console.log("Included file: "+l)}catch(e){o?.remove(),console.log("Could not include file: "+l,e);continue}}}else{if(document.querySelectorAll("include").length>0){var e=document.createElement("div");e.id="error",e.textContent="Web server exports must be hosted on an http / web server to be viewed correctly.",e.style.position="fixed",e.style.top="50%",e.style.left="50%",e.style.transform="translate(-50%, -50%)",e.style.fontSize="1.5em",e.style.fontWeight="bold",e.style.textAlign="center",document.body.appendChild(e),document.querySelector(".document-container")?.classList.remove("hide")}}}document.addEventListener("DOMContentLoaded",(()=>{loadIncludes()}));let isFileProtocol="file:"==location.protocol;function waitLoadScripts(e,t){let o=e.map((e=>document.getElementById(e+"-script"))),l=0;!function e(){let n=o[l];l++,n&&"true"!=n.getAttribute("loaded")||l<o.length&&e(),l<o.length?n.addEventListener("load",e):t()}()}</script><link rel="stylesheet" href="lib/styles/obsidian.css"><link rel="stylesheet" href="lib/styles/theme.css"><link rel="preload" href="lib/styles/global-variable-styles.css" as="style" onload="this.onload=null;this.rel='stylesheet'"><noscript><link rel="stylesheet" href="lib/styles/global-variable-styles.css"></noscript><link rel="preload" href="lib/styles/supported-plugins.css" as="style" onload="this.onload=null;this.rel='stylesheet'"><noscript><link rel="stylesheet" href="lib/styles/supported-plugins.css"></noscript><link rel="preload" href="lib/styles/main-styles.css" as="style" onload="this.onload=null;this.rel='stylesheet'"><noscript><link rel="stylesheet" href="lib/styles/main-styles.css"></noscript><link rel="preload" href="lib/styles/snippets.css" as="style" onload="this.onload=null;this.rel='stylesheet'"><noscript><link rel="stylesheet" href="lib/styles/snippets.css"></noscript></head><body class="publish css-settings-manager theme-dark"><script defer="">let theme=localStorage.getItem("theme")||(window.matchMedia("(prefers-color-scheme: dark)").matches?"dark":"light");"dark"==theme?(document.body.classList.add("theme-dark"),document.body.classList.remove("theme-light")):(document.body.classList.add("theme-light"),document.body.classList.remove("theme-dark")),window.innerWidth<480?document.body.classList.add("is-phone"):window.innerWidth<768?document.body.classList.add("is-tablet"):window.innerWidth<1024?document.body.classList.add("is-small-screen"):document.body.classList.add("is-large-screen")</script><div class="webpage-container workspace"><div class="sidebar-left sidebar"><div class="sidebar-handle"></div><div class="sidebar-topbar"><div class="topbar-content"><label class="theme-toggle-container" for="theme_toggle"><input class="theme-toggle-input" type="checkbox" id="theme_toggle"><div class="toggle-background"></div></label></div><div class="clickable-icon sidebar-collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" class="svg-icon"><path d="M21 3H3C1.89543 3 1 3.89543 1 5V19C1 20.1046 1.89543 21 3 21H21C22.1046 21 23 20.1046 23 19V5C23 3.89543 22.1046 3 21 3Z"></path><path d="M10 4V20"></path><path d="M4 7H7"></path><path d="M4 10H7"></path><path d="M4 13H7"></path></svg></div></div><div class="sidebar-content"><div class="search-input-container"><input enterkeyhint="search" type="search" spellcheck="false" placeholder="Search..."><div class="search-input-clear-button" aria-label="Clear search"></div></div><include src="lib/html/file-tree.html"></include></div><script defer="">let ls = document.querySelector(".sidebar-left"); ls.classList.add("is-collapsed"); if (window.innerWidth > 768) ls.classList.remove("is-collapsed"); ls.style.setProperty("--sidebar-width", localStorage.getItem("sidebar-left-width"));</script></div><div class="document-container markdown-reading-view hide"><div class="markdown-preview-view markdown-rendered allow-fold-headings allow-fold-lists is-readable-line-width"><style id="MJX-CHTML-styles">mjx-c.mjx-c30::before{padding:.666em .5em .022em 0;content:"0"}mjx-c.mjx-c39::before{padding:.666em .5em .022em 0;content:"9"}mjx-c.mjx-c2212::before{padding:.583em .778em .082em 0;content:"−"}mjx-container[jax=CHTML]{line-height:0}mjx-container [space="1"]{margin-left:.111em}mjx-container [space="2"]{margin-left:.167em}mjx-container [space="3"]{margin-left:.222em}mjx-container [space="4"]{margin-left:.278em}mjx-container [space="5"]{margin-left:.333em}mjx-container [rspace="1"]{margin-right:.111em}mjx-container [rspace="2"]{margin-right:.167em}mjx-container [rspace="3"]{margin-right:.222em}mjx-container [rspace="4"]{margin-right:.278em}mjx-container [rspace="5"]{margin-right:.333em}mjx-container [size="s"]{font-size:70.7%}mjx-container [size=ss]{font-size:50%}mjx-container [size=Tn]{font-size:60%}mjx-container [size=sm]{font-size:85%}mjx-container [size=lg]{font-size:120%}mjx-container [size=Lg]{font-size:144%}mjx-container [size=LG]{font-size:173%}mjx-container [size=hg]{font-size:207%}mjx-container [size=HG]{font-size:249%}mjx-container [width=full]{width:100%}mjx-box{display:inline-block}mjx-block{display:block}mjx-itable{display:inline-table}mjx-row{display:table-row}mjx-row>*{display:table-cell}mjx-mtext{display:inline-block}mjx-mstyle{display:inline-block}mjx-merror{display:inline-block;color:red;background-color:#ff0}mjx-mphantom{visibility:hidden}mjx-assistive-mml{top:0;left:0;clip:rect(1px,1px,1px,1px);user-select:none;position:absolute!important;padding:1px 0 0!important;border:0!important;display:block!important;width:auto!important;overflow:hidden!important}mjx-assistive-mml[display=block]{width:100%!important}mjx-math{display:inline-block;text-align:left;line-height:0;text-indent:0;font-style:normal;font-weight:400;font-size:100%;font-size-adjust:none;letter-spacing:normal;border-collapse:collapse;overflow-wrap:normal;word-spacing:normal;white-space:nowrap;direction:ltr;padding:1px 0}mjx-container[jax=CHTML][display=true]{display:block;text-align:center;margin:1em 0}mjx-container[jax=CHTML][display=true][width=full]{display:flex}mjx-container[jax=CHTML][display=true] mjx-math{padding:0}mjx-container[jax=CHTML][justify=left]{text-align:left}mjx-container[jax=CHTML][justify=right]{text-align:right}mjx-mi{display:inline-block;text-align:left}mjx-c{display:inline-block}mjx-utext{display:inline-block;padding:.75em 0 .2em}mjx-msub{display:inline-block;text-align:left}mjx-mn{display:inline-block;text-align:left}mjx-mo{display:inline-block;text-align:left}mjx-stretchy-h{display:inline-table;width:100%}mjx-stretchy-h>*{display:table-cell;width:0}mjx-stretchy-h>*>mjx-c{display:inline-block;transform:scaleX(1)}mjx-stretchy-h>*>mjx-c::before{display:inline-block;width:initial}mjx-stretchy-h>mjx-ext{overflow:clip visible;width:100%}mjx-stretchy-h>mjx-ext>mjx-c::before{transform:scaleX(500)}mjx-stretchy-h>mjx-ext>mjx-c{width:0}mjx-stretchy-h>mjx-beg>mjx-c{margin-right:-.1em}mjx-stretchy-h>mjx-end>mjx-c{margin-left:-.1em}mjx-stretchy-v{display:inline-block}mjx-stretchy-v>*{display:block}mjx-stretchy-v>mjx-beg{height:0}mjx-stretchy-v>mjx-end>mjx-c{display:block}mjx-stretchy-v>*>mjx-c{transform:scaleY(1);transform-origin:left center;overflow:hidden}mjx-stretchy-v>mjx-ext{display:block;height:100%;box-sizing:border-box;border:0 solid transparent;overflow:visible clip}mjx-stretchy-v>mjx-ext>mjx-c::before{width:initial;box-sizing:border-box}mjx-stretchy-v>mjx-ext>mjx-c{transform:scaleY(500) translateY(.075em);overflow:visible}mjx-mark{display:inline-block;height:0}mjx-c::before{display:block;width:0}.MJX-TEX{font-family:MJXZERO,MJXTEX}.TEX-B{font-family:MJXZERO,MJXTEX-B}.TEX-I{font-family:MJXZERO,MJXTEX-I}.TEX-MI{font-family:MJXZERO,MJXTEX-MI}.TEX-BI{font-family:MJXZERO,MJXTEX-BI}.TEX-S1{font-family:MJXZERO,MJXTEX-S1}.TEX-S2{font-family:MJXZERO,MJXTEX-S2}.TEX-S3{font-family:MJXZERO,MJXTEX-S3}.TEX-S4{font-family:MJXZERO,MJXTEX-S4}.TEX-A{font-family:MJXZERO,MJXTEX-A}.TEX-C{font-family:MJXZERO,MJXTEX-C}.TEX-CB{font-family:MJXZERO,MJXTEX-CB}.TEX-FR{font-family:MJXZERO,MJXTEX-FR}.TEX-FRB{font-family:MJXZERO,MJXTEX-FRB}.TEX-SS{font-family:MJXZERO,MJXTEX-SS}.TEX-SSB{font-family:MJXZERO,MJXTEX-SSB}.TEX-SSI{font-family:MJXZERO,MJXTEX-SSI}.TEX-SC{font-family:MJXZERO,MJXTEX-SC}.TEX-T{font-family:MJXZERO,MJXTEX-T}.TEX-V{font-family:MJXZERO,MJXTEX-V}.TEX-VB{font-family:MJXZERO,MJXTEX-VB}mjx-stretchy-h mjx-c,mjx-stretchy-v mjx-c{font-family:MJXZERO,MJXTEX-S1,MJXTEX-S4,MJXTEX,MJXTEX-A!important}@font-face{font-family:MJXZERO;src:url("lib/fonts/mathjax_zero.woff") format("woff")}@font-face{font-family:MJXTEX;src:url("lib/fonts/mathjax_main-regular.woff") format("woff")}@font-face{font-family:MJXTEX-B;src:url("lib/fonts/mathjax_main-bold.woff") format("woff")}@font-face{font-family:MJXTEX-I;src:url("lib/fonts/mathjax_math-italic.woff") format("woff")}@font-face{font-family:MJXTEX-MI;src:url("lib/fonts/mathjax_main-italic.woff") format("woff")}@font-face{font-family:MJXTEX-BI;src:url("lib/fonts/mathjax_math-bolditalic.woff") format("woff")}@font-face{font-family:MJXTEX-S1;src:url("lib/fonts/mathjax_size1-regular.woff") format("woff")}@font-face{font-family:MJXTEX-S2;src:url("lib/fonts/mathjax_size2-regular.woff") format("woff")}@font-face{font-family:MJXTEX-S3;src:url("lib/fonts/mathjax_size3-regular.woff") format("woff")}@font-face{font-family:MJXTEX-S4;src:url("lib/fonts/mathjax_size4-regular.woff") format("woff")}@font-face{font-family:MJXTEX-A;src:url("lib/fonts/mathjax_ams-regular.woff") format("woff")}@font-face{font-family:MJXTEX-C;src:url("lib/fonts/mathjax_calligraphic-regular.woff") format("woff")}@font-face{font-family:MJXTEX-CB;src:url("lib/fonts/mathjax_calligraphic-bold.woff") format("woff")}@font-face{font-family:MJXTEX-FR;src:url("lib/fonts/mathjax_fraktur-regular.woff") format("woff")}@font-face{font-family:MJXTEX-FRB;src:url("lib/fonts/mathjax_fraktur-bold.woff") format("woff")}@font-face{font-family:MJXTEX-SS;src:url("lib/fonts/mathjax_sansserif-regular.woff") format("woff")}@font-face{font-family:MJXTEX-SSB;src:url("lib/fonts/mathjax_sansserif-bold.woff") format("woff")}@font-face{font-family:MJXTEX-SSI;src:url("lib/fonts/mathjax_sansserif-italic.woff") format("woff")}@font-face{font-family:MJXTEX-SC;src:url("lib/fonts/mathjax_script-regular.woff") format("woff")}@font-face{font-family:MJXTEX-T;src:url("lib/fonts/mathjax_typewriter-regular.woff") format("woff")}@font-face{font-family:MJXTEX-V;src:url("lib/fonts/mathjax_vector-regular.woff") format("woff")}@font-face{font-family:MJXTEX-VB;src:url("lib/fonts/mathjax_vector-bold.woff") format("woff")}mjx-c.mjx-c1D439.TEX-I::before{padding:.68em .749em 0 0;content:"F"}mjx-c.mjx-c1D447.TEX-I::before{padding:.677em .704em 0 0;content:"T"}mjx-c.mjx-c1D43F.TEX-I::before{padding:.683em .681em 0 0;content:"L"}mjx-c.mjx-c1D43C.TEX-I::before{padding:.683em .504em 0 0;content:"I"}mjx-c.mjx-c1D441.TEX-I::before{padding:.683em .888em 0 0;content:"N"}mjx-c.mjx-c1D438.TEX-I::before{padding:.68em .764em 0 0;content:"E"}mjx-c.mjx-c31::before{padding:.666em .5em 0 0;content:"1"}mjx-c.mjx-c2C::before{padding:.121em .278em .194em 0;content:","}</style><pre class="frontmatter language-yaml" tabindex="0" style="display: none;"><code class="language-yaml is-loaded"><span class="token key atrule">title</span><span class="token punctuation">:</span> CS50 <span class="token punctuation">-</span> Week 1
+<span class="token key atrule">tags</span><span class="token punctuation">:</span> programming<span class="token punctuation">,</span> cs50
+<span class="token key atrule">use</span><span class="token punctuation">:</span> Documentation
+<span class="token key atrule">languages</span><span class="token punctuation">:</span> C
+<span class="token key atrule">dependences</span><span class="token punctuation">:</span> CS50</code><button class="copy-code-button"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon lucide-copy"><rect x="8" y="8" width="14" height="14" rx="2" ry="2"></rect><path d="M4 16c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2"></path></svg></button></pre><div class="markdown-preview-sizer markdown-preview-section"><h1 class="page-title heading" id="CS50 - Week 1"><p dir="auto">CS50 - Week 1</p></h1><div class="el-blockquote"><blockquote dir="auto">
+<p>This material is distributed by <code>Harvard ©&nbsp;2023&nbsp;edX LLC</code>. It was copied during the execution of the Course, and have been modified due to my understanding and integrated to the previous Data Structure of <code>Programing Studies</code>.</p>
+</blockquote></div><div class="el-details"><details> <summary>Table of Contents</summary></details></div><div class="el-ul"><ul>
+<li data-line="0" dir="auto"><div class="list-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle"><path d="M3 8L12 17L21 8"></path></svg></div><a class="internal-link" data-href="#lecture-1" href="#lecture-1" target="_self" rel="noopener nofollow">Lecture 1</a>
+<ul>
+<li data-line="1" dir="auto"><a class="internal-link" data-href="#welcome" href="#welcome" target="_self" rel="noopener nofollow">Welcome!</a></li>
+<li data-line="2" dir="auto"><a class="internal-link" data-href="#hello-world" href="#hello-world" target="_self" rel="noopener nofollow">Hello World</a></li>
+<li data-line="3" dir="auto"><a class="internal-link" data-href="#functions" href="#functions" target="_self" rel="noopener nofollow">Functions</a></li>
+<li data-line="4" dir="auto"><a class="internal-link" data-href="#variables" href="#variables" target="_self" rel="noopener nofollow">Variables</a></li>
+<li data-line="5" dir="auto"><a class="internal-link" data-href="#conditionals" href="#conditionals" target="_self" rel="noopener nofollow">Conditionals</a></li>
+<li data-line="6" dir="auto"><a class="internal-link" data-href="#loops" href="#loops" target="_self" rel="noopener nofollow">Loops</a></li>
+<li data-line="7" dir="auto"><a class="internal-link" data-href="#linux-and-the-command-line" href="#linux-and-the-command-line" target="_self" rel="noopener nofollow">Linux and the Command Line</a></li>
+<li data-line="8" dir="auto"><a class="internal-link" data-href="#mario" href="#mario" target="_self" rel="noopener nofollow">Mario</a></li>
+<li data-line="9" dir="auto"><a class="internal-link" data-href="#comments" href="#comments" target="_self" rel="noopener nofollow">Comments</a></li>
+<li data-line="10" dir="auto"><a class="internal-link" data-href="#abstraction" href="#abstraction" target="_self" rel="noopener nofollow">Abstraction</a></li>
+<li data-line="11" dir="auto"><a class="internal-link" data-href="#operators-and-types" href="#operators-and-types" target="_self" rel="noopener nofollow">Operators and Types</a></li>
+<li data-line="12" dir="auto"><a class="internal-link" data-href="#summing-up" href="#summing-up" target="_self" rel="noopener nofollow">Summing Up</a></li>
+</ul>
+</li>
+<li data-line="13" dir="auto"><a class="internal-link" data-href="#section-1" href="#section-1" target="_self" rel="noopener nofollow">Section 1</a></li>
+<li data-line="14" dir="auto"><div class="list-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle"><path d="M3 8L12 17L21 8"></path></svg></div><a class="internal-link" data-href="#shorts" href="#shorts" target="_self" rel="noopener nofollow">Shorts</a>
+<ul>
+<li data-line="15" dir="auto"><div class="list-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle"><path d="M3 8L12 17L21 8"></path></svg></div><a class="internal-link" data-href="#data-types" href="#data-types" target="_self" rel="noopener nofollow">Data Types</a>
+<ul>
+<li data-line="16" dir="auto"><a class="internal-link" data-href="#operators" href="#operators" target="_self" rel="noopener nofollow">Operators</a></li>
+</ul>
+</li>
+<li data-line="17" dir="auto"><a class="internal-link" data-href="#conditional-statements" href="#conditional-statements" target="_self" rel="noopener nofollow">Conditional Statements</a></li>
+<li data-line="18" dir="auto"><a class="internal-link" data-href="#loops-1" href="#loops-1" target="_self" rel="noopener nofollow">Loops</a></li>
+<li data-line="19" dir="auto"><a class="internal-link" data-href="#command-line" href="#command-line" target="_self" rel="noopener nofollow">Command Line</a></li>
+<li data-line="20" dir="auto"><a class="internal-link" data-href="#lab-1---population" href="#lab-1---population" target="_self" rel="noopener nofollow">Lab 1 - Population</a></li>
+<li data-line="21" dir="auto"><a class="internal-link" data-href="#problem-set-1" href="#problem-set-1" target="_self" rel="noopener nofollow">Problem Set 1</a></li>
+<li data-line="22" dir="auto"><a class="internal-link" data-href="#what-to-do" href="#what-to-do" target="_self" rel="noopener nofollow">What to Do</a></li>
+<li data-line="23" dir="auto"><a class="internal-link" data-href="#practice-problems" href="#practice-problems" target="_self" rel="noopener nofollow">Practice Problems</a></li>
+</ul>
+</li>
+</ul></div><div></div><div class="el-hr"><hr></div><div class="el-h1 heading-wrapper"><h1 data-heading="Lecture 1" dir="auto" class="heading" id="Lecture_1">Lecture 1</h1><div class="heading-children"><div class="el-details"><details>
+<summary>Keywords, lookup in <a href="./src/transcripts/lecture1.md" target="_blank" rel="noopener nofollow">transcript</a></summary></details></div><div class="el-ul"><ul>
+<li data-line="0" dir="auto">Source code</li>
+<li data-line="1" dir="auto">Machine code</li>
+<li data-line="2" dir="auto">Compiler</li>
+<li data-line="3" dir="auto">Correctness</li>
+<li data-line="4" dir="auto">design</li>
+<li data-line="5" dir="auto">style</li>
+<li data-line="6" dir="auto">IDE</li>
+<li data-line="7" dir="auto">CLI x GUI</li>
+<li data-line="8" dir="auto">Syntax highlighting</li>
+<li data-line="9" dir="auto">Common mistakes</li>
+<li data-line="10" dir="auto">Header files</li>
+<li data-line="11" dir="auto">Assignment</li>
+<li data-line="12" dir="auto">Counter</li>
+<li data-line="13" dir="auto">Loops</li>
+<li data-line="14" dir="auto">Initialize</li>
+<li data-line="15" dir="auto">Cancel (infinite loop)</li>
+<li data-line="16" dir="auto">Linux commands (<code>unix</code>)</li>
+<li data-line="17" dir="auto">Comments</li>
+<li data-line="18" dir="auto">Memory size</li>
+<li data-line="19" dir="auto">integer overflow</li>
+<li data-line="20" dir="auto">Truncation</li>
+<li data-line="21" dir="auto">Type casting</li>
+<li data-line="22" dir="auto">floating-point imprecision</li>
+</ul></div><div></div><div class="el-h2 heading-wrapper"><h2 data-heading="Welcome!" dir="auto" class="heading" id="Welcome!"><div class="heading-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle"><path d="M3 8L12 17L21 8"></path></svg></div>Welcome!</h2><div class="heading-children"><div class="el-ul"><ul>
+<li data-line="0" dir="auto">In our previous session, we learned about Scratch, a visual programming language.</li>
+<li data-line="1" dir="auto">Indeed, all the essential programming concepts presented in Scratch will be utilized as you learn how to program any programming language.</li>
+<li data-line="2" dir="auto">Recall that machines only understand binary. Where humans write <em>source code</em>, a list of instructions for the computer that is human readable, machines only understand what we can now call <em>machine code</em>. This machine code is a pattern of ones and zeros that produces a desired effect.</li>
+<li data-line="3" dir="auto">It turns out that we can convert <em>source code</em> into <code>machine code</code> using a very special piece of software called a <em>compiler</em>. Today, we will be introducing you to a compiler that will allow you to convert source code in the programming language <em>C</em> into machine code.</li>
+<li data-line="4" dir="auto">Today, in addition to learning about how to code, you will be learning about how to write good code.</li>
+<li data-line="5" dir="auto">Code can be evaluated upon three axes. First, <em>correctness</em> refers to “does the code run as intended?” Second, <em>design</em> refers to “how well is the code designed?” Finally, <em>style</em> refers to “how aesthetically pleasing and consistent is the code?”</li>
+</ul></div></div></div><div class="el-h2 heading-wrapper"><h2 data-heading="Hello World" dir="auto" class="heading" id="Hello_World"><div class="heading-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle"><path d="M3 8L12 17L21 8"></path></svg></div>Hello World</h2><div class="heading-children"><div class="el-ul"><ul>
+<li data-line="0" dir="auto">
+<p>The compiler that is utilized for this course is <em>Visual Studio Code</em>, affectionately referred to as , which can be accessed via that same url, or simply as <em>VS Code.</em></p>
+</li>
+<li data-line="1" dir="auto">
+<p>One of the most important reasons we utilize VS Code is that it has all the software required for the course already pre-loaded on it. This course and the instructions herein were designed with VS Code in mind. Best always to utilize VS Code for assignments in this course.</p>
+</li>
+<li data-line="2" dir="auto">
+<p>You can open VS Code at <a data-tooltip-position="top" aria-label="https://code.cs50.io/" rel="noopener nofollow" class="external-link" href="https://code.cs50.io/" target="_blank">code.cs50.io</a>.<br>
+<span alt="vscode web" src="./src/img/vscode_login.png" class="internal-embed media-embed image-embed is-loaded"><img alt="vscode web" src="courses/cs50x/week1/src/img/vscode_login.png"></span></p>
+</li>
+<li data-line="4" dir="auto">
+<p>The compiler can be divided into a number of regions:</p>
+<p><img title="IDE" alt="IDE" src="https://cs50.harvard.edu/x/2023/notes/1//cs50Week1Slide017.png" referrerpolicy="no-referrer"></p>
+<p>Notice that there is a <em>file explorer</em> on the left side where you can find your files. Further, notice that there is a region in the middle called a <em>text editor</em> where you can edit your program. Finally, there is a <code>command line interface</code>, known as a <em>CLI</em>, <em>command line</em>, or <em>terminal window</em> where we can send commands to the computer in the cloud.</p>
+</li>
+<li data-line="10" dir="auto"><div class="list-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle"><path d="M3 8L12 17L21 8"></path></svg></div>
+<p>We can build your first program in C by:</p>
+<ol>
+<li data-line="12" dir="auto" class="has-run-code-button">
+<p>typing <code>code hello.c</code> into the terminal window, <strong>to create a brand new file</strong>.</p>
+<pre class="language-bash" tabindex="0"><code data-line="14" class="language-bash is-loaded">$ code hello.c
+</code><button class="copy-code-button"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon lucide-copy"><rect x="8" y="8" width="14" height="14" rx="2" ry="2"></rect><path d="M4 16c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2"></path></svg></button><button class="run-code-button">Run</button></pre>
+<p>Notice that we deliberately lowercased the entire filename and included the <code>.c</code> extension. </p>
+</li>
+<li data-line="19" dir="auto" class="has-run-code-button">
+<p>Then, in the text editor that appears, write code as follows:</p>
+<pre class="language-c" tabindex="0"><code data-line="21" class="language-c is-loaded"><span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">include</span> <span class="token string">&lt;stdio.h&gt;</span></span>
+
+<span class="token keyword">int</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token keyword">void</span><span class="token punctuation">)</span>
+<span class="token punctuation">{</span>
+    <span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"hello, world\n"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code><button class="copy-code-button"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon lucide-copy"><rect x="8" y="8" width="14" height="14" rx="2" ry="2"></rect><path d="M4 16c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2"></path></svg></button><button class="run-code-button">Run</button></pre>
+<p>Note that every single character above serves a purpose. <em>If you type it incorrectly, the program will not run</em>.</p>
+</li>
+<li data-line="31" dir="auto" class="has-run-code-button">
+<p>Clicking back in the terminal window, you can compile your code by executing</p>
+<pre class="language-bash" tabindex="0"><code data-line="33" class="language-bash is-loaded">$ <span class="token function">make</span> hello
+</code><button class="copy-code-button"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon lucide-copy"><rect x="8" y="8" width="14" height="14" rx="2" ry="2"></rect><path d="M4 16c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2"></path></svg></button><button class="run-code-button">Run</button></pre>
+<p>Notice that we are omitting <code>.c</code>. <code>make</code> is a compiler that will look for our <code>hello.c</code> file and turn it into a program called <code>hello</code>. If executing this command results in no errors, you can proceed. If not, double-check your code to ensure it matches the above.</p>
+</li>
+<li data-line="38" dir="auto" class="has-run-code-button">
+<p>Now, type the following:</p>
+<pre class="language-bash" tabindex="0"><code data-line="39" class="language-bash is-loaded">./hello
+</code><button class="copy-code-button"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon lucide-copy"><rect x="8" y="8" width="14" height="14" rx="2" ry="2"></rect><path d="M4 16c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2"></path></svg></button><button class="run-code-button">Run</button></pre>
+<p>And your program will execute saying <code>hello, world</code>. This command oppens the executable file.</p>
+</li>
+</ol>
+</li>
+<li data-line="44" dir="auto">
+<p>In the <em>file explorer</em> on the left. You will notice that there is now both a file called <code>hello.c</code> and another file called <code>hello</code>. <code>hello.c</code> is able to be read by the compiler: It’s where your code is stored. <code>hello</code> is an executable file that you can run, but cannot be read by the compiler.</p>
+</li>
+</ul></div></div></div><div class="el-h2 heading-wrapper"><h2 data-heading="Functions" dir="auto" class="heading" id="Functions"><div class="heading-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle"><path d="M3 8L12 17L21 8"></path></svg></div>Functions</h2><div class="heading-children"><div class="el-ul"><ul>
+<li data-line="0" dir="auto">
+<p>In <em>Scratch</em>, we utilized the <code>say</code> block to display any text on the screen. Indeed, in <strong>C</strong>, we have a function called <code>printf</code> that does exactly this.</p>
+</li>
+<li data-line="1" dir="auto" class="has-run-code-button">
+<p>Notice our code already invokes this function:</p>
+<pre class="language-c" tabindex="0"><code data-line="3" class="language-c is-loaded"><span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"hello, world\n"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code><button class="copy-code-button"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon lucide-copy"><rect x="8" y="8" width="14" height="14" rx="2" ry="2"></rect><path d="M4 16c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2"></path></svg></button><button class="run-code-button">Run</button></pre>
+<p>Notice that the printf function is called. The argument passed to printf is ‘hello, world\n’. The statement of code is closed with a <code>;</code>.</p>
+</li>
+<li data-line="9" dir="auto" class="has-run-code-button">
+<p>A common error in C programming is the omission of a semicolon. Modify your code as follows:</p>
+<pre class="language-c" tabindex="0"><code data-line="11" class="language-c is-loaded"><span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">include</span> <span class="token string">&lt;stdio.h&gt;</span></span>
+
+<span class="token keyword">int</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token keyword">void</span><span class="token punctuation">)</span>
+<span class="token punctuation">{</span>
+    <span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"hello, world\n"</span><span class="token punctuation">)</span>
+<span class="token punctuation">}</span>
+</code><button class="copy-code-button"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon lucide-copy"><rect x="8" y="8" width="14" height="14" rx="2" ry="2"></rect><path d="M4 16c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2"></path></svg></button><button class="run-code-button">Run</button></pre>
+<p><strong>Notice the semicolon is now gone</strong>.</p>
+</li>
+<li data-line="22" dir="auto">
+<p>In your terminal window, run <code>make hello</code>. You will now be met with numerous errors! Placing the semicolon back in the correct position and running <code>make hello</code> again, the errors go away.</p>
+</li>
+<li data-line="23" dir="auto">
+<p>Notice also the special symbol <code>\n</code> in your code. Try removing those characters and <em>making</em> your program again by executing <code>make hello</code>. Typing <code>./hello</code> in the terminal window, how did your program change?</p>
+</li>
+<li data-line="24" dir="auto" class="has-run-code-button">
+<p>Restore your program to the following:</p>
+<pre class="language-c" tabindex="0"><code data-line="26" class="language-c is-loaded"><span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">include</span> <span class="token string">&lt;stdio.h&gt;</span></span>
+
+<span class="token keyword">int</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token keyword">void</span><span class="token punctuation">)</span>
+<span class="token punctuation">{</span>
+    <span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"hello, world\n"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code><button class="copy-code-button"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon lucide-copy"><rect x="8" y="8" width="14" height="14" rx="2" ry="2"></rect><path d="M4 16c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2"></path></svg></button><button class="run-code-button">Run</button></pre>
+<p>Notice the semicolon and <code>\n</code> have been restored.</p>
+</li>
+<li data-line="37" dir="auto">
+<p>The statement at the start of the code <code>#include &lt;stdio.h&gt;</code> is a very special command that tells the compile that you want to use the capabilities of <em>library</em> called <code>stdio.h</code>. This allows you, among many other things, to utilize the <code>printf</code> function. You can read about all the capabilities of this library on the <a data-tooltip-position="top" aria-label="https://manual.cs50.io" rel="noopener nofollow" class="external-link" href="https://manual.cs50.io" target="_blank">Manual Pages</a>.</p>
+</li>
+<li data-line="38" dir="auto">
+<p>It turns out that CS50 has its own library called <code>cs50.h</code>. You can find the code in <a data-tooltip-position="top" aria-label="https://cs50.readthedocs.io/libraries/cs50/c/" rel="noopener nofollow" class="external-link" href="https://cs50.readthedocs.io/libraries/cs50/c/" target="_blank">here</a>.</p>
+</li>
+</ul></div></div></div><div class="el-h2 heading-wrapper"><h2 data-heading="Variables" dir="auto" class="heading" id="Variables"><div class="heading-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle"><path d="M3 8L12 17L21 8"></path></svg></div>Variables</h2><div class="heading-children"><div class="el-ul"><ul>
+<li data-line="0" dir="auto">
+<p>Recall that in Scratch, we had the ability to ask the user <em>“What’s your name?”</em> and say <em>“hello”</em> with that name appended to it.</p>
+</li>
+<li data-line="1" dir="auto" class="has-run-code-button">
+<p>In C, we can do the same. Modify your code as follows:</p>
+<pre class="language-c" tabindex="0"><code data-line="3" class="language-c is-loaded"><span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">include</span> <span class="token string">&lt;cs50.h&gt;</span></span>
+<span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">include</span> <span class="token string">&lt;stdio.h&gt;</span></span>
+
+<span class="token keyword">int</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token keyword">void</span><span class="token punctuation">)</span>
+<span class="token punctuation">{</span>
+    string answer <span class="token operator">=</span> <span class="token function">get_string</span><span class="token punctuation">(</span><span class="token string">"What's your name? "</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"hello, %s\n"</span><span class="token punctuation">,</span> answer<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code><button class="copy-code-button"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon lucide-copy"><rect x="8" y="8" width="14" height="14" rx="2" ry="2"></rect><path d="M4 16c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2"></path></svg></button><button class="run-code-button">Run</button></pre>
+<p>Notice that <code>#include &lt;cs50.h&gt;</code> has been added to the top of your code. The <code>get_string</code> function is used to get a string from the user. Then, the variable <code>answer</code> is passed to the <code>printf</code> function. <code>%s</code> tells the <code>printf</code> function to prepare itself to receive a <code>string</code>.</p>
+</li>
+<li data-line="16" dir="auto">
+<p><code>answer</code> is a special holding place we call a <em>variable</em>. <code>answer</code> is of type <code>string</code> and can hold any string within it. There are many <em>data types</em>, such as <code>int</code>, <code>bool</code>, <code>char</code>, and many others.</p>
+</li>
+<li data-line="17" dir="auto">
+<p>Running <code>make hello</code> again in the terminal window, you can run your program by typing <code>./hello</code>. The program now asks for your name and then says hello with your name attached.</p>
+</li>
+</ul></div></div></div><div class="el-h2 heading-wrapper"><h2 data-heading="Conditionals" dir="auto" class="heading" id="Conditionals"><div class="heading-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle"><path d="M3 8L12 17L21 8"></path></svg></div>Conditionals</h2><div class="heading-children"><div class="el-ul"><ul>
+<li data-line="0" dir="auto">
+<p>Another building block you utilized within Scratch was that of <em>conditionals</em>. For example, you might want to do one thing if x is greater than y. Further, you might want to do something else if that condition is not met.</p>
+</li>
+<li data-line="1" dir="auto" class="has-run-code-button">
+<p>In the terminal window, type <code>code compare.c</code> and write code as follows:</p>
+<pre class="language-c" tabindex="0"><code data-line="3" class="language-c is-loaded"><span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">include</span> <span class="token string">&lt;cs50.h&gt;</span></span>
+<span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">include</span> <span class="token string">&lt;stdio.h&gt;</span></span>
+
+<span class="token keyword">int</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token keyword">void</span><span class="token punctuation">)</span>
+<span class="token punctuation">{</span>
+    <span class="token keyword">int</span> x <span class="token operator">=</span> <span class="token function">get_int</span><span class="token punctuation">(</span><span class="token string">"What's x? "</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">int</span> y <span class="token operator">=</span> <span class="token function">get_int</span><span class="token punctuation">(</span><span class="token string">"What's y? "</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+    <span class="token keyword">if</span> <span class="token punctuation">(</span>x <span class="token operator">&lt;</span> y<span class="token punctuation">)</span>
+    <span class="token punctuation">{</span>
+        <span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"x is less than y\n"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code><button class="copy-code-button"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon lucide-copy"><rect x="8" y="8" width="14" height="14" rx="2" ry="2"></rect><path d="M4 16c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2"></path></svg></button><button class="run-code-button">Run</button></pre>
+<p>Notice that we create two variables, an <code>int</code> or integer called <code>x</code> and another called <code>y</code>. The values of these are populated using the <code>get_int</code> function.</p>
+</li>
+<li data-line="21" dir="auto">
+<p>You can run your code by executing <code>make compare</code> in the terminal window, followed by <code>./compare</code>. If you get any error messages, check your code for errors.</p>
+</li>
+<li data-line="22" dir="auto" class="has-run-code-button">
+<p>We can improve your program by coding as follows:</p>
+<pre class="language-c" tabindex="0"><code data-line="24" class="language-c is-loaded"><span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">include</span> <span class="token string">&lt;cs50.h&gt;</span></span>
+<span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">include</span> <span class="token string">&lt;stdio.h&gt;</span></span>
+
+<span class="token keyword">int</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token keyword">void</span><span class="token punctuation">)</span>
+<span class="token punctuation">{</span>
+    <span class="token keyword">int</span> x <span class="token operator">=</span> <span class="token function">get_int</span><span class="token punctuation">(</span><span class="token string">"What's x? "</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">int</span> y <span class="token operator">=</span> <span class="token function">get_int</span><span class="token punctuation">(</span><span class="token string">"What's y? "</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+    <span class="token keyword">if</span> <span class="token punctuation">(</span>x <span class="token operator">&lt;</span> y<span class="token punctuation">)</span>
+    <span class="token punctuation">{</span>
+        <span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"x is less than y\n"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+    <span class="token keyword">else</span> <span class="token keyword">if</span> <span class="token punctuation">(</span>x <span class="token operator">&gt;</span> y<span class="token punctuation">)</span>
+    <span class="token punctuation">{</span>
+        <span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"x is greater than y\n"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+    <span class="token keyword">else</span>
+    <span class="token punctuation">{</span>
+        <span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"x is equal to y\n"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code><button class="copy-code-button"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon lucide-copy"><rect x="8" y="8" width="14" height="14" rx="2" ry="2"></rect><path d="M4 16c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2"></path></svg></button><button class="run-code-button">Run</button></pre>
+<p>Notice that all potential outcomes are now accounted for.</p>
+</li>
+<li data-line="50" dir="auto">
+<p>You can re-make and re-run your program and test it out.</p>
+</li>
+<li data-line="51" dir="auto" class="has-run-code-button">
+<p>Considering another data type called a <code>char</code> we can start a new program by typing <code>code agree.c</code> into the terminal window. In the text editor, write code as follows:</p>
+<pre class="language-c" tabindex="0"><code data-line="53" class="language-c is-loaded"><span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">include</span> <span class="token string">&lt;cs50.h&gt;</span></span>
+<span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">include</span> <span class="token string">&lt;stdio.h&gt;</span></span>
+
+<span class="token keyword">int</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token keyword">void</span><span class="token punctuation">)</span>
+<span class="token punctuation">{</span>
+    <span class="token comment">// Prompt user to agree</span>
+    <span class="token keyword">char</span> c <span class="token operator">=</span> <span class="token function">get_char</span><span class="token punctuation">(</span><span class="token string">"Do you agree? "</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+    <span class="token comment">// Check whether agreed</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span>c <span class="token operator">==</span> <span class="token char">'Y'</span> <span class="token operator">||</span> c <span class="token operator">==</span> <span class="token char">'y'</span><span class="token punctuation">)</span>
+    <span class="token punctuation">{</span>
+        <span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"Agreed.\n"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+    <span class="token keyword">else</span> <span class="token keyword">if</span> <span class="token punctuation">(</span>c <span class="token operator">==</span> <span class="token char">'N'</span> <span class="token operator">||</span> c <span class="token operator">==</span> <span class="token char">'n'</span><span class="token punctuation">)</span>
+    <span class="token punctuation">{</span>
+        <span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"Not agreed.\n"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code><button class="copy-code-button"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon lucide-copy"><rect x="8" y="8" width="14" height="14" rx="2" ry="2"></rect><path d="M4 16c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2"></path></svg></button><button class="run-code-button">Run</button></pre>
+<p>Notice that single quotes are utilized for single characters. Further, notice that <code>==</code> ensure that something <em>is equal</em> to something else, where a single equal sign would have a very different function in C. Finally, notice that <code>||</code> effectively means <em>or</em>.</p>
+</li>
+<li data-line="76" dir="auto">
+<p>You can test your code by typing <code>make agree</code> into the terminal window, followed by <code>./agree</code>.</p>
+</li>
+</ul><div><pre class="dataview dataview-error">Dataview (inline field '='): Error: 
+-- PARSING FAILED --------------------------------------------------
+
+&gt; 1 | =
+    | ^
+
+Expected one of the following: 
+
+'(', 'null', boolean, date, duration, file link, list ('[1, 2, 3]'), negated field, number, object ('{ a: 1, b: 2 }'), string, variable
+</pre></div></div></div></div><div class="el-h2 heading-wrapper"><h2 data-heading="Loops" dir="auto" class="heading" id="Loops"><div class="heading-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle"><path d="M3 8L12 17L21 8"></path></svg></div>Loops</h2><div class="heading-children"><div class="el-ul"><ul>
+<li data-line="0" dir="auto">
+<p>We can also utilize the loops building block from Scratch in our C programs.</p>
+</li>
+<li data-line="1" dir="auto" class="has-run-code-button">
+<p>In your terminal window, type <code>code meow.c</code> and write code as follows:</p>
+<pre class="language-c" tabindex="0"><code data-line="3" class="language-c is-loaded"><span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">include</span> <span class="token string">&lt;stdio.h&gt;</span></span>
+
+<span class="token keyword">int</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token keyword">void</span><span class="token punctuation">)</span>
+<span class="token punctuation">{</span>
+    <span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"meow\n"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"meow\n"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"meow\n"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code><button class="copy-code-button"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon lucide-copy"><rect x="8" y="8" width="14" height="14" rx="2" ry="2"></rect><path d="M4 16c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2"></path></svg></button><button class="run-code-button">Run</button></pre>
+<p>Notice this does as intended but has an opportunity for better design.</p>
+</li>
+<li data-line="16" dir="auto" class="has-run-code-button">
+<p>We can improve our program by modifying your code as follows:</p>
+<pre class="language-c" tabindex="0"><code data-line="18" class="language-c is-loaded"><span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">include</span> <span class="token string">&lt;stdio.h&gt;</span></span>
+
+<span class="token keyword">int</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token keyword">void</span><span class="token punctuation">)</span>
+<span class="token punctuation">{</span>
+    <span class="token keyword">int</span> i <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>
+    <span class="token keyword">while</span> <span class="token punctuation">(</span>i <span class="token operator">&lt;</span> <span class="token number">3</span><span class="token punctuation">)</span>
+    <span class="token punctuation">{</span>
+        <span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"meow\n"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        i<span class="token operator">++</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code><button class="copy-code-button"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon lucide-copy"><rect x="8" y="8" width="14" height="14" rx="2" ry="2"></rect><path d="M4 16c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2"></path></svg></button><button class="run-code-button">Run</button></pre>
+<p>Notice that we create an <code>int</code> called <code>i</code> and assign it the value <code>0</code>. Then, we create a <code>while</code> loop that will run as long as <code>i &lt; 3</code>. Then, the loop runs. Every time <code>1</code> is added to <code>i</code> using the <code>i++</code> statement.</p>
+</li>
+<li data-line="34" dir="auto" class="has-run-code-button">
+<p>Similarly, we can implement a count-down of sorts by modifying our code as follows:</p>
+<pre class="language-c" tabindex="0"><code data-line="36" class="language-c is-loaded"><span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">include</span> <span class="token string">&lt;stdio.h&gt;</span></span>
+
+<span class="token keyword">int</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token keyword">void</span><span class="token punctuation">)</span>
+<span class="token punctuation">{</span>
+    <span class="token keyword">int</span> i <span class="token operator">=</span> <span class="token number">3</span><span class="token punctuation">;</span>
+    <span class="token keyword">while</span> <span class="token punctuation">(</span>i <span class="token operator">&gt;</span> <span class="token number">0</span><span class="token punctuation">)</span>
+    <span class="token punctuation">{</span>
+        <span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"meow\n"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        i<span class="token operator">--</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code><button class="copy-code-button"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon lucide-copy"><rect x="8" y="8" width="14" height="14" rx="2" ry="2"></rect><path d="M4 16c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2"></path></svg></button><button class="run-code-button">Run</button></pre>
+<p>Notice how our counter <code>i</code> is started at <code>3</code>. Each time the loop runs, it will reduce the counter by <code>1</code>. Once the counter is less than zero, it will stop the loop.</p>
+</li>
+<li data-line="52" dir="auto" class="has-run-code-button">
+<p>We can further improve the design using a <code>for</code> loop. Modify your code as follows:</p>
+<pre class="language-c" tabindex="0"><code data-line="54" class="language-c is-loaded"><span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">include</span> <span class="token string">&lt;stdio.h&gt;</span></span>
+
+<span class="token keyword">int</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token keyword">void</span><span class="token punctuation">)</span>
+<span class="token punctuation">{</span>
+    <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">int</span> i <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> i <span class="token operator">&lt;</span> <span class="token number">3</span><span class="token punctuation">;</span> i<span class="token operator">++</span><span class="token punctuation">)</span>
+    <span class="token punctuation">{</span>
+        <span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"meow\n"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code><button class="copy-code-button"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon lucide-copy"><rect x="8" y="8" width="14" height="14" rx="2" ry="2"></rect><path d="M4 16c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2"></path></svg></button><button class="run-code-button">Run</button></pre>
+<p>Notice that the <code>for</code> loop includes three arguments. The first argument <code>int i = 0</code> starts our counter at zero. The second argument <code>i &lt; 3</code> is the condition that is being checked. Finally, the argument <code>i++</code> tells the loop to increment by one each time the loop runs.</p>
+</li>
+<li data-line="68" dir="auto" class="has-run-code-button">
+<p>We can even loop forever using the following code:</p>
+<pre class="language-c" tabindex="0"><code data-line="70" class="language-c is-loaded"><span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">include</span> <span class="token string">&lt;cs50.h&gt;</span></span>
+<span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">include</span> <span class="token string">&lt;stdio.h&gt;</span></span>
+
+<span class="token keyword">int</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token keyword">void</span><span class="token punctuation">)</span>
+<span class="token punctuation">{</span>
+    <span class="token keyword">while</span> <span class="token punctuation">(</span>true<span class="token punctuation">)</span>
+    <span class="token punctuation">{</span>
+        <span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"meow\n"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code><button class="copy-code-button"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon lucide-copy"><rect x="8" y="8" width="14" height="14" rx="2" ry="2"></rect><path d="M4 16c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2"></path></svg></button><button class="run-code-button">Run</button></pre>
+<p>Notice that <code>true</code> will always be the case. Therefore, the code will always run. You will lose control of your terminal window by running this code. You can break from an infinite by hitting <code>control-C</code> on your keyboard.</p>
+</li>
+</ul></div></div></div><div class="el-h2 heading-wrapper"><h2 data-heading="Linux and the Command Line" dir="auto" class="heading" id="Linux_and_the_Command_Line"><div class="heading-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle"><path d="M3 8L12 17L21 8"></path></svg></div>Linux and the Command Line</h2><div class="heading-children"><div class="el-ul"><ul>
+<li data-line="0" dir="auto"><em>Linux</em> is an operating system that is accessible via the command line in the terminal window in VS Code.</li>
+<li data-line="1" dir="auto"><div class="list-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle"><path d="M3 8L12 17L21 8"></path></svg></div>Some common command-line arguments we may use include:
+<ul>
+<li data-line="2" dir="auto"><code>cd</code>, for changing our current directory (folder)</li>
+<li data-line="3" dir="auto"><code>cp</code>, for copying files and directories</li>
+<li data-line="4" dir="auto"><code>ls</code>, for listing files in a directory</li>
+<li data-line="5" dir="auto"><code>mkdir</code>, for making a directory</li>
+<li data-line="6" dir="auto"><code>mv</code>, for moving (renaming) files and directories</li>
+<li data-line="7" dir="auto"><code>rm</code>, for removing (deleting) files</li>
+<li data-line="8" dir="auto"><code>rmdir</code>, for removing (deleting) directories</li>
+</ul>
+</li>
+<li data-line="9" dir="auto">The most commonly used is <code>ls</code> which will list all the files in the current directory or directory. Go ahead and type <code>ls</code> into the terminal window and hit <code>enter</code>. You’ll see all the files in the current folder.</li>
+<li data-line="10" dir="auto">Another useful command is <code>mv</code>, where you can move a file from one file to another. For example, you could use this command to rename <code>Hello.c</code> (notice the uppercase <code>H</code>) to <code>hello.c</code> by typing <code>mv Hello.c hello.c</code>.</li>
+<li data-line="11" dir="auto">You can also create folders. You can type <code>mkdir pset1</code> to create a directory called <code>pset1</code>.</li>
+<li data-line="12" dir="auto">You can then use <code>cd pset1</code> to change your current directory to <code>pset1</code>.</li>
+</ul></div></div></div><div class="el-h2 heading-wrapper"><h2 data-heading="Mario" dir="auto" class="heading" id="Mario"><div class="heading-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle"><path d="M3 8L12 17L21 8"></path></svg></div>Mario</h2><div class="heading-children"><div class="el-ul"><ul>
+<li data-line="0" dir="auto">
+<p>Everything we’ve discussed today has focused on various building-blocks of your work as a programmer.</p>
+</li>
+<li data-line="1" dir="auto">
+<p>The following will help you orient toward working on a problem set for this class in general: How does one approach a computer science related problem?</p>
+</li>
+<li data-line="2" dir="auto">
+<p>Imagine we wanted to emulate the visual of the game Super Mario Bros. Considering the four question-blocks pictured, how could we create code that roughly represents these four horizontal blocks?</p>
+<p><img title="Mario Question Marks" alt="Mario Question Marks" src="https://cs50.harvard.edu/x/2023/notes/1//cs50Week1Slide123.png" referrerpolicy="no-referrer"></p>
+</li>
+<li data-line="6" dir="auto" class="has-run-code-button">
+<p>In the terminal window, type <code>code mario.c</code> and code as follows:</p>
+<pre class="language-c" tabindex="0"><code data-line="8" class="language-c is-loaded"><span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">include</span> <span class="token string">&lt;stdio.h&gt;</span></span>
+
+<span class="token keyword">int</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token keyword">void</span><span class="token punctuation">)</span>
+<span class="token punctuation">{</span>
+    <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">int</span> i <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> i <span class="token operator">&lt;</span> <span class="token number">4</span><span class="token punctuation">;</span> i<span class="token operator">++</span><span class="token punctuation">)</span>
+    <span class="token punctuation">{</span>
+        <span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"?"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+    <span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"\n"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code><button class="copy-code-button"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon lucide-copy"><rect x="8" y="8" width="14" height="14" rx="2" ry="2"></rect><path d="M4 16c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2"></path></svg></button><button class="run-code-button">Run</button></pre>
+<p>------ Result ------</p>
+<pre class="language-bash" tabindex="0"><code data-line="21" class="language-bash is-loaded">$ <span class="token function">make</span> mario
+$ ./mario
+????
+$
+</code><button class="copy-code-button"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon lucide-copy"><rect x="8" y="8" width="14" height="14" rx="2" ry="2"></rect><path d="M4 16c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2"></path></svg></button></pre>
+<p>Notice how four question marks are printed here using a loop.</p>
+</li>
+<li data-line="30" dir="auto">
+<p>Similarly, we can apply this same logic to be able to create three vertical blocks.</p>
+<p><img title="Mario Blocks" alt="Mario Blocks" src="https://cs50.harvard.edu/x/2023/notes/1//cs50Week1Slide125.png" referrerpolicy="no-referrer"></p>
+</li>
+<li data-line="34" dir="auto" class="has-run-code-button">
+<p>To accomplish this, modify your code as follows:</p>
+<pre class="language-c" tabindex="0"><code data-line="36" class="language-c is-loaded"><span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">include</span> <span class="token string">&lt;stdio.h&gt;</span></span>
+
+<span class="token keyword">int</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token keyword">void</span><span class="token punctuation">)</span>
+<span class="token punctuation">{</span>
+    <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">int</span> i <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> i <span class="token operator">&lt;</span> <span class="token number">3</span><span class="token punctuation">;</span> i<span class="token operator">++</span><span class="token punctuation">)</span>
+    <span class="token punctuation">{</span>
+        <span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"#\n"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code><button class="copy-code-button"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon lucide-copy"><rect x="8" y="8" width="14" height="14" rx="2" ry="2"></rect><path d="M4 16c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2"></path></svg></button><button class="run-code-button">Run</button></pre>
+<p>------ Result ------</p>
+<pre class="language-bash" tabindex="0"><code data-line="48" class="language-bash is-loaded">$ <span class="token function">make</span> mario
+$ ./mario
+<span class="token comment">#</span>
+<span class="token comment">#</span>
+<span class="token comment">#</span>
+$
+</code><button class="copy-code-button"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon lucide-copy"><rect x="8" y="8" width="14" height="14" rx="2" ry="2"></rect><path d="M4 16c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2"></path></svg></button></pre>
+<p>Notice how three vertical bricks are printed using a loop.</p>
+</li>
+<li data-line="59" dir="auto">
+<p>What if we wanted to combine these ideas to create a three-by-three group of blocks?</p>
+<p><img title="Mario Grid" alt="Mario Grid" src="https://cs50.harvard.edu/x/2023/notes/1//cs50Week1Slide127.png" referrerpolicy="no-referrer"></p>
+</li>
+<li data-line="63" dir="auto" class="has-run-code-button">
+<p>We can follow the logic above, combining the same ideas. Modify your code as follows:</p>
+<pre class="language-c" tabindex="0"><code data-line="65" class="language-c is-loaded"><span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">include</span> <span class="token string">&lt;stdio.h&gt;</span></span>
+
+<span class="token keyword">int</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token keyword">void</span><span class="token punctuation">)</span>
+<span class="token punctuation">{</span>
+    <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">int</span> i <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> i <span class="token operator">&lt;</span> <span class="token number">3</span><span class="token punctuation">;</span> i<span class="token operator">++</span><span class="token punctuation">)</span>
+    <span class="token punctuation">{</span>
+        <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">int</span> j <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> j <span class="token operator">&lt;</span> <span class="token number">3</span><span class="token punctuation">;</span> j<span class="token operator">++</span><span class="token punctuation">)</span>
+        <span class="token punctuation">{</span>
+            <span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"#"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+        <span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"\n"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code><button class="copy-code-button"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon lucide-copy"><rect x="8" y="8" width="14" height="14" rx="2" ry="2"></rect><path d="M4 16c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2"></path></svg></button><button class="run-code-button">Run</button></pre>
+<p>------ Result ------</p>
+<pre class="language-bash" tabindex="0"><code data-line="81" class="language-bash is-loaded">$ <span class="token function">make</span> mario
+$ ./mario
+<span class="token comment">###</span>
+<span class="token comment">###</span>
+<span class="token comment">###</span>
+$
+</code><button class="copy-code-button"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon lucide-copy"><rect x="8" y="8" width="14" height="14" rx="2" ry="2"></rect><path d="M4 16c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2"></path></svg></button></pre>
+<p>Notice that one loop is inside another. <strong>The first loop defines what vertical row</strong> is being printed. <strong>For each row, three columns are printed</strong>. After each row, a new line is printed.</p>
+</li>
+<li data-line="92" dir="auto" class="has-run-code-button">
+<p>What if we wanted to ensure that the number of blocks to be <em>constant</em>, that is, unchangeable? Modify your code as follows:</p>
+<pre class="language-c" tabindex="0"><code data-line="94" class="language-c is-loaded"><span class="token keyword">int</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token keyword">void</span><span class="token punctuation">)</span>
+<span class="token punctuation">{</span>
+    <span class="token keyword">const</span> <span class="token keyword">int</span> n <span class="token operator">=</span> <span class="token number">3</span><span class="token punctuation">;</span>
+    <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">int</span> i <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> i <span class="token operator">&lt;</span> n<span class="token punctuation">;</span> i<span class="token operator">++</span><span class="token punctuation">)</span>
+    <span class="token punctuation">{</span>
+        <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">int</span> j <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> j <span class="token operator">&lt;</span> n<span class="token punctuation">;</span> j<span class="token operator">++</span><span class="token punctuation">)</span>
+        <span class="token punctuation">{</span>
+            <span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"#"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+        <span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"\n"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+</code><button class="copy-code-button"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon lucide-copy"><rect x="8" y="8" width="14" height="14" rx="2" ry="2"></rect><path d="M4 16c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2"></path></svg></button><button class="run-code-button">Run</button></pre>
+<p><strong>Notice how <code>n</code> is now a constant. It can never be changed.</strong></p>
+</li>
+<li data-line="110" dir="auto" class="has-run-code-button">
+<p>As illustrated earlier in this lecture, we can make our code prompt the user for the size of the grid. Modify your code as follows:</p>
+<pre class="language-c" tabindex="0"><code data-line="112" class="language-c is-loaded"><span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">include</span> <span class="token string">&lt;cs50.h&gt;</span></span>
+<span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">include</span> <span class="token string">&lt;stdio.h&gt;</span></span>
+
+<span class="token keyword">int</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token keyword">void</span><span class="token punctuation">)</span>
+<span class="token punctuation">{</span>
+    <span class="token keyword">int</span> n <span class="token operator">=</span> <span class="token function">get_int</span><span class="token punctuation">(</span><span class="token string">"Size: "</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+    <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">int</span> i <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> i <span class="token operator">&lt;</span> n<span class="token punctuation">;</span> i<span class="token operator">++</span><span class="token punctuation">)</span>
+    <span class="token punctuation">{</span>
+        <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">int</span> j <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> j <span class="token operator">&lt;</span> n<span class="token punctuation">;</span> j<span class="token operator">++</span><span class="token punctuation">)</span>
+        <span class="token punctuation">{</span>
+            <span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"#"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+        <span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"\n"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code><button class="copy-code-button"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon lucide-copy"><rect x="8" y="8" width="14" height="14" rx="2" ry="2"></rect><path d="M4 16c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2"></path></svg></button><button class="run-code-button">Run</button></pre>
+<p><strong>Notice that <code>get_int</code> is used to prompt the user.</strong></p>
+</li>
+<li data-line="133" dir="auto" class="has-run-code-button">
+<p>A general piece of advice within programming is that <em>you should never fully trust your user</em>. They will likely misbehave, typing incorrect values where they should not.<br>
+We can protect our program from bad behavior by checking to make sure the user’s input satisfies our needs. Modify your code as follows:</p>
+<pre class="language-c" tabindex="0"><code data-line="136" class="language-c is-loaded"><span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">include</span> <span class="token string">&lt;cs50.h&gt;</span></span>
+<span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">include</span> <span class="token string">&lt;stdio.h&gt;</span></span>
+
+<span class="token keyword">int</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token keyword">void</span><span class="token punctuation">)</span>
+<span class="token punctuation">{</span>
+    <span class="token keyword">int</span> n<span class="token punctuation">;</span>
+    <span class="token keyword">do</span>
+    <span class="token punctuation">{</span>
+        n <span class="token operator">=</span> <span class="token function">get_int</span><span class="token punctuation">(</span><span class="token string">"Size: "</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+    <span class="token keyword">while</span> <span class="token punctuation">(</span>n <span class="token operator">&lt;</span> <span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+    <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">int</span> i <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> i <span class="token operator">&lt;</span> n<span class="token punctuation">;</span> i<span class="token operator">++</span><span class="token punctuation">)</span>
+    <span class="token punctuation">{</span>
+        <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">int</span> j <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> j <span class="token operator">&lt;</span> n<span class="token punctuation">;</span> j<span class="token operator">++</span><span class="token punctuation">)</span>
+        <span class="token punctuation">{</span>
+            <span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"#"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+        <span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"\n"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code><button class="copy-code-button"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon lucide-copy"><rect x="8" y="8" width="14" height="14" rx="2" ry="2"></rect><path d="M4 16c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2"></path></svg></button><button class="run-code-button">Run</button></pre>
+<p>The code now has the <code>do..while...</code> block, wich will execute the first part (<code>do</code>) as long as the <code>while</code> ins't attended, until the user’s input is 1 or greater.</p>
+</li>
+</ul></div></div></div><div class="el-h2 heading-wrapper"><h2 data-heading="Comments" dir="auto" class="heading" id="Comments"><div class="heading-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle"><path d="M3 8L12 17L21 8"></path></svg></div>Comments</h2><div class="heading-children"><div class="el-ul"><ul>
+<li data-line="0" dir="auto">
+<p>Comments are fundamental parts of a computer program, where you leave explanatory remarks to yourself and others that may be collaborating with you regarding your code.</p>
+</li>
+<li data-line="1" dir="auto">
+<p>All code you create for this course must include robust comments.</p>
+</li>
+<li data-line="2" dir="auto">
+<p>Typically each comment is a few words or more, providing the reader an opportunity to understand what is happening in a specific block of code. Further, such comments serve as a reminder for you later when you need to revise your code.</p>
+</li>
+<li data-line="3" dir="auto" class="has-run-code-button">
+<p>Line comments involve placing <code>//</code> into your code, followed by a comment. Modify your code as follows to integrate comments:</p>
+<pre class="language-c" tabindex="0"><code data-line="5" class="language-c is-loaded"><span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">include</span> <span class="token string">&lt;cs50.h&gt;</span></span>
+<span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">include</span> <span class="token string">&lt;stdio.h&gt;</span></span>
+
+<span class="token keyword">int</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token keyword">void</span><span class="token punctuation">)</span>
+<span class="token punctuation">{</span>
+    <span class="token comment">// Get size of grid</span>
+    <span class="token keyword">int</span> n<span class="token punctuation">;</span>
+    <span class="token keyword">do</span>
+    <span class="token punctuation">{</span>
+        n <span class="token operator">=</span> <span class="token function">get_int</span><span class="token punctuation">(</span><span class="token string">"Size: "</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+    <span class="token keyword">while</span> <span class="token punctuation">(</span>n <span class="token operator">&lt;</span> <span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+    <span class="token comment">// Print grid of bricks</span>
+    <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">int</span> i <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> i <span class="token operator">&lt;</span> n<span class="token punctuation">;</span> i<span class="token operator">++</span><span class="token punctuation">)</span>
+    <span class="token punctuation">{</span>
+        <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">int</span> j <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> j <span class="token operator">&lt;</span> n<span class="token punctuation">;</span> j<span class="token operator">++</span><span class="token punctuation">)</span>
+        <span class="token punctuation">{</span>
+            <span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"#"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+        <span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"\n"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code><button class="copy-code-button"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon lucide-copy"><rect x="8" y="8" width="14" height="14" rx="2" ry="2"></rect><path d="M4 16c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2"></path></svg></button><button class="run-code-button">Run</button></pre>
+<p>Notice how each line comment begins with a <code>//</code>.</p>
+</li>
+<li data-line="33" dir="auto" class="has-run-code-button">
+<p>You can add a Comment Block using <code>/*</code> to open and <code>*/</code> to close the block, as follows:</p>
+<pre class="language-c" tabindex="0"><code data-line="35" class="language-c is-loaded"><span class="token keyword">int</span> <span class="token function">idle_function</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token comment">/*Some description for
+the function with break lines*/</span>
+<span class="token punctuation">{</span>
+    <span class="token comment">//code statements</span>
+<span class="token punctuation">}</span>
+</code><button class="copy-code-button"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon lucide-copy"><rect x="8" y="8" width="14" height="14" rx="2" ry="2"></rect><path d="M4 16c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2"></path></svg></button><button class="run-code-button">Run</button></pre>
+</li>
+</ul></div></div></div><div class="el-h2 heading-wrapper"><h2 data-heading="Abstraction" dir="auto" class="heading" id="Abstraction"><div class="heading-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle"><path d="M3 8L12 17L21 8"></path></svg></div>Abstraction</h2><div class="heading-children"><div class="el-ul"><ul>
+<li data-line="0" dir="auto">
+<p><em>Abstraction</em> is the art of simplifying our code such that it deals with smaller and smaller problems.</p>
+</li>
+<li data-line="1" dir="auto">
+<p>Looking at your code, you can see how two essential problems in our code are <em>get size of grid</em> and <em>print grid of bricks</em>.</p>
+</li>
+<li data-line="2" dir="auto" class="has-run-code-button">
+<p>We can abstract away these two problems into separate functions. Modify your code as follows:</p>
+<pre class="language-c" tabindex="0"><code data-line="4" class="language-c is-loaded"><span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">include</span> <span class="token string">&lt;cs50.h&gt;</span></span>
+<span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">include</span> <span class="token string">&lt;stdio.h&gt;</span></span>
+<span class="token comment">// Create an instance for main use</span>
+<span class="token keyword">int</span> <span class="token function">get_size</span><span class="token punctuation">(</span><span class="token keyword">void</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token keyword">void</span> <span class="token function">print_grid</span><span class="token punctuation">(</span><span class="token keyword">int</span> n<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token keyword">int</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token keyword">void</span><span class="token punctuation">)</span>
+<span class="token punctuation">{</span>
+    <span class="token keyword">int</span> n <span class="token operator">=</span> <span class="token function">get_size</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token function">print_grid</span><span class="token punctuation">(</span>n<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">int</span> <span class="token function">get_size</span><span class="token punctuation">(</span><span class="token keyword">void</span><span class="token punctuation">)</span>
+<span class="token punctuation">{</span>
+    <span class="token keyword">int</span> n<span class="token punctuation">;</span>
+    <span class="token keyword">do</span>
+    <span class="token punctuation">{</span>
+        n <span class="token operator">=</span> <span class="token function">get_int</span><span class="token punctuation">(</span><span class="token string">"Size: "</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+    <span class="token keyword">while</span> <span class="token punctuation">(</span>n <span class="token operator">&lt;</span> <span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">return</span> n<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">void</span> <span class="token function">print_grid</span><span class="token punctuation">(</span><span class="token keyword">int</span> n<span class="token punctuation">)</span>
+<span class="token punctuation">{</span>
+    <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">int</span> i <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> i <span class="token operator">&lt;</span> n<span class="token punctuation">;</span> i<span class="token operator">++</span><span class="token punctuation">)</span>
+    <span class="token punctuation">{</span>
+        <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">int</span> j <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> j <span class="token operator">&lt;</span> n<span class="token punctuation">;</span> j<span class="token operator">++</span><span class="token punctuation">)</span>
+        <span class="token punctuation">{</span>
+            <span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"#"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+        <span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"\n"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code><button class="copy-code-button"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon lucide-copy"><rect x="8" y="8" width="14" height="14" rx="2" ry="2"></rect><path d="M4 16c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2"></path></svg></button><button class="run-code-button">Run</button></pre>
+<p>Notice that we have three functions now. First, we have the <code>main</code> function that calls two other functions called <code>get_size</code> and <code>print_grid</code>. Second, we have a second function called <code>get_size</code> which includes the exact code we had to accomplish this task prior. Third, we have another function called <code>print_grid</code> that prints the grid. Because we abstracted away the essential problems within our program, our <code>main</code> function is very short.</p>
+</li>
+</ul></div></div></div><div class="el-h2 heading-wrapper"><h2 data-heading="Operators and Types" dir="auto" class="heading" id="Operators_and_Types"><div class="heading-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle"><path d="M3 8L12 17L21 8"></path></svg></div>Operators and Types</h2><div class="heading-children"><div class="el-ul"><ul>
+<li data-line="0" dir="auto"><div class="list-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle"><path d="M3 8L12 17L21 8"></path></svg></div>
+<p><em>Operators</em> refer to the mathematical operations that are supported by your compiler. In C, these mathematical operators include:</p>
+<ul>
+<li data-line="1" dir="auto"><code>+</code> for addition</li>
+<li data-line="2" dir="auto"><code>-</code> for subtraction</li>
+<li data-line="3" dir="auto"><code>*</code> for multiplication</li>
+<li data-line="4" dir="auto"><code>/</code> for division</li>
+<li data-line="5" dir="auto"><code>%</code> for remainder</li>
+</ul>
+</li>
+<li data-line="6" dir="auto">
+<p>Types refer to the possible data that can be stored within a variable. For example, a <code>char</code> is designed to accommodate a single character like <code>a</code> or <code>2</code>.</p>
+</li>
+<li data-line="7" dir="auto">
+<p>Types are very important because each type has specific limits. For example, because of the limits in memory, the highest value of an <code>int</code> can be <code>4294967296</code>.</p>
+</li>
+<li data-line="8" dir="auto"><div class="list-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle"><path d="M3 8L12 17L21 8"></path></svg></div>
+<p>Types with which you might interact during this course include:</p>
+<ul>
+<li data-line="9" dir="auto"><code>bool</code>, a Boolean expression of either true or false</li>
+<li data-line="10" dir="auto"><code>char</code>, a single character like a or 2</li>
+<li data-line="11" dir="auto"><code>double</code>, a floating-point value with more digits than a float</li>
+<li data-line="12" dir="auto"><code>float</code>, a floating-point value, or real number with a decimal value</li>
+<li data-line="13" dir="auto"><code>int</code>, integers up to a certain size, or number of bits</li>
+<li data-line="14" dir="auto"><code>long</code>, integers with more bits, so they can count higher than an int</li>
+<li data-line="15" dir="auto"><code>string</code>, a string of characters</li>
+</ul>
+</li>
+<li data-line="16" dir="auto" class="has-run-code-button">
+<p>You can implement a calculator in C. In your terminal, type <code>code calculator.c</code> and write code as follows:</p>
+<pre class="language-c" tabindex="0"><code data-line="18" class="language-c is-loaded"><span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">include</span> <span class="token string">&lt;cs50.h&gt;</span></span>
+<span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">include</span> <span class="token string">&lt;stdio.h&gt;</span></span>
+
+<span class="token keyword">int</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token keyword">void</span><span class="token punctuation">)</span>
+<span class="token punctuation">{</span>
+    <span class="token comment">// Prompt user for x</span>
+    <span class="token keyword">int</span> x <span class="token operator">=</span> <span class="token function">get_int</span><span class="token punctuation">(</span><span class="token string">"x: "</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+    <span class="token comment">// Prompt user for y</span>
+    <span class="token keyword">int</span> y <span class="token operator">=</span> <span class="token function">get_int</span><span class="token punctuation">(</span><span class="token string">"y: "</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+    <span class="token comment">// Perform addition</span>
+    <span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"%i\n"</span><span class="token punctuation">,</span> x <span class="token operator">+</span> y<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code><button class="copy-code-button"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon lucide-copy"><rect x="8" y="8" width="14" height="14" rx="2" ry="2"></rect><path d="M4 16c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2"></path></svg></button><button class="run-code-button">Run</button></pre>
+<p>Notice how the <code>get_int</code> function is utilized to obtain an integer from the user twice. One integer is stored in the <code>int</code> variable called <code>x</code>. Another is stored in the <code>int</code> variable called <code>y</code>. Then, the <code>printf</code> function prints the value of <code>x + y</code>, designated by the <code>%i</code> symbol.</p>
+</li>
+<li data-line="37" dir="auto">
+<p>As you are coding, pay special attention to the types of variables you are using to avoid problems within your code.</p>
+</li>
+</ul></div></div></div><div class="el-h2 heading-wrapper"><h2 data-heading="Summing Up" dir="auto" class="heading" id="Summing_Up"><div class="heading-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle"><path d="M3 8L12 17L21 8"></path></svg></div>Summing Up</h2><div class="heading-children"><div class="el-p"><p dir="auto">In this lesson, you learned how to apply the building blocks you learned in Scratch to the C programming language. You learned…</p></div><div class="el-ul"><ul>
+<li data-line="0" dir="auto">How to create your first program in C.</li>
+<li data-line="1" dir="auto">Predefined functions that come natively with C and how to implement your own functions.</li>
+<li data-line="2" dir="auto">How to use variables, conditionals, and loops.</li>
+<li data-line="3" dir="auto">How to use the Linux command line.</li>
+<li data-line="4" dir="auto">How to approach problem-solving for a computer science problem.</li>
+<li data-line="5" dir="auto">How to integrate comments into your code.</li>
+<li data-line="6" dir="auto">How to approach abstraction to simplify and improve your code.</li>
+<li data-line="7" dir="auto">How to utilize types and operators.</li>
+</ul></div><div class="el-p"><p dir="auto">See you next time!</p></div><div class="el-hr"><hr></div></div></div></div></div><div class="el-h1 heading-wrapper"><h1 data-heading="Section 1" dir="auto" class="heading" id="Section_1">Section 1</h1><div class="heading-children"><div class="el-blockquote"><blockquote dir="auto">
+<p><a class="internal-link" data-href="./src/transcripts/section1.md" href="courses/cs50x/week1/src/transcripts/section1.html" target="_self" rel="noopener nofollow">Transcript</a></p>
+</blockquote></div><div class="el-p"><p dir="auto">This is mostly the seme content of the <a class="internal-link" data-href="#lecture-1" href="#lecture-1" target="_self" rel="noopener nofollow">Lecture</a> and below is the main topics reviewed in the class.</p></div><div class="el-ul"><ul>
+<li data-line="0" dir="auto">Why are we using C? </li>
+<li data-line="1" dir="auto">How can we read and write code that includes <em>variables</em>, <em>conditionals</em>, and <em>loops</em>? </li>
+<li data-line="2" dir="auto">Why do we care about <em>data types</em>? </li>
+<li data-line="3" dir="auto">What does it mean to <em>compile</em> a C program?</li>
+</ul></div><div class="el-hr"><hr></div></div></div><div class="el-h1 heading-wrapper"><h1 data-heading="Shorts" dir="auto" class="heading" id="Shorts">Shorts</h1><div class="heading-children"><div class="el-h2 heading-wrapper"><h2 data-heading="Data Types" dir="auto" class="heading" id="Data_Types"><div class="heading-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle"><path d="M3 8L12 17L21 8"></path></svg></div>Data Types</h2><div class="heading-children"><div class="el-blockquote"><blockquote dir="auto">
+<p><a class="internal-link" data-href="./src/transcripts/shorts1_data_types.md" href="courses/cs50x/week1/src/transcripts/shorts1_data_types.html" target="_self" rel="noopener nofollow">Transc</a></p>
+</blockquote></div><div class="el-ul"><ul>
+<li data-line="0" dir="auto">
+<p><code>int</code>, is used for variables that will store integers.<br>
+Integers always take up 4 bytes of memory (32 bits). This means the range of values they can store is necessarily limited to 32 bits worth of information.</p>
+</li>
+<li data-line="3" dir="auto">
+<p><code>unsigned int</code>, have only positive integers, <code>unsigned</code> is a qualifier that can be applied to certain types (including <code>int</code>), which effectively doubles the    &nbsp;positive range of variables of that type, at the cost of disallowing any negative values.</p>
+</li>
+<li data-line="5" dir="auto">
+<p><code>char</code>, is used for variables that will store single characters.<br>
+Characters always take up 1 byte of memory (8 bits). This means the range of values they can store is necessarily limited to 8 bits Worth Of information,<br>
+Thanks to <code>ASCII</code>, we've developed a mapping of characters like A, B, C, etc... to numeric values in the positive side of this range.</p>
+</li>
+<li data-line="9" dir="auto">
+<p>The <code>float</code> data type is used for variables that will store floating-point values, also known as real numbers.<br>
+Floating points values always take up 4 bytes of memory (32 bits).<br>
+lt's a little complicated to describe the range of a float, but suffice it to say with 32 bits of precision, some of which might be used for an integer part, we are limited in how precise we can be.</p>
+</li>
+<li data-line="13" dir="auto">
+<p>The <code>double</code> data type is used for variables that will store floating-point values, also known as real numbers.<br>
+The difference is that doubles are double precision. They always take up 8 bytes of memory (64 bits).<br>
+With an additional 32 bits Of precision relative to a float, doubles allow us to be specify much more precise real numbers.<br>
+<br></p>
+</li>
+<li data-line="18" dir="auto">
+<p><code>void</code> <strong>is a type, but not a data type</strong>.<br>
+Functions can have a <code>void</code> return type, which just means they don't return a value.<br>
+The parameter list of a function can also be void. lt simply means the function takes no parameters.<br>
+For now, think of void more as a placeholder for "nothing". It's more complex than that, but this should suffice for the better part of the course.</p>
+</li>
+</ul></div><div class="el-br"><br></div><div class="el-p"><p dir="auto">CS50 header file (<code>#include &lt;cs50.h&gt;</code>) has defined two more data types:</p></div><div class="el-ul"><ul>
+<li data-line="0" dir="auto">
+<p><code>bool</code>, The bool data type is used for variables that will store a Boolean value. More precisely, they are capable only Of storing one Of two values: <code>true</code> and <code>false</code>. <em>In C, every nonzero value is equivalent to true, and zero is false.</em></p>
+</li>
+<li data-line="1" dir="auto">
+<p><code>string</code>, The string data type is used for variables that will Store a series Of characters, which programmers typically call a string.<br>
+Strings include things such as words, sentences, paragraphs, and the like.</p>
+</li>
+<li data-line="4" dir="auto" class="has-run-code-button"><div class="list-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle"><path d="M3 8L12 17L21 8"></path></svg></div>
+<p>Creating a variable</p>
+<ul>
+<li data-line="5" dir="auto">To bring a variable into existence, you need simply specify the data type of the variable and give it a name.</li>
+</ul>
+<pre class="language-c" tabindex="0"><code data-line="6" class="language-c is-loaded"><span class="token keyword">int</span> number<span class="token punctuation">;</span>
+<span class="token keyword">char</span> letter<span class="token punctuation">;</span>
+</code><button class="copy-code-button"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon lucide-copy"><rect x="8" y="8" width="14" height="14" rx="2" ry="2"></rect><path d="M4 16c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2"></path></svg></button><button class="run-code-button">Run</button></pre>
+<ul>
+<li data-line="10" dir="auto">If you wish to create multiple variables of the same type, you specify the type name once, and then list as many variables of that type as you want.</li>
+</ul>
+<pre class="language-c" tabindex="0"><code data-line="11" class="language-c is-loaded"><span class="token keyword">int</span> height<span class="token punctuation">,</span> width<span class="token punctuation">;</span>
+<span class="token keyword">float</span> sqrt2<span class="token punctuation">,</span> sqrt3<span class="token punctuation">,</span> pi<span class="token punctuation">;</span>
+</code><button class="copy-code-button"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon lucide-copy"><rect x="8" y="8" width="14" height="14" rx="2" ry="2"></rect><path d="M4 16c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2"></path></svg></button></pre>
+<ul>
+<li data-line="15" dir="auto">In general, it's good practice (clear code) to only declare variables when you need them.</li>
+<li data-line="16" dir="auto">After a variable has been declared, it's no Ion er necessary to specify that variable's type. (In fact, doing so as some unintended consequences!)</li>
+</ul>
+<pre class="language-c" tabindex="0"><code data-line="18" class="language-c is-loaded"><span class="token keyword">int</span> number<span class="token punctuation">;</span>     <span class="token comment">//declaration</span>
+number <span class="token operator">=</span> <span class="token number">17</span><span class="token punctuation">;</span>     <span class="token comment">//assignment</span>
+<span class="token keyword">char</span> Ietter<span class="token punctuation">;</span>     <span class="token comment">//declaration</span>
+letter <span class="token operator">=</span> <span class="token char">'H'</span><span class="token punctuation">;</span>   <span class="token comment">//assignment</span>
+<span class="token comment">//or</span>
+<span class="token keyword">int</span> number <span class="token operator">=</span> <span class="token number">17</span> <span class="token comment">//initialization (declaring and assigning)</span>
+```  
+</code><button class="copy-code-button"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon lucide-copy"><rect x="8" y="8" width="14" height="14" rx="2" ry="2"></rect><path d="M4 16c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2"></path></svg></button></pre>
+</li>
+</ul></div><div class="el-h3 heading-wrapper"><h3 data-heading="Operators" dir="auto" class="heading" id="Operators"><div class="heading-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle"><path d="M3 8L12 17L21 8"></path></svg></div>Operators</h3><div class="heading-children"><div class="el-ul"><ul>
+<li data-line="0" dir="auto" class="has-run-code-button">
+<p>In C we can add (<code>+</code>) , subtract (<code>-</code>), multiply (<code>*</code>) and divide (<code>/</code>) numbers, as expected.</p>
+<pre class="language-c" tabindex="0"><code data-line="1" class="language-c is-loaded"><span class="token keyword">int</span> x <span class="token operator">=</span> y <span class="token operator">+</span> <span class="token number">1</span><span class="token punctuation">;</span>
+</code><button class="copy-code-button"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon lucide-copy"><rect x="8" y="8" width="14" height="14" rx="2" ry="2"></rect><path d="M4 16c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2"></path></svg></button><button class="run-code-button">Run</button></pre>
+</li>
+<li data-line="5" dir="auto" class="has-run-code-button">
+<p>We also have the modulus operator, (<code>%</code>) which gives us the remainder when the number on the left of the operator is divided by the number on the right.</p>
+<pre class="language-c" tabindex="0"><code data-line="6" class="language-c is-loaded"><span class="token keyword">int</span> m <span class="token operator">=</span> <span class="token number">13</span> <span class="token operator">%</span> <span class="token number">4</span><span class="token punctuation">;</span>
+<span class="token comment">// m is now 1</span>
+</code><button class="copy-code-button"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon lucide-copy"><rect x="8" y="8" width="14" height="14" rx="2" ry="2"></rect><path d="M4 16c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2"></path></svg></button><button class="run-code-button">Run</button></pre>
+</li>
+<li data-line="11" dir="auto" class="has-run-code-button">
+<p>C also provides a shorthand way to apply an arithmetic operator to a single variable.</p>
+<pre class="language-c" tabindex="0"><code data-line="12" class="language-c is-loaded">x <span class="token operator">=</span> x <span class="token operator">*</span> <span class="token number">5</span> <span class="token comment">//or</span>
+x <span class="token operator">*=</span> <span class="token number">5</span>
+</code><button class="copy-code-button"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon lucide-copy"><rect x="8" y="8" width="14" height="14" rx="2" ry="2"></rect><path d="M4 16c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2"></path></svg></button><button class="run-code-button">Run</button></pre>
+</li>
+<li data-line="17" dir="auto" class="has-run-code-button">
+<p>This trick works with all five basic arithmetic operators. C provides a further shorthand for incrementing or decrementing a variable by 1:</p>
+<pre class="language-c" tabindex="0"><code data-line="19" class="language-c is-loaded">x<span class="token operator">++</span>     <span class="token comment">//to increase</span>
+x<span class="token operator">--</span>     <span class="token comment">//to decrease</span>
+</code><button class="copy-code-button"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon lucide-copy"><rect x="8" y="8" width="14" height="14" rx="2" ry="2"></rect><path d="M4 16c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2"></path></svg></button><button class="run-code-button">Run</button></pre>
+</li>
+<li data-line="24" dir="auto"><div class="list-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle"><path d="M3 8L12 17L21 8"></path></svg></div>
+<p>Logical operators</p>
+<ul>
+<li data-line="25" dir="auto"><strong>AND</strong> (<code>&amp;&amp;</code>) is true if and <strong>only if both</strong> operands are true, otherwise false.</li>
+<li data-line="26" dir="auto"><strong>OR</strong> (<code>||</code>) is true if and only <strong>if at least one</strong> operand is true, otherwise false.</li>
+<li data-line="27" dir="auto"><strong>NOT</strong> (<code>!</code>) <strong>inverts</strong> the value of its operand.</li>
+</ul>
+</li>
+<li data-line="29" dir="auto"><div class="list-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle"><path d="M3 8L12 17L21 8"></path></svg></div>
+<p>Relational operators</p>
+<ul>
+<li data-line="30" dir="auto">x is Less than  y (<code>x &lt; y</code>)</li>
+<li data-line="31" dir="auto">x is Less than or equal to y  (<code>x &lt;= y</code>)</li>
+<li data-line="32" dir="auto">x is Greater than y  (<code>x &gt; y</code>)</li>
+<li data-line="33" dir="auto">x is Greater than or equal to y (<code>x &gt;= y</code>)</li>
+<li data-line="34" dir="auto">Equality ( x is equal to y) (<code>x == y</code>)</li>
+<li data-line="35" dir="auto">Inequality (x is different from y) (<code>x != y</code>)</li>
+</ul>
+</li>
+</ul></div></div></div></div></div><div class="el-h2 heading-wrapper"><h2 data-heading="Conditional Statements" dir="auto" class="heading" id="Conditional_Statements"><div class="heading-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle"><path d="M3 8L12 17L21 8"></path></svg></div>Conditional Statements</h2><div class="heading-children"><div class="el-blockquote"><blockquote dir="auto">
+<p><a class="internal-link" data-href="./src/transcripts/shorts1_conditionals.md" href="courses/cs50x/week1/src/transcripts/shorts1_conditionals.html" target="_self" rel="noopener nofollow">Transc</a></p>
+</blockquote></div><div class="el-ul"><ul>
+<li data-line="0" dir="auto"><code>if</code> / <code>else if</code> / <code>else</code></li>
+<li data-line="1" dir="auto"><code>if</code> / <code>if</code> / <code>else</code>, chain of non-mutually exclusive conditionals</li>
+<li data-line="2" dir="auto"><code>switch</code> / <code>case</code></li>
+</ul></div></div></div><div class="el-h2 heading-wrapper"><h2 data-heading="Loops" dir="auto" class="heading" id="Loops"><div class="heading-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle"><path d="M3 8L12 17L21 8"></path></svg></div>Loops</h2><div class="heading-children"><div class="el-blockquote"><blockquote dir="auto">
+<p><a class="internal-link" data-href="./src/transcripts/shorts1_loops.md" href="courses/cs50x/week1/src/transcripts/shorts1_loops.html" target="_self" rel="noopener nofollow">Transc</a></p>
+</blockquote></div><div class="el-ul"><ul>
+<li data-line="0" dir="auto"><code>while</code></li>
+<li data-line="1" dir="auto"><code>do</code>-<code>while</code></li>
+<li data-line="2" dir="auto"><code>for</code></li>
+</ul></div></div></div><div class="el-h2 heading-wrapper"><h2 data-heading="Command Line" dir="auto" class="heading" id="Command_Line"><div class="heading-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle"><path d="M3 8L12 17L21 8"></path></svg></div>Command Line</h2><div class="heading-children"><div class="el-blockquote"><blockquote dir="auto">
+<p><a class="internal-link" data-href="./src/transcripts/shorts1_comand_line.md" href="courses/cs50x/week1/src/transcripts/shorts1_comand_line.html" target="_self" rel="noopener nofollow">Transc</a></p>
+</blockquote></div><div class="el-ul"><ul>
+<li data-line="0" dir="auto"><code>GUI</code> x <code>CLI</code><br>
+Please see the <a class="internal-link" data-href="../../Other/shell.md" href="../../Other/shell.md" target="_self" rel="noopener nofollow">Shell Command List</a></li>
+</ul></div><div class="el-hr"><hr></div></div></div><div class="el-h2 heading-wrapper"><h2 data-heading="[Lab 1 - Population](./lab1.md)" dir="auto" class="heading" id="[Lab_1_-_Population](./lab1.md)"><div class="heading-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle"><path d="M3 8L12 17L21 8"></path></svg></div><a class="internal-link" data-href="./lab1.md" href="courses/cs50x/week1/lab1.html" target="_self" rel="noopener nofollow">Lab 1 - Population</a></h2><div class="heading-children"><div class="el-blockquote"><blockquote dir="auto">
+<p>Full code in <a class="internal-link" data-href="./src/lab1.c" href="courses/cs50x/week1/src/lab1.c" target="_self" rel="noopener nofollow">here</a></p>
+</blockquote></div></div></div><div class="el-h2 heading-wrapper"><h2 data-heading="Problem Set 1" dir="auto" class="heading" id="Problem_Set_1"><div class="heading-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle"><path d="M3 8L12 17L21 8"></path></svg></div>Problem Set 1</h2><div class="heading-children"><div class="el-blockquote"><blockquote dir="auto">
+<p>Collaboration on problem sets is not permitted except to the extent that you may ask classmates and others for help so long as that help does not reduce to another doing your work for you, per the course’s policy on <a data-tooltip-position="top" aria-label="https://cs50.harvard.edu/x/2023/psets/1//../../syllabus/#academic-honesty" rel="noopener nofollow" class="external-link" href="https://cs50.harvard.edu/x/2023/psets/1//../../syllabus/#academic-honesty" target="_blank">academic honesty</a>.</p>
+<p>The staff conducts random audits of submissions to CS50x. Students found to be in violation of this policy will be removed from the course. Students who have already completed CS50x, if found to be in violation, will have their CS50 Certificate permanently revoked.</p>
+</blockquote></div></div></div><div class="el-h2 heading-wrapper"><h2 data-heading="What to Do" dir="auto" class="heading" id="What_to_Do"><div class="heading-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle"><path d="M3 8L12 17L21 8"></path></svg></div>What to Do</h2><div class="heading-children"><div class="el-p"><p dir="auto">Be sure you have completed <a data-tooltip-position="top" aria-label="https://cs50.harvard.edu/x/2023/psets/1//../../labs/1/" rel="noopener nofollow" class="external-link" href="https://cs50.harvard.edu/x/2023/psets/1//../../labs/1/" target="_blank">Lab 1</a> before beginning this problem set.</p></div><div class="el-ol"><ol>
+<li data-line="0" dir="auto">Log into <a data-tooltip-position="top" aria-label="https://code.cs50.io/" rel="noopener nofollow" class="external-link" href="https://code.cs50.io/" target="_blank">code.cs50.io</a> using your GitHub account.</li>
+<li data-line="1" dir="auto">Run <code>update50</code> in your codespace’s terminal window to ensure your codespace is up-to-date and, when prompted, click <strong>Rebuild now</strong></li>
+<li data-line="2" dir="auto">Submit <a class="internal-link" data-href="./hello.md" href="courses/cs50x/week1/hello.html" target="_self" rel="noopener nofollow">Hello</a></li>
+<li data-line="3" dir="auto"><div class="list-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle"><path d="M3 8L12 17L21 8"></path></svg></div>Submit one of <a class="internal-link" data-href="./mario.md" href="courses/cs50x/week1/mario.html" target="_self" rel="noopener nofollow">Mario</a>:
+<ul>
+<li data-line="4" dir="auto"><a data-tooltip-position="top" aria-label="https://cs50.harvard.edu/x/2023/psets/1//mario/less/" rel="noopener nofollow" class="external-link" href="https://cs50.harvard.edu/x/2023/psets/1//mario/less/" target="_blank">this version of Mario</a> if feeling less comfortable</li>
+<li data-line="5" dir="auto"><a data-tooltip-position="top" aria-label="https://cs50.harvard.edu/x/2023/psets/1//mario/more/" rel="noopener nofollow" class="external-link" href="https://cs50.harvard.edu/x/2023/psets/1//mario/more/" target="_blank">this version of Mario</a> if feeling more comfortable</li>
+</ul>
+</li>
+<li data-line="6" dir="auto"><div class="list-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle"><path d="M3 8L12 17L21 8"></path></svg></div>Submit one of <a class="internal-link" data-href="./cash_credit.md" href="courses/cs50x/week1/cash_credit.html" target="_self" rel="noopener nofollow">Crash | Credit</a>:
+<ul>
+<li data-line="7" dir="auto"><a data-tooltip-position="top" aria-label="https://cs50.harvard.edu/x/2023/psets/1//cash/" rel="noopener nofollow" class="external-link" href="https://cs50.harvard.edu/x/2023/psets/1//cash/" target="_blank">Cash</a> if feeling less comfortable</li>
+<li data-line="8" dir="auto"><a data-tooltip-position="top" aria-label="https://cs50.harvard.edu/x/2023/psets/1//credit/" rel="noopener nofollow" class="external-link" href="https://cs50.harvard.edu/x/2023/psets/1//credit/" target="_blank">Credit</a> if feeling more comfortable</li>
+</ul>
+</li>
+</ol></div><div class="el-p"><p dir="auto">If you submit both versions of Mario, we’ll record the higher of your two scores. If you submit both Cash and Credit, we’ll record the higher of your two scores.</p></div></div></div><div class="el-h2 heading-wrapper"><h2 data-heading="[Practice Problems](./problems1.md)" dir="auto" class="heading" id="[Practice_Problems](./problems1.md)"><div class="heading-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle"><path d="M3 8L12 17L21 8"></path></svg></div><a class="internal-link" data-href="./problems1.md" href="courses/cs50x/week1/problems1.html" target="_self" rel="noopener nofollow">Practice Problems</a></h2><div class="heading-children"><div class="el-ul"><ul>
+<li data-line="0" dir="auto"><a class="internal-link" data-href="./debug.md" href="courses/cs50x/week1/debug.html" target="_self" rel="noopener nofollow">Debug</a></li>
+<li data-line="1" dir="auto"><a class="internal-link" data-href="./half.md" href="courses/cs50x/week1/half.html" target="_self" rel="noopener nofollow">Half</a></li>
+<li data-line="2" dir="auto"><a class="internal-link" data-href="./prime.md" href="courses/cs50x/week1/prime.html" target="_self" rel="noopener nofollow">Prime</a></li>
+</ul></div><div class="mod-footer mod-ui"></div></div></div></div></div></div></div></div><div class="sidebar-right sidebar"><div class="sidebar-handle"></div><div class="sidebar-topbar"><div class="topbar-content"></div><div class="clickable-icon sidebar-collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" class="svg-icon"><path d="M21 3H3C1.89543 3 1 3.89543 1 5V19C1 20.1046 1.89543 21 3 21H21C22.1046 21 23 20.1046 23 19V5C23 3.89543 22.1046 3 21 3Z"></path><path d="M10 4V20"></path><path d="M4 7H7"></path><path d="M4 10H7"></path><path d="M4 13H7"></path></svg></div></div><div class="sidebar-content"><div class="graph-view-wrapper"><div class="sidebar-section-header">Interactive Graph</div><div class="graph-view-placeholder">
+		<div class="graph-view-container">
+			<div class="graph-icon graph-expand" role="button" aria-label="Expand" data-tooltip-position="top"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon"><line x1="7" y1="17" x2="17" y2="7"></line><polyline points="7 7 17 7 17 17"></polyline></svg></div>
+			<canvas id="graph-canvas" class="hide" width="512px" height="512px"></canvas>
+		</div>
+		</div></div><div class="tree-container mod-root nav-folder tree-item outline-tree" data-depth="0"><div class="tree-header"><span class="sidebar-section-header">Table Of Contents</span><button class="clickable-icon collapse-tree-button" aria-label="Collapse All"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></svg></button></div><div class="tree-scroll-area tree-item-children nav-folder-children"><div class="tree-item mod-tree-folder nav-folder mod-collapsible is-collapsed" style="display: none;"></div><div class="tree-item" data-depth="1"><a class="tree-link" href="gab\estudos-trabalhos\programação\programming-studies\courses\cs50x\week1\readme.html#CS50 - Week 1"><div class="tree-item-contents heading-link" heading-name="CS50 - Week 1"><span class="tree-item-title">CS50 - Week 1</span></div></a><div class="tree-item-children nav-folder-children"></div></div><div class="tree-item" data-depth="1"><a class="tree-link" href="gab\estudos-trabalhos\programação\programming-studies\courses\cs50x\week1\readme.html#Lecture_1"><div class="tree-item-contents heading-link" heading-name="Lecture 1"><span class="tree-item-title">Lecture 1</span></div></a><div class="tree-item-children nav-folder-children"><div class="tree-item" data-depth="2"><a class="tree-link" href="gab\estudos-trabalhos\programação\programming-studies\courses\cs50x\week1\readme.html#Welcome!"><div class="tree-item-contents heading-link" heading-name="Welcome!"><span class="tree-item-title">Welcome!</span></div></a><div class="tree-item-children nav-folder-children"></div></div><div class="tree-item" data-depth="2"><a class="tree-link" href="gab\estudos-trabalhos\programação\programming-studies\courses\cs50x\week1\readme.html#Hello_World"><div class="tree-item-contents heading-link" heading-name="Hello World"><span class="tree-item-title">Hello World</span></div></a><div class="tree-item-children nav-folder-children"></div></div><div class="tree-item" data-depth="2"><a class="tree-link" href="gab\estudos-trabalhos\programação\programming-studies\courses\cs50x\week1\readme.html#Functions"><div class="tree-item-contents heading-link" heading-name="Functions"><span class="tree-item-title">Functions</span></div></a><div class="tree-item-children nav-folder-children"></div></div><div class="tree-item" data-depth="2"><a class="tree-link" href="gab\estudos-trabalhos\programação\programming-studies\courses\cs50x\week1\readme.html#Variables"><div class="tree-item-contents heading-link" heading-name="Variables"><span class="tree-item-title">Variables</span></div></a><div class="tree-item-children nav-folder-children"></div></div><div class="tree-item" data-depth="2"><a class="tree-link" href="gab\estudos-trabalhos\programação\programming-studies\courses\cs50x\week1\readme.html#Conditionals"><div class="tree-item-contents heading-link" heading-name="Conditionals"><span class="tree-item-title">Conditionals</span></div></a><div class="tree-item-children nav-folder-children"></div></div><div class="tree-item" data-depth="2"><a class="tree-link" href="gab\estudos-trabalhos\programação\programming-studies\courses\cs50x\week1\readme.html#Loops"><div class="tree-item-contents heading-link" heading-name="Loops"><span class="tree-item-title">Loops</span></div></a><div class="tree-item-children nav-folder-children"></div></div><div class="tree-item" data-depth="2"><a class="tree-link" href="gab\estudos-trabalhos\programação\programming-studies\courses\cs50x\week1\readme.html#Linux_and_the_Command_Line"><div class="tree-item-contents heading-link" heading-name="Linux and the Command Line"><span class="tree-item-title">Linux and the Command Line</span></div></a><div class="tree-item-children nav-folder-children"></div></div><div class="tree-item" data-depth="2"><a class="tree-link" href="gab\estudos-trabalhos\programação\programming-studies\courses\cs50x\week1\readme.html#Mario"><div class="tree-item-contents heading-link" heading-name="Mario"><span class="tree-item-title">Mario</span></div></a><div class="tree-item-children nav-folder-children"></div></div><div class="tree-item" data-depth="2"><a class="tree-link" href="gab\estudos-trabalhos\programação\programming-studies\courses\cs50x\week1\readme.html#Comments"><div class="tree-item-contents heading-link" heading-name="Comments"><span class="tree-item-title">Comments</span></div></a><div class="tree-item-children nav-folder-children"></div></div><div class="tree-item" data-depth="2"><a class="tree-link" href="gab\estudos-trabalhos\programação\programming-studies\courses\cs50x\week1\readme.html#Abstraction"><div class="tree-item-contents heading-link" heading-name="Abstraction"><span class="tree-item-title">Abstraction</span></div></a><div class="tree-item-children nav-folder-children"></div></div><div class="tree-item" data-depth="2"><a class="tree-link" href="gab\estudos-trabalhos\programação\programming-studies\courses\cs50x\week1\readme.html#Operators_and_Types"><div class="tree-item-contents heading-link" heading-name="Operators and Types"><span class="tree-item-title">Operators and Types</span></div></a><div class="tree-item-children nav-folder-children"></div></div><div class="tree-item" data-depth="2"><a class="tree-link" href="gab\estudos-trabalhos\programação\programming-studies\courses\cs50x\week1\readme.html#Summing_Up"><div class="tree-item-contents heading-link" heading-name="Summing Up"><span class="tree-item-title">Summing Up</span></div></a><div class="tree-item-children nav-folder-children"></div></div></div></div><div class="tree-item" data-depth="1"><a class="tree-link" href="gab\estudos-trabalhos\programação\programming-studies\courses\cs50x\week1\readme.html#Section_1"><div class="tree-item-contents heading-link" heading-name="Section 1"><span class="tree-item-title">Section 1</span></div></a><div class="tree-item-children nav-folder-children"></div></div><div class="tree-item" data-depth="1"><a class="tree-link" href="gab\estudos-trabalhos\programação\programming-studies\courses\cs50x\week1\readme.html#Shorts"><div class="tree-item-contents heading-link" heading-name="Shorts"><span class="tree-item-title">Shorts</span></div></a><div class="tree-item-children nav-folder-children"><div class="tree-item mod-collapsible" data-depth="2"><a class="tree-link" href="gab\estudos-trabalhos\programação\programming-studies\courses\cs50x\week1\readme.html#Data_Types"><div class="tree-item-contents heading-link" heading-name="Data Types"><div class="collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle"><path d="M3 8L12 17L21 8"></path></svg></div><span class="tree-item-title">Data Types</span></div></a><div class="tree-item-children nav-folder-children"><div class="tree-item" data-depth="3"><a class="tree-link" href="gab\estudos-trabalhos\programação\programming-studies\courses\cs50x\week1\readme.html#Operators"><div class="tree-item-contents heading-link" heading-name="Operators"><span class="tree-item-title">Operators</span></div></a><div class="tree-item-children nav-folder-children"></div></div></div></div><div class="tree-item" data-depth="2"><a class="tree-link" href="gab\estudos-trabalhos\programação\programming-studies\courses\cs50x\week1\readme.html#Conditional_Statements"><div class="tree-item-contents heading-link" heading-name="Conditional Statements"><span class="tree-item-title">Conditional Statements</span></div></a><div class="tree-item-children nav-folder-children"></div></div><div class="tree-item" data-depth="2"><a class="tree-link" href="gab\estudos-trabalhos\programação\programming-studies\courses\cs50x\week1\readme.html#Loops"><div class="tree-item-contents heading-link" heading-name="Loops"><span class="tree-item-title">Loops</span></div></a><div class="tree-item-children nav-folder-children"></div></div><div class="tree-item" data-depth="2"><a class="tree-link" href="gab\estudos-trabalhos\programação\programming-studies\courses\cs50x\week1\readme.html#Command_Line"><div class="tree-item-contents heading-link" heading-name="Command Line"><span class="tree-item-title">Command Line</span></div></a><div class="tree-item-children nav-folder-children"></div></div><div class="tree-item" data-depth="2"><a class="tree-link" href="gab\estudos-trabalhos\programação\programming-studies\courses\cs50x\week1\readme.html#[Lab_1_-_Population](./lab1.md)"><div class="tree-item-contents heading-link" heading-name="[Lab 1 - Population](./lab1.md)"><span class="tree-item-title"><a class="internal-link" data-href="./lab1.md" href="./lab1.md" target="_blank" rel="noopener nofollow">Lab 1 - Population</a></span></div></a><div class="tree-item-children nav-folder-children"></div></div><div class="tree-item" data-depth="2"><a class="tree-link" href="gab\estudos-trabalhos\programação\programming-studies\courses\cs50x\week1\readme.html#Problem_Set_1"><div class="tree-item-contents heading-link" heading-name="Problem Set 1"><span class="tree-item-title">Problem Set 1</span></div></a><div class="tree-item-children nav-folder-children"></div></div><div class="tree-item" data-depth="2"><a class="tree-link" href="gab\estudos-trabalhos\programação\programming-studies\courses\cs50x\week1\readme.html#What_to_Do"><div class="tree-item-contents heading-link" heading-name="What to Do"><span class="tree-item-title">What to Do</span></div></a><div class="tree-item-children nav-folder-children"></div></div><div class="tree-item" data-depth="2"><a class="tree-link" href="gab\estudos-trabalhos\programação\programming-studies\courses\cs50x\week1\readme.html#[Practice_Problems](./problems1.md)"><div class="tree-item-contents heading-link" heading-name="[Practice Problems](./problems1.md)"><span class="tree-item-title"><a class="internal-link" data-href="./problems1.md" href="./problems1.md" target="_blank" rel="noopener nofollow">Practice Problems</a></span></div></a><div class="tree-item-children nav-folder-children"></div></div></div></div></div></div></div><script defer="">let rs = document.querySelector(".sidebar-right"); rs.classList.add("is-collapsed"); if (window.innerWidth > 768) rs.classList.remove("is-collapsed"); rs.style.setProperty("--sidebar-width", localStorage.getItem("sidebar-right-width"));</script></div></div></body></html>

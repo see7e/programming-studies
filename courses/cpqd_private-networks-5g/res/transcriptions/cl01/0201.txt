@@ -1,0 +1,509 @@
+Redes Privativas | Turma 1 
+terça, 13/05/2025
+
+0:00 - Conference Room (Fiap Convidado 112) - Speaker 1 
+Vou ver aqui. Talvez hoje tenha ficado alguma coisa meio conjunta, teve uma substituição de professor, então não sei se agregaram todos na mesma aula hoje somente, mas para mim aparece como turma 1, tá?
+
+0:26 - Nadia_CPQD 
+Mas mandaram bem ferrado lá no Discord, então o que tá entrando da turma dois tá caindo aqui.
+
+0:32 - Luciano CPQD 
+Bom, acho que eles devem ter juntado, viu, Nádia?
+
+0:35 - Palestrante Não Identificado 
+É.
+
+0:36 - Conference Room (Fiap Convidado 112) - Speaker 2 
+É a mesma, é a mesma, é o mesmo conteúdo.
+
+0:39 - Conference Room (Fiap Convidado 112) - Speaker 1 
+É o mesmo link? É a mesma aula. Na verdade, eu acredito que hoje pode ser que as duas turmas estejam unificadas, porque houve uma substituição de um professor por um problema de saúde, então talvez hoje a aula seja unificada e na quinta-feira que a gente já separe novamente, tá?
+
+0:58 - Ariane - CPQD 
+Pessoal, é isso mesmo, as duas turmas vão fazer aula hoje. Eu entrei aqui nas duas salas e como teve essa substituição de professor e o conteúdo é o mesmo, a turma 1 e a turma 2 vão fazer as aulas juntas hoje, Ajoel, obrigada.
+
+1:22 - Conference Room (Fiap Convidado 112) - Speaker 1 
+Bom, pessoal, vou começar a falar aqui para a gente poder manter aí a agenda. Conforme o pessoal for chegando, eu fazendo na turma, e eu já vou compartilhar aqui para gente poder dar dinâmica para... Só um minutinho. Acho que vocês já devem estar vendo aí o compartilhamento do conteúdo, né? Bom, então vamos lá. Boa tarde mais uma vez aí a todos, todas, para a gente começar o módulo 2 do curso de redes privativas. Eu sou professor Almir, sou professor Almir Alves, daqui a pouquinho, né, na sequência eu vou fazer a apresentação formal, tem um slide para falar sobre isso, e eu vou estar com vocês aí nesse módulo e vamos falar bastante, bastante mesmo, sobre alguns aspectos bem interessantes de de uma primeira abordagem em redes de dados, redes de computadores, cibersegurança, e depois a gente entra mais no contexto das redes de telecomunicações, o core da rede, 4G, 5G, e como que a gente pode analisar essa parte de dados lá dentro, protocolos, vamos ter uma abordagem bastante isso eu acho que vai ser legal para a gente poder trabalhar a nosso favor, não só vendo teoria, mas vendo como que as coisas acontecem na prática, então eu vou estar com vocês aí durante 12 encontros aproximadamente, tá? Então, daqui a pouquinho eu já passo esse calendário só para vocês terem ciência também, tá? Então, falando rapidamente de mim, Eu sou professor Almir Meira Alves. Eu trabalho há bastante tempo na área de telecomunicações. Eu sou técnico em telecomunicações. Eu sou engenheiro eletrônico especializado em telecomunicações. Trabalho na área de telefonia pelo menos desde 1994. Já passei por empresas importantes do setor de telecom. Trabalhei na Telesp, trabalhei na Nextel, trabalhei na Motorola, fiz projeto para Vivo, para Claro, quase fui trabalhar na Embratel, então tenho uma vivência bastante grande na área de telecomunicações e sou desenvolvedor de soluções de comunicação criptografada para telefone IP, tenho propriedade de uma solução nacional, que já foi utilizada pela presidência da república. Então, sou uma pessoa bastante ligada a essa parte mais prática de telecom, mas também sou especialista em cibersegurança, né? Trabalho muito com ciber. Acho que teve uma mensagem aqui da Anne para fazer o direcionamento. Deixa eu ver. Oi, professor Almeida, aqui.
+
+4:54 - Ariane - CPQD 
+Eu sou a Ariane, de CPQD, e eu fui confirmar com ela se estava não dá certo isso, e ela falou que não, que foi um erro dos links, então quem é Redes Turma 1 vai para Turma 1. Fica aqui, 1 é aqui. Peraí, não, aí aqui a do senhor é a 2, se eu não me engano.
+
+5:15 - Conference Room (Fiap Convidado 112) - Speaker 1 
+Não, para mim, no meu agendamento, lá no Tim, está tudo como Turma 1.
+
+5:19 - Ariane - CPQD 
+Tá, peraí. Nádia, qual que é a sua turma? A minha é Turma 2, mas eu cliquei no link da Turma 2, É, então, eu também cliquei no link da turma 2 e caiu aqAriane Ane, qual que é essa turma? É a 2 ou é a 1? Eu preciso dessa ajuda, porque eu tô falando com ela pelo WhatsApp, porque eu fui confirmar se era isso mesmo, pessoal, mas eu acho que tá com algumDOArianeT.
+
+5:45 - Conference Room (Fiap Convidado 112) - Speaker 1 
+A Ane me falou que hoje a aula seria junta, porque houve uma substituição de professores e o professor da turAriane2, a Ane, conversou aqui essa sala com os alunos.
+
+5:56 - Ariane - CPQD 
+Então, mas ela acabou de falar... Não, a Anny não, a Ariane sou eu.
+
+6:02 - Conference Room (Fiap Convidado 112) - Speaker 1 
+A Anny entrou nessa sala, ela veio para dentro da sala e quando eu coloquei essa questão ela falou que hoje as duas turmas fariam juntas.
+
+6:12 - Ariane - CPQD 
+Ué, mas acabou de colocar no chat que é para se direcionar a outra sala.
+
+6:19 - Nadia_CPQD 
+Que coisa estranha, bom...
+
+6:20 - Ariane - CPQD 
+aqui no WhatsApp, pessoal, só um minuto.
+
+6:23 - Conference Room (Fiap Convidado 112) - Speaker 1 
+Então, vamos aguardar um minutinho para ver se vai ter a divisão das turmas ou não. Professor, o senhor me ouvAnim, ouço.
+
+6:33 - Clodoaldo Callogero 
+A Anika acabou de colocar os links no Discord e agora ele está voltando para cá. Eu sou da turma 1.
+
+6:42 - Palestrante Não Identificado 
+Tá.
+
+6:42 - Conference Room (Fiap Convidado 112) - Speaker 1 
+O programa está certinho com o senhor e a Ani acabou de E uma coisa que é estranha é que, para mim, aparece no meu documento como turma 1 professor Almir, e da turma 2 é um outro professor, tá? É o professor Álvaro. Então, como eu conversei com o Álvaro mais cedo, eu entendi que essa mudança vai acontecer, essa separação vai acontecer a partir da próxima aula, porque como saiu outro professor para o problema de saúde e ele ingressou agora, a gente tá alinhando os conteúdos, entendeu?
+
+7:25 - Palestrante Não Identificado 
+Ah, ok.
+
+7:26 - Conference Room (Fiap Convidado 112) - Speaker 1 
+E que hoje, até pelo meu entendimento, se as duas turmas fizerem juntas, faz sentido. Tá? Faria sentido.
+
+7:35 - Clodoaldo Callogero 
+Na turma 1, pelo meu cronograma, tá igual, bate com o que o senhor disse aí.
+
+7:42 - Conference Room (Fiap Convidado 112) - Speaker 1 
+É... Você mesmo que ia dar aula para mim. É, no documento que eu tenho, eu tô como turma 1, mas tudo bem, eu vou seguir aqui, e se tiver que separar, eu paro um minutinho, a gente separa e continua da sequência, tá?
+
+8:00 - Icaro De Oliveira Castro Costa 
+Então, só retomando a gente, pessoal. Oi. Boa tarde. Rapidinho, eu queria falar com a Ariane, porque acredito eu que outros colegas também tenham recebido alguns e-mails de essa. Aí eu queria saber qual é o contato que eu posso falar com ela para tratar disso, porque a gente tem participado e talvez não tenha computado.
+
+8:21 - Ariane - CPQD 
+É por conta das faltas, né? Pessoal, quando vocês forem fazer login, vocês precisam colocar o nome de vocês. Tem muito aluno, por exemplo, não é o caso do de redes, tá? Vou dar um exemplo que aconteceu na outra na outra instituição que é nosso parceiro. Ele colocou, Guinotins como Lolo, só que a gente não sabe se é Lolo de Lorenzo, Lolo de Lorena, né? Então, vocês precisam colocar o nome de vocês. É Bruno da Silva Magalhães? Bruno da Silva Magalhães. É um exemplo, tá, gente? Por exemplo, o meu. O meu eu coloquei Ariane, CPQD, porque eu não sou aluna, eu só acompanho a residência. Aí, eu coloco Ariane, CPQD, mas se eu fosse aluna, eu vou colocar Ariane Stéfani de Oliveira Ferraresi, porque a presença vai ser computada pelo nome que vocês fazem login, e alguns alunos estão colocando apelidos, tá? Então, assim, você responde o e-mail da Anny sobre as faltas, coloca que você tem presença, que daí a gente vai verificar o que aconteceu, tá bom?
+
+9:33 - Nilceli Goncalves dos Santos Taliassaqui 
+É só falando que essa parte agora de frequência não cabe a nós do CPQD, tá bom? Essa parte de frequência vocês precisam realmente se alinhar com a própria universidade.
+
+9:47 - Ariane - CPQD 
+É que cortou, Nil.
+
+9:49 - Nilceli Goncalves dos Santos Taliassaqui 
+Tá cortou? Eu tô dizendo que essa parte de frequência, nesse momento, é com a universidade, tá? Não somos nós do CPQD.
+
+9:59 - Conference Room (Fiap Convidado 112) - Speaker 1 
+Eu sei que a frequência ela fica registrada aqui na própria reunião, né? Então, é importante que vocês coloquem os nomes, porque na hora que você vai retirar o relatório da plataforma, aparece o nome que vocês logaram. Então, se de repente alguém colocou um apelido, alguma coisa, eu recomendo que saia e entre novamente com o nome corretamente digitado, porque aí já fica mais fácil distrair esse relatório de presença, tá?
+
+10:28 - Ariane - CPQD 
+Exatamente, professor.
+
+10:29 - Palestrante Não Identificado 
+Obrigada.
+
+10:29 - Ariane - CPQD 
+Eu acho que agora a gente pode Então, nos casos, vocês têm alguma dúvida?
+
+10:35 - Conference Room (Fiap Convidado 112) - Speaker 1 
+Opa, cortou. Cortou. Cortou, não sei se foi só pra mim. Foi?
+
+10:41 - Ariane - CPQD 
+Por favor, de vocês, caso eles não respondam...
+
+10:44 - Conference Room (Fiap Convidado 112) - Speaker 1 
+Ah tá, é a Ariane. Não, beleza, beleza. Cortou. Cortou um pouco aqui. Beleza.
+
+10:50 - Clodoaldo Callogero 
+Professor, só confirmando e atrapalhando de novo, eu entrei pelo link que a Anne acabou de colocar pra turma 1 e apareceu aqui ó, sou da Turma 1, então ele redirecionou para esse link aqui.
+
+11:04 - Conference Room (Fiap Convidado 112) - Speaker 1 
+Eu acho que hoje... Eu sou da Turma 1 e estou no lugar certo.
+
+11:08 - Ariane - CPQD 
+Não, professor, é a Anny. A Anny tá aí, pode falar, por favor.
+
+11:12 - Ani Corrêa Braga1 
+Oi gente, boa tarde. Primeiramente, quero pedir desculpas pelo ocorrido. Eu acho que foi algum bug aqui na plataforma do Teams que unificou os links, mas vamos lá. Aqui é a Turma 1 de redes, então todo mundo que pertence à Turma 1 está no link certo.
+
+11:28 - Nadia_CPQD 
+Tem alguém aqui da firma 2? Qual que é o link da firma 2? Espera aí que eu vou pegar aqui o link da firma 2 e já mando no chat, só um momentinho.
+
+11:40 - Icaro De Oliveira Castro Costa 
+Tem gente da firma 2 aqui, inclusive eu. Inclusive, eu não sei se é minha rede aqui, mas algumas imagens, por exemplo, do professor mesmo está cortando, né? Não sei se está acontecendo.
+
+11:52 - Conference Room (Fiap Convidado 112) - Speaker 1 
+Eu acho que talvez seja a sua internet com vacilação, né? Pra mim tá normal. A imagem de quem tá com câmera aberta.
+
+12:00 - Palestrante Não Identificado 
+Aqui tá normal também.
+
+12:02 - Ani Corrêa Braga 
+Ó, gente, mandei aqui no chat o link da turma 2.
+
+12:06 - Palestrante Não Identificado 
+Obrigada.
+
+12:06 - Nadia_CPQD 
+Então vai ter a divisão das turmas, Anny? Isso?
+
+12:10 - Palestrante Não Identificado 
+Vai sim.
+
+12:11 - Ani Corrêa Braga 
+Quem é da turma 1 pode ficar nesse link, quem é da turma 2, por favor, vai para outro link que eu mandei aqui Obrigada, gente. Desculpa. Só faz uma coisa, Anny.
+
+12:26 - Conference Room (Fiap Convidado 112) - Speaker 1 
+Copia de novo, que acho que teve gente que entrou na hora que você mandou o link e ele não consegue ver o que tá pra cima. Manda novamente, por favor. Aí, se chegar mais gente da Turma 2, se você não puder ficar, eu compilo e colo o link na sequência conforme o pessoal for entrando, tá?
+
+12:45 - Palestrante Não Identificado 
+Pronto.
+
+12:46 - Palestrante Não Identificado 
+Beleza.
+
+12:46 - Conference Room (Fiap Convidado 112) - Speaker 1 
+Seguiu o link. Esse link é só da Turma 2, né? Que você agora. Beleza. Então, já tá já tá controlado aqui. Esse é o link da turma dois, tá Nilce? Esse que tá acima, que você olhou aqui. Então, quem for turma um, vamos seguir o jogo e vamos lá. Bom, pessoal, só retomando aqui, eu tava falando um pouquinho da apresentação, eu trabalho bastante tempo com telecom, com engenharia, ação tecnológica, mas principalmente nos últimos anos com o cibersegurança, tá? E falando, né, de FIAP e principalmente FIAP Alura, mas mais a FIAP, eu fui professor e coordenador da FIAP durante 12 anos, né? Eu fui professor de quase todos os cursos de graduação, fui coordenador dos cursos de engenharia em 2013, 14 e 15, depois eu saí e virei coordenador da um hack, entre outras possibilidades. Fala, Nilcelle, pode abrir o seu áudio.
+
+13:51 - Nilceli Goncalves dos Santos Taliassaqui1 
+Desculpa aí, professor, é que estão dizendo que esse link que a Anny passou não está legal, não está funcionando lá. Não está abrindo, foi o que colocaram aqui. Então, só se a Anny...
+
+14:05 - Conference Room (Fiap Convidado 112) - Speaker 1 
+Eu mando mensagem, eu mando mensagem para ela aqui.
+
+14:09 - Palestrante Não Identificado 
+Tá bom então, obrigada.
+
+14:12 - Conference Room (Fiap Convidado 112) - Speaker 1 
+Deixa eu só mandar mensagem para ela aqui. Tá, já mandei aqui, aí se ela me responder eu já atualizo vocês. Vocês, tá? Deixa eu só ver uma coisa aqui, pessoal. Só fazer... Deixa eu só responder uma coisa aqui, pessoal. Pronto. Beleza, gente, vamos lá. Eu tava falando, então, que eu fui professor e coordenador da FIAP, depois fui professor coordenador da FATEC e de outras instituições. Então, só resumindo, eu sou sócio de uma academia de capacitação em cibersegurança, que é a C-Cyber. Eu sou responsável lá por toda a parte da academia, programa de pós-graduação. Também sou professor do MBA de Data Science da PolyUSP, na disciplina de Cybersecurity, e já fui coordenador e professor de algumas instituições, como é o caso da FATEC São no FIAP, Universidade Brasculas. Eu sou especialista em criptografia e segurança de redes. Beleza. Feita essa apresentação, só um minutinho pessoal, deixa eu ver se alguém da tá me ligando, dá só um segundo.
+
+15:57 - Palestrante Não Identificado 
+Desculpa, a gente não era não, podia ser descartado.
+
+16:07 - Conference Room (Fiap Convidado 112) - Speaker 1 
+Nilce, eu vi que você mão levantada ainda, se tem outra pergunta, eu posso seguir aqui? Não, professor, pode seguir, desculpa. Ah tá, vou baixar a mão aqui, beleza. Ok, vamos lá, gente. Só falando um pouquinho do calendário de aulas, né, a gente vai ter esses encontros que começam hoje, então essa semana nós teremos três aulas. A aula de hoje, a aula de quinta e na sexta, tá? Então hoje nós vamos falar aí de troubleshooting em redes, falar um pouquinho essa parte de identificação e resolução de problemas em redes. Na aula de quinta, vamos falar um pouquinho sobre cyber, vulnerabilidades em aplicações. Vou dar um foco para a indústria 4.0, redes de telecom. Vamos entender um pouquinho sobre a segurança em redes celulares privadas. Essa parte é legal porque eu consigo mostrar algumas aplicações práticas de firewall, criptografia e outras coisas que são bastante interessantes. Depois a gente vai falar um pouquinho sobre segmentação e controle de acesso em redes privativas. Então aqui a gente entra um pouco com esse conceito de IAM, gestão de acessos e outras questões, mas aplicado às redes de telecomunicações. E aí a gente começa a falar um pouquinho da parte de dados e sinalização em redes móveis. A gente vai utilizar um simulador Ominet, que é muito legal, é muito legal. Então, nós vamos simular redes de telecomunicações na prática, vamos construir pequenas redes também, utilizando simuladores de redes, como é o caso do Packet Tracer, por exemplo, mas vamos entender um pouco essa parte de sinalização, como é que esse protocolo de sinalização funciona, como é que uma mensagem corre dentro da rede, como é que a gente... Outra coisa, vou fazer uma ligação e eu tenho que passar por várias antenas. Como que é essa requisição de uma antena fazendo conexão na outra e na outra e na outra até a nossa mensagem chegar do ponto A para o ponto B? Vamos trabalhar um pouquinho sobre a parte aí de conteúdo de sessões, autenticação, a parte de handover, que é a mobilidade, ou seja, conforme eu for andando numa rede de telecomunicações, eu vou mudando de uma antena para outra? Como é que isso acontece? Como é que eu aviso que eu tô em uma em uma etapa de transição? Como que eu faço essa migração de uma antena para outra? Como que isso garante a continuidade de uma ligação ou de uma conexão de internet? A gente vai falar um pouquinho sobre a rede core de 4G e 5G. A gente vai ver o conceito de Open RAN, que é bem legal também. Vamos falar um pouquinho de 5G e Quando a gente fala de 5G, é importante a gente ver que ela é quase que uma tecnologia totalmente nova. Embora ela converse com as outras, tem alguns aspectos que são importantes. Então, na aula 9, a gente vai falar bastante sobre essa questão das funções de rede específicas do 5G. Isso vai ser bem legal de trabalhar. E aí, depois, a gente vai falar um pouquinho do Open RAN, configuração de parâmetros para necessidade de rede cliente, duas aulas sobre isso, e aí depois a gente vai terminar falando sobre banda, modulação, canal, né, e outras questões importantes. Então, ele vai ser um módulo muito ligado à parte de comunicação de dados, mas essencialmente nós vamos falar sobre o funcionamento dos parâmetros de redes de telefonia, de mobilidade, e sempre tentando uma abordagem prática para esses conteúdos. Mas vamos lá, vamos para a aula de hoje. Hoje nós vamos falar sobre ferramentas de troubleshooting em redes. Ela é uma aulaAntoniovoltada a redes de computadores.
+
+20:11 - Antonio Carlos Ferreira de Almeida1 
+O Antônio Carlos levantou a mão. Boa tardAntonioessor.
+
+20:15 - Palestrante Não Identificado 
+Tudo bom? Tudo.
+
+20:16 - Antonio Carlos Ferreira de Almeida1 
+Pode falar, Antônio. Professor, posso considerar todos esses conceitos aí também para a NB-IoT?
+
+20:25 - Conference Room (Fiap Convidado 112) - Speaker 1 
+Como a gente, principalmente quando a gente fala de IPv6, sim, tá? O segredo é considerar que nesse contexto a gente vai ter esses conceitos de telecomunicações, mas o NB-IoT faz muito sentido quando você tem o IPv6 totalmente implementado e no Brasil isso é muito parcial ainda. Consegui responder a tua pergunta?
+
+20:53 - Antonio Carlos Ferreira de Almeida 
+Então, o IPv6 vai se tratar de eu também, do meu lado da aplicação, amparar o IPv6, né? Então, a minha ideia central é se toda abordagem do curso eu posso considerar que é aplicável ao Então, ele é aplicável desde que você respeite certos requisitos ou parâmetros iniciais.
+
+21:23 - Conference Room (Fiap Convidado 112) - Speaker 1 
+Quando eu falo de IPv6, por que eu quis frisar essa parte? Quando você tem o IPv4, você tem algumas restrições de redes. Você tem que fazer NAT, você tem número limitado de IPs, você tem restrições do próprio protocolo. E quando você fala de IPv6, cada dispositivo é um dispositivo vivo na rede, um IP próprio, com regras próprias, antropólogos de segurança aplicáveis individualmente. Aí eu posso expandir para praticamente tudo o que eu quiser, inclusive o NPA IoT, tá bom? Essa é a questão. Professor Flávio, tá com a gente aí? Deixa eu ver se ele tá aqui, ele tinha entrado. Não, acho que ele saiu. Ali, beleza. Vamos seguir aqui. Oi, pode falar aí.
+
+22:15 - Icaro De Oliveira Castro Costa 
+Eu queria saber, tem alguma, por exemplo, quem tem interesse na parte da pós-graduação, você sabe, tem alguma parceria com quem tá fazendo esse curso aqui?
+
+22:25 - Conference Room (Fiap Convidado 112) - Speaker 1 
+Desconto e tal? Eu consigo, eu consigo fazer, fazer a parceria, até porque a gente tá num mês que nós estamos com uma promoção bastante interessante. No final da aula eu te passo o link e a gente conversa, tá bom? Beleza, obrigado. Porque lá tem tem segurança da informação, segurança e inteligência defensiva, e tem segurança da informação com inteligência artificial. São dois temas bastante interessantes, mas depois a gente fala sobre isso, tá? Vamos lá. Pessoal, hoje, então, essencialmente, nós vamos fazer uma aula sobre redes, tá? Então, eu vou considerar que, inicialmente, vocês são versados em uma parte importante sobre redes, sobre arquitetura, arquitetura, topologia, conhecem os principais protocolos, e aí a gente vai falar hoje sobre problemas de redes. Mas, se alguém tiver alguma dúvida específica sobre questões ligadas à arquitetura de redes e outros pontos, de repente, ficou alguma coisa que eu não entendi, porque eu não conheço esse conceito, por favor, me chame para a gente poder conversar. Então, nós vamos falar um pouquinho sobre testes de rede, ping, vamos usar aí um analisador de protocolos, vamos falar um pouquinho também de ferramentas de análise, como é o caso aí do Nmap, do Netcat, do Logcat. O Logcat eu vou mais citar porque ele funciona em dispositivos móveis, mas eu vou dar um caminho para vocês poderem produzir e criar algumas máquinas virtuais para a gente poder trabalhar na prática com essas ferramentas, tá, pessoal? Falando em ferramentas de acesso, eu preparei nesse material, inclusive no material que eu postei lá no Discord, tá? Tem um link para os materiais de apoio, tá? Deixa eu trazer aqui para a nossa tela quais são esses materiais de apoio que eu deixei para vocês. Só um segundo, deixa eu pegar aqui meus por exemplo. Deixa eu ver, eu vou colocar na tela, tá? Quando vocês clicarem nesse link que tá aí, vocês vão cair nessa tela aqui, tá? Então, tem. Depois eu coloco pelo menos o link da gravação das aulas, mas o que que é importante? Das aulas, que eu coloquei lá no Discord também, tá? Então, o conteúdo dessa aula já tá disponível, então, quem quiser, eu passo, já vou passar o link para vocês, tá? Eu também tenho uma série de material matéria de apoio, matéria de apoio, tá? Nós vamos trabalhar com o AMINET, então já tem aqui um videozinho sobre o AMINET, tem como instalar o AMINET no Windows, tem até a legenda dele, um videozinho sobre instalação da máquina VM Linux, eu deixei já a imagem do Linux que a gente vai utilizar, deixei dois virtualizadores aqui, o VirtualBox e o VMware Player, Deixei o Packet Tracer para a gente poder simular redes. Deixei também uma distribuição para, de repente, quem vai trabalhar com alguma plaquinha, tipo o Raspberry, eu deixei uma imagem para instalar o Linux no Raspberry. E tem aqui uma VM do Android 9. É bastante material aí. E como a gente vai falar bastante sobre comunicação de dados, tem um documento sobre logs, como analisar logs, como fazer essas questões, tá? E aí tem um bônus que eu tô oferecendo para vocês. Eu criei cinco cursos lá na plataforma do Cisco Networking Academy. Quem quiser, é só pegar esse documento, clicar no link e se matricular, que eu tô disponibilizando até 31 de dezembro, cinco cursos para quem quiser fazer, com direito a certificado e tudo mais, tá? Então fica para vocês aí esses conteúdos todos os adicionais para que vocês possam acessar. Deixa eu ver se eu consigo pegar o link aqui. Vou pegar o link desse cara aqui. Aliás, deixa eu botar mais um. Deixa eu fechar. Materiais de apoio. É esse aqui. Eu vou passar o link aqui para vocês. Quem quiser já vai acessando, já começa baixando as coisas. Tá aqui no chat para vocês, tá? Então a gente vai ver bastante.
+
+26:59 - Clodoaldo Callogero 
+Pois não. Deixa eu atrapalhar mais uma vez. A ansiedade aqui já me fez fazer download de todo esse material quando você disponibilizou. Eu já posso instalando? Você trabalha e trabalha com Linux? Eu já posso instalar isso à medida das aulas? Como é que vai ser o roteiro de trabalho?
+
+27:21 - Conference Room (Fiap Convidado 112) - Speaker 1 
+Hoje quarta-feira e quinta-feira eu quero todo mundo com a VM pronta. É isso. Inclusive, nesta aula, eu vou passar um videozinho para quem não lida todo dia com virtualização, eu tenho aqui, tá na aula mesmo, o que a gente vai fazer. Inclusive, é o próximo slide, tá? Por quê? Porque a gente vai trabalhar com prática, vai trabalhar com prática, tá? Deixa só eu parar e compartilhar de novo que eu vou compartilhar com o Áudio. Só um segundinho, deixa eu no compartilhamento de novo aqui. Eu vou colocar o som. Você ia falar alguma coisa, Clodoaldo, pode falar.
+
+27:57 - Clodoaldo Callogero 
+Você vai trabalhar com o Linux, é isso? Linux e Windows.
+
+28:01 - Conference Room (Fiap Convidado 112) - Speaker 1 
+Eu tenho que criar uma máquina virtual no Linux.
+
+28:04 - Clodoaldo Callogero 
+Uma máquina virtual de Linux.
+
+28:06 - Conference Room (Fiap Convidado 112) - Speaker 1 
+Você pode fazer a virtualização no Windows, mas vai criar o seu Linux lá dentro, tá? Lá tem o passo a passo, porque realmente com o Linux eu nunca Isso, passo a passo, inclusive, tá aqui nesse slide, tá vendo a minha carinha ali do lado?
+
+28:24 - Clodoaldo Callogero 
+Ah, eu vi isso daí, esse foi o meu medo.
+
+28:27 - Conference Room (Fiap Convidado 112) - Speaker 1 
+Não, não, mas aqui eu já falo do passo a passo, tá? Então é o seguinte, pessoal, como a abordagem é prática, a gente vai trabalhar bastante com virtualização. Eu deixei lá nos materiais de apoio esse virtualizador aqui que é o VMware, deixei o VirtualBox também, cada um usa o que lhe for mais confortável. Especificamente nesta aula eu vou falar sobre como instalar a máquina virtual do Linux usando o VMware Player. Depois eu tenho um ambiente de laboratório, que é da minha empresa, que eu consigo acessar pelo navegador. Então vai ter coisas que eu vou abrir e vou mostrar para vocês no navegador, mas que é exatamente o mesmo ambiente. É o Ubuntu, é o Windows. Eu tenho aí algumas outras máquinas no meu laboratório, mas eu vou mostrar o que vocês vão fazer nas máquinas virtuais de vocês. Então, para a gente começar, antes de falar do troubleshooting propriamente dito, eu vou mostrar aqui um vídeo que tem uns 5, 6 minutos para falar sobre a instalação da máquina virtual. Quem já sabe fazer, segue em frente. Quem não mexeu com o Linux aqui, tem um roteirinho que eu vou passar a partir de agora. Eu deixar minha câmera para não poluir a imagem e vou disparar aqui, tá? Professor, tem uma dúvida. Sim, pode falar. Nesse material de apoio veio, tem a imagem do Linux ou tem que pegar na internet? Tem a imagem do Linux, tá tudo lá, é só baixar. Valeu, obrigado, excelente, obrigado. Só não coloca o Windows para baixar, porque o Windows você pode baixar o trial, mas você tem que colocar teu nome, teu e-mail, para poder baixar a versão lá de avaliação de 180 dias, tá? Mas o Linux, todo o restante está lá, tá? Pode pegar e ir baixando. Legal. Vamos lá, gente, para a gente poder manter a agenda aí. Então, o que é uma máquina virtual? Uma máquina virtual é um sistema operacional que roda em cima de outro sistema operacional. Para mediar essa virtualização, a gente utiliza um hypervisor, que aqui no caso é o VMware. Ou seja, eu vou poder rodar um Linux completo com todos os acessos, todos os comandos, toda a parte de configurações a partir desse virtualizador. Então, imagina que você pegou lá, clicou no meu link, foi lá para a área de material de apoio, baixou lá o seu Linux e você vai precisar transformar ele numa máquina virtual. Você vai seguir que eu vou começar a partir de agora a passar para vocês, tá? Então vamos lá!
+
+31:14 - Conference Room (Fiap Convidado 112) - Speaker 2 
+Bom pessoal, vamos ver aqui o procedimento para criação da máquina virtual do Linux que pode auxiliar aí no andamento do nosso curso e pode ajudar aí a pegar alguns detalhes a respeito da criação dessa máquina virtual para que ela possa acessar a internet, ser atualizada, para instalar pacotes, realizar os comandos necessários.
+
+31:37 - Conference Room (Fiap Convidado 112) - Speaker 2 
+Então aqui eu tenho do lado esquerdo o VMware Player, que é o virtualizador, foi deixado para vocês aí com o link para baixar diretamente do Drive.
+
+31:50 - Conference Room (Fiap Convidado 112) - Speaker 2 
+Do lado direito eu tenho uma versão da imagem do Ubuntu 22.04.5, que também foi deixado no link para vocês baixarem E vamos lá, vamos fazer essa instalação. Então aqui eu já vou considerar que vocês já tem o VMware Player instalado e já baixaram a imagem do sistema operacional. Então vamos lá, eu vou criar aqui uma nova máquina virtual, vai abrir uma nova tela e uma coisa importante, a última coisa que eu faço é instalar o sistema operacional. Então primeiro eu preparo os requisitos de hardware, né? Memória, disco, espaço, memória, disco e o espaço necessário para realizar as instalações e depois eu coloco a imagem para poder rodar. Configuração de redes e outras questões. Então eu vou clicar aqui em Next. A nossa máquina vai ser um Linux, ela vai ser um Ubuntu 64. Vou dar um Next.
+
+32:54 - Conference Room (Fiap Convidado 112) - Speaker 1 
+Nessa tela o nome da máquina virtual de vocês.
+
+33:01 - Conference Room (Fiap Convidado 112) - Speaker 2 
+Então, eu vou colocar aqui Ubuntu 22.04 e vou colocar aqui o nome do curso.
+
+33:08 - Conference Room (Fiap Convidado 112) - Speaker 1 
+O nome do curso é porque eu tenho esse mesmo conteúdo de outro curso, tá pessoal? As minhas máquinas virtuais.
+
+33:16 - Conference Room (Fiap Convidado 112) - Speaker 2 
+Então, eu vou colocar aqui dentro do meu ambiente, eu tenho aqui uma pasta de virtual machines, vou criar uma nova pasta, vou chamar aqui pelo nome do curso e uma vez que a pasta está definida eu vou dar um ok. Muito bem, ele já colocou aqui, vou clicar em next. Aí o tamanho da máquina virtual eu recomendo aumentar para uns 30 gigas e eu deixo aqui para ela ser feita em múltiplos arquivos porque fica mais fácil se eu quiser copiar e colar para um outro computador depois. Clicar em Next. E aqui uma parte importante, a customização de hardware.
+
+34:08 - Conference Room (Fiap Convidado 112) - Speaker 1 
+Então vamos abrir aqui.
+
+34:09 - Conference Room (Fiap Convidado 112) - Speaker 2 
+Com relação à memória, sempre verifique quanto você tem de memória e deixe sempre o máximo possível para você fazer uma instalação mais rápida, depois você pode reduzir essa memória. Eu vou deixar aqui 4GB para instalação, eu vou utilizar dois processadores, dois cores. Aí a parte de adaptador de rede, eu vou deixar para efeito desse curso em modo Bridge, ou seja, ela vai fazer parte da minha mesma rede local, porque se eu quiser comunicar com outras máquinas da minha rede local fica mais rápido. E aí sim, eu venho aqui em NeoCDDVD e eu escolho a imagem do então vou dar um browse aqui, vou procurar aqui as minhas imagens, eu tenho aqui o meu Linux, eu vou pegar aqui o Ubuntu 22.04, ok? Então foi feito isso né, 4 gigas de memória, dois processadores, dois cores, selecionei a imagem ISO e defini o adaptador de rede como o modo Bridge. Caso você não queira usar o modo Bridge e queira ter comunicação com a internet, selecione o modo NAT.
+
+35:27 - Conference Room (Fiap Convidado 112) - Speaker 1 
+Mas eu vou manter o modo Bridge para mim aqui, ok?
+
+35:31 - Conference Room (Fiap Convidado 112) - Speaker 2 
+Vou dar o Finish aqui e vou começar o processo de instalação. Vou dar um Play Virtual Machine. A instalação do Ubuntu é bastante simples, né? Ela é visual, então eu vou passar aqui só os momentos principais e onde você tem que ter algum posição durante o processo de instalação. Então eu vou adiantar o vídeo um pouquinho para ganhar tempo aqui. Aqui ele pergunta se eu quero tentar o instalar. Eu vou clicar aqui, ele vai carregar uma telinha original. Se o seu mouse ficar preso dentro do VMware, você digite Ctrl Alt para tirar o seu mouse e seguir em frente. Aqui ele começa a carregar a imagem do Ubuntu, daqui a pouco ele vai começar o processo de instalação. Bom, vamos lá. Finalmente vai aparecer essa tela aqui para vocês. Se você quiser, por exemplo, o Indio fazer a instalação toda em português do Brasil, você pode. Eu tenho aqui a opção. E aí tem a opção experimentar o Ubuntu ou instalar o Ubuntu. Para experimentar ele só roda a partir da própria imagem para você executar, mas aí quando finaliza você não consegue salvar as alterações porque está rodando só como experimentação. Eu vou escolher aqui em instalar Então ele vai passar por alguns poucos passos iniciais, só para eu definir alguns quesitos como o horário, o timezone e outras coisas, e aí a gente segue em frente aí.
+
+36:55 - Conference Room (Fiap Convidado 112) - Speaker 1 
+Primeira coisa é o layout do teclado.
+
+36:58 - Conference Room (Fiap Convidado 112) - Speaker 2 
+Se você estiver usando o teclado com o Cedilha, deixa esse padrão aqui, que é o Português Brasil do lado esquerdo, e a primeira opção é de Português Brasil do direito. Se você quiser fazer um teste, é só clicar aqui embaixo em digital cedilha.
+
+37:15 - Conference Room (Fiap Convidado 112) - Speaker 1 
+Se ele aparecer, significa que o teclado está correto.
+
+37:19 - Palestrante Não Identificado 
+Então, você vai e continua.
+
+37:21 - Palestrante Não Identificado 
+Vamos lá.
+
+37:22 - Conference Room (Fiap Convidado 112) - Speaker 2 
+Aqui, a gente tem o que eu quero instalar. Para efeito do nosso curso, a instalação mínima resolve. E se a gente precisar fazer mais alguma instalação, a gente vai fazer depois, já com a máquina pronta, a partir interface de linha de comando, tá? A gente não vai baixar atualizações enquanto está no Ubuntu, tá? E a gente não vai instalar programas de terceiro e outras questões por enquanto não, tá? A gente está numa rede virtualizada, então não precisa de dispositivo Wi-Fi, não precisa de placa de vídeo adicional, vai tudo pelo padrão do virtualizador. Então eu vou continuar aqui. Aí aqui uma tela básica, Se você tiver outros sistemas operacionais, se tiver que fazer dual boot ou alguma coisa, aparece em outras opções aqui. Mas eu vou selecionar, deixar selecionada a primeira, apagar o disco e reinstalar o Ubuntu.
+
+38:20 - Conference Room (Fiap Convidado 112) - Speaker 1 
+Na verdade, instalar o Ubuntu. E vou clicar em instalar agora.
+
+38:24 - Conference Room (Fiap Convidado 112) - Speaker 2 
+Aqui ele só pergunta a confirmação das mudanças no disco, onde que eu vou escrever e tudo mais. Eu vou manter o padrão. O sistema de arquivos vai ser o ext4 mesmo, então eu vou continuar. E aqui nessa tela é importante você mudar o seu timezone para aquele que é mais representativo da sua região. Veja, o padrão aqui veio Rio Branco, do Acre, mas eu estou em São Paulo, então eu vou clicar aqui no mapinha sobre São Paulo, ele mudou aqui embaixo, tá? E aí eu vou dar um continuar. Aqui uma tela que vai pedir suas informações, então aqui eu vou colocar o nome, vou deixar como aluno. O nome do computador ele sugere aluno virtual machina, você pode mudar. Importante, qual vai ser o nome do usuário? Então o nome do usuário para mim vai ser aluno, eu vou colocar uma senha aqui. Eu estou colocando três letras, sendo uma maiúscula e duas minúsculas, três números e três símbolos. Caracteres especiais e ele já considera como senha forte, ok? E eu deixo essa opção para digitar a senha para entrar. Você pode colocar para iniciar a sessão automaticamente, só que ele não vai pedir senha, mas no nosso caso é sempre bom trabalhar com senha até para poder reforçar as questões de segurança. Vamos continuar aqui. E agora aqui, pode até aparecer alguma imagem aí na instalação de vocês e tudo mais, correr aqui um carrosselzinho de imagens, mas basicamente agora é aguardar o final da instalação e reiniciar a máquina virtual para que ela possa voltar já a ponto de você utilizá-la. Mas basicamente o procedimento de instalação é esse. Então eu vou encerrando por aqui, se você tiver dificuldade, tire comigo, né, com o professor durante a aula que tiver presença live, mas, por enquanto, é isso, né? Espero que tenha sido simples para todos aí. É um procedimento tranquilo, então vamos lá para a gente poder tocar o nosso curso em frente.
+
+40:48 - Conference Room (Fiap Convidado 112) - Speaker 1 
+Um forte abraço aí do professor. Bom, gente, esse procedimento é padrão. Como a gente está gravando a aula, vai ficar disponível para vocês na gravação, tá? Então, quem não mexeu com o Linux ainda, vai mexer com o Linux. Então assim, não se preocupem, tem que mexer com o Linux. Então de repente você fala assim, eu evitei até agora isso. Pois é, chegou o dia de mexer com o Linux, tá? Então esse procedimento deve ser realizado, porque aqui, embora eu tenha parado o vídeo um pouco antes, é só terminar a cópia, ele vai fazer toda a instalação, no final ele pede só para reiniciar e você tem o Linux pronto, tá? Eu gosto do Ubuntu visual interessante. Mas vamos lá. Vamos falar um pouquinho sobre ferramentas de troubleshooting. Vamos ver quais são. O que é troubleshooting? Acho que é importante contextualizar o que é o troubleshooting, porque ele ajuda a identificar uma série de problemas em redes e sistemas operacionais. Se alguém tiver alguma dúvida, por favor, mande mensagem. Levante a mão, porque aí eu paro e vou respondendo, tá? Então vamos lá. A gente vai faAntonioidamente sobre o que é troubleshoot, né? O Antônio mandou. Por que não toda essa implementação noAntonio através de containers? É possível também, Antônio. Eu tô fazendo, vamos chamar assim, a implementação raiz, porque quando você coloca o Docker ou Kubernetes ou qualquer outra coisa assim, você não tá virtualizando o sistema operacional inteiro, você tá virtualizando somente o serviço. E eu quero entrar em alguns aspectos do sistema operacional mesmo, por isso que eu não tô fazendo com o Docker ou com container, tá? Eu gostaria de poder explorar algumas coisinhas que de repente vão tá lá no Kerner e tudo mais, e quando você fala sobre container ou Kubernetes, alguma coisa assim, você tem que E aí essa parte do sistema operacional é pensar só no serviço, tá? Por isso que eu faço a implementação desse jeito. Sim, é possível também só o SO, mas eu coloquei a virtualização. Eu acho que é importante a pessoa, antes de mexer com container, entender o que é uma virtualização também, tá? Mas dá pra fazer. Se você quiser subir como container, vai em frente, sem problema nenhum, tá? Então vamos lá, gente. Sobre o que é o troubleshooting de redes. Vamos ver por que isso é importante e algumas ferramentas, como é que a gente vai fazer na prática. Então, assim, a gente vai fazer uma análise de troubleshooting prática para poder fazer diagnóstico, identificar problemas que podem acontecer em redes e sistemas operacionais. Quando você faz troubleshooting, é importante que você estabeleça um processo. É igual estar aqui do lado, né? Então, se eu tenho que reportar um problema, eu vou fazer triagem, vou examinar, vou diagnosticar, vou testar e vou resolver. Se eu tiver algum ponto que precisa ser revalidado, eu volto e refaço. A mesma coisa a gente faz com trobochute de redes. E esse trobochute, ele é muito focado processos, mas também ferramentas. Por isso que a gente vai utilizar algumas ferramentas que são chamadas de essenciais. Especificamente na aula de hoje, nós vamos trabalhar pelo menos com o Ping, com o TCPdump, com o AirShark, com o Nmap, com o NetCatch. O SoCatch e o NetCatch são muito parecidos. O LogCatch, como ela é em máquina virtual do Android, aí eu já devo abordar na quinta-feira, porque aí dá tempo de vocês prepararem a VM. Vamos lá. Como eu falei, troubleshooting é processo. E processo pode ser feito a partir de uma metodologia. Então vamos pensar no troubleshooting como uma metodologia de resolução de problemas. Então vamos dar um exemplo. Eu tenho um servidor numa rede e esse apresenta lentidão. Por exemplo, eu vou acessar uma página web e ela fica lenta. Eu posso utilizar ferramentas como o Ping e o Trace Route para poder ver o quê? Tempo de resposta, latência, se algum elemento, se algum ativo no caminho está parando a comunicação, está deixando ela lenta. Depois que eu faço essa identificação inicial, eu posso ver o meu dentro de interesse e testar cada componente. De repente o problema está porque o cabo foi mal crimpado, ou o switch não tem uma velana, ou não tem uma rota de saída no meu roteador. Tem que testar cada componente. Eu posso capturar os pacotes e ver se eles chegam ao destino, posso analisar esse tráfego. E se eu tiver, por exemplo, com um serviço, dá um exemplo, imagina que eu esteja trabalhando um serviço de tempo real, que é o caso de Voice sobre IP. Eu posso partir para uma configuração de QoS, que é o Quality of Service, para priorizar tráfego. Nós vamos ver um pouquinho disso na aula de hoje ainda, desse item 3, especificamente voltado para VoIP. Mas vamos lá. Pensando nessa metodologia, a gente pode seguir um exemplo de, por exemplo, para verificar a conectividade de um elemento qualquer, utilizando o comando de ping. O ping utiliza o protocolo ICMP, ele faz o chamado echo reply, ou seja, eu mando uma comunicação e perguntou, você tá vivo aí? E o cara fala, tô vivo, beleza. Se ele não falar nada, eu sei que eu não tenho conectividade, aí eu posso eventualmente ir para um elemento um pouco mais sofisticado, usar um trace route, utilizar, sei lá, uma análise um pouco mais aprofundada para ver onde está o meu problema de conectividade. Se eu tiver, de repente, um tráfego que precisa ser analisado, eu já posso usar o TCP Dump para capturar esse pacote e usar o Wireshark para analisar esse tráfego. A gente vai ver. E aqui tem exemplos de comando. Eu vou dar um ping no meu endereço de interesse, eu vou utilizar o TCP Dump na interface eth0 na porta 80 capturar, por exemplo, esse tráfego e fazer alguns testes. E, pensando nisso, eu tenho aqui um ambiente de laboratório, esse aqui é o meu ambiente de laboratório live, em que eu tenho Linux, Linux é o mesmo que vocês vão instalar, que é o Ubuntu, eu tenho um Kali Linux, que é mais para análise de cibersegurança, captura de pacotes, Eu já capturei os pacotes aqui para a gente poder analisar. Eu tenho Windows para poder fazer uso do Wireshark, por exemplo, como ferramenta. Mas vamos lá. Considerando que eu estou aqui no meu Linux, eu quero saber o seguinte, qual é o meu endereço IP? Vou dar o comando IPA aqui. E esse daqui o meu endereço dentro da rede tá então eu tô endereçado aqui um 9268.61.7 ok aí de repente eu preciso acessar a internet tá eu vou lá e vou tentar acessar o site lá fiap.com.br por exemplo tá vamos ver se se ele vai resolver aqui eu acho que meu laboratório precisa colocar o da Deixa eu ver se eu tô com inconectividade aqui ou se ele tá bloqueando. Ah, deixa eu ver só uma coisa aqui. Então, na verdade eu posso sair aqui e eu posso usar o comando sudo, né? Sudo é de superuser, então aqui eu tô com o usuário Ubuntu, por exemplo, tá? Então, se eu quiser fazer uma análise um pouco mais avançada, para dar o ping não, ele até dá o ping, mas se eu tiver que fazer uma instalação, por exemplo, menos y, install Apache, Apache 2. Ele não vai fazer. Por quê? Porque o usuário Ubuntu não tem permissões para fazer a instalação. Aí eu posso virar root. Eu acho até que ele já já tá instalado mas veja ó eu já tenho esse cara já instalado mas agora ele fez o teste de instalação tá como poderia fazer o meu update é um apt update aqui eu acho só que ele tá com um problema de conectividade esse é problema do meu laboratório tá e por isso que ele não por isso que ele tá parado em 0% O que é importante aqui? Eu falei sobre dar um ping. Então, eu sei, por exemplo, que na minha rede eu tenho um endereço IP que é 192.168.61.1, 61.5, 61.9, eu tenho eAntonioras aí. Então, se eu der esse comando de ping... Na verdade, Antônio, ele tem conectividade com a rede externa, só que eu andei mexendo nesse laboratório E eu acredito que o nosso próprio ambiente de segurança deu uma bloqueada. Foi logo antes da aula, então não deu tempo de mexer, tá? 268.61.1. Olha só, ele já responde. Então, quando eu dou o pin, eu consigo testar essa conectividade que existe entre ele e esse cara, que é o .1, é o meu game. Inclusive, deixa eu ver se ele é... 192.168.61.1. Deixa eu ver se ele é o meu firewall. É, ele é o meu firewall. Então, esse meu firewall é o cara que está roteando para a internet. Então, ele tem conectividade com esse cara. Essa minha máquina, que tem o Kali Linux, Ele está com IP final 9 aqui. Então, se eu tiver na minha máquina e eu quiser testar a conectividade entre essas duas máquinas, eu vou dar um ping na máquina de interesse. Olha lá, ela respondeu. Agora, veja. Se eu der um ping aqui externo, sei lá, wall.com.br, Vamos ver se o meu problema é DNS. Deixa eu só reconectar aqui. Isso é internet minha, tá, pessoal? Ó, possivelmente ele tá com algum problema de DNS. Deixa eu ver se é só isso.
+
+52:48 - Icaro De Oliveira Castro Costa 
+CD... Deixa eu dar aqui um nano. Vou dar um comando pro Google, professor.
+
+52:55 - Conference Room (Fiap Convidado 112) - Speaker 1 
+8888. Não, mas deixa eu ver aqui. Nameserver... Deixa eu comentar aqui. Deixa eu colocar outro nameserver aqui, deixa eu ver se ele resolve. Aí eu acho que ele já resolve. Deixa eu ver agora se ele vai. Olha lá, agora já está com a internet. Então veja, troubleshooting feito na prática. Eu estava com problema de conectividade, por quê? Porque o meu DNS não estava corretamente configurado, tá? Agora veja, eu citei aqui o UOL, poderia ser qualquer outro, porque uma outra forma de você fazer esse teste de conectividade, imagina que eu tivesse com o DNS funcionando, e eu sei que o site lá do UOL tá funcionando, eu posso verificar com o comando trace route aqui ó, o que acontece o caminho entre a minha máquina e o site do UOL, por exemplo. Então, eu vou dar um trace route no uol.com.br. Vamos ver quantos sites... Ah, ele não está. Então, vamos instalar esse cara. Apt-install trace route. Ok. Está instalado. Vamos testar agora de novo. Ele tá dando, ele já deu 11 saltos, ele tá testando. Então, ele tá dando vários saltos aqui. Primeiro foi até o meu Gateway, deixa ele continuar, depois eu analiso tudo isso. Veja, ele vai tentar dar 30 saltos, ele já chegou no all, na verdade, e ele continuou analisando, deve ter mais uma máquina final. Mas vamos analisar. O comando trace route, ele vai pegar e falar assim, primeiro salto, Fui até o seu gateway, que era aquele PFSense. Depois, fui até o meu gateway de internet, que é esse 172. Depois, saiu para o provedor que está ligado o meu servidor, que é o da Vivo. Entrou na rede da Vivo. Telespinet é tudo Vivo. Vivo, Vivo, Vivo. Estou indo. Quando chegou aqui no salto 9, no salto 10, aliás, ele ainda está na rede da Vivo. Salto 11, aí ele chegou no site do UOL. Então eu posso dizer que para chegar no site do UOL ele teve que dar 11 saltos, ele encontrou 11 gateways no caminho. E aqui é interessante que se ele parasse, por exemplo, aqui no salto 8, eu poderia falar o seguinte, cara, existe um problema de rota lá no roteador que tem esse P15255 1.5.4, 1.3.6, dá vivo, e aí eu posso, de repente, entrar em contato com o meu provedor e falar, estou com problema nessa rota, libera para mim aí. Então, são formas que a gente tem de fazer alguns testes de redes, tá? Voltando aqui na apresentação, isso é usar o PING. Dump, ele também as análises interessantes. Então eu vou pegar e vou executar esse comando tcpdump-i, vou pegar o nome da interface na porta 80 e vou acessar a porta 80, vou acessar um site qualquer para poder fazer os testes. Então veja, estou aqui.
+
+56:33 - Icaro De Oliveira Castro Costa 
+Essa porta aí, professor, é HTTP, né? É HTTP.
+
+56:37 - Conference Room (Fiap Convidado 112) - Speaker 1 
+Eu posso pegar 80, posso pegar qualquer outra, posso pegar a 443 por exemplo tá então aqui imagina o seguinte tá ó eu tô com o navegador aqui por baixo aberto que depois na hora que eu executar o comando eu vou entrar no site qualquer aqui tá então aqui eu vou dar o comando tcp aliás deixa eu só ver qual que é o nome da interface tá a minha interface ela é a ens-18 então eu vou ter que usar esse nome para A análise, tá? Vamos lá. Então eu vou dar o pcpdump-i. Qual que é o nome dela? Ns18. Deixa eu ver só como é que tá aqui de novo. Port, aí eu vou usar 443, tá? Para poder executar. Port 443. Então veja só eu vou começar a capturar pacotes tá vou começar a capturar pacote tá capturando aí eu venho aqui no navegador e eu vou por exemplo acessar um site tá vou colocar aqui ó www.fiap.com.br tá ele resolvendo tá resolvendo e ele tá capturando pacotes aqui tal vez que ele tá Tá aqui. Eu vou parar esse cara aqui. Ele recebeu 13 mil pacotes, só que da forma como eu coloquei aqui, ele não guardou em lugar nenhum. Eu tenho que direcionar esse cara, por exemplo, por pacotes fiap.pcap. Eu vou salvar... Peraí que a minha internet deu uma oscilada aqui, deixa ele só retomar aqui, deixa ele voltar. Então eu vou fazer esse mesmo cara e vou aqui entrar e vou atualizar a página, vou atualizar Vou atualizar para gerar pacotes. Só para ele poder fazer a captura. Ele está capturando aqui. Aí eu vou parar a captura aqui. Ctrl-C. Muito bem. Agora que ele parou essa captura, eu vou dar um ls aqui. Ele está com esse cara aqui. Packets.fiab.pq. Se eu tentar ver o conteúdo, olha como aparece aqui. Ele pegou todos os logs, tá vendo? Ele tem 3158 linhas, então ele pegou todo esse conteúdo aqui. Só que vocês concordam que fazer a análise desta forma é muito complicado? É muita informação? A gente pode fazer análise utilizando uma outra eu não consigo instalar o AirShark aqui.
+
+1:00:03 - Icaro De Oliveira Castro Costa 
+Nem para pegar o ACK, o Tree Handshake, né?
+
+1:00:06 - Conference Room (Fiap Convidado 112) - Speaker 1 
+Não, com o AirShark já dá para fazer. Pode perguntar, Clodoaldo. Professor, só uma... Uma não, né?
+
+1:00:13 - Clodoaldo Callogero1 
+Eu tenho um monte de dúvida. Mas como é que você escolheu a porta 443?
+
+1:00:19 - Conference Room (Fiap Convidado 112) - Speaker 1 
+É porque eu já sei que ela é uma porta de navegação. Isso está lá na teoria dos protocolos de redes, tá? Tá? Deixa eu só continuar a instalação aqui. Então, eu vou postar o material para vocês falando dessas principais portas de trabalho, aí você vai entender, pode ser? Legal, obrigado. Tranquilo, a parte de rede vocês podem me perguntar bastante coisa, tá? Então assim, gente, eu instalei aqui o Airshark, eu tenho ele aqui, eu tenho ele aqui no Kali Linux também, e eu tenho Windows, então o AirShark é uma ferramenta que eu gosto de usar para quase tudo aqui, da análise de pacotes. Mas aqui no nosso caso, deixa eu pegar aqui o AirShark, olha ele aqui, e vamos analisar esse cara, vamos abrir um pacote aqui, deixa eu pegar aqui um Open, deixa eu ver onde que ele tá, Deixa eu ver onde que tá esse cara aqui. Deixa eu ver só onde que tá esse arquivo. Ele tá na barra root. Tá, tá no barra root. Então, deixa eu abrir aqui. Onde é que ele não tá aqui? Pode pegar tudo, qualquer um. Deixa eu mover ele para o barra rom e barra lu, pera aí. App para barra rom, barra, deixa eu ver só como é que tá aqui, pera aí. Mas qual que é a conta, professor?
+
+1:02:40 - Icaro De Oliveira Castro Costa 
+O senhor pode executar no próprio AirShark, né?
+
+1:02:45 - Conference Room (Fiap Convidado 112) - Speaker 1 
+Posso, posso. É que eu quero pegar o arquivo pronto, né? Ok. Para barra home, barra up. Ok, então cd barra home, barra up. Ele tá aqui, agora eu acho que eu consigo pegar.
+
+1:03:08 - Conference Room (Fiap Convidado 112) - Speaker 1 
+Se não, eu executo na hora, sem problema.
+
+1:03:12 - Conference Room (Fiap Convidado 112) - Speaker 1 
+Então, barra home, barra ubuntu, tá aqui. Vou dar um open aqui. Deixa eu ver por quê. Ah, ele tá muito grande. Deixa eu capturar por aqui mesmo, aí fica mais fácil. Então, opa. Por quê não? Eu tô como root, será? Deixa eu mudar meu usuário aqui. Senão eu executo por aqui. Deixa eu fechar aqui e executar pela máquina. Ah, beleza. Acho que agora eu consigo executar. Esse aqui eu não tô conseguindo mesmo.
+
+1:04:05 - Palestrante Não Identificado 
+Então vamos executar.
+
+1:04:08 - Conference Room (Fiap Convidado 112) - Speaker 1 
+Por que não? Permissão não. Vixe, eu tô com problema de permissão aqui. Vamos para outra máquina, sem problema. Eu não vou ficar mexendo aqui não para não perder tempo. Eu já capturei esse cara aqui. Deixa eu ver se é esse que está com o conteúdo. Eu fiz a coisa parecida, só estou com outro Linux aqui. Então veja, aqui eu tinha feito uma captura focada na porta 80, então veja que aqui na coluna Port, eu basicamente tenho a porta 80, mas tem umas portas altas aí. É a porta do meu lado, é quando a comunicação volta, tá? Então, veja, aqui, por que que é importante fazer essa análise do TCP? Primeiro, eu consigo saber o momento em que foi capturado, quantos pacotes eu tô capturando por segundo ou por décimo de segundo, qual é a origem e qual é o destino. Então, aqui eu tava acessando, acho que era o site do UOL, na verdade, tá? Qual é o protocolo qual é o tamanho do pacote, qual é a porta e as informações. Então, se eu vier aqui e eu, por exemplo, quiser fazer um filtro e colocar HTTP, por exemplo, ele vai analisar só o que é HTTP. Então, veja, eu vou pegar e eu vou iniciar uma captura nova aqui e eu vou acessar um site. Deixa eu pegar o filtro. Então, eu vou abrir aqui o navegador. Acho que eu já tenho aqui. Ok. Deixa só eu pegar e deixar o Wireshark aqui. Eu vou iniciar uma captura nova. Deixa eu fechar aqui. Vamos executar ele aqui. File... Por que ele não está executando? Ele tá com bloqueio? Acho que alguém andou mexendo na minha rede. Ele tá sem o start aqui. Deixa eu fechar, deixa eu ver se eu consigo executar como comando. Senão eu vou lá para o Linux.
+
+1:06:30 - Icaro De Oliveira Castro Costa 
+Pode ser uma política de segurança aí, professor, que tá barrando esse processo aí.
+
+1:06:36 - Conference Room (Fiap Convidado 112) - Speaker 1 
+Mas não deveria, mas não deveria, tá? Vamos ver se... Agora ele consegue. Então aqui, vou iniciar uma captura no eth0. A captura está aqui. Aí eu venho aqui, pego esse cara aqui e vou acessar, por exemplo, qapp.com.br. Deixa ele pensar um pouquinho. Mesmo que ele não pegue, que ele não abra, o AirShark capturar essas questões aqui, tá vendo? Ele tá capturando durante, tá? Tá capturando durante. Pode ser que eu esteja com algum problema aqui de DNS? Pode ser. Deixa eu ver se ele abriu aqui a página. Ó, FIAP. Ó, abriu a página. Então eu venho aqui agora e eu paro a captura, tá? Aí eu posso, por exemplo, tentar pegar o HTTP. Vamos ver o que que acontece? Vai me dar? Ó, não deu nada. Ah, não, deu sim. Tá aqui ó, ele fez uma requisição HTTP, ó, ele tá falando que teve uma movimentação permanente. Então, veja, quando a gente pega essas informações, eu consigo pegar detalhes e verificar por onde esse cara passou. Então, houve aqui ó, uma mensagem 301, funcionando permanentemente. Isso é um código lá do HTTP. Eu posso eliminar esse filtro e pegar, por exemplo, pegar aqui, o TCP vai ter um monte de coisa, né? Queria carregar, tem um monte de pacotes aqui, tá? Mas veja, eu tô comunicando entre essas duas máquinas aqui, né? Então, olha só, se eu quiser filtrar por uma mensagem, por exemplo, SIM, SIM-AC, AC para poder pegar o 3-way handshake, é possível aqui. Mas eu consigo, essencialmente, verificar problemas de comunicação. Quando eu tenho algum pacote que, de repente, está em preto ou está em vermelho, isso, em geral, indica que eu tive algum problema em algum pacote em algum momento aqui. Deixa eu eliminar todos os e ver se vai aparecer alguma coisa aqui de cores diferentes. Aqui eu acho até que não vai ter porque a comunicação aconteceu numa boa. Deixa eu ver aqui para onde que esse cara estava me levando. Esse protocolo quick acontece quando a gente acessa alguns conteúdos específicos de internet. Bastante pacote quick. Foi na hora que eu estava acessando o fiap.com.br. Mas, em linhas gerais, esse cara vai me ajudar bastante. A gente vai avançar um pouquinho e depois eu vou voltar a falar do AirShark para fazer uma análise bem interessante de latência em telefonia. Mas veja, aqui eu consigo analisar praticamente qualquer protocolo, tá? Qualquer protocolo. Voltando aqui para nossa aula. Vamos lá. Então, veja, eu falei do ping. Se eu quiser limitar a quantidade de pings que eu vou dar minha rede. No Linux, se eu não limitar, ele vai dando ping, até eu dar o ctrl-c lá. Então imagina que eu tenho esse cara que eu vou dar um ping no google.com, mas eu só quero quatro pacotes. Eu vou dar um ping "-c", que é de count, quatro, e o endereço aqui. Então, se eu vier aqui, e eu tiver, por exemplo, aqui nesse cara, deixa eu dar um ctrl-c pra parar, ele vai fechar o AirShark pra mim. Então se eu der um "-c 4 no google.com", ele vai dar o ping somente quatro vezes aqui. Ele vai demorar um pouquinho porque está na internet, está direto no navegador. Mas ele só vai fazer quatro vezes o comando de ping. Vou fazer aqui. 1, 2, 3, 4. Fez as quatro. Então, consigo limitar. O padrão do Windows é só quatro e eu não preciso fazer nada. No Linux, se eu não colocar o "-c", se eu só colocar o google.com... Opa, peraí que eu errei. O google.com, ele vai dando o ping até eu parar, até eu dar o Ctrl-C ou fechar a janela. Então, ele começou a resolver aqui, deixa eu fechar o navegador, porque ele deixa tudo mais pesado. E aí fica mais rápido. Veja que ele continua dando comandos. Se eu não der o Ctrl-C, ele não vai parar. Então, eu vou dar o Ctrl-C aqui para parar, beleza? Então, tem essa questão. E eu posso usar de várias formas. Então, aqui eu estou limitando a quantidade de pacotes com o "-c". Quando a gente dá o ping, a gente pode ter o retorno de pacotes fragmentados. Se eu usar o "-mdo", no comando, eu posso evitar fragmentação, ou seja, ele só vai me devolver os pacotes que não estejam quebrados, fragmentados, ele devolve pacotes inteiros. Eu já falei do trace route, identifica rotas, e gargalos e problemas de rede, mas a gente tem outras ferramentas bem legais, como é o caso do Netcat. O Netcat é legal porque eu consigo verificar se a porta está aberta, eu consigo criar um servidorzinho de escuta em uma porta, por exemplo, eu consigo me conectar a esse servidor, eu consigo testar essas conexões. Então, o que eu vou fazer aqui? Eu vou lá no nosso ambiente de laboratório. E vamos falar um pouquinho sobre esse teste com a Netcat. Eu vou usar aqui o Kali, porque ele é mais pronto, ele já tem a Netcat por padrão.
+
+1:13:02 - Palestrante Não Identificado 
+Deixa eu aumentar aqui o tamanho.
+
+1:13:04 - Conference Room (Fiap Convidado 112) - Speaker 1 
+Beleza. Então, se eu der aqui um Netcat menos e o endereço e a porta, tá? Eu vou pegar o endereço da minha rede mesmo para ver se eu tenho porta aberta nele, tá? Então, vou pegar aqui o 92, o 68.61.7, eu vou testar aqui a porta 80. Vamos ver se ela está aberta? Esperar um pouquinho. Olha lá, a porta HTTP está open. E olha só que interessante, naquele servidor, naquele Linux que eu mostrei para vocês, que é o Ubuntu, eu acho que eu não coloquei o certificado digital. Então vamos ver se a porta 443 está aberta? Vamos esperar ele testar. Olha lá, conexão recusada. Então essa porta não tá aberta. Vamos ver se é isso mesmo? Eu vou pegar esse cara aqui, tá? E eu vou acessar 192.168.61.7. Ó, o HTTP tá funcionando, a porta 80. Vamos ver se o HTTPS funciona? No meu teste com o Netcat, ele falou que a porta tava Vamos ver se está mesmo? Está fechado, certo? Então, até pensando em segurança da informação, é uma forma de eu saber quais são as portas abertas, fechadas. Eu consigo fazer o mapeamento da minha rede e saber o que está rodando lá e que portas estão abertas. Eu vou pegar agora e eu vou criar um servidor de escuta executa, tá, numa porta TCP, aqui na porta 1, 2, 3, 4, 5, tá? Então, nc-l-p e a porta, tá? Olha só que interessante, eu vou abrir esse terminal, né, eu vou dar aqui, nc-l-p e a porta 1, 2, 3, 4, 5. Ele tá executando, aí eu venho pego um outro cara aqui, tá? E eu posso fazer o que? Executar conexões. Eu vou dar o netcat, como tá na mesma máquina, 127.0.0.1 na porta 1,2,3,4,5. Vamos ver o que que ele vai fazer, tá? Então, NC 127.0.0.1, 1,2,3,4,5. Tempo. Ok, vamos ver. Você fala, mas não aconteceu nada aqui. Será que não? Deixa eu ver se eu não esqueci nada no comando. Não esqueci nada no comando. Para eu saber se essa conexão foi bem sucedida ou não, eu vou pegar um terceiro terminal aqui, tá? E nesse terceiro terminal, Eu vou aumentar um pouquinho para ficar um pouco mais visível. Eu vou testar se essa conexão está fechada ou não. Eu vou dar o comando aqui, o next start. Vou colocar ao menos o tam. Deixa eu abrir mais, que ele vai precisar de mais espaço para executar esse comando. Vamos ver se tem alguma coisa? Olha a nossa a conexão aqui está estabelecida, está usando esse Process ID e a aplicação que está rodando a NETCAT. Então veja, eu estou rodando aqui. Se eu der o CTRL C e parar aqui, parou. Aqui parou também. Vamos ver se a conexão continua? Olha só, já não tem mais a conexão do 127, não está estabelecida. Está Time Wait, que eu acabei de derrubar. Então, o Netcat Antonioerramenta bem interessante para fazer essas análises, para eu conseguir criar um servidorzinho. Binário de host P para host A Posso te responder isso direitinho na quinta-feira, Antônio? Porque aí eu já trago o comando feito? Pode ser? Porque aí sim, mas dá para usar o SCP. É que o SCP vai usar a porta 22, na verdade. Com o SCP eu consigo uFAGUNDESa porta 22, acesso remoto. Pode falar aí, Carol.
+
+1:18:00 - Palestrante Não Identificado 
+Pessoal, uma dúvida a título de segurança da informação. Geralmente, é possível saber quando você está prestes a sofrer um ataque de DDoS, quando há envio de muitos pacotes de dados? Sim.
+
+1:18:16 - Conference Room (Fiap Convidado 112) - Speaker 1 
+Vou abrir um parênteses aqui que vocês vão gostar dessa brincadeira. Deixa eu acessar um ambiente aqui e mostrar um negócio para vocês. Pode ser esse ambiente mesmo, deixa eu ver se vai dar para fazer nesse mesmo tá eu deixa eu ver se eu consigo executar um ataque aqui, deixa eu ver se eu tenho ferramenta aqui para isso deixa eu ver, eu tenho os senhas Deixa eu ver se eu consigo executar aqui. Deixa eu ver se eu tenho esse comando aqui. Esse aqui, ó. Eu vou executar um comando que vai atacar aquela máquina do Linux lá, tá? Mas eu vou pegar aqui e deixa eu ver se eu consigo acessar. Não, não é esse que eu quero. Esse cara aqui. Eu acho que ele pega... Deixa eu ver. Deixa eu ver qual que é o outro. O outro está no... Talvez esse cara aqui pegue. Isso aqui é uma ferramenta de CIEM, pessoal. Ele faz avaliação de segurança. Ele faz análise de segurança. Vamos ver se ele vai pegar esse ataque. Deixa eu pegar aqui a atividade de log. Ele está analisando a minha rede, pessoal. Analisando a minha rede, meu ambiente aqui. Isso daqui é informação em tempo real. Aí eu venho aqui e eu executo esse cara aqui para tentar pegar a senha. Deixa eu ver se ele pegou. Não pegou nesse. Pegou sim. Pegou aqui. Então veja, como é que eu consigo pegar um ataque desse? Esse foi um ataque minha senha de dicionário, ele gera para mim ofensas. Tentativa de múltiplos logins que falharam. Então, aqui ele está pegando. Se eu quiser executar um ataque um pouco mais sofisticado, eu até tenho um roteiro de ataque, só que aí ele vai gerar tipo 100 mil requisições, aí talvez ele derruba meu mas eu consigo analisar com uma ferramenta como essa, ou com uma ferramenta de monitoramento, como é o caso dos ABIX. No meu caso, esse Services Down é uma máquina que eu tirei. É que aqui não caiu nada ainda, mas eu estou analisando esse ambiente que nós estamos trabalhando. Agora, olha que legal, eu gerei o ataque, eu consegui o login e a senha desta máquinaAntonio, agora, se eu quiser fazer um acesso remoto, eu venho aqui, dou um SSH nele aqui, uso a senha que eu capturei, estou dentro da máquina. Se for um ataque feito em tempo real. Nesse caso, Antônio, o CIEM não mitiga, o CIEM só pega e analisa. Para mitigar, usar uma ferramenta de IPS, por exemplo, Snort, Suricata, ou criar regras no Firewall, como é o caso dessa ferramenta aqui. A gente vai falar disso na aula de quinta-feira, não vou dar muito spoiler não. Vamos lá. Seguindo aqui. Então dá para ter uma ideia de como uma ferramenta como essa é legal, porque eu consigo ver porta aberta, criar servidor para testar conectividade e outras pistões? É muito legal isso aqui, tá, pessoal? TCPdump eu já mostrei, né? Já vi como fazer aqui, ó. Se eu quiser fazer a captura sem ele ficar me mostrando o nome, só mostrando IP, eu uso esse parâmetro "-nm", e o host que eu quero analisar, tá? Mas como a gente já fez a análise, eu vou seguir em frente para a gente não estourar aqui a nossa agenda, tá? Uma coisa legal de fazer também na análise é usando o AirShark fazer, por exemplo, filtro. Então, se eu pegar lá o AirShark e colocar lá no filtro http.request.method igual a get, eu vou pegar só as requisições de get. Vamos ver como é que é esse cara aqui? Então, eu vou lá, deixa eu pegar aqui, acho que vai ser se eu fizer aqui que aqui eu já tenho e ele tá esgotando por tempo né então às vezes fica um pouco mais demorado. Deixa eu abrir o AirShark aqui. E AirShark. Deixa eu abrir Deixa eu pegar esse cara aqui. Deixa eu dar um open de novo aqui. Peraí que ele tá lento aqui, ficou lento. Minha internet tá um pouco instável, tá pessoal? Essa lentidão é do meu lado aqui. Como o laboratório tá hospedado em nuvem, ele pode estar demorando para deixa eu ver se deu problema no meu lab, não, aqui volto, volto, vou pegar aqui o arquivo de novo tá então só pegando aqui o comando de novo http.request.method então se eu pegar aqui e eu fizer esse filtro http.request.method e eu filtrar, vamos ver o que ele vai me dar, deixa eu ver se ele vai funcionar aqui. Pegou só um cara, então veja, eu só tenho uma solicitação de GET que foi da minha máquina 61.9 para esse endereço que era o site do UOL, então foi exatamente neste momento em que eu se você terminou de digitar lá no navegador wall.com.br, ele manda um GET para o site. Será que teve alguma coisa de POST? Vamos ver. POST. Vamos ver se fez alguma coisa. Olha lá, tem o POST também. E se o GET solicita o POST, ele está enviando alguma informação e solicitando outra. Então eu posso realizar uma série de filtros, tá? E uma coisa que é legal, quando você está fazendo análise, é que eu posso criar filtros em tempo real. Então, olha só. Eu vou pegar aqui, eu vou começar uma captura e eu vou colocar, por exemplo, somente HTTP. Aqui. Opa, deixa eu parar, deixa eu começar diferente aqui. Deixa eu colocar aqui. Ele está com uma HTTP, eu não acessei nada aqui, mas se eu vier aqui, de repente, colocar uma página nova, deixa eu pegar só a HTTP aqui, isso aqui não tem HTTPS, aí talvez ele pegue alguma coisa. Vamos ver se ele tem... Ah, eu tô colocando maiúsculo. Agora sim. Agora eu vou começar a captura com ele, com HTTP aqui, aí eu venho aqui e eu atualizo. Vamos ver se ele pegou. Olha lá. Pegou HTTP. Certo? Aí agora, uma coisa que é legal, Parei. Pegou só o HTTP. Olha a diferença que acontece quando eu starto aqui, volto aqui e faço. Ele capturou tudo agora, não só o HTTP. Então, quando eu já starto com o filtro, é legal que ele vai capturar só aquilo que eu quero analisar. Aquele cara que é feito em tempo real, é chamado de capture filter, que é o filtro de captura em tempo real. Quando eu já capturei, que é esse o caso, e eu vou fazer o filtro em cima dele, aí é que é o display filter. Eu estou mostrando somente algo dentro de um universo que eu já capturei. E quando é em tempo real, compact filter, que ele só tá capturando em tempo real. Então tem essa diferença. Qual é a vantagem de um e de outro? Se eu faço o filtro em tempo real, eu capturo só aquele protocolo. É menos pacote, porém, eu posso dispensar alguma coisa que poderia ser útil para mim. Já quando eu faço o display filter, que é esse caso aqui, eu capturo tudo. Então pode ser que eu tenha uma captura muito grande de que eu vou jogar 99% fora na minha análise, tá? Mas vamos lá. Então a gente fez essa análise de pacotes. Essa prática aqui, ela é uma prática de comandos Linux, tá? Eu vou pular essa aqui porque esse vídeo tá lá no material de apoio, ele tem 17 minutos, senão a gente vai matar do restante da aula, eu não vou conseguir finalizar, porque o início da aula foi mais longo. Eu vou passar para o próximo slide, mas essa parte aqui é legal, por quê?
+
+1:28:36 - Conference Room (Fiap Convidado 112) - Speaker 2 
+Porque são vários comandos que são dados...
+
+1:28:39 - Conference Room (Fiap Convidado 112) - Speaker 1 
+Bom, pessoal, vamos... Vou só parar o áudio aqui. Mas são vários comandos que são dados ao longo desse conteúdo aqui, tá? Então, eu ensino a criar arquivo, deletar arquivo, copiar arquivo, analisar, fazer download, analisar log... Coisas importantes, tá? Copiar, mover, criar diretório, dar permissão... É um conteúdo bem legal, tá? Bem legal. Complementando... Posso falar? Pode.
+
+1:29:14 - Clodoaldo Callogero 
+É o seguinte, você criou um novo terminal dentro do Ubuntu. Esse novo terminal é automático ou eu tenho que criar uma outra máquina virtual?
+
+1:29:28 - Conference Room (Fiap Convidado 112) - Speaker 1 
+não, não, você pode criar quantos terminais você quiser. Por exemplo, aqui ó, está vendo que tem um maisinho aqui? Ah, peraí, eu tô na aula. Peraí, peraí, eu tô no vídeo. Peraí, deixa eu passar para frente aqui. Pronto. Ó, o Ubuntu aqui, tá? Deixa ele carregar de novo. Ó, tem o maisinho aqui, né? Ó, segundo terminal, terceiro terminal, tá? Agora, quando você deu um ping de uma máquina para outra, você tinha duas máquinas virtuais.
+
+1:30:01 - Clodoaldo Callogero 
+Na verdade, isso, eu tenho duas máquinas virtuais, mas você pode dar o ping para a mesma máquina, não tem problema, tá?
+
+1:30:09 - Conference Room (Fiap Convidado 112) - Speaker 1 
+Legal. Você pode dar o ping para a mesma máquina ou para outra máquina, porque como eu várias. Fica legal de ver que sai de uma e vai para outra, entendeu?
+
+1:30:21 - Clodoaldo Callogero 
+Entendi. Mais uma. Na máquina virtual eu instalo, por exemplo, o navegador, eu instalo o Edshark e quando eu fechar ela eu não perco nada, é isso?
+
+1:30:31 - Conference Room (Fiap Convidado 112) - Speaker 1 
+Não, não. Não perde nada porque a máquina virtual foi criada, ela não tá rodando em live só como teste, tá?
+
+1:30:39 - Clodoaldo Callogero 
+Ok, ok.
+
+1:30:40 - Conference Room (Fiap Convidado 112) - Speaker 1 
+Então, tranquilo.
+
+1:30:42 - Conference Room (Fiap Convidado 112) - Speaker 1 
+Deixa eu só voltar aqui para o próximo slide. Então vamos lá. Cinco, ok. Então essa primeira parte que vai até os comandos a gente finalizou. Mas eu quero avançar um pouco com algumas outras ferramentas que são importantes também. Principalmente o Nmap para poder fazer algumas varreduras. Vocês vão ver que é uma ferramenta bem legal do ponto de vista até de segurança. Então o Nmap network mapper, ou seja, ele mapeia a minha rede. Então, por exemplo, eu quero identificar hosts, portas abertas e serviços na minha rede. Eu posso dar esse comando nmap-sv, que ela pega a versão de serviço, e apontar para um IP ou para uma rede. Então, olha só que legal isso aqui. Eu estou no Ubuntu. Então, veja, vou fazer pelo Kali para o Ubuntu que aí fica legal de pegar, tá? Então veja, estou aqui. Agora eu já posso fechar o AirShark. Vou trabalhar só comigo. Então, se eu der aqui, nmap, menos s, minúsculo, v, maiúsculo, e eu apontar para aquela máquina do Ubuntu, 926Antonio Sete, ele vai mostrar para mim quais são as portas, protocolos abertos e as versões. Então, deixa ele pensar um pouquinho. É diferente de risco. Segurança. Exato. Você tem que pensar que quando você conecta um site não confiável, Antônio, você pode estar sendo vítima sem saber. Aqui o Nmap demora um pouquinho mesmo, tá, pessoal? Então, não se preocupe, ele tá fazendo uma varredura longa aqui, minha internet também deu uma paradinha aqui do lado, eu vou reiniciar aqui a página. Pois não. Esse Nmap, esses protocolos, eles são nativos do Linux? Ou eu tenho que dar um pip está ou alguma coisa para chamá-los? Você pode o apt install vamos vamos instalar aqui ó peraí deixa ele voltar a minha rede tá um pouco lenta tá deixa só ela voltar aí a gente continua deixa eu ver o nmap tá bem demorado as ferramentas ele serve no linux mas você pode usar o pip install, o apt install, pode usar o snap O laboratório ficou lento agora. Beleza, olha só. Olha que legal isso aqui. Vamos ver o que ele pegou para a gente. Então eu estou analisando aquela outra máquina. Ele viu que a porta 22 SSH está aberta, que está rodando a versão 8.9 do OpenSSH. A máquina é um Ubuntu protocolo 2.0. A porta a 380 também está aberta, ela roda o Apache na versão 2.4.52 e a porta 3389, que é uma porta de acesso remoto RDP, também está aberta. Então olha que legal quando você usa o Nmap para fazer essa verificação. Deixa eu ver se a outra máquina ficou lenta, talvez eu tenha que reiniciar ela. Ela ficou devagar, Se eu começar a colocar para reiniciar, ela vai demorar, vou fazer por aqui mesmo, tá? Então veja, quando a gente usa o nmap, ele pode ser bem interessante. Se eu quiser saber só qual é a versão do sistema operacional, vou pôr "-O", maiúsculo. Então se eu der o nmap "-O", aqui, vou recuperar ele. E eu posso combinar também, colocar "-sv", no Zoio e assim por diante. Aqui foi rápido agora. O que ele pegou? Ele pegou as portas abertas, mas principalmente ele identificou qual é o sistema operacional para mim. Ele é um Linux kernel, ele tem o kernel 4, kernel 5, 5.8, é a versão final dele. Então veja, eu consigo usar o verificações interessantes aqui. Essa minha máquina perdeu a conectividade, que pena. Tudo bem, sem problema, a gente segue sem precisar dela nesse momento, tá? Beleza. Aí a gente tem os comandos para a varredura não somente de um host, mas de uma rede. Então se eu usar o parâmetro "-sn", naquela rede, eu posso fazer a arredura dela. Aqui pode ser que demore um pouquinho, mas eu vou executar, vamos ver se dá tempo de ela retornar ainda nessa aula de hoje para a gente, eu acho que vai. Então, se eu der aqui, deixa eu só limpar aqui, NMAC, menos, deixa eu pegar aqui, ela é menos SM, menos SM, e vou pegar minha rede, o 168.61.0. Deixa eu ver se eu vou precisar botar o barra 24. Vou por o barra 24, que é o tamanho da linha do meu segmento. Aí ele vai começar a varrer a rede. E aqui ele vai demorar um pouco, tá? Ele vai ver quais são os hosts que eu tenho nessa rede. Olha lá. Até que foi rápido. Eu tenho nove hosts up na minha rede, tá? Então eu tenho o .1 que é o meu Firewall, o .4 que é uma outra aplicação, .5 que eu acho que é o meu CIEM, .7 que é o Ubuntu, .8 que é outra máquina. E aí o que é legal, eu posso pegar depois cada uma delas e ver quais delas tem o HTTP ou alguma coisa assim. Então veja, eu dei aqui o comando "-sv", Se eu pôr aqui o 0 barra 24, 24, ele vai fazer a validação e ver todos os sistemas operacionais daquelas nove máquinas, só que agora provavelmente ele vai demorar um pouco mais. Então, a gente tem esses parâmetros que são interessantes. Agora, fiz a varredura de host, fiz a varredura de rede, O sv aqAntoniomesmo do anterior, tá? Então não precisa executar de novo. É o mesmo que estava aqui, tá? Agora, se eu tiver analisando um único host e eu precisar saber detalhes, diagnóstico de espaço em disco, por exemplo, eu posso dar esse comando df-h. Deixa eu ver. Antônio, Você colocou aqui no chat? Quer abrir o áudio? Ou manda mensagem aqui? Ah, beleza. Então, imagina o seguinte. Eu quero saber qual é o meu espaço em disco no meu host. Eu vou dar esse comando no Linux, df menos h. Então, veja só. De repente, eu percebo uma lentidão. Aí eu venho aqui e dou df menos h. E ele vai mostrar para mim os meus... Diretórios. Então, eu tenho aqui 79 gigas no meu disco principal, eu só usei 16, tenho 60 gigas aproximadamente disponíveis. Por que não 60 e 3? Porque 3 está aqui. Então, isso daqui é legal porque ele mostra a ocupação. Eu tive que fazer uma análise exatamente desse comando com uma máquina minha que está hospedando uma aplicação de Viper, ela ficou lotada. E aí ela parou de responder, aí eu tive que liberar espaço nela. Agora, se eu quiser fazer esse mesmo comando, só que utilizando o sort, para elicitar os arquivos grandes para mim, eu vou dar esse comando du-sh em barra var e o asterisco para poder fazer então eu vou pegar ele aqui, deixa só eu reduzir o tamanho dele, aumentar um pouquinho só né, para poder pegar o comando direitinho aqui.
+
+1:39:37 - Palestrante Não Identificado 
+Deixa eu executar ele aqui, ou o caramba, pera aí, que eu minimizei, errei, aqui.
+
+1:39:43 - Conference Room (Fiap Convidado 112) - Speaker 1 
+Então eu vou pegar esse cara aqui e vou dar esse comando, deixa eu só colocar para o lado, que aí você já não sente cabeça né, menos sh em barra var barra asterisco. Aí eu vou dar um pipe sort menos rh. Aí agora eu posso já aumentar esse cara aqui de novo. E vamos ver. Então ele está falando que os meus maiores arquivos estão aqui, barra var barra lib, barra var barra log, barra var cache e assim por dia dentro do barra var tá se eu quiser fazer de uma forma geral sem ser no barra var aí eu tiro ó ó ele tá pegando só no root aqui para mim aí eu quero fazer no barra etc tá olha só que legal aqui o barra etc onde tem os arquivos de configuração aí ele vai mostrar mas o RTC já tem muita coisa. Arquivo pequeno e arquivo grande. Olha lá. No barro RTC, o maior arquivo que eu tenho, como é a configuração? 800K. Os meus arquivos do Apache, do SSH e assim por diante. Então eu consigo fazer essa validação. Por arquivos, por tamanhos. Uma outra parte aqui. Eu estou com problema de conectividade. Vou lá e dou o comando nslookup. Por exemplo, não consigo acessar o Google. Dou o comando nslookup. Vamos ver como é que é. Então... Eu venho aqui, nslookup, e o domínio que eu quero. E no meu caso... Nslookup no... Google.com. Aí ele vai fazer o que? Ele vai resolver esse nome de domínio para mim, vai retornar. Está dando alguma comunicação de... Veja, eu usei. Esse é o troubleshooting em tempo real. Está dando realmente algum probleminha aqui. Será que eu estou com problema de DNS? Ele conseguiu encontrar. Então, ele encontrou o Google e o Google está nesse endereço IP aqui. Deixa eu ver uma coisa aqui. Cd barre tc. Deixa eu dar um nano no resolve. Deixa eu ver. Não, ele está com o nameserver correto. Sem problema. Será que o outro deu problema de DNS, por isso que ele ficou ruim? Pois eu vejo Então, usando então o comando nslookup eu consigo ver problemas aí, eu consigo primeiro resolver qual é o endereço IP e se eu tenho algum problema de resolução de NOPs, tá? E aí eu verifiquei a configuração no resolve.conf, ok? Ora aqui, uma coisa importante, serviço de acesso remoto o SSH. É um serviço super importante, vai permitir que eu acesse com conexão criptografada, entre outras possibilidades aqui. Esse é o último que a gente vai fazer no Linux, depois eu vou entrar um pouquinho no Windows para fazer alguns testes também. Então aqui, se eu quiser saber como está o meu serviço de SSH, eu vou dar, por exemplo, CTL status SSH.
+
+1:43:39 - Conference Room (Fiap Convidado 112) - Speaker 1 
+Ele está inativo.
+
+1:43:41 - Conference Room (Fiap Convidado 112) - Speaker 1 
+Deixa eu ver se ele responde como SSHD aqui. Também não. É o SSH. Então, veja. Ele não está recebendo nenhuma conexão agora. Eu posso dar um start nele? Posso. Deixa eu dar um start aqui. Deixa eu ver se ele começa. Start SSH. Ok. Vamos dar o status agora. Olha lá, agora ele está Active Running. Agora ele já pode receber conexões. Isso é um troubleshooting feito em tempo real. Dá para verificar esse cara. Então eu fiz o status e dei o start.
+
+1:44:24 - Palestrante Não Identificado 
+Beleza?
+
+1:44:24 - Conference Room (Fiap Convidado 112) - Speaker 1 
+Até agora a gente trabalhou com Linux. Vamos rapidinho mexer um pouquinho com o troubleshooting de Windows. Deixa só eu pegar. Esse conteúdo que eu tenho aqui em Word editável, que aí eu consigo pegar o comando certinho, senão fica difícil de digitar, fica demorado de digitar. Então assim gente, a gente vai fazer alguns testes com Windows, então imagina o seguinte, servidor não acessa a internet, então ele pede para executar, não no prompt de comando, no PowerShell, alguns arquivos, verificar conectividade na porta 80 ou na 443, verificar quem é o meu gateway padrão, então eu vou pegar Vamos lá no Windows. Tem um Windows aqui. E aí eu vou executar o PowerShell. Ele ficou pequenininho aqui, deixa eu ver se consigo aumentar ele. Ai, já fica melhor, né? Deixa eu ver se eu consigo colar aqui. Não tá colando. Que coisa, não? Deixa eu ver aqui. Senão eu faço na minha própria máquina, que aí eu consigo Deixa eu abrir o PowerShell da minha mesmo.
+
+1:46:41 - Palestrante Não Identificado 
+Vou pegar aqui.
+
+1:46:48 - Conference Room (Fiap Convidado 112) - Speaker 1 
+Vamos testar a conexão do google.com na porta 80. Vamos ver o que ele vai me retornar. Vamos ver se ele responde corretamente aqui. Está analisando, esperando pela resposta. Vamos ver o que ele vai me responder aqui. Em tese ele deveria responder. Pegou o IPv6 do Google. Não respondeu. Agora sim. Ele respondeu na porta 80. Vamos ver se ele responde na 443. Em tese tem que responder também. Respondeu na porta 443 também. Aí eu quero saber o seguinte. Quem é o meu gateway padrão nessa rede? Então tem o comando getnetpconfiguration. Então, se eu der esse comando aqui, ele vai analisar quem é o meu gateway. Vamos ver o que ele vai responder? Como na minha rede, no meu computador, eu tenho várias virtualizações, ele vai mostrar um monte de interfaces, tá? Mas a minha principal é essa aqui, Ethernet. Então, o meu gateway é esse cara, tá? O meu gateway é esse cara. E veja quantos servidores DNS eu tenho, porque aqui tem o meu interno, tem o meu provedor, IPv4, IPv6 e aí eu tenho as virtualizações, tá? Por isso que aparece um monte de outras informações aqui também, tá? Aí imagina o seguinte, imagina que eu tenho aqui um servidor DHCP que fornece conectividade para as minhas máquinas, tá? Eu quero verificar de repente o escopo do DHCP, eu acho só que nessa minha máquina eu não tenho DHCP, mas se eu quiser... Opa, peraí que ele não pegou o comando. Vamos ver se ele vai identificar. Não tem escopo porque não tem DHCP instalado aqui, mas ele daria para mim. Olha, você tem 50 IPs que são entregues pela rede, o primeiro é esse, o primeiro é aquele. Ícaro, sim, você pode usar ferramentas de ataque usando Nmap e Metasploit Eu vou mostrar isso para vocês. Vou mostrar um ataque em algum momento, talvez até na hora de quinta-feira. Então, fica tranquilo que nós vamos brincar bastante de segurança aqui. Uma coisa importante, pessoal, é que muitas vezes a gente utiliza serviços de compartilhamento no Windows. E o principal deles é o SMB. Então, se eu der esse comando aqui, esse aqui, o GetServiceLambanServer, ele vai mostrar para mim, ó, ele tá running, ou seja, eu tenho compartilhamento ativado nesta máquina, mas deixa eu ver se esse compartilhamento pode ser testado, vamos ver se ele tá na porta certa, eu vou testar ele na porta 445, opa, não é isso não, quero outra coisa. Estou com um pouco de problema aquele meu copiar e colar, assim. Então eu tô fazendo um teste de conexão no meu computador, no meu local host na porta 445. Vamos ver o que ele vai me dar de retorno aqui. Vamos ver se ele vai colocar como ativo, ó, o serviço tá ativo na porta 445. Não se preocupe, todos esses comandos estão na apresentação de vocês, tá pessoal? Todos eles estão. Aí agora eu quero, para para finalizar a aula, fazer um exercício bem interessante, que é um teste em tempo real de latência em serviços de voz sobre IP. Pessoal, eu desenvolvo soluções de VoIP. Esse cara aqui é um VoIP criptografado, tá? E eu vou usar o meu AirShark, da minha máquina mesmo, pessoal. Deixa só ele carregar aqui. E aí eu tenho no meu celular e no meu celular eu tenho um outro ramal criptografado que eu quero fazer a captura desses pacotes. Então o que eu vou fazer? Eu vou gerar uma chamada para esse cara aqui e vou começar a capturar. Depois eu vou mostrar para vocês como que é um grampo telefônico, mas principalmente como é que eu faço essa captura e identifico a latência entre a origem e o destino da chamada. Isso é legal, porque o AirShark faz isso. Então eu vou disparar ele aqui, tá? Ele tá capturando. Deixa ele começar. O demo tá meio pesado aqui, porque eu tenho muita coisa aberta. Talvez eu tenha que fechar algumas coisas aqui.
+
+1:51:50 - Conference Room (Fiap Convidado 112) - Speaker 1 
+Deixa eu fechar o laboratório.
+
+1:51:54 - Conference Room (Fiap Convidado 112) - Speaker 1 
+senão eu vou ter problemas. Eu acho que vai ficar lento, pessoal. Dá um minutinho. Deixa eu ver. É o meu hour check. Peraí um pouquinho, gente. Deixa eu dar um ok aqui. Deixa eu ver se eu vou conseguir rodar. Deixa eu fechar o meu laboratório aqui. Já fechou. Deixa eu fechar o meu... Algumas coisas, senão vai ficar muito pesado. Esse cara tá aqui, deixa eu abrir o Wireshark de novo. Deve estar rodando mil coisas diferentes aqui. Deixa eu ver, eu quero pegar o meu Ethernet. Ok, agora sim, beleza. Então, deixa eu gerar aqui uma ligação telefônica. Deixa eu pegar aqui o meu, minha aplicação de VoIP. E eu quero ligar para o ramal Mil.
+
+1:52:52 - Palestrante Não Identificado 
+Tô ligando.
+
+1:52:53 - Conference Room (Fiap Convidado 112) - Speaker 1 
+Deixa eu ver onde que tá aqui pra ele receber. Espera aí que ele sumiu aqui. Espera só um minutinho que eu vou fazer ao contrário. Que ele não abriu a tela. Tá tocando aqui do meu lado. Vou atender. Eu comecei a fazer uma chamada. Tô capturando pacotes aqui. E eu vou parar a captura agora. Ok, muito bem. Aí agora eu tenho que achar alguma coisa de... Deixa eu pegar só o endereço do meu servidor aqui. Espera aí.
+
+1:53:36 - Palestrante Não Identificado 
+Deixa eu abrir aqui.
+
+1:53:39 - Conference Room (Fiap Convidado 112) - Speaker 2 
+Isso aqui é legal de...
+
+1:53:41 - Conference Room (Fiap Convidado 112) - Speaker 1 
+Deixa eu ver se eu tenho... Os IPs... Deixa eu ver se eu pego ele aqui. Acho que ele pegou aqui. Não, não é esse. Começa com 167.
+
+1:54:01 - Palestrante Não Identificado 
+Destination.
+
+1:54:02 - Conference Room (Fiap Convidado 112) - Speaker 1 
+Vou precisar pegar, senão não vou conseguir mostrar. Deixa eu fazer de novo, senão não vai ficar legal. Deixa eu gerar a chamada aqui. Ok, estou gerando aqui. Eu vou atender. Tá pegando aqui. Agora eu vou conseguir pegar. Beleza, deixa eu parar aqui. Vou tentar ainda rodando. Deixa eu parar. Deixa eu ver se eu consigo achar os pacotes do endereço certo aqui. Deixa eu ver se ele tá como... Não é TCP, é UDP. É isso aqui, isso. Então, pessoal, o que eu vou fazer aqui? Eu vou converter esse cara, vou decodificar esse cara no protocolo RTP, real-time protocol, Dá ok. Aí tem o RTP aqui. Aí eu venho aqui em telefone. Olha que legal isso aqui. Stream. Isso aqui é a ligação que a gente fez. Olha o grampo aí. Só que o meu está criptografado. Eu vou dar um Play Streams. Está vendo? Olha que interessante agora. Se não fosse criptografado, ele ia exibir exatamente o conteúdo daquela chamada. Fotografia, olha o que acontece. Então a captura foi feita com o chiado. Agora olha que interessante, eu vou esticar um pouquinho mais, eu quero que vocês observem uma coisa. Tá vendo que aqui no começo eu tenho um azulzinho e um cinza, e que o cinza começa um pouquinho depois do Essa é a latência da chamada entre o momento em que eu executei o início dela e o atendimento. Então, olha só, eu vou executar de novo, observa que o chiado começa de um jeito, depois ele fica acentuado logo em seguida. Presta atenção. No começo, ele fica só como se fosse um lado só do fone, depois os dois, tá? E só tá ochiado porque tem criptografia, mas isso seria um grampo telefônico. Então, isso eu queria mostrar para vocês que não é difícil fazer um grampo quando você tem as ferramentas certas. E só voltando aqui, a gente fez os conteúdos, E a gente está finalizando, já vai dar sete horas. O que a gente viu hoje? Troubochute de redes, as ferramentas, análise de problemas, teste de conectividade, análise de pacotes e agora no final uma medição de latência. Eu sei que é muito conteúdo, a gente vai voltar a falar disso. Hoje eu falo que é o tsunami, eu apresento um monte de coisa e depois eu venho filtrando os assuntos. Pessoal. A gente está terminando esse conteúdo de hoje. O que eu vou pedir para vocês? Por favor, aponte o celular aí para esse QR code e avalie a nossa aula de hoje. Vou fazer isso em todas as aulas. O pessoal pede para vocês avaliarem todas as aulas, então, por favor, deem esse feedback. É importante para gente, importante para mim, e para saber se o curso está indo num Vocês viram que a minha abordagem é muito prática. Então, é importante que vocês criem a máquina virtual para a próxima aula.
+
+1:58:18 - Palestrante Não Identificado 
+Pode falar, Ícaro. Muito bom sua aula, professor. Eu vim da... Eu sou formado em defesa cibernética. Então, quando eu falei com o senhor, curiosamente, vê se tinha alguma parceria, que eu tenho interesse em pós, em vídeo, na parte de segurança.
+
+1:58:35 - Conference Room (Fiap Convidado 112) - Speaker 1 
+Bem, eu acho que eu consigo, pelo menos, mais ou menos uns 25% de desconto, tá, pessoal? Para quem se interessar, tá? Depois vocês... Tem o meu contato aqui, pessoal. Quem quiser... Opa, deixa eu voltar... Quem quiser pode adicionar meu WhatsApp, tá? Tem meu e-mail, tem meu LinkedIn, quem chamar no LinkedIn eu aceito sempre todas as conexões, tá? E a gente conversa, assim, a respeito disso, tá? E o pessoal que faz a pós agora, porque é muito prática, tá? Eu vou cortar aqui o compartilhamento só para a gente poder finalizar. A gente tem segurança da informação e inteligência defensiva, mais focada para o pessoal de defesa cibernética, e a gente tem segurança da informação com IA, com inteligência artificial, tem as duas, tá? Então, é bem e bem mão na massa. A mesma pegada que teve essa aula hoje em cima de lab, de prática, é lá o tempo todo. E uma coisa que é legal é que a entrada é contínua, né? Ou seja, você pode se matricular a qualquer momento, que é o curso totalmente online, digital, tá? Mas vamos lá. Você vai dar uma pincelada no iPerf também ou não? Eu não tenho essa previsão, mas eu posso fazer. Posso fazer. Manda para mim, manda depois para mim aqui no chat, que aí eu guardo essa informação e preparo para as próximas aulas. É, mostrar a largura de banda ali da conexão para o pessoal, acho que seria legal. É, aí eu preciso ver, mas o problema é que você tem... Você vai mostrar de uma forma mais ou menos restrita, porque Tem muita coisa que tá influenciando na largura de banda, né? É difícil isolar um tráfego, aí eu vou pegar um todo. Mas manda pra mim aqui no chat o nome da ferramenta que aí depois eu já preparo. Faz tempo que eu não beijo com ela, hein? Vai, pô, faz tempo. Francis, abrir VPN pra SEGINFO, pô. É legal porque ele acrescenta uma camada de criptografia, um túnel criptografado, pra que a sua comunicação não tenha tem que expor portas importantes diretamente na internet. Vou dar um exemplo. Imagina que eu preciso fazer uma conexão remota SSH a um servidor web na internet. Servidor web é um servidor qualquer. Se eu fizer a conexão direta, a porta 22 está aberta e ela tem vulnerabilidades conhecidas. Se eu estabeleço uma VPN, eu consigo criar um túnel e por dentro do túnel aí eu faço acesso a SSH, eu isolo, tá? Eu isolo. A gente já tá terminando, tá, Ícaro? Então, se você quiser ir para a sua aula de inglês, vai, tranquilo, que é só mais alguns minutinhos, eu também vou precisar finalizar, que eu ainda tenho mais uma outra atividade na sequência, tá? Mas, sim, a gente vai falar bastante sobre isso. Eu volto a falar sobre VPN e outros aspectos de segurança, posso até, de repente, mostrar como criar uma VPN, na aula de quinta-feira, porque ela é sobre cyber. Então, fiquem tranquilos em relação a esses assuntos, porque é um tema que eu gosto bastante e domino bem. Pode falar, Gabriel, depois o Clodoaldo.
+
+2:02:09 - Gabryel Nóbrega 
+Gabriel Nóbrega, pode falar. Sim, sim.
+
+2:02:12 - Palestrante Não Identificado 
+Está me ouvindo bem?
+
+2:02:13 - Gabryel Nóbrega 
+Sim.
+
+2:02:14 - Palestrante Não Identificado 
+Pronto.
+
+2:02:14 - Gabryel Nóbrega 
+A gente estava no trabalho fazendo uns testes sobre a parte de deploy para o GitHub. E aí a conexão que a gente tem para o servidor da empresa em desenvolvimento é somente com VPN e justamente o que o senhor falou dessa questão da VPN, do SSH, eu lembrei. A gente estava vendo uma forma de criar VPN automaticamente e fazer a conexão SSH em seguida a partir da VPN, tudo de forma automática dentro do Workflow para evitar essa Você não tem que automatizar isso com um script, viu?
+
+2:02:53 - Conference Room (Fiap Convidado 112) - Speaker 1 
+Você só precisa ter o servidor de SSH do outro lado liberado, você cria um script pra isso, pra ele fazer por etapas. Cria VPN, estabelece conexão, depois estabelece o SSH, é tudo script. Você vai fazer em Python, por exemplo, em Ansible, ou seja, lá o que for.
+
+2:03:11 - Gabryel Nóbrega 
+Isso, o que a gente tava usando era as actions do GitHub, né? Com o YAML pra DocFile.
+
+2:03:18 - Conference Room (Fiap Convidado 112) - Speaker 1 
+É isso, exatamente. Você pode fazer isso também. Mas é importante saber usar script para automatizar. Eu tive uma conversa hoje, mais cedo, com o pessoal de uma baita plataforma de RPA e automação, que eles estão tendo problema justamente de segurança. E a gente vai tentar criar uma capacitação, porque tem muito cliente que está tendo furo de segurança. A gente vai criar uma capacitação para educar os clientes não são versados em atitudes de segurança. É isso. Clodoaldo, pode falar. Professor, parabéns pela aula.
+
+2:03:53 - Clodoaldo Callogero1 
+Realmente, como você mesmo disse, foi um tsunami. Agora, em cima disso, eu vi que no seu OneDrive tem uma pasta de gravações de aula. Você já vai por ela já? Porque a minha preocupação é, eu não sou versado nessa em Linux. Então eu vou repetir tudo que você fez seguindo o passo a passo. Ou vai depender da FIAP, como é que é?
+
+2:04:22 - Conference Room (Fiap Convidado 112) - Speaker 1 
+Então eu vou ver se a gravação ficar disponível para mim, eu coloco lá, se não eu coloco o link, mas o ideal é que amanhã esse link já esteja lá no Discord de vocês, tá? Vocês estão usando o Discord como canal de comunicação também, né? Deixa eu pegar ele aqui, eu até pego ele e já posto Deixa eu ver se ele tá aqui para nós. Caramba, eu acho que eu fechei. Deixa eu ver, pera aí. Deixa eu ver, deixa eu ver. Deixa eu ver se ele tá em algum lugar aqui. Ah, tá aqui. Deixa eu pegar ele aqui. O canal do Discord vai ajudar bastante. De repente, quem não tá com ele aí, já tá até na parte de materiais, tá? E nessa parte de materiais, logo, tem a parte das gravações da Turma 1, que é esse aqui. Tá? Eu vou postar para vocês. A gravação ela ainda vai ser gerada, mas assim que ela estiver disponível eu tento colocar lá, senão o link vai para vocês. O Fernando deve colocar isso para vocês, tá bom?
+
+2:05:27 - Clodoaldo Callogero 
+É legal, porque eu percebi que sem a sua, sem a aula, sem a gravação da aula, é complicado repetir. O seu PowerPoint, seu PDF foi sensacional, que eu já estudei um mas sem a gravação de refazer os exercícios e criar outros. Tá bom?
+
+2:05:45 - Conference Room (Fiap Convidado 112) - Speaker 1 
+Obrigado. Mas assim, leva uns minutos depois que ficar pronto, aí eu vou deixar renderizando. Se já ficar disponível para mim, eu já devo baixar hoje mais tarde ou amanhã cedo. Se der para baixar, eu coloco lá e aviso vocês pelo Discord.
+
+2:06:04 - Palestrante Não Identificado 
+Carlos Alberto, pode falar.
+
+2:06:05 - Conference Room (Fiap Convidado 112) - Speaker 1 
+Professor, fica então a atividade de patriação. Criação da máquina virtual, e esse material tem algum desafio, alguma lista de exercícios? Não, não. Vai ter um punhado delas, é que hoje eu quis apresentar mais o contexto, mas eu sempre vou colocando atividades para serem feitas ou durante ou pós-aula, tá? Pode ficar tranquilo que vai ter bastante coisa para fazer. Na aula de quinta, como ela é toda em cima de cyber, vai ter um monte de coisa que eu vou pedir para vocês fazerem, durante quanto no pós-aula, tá? Então, preparem-se porque quinta-feira vai ser uma aula bem dinâmica, tá? É isso. Pessoal, mais alguma pergunta? Já avançamos um pouquinho no tempo, vamos finalizando por hoje. Tranquilo. Queria saber se tem alguém aí que tá da FIAP ou do CPQD que tá acompanhando hoje, se tem algum recado para dar para a turma. Se tiver, eu acho que já dá para gente ir encerrando aqui. Acho que é isso, então, pessoal. Como a gravação começou, deixa eu ver se eu tenho autorização para parar a gravação. Acho que ela vai parar sozinha, eu não vou nem mexer aqui. Nilcelle, você abriu o seu vídeo?
+
+2:07:20 - Nilceli Goncalves dos Santos Taliassaqui 
+Não, é só para falar que eu sou do CPQD, mas não temos nenhum recadinho específico hoje, professor.
+
+2:07:27 - Palestrante Não Identificado 
+Tá, você conseguiu acompanhar a aula toda?
+
+2:07:29 - Nilceli Goncalves dos Santos Taliassaqui 
+Acompanhei a aula Opa, beleza.
+
+2:07:31 - Conference Room (Fiap Convidado 112) - Speaker 1 
+As outras a gente traz, de repente, um pouco menos de conteúdo para dar tempo deles fazerem os exercícios, mas hoje é o que eu falei. Eu gosto de passar o tsunami na primeira aula para o pessoal falar que vai ter que trabalhar. Tem que trabalhar. Ninguém aprende a nadar lendo o livro. Tem que botar a mão na massa. Tem que cair na água. Então vamos cair na água em todas as aulas aí.
+
+2:07:56 - Nilceli Goncalves dos Santos Taliassaqui 
+Tá bom, gente? Foi excelente, professor. Parabéns. Obrigado, obrigado.
+
+2:07:59 - Conference Room (Fiap Convidado 112) - Speaker 1 
+Pessoal, então assim que a gravação estiver pronta ou vai estar lá no link do canal do Discord ou eu posto lá no Drive para vocês. Quinta-feira nos encontramos novamente. Um bom descanso aí para quem tiver mais aula. Boa aula e a gente se vê na quinta-feira. Forte abraço aí, pessoal. Boa noite a todos. Boa noite.
+
+2:08:22 - Gabryel Nóbrega 
+Boa noite. Boa noite.
+
+2:08:24 - Palestrante Não Identificado 
+Boa noite.
+
+2:08:25 - Geraldo Cruz 
+Boa noite.

@@ -1,0 +1,506 @@
+Redes Privativas | Turma 1 
+terça, 6/05/2025
+
+0:02 - Gabriel Theodoro 
+O canal está ruim para a gente, não, professor.
+
+0:05 - Loreno Menezes da Silveira 
+A gente não viu nada de mais, pode ficar tranquilo. Anotar no WhatsApp não é para mim mesmo.
+
+0:12 - Loreno Menezes da Silveira 
+Bom, deixa eu ver uma coisa...
+
+0:14 - Gabriel Theodoro 
+Professor, a gente está vendo a sua tela já, só não está na tela cheia.
+
+0:20 - Palestrante Não Identificado 
+Isso, vamos botar na tela cheia.
+
+0:22 - Gabriel Theodoro 
+Tá bom.
+
+0:23 - Gabriel Theodoro 
+Na hora que ficar a tela cheia, nós avisamos o senhor.
+
+0:27 - Loreno Menezes da Silveira 
+Modo de apresentar, destaque, cima e plano. Tela. Isso. Estão vendo agora? Só não está a tela cheia, né?
+
+0:36 - Gabriel Theodoro 
+Isso, só não está a tela cheia, mas nós não vemos protocolo de controle.
+
+0:43 - Loreno Menezes da Silveira 
+Tá. Não, mas eu vou... Nós vamos... Vamos pular para o início, que isso aqui eu... Tela cheia, né?
+
+0:52 - Gabriel Theodoro 
+Tela cheia, protocolo de controle.
+
+0:55 - Loreno Menezes da Silveira 
+Está mudando lá para o começo, certo? Sim. Pronto.
+
+1:01 - Gabriel Theodoro 
+Tela inicial, tela cheia e avançou a tela.
+
+1:06 - Loreno Menezes da Silveira 
+A gente conseguiu ver.
+
+1:08 - Palestrante Não Identificado 
+Então, vamos começar.
+
+1:10 - Loreno Menezes da Silveira 
+A primeira coisa que eu queria comentar é o seguinte. O que eu deixei para essa última aula dentro do quadro de VLAN? Porque as próximas duas aulas vão ser sobre Então, para essa última aula, eu achei que era interessante a gente fazer uma espécie de uma integração do que a gente aprendeu sobre VLAN com aquilo que a gente aprendeu sobre redes privativas. Ele deu o título de considerações para o uso de VLAN em redes privativas e eu estou interpretando dessa forma aí. Então, o que seria interessante ver? Primeiro, os requisitos de redes privativas. Quais são os requisitos 4G e 5G quanto a redes privativas. Como é que você monta uma rede privativa? O que é necessário? O segundo aspecto é que aquilo que é necessário pode não ser suficiente. Ou pode não ser o melhor. Então a gente vai ter que falar um pouquinho sobre Edge Computing e CloudRail, que é praticamente um acessório que se torna essencial para a operação e a facilitação da gerência das redes privativas. Depois a gente vai ver um pouquinho também sobre a questão das redes privativas providas na nuvem. Eu quase não falei das diversas nuvens que existem aí. Então vamos falar um pouquinho sobre isso e depois tirar uma conclusão. Nesse gap entre primeiro tópico, o segundo tópico, nós vamos ter que falar um pouquinho sobre protocolos. Então, a gente vai tentar dar uma analisada do como é que são os protocolos da rede 5G. A gente já falou meio por alto, mas vamos só dar um reforçamento, vamos aprofundar um pouco para poder entender a dinâmica da rede.
+
+3:20 - Palestrante Não Identificado 
+Isso.
+
+3:21 - Palestrante Não Identificado 
+Bom.
+
+3:21 - Loreno Menezes da Silveira 
+Os requisitos que estão em todos os votais são esses aí. E mais alguns que eu depois vou apresentar contra a tela. Então, um deles é assim. Os equipamentos têm que ser compatíveis com a versão e banda de frequências utilizada pela rede de acesso. Certo? É meio básico, né? Então, assim, você não vai querer que sepaque uma arma. Rede de acesso 3G e os aplicativos são 4G. O segundo ponto, que eu acho que é mais essencial, mais básico, é que os equipamentos terminais têm que conter um módulo de identidade. O pessoal chama de Subscriber Identity Module. Esse módulo de identidade pode ser um pequeno chip, como é nos Mas pode ser também uma placa de circuito integrado ou pode ser até uma eletrônica colocada no circuito. Ou até a questão de SIM cards integrados e virtuais, onde o próprio dispositivo já nasce com SIM card. Existem todas essas modalidades de dispositivo e aí temos que adaptar. Os equipamentos têm que ter esses indicadores, porque senão eles não se ligam à rede. Tem que haver uma estação rádio base que está enviando sinal celular para todas as partes da empresa onde tem equipamentos, tanto o dispositivo vamos chamar assim, contra equipamentos de comunicação. E precisa ter um núcleo conectado a RAM e a PDN, a rede de pacotes que usualmente é a própria internet. Então tem que haver um RAM, um núcleo 4G, 5G, CORE, que o pessoal chama, conectado à rede de acesso e conectado à rede de dados. Que, no caso aqui, a maioria das vezes é a própria internet. E realmente o core é responsável por autenticar os terminais. Tem que estar no domínio dele, os terminais. Tem uma figurinha para isso, essa daqui. Só mostrei ele. Vocês estão lembrados dessa figurinha, né? Vocês vão enjoar dela. Essa figurinha apresenta as diversas... Aqui vocês podem entender como access point ou como rádio base de microcélulas. E aqui uma macrocélula, por exemplo. Ou vocês podem entender que é uma só macrocélula que está enviando para todo mundo, mas tem também os access points. Tanto faz a arquitetura. Mas já falamos bastante sobre essa rede, O fato que nós queremos salientar é que ela tem que ter esse core aqui, que está ligado na rádio base e está ligado na rede de dados ou na internet. Vocês lembram que na prática essa rede de dados ou era uma rede corporativa ou era uma rede de internet. Seria uma rede corporativa se você tivesse um serviço de cartão, cartão de crédito, coisa parecida. Que você vai passar na maquininha, você tem que ter um acesso direto para essa rede corporativa, da Cielo, por exemplo. E seria para uma rede de internet nos demais casos, seja na grande maioria dos casos. Então, aqui está representado mais ou menos esse requisito do núcleo estar conectado e da rádio base estar conectada ao núcleo, etc. Mas tem outros requisitos. Ele enfatiza que tanto a rede de acesso quanto o núcleo 5G e a rede de pacotes têm que estar ligados por internet e de forma que permitam passar o tráfego IP de um para o outro. Porque IP é o tráfego que vai circular aí, tá? Então tem esse requisito. E aí até ele dá um detalhe aqui, eu peguei isso no site da Azurio, coisa parecida, que ele fala que tem que ter no mínimo 100 megabits. Olha, tem que ter uma capacidade grande, com certeza. Bom, o 5G você sabe que chega a gigabit, né? Então você não vai querer que um terminal tenha acesso a gigabit e o acesso à internet seja bem menor. Seria compatível, tá? Mas ele botou uma, como ele está falando de 4G, também, ele botou uma capacidade mínima aí. Não sei de onde é que tinha, mas colocou. Eu diria que tem que ser coisa de gigabit. Bom, aqui aparecem esses requisitos novamente, tá? Então, agora a gente deu ênfase aqui na questão da conexão via internet, da rádio base, com a rede de dados, ou internet, com o e também do corpo com a rede de dados. E a gente colocou aqui uma funcionalidade tracejadinha que aparece naquela arquitetura do relatório de redes privativas. E essa funcionalidade, digamos, é opcional, mas ela é bastante importante porque é ela que vai trazer as aplicações inteligência artificial, analytics, automação, uma série de coisas. Além dos dados em si, ela pode estar contribuindo com os dados mais próximos. Mas até aqui, por exemplo, essa interface não precisaria ser a pergunta que eu vou fazer para vocês. Que interface é essa? Se for uma interface com access point, Se for um access point, com certeza a interface que está rolando aqui é um Wi-Fi. Não é um Wi-Fi, desculpe. É uma 802.3, é uma internet pura, certo? Se isso aqui for um Wi-Fi. Mas se isso aí for uma rádio base de uma microcélula, ou de uma picocélula, se essas pequenas anteninhas aqui, representar em picocelulas. Que protocolo está rolando aqui? É o mesmo protocolo, é a internet. Não tem sentido não ter um protocolo. Hoje em dia, antes do 3G, no tempo do 2G, esse protocolo era proprietário. E era dedicado para cada fornecedor. Mas hoje esse protocolo é a própria internet. E suas próprias versões. Então, repara que o que pode ajudar aqui? O que pode ajudar é ter alguns switches aqui, um router, para tentar dar uma aliviada nesse tráfego aí, né? Então, daí a ideia que a rede... Vou até primeiro mostrar a figurinha e depois eu volto. Então, assim, a ideia seria você povoar essa rede de acesso com rede, com switches, certo? Isso aqui é uma rede cabeada, tá? Com switches e com router também. E esse router, por sua vez, está ligado ao core e está ligado à internet também. Com isso você vai ter, como a gente vai explicar aqui anteriormente, vai ter flexibilidade para configurar a avalanche, tá? Então, o que eles estão comentando? E use extensivamente a funcionalidade VLAN. Com a funcionalidade VLAN, o núcleo 5G pode dar suporte a diversas redes de dados e à própria configuração do sistema. Por exemplo, não sei se ficou claro para vocês, mas o IP usado no 5G é o IPv6. Então, em algum momento vai ter que traduzir esses IPv6 para IPv4. Ou traduzir, mesmo que esteja usando um IPv4, vai ser necessário traduzir o endereço interno que está sendo usado, geralmente é usado um endereço simplificado, para um endereço IP público. Então sempre vai ser necessária essa questão. Da tradução dos endereços IP etc. E nada como um router para fazer isso ou a própria funcionalidade NAT aí agregada seja no fornecedor, seja no fornecedor de rede, esse carinha aqui que eu tô falando, fornecedor de serviços adicionais, seja agregada na própria internet mesmo. Então qual é a política? A política é producionar os terminais, gerando as respectivas VLANs e usando essa funcionalidade de tronco VLAN também. Toda configuração de VLAN e IP tem que ser feita ao configurar cada rede. Aqui vamos gastar um tempinho eu dei um chute aqui em uma configuração possível. Eu utilizei dez VLANs aqui. Então, o que eu coloquei aqui? Imagina que nesses servidores aqui você precise de dados financeiros, dados de vendas e dados de operações. Sejam isso que eles armazenam. Então você pode criar para cada tipo de servidor a sua VLAN adequada. Sempre que você ligar, por exemplo, a VLAN 12, seja para jantos financeiros, A13 para vendas e A14 para operações. Nesse segundo ramo da internet, você vai ter com certeza aplicações IoT, pode ter a parte de dados de operação também e vai ter Dois terminaizinhos aqui que podem ser usados para vozes, tá? E na VLAN... E na VLAN da última rama internet também você vai ter voz, você pode falar via conferência, via esses terminais, né? Dados financeiros e dados de vendas. Então isso seria uma atribuição possível de VLANs. E no router você poderia configurar a violão de gerência.
+
+14:50 - Palestrante Não Identificado 
+Essa seria uma configuração possível.
+
+14:53 - Loreno Menezes da Silveira 
+Se vocês quiserem, a gente pode até tentar exercitar isso, ou tentar fazer outros exercícios, ou bolar outras redes e começar a criar em cima disso ainda.
+
+15:10 - Loreno Menezes da Silveira 
+Quanto mais, melhor, professor.
+
+15:15 - Loreno Menezes da Silveira 
+Tá certo. Eu tô pronto com eles, pode mandar ver aí. Eu tentaria tirar as velãs aqui, por exemplo, mudar o desenho. Queria fazer um desenho online. Vamos ver se vai sobrar tempo, a gente brinca um pouquinho com isso. Pode ser? Perfeito. Vamos para cima.
+
+15:39 - Loreno Menezes da Silveira 
+Vamos para cima, né?
+
+15:41 - Loreno Menezes da Silveira 
+Outro aspecto é o que o pessoal chama de front hall centralizado. Então, o que eles querem dizer com isso? Nós vamos explicar com detalhes, vou inclusive pular para as últimas transparências, que lá aparece uma explicação melhor. O front hall é a parte do back hall, vamos dizer assim, em que quando você usa, ou você bases retransmissoras ou você usa rádio bases aplicadas como microcélulas. Então, um dos casos é que, por exemplo, a rádio base é centralizada. Toda a funcionalidade inteligente da rádio base está junto com a rádio base da macrocélula ou da área. E o restante da funcionalidade está distribuída entre essas centralizinhas aqui. Eu vou explicar isso melhor numa figura, mas imagine que essa rádio base aqui, ela se comunica, ela pega todos, em princípio, ela pega todos os objetos aqui dessa rede privatizada. Mas imagine que além de pegar todos os objetos, as outras também pegam. A diferença é que as outras vão te permitir um fluxo, um aproveitamento melhor seriam picocelas, ou microcelas, e elas seriam uma macrocela que pega tudo, mas pode não pegar bem, por isso que precisa as células menores. Então vamos pular lá para o... Tirar o numérico e... Não adianta, tem que ser. Aqui só para reforçar o que eu falei do conceito de backhaul e fronthaul. Geralmente o backhaul, essa parte que é chamada tradicionalmente, essa parte de link de fibra óptica ou pode ser inclusive via rádio, pode ter uma rádio base aqui junto do mas a configuração mais recomendada hoje em dia é uma fibra ótica que vai passando pelas radiobases e compartilha então a banda com as radiobases. Aí tem disponibilidade de banda à vontade, não tem gargalo aí. Esse era o conceito de backhaul, só que com a formação de microcélulas ou de picocélulas ficou com a necessidade de de criar uma conexão genérica da rádio base, onde estão amarradas as microcélulas, por exemplo, com as microcélulas. Isso pode ser feito também, da mesma forma, via rádio, mas pode ser feito também por uma outra fibra ótica. Isso aqui não tem nada a ver Isso é geral para a rede celular, de modo geral, só para deixar claro. Então você pode ter essa porção de front wall aqui, esse conceito. Agora, o que aconteceu? Quando houve a passagem para 5G, houve uma série de estudos, porque obviamente que vai sair caro você botar essa fibra óptica aqui. Elas estão atingindo hoje a rádio base 4G, certo? Estou falando da planta pública, da rede pública. E tem poucos casos de fibra ótica sendo mais privativa, sendo lançada em ambientes mais, por exemplo, no centro da cidade, coisa parecida. Então, o que acontece? Tinha vários estudos, fizeram vários test-bed, que eles chamam, de como transportar isso de maneira mais objetiva possível. Por fio, também, ia ser uma coisa, além de onerosa, uma coisa que ia trazer latência, ia trazer problemas de transporte. Então, alguém enrolou uma solução que é a Cloud Run. Essa Cloud Run, que o pessoal teve, é uma coisa muito simples. Em vez de ligar num provedor separado, vamos ligar Vamos ligar num pool. Aqui é um caso particular, onde tem uma separação entre unidades de banda básica. Vamos ligar as diversas antenas das microcélulas. Vamos ligar direto num pool de banda básica e vai ligar. E vai ligar na internet. Então isso aqui pode estar localizado o mais próximo possível delas. Essa nuvenzinha aqui pode ser uma coisa localizada bem próximo delas, como uma estrutura. Ela tem os mesmos protocolos, basicamente, que a rádio base vai ter. E os terminais ficam ligados às microcelas, que por sua vez ficam ligadas. Se alguém tiver ideia de dividir essa conta. Essa continha do front hall aqui, quem vai lançar isso aqui? Não. Põe numa rádio base, por exemplo essa aqui, você põe o pool. E aí todo mundo se liga nesse pool. Pode ser até por rádio, entendeu? Tem um caso que ele apresentou aqui. E esse pool se liga por sua vez ao back hall e que se liga por sua Então essa é a noção da Cláudia, ok? Então essa solução é uma solução que otimiza, né? Alguma dúvida aí?
+
+21:49 - Antonio Carlos Ferreira de Almeida 
+Professor, e se no caso não usar a BB1, que a BB1 já está um pouco ultrapassada, se usar uma U direto muda alguma coisa?
+
+21:59 - Loreno Menezes da Silveira 
+Olha, o que você falou? Uma U? É. Não sei o que é a U. Conceitua a U pra mim, por favor.
+
+22:09 - Antonio Carlos Ferreira de Almeida 
+É um...
+
+22:09 - Antonio Carlos Ferreira de Almeida 
+AcessUnit é um hardware que engloba BBU já? Não, é o mesmo conceito.
+
+22:18 - Loreno Menezes da Silveira 
+Isso aí é uma figura antiga, logo que saiu do 5G e saiu a solução, então é dessa época. Com certeza é qualquer solução que tenha um acesso fácil. Ao gate e daí para a internet, tá bom?
+
+22:42 - Palestrante Não Identificado 
+Então esse é o conceito aí.
+
+22:45 - Loreno Menezes da Silveira 
+Então repara que esse conceito fecha bem com aquele conceito da rede privativa nossa. Por quê? Porque todo mundo vai estar ligado em algum gate e que vai estar ligado na internet. Inclusive a radiobase principal aqui. Se existir, pode não existir, tá? Pode ser só esse por aí. Vamos voltar lá para a nossa figurinha, direito privativo. Aqui o que eu tentei representar é a mesma funcionalidade, que poderia ser uma espécie de um front hall centralizado e ter pouca funcionalidade nas radiobases. Para reduzir custos. E aqui é só para mostrar como é que seria uma rede privativa dedicada. Então, aqui eu não estou imaginando ainda uma rede privativa provida pela nuvem, só aquela que é instalada e logo. Então, repara que aqui eu tentei mostrar como é que seria a tradução dos endereços. Do celular iria para essa rádio base, menor o ponto de acesso, dele iria para o switch, do switch iria para o router, o router, se ele não tiver a funcionalidade dele, às vezes o próprio router tenha essa funcionalidade de NAT nele. É muito comum isso. Ele consultaria o 5G, o 5G se não tiver, ele vai consultar a internet e vai obter essa resposta. Só para mostrar como funcionaria a questão da tradição dos endereços etc. Ok? Bom, aqui vocês estão lembrados dessa figurinha? Que era a figurinha que a gente tinha visto já antes, que é a figura lá que está no relatório de redes privativas. 4G e 5G. Então aqui vocês veem que tem os seguintes elementos. Tem os dispositivos usuários, incluindo neles os dispositivos que são controlados, sensores e tudo. Tem a RAM, que aqui está representada como uma única estação. Tem o núcleo 5G, que estava com gerência. E tem um gateway da RAM. E do 5G também, do Core também, para uma série de funções que precisam ser executadas. O que acontece? Se você tiver que montar a sua rede dedicada, privativa, ou você vai ter que montar essa estrutura de dados, analíticas e aplicativos, ou você vai Importar isso de uma nuvem, trazer de uma nuvem pra você. Então, por essa razão, como o pessoal que geralmente faz rede privativa não é especialista em TI, eles acham mais fácil importar de uma nuvem ou coisa parecida. Mas, em princípio, são funções de Edge Computing, que envolve um processamento mais na ponta das funcionalidades. Um exemplo típico é, por exemplo, o Smart Grid. Imagina que tem um aplicativo aqui atendendo um burumbi. Uma rede privativa atendendo um burumbi com o Smart Grid, por exemplo. Ou então um condomínio de um burumbi com o Smart Grid. Seria o caso de essas funcionalidades do Smart Grid. O que você vai fazer? Quando entrar, acende a luz automaticamente? Vai poder ter comando de voz pedindo para ligar o condicionado, entendeu? Toda essa especificaçãozinha, toda a especificação das funcionalidades desenvolvida aqui nesse... Ou seja, o coração, a inteligência da rede está aqui, né?
+
+27:06 - Ícaro De Oliveira Castro Costa 
+Professor, uma dúvida em relação à diferenciação do 4G e 5G, a questão do no 5G o fatiamento é muito melhor, né? Digamos assim, é muito mais fácil de implantar, né? Em relação ao 4G.
+
+27:24 - Loreno Menezes da Silveira 
+Sim, eu vejo, sim, que o 4G, ele, é que nem eu comentei da outra vez, ele tem a vantagem que o pessoal domina melhor, porque a rede, hoje em dia, a grande parte da rede é 4G.
+
+27:39 - Palestrante Não Identificado 
+Perdão?
+
+27:40 - Ícaro De Oliveira Castro Costa 
+Não, professor, não falei não.
+
+27:43 - Loreno Menezes da Silveira 
+O 5G tem a vantagem de que foi desenhado, projetado para isso. Como eu mostrei para vocês, é mais fácil para você criar funções novas, buscar, ter um repertório de funções. Eu imagino que para desenvolver é bem mais simples. Então não é difícil para customizar. Essas funções aqui devem ser bem mais simples que no 4G. Vamos falar um pouquinho sobre as redes privativas providas na nuvem. Podem ser totalmente providas ou parcialmente providas por serviços na nuvem. A gente vai ver alguns exemplos e vai justamente explorar isso. Um ponto importante é o seguinte. Na verdade, como eu comentei antes, a própria rede privativa vai precisar usar recursos da rede, recursos de serviços, de rotina, de uma série de valores de computing que estão disponíveis. Então a ideia é usar para conectividade e utilizar essa função dentro de uma única organização ou instalação. A gente vai ver exemplos onde essa parte aqui tem uma função de orquestração também. Imagina que você tem um monte de robô. Quem que orquestra isso? Então tem toda uma funcionalidade que tem que ser desenvolvida, que é a parte inteligente da rede, sem dúvida. O 5G em si é só o transporte. Então aqui eu comentei que geralmente envolve uma série para controlar os dispositivos e possibilitar o fatiamento, edge computing e gerenciamento centralizado. Tá bom? Aqui, uma figurinha que acho que vocês podem encontrar na internet fácil também, é a figurinha que serviu de guia para todo mundo. Como é que a IBM pensou em implantar, né? Então, aqui está bem claro, né? Ela vai ter uma parte que se compõe de uma RAM e do Core e vai ter uma série de funções de Edge Applications aqui, não necessárias, e a internet. E ela consegue ter acesso aos aplicativos dela de automação, orquestração, garantia de serviço, monitoramento, registro, essa coisa toda necessário para fazer a rede funcionar. Deu para vocês pegarem mais ou menos a ideia? Professor, uma dúvida.
+
+31:10 - Antonio Carlos Ferreira de Almeida 
+Pode falar. Professor, quando as empresas fogem de um datacenter, por exemplo, a empresa tem um datacenter local lá e ela foge disso contratando serviços em nuvem. Ela opta por pegar... Por exemplo, a AWS tem vários serviços que disponibilizam on-demand para as empresas e as empresas se utilizam desse serviço, que seria, em tese, a mesma coisa que a empresa ter um datacenter e manter uma série de funcionários lá, uma arquitetura toda gigantesca lá. Então, quando nessa mesma configuração que está na tela, As empresas não vão ter um custo além em função de manter um datacenter?
+
+32:03 - Loreno Menezes da Silveira 
+O datacenter que você está falando se refere a essas funções aqui? Isso, isso. Aqui a IBM representou como sendo uma coisa, vamos dizer, dentro das funcionalidades de controle do Core. Ou seja, é parte da gerência, é parte do core isso. Só que assim, concordo com você, a orquestração já não é tão típica. E o monitoramento do que está acontecendo, por exemplo, os sensores para monitorar a temperatura, isso tudo pode ser uma coisa externa. Concordo com você, tem esse aspecto aí. Então, o problema é não crescer demais isso aqui, entendeu? Manter isso não importa. Compatível com isso aqui e compatível com alguma empresa e deixar essas aplicações na nuvem. Entendeu? Perfeito.
+
+32:59 - Loreno Menezes da Silveira 
+O balanço e a fruta é esse.
+
+33:03 - Ícaro De Oliveira Castro Costa 
+Só complementando o que o colega falou, tem muitas empresas hoje que oferecem esse serviço de Education Application com o objetivo de não deixar para a responsabilidade da empresa Existem especialistas em Education Application, né? Que é responsável por administrar isso aí, né? É, em desonerar.
+
+33:26 - Loreno Menezes da Silveira 
+O objetivo deles é desonerar quem foi precisar desse serviço, certo? Então, aí tem várias aplicações, né? Que pode ser, por exemplo, essas que... Imagina que você tem um hospital que está usando essa funcionalidade. Não faz sentido você... Vamos pegar um exemplo aqui. São Paulo é um exemplo grande, mas imagina que em Campinas você está usando o hospital de São Paulo. Você tem que ter uma função ED lá que tenta interagir com o hospital e tentar buscar essa inteligência. Não faz sentido você trazer isso para uma para uma base de dados de uma central que está aqui em Campinas, digamos.
+
+34:20 - Antonio Carlos Ferreira de Almeida 
+Professor, nesse caso que você está falando do hospital, é até uma questão de legislação, porque o hospital tem dados sensíveis e a lei obriga que ele tenha a base de dados dele e assecure que isso não pode ser espalhado. Então, no caso do hospital, ele é obrigado a de lei, ele é obrigado a proteger, além de proteger os dados dele, ele é obrigado a manter uma estrutura para que isso seja adequado.
+
+34:53 - Loreno Menezes da Silveira 
+Perfeito.
+
+34:53 - Gabriel Theodoro 
+Professor, pegando um gancho no Antônio, a gente até passou por isso, ano passado a gente participou de uma licitação na Caixa e um dos motivos da gente ter avançado para as últimas, para as finais, foi porque toda a nossa operação era Cloud. Esbarraram todo mundo que tinha armazenamento dados locais. A gente já teve que pegar, a nossa operação é tudo na Azure, teve que pegar por escrito da Microsoft, confirmando que todos os dados seriam lá. Então tem os dois lados, quando fica mais caro e quando você não faz um business por não estar na cloud.
+
+35:32 - Loreno Menezes da Silveira 
+É, não, sem dúvida que é uma solução mais inteligente, não adianta...
+
+35:36 - Antonio Carlos Ferreira de Almeida 
+Professor, sobre isso que o Gabriel falou, mais uma coisa, por exemplo, o ele obriga que todos os dados da empresa do Reino Unido estejam hospedados no Reino Unido. A empresa não consegue trabalhar no Reino Unido se ela não tiver os dados hospedados lá. Ou assegurar que pelo menos tenha uma cópia. Aqui no Brasil eu nunca vi exatamente a legislação do que cerca tudo isso. Mas existe essa e de isolação também.
+
+36:11 - JOAO RUBENS 
+Oi, Antônio. Na LGPD é a mesma coisa, tá? A gente tem uma certa dificuldade, por exemplo, quando a gente faz projetos cloud com a AWS, todos os servidores que estiverem processando dados de brasileiros têm que ficar no Brasil, ser obrigado a pagar mais caro, pagar a AWS São Paulo, que custa mais que a AWS dos Estados Unidos, por exemplo, só por causa disso. Você pode colocar outras funções para mas aquela base de dados, de dados sensíveis, ela não pode sair do território nacional. Está na LGPD, isso aí está na GDPR, para a Europa, e está na LGPD para o Brasil.
+
+36:53 - Gabriel Theodoro 
+João, pegando um gancho nisso daí seu, quatro ou cinco dias atrás, o TikTok tomou uma multa gigante lá na União Europeia, porque foram pegos dados na China. Dados dos cidadãos europeus. E essa questão dos dados locais é cara mesmo, cara. Às vezes a gente provisiona um servidor aqui porque não dá pra mandar no database pra fora e lá fora tá muito mais barato. Mas depois da LGPD a gente teve que trazer bastante coisa pra cá e foi uma facada.
+
+37:26 - JOAO RUBENS 
+É metade do preço você fazer lá fora.
+
+37:29 - Palestrante Não Identificado 
+Olha só.
+
+37:30 - JOAO RUBENS 
+Mas não pode por causa dos dados sensíveis. Tem que manter aqui. Na AWS São Paulo, por exemplo.
+
+37:39 - Loreno Menezes da Silveira 
+Perfeito, pessoal. Excelente contribuição. Ok? Agora, só brincando um pouquinho aqui com a Cláudia, com a Cláudia da... Da Azure, né? Microsoft. Então, aqui, não sei se vocês estão lembrados, funções UDR, PCF, UDM, AMF, SMF, UPF, é tudo função MME, são tudo funções de 5G, o Core 5G. 5G e 4G, né? Aqui está representando em amarelinho e em azulzinho, o Core 4G em azulzinho. Que é o correspondente dos 5G. Então, aqui a Azuri mostrando quais são as funções que podem estar na nuvem ou não. E que estão em parceiros deles ou não. Então, por exemplo, o próprio GnodeB ou o InodeB do 4G, eles são de parceiros. E as demais funcionalidades podem ser metade e metade, como é o caso aqui. Essa figurinha eu tirei desse link aqui, podem dar uma olhada lá se vocês não conhecem. Ela tem uma descrição bem interessante. Das interfaces e das funções aí. Vocês estão lembrados mais ou menos do que é cada coisa aqui, né?
+
+39:31 - Gabriel Theodoro 
+Professor, tem uma dúvida. Em uma das aulas do senhor, o senhor estava explicando sobre as conexões dos gateways e aí tinha que fazer a programação para o hardware funcionar, por mais que os cabos tivessem se conectado ali. Nesse caso, você mostrou uma aplicação na cloud da IBM e agora uma na Azure. Em redes privativas, é comum ser multi-cloud ou é mais vantajoso estar em uma única cloud ou cada cloud ela vai ter uma especificidade? Por exemplo, na nossa área tem soluções que elas rodam melhor na Oracle, melhor na IBM, melhor na AWS, tem alguns louquinhos nas clouds.
+
+40:10 - Loreno Menezes da Silveira 
+Eu não sei te dizer se tem alguma cloud que é melhor que as outras, tá? Mas o que o que acontece é contratar uma única Cloud, certo? Ele escolhe se ele vai usar Cloud IBM ou vai usar AWS ou vai usar Azure, ele escolhe o que vai ser.
+
+40:33 - Antonio Carlos Ferreira de Almeida 
+Professor, posso dar a minha contribuição? Porque eu trabalho há muito tempo com a AWS, então eu tenho a noção de que nesse tema aí depende, tá de todo mundo a resposta, porque veja bem, se tem um time que já tem desenvolvido com a Azure, ele vai escolher a... Porque em si elas são diferentes da mesma coisa. A Google, você pega um serviço de gateway para nuvem, um canal de rede privativo para nuvem. A configuração é quase a mesma e muda muito pouca coisa. Agora, já tem um time que é especialista em AWS, então ele vai seguir no caminho da AWS. Agora, a mesma coisa acontece com as outras, entendeu? Ele não vai se aventurar e falar, olha, se a diferença em custo for exorbitante, aí pode ser que ele, sei lá...
+
+41:42 - Loreno Menezes da Silveira 
+Entendeu?
+
+41:43 - Antonio Carlos Ferreira de Almeida 
+O custo vai determinar, mas o time determina muito também.
+
+41:49 - Loreno Menezes da Silveira 
+Eu concordo com você. É muito similar, como tínhamos antigamente, a questão Franciscoovisionamento. Então tinha gente que estFranciscocostumada a provisionar Cisco, por exemplo. Então o cara que conhece Cisco, dificilmente ele já está viciado E aí dificilmente vai mudar para outro, tipo Júnior, coisa parecida. Mas essa é a questão, o que é mais fácil, culturalmente, o que é mais aceitável para a equipe. Certo? Tem muito disso. O que eu ia comentar mais que eu lembrei também, a questão de provisionamento, também é a mesma coisa para sistemas de operação. Então, hoje em dia, tem algumas empresas que fornecem sistemas de operação para outras empresas. Então, obviamente que o cara que está acostumado com o Ericsson, num switch 4G, 5G, ele não vai se adaptar facilmente a um provedor de gerência externo. Mas é uma questão de e de convivência, etc. Ok? Eu tenho uma pergunta, professor.
+
+43:14 - Palestrante Não Identificado 
+Pode falar, vamos lá.
+
+43:18 - Palestrante Não Identificado 
+Espera aí que eu não estou te ouvindo.
+
+43:24 - ANTONIO ADADE DE CASTRO BATISTA 
+Nesse sistema de cloud, o WhatCore está no cloud?
+
+43:32 - Loreno Menezes da Silveira 
+Antônio, caiu...
+
+43:33 - Gabriel Theodoro 
+o teu áudio no começo, a gente só ouviu se pode forçar o sistema de cloud.
+
+43:43 - ANTONIO ADADE DE CASTRO BATISTA 
+Bom, eu pelo menos ouvi isso.
+
+43:46 - Loreno Menezes da Silveira 
+O que você perguntou antes não chegou pra gente. Eu também. Vocês me escutam? Sim. Sim.
+
+43:55 - Loreno Menezes da Silveira 
+Não sei se você tá falando, mas agora a gente não Boa noite, escreve no chat que eu acho que fica melhor, o áudio tá bem ruim aí.
+
+44:20 - Palestrante Não Identificado 
+Oi.
+
+44:25 - Palestrante Não Identificado 
+Professor, eu estou com chá.
+
+44:48 - Gabriel Theodoro 
+chat aberto aqui, se o senhor quiser ir avançando, a hora que ele mandar no chat eu já respondo, já aviso, já leio para o senhor.
+
+45:01 - ANTONIO ADADE DE CASTRO BATISTA 
+Vocês me escutam? Sim. Desculpa pessoal, estou em deslocamento aqui. Professor, como é que funciona a parte de aprovisionamento de SIM cards quando eu utilizo o PactCore em cloud?
+
+45:16 - Loreno Menezes da Silveira 
+Não sei se mas você quer dizer que o teu patch core tá ligado na cloud, é isso?
+
+45:23 - ANTONIO ADADE DE CASTRO BATISTA 
+Não, nesse mesmo exemplo, né? Eu posso usar o meu core inteiro 5G na nuvem, né? Sim, pode. Isso, só que a função de rede que faz a autenticação do SIM card também está na nuvem. E aí como que funciona essa autenticação? Como que eu gero o SIM card por exemplo, se a plataforma não é minha, né? Como é que funciona essa parte de...
+
+45:51 - Loreno Menezes da Silveira 
+Ah, você... Não, é você... Obviamente que o cara que vai provisionar esse... A nuvem que for provisionar isso pra você, ela tem que comparecer com essa funcionalidade. Ou seja, ela vai... Se tiver vários terminais, por exemplo, assim no caso do feijão com arroz, vários telefones, smartphones, ele vai dar o smart card para cada um, tá? Mas se não for isso, se tiver que botar um smart card eletrônico, coisa parecida, ou integrado, é ela que vai ter que providenciar ele. Eu entendo.
+
+46:25 - Ícaro De Oliveira Castro Costa 
+É, o que pomogou também, professor, eu até trabalho numa empresa que trabalha com prestação a serviço, geralmente existe integração entre sistemas, né? Então, quando faz uma reserva de uma linha, você tem que fazer uma integração com o sistema externo, para que aquela linha ali seja reservada. Se for cancelada, o sistema também tem que reconhecer o cancelamento. Então é uma integração entre o Cláudio e a outra, né?
+
+46:55 - Loreno Menezes da Silveira 
+Sim, exatamente. Tem que abrir essa conversa, eu tenho a dúvida.
+
+47:01 - Clodoaldo Callogero 
+Professor, não sei se o senhor está me ouvindo bem, esse SIM card, é regulamentado? Porque, por exemplo, o SIM card de um telefone, a gente tem a Anatel regulamentando, quer dizer, regulamentava, né? Como é que ele é regulamentado? Cada um monta um pacote de identificação do SIM card?
+
+47:24 - Loreno Menezes da Silveira 
+Não, existe uma regulamentação internacional. Em caso do, por exemplo, emitida pelo 3GPP, por exemplo, e pelo Etsy, no caso da Europa, imagino que os Estados Unidos deve ter uma regulamentação similar. É o mesmo padrão de telefone, então, dos celulares, da numeração de celular?
+
+47:48 - Loreno Menezes da Silveira 
+Não, eu uso o mesmo padrão da numeração de celular.
+
+47:55 - Loreno Menezes da Silveira 
+Uso o número do celular MNI lá. Ah, entendi. Beleza, obrigado. Aqui um exemplo, na verdade um exemplo prático, que o mesmo site da Azuri lá apresenta. Como é que seria, por exemplo, mostrando... Imagina que você tem duas fábricas, um e dois, e elas dependem de um warehouse, e você quer ter uma logística controlada por mutação de borda. Seria o caso aqui, por exemplo, O data center é localizado mais aqui, ou mais próximo de cada fábrica. Aqui ela mostra qual é a proximidade que ela ganha pela nuvem. Todo mundo se conecta com a nuvem e a nuvem orquestra essa coisa aí. Agora que eu vi que está em cima, Mas não precisa ser em cima do Mapamundi, pode ser em uma região, obviamente no estado, no país. Bom, aqui eu achei que a pergunta do rapaz lá que está em deslocamento, eu achei que a pergunta dele era essa aqui, mas essa aqui também é pertinente. Como é que funciona essa questão do credenciamento, do registro, do móvel. Aqui está representado como seria feito usando o Azure. Como no caso da rede dedicada, ele vai até o router, o router vai para o core, o core pode consultar a nuvem, e pode dar a resposta para ele.
+
+49:51 - Palestrante Não Identificado 
+Agora alguns exemplos como a AWS.
+
+49:56 - Loreno Menezes da Silveira 
+Eu achei interessante esses exemplos por duas razões. Para mostrar que a estrutura é sempre a mesma. Isso eu queria que vocês notassem. A estrutura é sempre Essa aqui, a da Eliane Cláudio, que eu comentei, mas também essa que a gente tem no relatório lá. A estrutura é sempre alguma coisa parecida com isso. Então vamos ver o caso da AWS. Aqui é o caso da AWS, por exemplo, na questão da robótica. Existe uma empresa britânica chamada Man and Life, que ela é especializada em software para a orquestração de robótica, e aí ela passa a ser a inteligência da borda que vai ser utilizada. E aí tem as mesmas funções sempre, o router, o switch, o core, o switch aqui é o switch IP, e a RAM, E pode ter uma funcionalidade de gerência de frota e os robozinhos lá. Só para vocês verem. E a internet, né? Então a estrutura é sempre a mesma, tá? O switch aqui é uma facilidade para você configurar de lance e para você também não jogar direto em cima do router, digamos, vários servidores, né? Então, Mas basicamente o que tem é o router, o core, a RAM, a internet e a gerência da frota, que é física, e a questão da aplicação. Agora tem uma outra aplicação, a Video Analytics, por exemplo.
+
+52:02 - Palestrante Não Identificado 
+É bastante similar também.
+
+52:05 - Loreno Menezes da Silveira 
+Ele tem essa MEG Video Analytics, que é uma solução, E aí é essa plataforma que faz a função, completamente terceirizada.
+
+52:19 - Palestrante Não Identificado 
+Esse Snowball, esse Output Server é quando ele tem comunicação.
+
+52:25 - Loreno Menezes da Silveira 
+É um dispositivo, um servidor, que tem comunicação com o resto do mundo. E o Snowball é um dispositivo que está isolado. Você só vai lá e...
+
+52:43 - Loreno Menezes da Silveira 
+Professor, perdão.
+
+52:44 - Antonio Carlos Ferreira de Almeida 
+Pode falar. Professor, o Snowball na AWS, ele é um caminhão de HDs que garante que você quer transportar dados, então você vai lá, aluga o caminhão, ele leva o caminhão em loco e coloca todos os dados lá dentro por causa da quantidade de dados. E hotspots é quando você e coloca um servidor no seu datacenter.
+
+53:14 - Palestrante Não Identificado 
+Sim, perfeito.
+
+53:14 - Loreno Menezes da Silveira 
+Melhorou, melhorou a sua explicação, melhorou a explicação que eu tinha falado. Diga.
+
+53:21 - JOAO RUBENS 
+Desculpa, dentro dessa discussão, eu tô olhando para essa topologia e queria entender um pouquinho melhor, porque eu fiquei uma dúvida. Porque os EC2, eles estão ali, o EC2 já é domínio AWS, né? Uma instância EC2, onde está o Snowball ED, esquerda, e aí eles se conectam via router com uma rede 5G, e a internet está como se estivesse indo para fora disso. Mas a topologia normal não seria a AWS já estar na internet? Parece que Parece que isso aqui está dentro de uma rede fechada, a própria AWS, nesse esquema.
+
+54:10 - Loreno Menezes da Silveira 
+Não, o que ele quis representar aqui, a representação da AWS, é que todo esse conjunto de funções se liga à internet.
+
+54:19 - JOAO RUBENS 
+Ah, tá. Então tudo é através dele, né?
+
+54:23 - Loreno Menezes da Silveira 
+Através da internet, é.
+
+54:24 - JOAO RUBENS 
+Eu vi essa conexão, falei, agora entendi.
+
+54:27 - Loreno Menezes da Silveira 
+Não, é que, na verdade, É dentro dessa filosofia aqui. Então, as Edge Applications, elas se ligam à internet e que é a mesma coisa que a gente disse aqui. Entendi. Perfeito. Tá perfeito. Obrigado.
+
+54:48 - JOAO RUBENS 
+É aqui que apareceu a questão do router, né?
+
+54:53 - Loreno Menezes da Silveira 
+Então, é mais ou menos essa questão. Como a rede é privativa, é dedicada, eu imaginei que essas funcionalidades estavam nesses servidores aqui.
+
+55:07 - JOAO RUBENS 
+Podem estar numa AWS que aí estaria na nuvem.
+
+55:12 - Loreno Menezes da Silveira 
+Exatamente.
+
+55:12 - JOAO RUBENS 
+Na verdade estaria na nuvem, não estaria diretamente.
+
+55:17 - Loreno Menezes da Silveira 
+Para estar na nuvem, elas teriam que estar em um partner, né? Sim.
+
+55:25 - JOAO RUBENS 
+Um parceiro de Cláudio.
+
+55:28 - Loreno Menezes da Silveira 
+Perfeito. E aqui o último caso é a história do... Quando vai utilizar... Realidade aumentada, realidade virtual, esse tipo de coisa. Então, o que ele está mostrando aqui é que ele tem as diversas... Funcionalidades aqui ligadas a dispositivos da RAM, só que para interagir com isso é um Snowball Edge. O rapaz da AWS mesmo?
+
+56:23 - Antonio Carlos Ferreira de Almeida 
+Sou eu, professor.
+
+56:25 - Antonio Carlos Ferreira de Almeida 
+Então, como você chama?
+
+56:27 - Loreno Menezes da Silveira 
+Desculpa. Antônio. Como você chama?
+
+56:29 - Palestrante Não Identificado 
+Antônio. Antônio.
+
+56:30 - Loreno Menezes da Silveira 
+Então, Antônio, questão do Snowball, né? De uma forma como você falou, a impressão que dá é que o caminhão não se comunica com o sistema quando ele é um Snowball.
+
+56:45 - Antonio Carlos Ferreira de Almeida 
+Então, professor, o Snowball não se comunica com... Porque imagina, você tem o Snowball lá no Polo Norte. Por que você vai convidar o Snowball para o Polo Norte? Porque não tem comunicação de internet para você passar seus dados. Então, você chama o caminhão lá, o caminhão dá um jeito, a AWS segura, que vai levar até você a unidade de armazenamento se você contratar. E aí eles levam lá, tem capacidade para 10 tera milhões de milhões de aí ele pega e leva lá mas por que ele leva lá? Porque não tem capacidade de transmitir esses dados hoje em dia hoje em dia o Starwom já tá andando por tudo quanto esses lugares aí então as empresas elas andam contratando lá com Elon Musk um um pedaço da banda do satélite, mas até então muitas empresas ainda contratam o Snowball. Agora tem uma modalidade do Snowball que ela pode fazer processamento em loco, aí eles têm umas unidades de computação mesmo, que são caminhões também, e aí eles carregam aqueles processadores Graviton, que é última geração em processador e aí eles fazem o processamento dos dados em loco e aí levam embora só as informações necessárias, entendeu? Eu acho que ele foi um pouco infeliz em colocar Snowball Edge porque o Snowball Edge é justamente isso, é uma unidade de armazenamento que chega onde não há capacidade de transmissão de dados ou por cabo ou por fibra ótica ou por rádio. Então aí eles colocam lá o caminhão para levar os dados, entendeu? Na WS é assim.
+
+58:56 - JOAO RUBENS 
+Antônio, ouvindo o que você está falando e olhando para a figura, agora fez mais sentido até para mim. Porque aí sim, por exemplo, você levar o Snowball para processar localmente esse derroteador tudo e sai para a internet um extrato disso que consome muito menos internet você poderia ter uma capacidade muito menor de transmissão, né? Se você olhar nesse esquema, com isso que você falou, parece que casou a coisa.
+
+59:27 - Antonio Carlos Ferreira de Almeida 
+Isso, pode ser feio. E aí faz mais sentido, entendeu? Agora processou tudo lá e a internet saiu só aquele pedacinho Mas por outro lado, você vê aqui embaixo na figura, ele coloca EC2. EC2 é uma máquina virtual comum da AWS que você loca ela e roda suas aplicações dentro dela. Então no Snowball você não roda EC2. EC2 já é Nano URBAN.
+
+59:57 - Loreno Menezes da Silveira 
+Foi isso que me confundiu a primeira vez. A figurinha dele não representa bem isso, né?
+
+1:00:08 - JOAO RUBENS 
+Ela representa que a computação em nuvem estaria acontecendo aqui, né?
+
+1:00:15 - Antonio Carlos Ferreira de Almeida 
+Exatamente, onde está esse GPU. Nada mais é do que um processador especializado em gráficos. Então ele foi construído para um graviton, por exemplo. Especializado em gráficos. Se você quer fazer um processamento de sinal analógico ou de imagem ou que exige muito muito do processador, você contrata, você paga por esses processadores. Quando você paga por esses processadores, você contrata uma EC2 que tenha um processador ou vários processadores desses, quantos você quiser. Eu acho que 22 processadores na mesma EC2 e você pode colocar tudo junto para processamento.
+
+1:01:07 - Ícaro De Oliveira Castro Costa 
+Em relação ao Snowball quando a gente vai guardar dados a gente utiliza um S3 da AWS.
+
+1:01:16 - Antonio Carlos Ferreira de Almeida 
+O S3 já é na AWS, já é na nuvem. Você leva para o Snowball e quando o Snowball tiver uma comunicação ou acabou o rádio ou seja lá o que for aí você passa para o S3 que aí a S3 é o lugar realmente é o lugar onde você guarda lá seus arquivos seus dados agora o Snowball é só um meio de transporte quando você chegar uma hora eu vou chegar na AWS eu carreguei todos meus... Eu tô lá no Alasca num lugar inóspito lá aí eu vou carregar carreguei, está no Snowball, Snowball caminha até uma base onde dá para passar os dados para a AWS. Ok, vamos passar os dados para a AWS, vamos passar para onde?
+
+1:02:10 - Ícaro De Oliveira Castro Costa 
+Vamos passar para o S3.
+
+1:02:12 - Loreno Menezes da Silveira 
+Ah, entendi agora.
+
+1:02:13 - Gabriel Theodoro 
+Legal que dá para contextualizar, pessoal, é que o Snowball tem muitos usos específicos, né? E um dos usos deles, principalmente agora com robôs e processamento de de imagem sendo necessário em solo, um dos usos muito comuns dele é o uso militar. Então, imagina assim, os Estados Unidos, fora do país, montou a base ou qualquer operação, ele tem alta transferência de dados e armazenamento e processamento local. Sem o Snowball, era muito difícil fazer isso com alguma solução americana. E aí, quando a AWS começou, vamos por assim, abrir isso para uso militar muito amplo, o Snowball se popularizou. Então, quando você olha o Snowball na indústria, que eu vou querer isso, eu posso mandar. Mas, gente, muitas situações, principalmente agro, uso militar, não tem como mandar dados, né? Por exemplo, você pega 50 petabytes de dados, o caminhão são 100, se eu não me engano, cento e poucos. Não tem isso, você faz imagens em operações a campo em poucas semanas. Não é o normal que a gente tem que tá enviando 24 horas. Então, o uso dele é mais específico do que o que a gente tem aqui no Brasil. Não é muito comum aqui, porque às vezes o pessoal conversa assim, o pessoal fica perdido no que é o snowball.
+
+1:03:29 - Antonio Carlos Ferreira de Almeida 
+Ele é caro, né? Ele é muito caro e o snowball é uma família, né? Tem vários snowballs. Tem uma maleta que é o snowball menor capacidade, porque aí eu quero transportar 50 tera num SSD, por exemplo. Aí eu vou contratar um caminhão snowball, porque uma maleta snowball não aguenta, entendeu? É uma família, tem vários componentes da família.
+
+1:03:55 - Loreno Menezes da Silveira 
+Várias dimensões, né?
+
+1:03:56 - Gabriel Theodoro 
+É, e eles tem os níveis de proteção, tem a prova d'água, a poeira, enfim.
+
+1:04:01 - Antonio Carlos Ferreira de Almeida 
+Isso, isso mesmo, isso mesmo. É um serviço, né?
+
+1:04:04 - Gabriel Theodoro 
+Se você quer um que aguenta tiro, porrada e bomba um por assim, é o Zoidacar, o fígado e o rim, mas tem gente que paga por dinheiro que eu uso, né?
+
+1:04:15 - Loreno Menezes da Silveira 
+Se for necessário, né?
+
+1:04:19 - ANTONIO ADADE DE CASTRO BATISTA 
+Pessoal, na verdade, o que essa imagem está mostrando, em última instância, trazendo para o nosso curso, é que a rede 5G pode rodar offline.
+
+1:04:33 - Palestrante Não Identificado 
+Como assim?
+
+1:04:34 - ANTONIO ADADE DE CASTRO BATISTA 
+Perceba que ali você tem um monte de aplicação, na direita, e você tem ali, na saída do Core 5G, uma interface N6. Essa interface N6 ela quer dizer que você vai ligar o Core 5G numa UAN. Essa UAN pode ser uma internet ou nesse caso um Snowball. O que esse Snowball está representando aqui na figura? Que a aplicação do cliente ela está contida no ambiente do cliente privado. Então se você tem uma aplicação, por dentro de realidade aumentada, essa aplicação pode estar rodando, por exemplo, no Snowball Maleta, igual o amigo explicou, que vai ser de uso exclusivo do cliente e ele pode optar ou não por expor isso à internet.
+
+1:05:31 - Palestrante Não Identificado 
+Aí cabe, aí dá certo.
+
+1:05:34 - ANTONIO ADADE DE CASTRO BATISTA 
+Isso é uma grande característica do Core 5G, pela sua disposição ali de serviços, como você estancia as funções do 5G e que você consegue deixar ele totalmente offline e mesmo assim funciona, entendeu pessoal? Ele tem uma aplicação de vídeo analítica, que ele vai pegar e vai colocar um vídeo para analisar quantos carros passaram. Ele não precisa estar na internet, ele precisa chegar só no servidor dele, entendeu? É isso, essa imagem em última instância quer dizer isso.
+
+1:06:19 - Loreno Menezes da Silveira 
+Desculpa atrapalhar a aula.
+
+1:06:21 - Gabriel Theodoro 
+A rede é parcada no caso, né?
+
+1:06:24 - ANTONIO ADADE DE CASTRO BATISTA 
+Exatamente.
+
+1:06:24 - ANTONIO ADADE DE CASTRO BATISTA 
+Não, não, é isso, ele não precisa de internet, ele precisa de um servidor, no caso, né? Você pode trocar o Snowball aqui, você pode por exemplo, pelo data center da própria empresa que comprou o Core 5G, entendeu? Aí já é o Outspots.
+
+1:06:46 - Antonio Carlos Ferreira de Almeida 
+Aí é o Outspots. O que é o Outspots? Você contrata a AWS, pega um hardware físico dela, leva lá na sua empresa e instala ele lá, com ligação para a rede AWS, entendeu? Esse é o serviço Oldspot é isso que está aqui, Oldspot Server é um hardware físico que o cara pega e leva no teu datacenter, instala lá e esse hardware tem comunicação com a rede da AWS, tanto a privada, porque a AWS você tem duas possibilidades, você pode carregar seus dados pelo HTTPS que aí vai para a internet pública, mas se você quiser traficar a nível mundial, pela rede da AWS, ela também tem uma rede não pública dela, que viaja o mundo inteiro também. Perfeito. Tem um detalhe aí importante.
+
+1:07:45 - Gabriel Theodoro 
+Se a gente observar, ele está linkado em câmeras. E aquele... Principalmente aquele Snowball novo, de borda para aí, ele já faz o processamento de visão computacional em campo. Então, por exemplo, as imagens dessas câmeras, automaticamente, elas não precisam sair da rede. Além do armazenamento tradicional, que a gente já está acostumado com o Snowball, o novo de borda, ele já faz o processamento com o modelo de ar local. Então, pode ser, dá para utilizar ele tanto no processamento de ar local, para tratamento dos vídeos, como no processo de armazenamento.
+
+1:08:25 - Antonio Carlos Ferreira de Almeida 
+Então, aí, nesse caso, vai Porque se você tem uma IA proprietária, se você desenvolveu a sua própria IA, aí você consegue fazer isso. Agora, se você for usar um GPT, por exemplo, você precisa deixar o GPT entrar e deixar ele sair. Bom, se você deixar ele entrar na AWS, você já garante que ele possa sair. Agora, esse proprietário aí é que é o caso. Se você desenvolveu o seu próprio IA, aí você não precisa de comunicação interna. Agora, se você for usar o GPT ou qualquer outra IA de terceiros, aí você precisa deixar ele entrar, né?
+
+1:09:03 - ANTONIO ADADE DE CASTRO BATISTA 
+Usa o DeepSeek e deixa no seu próprio datacenter e tá tudo certo.
+
+1:09:08 - Antonio Carlos Ferreira de Almeida 
+Então, o problema é que você faz a consulta, por exemplo, você vira para a IA e fala qual o melhor time do mundo, ela vai falar o Corinthians, tudo bem, você já sabe, mas só que ela vai lá nos servidores dela e pergunta e volta com a resposta, é uma requisição, e aí se você tem essa IA própria sua dentro do seu datacenter, aí não precisa sair, entendeu? Porque aí você faz a pergunta, processo interno e já devolve a resposta, aí a própria IA já responde com as características dela e você aproveita função, entendeu?
+
+1:09:50 - Loreno Menezes da Silveira 
+O que me deu a impressão, o que a AWS quis colocar, é que, respondendo talvez a pergunta do João Rubens, mas acho que já tirou essa dúvida, é que a questão, o que ele está dizendo é que você pode ter essas facilidades que são providas por terceiros dentro da própria através da conexão com router, antes de conectar com a internet ou não, em offline, como ele falou aí. Foi esse o entendimento que eu tive. Ela quis mostrar como é que seria essa facilidade de conectar com a...
+
+1:10:32 - JOAO RUBENS 
+Perfeito, acho que é isso mesmo.
+
+1:10:34 - JOAO RUBENS 
+Acho que é isso mesmo, professor.
+
+1:10:37 - Loreno Menezes da Silveira 
+Acho que é isso mesmo, perfeito.
+
+1:10:39 - Loreno Menezes da Silveira 
+Temos a funcionalidade de levar para a borda o que é mais pesado.
+
+1:10:44 - Loreno Menezes da Silveira 
+Isso, também tem essa alternativa. Bom, aqui acho que não sei se deu para exaurir esse assunto, mas tem muita coisa nova acontecendo, tem muita novidade tecnológica, né? E acho que uma coisa que está clara é que essas plataformas de nuvem, tipo a AWS ou a Azuri, elas estão tomando as providências para responder a esse mercado e utilizando e partilhando com esse mercado. Então vocês podem ver que ninguém está falando de 4G aqui. Não que eu esteja dizendo que o 4G não é para ser usado, mas a facilidade de mexer com esse tipo de coisa está dentro do 5G e dessa questão das atrevi isso por APIS, né? Ok? Bom, aí uma conclusão que eu queria tirar com vocês é essa daí, que com o crescimento da IOT, as VLANs têm um papel cada vez mais estratégico. Em vez das VLANs ficarem uma coisa superada, na verdade elas estão se tornando mais estratégicas, na medida que elas permitem segmentar as redes isolar dispositivos e, só para dar o exemplo do colega lá, se isso aqui é estratégico, se isso é coisa usada por militar, essa snowboard, o cara vai deixar isso junto com as outras, junto com a rede? Claro que não. Todo mundo vai saber o que está acontecendo. Então, essa que é a grande vantagem da Avelã, isolar os dispositivos para atender a essa separação dos tráficos.
+
+1:12:41 - Palestrante Não Identificado 
+Além disso, diga.
+
+1:12:42 - JOAO RUBENS 
+E até, eu acho que, na verdade, falando em 5G, aí você casa um pouco também a parte do Network Slicing, que está lá na rádio base.
+
+1:12:55 - Loreno Menezes da Silveira 
+A sensualidade deles, exatamente.
+
+1:12:57 - JOAO RUBENS 
+Você casa com a vilã, você segmenta no Network Slicing e traz segmentado na vilã.
+
+1:13:04 - Loreno Menezes da Silveira 
+Você pode criar uma violãs críticas em cima de um slice que é crítico. Então, essa questão da integração das violãs e as violas definidas por software, essa integração cada vez favorece mais esse tipo de ambiente. Ou seja, a conclusão que a gente queria tirar do curso em si é que a AVLAN é uma tecnologia indispensável para qualquer empresa que deseja otimizar sua infraestrutura. Os benefícios passam por segmentação, melhoria da segurança e gerenciamento das redes. Eu tinha deixado uma parte aqui de protocolos para a gente analisar em função de entender... Na verdade, o meu primitivo aqui dessa figurinha era A questão de mostrar, que eu não sei se é claro pra todo mundo isso, que o protocolo que a rádio base fala pra dentro da rede, o que ele fala pra fora são os protocolos rádio, certo? E aí tem diversos protocolos rádio aqui. Mas o que ele fala pra dentro da rede é o protocolo internet, o protocolo IP, que nem em cima de internet. Então eles tiveram que fazer adaptações, inclusive. Fizeram uma adaptação que, em vez de usar o TCP em cima do IP para efeito de controle, eles usaram outro dispositivo chamado Stream Control Transmission Protocol. E tem uma grande vantagem sobre o TCP, se vocês quiserem depois de passar uma por uma, mas queria só mostrar a e a feature do SCP. Tem o problema que ele não tem reconhecimento negativo. Se você está mandando os pacotes lá que estão numerados, se der um pacote errado, ele cata o pacote e aí ele só vai descobrir que está errado quando terminar aquela sequência e aí ele vai falar, opa, está dando perda de sequência aqui. Aí ele vai pedir para Por isso ele é muito lento. E aí esse SCP fez uma coisa diferente, ele tem um reconhecimento negativo e aí o fluxo dele passa a ser contínuo, que é muito mais adequado essa topologia de rapidez e de baixa latência que é exigido por esses serviços. Era mais ou menos esse o recado, se vocês acharem que é o caso, a gente passa uma por uma aqui, mas eu daria como encerrado aqui a aula, tá? Se vocês têm mais dúvidas...
+
+1:16:28 - Palestrante Não Identificado 
+Perfeito, professor, brigadão.
+
+1:16:29 - Loreno Menezes da Silveira 
+Bom, eu que agradeço, pessoal. Obrigado pelas contribuições do pessoal da AWS aí, que nada como já tá trabalhando com o assunto e aí conhece mais a foda, ok?
+
+1:16:44 - Palestrante Não Identificado 
+Valeu, professor, brigadão.
+
+1:16:46 - Palestrante Não Identificado 
+Paramos por aqui.
+
+1:16:49 - Loreno Menezes da Silveira 
+Valeu, mestre Loreno.
+
+1:16:52 - Ícaro De Oliveira Castro Costa 
+Obrigado.
+
+1:16:54 - Loreno Menezes da Silveira 
+Valeu, professor.
+
+1:16:56 - Palestrante Não Identificado 
+Obrigado.
+
+1:16:57 - Palestrante Não Identificado 
+Obrigado.
+
+1:16:58 - Palestrante Não Identificado 
+Um abraço.
+
+1:17:00 - Francis 
+Obrigado.
+
+1:17:01 - Palestrante Não Identificado 
+Um abraço.
+
+1:17:04 - Palestrante Não Identificado 
+Boa noite.
+
+1:17:06 - Palestrante Não Identificado 
+Boa noite.
+
+1:17:08 - Palestrante Não Identificado 
+Boa noite.
+
+1:17:10 - Palestrante Não Identificado 
+Boa noite.
+
+1:17:12 - Palestrante Não Identificado 
+Tchau. Legendas pela comunidade Amara.org

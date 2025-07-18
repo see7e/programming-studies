@@ -1,0 +1,104 @@
+{% extends "layout.html" %}
+
+{% block title %}
+	Home
+{% endblock %}
+
+{% block main %}
+	  <section id="home">
+		<div class="container">
+		  <div class="row">
+			<div class="col-md-6 d-flex"> <!--textos-->
+			  <div class="align-self-center">
+				<h1 class="display-4">Your accounts, uncomplicated!</h1>
+	
+				<p>Used by over 1 million people, Finans is an online tool that will make your financial life easier.</p> 
+			  
+				<form action="/" method="post">
+				  <div class="input-group mt-4 mb-4">
+					<input id="email" name="email" type="e-mail" placeholder="Your best e-mail" class="form-control">
+					<button class="btn btn-dark bg-dark input-group-text">Register</button>
+				  </div>
+				</form>
+
+				<div>
+				  <p>Available for
+					<a href="https://play.google.com/store/search?q=yourFinance&c=apps" class="btn btn-outline-light">
+					  <i class="fab fa-android fa-lg"></i>
+					</a>
+
+					<a href="https://www.apple.com/us/search/yourFinance?src=globalnav" class="btn btn-outline-light">
+					  <i class="fab fa-apple fa-lg"></i>
+					</a>
+				  </p>
+				</div>
+			  </div>
+			</div>
+
+			<div class="col-md-6 d-none d-md-block"> <!--imagem-->
+			  
+			  <img src="../static/img/capa-woman.png" class="img-fluid">
+			</div>
+		  </div>
+		</div> 
+	  </section>
+
+	  <section class="box">
+		<div class="container">
+		  <div class="row"> <!--know-->
+			<div class="col-md-6 d-flex"> <!--text-->
+			  <div class="align-self-center">
+				<h2>Know where your money goes.</h2>
+				<p>With the finances, you categorize your releases. With simple graphics, you know where your money comes from and where.</p>
+
+				<a href="#" class="btn btn-outline-dark">Find more</a>
+			  </div>
+			</div>
+			<div class="col-md-6"> <!--img-->
+
+			  <img src="../static/img/know.png" class="img-fluid">
+			</div>
+		  </div>
+
+		  <div class="row"> <!--taxes-->
+			<div class="col-md-6"> <!--img-->
+			  
+			  <img src="../static/img/taxes.png" class="img-fluid">
+			</div>
+
+			<div class="col-md-6 d-flex"> <!--text-->
+			  <div class="align-self-center">
+				<h2>Stop paying interest and save!</h2>
+				<p>Keeping accounts on days always a problem? <br>
+				 The fins warns you! Receive Alerts of Accounts Payable and Receive.</p>
+
+				<a href="#" class="btn btn-outline-dark">Find more</a>
+			  </div>
+			</div>
+		  </div>
+
+		  <div class="row"> <!--3 rows-->
+			<div class="col-md-4">
+			  <img src="../static/img/easy.png" class="img-fluid">
+
+			  <h4>Easy to use</h4>
+			  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse sit amet luctus nunc, eu ullamcorper nisi. Fusce sodales sapien dui, eu porttitor risus bibendum sed.</p>
+			</div>
+
+			<div class="col-md-4">
+			 <img src="../static/img/save.png" class="img-fluid">
+
+			  <h4>Save your time!</h4>
+			  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse sit amet luctus nunc, eu ullamcorper nisi. Fusce sodales sapien dui, eu porttitor risus bibendum sed.</p>
+			</div>
+
+			<div class="col-md-4">
+			  <img src="../static/img/suport.png" class="img-fluid">
+
+			  <h4>Friendly support</h4>
+			  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse sit amet luctus nunc, eu ullamcorper nisi. Fusce sodales sapien dui, eu porttitor risus bibendum sed.</p>
+			</div>
+		  </div>
+		</div>
+	  </section>
+{% endblock %}

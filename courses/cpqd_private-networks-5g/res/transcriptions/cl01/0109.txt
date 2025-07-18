@@ -1,0 +1,473 @@
+Redes Privativas | Turma 1 
+sexta, 9/05/2025
+
+0:01 - Palestrante Não Identificado 
+Boa tarde, pessoal.
+
+0:02 - Carlos Alberto de Almeida Batista 
+Tudo bem?
+
+0:03 - Palestrante Não Identificado 
+Fala, professor.
+
+0:04 - Loreno 
+Eu estava em dúvida aqui para ver se estava tudo certo.
+
+0:08 - Fiap Convidado 117#+#Loreno 
+Então, você conseguiu entrar muito bem.
+
+0:11 - Fiap Convidado 117 
+Deu tudo certo, então, né? Eu sou o Flávio, professor.
+
+0:15 - Fiap Convidado 117#+#Loreno 
+Mas antes não estava.
+
+0:17 - Loreno 
+Não sei se o pessoal já estava há mais tempo aí. Eu sei que tem pessoal que chega 15 minutos antes.
+
+0:25 - Fiap Convidado 117 
+Mas o importante é que chequinha que a aula já vai começar.
+
+0:33 - Fiap Convidado 117#+#Loreno 
+Valeu, um abraço.
+
+0:35 - Loreno 
+Muito bem, tchau.
+
+0:37 - Palestrante Não Identificado 
+Boa tarde, pessoal.
+
+0:40 - Whibero 
+Boa tarde, professor.
+
+0:42 - Loreno 
+Boa tarde, tudo bem?
+
+0:45 - Whibero 
+Tudo joia, e você?
+
+0:48 - Loreno 
+Já estou começando, tá bom?
+
+0:51 - Palestrante Não Identificado 
+17 horas. Estão enxergando? Pessoal? Sim? Ótimo.
+
+1:12 - Loreno 
+Então, vamos. Podemos começar. Essa aula de hoje, então, é mais a questão de como ter as licenças. Mas a gente vai ter que passar um pouco pelos regulamentos, claro. Vou entrar um pouquinho mais em detalhe e ver a coisa mais prática. E não estava no programa, mas eu vou apresentar um tutorialzinho do sistema Mosaico, que é onde você entra na Anatel, onde tem as licenças e as frequências. Frequências, tá bom? Então vai ser esse sumário aqui. Primeiro eu vou tratar da escolha da faixa de frequências, na verdade isso seria uma análise do terreno e a escolha da faixa, análise do problema e escolha da faixa de frequências. Então vai passar um pouco por aquela história que nós vimos ontem de analisar onde a gente deve colocar, que tipo de rádio base deve colocar, esse tipo de coisa. Ou seja, tem um pouco de engenharia nisso. Depois a gente vai passar para a parte de regulamento e para a parte prática, de como introduzir essas frequências. Então, vamos em frente.
+
+2:41 - Loreno 
+Então o problema pode ser esse que eu formulei para vocês ontem, parecido, são dois prédios e tem uma fábrica a uns 101 quilômetros de distância e a gente quer saber como deve povoar isso. Então ontem nós já vimos alguns exercícios, eu vou passar para a solução, mas antes eu acho aqui, eu não sei se vocês estão mais ou menos a par, né? Uma questão é esses tipos de célula, né? Vocês sabem que são vários tipos de célula, macro célula, micro célula, pico célula, tem alguns que estão onde admitem a fento célula. Então são vários tamanhos de célula aí. Isso aí é uma definição bem transparente, só que não existe um parâmetro rigoroso. Os parâmetros seriam a potência de saída e o raio da célula. Seriam os grandes dois parâmetros. Claro que o número de usuários é função desses parâmetros também. Então eu vou pegar aqui, eu peguei da Corvo, que é um site aí, eu peguei deles, assim, mais ou menos, não foi essa que eu adoto sempre, mas ela está mais didática e mais interessante, eu resolvi trazer para mostrar para vocês aqui. Então, o primeiro que ele está mostrando aqui é que existe a área suburbana e a área urbana, né? E que se aplica diferentes tipos de célula conforme a proximidade conforme o tráfego e conforme o uso também. Então aqui ele tem, vamos começar de baixo para cima, a macrocela, que tem de 10 até 50 watts, ou até mais, às vezes, e que pode chegar a 8 a 30 quilômetros. Esses valores são teóricos, claro. Mas, ou seja, alguns quilômetros. Em Campinas tem um caso bem clássico, que é o prédio do Castelo, na Telefônica, lá tem uma rádio base. Essa rádio base pega a 10 quilômetros de distância, em Barão Geraldo. Então, você está se movendo em Barão Geraldo, se as rádios bases de Barão Geraldo não permitem o Rondorf, essa maior macrocélula acaba permitindo. E pode ter mais de 2 mil usuários. Tipicamente outdoor. Depois vem a micro sela, que poderia ser usada em indoor ou outdoor, mas que tem um raio de... Eu prefiro as distâncias de, por exemplo, por volta de 30, né? Então eu prefiro, por exemplo, 300 metros a 3 quilômetros. Mas pode entender que é 200 metros a 2 quilômetros também, tá? Não é... Vamos dizer, a rigor aí não é tão importante, o importante é a potência. E aí pode ter até dois mil usuários, por exemplo. Então o 5G já entra, o 4G praticamente tomou todo o espaço de quatro céus, a menos que vá entrar numa instalação nova, aí o 5G pode ser usado como macrocélula também. Estou falando agora da rede pública um pouco, né? E a microcélula já é onde entra o 5G, e na picocélula também. Então a picocélula seria de 3 metros a 30 metros, de 30 a 300 metros, né? Ou seja, aqui está em decimal de quilômetros, seria de 100 metros a 200 metros, e pode ter de 30 a 100 usuários e também para o ambiente indoor ou outdoor. E finalmente vem a fetocela, que em muitos lugares não tem, é uma questão de preferência do usuário, seria bem típico para inbuilt, E aí ela pode ter de 10 metros a 100 metros, no máximo. E pode ter de 1 a 30 usuários. Então essa é a classificação dos tipos de selo. Então a pergunta que a gente sempre se faz é assim, qual é o tamanho do ambiente que eu vou colocar a rede primativa? Se for um ambiente de quilômetros, e tem várias fazendas aí que são vários quilômetros, com certeza vai ter que ter algumas macrocélulas. Agora, se for um ambiente menor que quilômetro, então aí cabe a microcélula para uma microcélula. Isso é com relação a essa pergunta aqui. Então, se a gente falar que é um quilômetro aqui, vocês veem que vai ter que ter uma macrocélula aí, provavelmente. Ou vai ter uma microcélula bastante potente. Ele fala que a microcela pode chegar de 1 a 10, mas geralmente não vai a tanto, não. Senão você não usava macrocela, né? Bom, aí vem aquela figura que vocês já conhecem, né? Da escolha da faixa de frequências. Então existe um gráfico que é de capacidade por cobertura. Então quanto maior a menor é a cobertura, com certeza. Então, por exemplo, tipicamente, se você quer coisa de 10 gigabits, você vai ter que escolher uma faixa do espectro de mais do que 25 gigahertz e vai ter uma cobertura baixa. Se você não quiser uma cobertura ampla, de macrocélula, aí você pode usar 700 mega, tá na moda agora, e aí você vai ter uma cobertura maior. Então aqui tá mostrando os diversos tipos de... Eu peguei nessa referência aqui do finlandês, tá? Que eu achei muito interessante, porque ele descreveu com bastante detalhe essa coisa aí. Bom, então aí a gente partiria para essa solução. Não sei se ficou vai ter que ter uma radiobase aqui no primeiro dos prédios. Eu botei em cima para dizer que eu estou deixando ela bem alta, mas pode ser, se ela for uns 30, 40 metros, claro que ela pode partir do chão. E aí coloquei as diversas radiobases nos lugares onde vai precisar. Então, dentro dos prédios aqui e também externamente, Aí eu fiz um caminho aqui, que seria um pretexto caminho do trânsito, dos caminhões, por exemplo, da logística. E deixei essas em vermelho, que seriam a cereja do bolo. Provavelmente, quando alguém submeteu isso a um especialista, o cara falou que não, mas tem que botar esse ambiente aí, um ambiente que deve ser protegido, vocês têm que botar algumas rádios básicas, que protejam a fronteira, que o cara tenha supervisão com câmeras, que você tenha supervisão do muro e do ambiente que cerca a rede privativa. Então essa que foi a ideia, tá? E aí, conforme a gente já tinha conversado ontem, o aplicável aí são alguns switches, né? E eu ia comentar também o seguinte, como que você vai dispor, aí vai ter discussões, quer dizer, poderia ter discussões homéricas, né? Sobre, e aí a rede de segurança pode usar os mesmos switches que a outra rede? Do meu ponto de vista pode, tá? Se você compartilhar, né? Se você fizer onde você tá botando em dois suítes e tá deixando a parte da fábrica num suíte separado aqui também. Então assim, tá meio independente, né? Então, acho que fica uma solução boa, mas também pode se dar outro tipo de solução, claro, pode ter um suíte adicional aqui ou em algum lugar, só pra reunir as seguranças, Por aí vai, né? Pode ter vários critérios que entrem. Isso vai ter que ser conversado com o engenheiro, o responsável, pela rede privativa, pelo responsável legal, que existe essa figura também. Ou com o próprio dono, às vezes os próprios donos da empresa. Ok? Estão de acordo? Tem alguma dúvida?
+
+12:11 - Palestrante Não Identificado 
+Peraí que eu tô...
+
+12:13 - Clodoaldo Callogero#+#Loreno 
+Tá me ouvindo bem? Esse é o pequeno detalhe, colocar o fone de ouvido.
+
+12:19 - Clodoaldo Callogero 
+É, eu também, é que o microfone é complicado.
+
+12:23 - Loreno 
+Um minutinho, gente, peraí um minutinho.
+
+12:26 - Clodoaldo Callogero 
+Vocês estavam me ouvindo bem antes?
+
+12:29 - Clodoaldo Callogero#+#Loreno 
+Sim. Alô.
+
+12:30 - Palestrante Não Identificado 
+Oi. Sim, estávamos.
+
+12:31 - Loreno 
+Alô, alô. Oi, me ouve bem, professor?
+
+12:34 - Clodoaldo Callogero 
+Tô ouvindo mal ainda, vamos ver.
+
+12:37 - Loreno 
+Alô? Oi, alô?
+
+12:38 - Clodoaldo Callogero#+#Loreno 
+Agora eu tô ouvindo melhor.
+
+12:41 - Clodoaldo Callogero 
+É o seguinte, em relação à interligação entre o suíte e as rádios bases, tem a opção de fazer cabeado, mas poderia ser por rádio frequência também. Isso seria funcional?
+
+12:56 - Clodoaldo Callogero#+#Loreno 
+Ou não?
+
+12:57 - Clodoaldo Callogero 
+Já é um padrão fazer cabeado, alguma coisa?
+
+13:01 - Loreno 
+Não, poderia ser por rádio frequência. É que, por exemplo, a regra geral, como a saída aqui É natural você usar um meio físico de internet. Tradicionalmente, nem posso falar isso, mas o que se espera é que as radiobases estejam ligadas umas às outras através de meio físico. Mas claro que existe a solução de link em visibilidade.
+
+13:37 - Clodoaldo Callogero#+#Loreno 
+Na área do arco, eu penso em fazenda.
+
+13:41 - Loreno 
+Na área do arco, seria de se esperar. Imagina você ter uma internet de 200 quilômetros. Não vai sair barato, não. Então o certo seria ter realmente links e invisibilidade aí. Ou seja, essas torres aqui, além de suportar o rádio local, o rádio broadcast local, elas suportam também uma antena de rádio invisibilidade para as outras. Então agora sim, vem a regra do bolo. Se a escolha for para uma rede privativa dedicada, vai valer aquelas frequências que nós já vimos e que eu vou representar no slide 8, aquelas frequências dedicadas. Por essa resolução aqui. Agora, se for parceria com prestadora do SMP, a escolha vai ser da prestadora, óbvio. Então aí vai recair sobre frequências do SMP, que estão no outro slide. No slide 8, são aquelas frequências que vocês já viram aqui. E elas têm aquela vantagem que eu comentei com vocês aqui, que são os serviços que elas foram atribuídas agora, nessa última atribuição aí, elas foram atribuídas às redes privativas porque elas estavam vazias dos sistemas de interesse coletivo. Então o sistema de interesse coletivo não estava usando isso. Então a Anatel falou, bom, ela não está usando, então nós vamos atribuir isso para as redes privativas. E aí atribuiu para a rede privativa. E aí a rede Então, a partir de agora, elas têm preferência. Mesmo sendo de alocação secundária, elas são as frequências preferenciais para uso da rede privativa. Pode usar outras? Pode. Existe a 250, 145. Nós vimos várias. Não sei se vou repetir aqui. Não, não vai repetir, não. Mas vocês lembram que quando falamos do Sistema Limitado Privado, do SLP, a gente justamente tinha várias frequências. Tinha o caso da Vale, isso é uma outra coisa que vale a pena comentar, é assim, né? Às vezes, que nem foi uma pergunta do colega ontem, se você poderia ter a anguera toda como como fazendo parte da sua rede privativa. Era muito difícil, porque seria uma rodovia. Mas tem ferrovias que estão usadas. Por exemplo, a Vale tem uma ferrovia que vai, se não me engano, do Rio de Janeiro até Brumadinho. E essa ferrovia usa a faixa de, se não me engano, 145 ou 200 MHz. E é dedicada para ela. Agora, o que eles fizeram para isso? Eles pediram de faixa, apesar de usar a faixa 145 MHz, eles usaram uma banda de 10 KHz. Ou seja, usam uma titica de banda. E aí não interferem com ninguém. E como a ferrovia é deles mesmos, então ninguém vai entrar dentro da ferrovia e reclamar que o sinal dele está sendo interferido pelo sinal do trem. Então o princípio é esse daí. Tudo depende muito da banda que você está pedindo, que é esse valor aqui, e do valor da faixa explícita que você vai usar. Cada portadora é de quantos MHz ou de quantos KHz. Nós vimos que o sistema 4G, por exemplo, só permitia até 10 MHz. Lembram dessa história? Que a partir de 10 MHz o sistema 4G... Existe uma modalidade que eles chamam de agregação de care, que daí pode agregar e vale. Mas a massa amportadora é 10. E no caso do sistema 5G, a massa amportadora É de 2024. Entendeu? É bem diferente, né? Ok? E aí vale isso que a gente já comentou. Aí as frequências das prestadoras estão sendo essas, né? 698, 960, tá? Aí tem três, pelo menos. A banda 700 para 4G, 850 antigas bandas A e B para o GSM. Se o 4G permitisse a adaptação, o 5G pode ser feito. E a de 900 Hz também. As outras bandas geralmente fazem parte do 4G ou do 5G. E o que eu ia comentar é que essas faixas de frequência podem também ser utilizadas por SLP. Ou seja, você pode pegar e dizer que quer usar essa faixa para o SLP. Aí tem duas alternativas. A Anatel pode rejeitar porque colide com a prestatura SMP ou O que pode acontecer é que você tenha o seu espaço. Lá no interior, por exemplo, não vai colidir, porque, digamos, no território nacional, eu diria que... Vou dar um chute aqui. No território nacional, eu diria que 10% está ocupado por SMP. Então, assim, sobra 90% para utilizar com outros serviços e outras bandas. Isso é natural Acontece muito. Professor, só uma dúvida, por favor.
+
+20:09 - Palestrante Não Identificado 
+Sim, senhor.
+
+20:10 - FAGUNDES Felipe (ENGIE BRASIL ENERGIA S.A.) 
+Por exemplo, se um mesmo equipamento, tá? Ele pode operar em várias bandas diferentes. Por exemplo, se eu vou fazer a aquisição de um equipamento, mas ainda não sei em qual faixa eu vou operar. Ao certo, tem uma ideia.
+
+20:34 - Loreno 
+Então, o equipamento Core não, mas o equipamento Core ainda depende da frequência. Mas o equipamento rádio base, ele depende sim. A antena aqui, na verdade, é assim. Como regra, tá? Qualquer antena de mais de seis metros, de mais de dez metros, serve para celular. Então aí ela pode usar qualquer uma dessas faixas aqui. Depende da antena que você for instalar ali, tá? Mas o maior preço é a infraestrutura. Por isso que eu comentei que a sua pergunta, na verdade, é duas partes. A parte de infraestrutura, sim. A parte de antenas, não. A parte de eletrônica, também não. A parte da eletrônica é separada. A eletrônica é da radiobase. Então, para cada frequência tem uma eletrônica. Adequado aí. Ok? Ok, obrigado. Imagina. Bom, agora vamos falar um pouquinho das... Nós vamos falar de três regulamentos aqui. O primeiro regulamento é o regulamento do serviço de telecomunicações. É um regulamento velho. Foi criado em 1998. Mas o pessoal do Anatel assim meus superintendentes e companhia falavam lá, é um regulamento considerado exemplar da Anatel. Exemplar em que sentido? Porque ele coloca todos os pingos nos índices. Então aqui tem várias definições que eu acho que vai interessar para vocês. Então uma delas é essa aqui, no serviço de telecomunicações de interesse restrito. Então é A definição daquele regulamento, que vale até hoje, é esta aqui. Destinada ao uso da própria executante ou do prestado, entre outros grupos de usuários, selecionados pela prestadora mediante critérios por ela estabelecidos. Observados os requisitos da regulamentação e que os serviços de trânsito restrito não estão sujeitos aos condicionamentos da coletividade. Os condicionamentos deles devem ser tais que não prejudiquem os interesses da coletividade. E a prestação é sempre no regime privado, claro que não vai ser público. Aqui mostra bem a hierarquia. A prestação de serviços de telecomunicações, tendo em vista a conjugação da lei Geral de Telecomunicações, pode ser No interesse coletivo, regime público. Esse era antigamente o STFC. No interesse coletivo, regime privado. Chegou um aviso aqui, já estamos rodando há 20 minutos. No interesse coletivo, regime privado, que é o que existe hoje em dia, e no interesse restrito, e agindo em privado, que seria o caso do nosso serviço SLP ou qualquer outro. E repara aqui o regulamento geral, o que ele dizia? A utilização da rádio-frequência em rede de suporte a serviços prestados com interesse restrito está subordinada à precedência no atendimento das necessidades das prestadoras de serviços Ou seja, o interesse particular está sempre subordinado ao interesse coletivo, tem que ser. Só que aquela história que eu já comentei, no caso dessas frequências aqui, a Nathel Martello analisou, viu que essas frequências estavam livres e falou, pronto, agora quem vai usar isso aqui provencialmente são as redes primativas. Então agora, Vou falar um pouco sobre como funciona a autorização do SLP. Tem que ter autorização do serviço e tem que ter autorização da frequência. São duas autorizações separadas obtidas pelo sistema mosaico. Aquela história também que nós já conversamos, que as autorizações dos serviços limitados privados são em caráter secundário, ou seja, é caracterizado pelo direito à proteção contra interferência prejudicial, exceto quando proveniente, exceto quando vindo do SMP, digamos, caráter primário. Não precisa ser o SMP, pode ser um uso militar também, uma coisa assim, né? Professor, você comentou sobre o mosaico aí, sobre as licenças do SLP, né?
+
+25:39 - antonio adade 
+A Anatel meio que já destinou uma faixa para esse uso, né? O N77 lá, o 3.7 gigas, né?
+
+25:50 - Loreno#+#antonio adade 
+Já está separado para o 5G ou para as redes privativas? Isso, redes e modelo SLP. É bastante simples você fazer o pedido de uso dessas frequências. As redes privativas são essas aqui, as frequências.
+
+26:09 - Loreno 
+Então você vê que 3.700 a 3.800 você pode usar, tá? Então a Anatel não é que meio, não. Predestinou mesmo. Porque verificou que essa parte do espectro estava limpa, e aí então falou, designar. E como o 4G não entra nessa faixa, ele entra na faixa inferior, né? Então é para o 5G mesmo.
+
+26:38 - Palestrante Não Identificado 
+Oi?
+
+26:38 - Clodoaldo Callogero 
+Não ouvi, descuantoniomplementando a pergunta do Antônio, isso significa que o 3.7 é a faixa preferencial, é isso ou não? Não tem nada a ver.
+
+26:51 - Clodoaldo Callogero#+#Loreno 
+Dependendo do tamanho...
+
+26:53 - Loreno 
+Não, significa que essas faixas aqui que são as preferenciais. Todas elas. Aí se você entrar com, digamos, o teu 4G, por se adaptar para essa faixa, porque assim, uma coisa são as faixas usadas no Brasil, para 4G e para 5G. O que eu mostrei para vocês são as faixas usadas no Brasil. Mas é muito comum aí fora ter o 4G em 1900, ou então em 400. Então se o sistema que você estiver contratando do fornecedor, ele tiver o 4G por essa frequência aqui, ela é preferencial, você pode usar. Agora se for 5G, você não tem muita escolha não, você vai ter que escolher essa aqui ou essas últimas três.
+
+27:51 - Clodoaldo Callogero#+#Loreno 
+o tamanho da célula também. O tamanho da célula é a função do seu projeto, entendeu?
+
+27:59 - Loreno 
+E aí assim, aquela coisa que nós vimos aí. Se você achar que tem ambiente para microcélula, você vai escolher na faixa de 2,5 giga, que pode ser 4G ou 5G.
+
+28:16 - Clodoaldo Callogero 
+Então, naquela faixa dos 3,7, a distância não teria como ser uma macrocélula, por exemplo, né? Poderia ser, sim.
+
+28:25 - Clodoaldo Callogero#+#Loreno 
+Poderia ser. Olha, não é usual, tá? Não é usual, mas você viu ali que a macrocélula, que a micro, ele fala que vai até de 1 a 10 quilômetros.
+
+28:39 - Loreno 
+Então, aquilo que vale para o 2,5 praticamente vale para o 3,5, tá?
+
+28:47 - Clodoaldo Callogero 
+Isso.
+
+28:48 - Clodoaldo Callogero#+#Loreno 
+Seria possível, sim. Tá bom, obrigado.
+
+28:52 - Loreno 
+Professor, só uma dúvida, por favor.
+
+28:55 - Palestrante Não Identificado 
+Sim.
+
+28:56 - FAGUNDES Felipe (ENGIE BRASIL ENERGIA S.A.) 
+Com relação a essa dúvida do Clodoaldo, por exemplo, e se para a minha aplicação eu gostaria que eu tivesse um alcance maior?
+
+29:10 - FAGUNDES Felipe (ENGIE BRASIL ENERGIA S.A.)#+#Loreno 
+Eu poderia escolher, por exemplo, 700 MHz?
+
+29:16 - FAGUNDES Felipe (ENGIE BRASIL ENERGIA S.A.) 
+que seria menor frequência para um alcance maior e ainda conseguiria utilizar todos os outros atributos, não é isso? Sim.
+
+29:28 - Palestrante Não Identificado 
+Perfeito.
+
+29:28 - FAGUNDES Felipe (ENGIE BRASIL ENERGIA S.A.)#+#Loreno 
+Obrigado.
+
+29:29 - Loreno 
+O único atributo que você não vai conseguir, mas também não é o caso da rede privativa, é uma taxa de throughput de 5 gigas. Ou então um trupute de 1 GB, entendeu? O trupute vai ser menor.
+
+29:49 - FAGUNDES Felipe (ENGIE BRASIL ENERGIA S.A.) 
+Sim, observando o gráfico aí, eu suponho que a capacidade seria na casa aí de, sei lá, 100 MB, de 100 MB a 1 GB aí. Seria isso?
+
+30:03 - Loreno 
+Seria na ordem dos 500 MB, eu acho. 500 MB.
+
+30:07 - FAGUNDES Felipe (ENGIE BRASIL ENERGIA S.A.) 
+Chute, chute.
+
+30:08 - Loreno 
+Eu já fiz outras vezes.
+
+30:10 - FAGUNDES Felipe (ENGIE BRASIL ENERGIA S.A.)#+#Loreno 
+Isso pode ser obtido.
+
+30:12 - Loreno#+#antonio adade 
+É um valor que eu posso depois mostrar para você.
+
+30:16 - antonio adade 
+Eu acho que é importante comentar que a frequência é agnóstica à tecnologia. Eu posso usar tanto para o 4G quanto para o 5G. E um exemplo disso é a própria frequência dos 700 MHz.
+
+30:30 - Loreno 
+Ela é utilizada no 4G e foi leiloada para o 5G para fazer coberturas Sim, você está certo, mas a frequência de 3,5, acima de 3,5 é vendada para o 4G. Então, 27 gigas, o 4G, não existe 4G com 27 gigas, entendeu? É porque ela é TDD, né?
+
+30:56 - Loreno#+#antonio adade 
+Não dá para fazer... Não importa.
+
+30:59 - Loreno 
+Não, assim, na verdade, o 4G não chega a 27 gigas. Entendeu? Então ele usa 10 mega de faixa de care. Então faz a conta aí de 27 dividido por 10 mega, por 10 mil, os 27 giga, 10 nanona, dividido por 10 mil. Dá uma cacetada de care. Não existe um sistema que faça isso. Essa capacidade muito alta está vedada para o 4G. O 4G pode ir até, eles espicharam aqui, se não me engano. Acho que vocês lembram daquela figurinha, vocês querem botar nela? Pode ser? Eu vou dar uma olhadinha naquela figurinha que a gente já viu. Acho que foi... Deixa eu ver se eu lembro que aula que foi. Acho que foi na aula sete que a gente falou mais de...
+
+32:16 - Palestrante Não Identificado 
+Vou pegar outra.
+
+32:19 - Loreno 
+Fui eu, mais fácil. Não, essa aqui foi a aula cinco, talvez.
+
+32:37 - Palestrante Não Identificado 
+É por aqui, eu acho.
+
+32:47 - Loreno 
+Ou foi antes? Foi antes. Vamos ver qual foi, se foi a quatro. Acho que foi a três, viu? Encontrei todas.
+
+33:04 - Loreno 
+Naquele outro arquivo tem também.
+
+33:09 - Palestrante Não Identificado 
+Vixe, não foi aqui?
+
+33:13 - Loreno 
+Será que foi nos slides adicionais? Mas aí era para estar aqui, né? Foi nos slides adicionais. Tinha um tutorial, né?
+
+33:46 - Loreno 
+Essa figurinha aqui, vocês estão enxergando? Sim, sim.
+
+33:54 - Carlos Alberto de Almeida Batista#+#Loreno 
+Então, repara o seguinte.
+
+33:58 - Loreno 
+O 5G, eu tinha uma tabelinha mais completa. Aqui aparece, o 4G vem até 7,6%. 125 gigahertz, não gigahertz, não é throughput, tá? Então expandiram a faixa do 4G até aqui. Agora, para você em uma faixa maior, digamos 30 giga, só o 5G, tá vendo? Não sim professor, mas o 3,5, desculpa, 3,5 giga?
+
+34:43 - Loreno#+#antonio adade 
+Está contido aqui.
+
+34:45 - Loreno 
+Sim, o 3,5 é permitido, mas no Brasil não. Licença SMP. Licença SLP, sim. Foi o que nós estávamos conversando antes.
+
+34:59 - Palestrante Não Identificado 
+Certo? Aqui.
+
+35:04 - Loreno 
+O SMP não usa essa frequência, porque ele não usa que você pode usar um 5G. E pode usar o da prestadora, se a prestadora quiser usar essa faixa e subscrever essa faixa. E você pode também usar como SLP. Está entendido? Tem alguma coisa que ficou faltando aí?
+
+35:44 - Palestrante Não Identificado 
+Pessoal? Estou mastigando.
+
+35:47 - Loreno 
+Eu ainda estou mastigando. Não, é o seguinte.
+
+35:53 - Clodoaldo Callogero#+#Loreno 
+Vamos ver.
+
+35:55 - Loreno 
+Essas são as faixas preferenciais. Tanto faz para... Vamos dizer assim, que tipo de máquina você vai usar, 4G ou 5G? Não importa.
+
+36:10 - Clodoaldo Callogero#+#Loreno 
+Como o colega falou lá, é agnóstico para tecnologia. Entendeu?
+
+36:15 - Loreno 
+Agora, em termos de permissão para o sistema móvel pessoal, você não tem o 4G, o 4G não é permitido para essa faixa aqui. Nós vimos isso. Sabia que nós vimos? Na aula passada. É que às vezes a coisa escapa, né?
+
+36:43 - Palestrante Não Identificado 
+Foi na passada? Acho que foi.
+
+36:49 - Loreno 
+Vou pegar aqui.
+
+36:52 - Palestrante Não Identificado 
+É, foi nessa aqui.
+
+37:03 - Loreno 
+Aqui, 4G no Brasil. Então eu comentei que ele usa ou essa frequência de 2,600 ou a de 700. Ele não usa de 3,500. Isso quando o 4G está fazendo o trabalho do sistema coletivo SMP. Com o SLP ele pode usar qualquer uma daquelas frequências que a gente estava vendo antes. Agora no 5G. O 5G pode, o 700, o 2.3 invadiu a faixa do 4G, o 3.5 e o 26. Entendeu? Então o que eu estou dizendo é que você não pode usar essas faixas, você não pode pedir para a prestadora, me arruma um 4G a 3.5 giga. Ela vai dizer, não, você só vai poder fazer isso se você explorar ele como SLP. Você quer usar ele como SLP, eu posso fazer, mas ele não é o SMP. É isso que eu quis dizer. Eu vou usar a seguinte nomenclatura. Em vez de ficar dizendo que vale o texto da referência, eu vou colocar itálico. Quando for itálico, já é o próprio trecho do regulamento. Então a gente viu um pouquinho do regulamento geral, para vocês verem que lá estabelece a precedência do uso coletivo sobre o uso restrito. Não obstante, tem essa última atribuição que a Natel fez, que permitiu essas bandas aqui serem preferenciais. Então, como que abrir uma exceção nesse regulamento aí? Essa é a mesma ideia. E agora vamos ver as definições. Pode-se por exemplo, internacional ou internacional, no regime privado, destinado ao uso do próprio executante ou prestado a determinados grupos de usuário, selecionados pela prestadora mediante critérios por ela estabelecidos e que abrange múltiplas aplicações. Então é aquela história que a gente já viu, tem muitas aplicações. E assim como a questão de captação e transmissão de dados científicos, metodologia, por exemplo. Então tem de qualidade do SLP e onde requer. Isso ele fala, espero que eu tenha botado pelo menos uma vez, mas ele fala várias vezes no regulamento que se precisar de exploração por órbita, é permitido, mas vai ter que solicitar órbita também e vai ter que ser analisado em uma série de aspectos. Outro artigo, o quinto, que eu achei relevante, depende de pré-autorização do ANATEL, que será expedido por prazo determinado e ativo veneroso. A autorização para exploração do SMP não tem licitação, então não vai ter três. Para todo SMP, a ANATEL é obrigada a fazer uma licitação. Então tem o leilão e tem a licitação. Agora, aqui não tem licitação. Você vai lá, levanta a mão, levanta o seu crachá e fala que quer uma autorização. Em princípio, o hotel vai te dar. A menos que coincida de ter descobrido uma mina de diamante, qualquer dia desses aí, pode ter mais de uma corrente. Aí abriria uma exceção. Mas como regra não tem.
+
+41:11 - Loreno 
+A outra paráfora, que não será necessária a autorização, é aquilo que você já conhece. Meios confinados ou equipamentos de radiação restrita. A frase-chave aqui é a radiação restrita, que é aquelas frequências que dispensam licitação. Estão lembrados, né? Bom, aí os preços. Eu achei importante, se algum de vocês for entrar no Maratel e tudo, acho que é importante saber que existe preço para tudo, né? Então, tem esse preço público para o direito de exploração do serviço e tem o preço público pelo direito de uso de rádio frequência, que são basicamente associados às duas licenças, a de rádio frequência e a de serviço. O preço público pelo direito de uso de rádio frequência, nós temos satélite para captação e tradução de dados, atribuindo essa exploração quando a exploração do SP será paga ou autorizada. Então, é assim mesmo que seja, não, mas eu quero, é pesquisa o que eu estou fazendo, ou é meteorologia, não importa, você vai pagar o preço. E aqui ele fala bem claramente, na exploração do SP permitido a utilização do sistema de satélite para realizar localização ou rastreamento de plataformas de coleta, estações de observação, operando nas faixas de radiofrequência atribuídas a esse regime de exploração da Terra por satélite. Bom, aqui só para repetir um pouco, não sei se vocês ficam tão inseguros quanto a questão da exclusividade dessas faixas ou da preferência que elas têm. Ele vai dar umas aberturas para isso. As redes serão organizadas, como o Laminar até praticamente fala, com vias de livre circulação, com uso exclusivo da comunicação entre usuários, uso do plano de iluminação particular. Você pode usar um plano IP particular, e é usado.
+
+43:59 - Loreno 
+E assim, tem direito a disponibilizar a conexão à internet. E repara, eu não sei se vai aparecer aqui, a rede privativa 5G, por exemplo, que vocês vão fazer para uma fazenda dedicada, por exemplo, ela não pode ficar se interconectando nem com outras redes do SLP, nem se interconectando com SMP, certo? Nem com telefonia. Também não pode haver contratação de outra empresa para prestar serviços, etc. Esse artigo 19 ele fala bem claramente, é verdade. A interconexão entre rede de suporte e OSLP. Por isso que a única conexão que tem, que a gente representa aqui, é a conexão com a internet. A interconexão entre rede de suporte e OSLP e rede de suporte a serviço também não pode. E também não pode contratação. A empresa do SMP não pode contratar você para prover rede. Essa condição de exploração industrial é justamente quando você é provedor para eles. Então a sua rede é para você mesmo. Não pode nem ser usada para uma rede de interesse coletivo, para acessar terceiros. Entendido? Bom, então assim, um papo, pode falar.
+
+45:30 - Palestrante Não Identificado 
+Nasce mais uma dúvida.
+
+45:33 - Loreno 
+Se eu não posso contratar...
+
+45:37 - Clodoaldo Callogero 
+As outras estão morrendo, a minha única dúvida é essa.
+
+45:45 - Loreno 
+As outras estão ou estão vivas ainda.
+
+45:50 - Clodoaldo Callogero 
+É o seguinte, por exemplo, se eu tenho um SLP e eu quisantonioratar uma Claro, por exemplo, do nosso amigo, acho que é o Antônio que trabalha na Claro lá. Não pode fazer isso.
+
+46:08 - Clodoaldo Callogero#+#Loreno 
+Você não pode fazer isso.
+
+46:10 - Loreno 
+Você pode ter linhas da tua rede privativa que acessam a Claro, da Claro como assinantes da Claro, normais. Mas você não pode ter interconexão da tua rede com a Claro. Entendeu? O que significa isso? Interconexão é quando você usa a rede do cara e o cara usa a tua rede pra chegar em alguém.
+
+46:34 - Palestrante Não Identificado 
+Entendeu?
+
+46:34 - antonio adade 
+Ô Clodoaldo, o jeito de você fazer isso, porque nós comentamos umas, sei lá, um mês passado, é usando slice de rede. Entendeu.
+
+46:44 - Clodoaldo Callogero#+#antonio adade 
+Aí você consegue usar a rede da Claro por exemplo.
+
+46:48 - antonio adade 
+E aí esses lá e esses lá ele vai ser privativo para você entendeu. E esse slide você não vai se você não pode dar serviço que nem o professor comentou agora. Ele vai direto para o seu data center por exemplo. Entendeu. Então eu uso a minha minha base station aqui macro eu reservo um pedaço do espectro para você. Você vai pagar um fim muito alto ali para mim. Mas aí você leva ele embora como se fosse uma rede sua, entendeu? É assim, eu tô fazendo uma aspas aqui, ele vira um... Você vira pra mim aqui uma MVNO, entendeu?
+
+47:23 - Palestrante Não Identificado 
+Entendi.
+
+47:23 - Clodoaldo Callogero#+#Loreno#+#antonio adade 
+Mas aí você precisa ter um slice, entendeu?
+
+47:26 - Clodoaldo Callogero#+#antonio adade 
+Sem isso aí o professor tá correto, não tem como fazer.
+
+47:30 - Clodoaldo Callogero#+#Loreno#+#antonio adade 
+É, como é que eu contrataria, por exemplo?
+
+47:33 - Clodoaldo Callogero#+#Loreno 
+Aqui não sou eu, viu? Quem tá falando isso é a Anatel.
+
+47:37 - Clodoaldo Callogero#+#Loreno#+#antonio adade 
+Ah, desculpa, desculpa, professor.
+
+47:38 - Clodoaldo Callogero#+#antonio adade 
+A Anatel... Realmente nesse regime de SLP em cima do SMP, a não ser pelos live, entendeu?
+
+47:47 - Clodoaldo Callogero 
+Então é nesse sentido que o contrato, por exemplo, um OSS, um VAS, da Clara, por exemplo.
+
+47:55 - Clodoaldo Callogero#+#Loreno 
+Entendi. Isso vai poder fazer. Você está apercebendo essa parte aí, tá? Mas aqui nós estamos falando de rede, rede de suporte. Rede de suporte, ok.
+
+48:08 - Loreno 
+Entendi. Bom, então aqui só para lembrar vocês que a solicitação de frequência também tem que ser solicitada. Tem que ter uma autorização de uso de radiofrequência e também a solicitada pelo sistema mosaico. E aqui de novo aquela história, as autorizações por SLP são em caráter secundário, ou seja, ele é caracterizado pelo direito contra interferência prejudicial, exceto quando provente de um caráter primário. Agora é aquela história que existe uma exceção para essa regra, que são aquele conjunto de faixas de frequência. Esse trecho eu tirei do relatório. Eu devia ter tido a iniciativa de pegar uma coisa diferente, mas aqui existe um lugar onde você pode fazer simulação do preço que você vai pagar. Antigamente estava no próprio regulamento. A gente pode ver no regulamento que tinha preços estipulados, mas agora você estabelece isso, na verdade, de forma eletrônica. E aí fazer uma simulação com o que o Tudy está falando aqui. Para essa freqüência de 3.75, banda de 100 MHz, rádio cobertor de 1 Km por 10 anos, o preço seria R$ 860,00. Vamos voltar agora ao Stellar Mosaic. Eu vou tentar particularizar o uso do Stellar Mosaic. Eu fiz um tutorialzinho do Stellar Mosaic, mas eu acho que vocês vão preferir ter o documento em si. É fácil baixar o tutorial do Stellar Mosaic. Eu posso disponibilizar ele junto com a aula. O que vocês acham? Tudo bem? Pessoal, eu poderia acabar a aula aqui, né?
+
+50:37 - Clodoaldo Callogero#+#Loreno 
+Não, estar lá eu não vou disponibilizar.
+
+50:40 - Loreno 
+Mas eu acho que vale a pena a gente navegar um pouquinho no Steal Mosaico e entender um pouquinho, principalmente para quem nunca usou, né? Entender um pouquinho o que vai pedir, qual é a dificuldade. Tem a dificuldade de fazer um imposto de renda, praticamente. Aqui aparece o tutorialzinho para vocês do mosaico em 16 slides. Primeiro tem que fazer o cadastro nesse sistema eletrônico de informações. Vai preencher um formulário, vai enviar esses termos aqui, essas coisas assim. Então tem que ser feito acontecer Se você está querendo trabalhar nisso amanhã, é bom mandar com antecedência para chegar na Anatel e eles terem como tratar isso. Vamos no primeiro acesso. Vai acessar pelo site Anatel, aplicativos. Quando entra no acesso pela Anatel, ele vai dar a opção de Estela Mosaico. Sempre tem que estar com... A pessoa que vai preencher tem que estar com gov.br. Ou a pessoa que vai dar o documento, tem que entrar com gov.br. Aí ele vai começar a pedir dados. Então o CPF, claro que tem que formar sem traços, isso aqui é meio padrão hoje em dia, a maioria dos CPFs é assim. Ele chama a atenção que é obrigatório o cadastro, que todas as pessoas que forem constar nas solicitações de outorga ou licenciamento, que seja realizada efetivamente o cadastro no sistema da Anatel. Aí tem esse clique, tem esse sistema mosaico da Anatel, é só clicar nele e vai passar para a próxima tela. Aí a próxima tela são os pedidos de outorga.
+
+52:53 - Loreno 
+Aqui, no caso, ele já selecionou os pedidos de serviço, mas tem alternativa de frequência também. Então, você navegaria nessa motorgada, estaria na motorga, e aí você vai escolher se é um serviço de interesse coletivo ou serviço de interesse restrito. Na verdade, a gente é interesse restrito. Aí, Vai ter mais umas telas onde vai aparecer o formulário novamente e até o pagamento. Na notificação do serviço, ele tem aqui uma escolha. E aqui nessa escolha vão estar tanto os serviços em si quanto as frequências. Quanto até a frequência que a gente quer lá, que seria a frequência incremental, que nós falamos ontem, seria também aqui. Está aqui que você vai fazer a diferenciação, se é frequência que você vai fazer, se é serviço ou se é o quê. Ele vai permitir essa navegadora, ele expande e mostra essa alternativa. Então, olha o que ele está comentando aqui. No campo serviço prestado, que é esse campo aqui, indica quais os serviços que pretende explorar. Então, a autógrada permite serviço coletivo, interesse restrito, condicionada à pré-verificação, claro. E a autógrada permite serviço restrito e possibilita qualquer serviço de interesse restrito também. Aí depois, a primeira coisa, quase uma das primeiras, tem que cadastrar o representante legal. Então tem que ter um advogado, um administrador que seja o representante legal e vai cadastrar ele, tá? E esse cara tem que estar cadastrado no sistema do hotel também.
+
+55:03 - Palestrante Não Identificado 
+Professor, aí no caso de...
+
+55:06 - FAGUNDES Felipe (ENGIE BRASIL ENERGIA S.A.)#+#Loreno 
+Desculpa, professor. Aí no caso... No caso de ser uma empresa, aí precisaria ter um procurador ou alguma coisa do tipo. Isso. Você vai perguntar para o cara, fala, ó, quem que é o teu representante legal aí?
+
+55:22 - Loreno 
+Então é advogado tal, é administrador tal? Geralmente é um advogado, né? Recomendo que seja um advogado.
+
+55:29 - FAGUNDES Felipe (ENGIE BRASIL ENERGIA S.A.)#+#Loreno 
+Do jurídico, né? Tá bom.
+
+55:31 - Palestrante Não Identificado 
+É.
+
+55:31 - Loreno 
+E repara que sempre tem que ir nesse sistema CEI aqui para cadastrar os caras antes. Então, primeira coisa é É importante fazer essa navegação aqui para ver quem você vai precisar cadastrar. Mas assim que você souber quem, você tem que cadastrar esses caras nesse sistema SEI. Existe um sistema SEI do Ministério também, que é independente. Esse daí é o sistema SEI da Anatel. E aí tem aquela história de usar o Token, né? Eles vão dar o toque e você vai ter que repetir. Vai ter um procedimentozinho aí. Aí vem o que eles chamam de autocadastramento, uma pessoa que está preenchendo ou coisa parecida. E vai ter que cadastrar a entidade também. Qual seja o PJ, o nome, Todos os dados da e-mail, essas coisas aí. Só que isso é feito aqui, então, tá?
+
+56:41 - Palestrante Não Identificado 
+Aí depois o endereço da sede, né?
+
+56:44 - Loreno 
+Se tiver mais de uma representante, mais de uma filial, né? E aí repara que pode ter diversas aí, tá?
+
+57:01 - Loreno 
+também o endereço de correspondência, que geralmente é o próprio endereço da sede. E aí vem a parte de encaminhar o formulário. O formulário deve aparecer para você, você deve preencher e validar o formulário. Clique no botão Validar.
+
+57:27 - Loreno 
+Caso houver alguma mensagem de erro, corriga o erro e depois salva a aplicação. O sistema vai validar e vai buscar mais informações, como se existe uma procura a operação eletrônica, a representação, a regularidade do CNPJ, a regularidade fiscal perante a TEL e se já existe autorização para prestação de serviço ou não. Após tudo isso, volta à tela inicial para enviar o formulário. E aí você começa a colocar os anéis. O detalhe é que ele só aceita um único pdf, então não adianta você tentar colocar vários pdfs. É um único pdf contendo tudo. Você tem que incorporar no mesmo Word ou no mesmo pdf todos os arquivos que você pretende apresentar.
+
+58:50 - FAGUNDES Felipe (ENGIE BRASIL ENERGIA S.A.) 
+Que documentos são esses, professor?
+
+58:53 - Loreno 
+Esses documentos aqui que são pedidos, por exemplo, CNPJ. Aqui uma coisa que ele vai comentar. Deixa eu ver se é aqui que ele comenta. Aqui, é aqui. A pergunta é exatamente isso aqui. Para o serviço de interesse restrito não é exigida apresentação de documento nenhum para expedição do ato, entendeu? Você pode adiantar, por exemplo, certidão que comprove os equipamentos, tem certificado de alogação, parecer favorável ou documento dos órgãos competentes sobre a historia da tua planta. Você pode adiantar esse tipo de documento, mas mesmo que você não queira anexar, pode ser feito depois, durante o processo de autórgata. No caso do interesse restrito, não precisa. No caso, ter esse coletivo precisa dar toda a documentação antes.
+
+59:51 - Icaro De Oliveira Castro Costa 
+Não sei se o senhor ainda vai abordar isso, mas esse processo todo tem quanto tempo, mais ou menos, para obter essa aprovação?
+
+1:00:03 - Loreno 
+Olha, de 15 dias a um mês.
+
+1:00:07 - Palestrante Não Identificado 
+É eletrônico, né?
+
+1:00:13 - Icaro De Oliveira Castro Costa 
+Pronto, era isso mesmo, minha dúvida.
+
+1:00:17 - Loreno 
+Obrigado. Bom, agora a minha proposta é a gente conversar um pouquinho sobre a famosa UTE, Autoração de Uso Temporário do Espectro, ou também chamada Autoração de Uso Temporário de Áudio-Frequência. Em termos de autorização, é a mesma coisa que a gente conversou ontem praticamente, né? Ela pode ser solicitada a cobertura de eventos, visitas, uma série de finalidades aí, tá? E ela tem um prazo máximo de 60 dias, não prorrogados, segundo a Anatel, mas tanto quanto eu me lembro, se tiver um aval de alguém da Anatel, tem problema. E ela foi feita de acordo com a resolução 635 de 2014. Então ela é relativamente nova, digamos, o regulamento dela. Mas já havia a prática há muito tempo. Em termos jurídicos, professor, isso aí é uma concessão, né?
+
+1:01:33 - Icaro De Oliveira Castro Costa 
+Esse licenciamento é uma concessão. Né? Ela pode ser revogada se eu não cumprir o que está estabelecido, né? Sim, ele pode interromper.
+
+1:01:44 - Loreno 
+Se ele achar que você está interferindo, por exemplo, tá?
+
+1:01:49 - Icaro De Oliveira Castro Costa#+#Loreno 
+Não podendo causar interferência, tá vendo?
+
+1:01:51 - Loreno 
+É uma autorização. É, é uma autorização, tá? Não é uma concessão, é uma autorização, só que ele revoga porque ela é para uso temporário e você a condição que é essa aqui. Que não pode causar interferência em sistemas operando em caráter primário.
+
+1:02:13 - Icaro De Oliveira Castro Costa 
+E nesse caso aí de suspensão, eu teria que reativar isso ou teria que fazer uma nova solicitação, tudo do início de novo?
+
+1:02:24 - Loreno 
+Se você mantiver aquela frequência, provavelmente você vai ter que fazer uma nova. Mas se você Porque, ou seja, ela vai ser negada para você. Mas se você conseguir... Digamos que você tenha apontado três frequências. Uma de aula de interferência. Não há necessidade de mudar, de fazer uma nova. Entendeu? Entendi, professor.
+
+1:02:56 - Palestrante Não Identificado 
+É por aí.
+
+1:03:02 - Loreno 
+Bom, só para dar uma olhadinha no regulamento. Ele fala que a autorização se aplica ao uso temporário para cobertura de eventos diversos, incluindo demonstração de produtos de sorte de altas frequências e a visita oficial ao Brasil de autoridades estrangeiras, ou embarcações, ou aeronaves. É otorgado em caráter secundário, dependente da atribuição ou destinação da faixa, por um período determinado, não tendo interessado direito a proteção contra defensas prejudiciais. Então, se você for prejudicado contra a defensa de alguém, aí azar é seu. Ou vai desistir do experimento ou vai ou vai verificar se também, porque às vezes a interferência que você está detectando é uma interferência ilegal. Ou seja, o cara não deveria estar usando aquela frequência. Aí quem tem razão é você, claro. Você sabe que a Anatel fecha estação toda hora, né? Já conhece essa história, né? A Natela é perita em baixar a equipe lá e arrebentar o rádio, puxar, fechar. Então, isso aí é a rotina deles.
+
+1:04:39 - Palestrante Não Identificado 
+Então, o mesmo critério de antes. Perdão.
+
+1:04:43 - Loreno 
+Pode falar. Oi, com licença, professor. É só para avisar.
+
+1:04:50 - Daniel Quintao Ferreira 
+tem uma resolução nova, saiu a coisa de menos de um mês aí, que substituiu essa daí, que é a 775.
+
+1:04:59 - Daniel Quintao Ferreira#+#Loreno 
+Eu botei aí no chat aí. Ah, legal.
+
+1:05:02 - Daniel Quintao Ferreira 
+É a 775.
+
+1:05:03 - Loreno 
+Ah, bom saber, senhora. E ela aborda o que essa nova aí? Tem alguma diferença?
+
+1:05:09 - Icaro De Oliveira Castro Costa 
+Muita diferença dessa antiga? Essa que é a pergunta, essa que é a pergunta, podemos dar uma olhada nela.
+
+1:05:18 - Daniel Quintao Ferreira 
+atualizando, eu botei no chat aí se você quiser abrir ela aí para ir olhando, mas é importante para colaborar aí tá?
+
+1:05:29 - Loreno 
+Vamos abrir, acho que nossa, super super válido. Deixa eu ver uma coisa aqui, cadê o chat? Essa aqui né, é o Daniel? Isso. Então essa aqui, vamos tentar ir lá.
+
+1:05:52 - Palestrante Não Identificado 
+Nossa, nem sabia.
+
+1:05:54 - Loreno 
+A verdade está aqui, de 28 de abril. Ah, mas é bem recente, hein? Por isso.

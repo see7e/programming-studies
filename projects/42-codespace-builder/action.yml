@@ -1,0 +1,13 @@
+# GitHub Actions metadata file
+# https://docs.github.com/en/actions/creating-actions/metadata-syntax-for-github-actions
+
+name: '42 Codespace Builder'
+description: 'Automates the creation of Codespaces for 42 projects'
+inputs:
+  branch:
+    description: 'The branch to trigger Codespace creation on'
+    required: true
+    default: 'main'
+runs:
+  using: 'docker'
+  image: 'Dockerfile'

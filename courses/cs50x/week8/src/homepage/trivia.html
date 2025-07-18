@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+
+<html lang="en">
+    <head>
+        <!-- Meta info -->
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="author" content="Gabryel Nobrega, Bootstrap">
+        <meta name="description" content="CS50x-PSet8">
+        
+        <title>Trivia!</title>
+    
+        <!-- Bootstrap core CSS -->
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+        <!-- CSS -->
+        <link href="styles.css" rel="stylesheet">
+        <!-- Bootstrap core JS / JQuery -->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+        <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+        <title>My Webpage</title>
+
+        <script>
+            // Multiple Choice Question Logic
+            function checkMultipleChoiceAnswer(selectedButton, isCorrect) {
+                let buttons = document.querySelectorAll('.multiple-choice .answer-button');
+                let fb1 = document.getElementById("feedback1");
+
+                buttons.forEach(function(button) {
+                    if (button === selectedButton) {
+                        if (isCorrect) {
+                            button.style.backgroundColor = 'green';
+                            document.querySelector('#feedback1').innerHTML = 'Correct!';
+                            // button.parentElement.nextElementSibling.textContent = '...';
+                        } else {
+                            button.style.backgroundColor = 'red';
+                            document.querySelector('#feedback1').innerHTML = 'Incorrect!';
+                        }
+                    } else {
+                        // Opitional: Disable a second try
+                        button.disabled = true;
+                    }
+                });
+            }
+
+            // Free Response Question Logic
+            function checkFreeResponseAnswer() {
+                let responseInput = document.querySelector('.free-response input');
+                let responseButton = document.querySelector('.free-response button');
+                let responseText = responseInput.value.trim().toLowerCase();
+
+                if (responseText === 'because they stop calling each other') {
+                    responseInput.style.backgroundColor = 'green';  // bg
+                    responseInput.style.color = 'white';    // text
+                    document.querySelector('#feedback2').innerHTML = 'Correct!';
+                } else {
+                    responseInput.style.backgroundColor = 'red';  // bg
+                    responseInput.style.color = 'white';    // text
+                    document.querySelector('#feedback2').innerHTML = 'Incorrect!';
+                }
+                // Opitional: Disable a second try
+                // responseInput.disabled = true;
+                // responseButton.disabled = true;
+            }
+
+            document.addEventListener('DOMContentLoaded', function() {
+                const multipleChoiceButtons = document.querySelectorAll('.multiple-choice .answer-button');
+                multipleChoiceButtons.forEach(function(button) {
+                    button.addEventListener('click', function() {
+                        checkMultipleChoiceAnswer(this, button.textContent === 'squirrel');
+                    });
+                });
+
+                const freeResponseButton = document.querySelector('.free-response button');
+                freeResponseButton.addEventListener('click', checkFreeResponseAnswer);
+            });
+        </script>
+    </head>
+    <body>
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark" aria-label="Main navigation">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="index.html">HomePage</a>
+                <button class="navbar-toggler p-0 border-0" type="button" id="navbarSideCollapse" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <div class="navbar-collapse offcanvas-collapse">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0 flex-grow-1">
+                    <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" href="index.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown" data-bs-target="dropdown01" aria-expanded="false">Radio Redo</a>
+                        <ul class="dropdown-menu" aria-labelledby="dropdown01" id="dropdown01">
+                            <li><a class="dropdown-item" href="./radio1996/index.html">Radio 1996</a></li>
+                            <li><a class="dropdown-item" href="./radio1997/index.html">Radio 1997</a></li>
+                            <li><a class="dropdown-item" href="./radiotoday/index.html">Radio Today</a></li>
+                        </ul>
+                    </li>
+                    <a class="nav-link" href="trivia.html">Trivia!</a>
+                    </li>
+                </ul>
+                <form class="d-flex">
+                    <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                    <button class="btn btn-outline-success" type="submit">Search</button>
+                </form>
+                </div>
+            </div>
+        </nav>
+        
+        <main id="trivia">
+            <div class="cont">
+                <div class="section multiple-choice rounded-3">
+                    <h2>Part 1: Multiple Choice </h2>
+                    <hr>
+                    <h3>Question 1: Which animal is known for "crashing" many pictures since 2009?</h3>
+                    <button id="t-btn" class="answer-button">elephant</button>
+                    <button id="t-btn" class="answer-button">bird</button>
+                    <button id="t-btn" class="answer-button">squirrel</button>
+                    <button id="t-btn" class="answer-button">cat</button>
+                    <p id="feedback1"></p>
+                </div>
+
+                <div class="section free-response rounded-3">
+                    <h2>Part 2: Free Response</h2>
+                    <hr>
+                    <h3>Question 2: How functions break up?</h3>
+                    <input type="text">
+                    <button id="t-btn">Check Response</button>
+                    <p id="feedback2"></p>
+                </div>
+            </div>
+        </main>
+    </body>
+</html>

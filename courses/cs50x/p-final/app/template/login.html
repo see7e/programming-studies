@@ -1,0 +1,28 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    - Log In
+{% endblock %}
+
+{% block main %}
+    <div class="container-fluid py-5 text-center login-form">
+        <div class="mb-3 avatar">
+            <!-- <a href="https://www.flaticon.com/free-icons/user" title="user icons">User icons created by Becris - Flaticon</a> -->
+            <img src="../static/img/user.png" alt="Avatar">
+        </div>
+        <h2 class="mb-3">Login</h2>
+        <form action="/login" method="post">
+            <div class="mb-3">
+                <label for="username" class="form-label">Username</label>
+                <input autocomplete="off" autofocus class="form-control mx-auto w-auto" id="username" name="username" type="text">
+            </div>
+            <div class="mb-3">
+                <label for="password" class="form-label">Password</label>
+                <input class="form-control mx-auto w-auto" name="password" type="password">
+            </div>
+            <div class="mb-3">
+                <button type="submit" class="btn btn-warning">Log In!</button>
+            </div>
+        </form>
+    </div>
+{% endblock %}

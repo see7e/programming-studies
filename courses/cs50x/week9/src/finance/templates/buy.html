@@ -1,0 +1,32 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Buy Shares
+{% endblock %}
+
+{% block main %}
+            <h1>Buy Shares</h1>
+            <hr>
+            <form action="/buy" method="post">
+                <div class="mb-3">
+                    <label for="symbol" class="form-label">Stock Ticket:</label>
+                    <input id="symbol" name="symbol" type="text" class="form-control mx-auto w-auto" autocomplete="off" autofocus="" required>
+                </div>
+                <div class="mb-3">
+                    <label for="shares" class="form-label">Stock Shares:</label>
+                    <input id="shares" name="shares" type="number" class="form-control mx-auto w-auto" min="1" required>
+                </div>
+                <button class="btn btn-primary" type="submit">Buy</button>
+            </form>
+{% endblock %}
+
+
+<!--Improvements Made:
+
+Added the <h1> heading to provide a clear title for the page.
+Used the Bootstrap form-group class to style the form elements.
+Added the required attribute to the input fields to enforce client-side validation for mandatory fields.
+These improvements make the "buy" form more user-friendly and consistent with standard design
+practices. The form will not be submitted until the required fields are filled, providing better
+feedback to the user when trying to proceed with the buy action.
+-->

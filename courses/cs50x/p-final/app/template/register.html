@@ -1,0 +1,36 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Register
+{% endblock %}
+
+{% block main %}
+<div class="container-fluid py-5 text-center login-form">
+    <div class="avatar">
+        <!-- <a href="https://www.flaticon.com/free-icons/user" title="user icons">User icons created by Becris - Flaticon</a> -->
+        <img src="../static/img/user.png" alt="Avatar">
+    </div>
+    <h2 class="mb-3">Register</h2>
+    <form action="/register" method="post">
+        <div class="mb-3">
+            <label for="username" class="form-label">Username</label>
+            {% if email %}
+            <input id="username" name="username" autocomplete="off" class="form-control mx-auto w-auto" type="text" value="{{ email }}">
+            {% else %}
+            <input id="username" name="username" autocomplete="off" autofocus="" class="form-control mx-auto w-auto" type="text">
+            {% endif %}
+        </div>
+        <div class="mb-3">
+            <label for="password" class="form-label">Password</label>
+            <input class="form-control mx-auto w-auto" name="password" type="password" required>
+        </div>
+        <div class="mb-3">
+            <label for="confirmation" class="form-label">Confirm Password</label>
+            <input class="form-control mx-auto w-auto" name="confirmation" type="password" required>
+        </div>
+        <div class="mb-3">
+            <button type="submit" class="btn btn-warning">Register!</button>
+        </div>
+    </form>
+</div>
+{% endblock %}

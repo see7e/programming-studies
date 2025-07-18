@@ -1,0 +1,786 @@
+22.05.2025 Aula 4 Interpretar o Fluxo de Sinalização em Redes Móveis
+
+0:18
+Boa tarde, pessoal, tudo bem? Boa tarde, mestre, tudo bem? Clodoaldo, Ashley, Guilherme, Felipe, tudo certo, OPA, vou esperar o pessoal chegar, daqui a pouco a gente começa, mestre, enquanto isso eu te mandei um e-mail bíblia lá, não sei se você conseguiu ler Ah, você mandou pro pera aí, você mandou pro Cyber, é, é, pera aí, deixa eu pegar agora sim, oi.
+
+1:09
+Na verdade, quando que você mandou o eu acho que eu mandei hoje à tarde, o Almir, Ah, tá, tá, tô vendo aqui, mas fica tranquilo, não tem não tem AA pressa, foi só mais um, um talvez Oo pessoal não não esteja sentindo o que eu tô sentindo. Então se for, se for o caso, eu dou um passo atrás e.
+
+1:39
+Mas fica tranquilo que eu respondo sim, depois eu já deixei ele aqui com aberto aqui, tá bom, obrigado, viu mestre, não, tranquilo, vamos lá, aberto. Boa tarde, professor, boa tarde pessoal, tudo bem, boa tarde, bem-vinda aí tudo beleza, obrigado pagar aqui pra não, ué, como é que eu desativo a câmera aqui?
+
+2:16
+Esperar mais uns 3 minutinhos, chegar um pouco mais de gente. Ainda estamos abelha das 5 da tarde, né? Então dá dá tempo de o pessoal chegar aí.
+
+2:49
+Ó, pessoal, já vou adiantando, Hein? Se nas outras aulas a gente não falou tanto das redes de telefonia móvel, hoje é totalmente lá, tá falar um pouco de mais de 4 GE 5G, mas vamos falar um pouquinho de 3G também. Mas muito da parte de já aula é sinalização, né? Então é importante saber como é que, como é que tudo funciona.
+
+3:16
+É na telefonia móvel. E como que a gente interpreta a as interfaces, os protocolos EE esse funcionamento? Na verdade, esse tema, ele vai até é ter mais uma aula a respeito, porque é muito conteúdo para passar num dia só, mas é legal que que a gente já começa a falar, porque aquilo que eu falei antes sobre.
+
+3:43
+Comunicação de dados, redes, protocolos e tudo mais. Vai ter uma ligação com com alguns temas que nós vamos falar na aula de hoje. Eu não sei se é aí onde vocês moram. Está chovendo aqui em Santo André agora está chovendo até forte, Hein, até relativamente forte, pois de alguns dias está chovendo, mas vamos lá esperar mais um minutinho. A gente já começa, já está gravando mesmo, então.
+
+4:12
+Deixa eu só compartilhar aqui um áudio, só me falem se já está aparecendo para vocês. Aula 4 aí na tela. É uma beleza, né? É só começando. AA falar devagarinho aqui é.
+
+4:39
+Quando a gente fala de sinalização em, principalmente em redes e em telecomunicações, é a sinalização, é tudo aquilo, todas as mensagens que são trocadas para que o sistema funcione corretamente, tá? Então tudo aquilo que que precisa ser é trocado entre.
+
+5:05
+Uma estação rádio base, um centro de computação e controle, né? Um elemento interno da rede ou mesmo entre a estação rádio base e o dispositivo do usuário para que ele possa estabelecer uma sessão, fazer autenticação, se preparar para troca de voz e dados. Tudo isso é sinalização.
+
+5:31
+Então, o tema da aula de hoje é em cima de sinalização. Então por que que a gente começou estudando aspectos relacionados a redes, né? Falou um pouco sobre rede, falou um pouco sobre sistema operacional, uma aula de Lins, como 1 hora de cibersegurança, por que alguns elementos que fazem parte da rede, tanto a cor quanto outras partes da rede, eles têm.
+
+5:59
+Comunicação de dados com o endereço IP, com estabelecimento de sessão ou de conexão a gente tem é encaminhamento, roteamento. Tudo isso acontece e é mediado por uma série de sinalizações. Então, Oo conteúdo de hoje começa a falar sobre isso, a gente vai falar também sobre isso. É na próxima aula. Aliás, eu eu ouvi que.
+
+6:29
+É, a gente tem uma aula que no meu calendário, calendário da coordenação, tá marcado pra amanhã e ainda não apareceu no agendamento do Teams, tá aí eu pedi pra colocarem porque teve uma aula é que já era pra tá e acabaram não colocando, tá? E só explicando, tá, gente, na terça-feira eu não, eu não pude é dar essa aula que eu tava é acompanhando a minha esposa numa série de.
+
+6:55
+Exames e consultas, né? Ela tá, vai iniciar um tratamento aí que vai tomar um pouco de tempo e era importante estar junto, porque medicação é EEEO, preparatório para os exames, não deixa ela bem e tal, e para não se sentir mal no caminho, eu fui junto, tá? Então foi por conta disso, mas tomou o dia todo, né? Então não é gostoso ficar o dia todo entre clínica de exames e hospitais, mas foi necessário ficar naquele momento, então por isso que eu não vim na terça-feira.
+
+7:25
+Mas vamos lá, agora estamos aqui, então vamos começar aqui o nosso conteúdo, tá conforme o pessoal for chegando, eu vou admitindo aqui, tá bom, vocês já me conhecem, acho que eu não preciso passar novamente, mas hoje a gente espera aí. Tem gente que eu acho que está batendo, né, pra entrar na sala e está tendo algum problema, deixa eu ver, não, agora está todo mundo aqui.
+
+7:51
+A gente vai falar sobre isso que eu comentei, a sinalização em redes móveis, celulares, né? Principalmente. A gente vai falar nessa aula, veja que dessa vez eu não separei em 2 partes. Eu IA fazer ela em 2 partes, mas aí eu falei, cara, se eu separar é o que é arquitetura, do que é protocolo, do que é fluxo, do que é interface, se eu separar em 2 partes.
+
+8:19
+O entendimento não vai ser legal. Então, quando eu apresentar um determinado ponto aqui, um determinado aspecto, eu vou falar em geral sobre a arquitetura, o protocolo e as interfaces, ou arquitetura e as interfaces, protocolos. Depende da tecnologia que eu tiver falando. E aí os fluxos de sinalização. Eu vou usar bastante imagens para explicar o fluxo.
+
+8:45
+E depois nós vamos lá para o simulador, que é maravilhoso. Aliás, eu vou pedir para vocês instalarem aí para as próximas aulas, a gente vai usar bastante ele, que é o omnet, tá, o omnet, ele é um trator, tá? Ele é um simulador pesadão, um grandão, é, dá um certo trabalho instalar, mas depois que funciona é um negócio sensacional, tá? Então eu vou mostrar ele para vocês, vou também mostrar como que a gente constrói uma pequena rede móvel lá dentro do packet tracer, né, que é Oo simulador de redes.
+
+9:16
+Eu deixei os os os vídeos dos conteúdos de instalação do do ominete lá na área de de de arquivos, tá? Então vocês vão ter acesso a tudo isso. Então vamos começar lembrando, todo o material já foi postado para você? Está lá no canal do do Discord, tá também nos materiais de apoio ao mesmo link.
+
+9:39
+Tá então a aula de hoje que a aula quarta já tá lá. Mais do que isso, eu deixei lá uma apostila de 70 páginas que eu preparei, na verdade, preparei atualizei, peguei algumas informações de site de IA para montar um pouco esse conteúdo tá bem completo, então tem o conteúdo de hoje, tem o conteúdo da próxima aula, então tem alguns conteúdos lá na frente, eu só na apostila não tá dividido, aula a aula tá, tá sequência de temas lá, tá?
+
+10:07
+Então vocês podem acessar e pegar lá o são 2 apostilas, uma da aula passada, da aula 3 e a outra que é da aula de hoje e da próxima também. Tá, mas vamos lá, então vamos lá, vamos falar sobre sinalização. Primeira vez que eu tive contato, vamos chamar assim de acadêmico EEE profissional com.
+
+10:35
+Um sistema telefônico nesse sentido foi no ano de 1000, 992992. Eu comecei a fazer o curso técnico em telecomunicações lá no instituto federal de São Paulo, que é a antiga escola técnica federal, tá? Fiz lá um curso técnico muito bom, muito bom e na época, 92 foi o ano.
+
+11:03
+Que a telefonia celular chegou na cidade de São Paulo, mas ainda era uma coisa pra muito pouca gente, era muito caro, era muito difícil. É, você tinha praticamente que fazer um testamento pra poder ter um celular, tá? Mas a telefonia fixa era muito forte ainda. E por ser forte, a gente aprendeu muito sobre telefonia fixa naquele período do curso técnico, principalmente.
+
+11:33
+9394 quando eu comecei a trabalhar meu primeiro emprego, meu primeiro estágio na vida foi na telesp e eu fui trabalhar numa área que fazia a ponte entre a comunicação de voz e os primeiros links de dados, né? As chamadas LPs são as linhas privativas de dados. Então eu tive que entender desde bastante cedo o que era sinalização.
+
+11:59
+Porque você tem sinalização que é voltada para voz. Você tem sinalização que é voltada para dados, você tem sinalização que é voltada para as 2 coisas. Tá, mas eu vou dar um exemplo de sinalização. E quem é um pouco mais velho que utilizou o telefone fixo? Conhece o seu telefone fixo. Quando você tira o telefone do gancho e coloca ele no ouvido, ele sinaliza para você se a linha está disponível ou não.
+
+12:28
+Tá então aquele sinalzinho. Aquilo lá é sinalização, é uma sinalização de áudio pra te falar, ó, beleza, eu estou disponível pra você começar a discagem ou a teclar, tá? É quando. E tem uma outra coisa, quando o telefone ficava no gancho, é.
+
+12:55
+Telefone fixo, né? O gancho ainda aquela coisa que ficava, né, conectada. Quando o telefone ficava no gancho a aquele circuito telefônico, ele ficava com uma tensão de 5 volts. Quando você tirava o telefone do gancho, ele aumentava para 48 volts e em torno desses 48 volts ele mandava esse tom de 425 Hertz. Ó, eu lembro do do valor, que era o tom.
+
+13:25
+De linha. E aí quando você pressionava as teclas, se você tivesse no telefone de tecla já, ele mandava o chamado dtmf, que era aquele cruzamento de 2 frequências que forma a frequência daquele dígito pra central, tudo isso é sinalização, que é aquilo que ocorre antes de você estabelecer a ligação, tá?
+
+13:49
+Então veja, 5 volts em repouso, 48 volts a hora que eu tiro, vem uma frequência de 425 herts. E aí quando você pressiona a tecla, tem o chamado dtmf, né? Que é aquela frequência que você cruza lá, ó, você pega 2 frequências e cruza, soma as 2 e manda para cada dígito pressionado. E aí?
+
+14:11
+Essa informação chegava na central, então tá aqui no na imagem aqui, estação fixa, chega na rede pública, vai na central, né? E processa e chega no destinatário, tá? Então tem toda uma sinalização entre o seu aparelho, a primeira central telefônica que a que te atende. As centrais também são as centrais intermediárias, as centrais que fazem ODDDE tudo mais, né? Para que chegue do outro lado e o telefone, toque esse toque.
+
+14:40
+Ele tem lá também uma frequência específica. Ele toca por um segundo para 3, toca um segundo para 3, até você atender, tá? O ringue, né? Exato. E antes disso, ainda, quando o telefone ainda não era de tecla, era de disco. Quando você pressionava o disco e você soltava aquilo, fazia interrupções nessa linha de 48 volts, fazia uma onda quadrada e a central interpretava essa onda quadrada para poder.
+
+15:09
+Enviar o dígito para dentro lá da central e fazer o processamento. Nessa época ainda tinha centrais. Quando eu comecei a trabalhar, ainda tinha central eletromecânica, toda baseada em reles que ficava abrindo e fechando. Quando você ligava discava para alguém, era um negócio muito louco fazer um barulho danado. Então trabalhei na telesp exatamente nessa migração e tinha as linhas de dados. Dito isso, imagina como a gente evoluiu?
+
+15:36
+É enquanto é quando surge a telefonia móvel, em que você coloque elementos de interconexão entre a rede fixa, né, que é a psdn e a rede móvel, como por exemplo a CCC, que tá nessa imagem, que é a central de comutação e controle. É o cara que pode fazer o meio de campo entre rede fixa e rede móvel, a gente também tem.
+
+16:01
+As herbes, né? Ou BS, né? As base stations, né, que são as antenas, tudo tem sinalização. E basicamente por que que a gente tem sinalização? A gente tem que sinalizar tudo, a gente tem que sinalizar que a gente quer fazer a ligação, na verdade, que a gente tá vivo na rede, que a gente tá parado ou está em trânsito, ou seja, mobilidade do usuário.
+
+16:26
+Eu tenho que gerenciar recursos de rádio pra saber se eu estou fazendo uma chamada de voz, ou de dados ou de vídeo ou tudo isso junto. Eu tenho que garantir autenticação e segurança, ou seja, as informações do meu rádio móvel meu e-mail, o meu chip, o meu número, tudo isso tem que autenticar de forma segura pra que somente eu seja o Almir na rede que utilize operadora tal. Eu tenho o quê?
+
+16:56
+Definir parâmetros de priorização de tráfego, que é o chamado qualidade de serviço. iOS, né? Então, por exemplo, a rede móvel celular ela trafega. Hoje a gente consegue ter conexão de voz e de dados muito bem definidas lá. Então, por exemplo, se eu fizer ao mesmo tempo uma chamada de voz, mas eu tiver trafegando dados, eu tenho que dar prioridade pra voz porque o dado.
+
+17:23
+Se eu tiver, por exemplo, mandando um arquivo, se eu perder um pacote, ele pode ser reenviado. Mas numa chamada de voz, se tiver um picote, fica um picote. Você percebe que a chamada que foi picotada, então o que é OS ele serve pra fazer o que? A priorização de tráfego tá além disso?
+
+17:40
+A gente também precisa da sinalização pra falar o seguinte, olha o Almir ou a Ashley ou clodoal do Felipe. Eles não estão em São Paulo DDD 11, eles estão saindo do DDD 11, indo pra Campinas DDD 19 ou Barretos DDD 17 ou Ribeirão Preto DDD 16. Ou seja, ele tem que autenticar esse usuário na rede em qualquer lugar que ele esteja, mesmo que aquilo não seja 11 região da operadora dele, né?
+
+18:09
+E isso é um negócio muito interessante, porque essa mobilidade é é é o que diferencia, né? O que faz com que a rede móvel tenha vantagens em relação à rede fixa, né? E a gente tem que falar também sobre estabelecimento de sessões de dados, tá, mas sem demorar muito. Eu queria falar dessa explicação e depois eu vou falar de um fato muito interessante pra vocês. É algo que vocês não sabem sobre os primeiros aparelhos.
+
+18:37
+GSM, que chegaram no Brasil e a primeira antena de GSM montada no Brasil. Tá, mas vamos lá. A gente tem que a sinalização é algo importante, por tudo isso que eu falei, porque ela estabelece conectividade, ela gerencia a mobilidade, ela gerencia sessões, ou seja.
+
+18:59
+Se eu estou dentro, se eu não estou, se eu encerro a sessão, se é, é, é como que eu estou autenticado. Se eu estou fazendo Oo tráfego de voz, dados, vídeo ou tudo isso junto, eu tenho que fazer a chamada autenticação e garantia de segurança. Ou seja, eu tenho que ter o chamado EAM, que é o gerenciamento de identidade de acesso. Eu tenho que proteger a comunicação, porque se alguém puder se logar na rede com o meu perfil, como é que fica, né?
+
+19:28
+Então tudo isso são pontos que a gente tem que analisar e eu tenho que fazer o gerenciamento de recursos, tá? Então veja só, numa rede móvel a gente tem o chamado back hall e o front hall. Front hall é todo gerenciamento de recursos que a gente tem entre a antena e o seu dispositivo e os e os rádios, né? Então tudo aquilo que acontece de alocação e gerenciamento de recursos entre a antena.
+
+19:59
+E o vamos chamar de celular ou dispositivo móvel é front hall, mas tudo aquilo que está para trás da antena, dentro do core da rede, que faz o gerenciamento de recursos dentro da arquitetura, tudo isso é back haw. Peraí que eu passei a mais aqui, isso aqui.
+
+20:20
+Então a gente tem que, dentro da nossa rede, fazer um bom gerenciamento de recursos. E aí a gente tem aquela tradicional imagem das celulazinhas, né? Parece uma colmeia aqui, né? Então nela eu tenho alguns elementos importantes, que são elementos que conversam entre eles. Então eu tenho a estação móvel, que é o meu celular, eu tenho a Hebe, que é a antena, eu tenho o Cora aí as centrais computação e controle e controle de todos os outros elementos da rede que se falam.
+
+20:48
+E o estabelecimento de células? Ele é feito toda vez que eu tenho pelo menos 3 antenas que fechem um ponto de triangulação. E a cada 3 antenas eu eu consigo estabelecer esse ponto de triangulação. E quando eu vou juntando todas elas, fica esse formato, que idealmente são células de 6 faces, mas que na prática a gente sabe que não é exatamente assim. Beleza? Dito isso.
+
+21:19
+Vamos entender uma coisa muito importante que tem a ver com a sinalização, tá? A gente tem que estabelecer o que é a parte do sistema ou controle e o que é a parte do usuário. Isso são os planos, tá? Então veja só, nessa imagem aqui, imagina que a parte de cima representado por esse único servidor aqui, ok?
+
+21:47
+Esse cara aqui que é o plano de controle, representa os elementos da rede celular que sinalizam para o restante da rede, para que eu possa transportar as mensagens de sinalização, gerenciar as conexões, inclusive dos usuários finais, que lá No No no conjunto de de dados, tem o baixo volume, mas é crítico para funcionar.
+
+22:15
+Então veja registro de rede, o randolver, o roaming, tudo isso é importante pra EEEO estabelecimento chamado, ou seja, quando eu digo pra alguém toca do outro lado. Até o momento que alguém atende é sinalização. Tudo isso prepara o cenário pro chamado plano de usuário que tem a ver com a parte dos dados. Ou seja.
+
+22:37
+Eu tenho lá um controle, né? Eu tenho lá um plano de usuário que me fala o seguinte, olha como é que os dados, como é que, como é que o conteúdo dos usuários vai ser transportado? Voz, dados e vídeo, como é que isso? Vamos dizer que aqui esse roteador represente uma antena. Como é que eu separo canal de voz, canal de dados, canal de vídeo, como é que eu recebo essas informações? Como é que eu jogo isso pra dentro da rede?
+
+23:01
+Isso tudo é o plano do usuário. E claro, como eu trafego voz, como eu trafego dados, como eu trafego vídeo, eu tenho 1 o volume muito maior de tráfego, então a conversa, o streaming, a navegação web, tudo isso é plano do usuário. E o legal de ter isso separado é que eu consigo otimizar a rede. Então se eu tiver por exemplo um planejamento de rede.
+
+23:27
+Que ele não esteja muito adequado pra parte de sinalização, eu vejo só no plano de controle, ou o contrário. Olha, eu tenho um plano de controle bom, a sinalização funciona bem, porém a minha rede tá sobrecarregada. Eu preciso aumentar o número de herbes ou eu preciso aumentar a largura de banda ou OOA capacidade de atendimento de recursos no plano do usuário? Então eu vou mexer só no plano do usuário, então tudo isso.
+
+23:56
+É importante pra gente entender que a sinalização é o que viabiliza o restante. Se eu não tiver uma boa sinalização, provavelmente o plano de usuário vai dar problema. Eu lembro quando a telefonia móvel começou AAA se expandir lá no começo dos anos 2000, que ela começou a ganhar bastante volume. Eu fui trabalhar na Motorola, eu me formei em 2000.
+
+24:24
+Na engenharia. E aí fui trabalhar na Motorola. Em 2001, a Motorola fez o spin off, que era uma empresa para parte do que hoje seria OIOT. Na época a gente chamava de the bices de telemetria chamada tmdata, mas era da Motorola e da tecnocolum da Espanha. Muito bem. Quando eu estava Na Na tmdata, deixa eu só voltar aqui é a gente. Como tinha uma ligação direta com a Motorola.
+
+24:52
+A gente foi escolhido pra fazer uma validação bem interessante. A Tim, né? Que na época era só telecom Itália pra gente. Ela tava trazendo a operação pro Brasil e não existia nenhuma operadora que fosse full gsm. A gente tinha OCDMA que era da telestre celular, depois virou a vivo e tinha OTDMA que na época era ABCP, que depois virou a claro.
+
+25:22
+Então você não tinha o sistema, os telefones não eram de chip ainda, né? E em 2001, que foi quando eu fui trabalhar nessa empresa, a Tim falou, não, a gente quer entrar no Brasil já com o conceito de gsm. Todos os celulares vão ter um chip muito bem. E aí eles escolheram a Motorola pra homologar a tecnologia gsm no Brasil.
+
+25:49
+A Motorola, por sua vez, falou, cara, a gente tem uma empresa que fala sobre inovação, telemetria, Natal, e eles nos escolheram pra fazer essa validação. Então tinha eu mais um, um outro é analista, né, que era o meu chefe e tinha mais 2 é engenheiros, que era de uma empresa parceira, e nós 4 fomos fazer a validação. Então nós recebemos a primeira antena de GSM do Brasil. É uma antena experimental. Ela era pequena, vinha numa maleta.
+
+26:19
+Parecia um cabo de vassoura, só que ela era dourada, recebeu umas 2 dessas. E aí eu lembro que na época, a Motorola, ela ficava no edifício Passarelli, do lado da estação Pinheiros, de trem, aqui de São Paulo, e o nosso escritório ficava na marginal Pinheiros, a 3 km e meio da Motorola, num prédio do lado do clube Hebraica, frente do jocke. E aí, o que que a gente fez? Olha, olha que interessante esse trabalho. Nós recebemos 2.
+
+26:46
+Antenas, né? 2 caixas com 2 antenas e recebemos 6 aparelhos de SM, tá com os chips e tudo mais. A Motorola, no prédio dela, ela tinha uma fibra ótica que ligava ela lá no sistema de GSM, lá nos Estados Unidos, lá na Flórida, em for lauderday, tinha uma fibra, chegava lá, então a gente conseguia puxar o sinal de GSM por essa fibra. A gente montou a antena no telhado do prédio da Motorola, puxamos cabeamento, conectamos.
+
+27:14
+No rack lá, Pra Ele poder pegar a sinalização, fizemos a primeira antena a funcionar. Na hora que a primeira antena funcionou, que a gente viu que tava tudo ok, nós tiramos os 6 celulares da caixa e ligamos o celular, colocamos o chip e ele já identificou que tinha uma rede e pedia a conexão. Beleza, conectamos. Aí nós fomos pro outro prédio. No outro prédio não tinha fibra ótica, então ele tinha que se conectar. Na primeira antena, nós montamos a antena.
+
+27:43
+Achamos avisada que era 3 km e meio visada direta. Conseguimos pegar avisada, fizemos o registro dessa antena e fechamos o circuito só para que uma antena pudesse falar com a outra. Então, o primeiro teste de 2 telefones gsm se falando entre 2 antenas diferentes, ou seja, com a possibilidade de randover DeX 2, que é o protocolo que a gente vai falar daqui a pouco, foi feito por mim e por mais 3 pessoas em 2001.
+
+28:13
+E aí com base nesses testes, nós ficamos fazendo o teste durante uns 30 dias. Nós homologamos a tecnologia de gsm para Motorola. Motorola, por sua vez, é homologou pro pro na época. Eu acho que eu acho até que que que foi pra Anatel, não sei se foi via CPqD, não vou lembrar, mas aí eles homologaram a entrada da Tim. A Tim entrou naquele mesmo ano, no final do ano no Brasil, comercialmente, então foi muito legal ter participado disso.
+
+28:43
+Entender como era diferente a tecnologia, que o chip passa a ser o centro de tudo. Isso aconteceu quando a gente tava lá da da primeira geração pra segunda geração, né? O gsm tá aqui na geração 2 e depois disso a gente teve uma evolução muito rápida, né? Então eu lembro, pô, quando quando entrou o 3G no Brasil? 2007 mais ou −2008.
+
+29:11
+Eu já era professor da fiap. Eu lembro que eu era muito consultado para essas questões de telecom, e aí eu lembro que eu conversei com o pessoal da Globo, nós fizemos o teste de 3G lá no prédio da fiap, foi bem, foi bem legal isso daí. E depois evoluiu mais rápido, né? O 4G e o 5G é, são, é, é, vamos dizer que até OOO 3G, você teve uma mudança conceitual da tecnologia, você sai de uma capacidade analógica.
+
+29:38
+Você vai para 12 g, em que você tem comunicação digital, você tem alguns serviços de dados, mas aí você ainda não tem necessariamente OOO chamado pack data. Você ainda tem o chamado é circuit swit, data em que você trafega dados por um circuito comutado, e não pro circuito fundados. E a coisa vira fundados e IP a partir do 3G, né?
+
+30:06
+E aí hoje a gente tem toda essa questão de você ter é IoT, internet, 4.0 e outras coisas, porque as redes evoluíram nesse sentido. Mas vamos lá falar um pouquinho sobre é as evolução da sinalização. Lá no um g redes analógicas, era praticamente a mesma coisa que tinha na telefonia fixa, só que promove. É sinalização básica pra estabelecer chamada, tá?
+
+30:35
+Então, tinha tom de frequência, tinha sinal analógico e as capacidades eram bastante ilimitadas. Aí deixa eu só eu adicionar mais uma pessoa que tá aqui esperando, ok? E aí o que eu falei quando chegou OGSMEOCDMA, né? Porque AAA tecnologia de um g chamava amps, né, que era o analógico. Aí entrou OTDMAEOCDMA, depois OTDMA, foi migrada para OGSME, depois tudo virou GSM.
+
+31:05
+Então o 2 GA gente começa a falar de sinalização digital, protocolo específico, sinalização SS 7, meio que uma herança das redes fixas vindo aqui pro pro mundo móvel. Aí a gente começou a ter serviços como o protocolo APSMS. Eu lembro que a gente mandava igual hoje você manda um ZAP, você mandava SMS para as pessoas, né? E aí aqui.
+
+31:34
+Na quando digitalizou, você começa a ter o conceito mais claro do randolver, mas principalmente do roaming, que no início o roaming era chamado de VLR, que é o visitor location register, quando você era um visitante naquela outra área de registro. E aí, meu, pra você calcular o custo de uma ligação no sistema celular, era um negócio infinitamente difícil você.
+
+32:03
+Pagava pela chamada, pela movimentação do DDDE, pela hora do dia. O custo da ligação mudava 6 vezes ao longo do dia. Quando você estava em, quando você precisava fazer uma ligação interurbana, tá? Então era o inferno. Se você falasse de madrugada, era um preço.
+
+32:25
+Das 6 às 9 era um preço da manhã, das 9 ao meio-dia era um preço, do meio-dia às 18 era um preço, das 18 às 21 era um preço, das 21 à meia-noite era outro preço, era o inferno, tá, é, mas a gente precisou passar por isso pra depois chegar no 3G, tá? E aí, quando a gente chega no 3 GA, gente começa a ter a chamada banda larga no celular. Quando era o 2 g, você tinha.
+
+32:55
+Até alguma coisinha de dados ali, mas era, é, é, era, era cobrado por minuto. Era um negócio complicado aqui no 3G, não, ele já era, é, é, gera, fui, quase fui p, né? Então você tem a chamada banda larga chegando aqui, né, que é o sistema OMTS.
+
+33:16
+No caso das operadoras full gsm e o CDMA2 1000, que praticamente não foi adotado porque aí a telesp celular já estava virando vivo, já tinha virado vivo, na verdade, e ao invés dela optar por só fazer AAA migração para o CDMA2 1000, eles já foram direto pro MTS, pro gsm e full total. E aí a gente tem.
+
+33:42
+Uma mudança importante aqui porque a quantidade de protocolos pra suportar a banda larga EEE os serviços de voz e vídeo é muito maior, mas tem um protocolo que é bem interessante, que é o hanap, né? O radioats network application parte. Daqui a pouco eu vou falar sobre ele especificamente, mas esse cara aqui é o segredo pra que você de fato conseguisse. É trafegar em alta velocidade, porque ele separava.
+
+34:09
+É dentro da rede, as aplicações. Então aplicação de voz é uma coisa, aplicação de dados é outra, aplicação de vídeo é outra. E aí as coisas começaram a ficar mais fáceis pra se fazer OQOS, que era separar e priorizar isso aí, fazer gerenciamento de mobilidade. E aí eu entendo que a partir do quarto g é quando AAA telefonia móvel.
+
+34:37
+Ela começa a ter capacidades realmente altas de tráfego de dados, e aí já pouco importa se você vai fazer uma chamada de voz de dados, de vídeo, vai assistir em streaming, tudo ali é uma conexão IP, tudo tá. Então veja a arquitetura, o IP, tudo baseado em IP. Depois eu vou falar sobre esses protocolos, né? O de amiter EOS, um APE são bem legais pra estabelecimento de chamada randolver e outras coisas, tá?
+
+35:07
+Aqui é quando você tem a separação mais clara entre plano de controle, que é sinalização, e plano de usuário, que é o tráfico de dados. E mesmo que aqui no 3 GA gente já tivesse falando de banda larga, no 4G você já começa a falar de aplicações da indústria e aí a latência passa a ser um problema. O tempo de resposta passa a ser um problema, então ela já passa a ser uma rede otimizada para reduzir latência, porque? Veja.
+
+35:36
+É, eu posso ter uma conexão de 10 megabits em 3G ou em 4G. Eu posso ter essa conexão de 10 megabits sendo aplicada a uma aplicação industrial ou um maiut, por exemplo, pra é coletar dados em tempo real de alguma coisa. Só que imagina que eu estou coletando dados em tempo real de alguma coisa que precisa ter um tempo de resposta muito baixo.
+
+36:01
+Aqui no 3G eu não conseguia garantir esse tempo de resposta. No 4G já é possível ter muito mais certeza do tempo de resposta. Então veja, mesmo que eu tenha nos 2 casos uma conexão de 10 megabits aqui no 3G, eu posso ter, por exemplo, um tempo inicial de resposta de uma solicitação de meio segundo 500 milissegundos.
+
+36:28
+E vamos dizer que a minha aplicação não possa ter um tempo de resposta superior a 20 milissegundos. O 3G não funciona, é 500 a. No 4G eu consigo garantir, então tudo muda, tudo muda. Então aqui a gente começa a ter. Realmente é uma aplicabilidade, é na indústria e principalmente quando a gente chega aqui no 4G, como a arquitetura é OIP.
+
+36:58
+A gente já consegue visualizar a possibilidade de aplicações distribuídas de internet das coisas, de IoT, porque a gente já entende que o 4G ele é muito mais preparado pra pro IPV 6 do que o 3 GE. Quando a gente fala de IoT, OIPV 6 é importante. Acho que eu IA comentar isso com vocês na primeira aula, tá? E aí nós temos o 5 GO new radio, né? Que é ONR aqui.
+
+37:28
+E olha que interessante, se aqui a arquitetura ela é baseada em Ipês, no 5G ela é baseada em serviços. Então aqui a gente já fala de PIA, gente já fala de é, você disponibiliza serviços? Então aí a gente já tem 11. Negócio bacana que é o fato de que a arquitetura 5G ela já é cloud native, ou seja, ela já é nativa para cloud, né?
+
+37:59
+EE aí a gente consegue ter alguns casos de uso. Tudo essa, essa sopa de letrinhas eu vou falar mais a frente, tá? Vamos lá então, essa evolução. Ela mostra que as redes foram ficando mais otimizadas para aplicações em tempo real, foram ficando mais otimizadas para banda larga.
+
+38:19
+EE, hoje vamos lá, quantas vezes você pega o seu telefone pra fazer uma chamada de voz por dia e quantas vezes você usa, por exemplo, pro WhatsApp pra mandar um arquivo ou uma mensagem, né? Isso dá uma ideia de como ter uma arquitetura baseada em serviços é importante, então é é essa era a evolução, essa historinha que eu acho que é importante contar aqui, tá?
+
+38:47
+E aí, veja, hoje, quando a gente fala de sinalização, a gente pode ter uma situação como essa, ó, em que a arquitetura de sinalização tá controlando drone, tá controlando dispositivos de usuário, tá controlando comunicação veicular de carro elétrico, tá controlando serviços, tá controlando edifícios inteligentes, cidades inteligentes, smart Cities, tudo isso.
+
+39:13
+Porque a sinalização permite, a gente tem ela orientada a serviços. Quando a gente faz uma comparação entre as arquiteturas, a gente consegue ver o seguinte, né? Na filosofia Oo 3G, ela é hierárquica, ou seja, a arquitetura, ela não era full IP, então tinha gente que mandava. É, é, é elementos que manda em elementos, estabelece uma hierarquia. O 4G por GCOIP, ela é plana, ou seja, é tudo uma rede IP.
+
+39:41
+A única coisa que eu tenho que pensar é no roteamento encaminhamento regras de rede, tá mais o motivo de porque nós começamos falando de redes aqui, tá? E agora? 5G baseado em serviços. Quando a gente fala na arquitetura, o 3G tem uma baita arquitetura complexa, porque ela ainda traz alguma coisa da herança do 2 GE, até da rede fixa. Então a complexidade da arquitetura é alta, do 4G é média, porque você tá pensando numa arquitetura IP.
+
+40:10
+Já no 5G, como você tem todos os toda a questão de de consumir API, de basear em serviço, de ser cloud native, você tem uma complexidade alta, mas ela é escalável e modular, né? Então olha que interessante, né? A gente tá falando de uma rede complexa atual, mas que a gente pode ampliar de uma forma mais simples. E quando você fala do cor da rede, o 3G, ela ainda tem, como eu falei, herança.
+
+40:40
+Da rede fixa e das redes anteriores, ou seja, uma parte por circuito, mas já é uma parte por pacote, mas não totalmente IP. O 4 GG é totalmente IP e o 5G é mais do que totalmente IP, ela é IP ecloud, tá? E a gente tem os elementos de sinalização que daqui a pouco a gente vai falar separados livres, né? Os protocolos foram mudando ao longo do tempo. Olha só, hoje no 5 GO que a gente tem HTT, PHTP2, na verdade.
+
+41:10
+Tá, e olha a questão da latência de sinalização, olha o que eu falei, do 3G até 500 milissegundos, o 4G de 50 a 100 e no 5 GA gente consegue ter latências abaixo de 10 milissegundos. Isso é ótimo. Já dá para usar na indústria para aplicações aí 24 por 7 e outras questões, né? Então tem questões aí importantes dessa comparação entre as arquiteturas, né? E.
+
+41:39
+E é legal esse esse aqui é um quadro que eu acho que vale a pena dar uma estudada é daqui a pouco eu falo sobre o que é HTTP2, mas é basicamente é o é a gente poder trafegar serviços baseados em comunicação HTTPO, que que é o 2 dela, né? O HTTP2 é porque eu consigo usar esse HTTP para serviços em mobilidade, tá? É isso, serviços web em mobilidade, vamos lá.
+
+42:09
+O Antônio tá com HTPOHTPSE, os 2, com certeza os 2. Daqui a pouco a gente vai ver isso também, então vamos pegar. Eu vou falar principalmente de arquitetura de sinalização e interface e tal de 4 GE 5G, porque é o que pega hoje, tá? Principalmente quando você fala de redes privativas, é 4 GE 5G. Difícil você ver alguma coisa entre aí, tá?
+
+42:37
+Então, primeiro vamos passou, para de letrinhas aqui, tá? Vocês vão ver nas próximas imagens que estão aqui, na sequência um Monte de desenhos aqui, tá? Então o que que aparece aqui? Então vamos lá, ó, user, equipament o usuário, né? O rádio do usuário, aí eu tenho a antena de celulares, estação rádio básica, é também chamado de enote π, tá?
+
+43:04
+A estação base avançada é que combina funcionalidades, né? Do nudebe EORN 100 3G. Depois eu vou falar sobre ORNC. Então nessa imagem ainda tem quem OMME esse cara é importante, tá OMME. Ele praticamente é o cara que vai controlar a autenticação e a mobilidade dos usuários na rede. Então quando eu vou fazer o randover, ou seja, mudar de uma antena pra outra?
+
+43:33
+É esse cara que vai cuidar desse meu processo de mobilidade e autenticação. Ou seja, quando eu tô em trânsito, indo de um de um ponto a outro e que eu vou saindo da região de atuação de uma antena e chegando na outra, eu já começo a mandar essa sinalização falando, ó, eu tô, eu tô chegando, tô chegando, tô chegando. Então já vai sendo feito, utilizando Oo um cara chamado x 2. Daqui a pouco eu vou falar para vocês, OMME gerencia via x 2.
+
+44:03
+De uma entidade para outra, de uma antena para outra e fala, ó, o cara tá saindo da antena. AE chegando na antena, na antena b, antena b começa o processo de autenticação desse cara, tá? Então esse cara é importante aqui, então ele tá aqui, ó. Ah, mas tem o Word MM, é das redes mais antigas. Eu tenho que conversar, porque pode ser que eu chegue em algum lugar que eu não tenha disponível 4G, 5G, só tenha 3G, então eu tenho que ter uma versão antiga aqui, tá?
+
+44:32
+Eu também tenho os gatewes, né? O serving gateway, o sgw. Então veja só, esse cara até aqui eu estou falando de sinalização, plano de controle. Esse cara aqui é quem vai é falar sobre o plano de usuário. Então esse cara é que vai falar assim, ó, o fulano que está em mobilidade.
+
+44:55
+Que que você vai trafegar? Você pode trafegar. Voz, dados, vídeo, serviço ABCDE. Então é OSGW que faz isso, tá? Aí eu tenho que ter uma comunicação IP, porque eu provavelmente vou fazer chamadas mesmo de voz, utilizando comunicação de dados. Então tem esse PGW aqui que tá aqui ó.
+
+45:19
+Fazendo justamente isso, é ele que vai, ele é o meu servidor de HCP, vamos fazer falar isso, ele que vai fornecer para mim endereço IP, máscara, Gate e DNS e vai estabelecer roteamento com as redes externas, tá? Então ele é o meu Gate, né? É o meu roteador, ele é o meu servidor de HCP, é o cara que faz esse controle, tá aí é o seguinte, eu tô.
+
+45:46
+Comunicando com a rede, olha, eu sou o Almir, eu utilizo a operadora tal, meu IMEI é esse meu XP. SEE, eu preciso é garantir que a minha comunicação é que a minha autenticação ocorra de forma correta. Aí entra o hss, é ele que é o banco de dados, falando assim, olha, realmente existe esse assinante, esse assinante pode se autenticar na rede, ele tá com o pagamento em dia, beleza, deixa ele falar, tá?
+
+46:15
+Ele tá aqui e eu tenho um outro cara que não tá aqui, mas daqui a pouco ele vai aparecer, que é o pcrf, tá? Esse cara é quem vai definir que OSE regra de cobrança, ou seja, ele cuida da qualidade de serviço. Ele deleta o que eu tô fazendo e estabelece a conta também, tá, é isso. Então tudo isso.
+
+46:42
+Toda essa arquitetura tá resumido aqui. Só que essa arquitetura de sinalização, ele precisa de interfaces de sinalização, tá? E essas interfaces são importantes, elas estão todas aqui, tá? Então quem que eu tenho aqui, ó? Eu tenho lá ONTU interface aérea entre o equipamento do usuário e a antena. Então, veja, eu tô aqui, ó.
+
+47:10
+Entre AAO, equipamento do usuário e a antena eu tenho OU aqui tá RTEU aí eu tenho a interface x 2 entre as antenas para randovers diretos e coordenação, então eu tenho x 2 aqui, ó, então aqui é uma antena, aqui é outra antena, aqui é outra antena entre elas. Eu tenho interface x 2, tá aí, eu tenho S1, MME.
+
+47:39
+Interface entre a antena EOMME vamos lá ver quem é OMME de novo, é o cara que gerencia autenticação e mobilidade. Então entre a antena e o meu plano de controle é essa interface que vai falar comigo. Então eu tenho aqui, ó, S1, MME, deixa eu ver se ele tá aqui, bom, ele tá aqui, ó, tá por aqui, tem o os S1, é, são esses caras aqui, tá?
+
+48:07
+Eu tenho de SOS 5 ES 8 são interfaces entre ó, vamos botar lá, SGWEPGW ó, plano de usuário e mobilidade e conectividade p então S5 ES 8 aonde que eles estão? Eles estão aqui, ó, entre SWSGWEPGW, então exatamente aqui, veja como as interfaces são importantes, porque elas são.
+
+48:36
+Os elementos, muitas vezes físicos, que vão permitir essa comunicação, essa sinalização, tá, é isso, voltando aqui, ainda falta, acho que um ou 2 elementos, ó, eu tenho as S6, a interface entre MMEEO, hss, vamos voltar, ó, o hss é o banco de dados. Então eu tenho essa comunicação, né? Essa interface entre Oo, gerenciamento de autenticação e o banco de dados. Vamos lá ver onde está esse cara aqui, os 6 a tá aqui, ó.
+
+49:06
+Então eu faço a autenticação aqui. Por quê? Porque eu consulto o usuário no banco de dados aqui, ele me devolve. Então a interface tá aqui e eu tenho também algumas interfaces importantes, entre MMEEOSGWTO S11, depois você vai aparecer um Monte de gente, tá? Então a autenticação é a parte de de mobilidade, o S11 aparece e por fim.
+
+49:35
+Eu tenho o GX, que é o cara entre OP GW e o pcrf, então vamos ver quem é de novo p GW, endereço IP e QoS. Então veja, não basta estabelecer uma conexão com OP GW, eu tenho que estabelecer a conexão é as regras de tráfego. Então quem faz isso pra mim é o GW, que é exatamente esse cara, é o GX que é esse cara aqui, olhe aqui, ó, tá beleza?
+
+50:04
+Pessoal, eu sei que é muita informação, mas ninguém falou que isso daqui é simples, né? Aí eu falei, então vamos lá, arquitetura, falei de interface, de sinalização. Agora vamos ver quais são os protocolos. Ainda estou falando de 4G aqui, vamos ver quais são os protocolos de sinalização. Aí a gente vai começar a ver alguns caras importantes aí, tá?
+
+50:33
+Então a gente tem alguns protocolos aqui novamente, eu vou pra frente e pra trás nos slides pra poder explicar cada um deles. Recomendo que depois vocês aí fortemente reassistam essa aula, até eu pedir reforcei mais uma vez pra colocar os links das aulas que eu vi que eles não estão lá no Discord, né? Mas vamos lá, então vamos falar primeiro aí dos protocolos aqui, de fato são as regras de sinalização, tá? Vamos lá, primeiro protocolo.
+
+51:02
+É o rrc radio resorts control, tá? Esse cara é quem gerencia as conexões entre o rádio, né? O meu dispositivo e a antena. Então, o rrc, quando a gente pega AAA infraestrutura, ele tá aqui, ó, aqui é o usuário e aqui são as antenas, ó SNBETNB, são as antenas, tá basicamente, basicamente.
+
+51:31
+A operação de celular tá basicamente operação celular. Ela é uma operação de 2 é é de 2 passos de 2 momentos importantes, o up link e o down link, né? Então veja, eu tenho que chegar aqui na parte do sgw, que é quem define mobilidade, conversa com o pgw para estabelecimento de.
+
+51:56
+De de conectividade. P, mas basicamente eu solicito alguma coisa pra rede, deixa eu pegar aqui o apontador, então eu solicito alguma coisa pra rede uplink. Quando ela me devolve, dá um link. Ok, mas vamos lá. O rrc, ele vai gerenciar essa comunicação entre quem entre o rádio e as antenas. Agora veja que coisa interessante, eu tô aqui na minha antena.
+
+52:25
+Então eu tô fazendo mensagens de controle aqui, né? O protocolo de controle tá aqui rrc aí Oo meu posicionamento em relação às antenas, ele diz o seguinte, ó, esse cara tá mudando de antena. Aí o rrc, ele vai abrir espaço pro S1 AP que ele é usado.
+
+52:54
+Pra sinalizar o seguinte, ó, entre a antena EOMME, se eu tiver que é. Se eu tiver que solicitar a mudança de antena, eu vou ter que mandar uma sinalização aqui, ó, tô conversando com a minha antena e eu falo, ó, eu preciso mudar de antena. Esse é o randolver, a requisição de randolver. Chega aqui no MME. No MME. Fala assim, ó para as antena, pra próxima antena, ó.
+
+53:23
+Houve um randolver solicitado essa antena, ela vai falar comigo, vai falar beleza, já tá no meu raio de ação, pode aceitar. Aí OMME, volta aqui na primeira antena e fala, beleza, reconfigura esse cara na outra antena. Aí eu começo a falar, com quem? Com esse cara aqui, ó, ó, ORRC, aqui, ó, com o segundo cara, mudei de antena. Tá vendo como os protocolos são importantes?
+
+53:52
+O rrc fala só com a sua primeira antena, o S1. AP fala com a central de controle e pede a mudança de antena. E aí no momento que eu estabeleço, eu já estou falando com a outra antena, mas eu tenho outros protocolos aqui, tá? Eu tenho o chamado x 2 AP. Ele é usado entre as antenas Pra Elas se conversarem, até porque.
+
+54:20
+Pode ser que eu esteja bem no meio, entre uma antena e outra, então a hora eu tô em 1 hora que eu tô em outra, eu preciso gerenciar isso, tá? Então OX 2 AP cuida disso, é a sinalização entre as antenas, tá? Beleza, vamos ver se ele tá aqui, não, OX 2 AP, eu vou mostrar ele depois, tá, então eu tenho alguns protocolos, então esse primeiro era mais pra falar do S1, APE do RRC, tá? Eu tenho outros caras, OX 2 APO, nasa, o dianiter.
+
+54:49
+EOGTPC, já vou falar deles, então vamos passar 2 slides, ó OX 2 aqui, ó x 2 AP, ele é o cara que vai falar pra mim, ó antena a, eu sou AA antena AV tá falando com você. Então quando eu tiver a troca de algum usuário aqui por trás das antenas, é com vocês que a gente vai conversar. Então eu vou estabelecer essa comunicação entre vocês, tá? Beleza.
+
+55:19
+O nas que é o non ACS extratum, veja só, entre o usuário e a central de controle para gerenciamento da mobilidade e cessão. Então veja nessa imagem aqui seria uma comunicação direta entre o usuário e o gerenciador. Aqui não aparece, tá? Mas quem faz isso é o nas.
+
+55:45
+Ele não tá aqui, eu já vou direto para o diamitter, tá? Então vamos falar dele, então veja, para comunicação entre elementos do core network. Então esse aqui já é um protocolo interno, ele não conversa com o rádio, tá? Ele não é, pois não tem alguns slides atrás. O senhor mostrou uma arquitetura ali com os elementos, veja qual que é essa.
+
+56:11
+Não acho que é um para frente ou um para trás ali. Não sei isso, isso, isso, isso perfeito. Onde que entra o da amiter aí para fazer o roteamento desses protocolos? Professor, o diamiter é o cara que vai falar com o core da rede toda, ele meio que perpassa todo mundo, entendeu? Veja, ó, vamos pegar a definição dele aqui, ó, comunicação entre elementos do core network, então ele.
+
+56:36
+Efetivamente é o cara que faz com que todo mundo, vamos dizer que o core network, ele começa aqui nessa nesse limite da antena e vai para o lado de dentro. Então o dia mitter vai conversar com todos esses caras para dentro, entendeu? Essa sinalização SSI um S6 a essa sinalização, eles passam pelo Dr. Mitter, não passa.
+
+57:03
+Passa, então ele fornece o meio de ele, ele faz o meio de porque ele é o cara que fala com todo mundo, então ele aguarda de trans, ele fala, ó, você fala com esse, você fala com esse, eu falo com todo mundo, mas eu vou permitindo que isso aconteça, entendeu? Não, não só os Ipês ele consegue ter é porque nem.
+
+57:29
+Nem tudo é feito com base no IP, muitas vezes ele é feito com com regras baseadas em é em firmware em aplicação, então não é só IP. O Dinamite, ele já consegue falar, vamos pegar ele aqui.
+
+57:48
+Ele já consegue falar com todo mundo aqui. Veja, ó, ele tá conversando aqui com MMA e hss, mas veja que aqui na borda, que é onde tá com a antena, ele não fala. Ele vai pegar o que tá dentro. Então ele conversa com quem? Com MMA, que é gerenciamento. Ele conversa com hss, que é banco de dados. Ele conversa com OOS 6, que é que tá entre esses caras, entendeu?
+
+58:11
+Então olha só o dianiter, ele linka as conexões do MME com hss, então ele é usado para autenticação do usuário, download do perfil do usuário, então ele controla essas coisas aí. Beleza, deu para ter uma ideia, deu, deu sim, professor, obrigado, beleza, qualquer coisa, vocês podem parar a aula a qualquer momento, tá? E por fim, o gtpc.
+
+58:38
+Veja só, ele é um protocolo de tunelamento pro plano de controle, então veja, o GPRS já é Oo, é o que a gente começa a ter lado 2 g pra parte de comunicação de pacotes, tá? É esse cara que define pra gente o seguinte, ó, tá havendo uma requisição de é exatamente Gabriel. Ele funciona como um broker. Boa definição.
+
+59:07
+Exatamente OOO Jean meter é como se fosse um broker mesmo. Exato. EOOO GPRS. Aqui ele vai. É a hora que ele avisa assim, olha dentro desses usuários que estão autenticados. Eles estão usando voz, mas eles fizeram uma solicitação.
+
+59:27
+Pra usar um canal de dados pra uma troca qualquer de dados. É esse protocolo que vai fazer esta comunicação. E quando você fala em tonelamento, significa que ele pode, dentro desse tonelamento, fazer a colocar o label do que é OS no pacote e falar, ó, esse aqui tem prioridade, esse aqui tem menos, esse aqui tem mais e assim por diante. EOGTPC, ele tá aqui, tá? Então veja, deixa eu.
+
+59:58
+Deixa eu voltar aqui, deixa eu dar um SK isso. Então veja OGTP, ele tá no plano de controle. Olha que interessante, quando você tem uma rede muito grande que tem vários MMSOGTP, é que vai fazer esse tonelamento. Então ele que vai criar as condições para trafegar dados aqui, é isso que é legal. Então ó, é importante primeiro.
+
+1:00:25
+Como ele pode colocar o label no pacote? Ele define se a minha comunicação é TCPUDP, se é, se é baseado em GSM ou MTS ou uma rede é mais Moderna. Então é ele que coloca esses labels dos cabeçalhos dos pacotes e fala, olha, é essa comunicação, ela é TCP ou UDP? Ela vem de uma rede GSM pura, tá caindo em uma rede LTE, então é ele que cria essas condições, tá? Então.
+
+1:00:53
+Essa é é é isso que eu queria passar sobre rede 4 GA gente vai começar a falar agora de rede 5G novamente, arquitetura, interfaces e protocolos. Tá, a muito do que eu falei do 4G se aplica ao 5G, mas tem coisas que são diferentes. Então vamos lá, até agora, tudo bem, posso seguir, por favor, oi.
+
+1:01:24
+O nas podia falar um pouco sobre o nas eu me programei para falar sobre nas na aula de amanhã, pode ser, senão vamos tirar as coisas, pode ser, é, senão eu acabo avançando ou entrando um pouco no nos aspectos. A gente vai falar um pouquinho, vamos, vamos, vamos daqui a pouco, chega lá, vamos lá, vamos lá. Falei de 4G, olha como o 5G tem mais elementos.
+
+1:01:52
+Na arquitetura, tá? Eu tenho o dispositivo do usuário, eu tenho a as antenas, veja aqui que ele já coloca aqui um g nodeb, que é a nast generation, né? Ela normalmente é uma antena menor, com menos potência e tal, mas ela é mais inteligente, tem uma série de questões, tá aí, OMME? No 5G, ele é substituído pelo amf.
+
+1:02:17
+Ele gerencia acesso e mobilidade, faz as mesmas coisas. Só um minutinho, gente. Deixa eu ver se tem aluno tentando falar comigo aqui, ok, beleza, vamos lá. Ah, espera aí. Só um minutinho. Só um minutinho, gente.
+
+1:02:49
+Beleza, a gente estava me pedindo uma eu mandei uma proposta hoje, a pessoa me respondeu, queria resposta hoje, então tudo certo, vamos lá. Então, no lugar do MME, aparece uma figura chamado AMF. Onde é que estão todos esses caras estão aqui, tá? 5G core, tá, então vamos lá, aí eu tenho um cara que gerencia acesso e mobilidade, aparece um cara novo, SMSSMF, que gerencia a sessão do usuário.
+
+1:03:18
+Tá, então aparece um cara novo aqui também. Veja, eu tô gerenciando a sessão do usuário, mas eu ainda tô no plano de controle, o plano do usuário, ele entra aqui, ó, no PF, tá? Ele manipula o tráfico do plano usuário. Então ele que gerencia pra mim, de certa forma, o que eu vou trafegar lá e de que forma eu posso fazer isso baseado em serviços, tá? Lembra do banco de dados lá do 4G que era OHSS aqui é ODM.
+
+1:03:47
+Armazena dados de assinante, perfis de usuário? Tá lá na rede anterior, quem fazia a parte de autenticação era o MME. Aqui entra OAOSFO Austin autentication server funcion. Então autenticação tá aqui, tá? E aí? Eu tenho 2 elementos de rede aqui, né? O nrf bom, o repositório serviços de rede.
+
+1:04:13
+E eu tenho o nef, que é pra identificar as capacidades pra aplicações externas. Sabe quando você tá de repente você tá no você tá dentro do metrô, dentro do trem, por exemplo, do exemplo aqui da grande São Paulo, a gente usa muito trem e você fala assim, não, eu vou assistir, eu vou ficar 40 minutos no trem, eu vou assistir o episódio da minha série na Netflix e aí você bota ela na maior?
+
+1:04:40
+Qualidade possível, e aí você começa a assistir, 1 hora tá boa, em outras horas dá uma parada, dá uma diminuída, não fica legal por quê? Porque o tempo todo a rede ela tá calculando a sua capacidade para aplicação externa. Quem faz isso no 5G é o nef, tá? Não é isso? E aquele cara que define as políticas de rede e cobrança, que lá era o pcrf, aqui é só PCR, tá? Ele define as políticas de rede, que é OSE cobrança, tá?
+
+1:05:09
+Então todos esses caras, eles estão aqui, então vamos lá repassando OOEEO genor de Bia aqui, ele é esse cara aqui, né? O genor de Bia é a antena. A antena tá ligada em quem? No AMF que era OMME. Então vamos voltar, ó, liga no AMFOAMF, tá ligado em quem? Olha aqui, ó, o cara novo que apareceu aqui, ó SMF.
+
+1:05:37
+Aqui já tá até com o exemplo de de endereçamento EP, que fica legal de analisar, então OSMF gerencia a sessão do usuário, então ó, autentiquei aqui, gerenciei aqui tá esses N1N 12N, 11. Daqui a pouco a gente vai falar desses caras que eles são importantes também, que são as interfaces de sinalização. Aqui eu ainda tô falando da arquitetura e sinalização, que são os elementos. Tá aí, olha só, então eu.
+
+1:06:05
+Que eu gerencio a sessão, eu manipulo o tráfico e aí eu vou gerenciar o banco de dados. Então aqui esse ODM é o banco de dados. Então veja, ó, eu venho aqui estabeleço a autenticação, eu gerencio, OOA sessão do usuário e eu verifico se esse cara tá na rede aqui no banco de dados. Aí veja que esse cara conversa com o austria aqui.
+
+1:06:29
+Então, OA USP é quem vai garantir a autêntica. Então, até aqui, ó, eu tô gerenciando o acesso. Aqui eu garanto que o cara entrou na rede, tá? Então aqui eu garanto que ele entra na rede muito bem, aí pode voltar. Eu preciso, por exemplo, fazer com que esse cara tenha uma comunicação externa. Via, né OPF?
+
+1:06:56
+Ó, então é esta comunicação que muda o plano do usuário. Então é aqui, ó, nesse cara que vai conversar com esse cara, que vai conversar com o banco de dados, que vai conversar com autenticação, que vai dizer, olha, você pode usar esses serviços aqui, serviço a voz dados, você tem tantos Giga para trafegar e tudo mais. E veja que é ele que te coloca na internet, tá?
+
+1:07:25
+Então esses caras estão todos aqui, tá só comentando, né ONRF, que é o serviço de redes, tá aqui em cima, tá ele que define o que você vai ter acesso em termos de serviço, o que que eu tô armazenando, né, como repositório, tá, o nefe aqui, ele não aparece nessa imagem, tá? Ele não aparece. Faltou isso. Eu não, não consegui encontrar minha imagem que tivesse tudo.
+
+1:07:54
+EOPCF, ele tá aqui ó, fazendo AO controle, tá hebiritando você? Ele consulta você no banco de dados, ele verifica sua autenticação, ele verifica o seu consumo, ele vai te biritando e falando que tem prioridade e o que não tem prioridade. Então, a arquitetura do 5G, veja que tem muito mais elementos, mas quando você analisa.
+
+1:08:20
+Em relação a esse cara, parece que o 5G é até mais simples, né? De entender. Não tem tanto cruzamento aqui, né? Mas ele tem muito mais elementos e além disso, tem esses NS que eu vi aqui, ó, são as interfaces. Então vamos lá. Essa interface entre Oo usuário e a antena é chamado de NRUU. Esse cara aqui, ó, tá entre.
+
+1:08:50
+Entre o as antenas, a gente tem OA. Evolução do x 2 é chamado de XN, tá, o que era x 2 no LTE 4G é XN aqui. Aí a gente tem as interfaces entre o logbi e o amf, que são os NGCENGU.
+
+1:09:15
+Então a gente tem pro plano de controle do usuário essas interfaces diretamente das antenas. Então veja, das antenas, ó, veja que eu tenho aqui, ó, essas interfaces com AMFE, com OPF aqui tá sendo chamado, né? Na verdade a gente tem ON 2, ON 3, mas tem esse cara também, né, ONGCENGU aí vamos lá, as outras interfaces, aquilo que liga o usuário ao AMF é ON um.
+
+1:09:46
+Vamos ver se ele tá aqui. ON um, ele nem tá aqui porque não tá direto, né? O usuário não tá direto com AMF, mas ON 2, tá interface entre a rede de acesso, né? O radio access network, né? A rede de acesso aos rádios EOAMF então ON 2 tá aqui ó, ON 3 é a interface entre a rede EOUPF, então aqui ó.
+
+1:10:14
+Entre o cara que vai colocar a gente na internet, então essa interface existe aqui. Quem mais n 4 entre SMFEOPF, vamos ver n 4, tá aqui, ó, é o cara que vai definir quais serviços, se eu vou pra internet ou não, com o cara que faz o controle aqui em cima e assim por diante. Então a gente tem essas interfaces todas, tá? A parte do banco de dados é aqui, né? Então, ó, entre a autenticação e o banco de dados é ON 8.
+
+1:10:44
+Então, entre a autenticação e banco de dados, deixa eu ver se ON 8 tá aqui, ON 8 não tá aqui? Mas entre ODNEO AMFODNEAMF direto no Tatá por aqui, ele faria este caminho aqui ó, ON 8 EON 11 entre gerenciamento e a parte de IP que é OSMF, então ON 11 ele tá aqui, ó, tá aqui.
+
+1:11:13
+Então todas essas interfaces fazem sentido pra que a arquitetura dos elementos funcione. Mas pra funcionar eu tenho que ter protocolos, então vamos ver os protocolos, tá? Então eu tenho alguns protocolos principais aqui. O rrc, eu vou pegar um slide pra pra alguns deles aqui, né? O rrc que é o radio resors control, vamos ver o que que esse cara faz.
+
+1:11:43
+Ó ORRC principal protocolo entre a antena e o rádio, tá então ele que que faz AAO estabelecimento da sessão, ele que configura portadora de rádio. Ou seja, ele fala assim, ó, o seu celular tá no canal tal da sessão, tal da antena, tal, tá, é ele que faz a medição de randôver, ou seja, quando eu mudo de uma antena para outra, ele que sinaliza.
+
+1:12:08
+Ele faz um podcast de informação no sistema, então toda vez que a rede manda alguma coisa, é esse protocolo que manda para gente. Ele que faz gerenciamento de mobilidade na camada de rádio. E o page na verdade é parte de comunicação, né? Então ORC faz isso ORRC. Ele tem alguns estados que diferencia da operação dele do 4G para o 5. GE. Aqui a gente tem os estados do RRC, ó.
+
+1:12:35
+Aqui no 4G, que é OLTE, ele tem 2 estados, o Idol quando eu não tenho uma conexão ativa e o conect quando eu tenho uma conexão ativa, tá? Então o Idol então não tem uma conexão ativa, ele manda esse estado de RC quando eu conecto, ele muda aqui. Já no caso do 5G, entra um item a mais, então o Idol aqui é é parecido, né?
+
+1:13:03
+Eu tenho o conectado quando eu de fato conecto a rede e tenho o inativo, que assim eu reduzo a potência, eu reduzo o uso de sinalização, eu não desconecto totalmente, eu acordo mais rápido, tá? Então o 5G traz uma evolução para esse protocolo, tá? Quem mais que eu tenho aqui? Eu tenho ONGAP, onex, generation, application protocol, esse cara.
+
+1:13:32
+Aliás, minto antes dele. Eu vou falar do protocolo Mac, e ele nem apareceu aqui ainda, mas ele é super importante. ONGAP. Daqui a pouco eu falo, fala um pouquinho desse protocolo aqui que é o Mac, exatamente o protocolo de acesso à mídia, controle de acesso à mídia. Esse cara é super importante, tá? É, é ele que vai definir.
+
+1:13:58
+Todo o processo de multiplexação, de multiplexação, priorização de tráfico, e tem uma parte dele que eu acho que a mais importante desse slide, que é o controle de erro. Daqui a pouco eu vou mostrar um exemplo real no simulador real assim no simulador pra vocês, que é o controle de erro, que é bem legal. Então esse protocolo gerencia bastante coisas, tá? Então ele, ele, ele permite que eu inicie uma transmissão no agendado, ou seja, ele quer o celular agora.
+
+1:14:27
+Beleza, é o Mac que vai estabelecer essa transmissão. Eu também posso, né? Oo celular de tempos em tempos, ele vai conversando com a rede e ele vai agendando certas coisas, então ele faz esse scheduling request, tá? Também ele define o seguinte, olha, o meu aparelho não está em comunicação agora, eu tive um corte de de de sinal, ele armazena em buffet algumas coisas pra na hora que tiver sinal ele dispara, é esse protocolo que faz isso.
+
+1:14:57
+E uma outra coisa importante, sabe por que que o por que que o celular de vez em quando esquenta no bolso? Quando você tem uma região de pouco sinal, ele usa esse recurso do protocolo Mac bel Power Red room report. Ele informa a capacidade de potência disponível pra conexão e se por acaso o sinal tá fraco, ele faz com que o seu celular vire um chuveirão. Ele vai procurar a antena em todo lugar. Ele aumenta o uso de potência, por isso que ele esquenta no bolso.
+
+1:15:26
+Tá, é isso. Outro protocolo importante que a gente tem aí é ORLC. Eu vou mostrar 11 pilhazinha aqui, ó, que é o seguinte, ó, eu falei do Mac, eu falei do RRC, veja acima do Mac. Eu tenho um protocolo aqui que é ORLC depois do PDCP, então vamos falar do RLC. Então o Mac faz tudo isso que eu falei agora ORLC.
+
+1:15:55
+Opera acima do Mac, responsável por segmentação e remontagem de unidades de dados. Ou seja, eu estou fazendo uma comunicação, pô, começou a perder pacote e ele solicitou de novo, igual 11 comunicação TCP. É esse protocolo que faz isso, tá? Ele tem 3 modos de operação, o modo que parece o TCP é o chamado modo am, o aknogled molde. Aqui tá outra coisa.
+
+1:16:20
+Quando você manda pacotes de um lado pro outro, por exemplo, quando você acessa um site e alguma coisa assim, os pacotes vêm. Em geral eles vem numa ordem pré definida, mas às vezes vem algum pacote fora de ordem. É esse cara que remonta os pacotes recebidos lá. No caso do 5G, ele também faz a detecção e correção de erros junto com o raarc. A gente vai ver ali na frente e uma coisa legal, entrega em sequência pra camadas superior. Imagina lá no modelo Ozzy de encapsulamento, ele encapsula e manda pro.
+
+1:16:50
+Pro pra camada superior. E olha só que interessante, tá? A gente tem, no caso da comunicação de rede, protocolo TCP e o DP. Então o TCP seria OAM aqui suporta retransmissão e entrega confiável. Eu tenho o chamado UDP no caso da rede, e o equivalente desse cara aqui é OUM. É um pacote que tem cabeçalho.
+
+1:17:20
+Tem número, mas não faz retransmissão. Então perdeu o pacote, perdeu. E ele tem um outro modo, que é mais simples, que é assim, quando eu preciso mandar uma informação que não requer sequência, não tem cabeçada, eu só preciso mandar pro outro lado. Aí esse protocolo tem esse transparente molde. Imagina que aqui é como se fosse um jogo, você tá jogando.
+
+1:17:46
+Cara, você tá jogando, deu uma picotada meu, acabou, perdeu o pacote, acabou, não preciso saber o número dele, nem nada. Segue o jogo, entendeu? E aqui no próximo slide tem os 3 modos de operação, veja aqui, OOO modo TM, que é Oo mais simples, né? Sem cabeçada nem nada, e o modo OM, que seria equivalente ao UDP. Ele tem um processo de transmissão, né? Transmissão, recepção.
+
+1:18:15
+E recepção à transmissão separados, eu mandei o outro lado, recebeu, ele me mandou, eu recebi a mesma coisa. Serve pra cá um canal pra recebimento pra transmissão. Recebimento, outro pra recebimento da transmissão. Quando você vem aqui pro AM, como a transmissão é confiável, ele coloca tudo num num balaio só. Então transmissão e recepção são tratados com com prioridade, reconstrução, remontagem, sequenciamento.
+
+1:18:45
+Tudo aqui tá então esse protocolo, ele é bem legal porque ele permite 3 modos de operação bem interessantes, tá? Vamos lá pra gente poder depois fazer mostrar um pouquinho da parte prática, tá? Vou falar aí do PDCPE, é um outro protocolo, veja Na Na linha aqui ó, é o que está mais acima. Então falamos do começamos falando do RRC lá atrás, depois falamos de Mac, Mac, RLCPDCP, que que esse cara faz?
+
+1:19:13
+Esse cara é importante pra caramba no quesito segurança, faz a compreensão de que de cabeça LP reduz o volume de dados, faz a criptografia e verificação de integridade, ou seja, garante segurança. E dos pilares da segurança ele garante 2, né? Confidencialidade e integridade. Outra coisa, faz a contagem de pacotes e evita que eles sejam duplicados, tá?
+
+1:19:42
+Também durante a mudança de antenas, ele que muda, ele que faz a transferência de contexto, ou seja, eu tô de uma antena pra outra, eu tô no meio de uma chamada falando com alguém, eu tô assistindo um vídeo, é ele que transmite esse contexto pra que a outra antena já me receba e mantenha a minha comunicação, tá? E é ele que faz a retransmissão de de pacotes. Entre as mudanças de antenas pra que eu não tenha perdas. E quais são as funções de segurança? Criptografia.
+
+1:20:12
+Né? Proteção contra a modificação não autorizada, ou seja, garante integridade confidencialidade pela criptografia e também contador em sequência. Ou seja, esse cara ele analisa os pacotes, se ele evita de certa forma ataques de negação de serviço, onde eu tenho a repetição das mesmas solicitações? Esse cara é importante pra caramba, tá? E ele tá aqui, ó, então ó, eu estabeleço.
+
+1:20:39
+Né? O controle de acesso a mídia com o Mac, com ORLC, vamos voltar aqui, ó. Eu faço a transferência de dados com diversos modos e depois eu garanto, segurança. Isso tudo pra eu poder ter uma comunicação mais confiável, tá? É isso. E aí eu trago pra vocês um exemplozinho que eu vou colocar aqui.
+
+1:21:08
+E eu até coloquei este arquivo do packet tracer lá pra vocês na área de aluno, né? No, no, no dos arquivos, que é a construção de uma pequena rede móvel no packet tracer. Depois a gente vai ver o outro simulador, mas eu vou mostrar toda toda a construção aqui, como que eu fiz, que elementos que eu fiz, que testes que eu fiz para vocês poderem reproduzir, tá, pessoal? Então deixa eu dar um Esc aqui.
+
+1:21:32
+E eu vou começar a executar, me digam se o áudio está é vai aparecer pra vocês, vou começar aqui. Bom pessoal, é, eu vou fazer aqui um exercício, tá ok, tá ok, vou seguir aqui de uma criação de uma pequena rede de telefonia utilizando o packet trazer, né? Então já loguei já, já.
+
+1:22:01
+Coloquei, eu loguei minha senha lá do network Academy, né, do do Cisco net Academy, e vamos começar aqui, tá? Então, a primeira coisa que eu vou fazer aqui, eu vou colocar aqui no topo da nossa imagem um roteador, eu vou colocar aqui, por exemplo, 29 e 11, eu vou deixar esse cara aqui, tá? É logo abaixo dele. Eu vou colocar um suíte, vou colocar o 29 e 60 e ele vai fazer a parte de conectividade pra gente, tá?
+
+1:22:30
+E aí a gente vai entrar numa parte importante, que são os device sem fio. Então tô pegando esses caras aqui. E aí aqui no final, a gente tem 2 caras que nos interessam, OCD server e a torre de celular, tá? Então eu vou começar pegando aqui 3 Torres de celular, vou pegar uma aqui, vou pegar uma aqui no centro, eu vou pegar uma lá do lado de.
+
+1:22:55
+Então são 3 Torres de celulares que estou colocando aqui, só que a torre de celular, ela precisa ter um, é um servidor de gerenciamento, que é esse cara aqui, ó, vou centrar o Office server, então vou colocar um pra cada antena, tá? Então vou colocar eles aqui. Aliás, eu vou colocar ele numa posição que eu consiga conectar com o switch. Muito bem feito isso. Vamos pensar aqui nas conexões, como.
+
+1:23:23
+Aqui é simples, eu vou pegar essa conexão geral aqui para já não ter problema de errar nenhum cabo. Então vou colocar ela aqui, vou colocar ela aqui para cá, vou colocar para os outros Office servers aqui e aí depois a gente verifica se for necessário, o tipo de cabo específico e veja, quando eu faço a comunicação do central Office server com a antena de celular, que é diferente, né? O tipo de.
+
+1:23:51
+Cabo que ele utiliza, mas vamos lá, por enquanto vamos colocar esses caras aqui, tá? Então, muito bem. Se nós temos antenas de celulares, é importante que nós tenhamos celulares. Então vamos pensar aí em quais dispositivos nós vamos colocar. Então eu vou colocar aqui o smartphone, eu vou colocar 3 deles aqui, tá? Vou colocar um, vou colocar 2 e vou colocar 3.
+
+1:24:19
+Não se preocupe, onde ele vai conectar nesse primeiro momento, que mais importante é a gente, é fazer as configurações e aí isso tudo passa a ser resolvido aqui, tá? Então é, a primeira coisa que é importante a gente fazer é o nosso roteador. Ele vai ter 2 endereços ipes aqui, tá? Então deixa eu colocar aqui a parte do texto para a gente poder é já definir como vão ser os nossos endereços, ipes então o nosso.
+
+1:24:49
+Endereço interno, né? Do lado de dentro eu vou colocar aqui que esse cara vai ter um IP interno, vai ser 192168 ponto 1.1, ok? E ele vai ter um DNS externo. Vamos colocar aqui um endereço como se fosse de internet. Vou colocar 200.200 ponto 200.200, ok?
+
+1:25:19
+Então esse vai ser o nosso DNST desse cara aqui, tá? Então depois a gente mexe aqui aí vamos colocar que esse cara vai fornecer DHCP, então a gente vai fazer as configurações no roteador pra que ele possa oferecer ODHCP pra todo mundo pegar os seus IPS aqui, tá? Então vamos mexer nisso agora. Inicialmente vamos clicar aqui no roteador Pra Ele poder abrir AA sua telinha.
+
+1:25:49
+E vamos lá, eu estou utilizando a gigabit Ethernet zero barra zero pra ser o meu IP é. Vamos retirar essa parte anterior aí da configuração do roteador. Eu vou recomeçar novamente. É vamos começar aqui clicando no roteador Pra Ele poder abrir a telinha de configuração.
+
+1:26:14
+E aí aqui em config a gente vê ainda o gga 20 internet zero barra zero, que é exatamente quem tá ligado aqui pro lado de dentro e vamos configurar esse cara. Então esse cara aqui, ele vai ser 192168 ponto 1.1 a máscara de sub rede, já vou deixar a barra 24 e tá tudo ok. É isso mesmo que eu preciso, ok, então vamos deixar esse cara funcionando. Então já vamos deixar essa configuração pronta aqui muito bem.
+
+1:26:47
+Agora a gente vai entrar aqui na interface de linha de comando do nosso roteador e vamos trabalhar um pouquinho para poder configurar a parte de serviços, DHCPE tudo mais. Então, primeira coisa que eu vou sair, vou sair de novo. E aí a gente vem, começa de novo, vou dar o enaple.
+
+1:27:12
+Depois vou dar um configure terminal e aí a gente vai é primeiro falar sobre a questão do DHCP, então eu vou colocar primeiro, eu vou excluir aqui ODHCPO IP do próprio roteador, então eu vou entrar aqui com DHCP, espaço.
+
+1:27:42
+Ah, EPDHCP, tô comando errado aqui, IP DHCP excluded, adris. Aí eu coloco 19216 8.1 e enter. Aí agora eu vou criar o pool do DHCPCIPDHCP pool e aí eu vou definir 11 nome Pra Ele, então vou chamar de endereço.
+
+1:28:11
+Samento, ok, e aí beleza, eu venho aqui e agora eu vou criar esse range DHCP, então vou dar um network, vou colocar 192168 ponto 1.0 e o meu a minha máscara de sub rede, definindo qual é a minha rede.
+
+1:28:38
+Aí eu vou definir quem é o meu gato e padrão, né? O meu defor router aqui, então eu vou colocar aqui defor router 192168 ponto 1.1 e vou colocar o meu DNS server aqui. Então eu vou colocar DNS traço server 200, 200 200 200.
+
+1:29:08
+Muito bem. Então foi feita essa primeira, é configuração, então todo esse pool aqui vai ser o meu DHCP. Eu estou excluindo apenas esse cara e aí ele já vai estar pronto para trabalhar um pouco mais aí agora aqui, no final eu posso dar um exit e aí a gente vai seguindo com as configurações, só pra gente garantir que está tudo ok aqui. Vamos entrar aqui no.
+
+1:29:37
+OPA, interface vou colocar aqui gigabit, eternet zero, barra zero, ok? E vamos colocar OIPA ress 192168 ponto 1.1 só pra reafirmar aqui e a máscara de sub rede, ok, e vamos salvar esse cara, então eu vou dar aqui um novo.
+
+1:30:05
+No shut, ok. E aí a gente já vai ter provavelmente esse cara indo pra up. Vamos ver se ele já ligou aqui em cima. Já ligou, então a comunicação, a conectividade foi feita corretamente, muito bem. Agora que eu estou aqui, eu posso dar um exit, OPA, exit, e vamos seguir com as nossas configurações. E também aqui. Agora a gente vai.
+
+1:30:35
+Fazer uma rápida configuração nas antenas de celular aqui no celtower, tá? Então vamos mexer com com esse cara aqui, então vou clicar aqui na primeira celtower, deixa ele abrir e aí eu vou dar um nome Pra Ela, então eu vou colocar o nome das nossas operadoras, então eu vou colocar aqui, vai ser a vivo, aliás, aqui vai ser a claro, vou dar aqui, permitir o acesso externo, ok? Vou pegar essa segunda aqui, ela vai ser.
+
+1:31:06
+A vivo sem processo externo, ok, e essa aqui vai ser a Tim, ok? Então estamos dando o nome aos bois aqui, já aproveita e a gente pode colocar esses nomes aqui. Então eu estou colocando aqui. Aqui vai ser a claro, vou colocar aqui, aqui vai ser a vivo.
+
+1:31:33
+Eu vou colocar aqui, aqui vai será? Tim, muito bem. Então as operadoras já estão funcionando aqui feito isso. Agora veja que os celulares, né, os smartphones perderam a comunicação com as antenas. Que que eu tenho que chegar e fazer aqui? Agora eu vou clicar no smartphone e aí aqui nas configurações. Deixa eu só parar essa parte aqui, comentar com vocês.
+
+1:31:58
+Isso que a gente vai fazer aqui é o seguinte, imagina que você ligou o celular e ele vai procurar a sua operadora. Tem que ter algum label, alguma coisa configurada no seu celular Pra Ele poder entender que aquela é a operadora dele. Então imagina a tua antena? Tem esse label, ó, sou da claro, sou da vivo, sou da Tim. Olha só, como que seria no celular, claro.
+
+1:32:20
+Pensando que isso é feito de forma automática, porque você já é cliente de uma operadora, mas exatamente o que vai acontecer agora eu tenho que verificar o seguinte, quem que é a célula, né que eu estou utilizando? Então veja que ele está tudo como PT celular, então eu estou no primeiro, ele vai ser um celular conectado na claro, ok, eu vou pegar esse segundo e vai ser um celular que vai ser conectado na vivo, então vamos lá na célula, será?
+
+1:32:50
+Vivo. E olha só que interessante, logo depois ele já faz a conexão. E esse cara aqui, o terceiro vai estar conectado a Tim muito bem fazendo isso. A gente já resolve essa parte de conexão dos smartphones nas suas respectivas antenas, tá?
+
+1:33:17
+Agora na sequência a gente vai fazer a configuração dos servidores, né, do central Office aqui de cada uma das antenas. Então vamos entrar aqui é em cada um dos offices servers e vamos colocar esse IP do DNS externo em cada um deles. Então a gente vem aqui, clica, deixa só ele abrir, a gente vai ver aqui em services e aqui na parte do DNS server a gente vai colocar o IP 200, no nosso caso aqui 200, 200, 200 e 200 e salva.
+
+1:33:47
+Tá salva aí. Ele pode fechar, faz a mesma coisa com todos os outros. Vem aqui em services e coloca esse endereço do DNS. Mesma coisa aqui, services e coloca o DNS ok, se a gente vier em cada um deles também. EE analisar aqui, ODHCP.
+
+1:34:15
+Por exemplo, a gente percebe que ele pega, não, ele tem um serviço DHCP interno, né? Então ele já funciona dessa forma, ok? Agora só uma coisa interessante, quando você entra aqui no smartphone, você vai analisar, por exemplo, as informações deles. Quando você vem, por exemplo, no partido wireless, veja ele, ele tá com autenticação desabilitada, não tem problema, tá tudo ok.
+
+1:34:42
+Se eu vier aqui no desktop v em IP configuration, olha só, ele pega um IP, a pipa não tem problema, tá só explicando o apipa, ele é um serviço que ele fornece, lhe entrega um IP.
+
+1:34:57
+Sempre começando com 169, quando você tem algum problema de problema de conectividade. Aqui não é exatamente um problema de conectividade. Na minha opinião, isso é um bugzinho do pack trac, mas ele tem conectividade. Daqui a pouco vocês vão ver que ele vai ter, mas ele pega um IP, tá? Automaticamente ele se atribui um IP e isso é chamado de apipa. Bom, pessoal é, eu vou.
+
+1:35:24
+Tá com autenticação desabilitada, não tem problema, tá tudo ok. Então se você vier em cada um dos smartphones, aparentemente o IP que ele tá pegando não funciona muito bem, ele não tem conectividade, mas é isso aqui mesmo, daqui a pouco ele até ó, ó, pegou aqui, ó, pegou uma pipa novamente, tá vendo, tá? Então isso é uma característica dele, eu vou fazer a mesma coisa com o terceiro e aí você vem em desktop?
+
+1:35:52
+Você vai ver que ele vai pegar um IP do apito, não tem problema novamente. Aí a gente pode fazer alguns testes aqui, né? Vamos ver se ele tá pingando, como é que tá, só pra gente ver se precisa fazer alguma correção, tá? Então se eu pegar aqui a cartinha, colocar no primeiro smartphone e no segundo smartphone, ó, lá, ele já fez com sucesso essa configuração quando você faz 11. Topologia com.
+
+1:36:19
+3 antenas assim, às vezes acontece algum errinho de de dar o Ping e tudo mais, mas vamos testar aqui para ver se algum deles aparece com erro. Então vou pegar do segundo e vou mandar para o primeiro. Olha lá, também foi com sucesso. Vamos ver se do primeiro para o terceiro também vai. Vamos ver se vai acontecer algum problema, vamos ver.
+
+1:36:42
+Ó, deu alguma falhada aqui? Então tem que depois corrigir alguma rota, alguma coisa assim, tá? Então talvez o problema esteja aqui na terceira torre. Precisa corrigir isso, se for o caso. Vamos ver se da terceira tá pingando pros outros.
+
+1:36:56
+Ó, também tá falhando, mas em forma geral, aqui foi algum de repente alguma coisinha digitada errada. Essa configuração tá pronta né? Pra pra pra gente poder testar. Aí a gente consegue colocar né, uma pequena operação de telefonia funcionando aqui no pack trazer eu só vou salvar o arquivo pra gente poder é seguir em frente com ele. É, antes de finalizar eu fiz uma alteração aqui que pode ser interessante pra poder testar essa rede.
+
+1:37:23
+Eu incluí aqui um servidor web ligado na outra interface do roteador pra que a gente possa acessar uma páginazinha web a partir do smartphone. Então vamos só revisar aqui as configurações em cada um dos elementos, começando pelo roteador, tá? Então o que que foi feito aqui, tá, é na interface gigabit eternnet zero barra um, né? Então o que que eu fiz? Eu dei um enable configure terminal, aí eu entrei em interface gigabit eternnet zero barra um.
+
+1:37:52
+Coloquei esse endereço do DNS como endereço externo desse cara. Anota aqui, ó, EOBA dress e a máscara, né, ok? E salvei, deu no chat, ok, então configurei, porque aí ele ativou essa segunda interface no roteador muito bem. Aí eu criei aqui, né? Eu adicionei um servidor, onde é que ele está? Está em and devices server está aqui embaixo, adicionei esse cara.
+
+1:38:22
+E aí nele eu fiz algumas configurações. Primeira coisa, aqui nos serviços, eu habilitei, OHTTPOHTPS, peguei a página inicial aqui, cliquei em edit e só coloquei a mensagem minha rede privativa, celular, ok, salvei e tá tudo certo, tá? E aí, aqui no desktop eu entrei em IP configuration e coloquei as informações, né? Coloquei o endereço IP.
+
+1:38:49
+A máscara ou deforgatoen que é esse cara do roteador EODNSO mesmo IP pros 2, tá? Fiz isso e salvei. Muito bem feito isso, né? Se a gente for pegar aqui as configurações, ele tá pronto, né? É importante que o gato EODNS sejam esse IP aqui pra funcionar direitinho. E aí nós temos um servidor pronto pra poder fornecer páginas web.
+
+1:39:17
+Pros clientes da rede. Então, se eu entrar aqui no smartphone, vier aqui em web browser, ele vai abrir uma janela do web browser que é um pouquinho pesado às vezes. Então vamos esperar um pouquinho Pra Ele abrir, né? Espera só um instantinho e a gente já faz o acesso. Bom, apareceu aqui e aí na URL, o endereço IP desse cara a gente coloca aqui como 200.
+
+1:39:42
+Ponto 200 ponto 200.201, que é o meu caso. Aqui ele já vai montar um HTTP, isso é a página básica. E se eu clicar aqui em smallpage, olha que legal minha rede privativa celular, então veja dessa forma, eu vou chegando aqui. No final desse exercício, a gente consegue simular uma pequena rede.
+
+1:40:04
+De telefonia móvel com as Torres aqui a limitação do pept 3. Será que ele fala só 3 GE 4G? Não fala 5G ainda, mas é uma forma legal de de fazer um primeiro exercício pra poder entender um pouquinho dessa sinalização que é tópico dessa aula, pra gente poder é deixar tudo é encaminhado pra fazer as atividades práticas, tá? Então eu vou terminando esse conteúdo por aqui, então, pessoal.
+
+1:40:33
+Ver no que dá para fazer. Eu deixei esse arquivo lá na área de é material de apoio. Vale a pena. A parte de sinalização mais importante aqui é aquela parte que mostra quando o smartphone conecta na rede, porque ali você consegue ver exatamente OA comunicação do UE, né? Que é Oo equipamento do usuário com o noteby e também a sinalização desse cara com a central Office. Aqui que a central Office significa para mim o core da rede.
+
+1:41:02
+Tá, eu vi que o Antônio Carlos vai deixou Oo documento lá é pra consumo. Acho legal todo mundo pegar lá no Discord, mas isso daqui é só a ponta do iceberg. Pessoal, eu sei que já são 20 pra 7, mas vamos falar um pouquinho desse cara aqui, ó do omnet tem um link pra pro projeto, né? Que é o site do omnet. Ele é o melhor simulador de eventos discretos que eu conheço no mundo.
+
+1:41:29
+Ele é objeto de muitos p HDs que estudam redes, estudam tecnologias diferentes. Dá para simular tudo aqui. Regressão em em processo químico, biológico e tal. E tem a parte de rede, então tem aqui o simo 5 GO, simo LTEEO, ainet, que são projetos que se destacam aqui dentro do ominete, tá?
+
+1:41:55
+Lá na área de arquivos de apoio eu coloquei um vídeo de como instalar esse cara e acredita, a instalação dele dá um pouco de trabalho, tá? Dá para instalar no Windows, dá para instalar no Linux. Eu fiz a instalação na minha máquina do Windows aqui. Quando você entra no omnet, ele tem essa carinha aqui, né? Você fala, Ah, pô, mas parece um parece um AD lá da da do Windows serverman não sei o quê, não é? Tudo bem?
+
+1:42:23
+Então os projetos aparecem aqui. Um dos projetos que é o simo x 5G, esse que está aberto aqui, ele tem alguns, é alguns exemplos, alguns templays interessantes. Esses 5 aqui eu vou mostrar 4 para vocês, o standalone, quando eu tenho uma antena e um celular, o standalone multicelulas, ou seja, eu tenho 11 aparelho e 2 antenas ou mais de uma antena.
+
+1:42:51
+Eu tenho multicarrier quando eu tenho uma antena e vários aparelhos celulares e eu tenho o tdd, que é o como se fosse do tdma é o time Division Multiplex, né? Dentro do dentro do plexing pra poder mostrar sinalização, tá? Então eu vou mostrar rapidamente todos eles aqui, tá? Esse aqui é, é só um slide, mas eu vou mostrar na prática. Mas esse cara aqui é o standalone, ou seja, eu tenho uma antena e um aparelho.
+
+1:43:21
+Quando você clica aqui, deixa eu pegar aqui, ó, quando você clica aqui, ele vai executando a sinalização, que vai passando aqui embaixo, tudo de uma vez. Quando você clica aqui nesse primeiro cara, quando você está projeto, aí a sinalização vai tela a tela e você consegue verificar ele é muito legal, tá? Então eu tenho o standalone, uma antena e um celular. Eu tenho, o multisel, eu tenho.
+
+1:43:47
+2 células, na verdade 2 antenas e um aparelho. Isso é legal pra pra pegar sinalização de randolver e de correção de erros, tá? Uplink downink, eu tenho o multquerrier, que é quando eu tenho uma antena de vários aparelhos. É que é bem legal que você vê cada um dos aparelhos. É um elemento diferente na sinalização, é bem legal.
+
+1:44:13
+E tem aqui também o tdd. Eu até deixei um link para um artigo que fala como que é, o que que é esse cara e tal, tal, tal. Mas aqui ele meio que mostra passo a passo como que essa sinalização ocorre. Então você vê Oo sinalzinho vindo de um lugar para o outro. Como que eu posso fazer essa sincronização baseado em tempo e não não somente em pacote? Bem legal isso aqui, tá? Então para a gente poder ver, eu trouxe.
+
+1:44:42
+O ominete está aqui, eu já carreguei os os projetos e aí vamos mostrar rapidamente cada um deles. O primeiro eu vou mostrar é o standalone, ou seja, deixa eu só trazer aqui. Então aqui ó, quando eu coloco pra rodar, veja, olha a sinalização correndo aqui embaixo. Tudo isso que a gente viu na aula de hoje está aqui, tá? Então aqui eu tenho uma antena e um aparelho.
+
+1:45:10
+Quando eu quero saber passo a passo que tá rolando, eu venho aqui, ó, do lado desse botão mais tudo verde, só do lado esquerdo você vem, veja que ele vai mudando, ó, então ó, aqui é tudo a sinalização, ó recibo, it, Power então tudo que ele tá mandando potência que ele mandou a sinalização e tudo mais, beleza, vou seguir uma em frente. Oi, pois não, Antônio.
+
+1:45:35
+Essa sinalização é só a nas ou também a sinalização entre os as funções de rede? Tem tudo aí, tá, tá tudo que a gente viu hoje, tá tudo aí, ó, olha aqui, ó, eu parei num ponto interessante, ó, lembra daquele elemento de correção de erros? O hark, ó. Então ele identificou que teve algum problema de comunicação?
+
+1:45:58
+Ó, single Cell, single user, então se eu tenho só uma célula com um usuário, aí tive algum problema de de de comunicação, então ele identificou, ó, tá fazendo correção de erros, ou seja, ele não garantiu a configuração, então ele faz o check aqui, utiliza o rack, que é um protocolo disso, ó abortou, aí ele vai incrementar o contador pra correção de erros e aí vamos em frente, ó, 1 hora ele acerta, tá, ó, isso é muito legal, ó, então veja.
+
+1:46:27
+Aqui em cima é o uplink, ou seja, eu o meu aparelho se comunicando com a rede, então, ó, eu estou fazendo, né, a transmissão transmitir, tem coisa que é não um agendado aqui é uma comunicação agendada, ok, terminou o uplink, estabeleci comunicação com ele, aí agora dá um link, eu estou recebendo dele, ó, estou agendando uma portadora, estou startando a comunicação, está vendo, ó?
+
+1:46:56
+Ele é um ldl, é um 4G aqui, nesse caso, tá, então veja, eu tô vendo quase tudo aquilo que a gente viu de sinalização, ó protocolo, Mac, lembra que eu falei pra vocês? É ele que define a correção de erros, ó, ele aqui, tá, o Mac entra várias vezes e aqui ele é meio repetitivo, nesse caso, tá é meio repetitivo, não é isso? Ah, mas eu quero ver mais coisa, beleza, vamos ver mais coisa. Vou mostrar agora o muticel.
+
+1:47:27
+Meu computador tá fritando aqui porque eu tô com esse Monte de coisas abertas, isso é pesado pra caramba. Então você dá uma parada aí. Vocês me perdoem, tá? Vamos lá, já pedi, tá? Daniel, antes da nossa aula, já pedi para colocar as aulas mais rápido possível. Pedi até para colocar hoje ainda, se possível, tá?
+
+1:47:49
+Mas eu vou, é, eles estão criando até um outro ambiente dentro do Teams pra vocês terem acesso mesmo quando não estão em aula comigo, tá? Então vamos lá, olha só, gente, aqui, 2 antenas e um aparelho, a sinalização ela é um pouco diferente, eu vou passar o passo a passo dela aqui, mas veja, ó, as antenas se comunicam, entre elas é OX 2 lembra do do do protocolo da interface x 2? E entre esses caras aqui e o aparelho, tem outra sinalização.
+
+1:48:18
+Parar aqui, vamos passar um pouquinho por cada um. Tá, ó, veja que o Mac entra o tempo todo aqui, ó, Mac, correção de erro, tem bastante correção de erro, mas olha só, ó, eu tenho multistel, eu só tenho um usuário que é OE zero aqui, mas vamos lá, vamos olhar, como é que esse cara funciona aí, tá, ó, eu tenho aqui uma antena.
+
+1:48:48
+E tá com ó, eu tô com 2 IDs, 255 e o 408, provavelmente eles são os 2 IDs das antenas, tá? Então olha só, então aqui o processo, ele tem algumas etapas a mais pra pra performar, porque o uplink eu vou pedir pra quem? Pra esse cara ou pra esse cara? Então ele tem que olhar pra esses 2 caras, ó, ele olha pro nó um, ele tenta agendar pelo nó um, se não der ele vai fazer pelo nó 2. Vamos seguir em frente.
+
+1:49:19
+Ó, aqui ele já tá com outro cara. Então ele vê correção de erros. Ele vai verificando se ele consegue fazer a checagem de integridade. Tá, veja que tem bastante processo de correção de erros, tá aí, deixa eu descer, eu pego mais, ó, ó, aqui, ó, quando olha a parte, quando ele conversa com os 2, com as 2 estações, ó GNB um.
+
+1:49:45
+Que é a primeira antena genode b, um genode b 2. Então ele tá conversando com os 2 caras, tá? Ó, é o flush do Hart message. Ou seja, ele tá dando flush da correção de erros para as 2 antenas, tá? E aí segue né, com os 2 caras, conversa com os 2 caras e assim segue a sinalização. Tá toda aqui.
+
+1:50:12
+Tá, então ele tem muito agendamento, pois não, como é que eu, como é que eu sei que a sessão PDU abriu pra qual? Pra qual antena aí aí puta, a gente vai ter que pegar. Eu vou fazer mais aulas com esse, com esse simulador. Calma que eu trago isso nas próximas aulas. Pode ser, pode ser obrigado, mas ele vai ter. Quando você analisa aqui, vai ter 1 hora que ele vai colocar informação sobre OPDU.
+
+1:50:37
+Ó, deixa eu ver, ele está falando com quem aqui, porque eu não entendi. Aí ele ele nem fez OA Tati ainda, né? Não, ele ainda não, ele ainda está na fase de sinalização, mas se a gente chegar lá, eu tenho que talvez entrar com mais algumas coisas, tá? Beleza, aí eu tenho o multicarrer, ou seja, vários celulares e uma antena só, então quando corre, ó, agora você vê que tem sinalização pra caramba.
+
+1:51:06
+O que que é legal aqui? Aqui é muito legal ver essa parte dos dispositivos. Então, por exemplo, ó, esse cara aqui é o dispositivo 5, esse cara aqui, ó, dispositivos 6, se eu não me engano, são 10 dispositivos. Então ó ele, ele comunica com todo mundo, ó, vou pegar desde o zero aqui, vamos ver quando ele começa aqui. Então agora começou o processo, falou com o celular zero, então mandou essa mensagem Pra Ele, correção de erros, ok?
+
+1:51:35
+Fez a mesma coisa pro celular, um ó, ele fez 2 vezes, porque provavelmente aqui ele não conseguiu garantir a comunicação AAA sinalização ele precisou fazer mais uma vez. Ó, veja que aqui em cima ele não faz o incremento do contador com a correção de erros. Aqui embaixo ele faz então fala com o celular um com o celular 22 vezes celular 3.
+
+1:51:59
+Tá, vamos ver que às vezes ele ele não consegue incrementar o contador, ele faz o processo 2 vezes, então ele vai passando e conversando com todo mundo aqui, deixa eu pegar aqui, deixa eu ver se ele vai, Ah, ó, aqui, ó, aqui. Ele tá mandando o pacote. Então ele conversou com todo mundo, ele vai passar o pacote, tá aqui em cima, pé do core da rede, e vai chegar na antena. E aí ele vai começar a falar com todo mundo na sequência, ó lá.
+
+1:52:27
+Agora falou pra todo mundo, mandou informação pra todo mundo, então essa comunicação é muito legal, então isso aqui, ó, pegar lá no final quando tá em tempo real, ó, aqui, ó, então esse processo todo, ó, ele falou, ó, eu falei com esse cara, então esse cara aqui estabeleceu a sessão, tá vendo, ó, é a parte que você fala do atache foi quem que foi e falou comigo do atache foi o Antônio, ó, vou até parar aqui, ó, ele tem aqui, ó, recebeu datagrama?
+
+1:52:55
+Então aqui ele já está com a taxa, ó lá, quem foi o cara que pegou? Deixa eu ver com qual o cara que ele está falando aqui, ó, stand up, rauter, deixa eu ver com quem que ele está falando. Ele não está mostrando com quem, mas mas deve ser com esse cara aqui, porque ele que está ativo aqui. Então olha que interessante essa informação, então a gente consegue pegar.
+
+1:53:23
+Muito, muito detalhamento da sinalização o tempo todo. Então, tudo que a gente viu na aula de hoje tá de certa forma pra enxergar aqui. E aí tem o último cara, que vai ser o último de hoje, que é o tdd, o time Division do plexing. Esse cara ele já tem, ó, olha que legal. Esse cara que tá falando assim, ó.
+
+1:53:52
+Eu estou conversando com você e, embora ele esteja mais perto de você, sou eu que estou falando com essa estação. Então veja, ó, tem hora que ele manda o pacote, então essa antena tá falando com esse cara. Isso aqui tem muito a ver com a parte do randolver, então quando esse cara tá numa região de randolver, quem tá falando com ele a cada momento vamos ver quem que vai mandar a informação, ó, essa antena tá aqui, vamos ver se ele vai comunicar com a antena direto com o celular, vamos ver o que acontece na sequência, esperar um pouquinho.
+
+1:54:22
+Ó, lá vai falar com a antena. Então ele usou OX 2 aqui e esse cara fala com o celular. Depois acredito que vá voltar e na próxima é a antena do lado esquerdo que vai falar com o celular. Vamos ver como vai ser da próxima. Ó, já fiz o despete, Hein, aqui, ó, o atash. Então tá aqui, ele tá conectado, tá conversando com alguém, só que ele tá fazendo isso com um tipo de multiplexação no tempo.
+
+1:54:51
+E diferente, né? Que o 5G também suporta. A aqui ele tá fazendo direto com a segunda antena. Não, não, não, replicou aquele primeiro cara que eu falei. Mas o legal daqui é que a gente consegue ver todo o processo de sinalização do core pro, pro router, pro meu servidor de controle, para minha Hebe, para outra Hebe e para o aparelho celular.
+
+1:55:21
+Então isso daqui é legal. Então todo esse processo é o chamado tdd, vou parar aqui, mas o que que eu recomendo que vocês façam? Peguem essa aula, reassistam ela, tentem instalar o ominete, porque a gente vai usar ele algumas vezes ainda. As próximas aulas, seu principal é o principal ferramenta, né? Deixa eu botar um Esc aqui.
+
+1:55:52
+E eu queria mostrar porque esse esse simulador realmente vale a pena é implantar, dá trabalho, mas ele é legal. Por que que dá trabalho? Porque quando você vai rodar a primeira vez da simulação, às vezes demora uns 15 minutos para ela rodar. Aí, beleza, eu mesmo chegou a demorar mais até depois você abre vários. A partir do momento que você carrega o projeto, você consegue executar vários. É vários elementos simultaneamente, igual eu mostrei para vocês.
+
+1:56:20
+Ele é um simulador sensacional, mas, em resumo, era esse esse o recado que eu queria dar na aula de hoje. A gente viu bastante coisa aí, né? Vimos o fluxo de sinalização de redes, arquitetura, protocolo, interface e os fluxos de sinalização, o fluxo, principalmente nesse final que eu mostrei o simulador pra vocês, tá? Então, embora tenha muito conteúdo.
+
+1:56:47
+Eu acho que hoje a gente falou em telefonia muito mais do que qualquer outra coisa. Falamos de de redes 4G, 5G, de fato, tá? Então é, por favor, tenho feedback, né? Dessa nossa aula e deixa eu abrir aqui a câmera. Fiquei importante que a partir de agora a gente sempre vai falar de alguma coisa ligada.
+
+1:57:10
+AA, as telefonias mesmo, comecei a comunicação de dados e redes pra poder chegar aqui e falar pra vocês sobre elementos como por exemplo, sinalização, que tem muito a ver com rede, muito a ver com rede, tá? Então é, tentem revisar o material, o material está disponível pra vocês, façam é as considerações. Amanhã a gente vai ter aula, né? Então vou pedir urgente lá pra já pedi, acho até que talvez já tenha, deixa eu ver se já agendaram pra gente.
+
+1:57:40
+Pra amanhã já tá agendado pra gente, tá pra amanhã, então é a gente tem mais uma aula amanhã a gente vai continuar com esse papo, né, da da da infraestrutura, do do do 5G, do 4 GE. Eu vou trazer mais exemplos. Eu vou ver se consigo trazer pelo menos mais um exemplo de simulação pra amanhã. E é isso pessoal, alguém quer fazer algum comentário que achou do conteúdo de hoje?
+
+1:58:05
+Por exemplo, OOO Antônio que postou, aí o trabalho foi é, é agregou para você Antônio, que já conhece um pouquinho dessas interfaces e tudo mais, sempre professor, sempre AAA. Conhecimento é sempre uma soma, cada um mesmo que é o mesmo assunto. Você faz uma abordagem por um outro ângulo, entendeu? Então sempre soma, boa, boa.
+
+1:58:32
+Mais alguém comentar alguma coisa? Clodoaldo, você que que que sempre fala que a minha aula é um tsunami, acho que o maior tsunami foi hoje, né não, professor, mas nesse sentido, a sua aula, eu acho que essa foi mais lá, não vou dizer que foi lá e tipo que aí é um tsunami, mas é, é, foi a minha praia de telecomunicações. Então essa parte de troca de protocolos é.
+
+1:58:59
+Isso foi mais tranquilo. Vamos ver se o homem net, como é que o instala, ele é bruto, vamos ver como é que ele roda, é. Mas foi sensacional. Nem realmente agora vamos ver. Como é que eu vejo essa troca de sinalização No No.
+
+1:59:18
+Na prática, quem sabe eu eu saio da da surra que eu tomei no Linux. Mas não adianta sem sem, sem suar um pouco, a gente não consegue sair do ponto a para o ponto b tem que suar mesmo é exatamente, mas valeu obrigadão, professor, valeu pessoal, mais alguém comentar alguma coisa, senão eu já vou encerrando a aula de hoje que já vai dar 7 horas, né? Deixa eu cortar aqui o já anotaram aí o QR Code, não deixem de fazer AAA pesquisa, né feedback?
+
+1:59:47
+Depois, isso é importante pra gente, tá bom, pessoal que podemos é encerrando por hoje. Espero que tenha sido uma aula bastante informativo, muito informativo, eu diria, mas que que tem aplicação aí nas vidas profissionais, EEE nesse projeto que vocês estão fazendo aí junto com a gente, tá, então amanhã tem mais, né? Então amanhã tem sextou de novo comigo, estejam prontos aí pra.
+
+2:00:15
+Mais uma avalanche de conteúdos. Amanhã gente, uma boa noite pra vocês, um bom Descanso e a gente se fala em menos de 24 horas. Forte abraço pessoal. Valeu. Obrigado professor. Boa noite a todos. Valeu pessoal, um abraço.
+
+2:23:09

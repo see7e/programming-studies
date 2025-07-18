@@ -1,0 +1,465 @@
+<!DOCTYPE html> <html><head>
+		<title>CS50 - Week 0</title>
+		<base href="..\..\..\..\..\..\../">
+		<meta id="root-path" root-path="..\..\..\..\..\..\../">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes, minimum-scale=1.0, maximum-scale=5.0">
+		<meta charset="UTF-8">
+		<meta name="description" content="DRIVE - CS50 - Week 0">
+		<meta property="og:title" content="CS50 - Week 0">
+		<meta property="og:description" content="DRIVE - CS50 - Week 0">
+		<meta property="og:type" content="website">
+		<meta property="og:url" content="courses/cs50x/week0/readme.html">
+		<meta property="og:image" content="https://cs50.harvard.edu/x/2023/notes/0/cs50Week0Slide38.png">
+		<meta property="og:site_name" content="DRIVE">
+		<meta name="author" content="Gabryel Nóbrega"><link rel="alternate" type="application/rss+xml" title="RSS Feed" href="lib/rss.xml"><script async="" id="webpage-script" src="lib/scripts/webpage.js" onload="this.onload=null;this.setAttribute(&quot;loaded&quot;, &quot;true&quot;)"></script><script type="module" async="" id="graph-view-script" src="lib/scripts/graph-view.js"></script><script async="" id="graph-wasm-script" src="lib/scripts/graph-wasm.js" onload="this.onload=null;this.setAttribute(&quot;loaded&quot;, &quot;true&quot;)"></script><script async="" id="graph-render-worker-script" src="lib/scripts/graph-render-worker.js" onload="this.onload=null;this.setAttribute(&quot;loaded&quot;, &quot;true&quot;)"></script><script async="" id="tinycolor-script" src="lib/scripts/tinycolor.js" onload="this.onload=null;this.setAttribute(&quot;loaded&quot;, &quot;true&quot;)"></script><script async="" id="pixi-script" src="https://cdnjs.cloudflare.com/ajax/libs/pixi.js/7.4.0/pixi.min.js" onload="this.onload=null;this.setAttribute(&quot;loaded&quot;, &quot;true&quot;)"></script><script async="" id="minisearch-script" src="https://cdn.jsdelivr.net/npm/minisearch@6.3.0/dist/umd/index.min.js" onload="this.onload=null;this.setAttribute(&quot;loaded&quot;, &quot;true&quot;)"></script><link rel="icon" href="lib/media/favicon.png"><script async="" id="graph-data-script" src="lib/scripts/graph-data.js" onload="this.onload=null;this.setAttribute(&quot;loaded&quot;, &quot;true&quot;)"></script><style>body{--line-width:40em;--line-width-adaptive:40em;--file-line-width:40em;--sidebar-width:min(20em, 80vw);--collapse-arrow-size:11px;--tree-horizontal-spacing:0.6em;--tree-vertical-spacing:0.6em;--sidebar-margin:12px}.sidebar{height:100%;min-width:calc(var(--sidebar-width) + var(--divider-width-hover));max-width:calc(var(--sidebar-width) + var(--divider-width-hover));font-size:14px;z-index:10;position:relative;overflow:hidden;transition:min-width ease-in-out,max-width ease-in-out;transition-duration:.2s;contain:size}.sidebar-left{left:0}.sidebar-right{right:0}.sidebar.is-collapsed{min-width:0;max-width:0}body.floating-sidebars .sidebar{position:absolute}.sidebar-content{height:100%;min-width:calc(var(--sidebar-width) - var(--divider-width-hover));top:0;padding:var(--sidebar-margin);padding-top:4em;line-height:var(--line-height-tight);background-color:var(--background-secondary);transition:background-color,border-right,border-left,box-shadow;transition-duration:var(--color-fade-speed);transition-timing-function:ease-in-out;position:absolute;display:flex;flex-direction:column}.sidebar:not(.is-collapsed) .sidebar-content{min-width:calc(max(100%,var(--sidebar-width)) - 3px);max-width:calc(max(100%,var(--sidebar-width)) - 3px)}.sidebar-left .sidebar-content{left:0;border-top-right-radius:var(--radius-l);border-bottom-right-radius:var(--radius-l)}.sidebar-right .sidebar-content{right:0;border-top-left-radius:var(--radius-l);border-bottom-left-radius:var(--radius-l)}.sidebar:has(.sidebar-content:empty):has(.topbar-content:empty){display:none}.sidebar-topbar{height:2em;width:var(--sidebar-width);top:var(--sidebar-margin);padding-inline:var(--sidebar-margin);z-index:1;position:fixed;display:flex;align-items:center;transition:width ease-in-out;transition-duration:inherit}.sidebar.is-collapsed .sidebar-topbar{width:calc(2.3em + var(--sidebar-margin) * 2)}.sidebar .sidebar-topbar.is-collapsed{width:0}.sidebar-left .sidebar-topbar{left:0}.sidebar-right .sidebar-topbar{right:0}.topbar-content{overflow:hidden;overflow:clip;width:100%;height:100%;display:flex;align-items:center;transition:inherit}.sidebar.is-collapsed .topbar-content{width:0;transition:inherit}.clickable-icon.sidebar-collapse-icon{background-color:transparent;color:var(--icon-color-focused);padding:0!important;margin:0!important;height:100%!important;width:2.3em!important;margin-inline:0.14em!important;position:absolute}.sidebar-left .clickable-icon.sidebar-collapse-icon{transform:rotateY(180deg);right:var(--sidebar-margin)}.sidebar-right .clickable-icon.sidebar-collapse-icon{transform:rotateY(180deg);left:var(--sidebar-margin)}.clickable-icon.sidebar-collapse-icon svg.svg-icon{width:100%;height:100%}.sidebar-section-header{margin:0 0 1em 0;text-transform:uppercase;letter-spacing:.06em;font-weight:600}body{transition:background-color var(--color-fade-speed) ease-in-out}.webpage-container{display:flex;flex-direction:row;height:100%;width:100%;align-items:stretch;justify-content:center}.document-container{opacity:1;flex-basis:100%;max-width:100%;width:100%;height:100%;display:flex;flex-direction:column;align-items:center;transition:opacity .2s ease-in-out;contain:inline-size}.hide{opacity:0;transition:opacity .2s ease-in-out}.document-container>.markdown-preview-view{margin:var(--sidebar-margin);margin-bottom:0;width:100%;width:-webkit-fill-available;width:-moz-available;width:fill-available;background-color:var(--background-primary);transition:background-color var(--color-fade-speed) ease-in-out;border-top-right-radius:var(--window-radius,var(--radius-m));border-top-left-radius:var(--window-radius,var(--radius-m));overflow-x:hidden!important;overflow-y:auto!important;display:flex!important;flex-direction:column!important;align-items:center!important;contain:inline-size}.document-container>.markdown-preview-view>.markdown-preview-sizer{padding-bottom:80vh!important;width:100%!important;max-width:var(--line-width)!important;flex-basis:var(--line-width)!important;transition:background-color var(--color-fade-speed) ease-in-out;contain:inline-size}.markdown-rendered img:not([width]),.view-content img:not([width]){max-width:100%;outline:0}.document-container>.view-content.embed{display:flex;padding:1em;height:100%;width:100%;align-items:center;justify-content:center}.document-container>.view-content.embed>*{max-width:100%;max-height:100%;object-fit:contain}:has(> :is(.math,table)){overflow-x:auto!important}.document-container>.view-content{overflow-x:auto;contain:content;padding:0;margin:0;height:100%}.scroll-highlight{position:absolute;width:100%;height:100%;pointer-events:none;z-index:1000;background-color:hsla(var(--color-accent-hsl),.25);opacity:0;padding:1em;inset:50%;translate:-50% -50%;border-radius:var(--radius-s)}</style><script defer="">async function loadIncludes(){if("file:"!=location.protocol){let e=document.querySelectorAll("include");for(let t=0;t<e.length;t++){let o=e[t],l=o.getAttribute("src");try{const e=await fetch(l);if(!e.ok){console.log("Could not include file: "+l),o?.remove();continue}let t=await e.text(),n=document.createRange().createContextualFragment(t),i=Array.from(n.children);for(let e of i)e.classList.add("hide"),e.style.transition="opacity 0.5s ease-in-out",setTimeout((()=>{e.classList.remove("hide")}),10);o.before(n),o.remove(),console.log("Included file: "+l)}catch(e){o?.remove(),console.log("Could not include file: "+l,e);continue}}}else{if(document.querySelectorAll("include").length>0){var e=document.createElement("div");e.id="error",e.textContent="Web server exports must be hosted on an http / web server to be viewed correctly.",e.style.position="fixed",e.style.top="50%",e.style.left="50%",e.style.transform="translate(-50%, -50%)",e.style.fontSize="1.5em",e.style.fontWeight="bold",e.style.textAlign="center",document.body.appendChild(e),document.querySelector(".document-container")?.classList.remove("hide")}}}document.addEventListener("DOMContentLoaded",(()=>{loadIncludes()}));let isFileProtocol="file:"==location.protocol;function waitLoadScripts(e,t){let o=e.map((e=>document.getElementById(e+"-script"))),l=0;!function e(){let n=o[l];l++,n&&"true"!=n.getAttribute("loaded")||l<o.length&&e(),l<o.length?n.addEventListener("load",e):t()}()}</script><link rel="stylesheet" href="lib/styles/obsidian.css"><link rel="stylesheet" href="lib/styles/theme.css"><link rel="preload" href="lib/styles/global-variable-styles.css" as="style" onload="this.onload=null;this.rel='stylesheet'"><noscript><link rel="stylesheet" href="lib/styles/global-variable-styles.css"></noscript><link rel="preload" href="lib/styles/supported-plugins.css" as="style" onload="this.onload=null;this.rel='stylesheet'"><noscript><link rel="stylesheet" href="lib/styles/supported-plugins.css"></noscript><link rel="preload" href="lib/styles/main-styles.css" as="style" onload="this.onload=null;this.rel='stylesheet'"><noscript><link rel="stylesheet" href="lib/styles/main-styles.css"></noscript><link rel="preload" href="lib/styles/snippets.css" as="style" onload="this.onload=null;this.rel='stylesheet'"><noscript><link rel="stylesheet" href="lib/styles/snippets.css"></noscript></head><body class="publish css-settings-manager theme-dark"><script defer="">let theme=localStorage.getItem("theme")||(window.matchMedia("(prefers-color-scheme: dark)").matches?"dark":"light");"dark"==theme?(document.body.classList.add("theme-dark"),document.body.classList.remove("theme-light")):(document.body.classList.add("theme-light"),document.body.classList.remove("theme-dark")),window.innerWidth<480?document.body.classList.add("is-phone"):window.innerWidth<768?document.body.classList.add("is-tablet"):window.innerWidth<1024?document.body.classList.add("is-small-screen"):document.body.classList.add("is-large-screen")</script><div class="webpage-container workspace"><div class="sidebar-left sidebar"><div class="sidebar-handle"></div><div class="sidebar-topbar"><div class="topbar-content"><label class="theme-toggle-container" for="theme_toggle"><input class="theme-toggle-input" type="checkbox" id="theme_toggle"><div class="toggle-background"></div></label></div><div class="clickable-icon sidebar-collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" class="svg-icon"><path d="M21 3H3C1.89543 3 1 3.89543 1 5V19C1 20.1046 1.89543 21 3 21H21C22.1046 21 23 20.1046 23 19V5C23 3.89543 22.1046 3 21 3Z"></path><path d="M10 4V20"></path><path d="M4 7H7"></path><path d="M4 10H7"></path><path d="M4 13H7"></path></svg></div></div><div class="sidebar-content"><div class="search-input-container"><input enterkeyhint="search" type="search" spellcheck="false" placeholder="Search..."><div class="search-input-clear-button" aria-label="Clear search"></div></div><include src="lib/html/file-tree.html"></include></div><script defer="">let ls = document.querySelector(".sidebar-left"); ls.classList.add("is-collapsed"); if (window.innerWidth > 768) ls.classList.remove("is-collapsed"); ls.style.setProperty("--sidebar-width", localStorage.getItem("sidebar-left-width"));</script></div><div class="document-container markdown-reading-view hide"><div class="markdown-preview-view markdown-rendered allow-fold-headings allow-fold-lists is-readable-line-width"><style id="MJX-CHTML-styles">mjx-c.mjx-c30::before{padding:.666em .5em .022em 0;content:"0"}mjx-c.mjx-c39::before{padding:.666em .5em .022em 0;content:"9"}mjx-c.mjx-c2212::before{padding:.583em .778em .082em 0;content:"−"}mjx-container[jax=CHTML]{line-height:0}mjx-container [space="1"]{margin-left:.111em}mjx-container [space="2"]{margin-left:.167em}mjx-container [space="3"]{margin-left:.222em}mjx-container [space="4"]{margin-left:.278em}mjx-container [space="5"]{margin-left:.333em}mjx-container [rspace="1"]{margin-right:.111em}mjx-container [rspace="2"]{margin-right:.167em}mjx-container [rspace="3"]{margin-right:.222em}mjx-container [rspace="4"]{margin-right:.278em}mjx-container [rspace="5"]{margin-right:.333em}mjx-container [size="s"]{font-size:70.7%}mjx-container [size=ss]{font-size:50%}mjx-container [size=Tn]{font-size:60%}mjx-container [size=sm]{font-size:85%}mjx-container [size=lg]{font-size:120%}mjx-container [size=Lg]{font-size:144%}mjx-container [size=LG]{font-size:173%}mjx-container [size=hg]{font-size:207%}mjx-container [size=HG]{font-size:249%}mjx-container [width=full]{width:100%}mjx-box{display:inline-block}mjx-block{display:block}mjx-itable{display:inline-table}mjx-row{display:table-row}mjx-row>*{display:table-cell}mjx-mtext{display:inline-block}mjx-mstyle{display:inline-block}mjx-merror{display:inline-block;color:red;background-color:#ff0}mjx-mphantom{visibility:hidden}mjx-assistive-mml{top:0;left:0;clip:rect(1px,1px,1px,1px);user-select:none;position:absolute!important;padding:1px 0 0!important;border:0!important;display:block!important;width:auto!important;overflow:hidden!important}mjx-assistive-mml[display=block]{width:100%!important}mjx-math{display:inline-block;text-align:left;line-height:0;text-indent:0;font-style:normal;font-weight:400;font-size:100%;font-size-adjust:none;letter-spacing:normal;border-collapse:collapse;overflow-wrap:normal;word-spacing:normal;white-space:nowrap;direction:ltr;padding:1px 0}mjx-container[jax=CHTML][display=true]{display:block;text-align:center;margin:1em 0}mjx-container[jax=CHTML][display=true][width=full]{display:flex}mjx-container[jax=CHTML][display=true] mjx-math{padding:0}mjx-container[jax=CHTML][justify=left]{text-align:left}mjx-container[jax=CHTML][justify=right]{text-align:right}mjx-mi{display:inline-block;text-align:left}mjx-c{display:inline-block}mjx-utext{display:inline-block;padding:.75em 0 .2em}mjx-msub{display:inline-block;text-align:left}mjx-mn{display:inline-block;text-align:left}mjx-mo{display:inline-block;text-align:left}mjx-stretchy-h{display:inline-table;width:100%}mjx-stretchy-h>*{display:table-cell;width:0}mjx-stretchy-h>*>mjx-c{display:inline-block;transform:scaleX(1)}mjx-stretchy-h>*>mjx-c::before{display:inline-block;width:initial}mjx-stretchy-h>mjx-ext{overflow:clip visible;width:100%}mjx-stretchy-h>mjx-ext>mjx-c::before{transform:scaleX(500)}mjx-stretchy-h>mjx-ext>mjx-c{width:0}mjx-stretchy-h>mjx-beg>mjx-c{margin-right:-.1em}mjx-stretchy-h>mjx-end>mjx-c{margin-left:-.1em}mjx-stretchy-v{display:inline-block}mjx-stretchy-v>*{display:block}mjx-stretchy-v>mjx-beg{height:0}mjx-stretchy-v>mjx-end>mjx-c{display:block}mjx-stretchy-v>*>mjx-c{transform:scaleY(1);transform-origin:left center;overflow:hidden}mjx-stretchy-v>mjx-ext{display:block;height:100%;box-sizing:border-box;border:0 solid transparent;overflow:visible clip}mjx-stretchy-v>mjx-ext>mjx-c::before{width:initial;box-sizing:border-box}mjx-stretchy-v>mjx-ext>mjx-c{transform:scaleY(500) translateY(.075em);overflow:visible}mjx-mark{display:inline-block;height:0}mjx-c::before{display:block;width:0}.MJX-TEX{font-family:MJXZERO,MJXTEX}.TEX-B{font-family:MJXZERO,MJXTEX-B}.TEX-I{font-family:MJXZERO,MJXTEX-I}.TEX-MI{font-family:MJXZERO,MJXTEX-MI}.TEX-BI{font-family:MJXZERO,MJXTEX-BI}.TEX-S1{font-family:MJXZERO,MJXTEX-S1}.TEX-S2{font-family:MJXZERO,MJXTEX-S2}.TEX-S3{font-family:MJXZERO,MJXTEX-S3}.TEX-S4{font-family:MJXZERO,MJXTEX-S4}.TEX-A{font-family:MJXZERO,MJXTEX-A}.TEX-C{font-family:MJXZERO,MJXTEX-C}.TEX-CB{font-family:MJXZERO,MJXTEX-CB}.TEX-FR{font-family:MJXZERO,MJXTEX-FR}.TEX-FRB{font-family:MJXZERO,MJXTEX-FRB}.TEX-SS{font-family:MJXZERO,MJXTEX-SS}.TEX-SSB{font-family:MJXZERO,MJXTEX-SSB}.TEX-SSI{font-family:MJXZERO,MJXTEX-SSI}.TEX-SC{font-family:MJXZERO,MJXTEX-SC}.TEX-T{font-family:MJXZERO,MJXTEX-T}.TEX-V{font-family:MJXZERO,MJXTEX-V}.TEX-VB{font-family:MJXZERO,MJXTEX-VB}mjx-stretchy-h mjx-c,mjx-stretchy-v mjx-c{font-family:MJXZERO,MJXTEX-S1,MJXTEX-S4,MJXTEX,MJXTEX-A!important}@font-face{font-family:MJXZERO;src:url("lib/fonts/mathjax_zero.woff") format("woff")}@font-face{font-family:MJXTEX;src:url("lib/fonts/mathjax_main-regular.woff") format("woff")}@font-face{font-family:MJXTEX-B;src:url("lib/fonts/mathjax_main-bold.woff") format("woff")}@font-face{font-family:MJXTEX-I;src:url("lib/fonts/mathjax_math-italic.woff") format("woff")}@font-face{font-family:MJXTEX-MI;src:url("lib/fonts/mathjax_main-italic.woff") format("woff")}@font-face{font-family:MJXTEX-BI;src:url("lib/fonts/mathjax_math-bolditalic.woff") format("woff")}@font-face{font-family:MJXTEX-S1;src:url("lib/fonts/mathjax_size1-regular.woff") format("woff")}@font-face{font-family:MJXTEX-S2;src:url("lib/fonts/mathjax_size2-regular.woff") format("woff")}@font-face{font-family:MJXTEX-S3;src:url("lib/fonts/mathjax_size3-regular.woff") format("woff")}@font-face{font-family:MJXTEX-S4;src:url("lib/fonts/mathjax_size4-regular.woff") format("woff")}@font-face{font-family:MJXTEX-A;src:url("lib/fonts/mathjax_ams-regular.woff") format("woff")}@font-face{font-family:MJXTEX-C;src:url("lib/fonts/mathjax_calligraphic-regular.woff") format("woff")}@font-face{font-family:MJXTEX-CB;src:url("lib/fonts/mathjax_calligraphic-bold.woff") format("woff")}@font-face{font-family:MJXTEX-FR;src:url("lib/fonts/mathjax_fraktur-regular.woff") format("woff")}@font-face{font-family:MJXTEX-FRB;src:url("lib/fonts/mathjax_fraktur-bold.woff") format("woff")}@font-face{font-family:MJXTEX-SS;src:url("lib/fonts/mathjax_sansserif-regular.woff") format("woff")}@font-face{font-family:MJXTEX-SSB;src:url("lib/fonts/mathjax_sansserif-bold.woff") format("woff")}@font-face{font-family:MJXTEX-SSI;src:url("lib/fonts/mathjax_sansserif-italic.woff") format("woff")}@font-face{font-family:MJXTEX-SC;src:url("lib/fonts/mathjax_script-regular.woff") format("woff")}@font-face{font-family:MJXTEX-T;src:url("lib/fonts/mathjax_typewriter-regular.woff") format("woff")}@font-face{font-family:MJXTEX-V;src:url("lib/fonts/mathjax_vector-regular.woff") format("woff")}@font-face{font-family:MJXTEX-VB;src:url("lib/fonts/mathjax_vector-bold.woff") format("woff")}mjx-c.mjx-c1D439.TEX-I::before{padding:.68em .749em 0 0;content:"F"}mjx-c.mjx-c1D447.TEX-I::before{padding:.677em .704em 0 0;content:"T"}mjx-c.mjx-c1D43F.TEX-I::before{padding:.683em .681em 0 0;content:"L"}mjx-c.mjx-c1D43C.TEX-I::before{padding:.683em .504em 0 0;content:"I"}mjx-c.mjx-c1D441.TEX-I::before{padding:.683em .888em 0 0;content:"N"}mjx-c.mjx-c1D438.TEX-I::before{padding:.68em .764em 0 0;content:"E"}mjx-c.mjx-c31::before{padding:.666em .5em 0 0;content:"1"}mjx-c.mjx-c2C::before{padding:.121em .278em .194em 0;content:","}</style><pre class="frontmatter language-yaml" tabindex="0" style="display: none;"><code class="language-yaml is-loaded"><span class="token key atrule">title</span><span class="token punctuation">:</span> CS50 <span class="token punctuation">-</span> Week 0
+<span class="token key atrule">tags</span><span class="token punctuation">:</span> programming<span class="token punctuation">,</span> cs50
+<span class="token key atrule">use</span><span class="token punctuation">:</span> Documentation
+<span class="token key atrule">languages</span><span class="token punctuation">:</span> <span class="token null important">NULL</span>
+<span class="token key atrule">dependences</span><span class="token punctuation">:</span> CS50</code><button class="copy-code-button"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon lucide-copy"><rect x="8" y="8" width="14" height="14" rx="2" ry="2"></rect><path d="M4 16c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2"></path></svg></button></pre><div class="markdown-preview-sizer markdown-preview-section"><h1 class="page-title heading" id="CS50 - Week 0"><p dir="auto">CS50 - Week 0</p></h1><div class="el-h1 heading-wrapper"><div class="heading-children"><div class="el-details"><details>
+<summary>Keeywords, lookup in <a href="./src/transcripts/lecture0.md" target="_blank" rel="noopener nofollow">transcript</a></summary></details></div><div class="el-ul"><ul>
+<li data-line="0" dir="auto">Unary (base-1)</li>
+<li data-line="1" dir="auto">Binary (base-2)</li>
+<li data-line="2" dir="auto">BInary digiT -&gt; BIT (0/1)</li>
+<li data-line="3" dir="auto">Transistors</li>
+<li data-line="4" dir="auto">Swiches</li>
+<li data-line="5" dir="auto">Base-10 ( ... 10<sup>2</sup> 10<sup>1</sup> 10<sup>0</sup>)</li>
+<li data-line="6" dir="auto"><a class="internal-link" data-href="#bites" href="#bites" target="_self" rel="noopener nofollow">Bites</a></li>
+<li data-line="7" dir="auto"><a data-tooltip-position="top" aria-label="https://pt.wikipedia.org/wiki/ASCII" rel="noopener nofollow" class="external-link" href="https://pt.wikipedia.org/wiki/ASCII" target="_blank">ASCII</a></li>
+<li data-line="8" dir="auto">Caracters (tipos)</li>
+<li data-line="9" dir="auto">Unicode</li>
+<li data-line="10" dir="auto">RGB</li>
+<li data-line="11" dir="auto">Pixels</li>
+<li data-line="12" dir="auto">Image Frames (video)</li>
+<li data-line="13" dir="auto">pseudocode</li>
+<li data-line="14" dir="auto">patherns - functions</li>
+<li data-line="15" dir="auto">cicles</li>
+<li data-line="16" dir="auto">syntax</li>
+<li data-line="17" dir="auto">event / side effect</li>
+<li data-line="18" dir="auto">loop</li>
+<li data-line="19" dir="auto">Scratch</li>
+<li data-line="20" dir="auto">return value</li>
+<li data-line="21" dir="auto">variables</li>
+</ul></div><div></div><div class="el-p"><p dir="auto">Table of Contents</p></div><div class="el-ul"><ul>
+<li data-line="0" dir="auto"><div class="list-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle"><path d="M3 8L12 17L21 8"></path></svg></div><a class="internal-link" data-href="#lecture-0" href="#lecture-0" target="_self" rel="noopener nofollow">Lecture 0</a>
+<ul>
+<li data-line="1" dir="auto"><a class="internal-link" data-href="#welcome" href="#welcome" target="_self" rel="noopener nofollow">Welcome!</a></li>
+<li data-line="2" dir="auto"><a class="internal-link" data-href="#whats-ahead" href="#whats-ahead" target="_self" rel="noopener nofollow">What’s Ahead</a></li>
+<li data-line="3" dir="auto"><a class="internal-link" data-href="#community" href="#community" target="_self" rel="noopener nofollow">Community!</a></li>
+<li data-line="4" dir="auto"><a class="internal-link" data-href="#computational-thinking" href="#computational-thinking" target="_self" rel="noopener nofollow">Computational Thinking</a></li>
+<li data-line="5" dir="auto"><a class="internal-link" data-href="#bites" href="#bites" target="_self" rel="noopener nofollow">Bites</a></li>
+<li data-line="6" dir="auto"><a class="internal-link" data-href="#text" href="#text" target="_self" rel="noopener nofollow">Text</a></li>
+<li data-line="7" dir="auto"><a class="internal-link" data-href="#emojis" href="#emojis" target="_self" rel="noopener nofollow">Emojis</a></li>
+<li data-line="8" dir="auto"><a class="internal-link" data-href="#rgb" href="#rgb" target="_self" rel="noopener nofollow">RGB</a></li>
+<li data-line="9" dir="auto"><a class="internal-link" data-href="#images-video-and-sound" href="#images-video-and-sound" target="_self" rel="noopener nofollow">Images, Video and Sound</a></li>
+<li data-line="10" dir="auto"><a class="internal-link" data-href="#algorithms" href="#algorithms" target="_self" rel="noopener nofollow">Algorithms</a></li>
+<li data-line="11" dir="auto"><a class="internal-link" data-href="#pseudocode-and-the-basic-building-blocks-of-programming" href="#pseudocode-and-the-basic-building-blocks-of-programming" target="_self" rel="noopener nofollow">Pseudocode and the Basic Building Blocks of Programming</a></li>
+<li data-line="12" dir="auto"><a class="internal-link" data-href="#scratch" href="#scratch" target="_self" rel="noopener nofollow">Scratch</a></li>
+<li data-line="13" dir="auto"><a class="internal-link" data-href="#abstraction" href="#abstraction" target="_self" rel="noopener nofollow">Abstraction</a></li>
+<li data-line="14" dir="auto"><a class="internal-link" data-href="#if" href="#if" target="_self" rel="noopener nofollow">If</a></li>
+<li data-line="15" dir="auto"><a class="internal-link" data-href="#expanding-your-imagination" href="#expanding-your-imagination" target="_self" rel="noopener nofollow">Expanding Your Imagination</a></li>
+<li data-line="16" dir="auto"><a class="internal-link" data-href="#sprite-movement" href="#sprite-movement" target="_self" rel="noopener nofollow">Sprite Movement</a></li>
+<li data-line="17" dir="auto"><a class="internal-link" data-href="#more-sprites" href="#more-sprites" target="_self" rel="noopener nofollow">More Sprites</a></li>
+<li data-line="18" dir="auto"><a class="internal-link" data-href="#summing-up" href="#summing-up" target="_self" rel="noopener nofollow">Summing Up</a></li>
+<li data-line="19" dir="auto"><a class="internal-link" data-href="#problem-set-0---scratch" href="#problem-set-0---scratch" target="_self" rel="noopener nofollow">Problem Set 0 - Scratch</a></li>
+</ul>
+</li>
+</ul></div><div class="el-h2 heading-wrapper"><h2 data-heading="Welcome!" dir="auto" class="heading" id="Welcome!"><div class="heading-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle"><path d="M3 8L12 17L21 8"></path></svg></div>Welcome!</h2><div class="heading-children"><div class="el-ul"><ul>
+<li data-line="0" dir="auto">This class is about more than computer programming!</li>
+<li data-line="1" dir="auto">Indeed, this class is about problem-solving in a way that is exceedingly empowering! You will likely take the problem solving that you learn here will likely be instantly applicable to your work beyond this course and even your career as a whole!</li>
+<li data-line="2" dir="auto">However, it will not be easy! You will be “drinking from the firehose” of knowledge during this course. You’ll be amazed at what you will be able to accomplish in the coming weeks.</li>
+<li data-line="3" dir="auto">This course is far more about you advancing “you” from “where you are today” than hitting some imagined standard.</li>
+<li data-line="4" dir="auto">The most important opening consideration in this course: Give the time you need to learn through this course. Everyone learns differently. If something does not work out well at the start, know that with time you will grow and grow in your skill.</li>
+</ul></div></div></div><div class="el-h2 heading-wrapper"><h2 data-heading="What’s Ahead" dir="auto" class="heading" id="What’s_Ahead"><div class="heading-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle"><path d="M3 8L12 17L21 8"></path></svg></div>What’s Ahead</h2><div class="heading-children"><div class="el-ul"><ul>
+<li data-line="0" dir="auto">
+<p>You will be learning this week about Scratch, a visual programming language.</p>
+</li>
+<li data-line="1" dir="auto">
+<p>Then, in future weeks, you will learn about C. That will look something like this:</p>
+<pre><code data-line="3">  #include &lt;stdio.h&gt;
+
+  int main(void)
+  {
+      printf("hello, world\n");
+  }
+</code><button class="copy-code-button"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon lucide-copy"><rect x="8" y="8" width="14" height="14" rx="2" ry="2"></rect><path d="M4 16c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2"></path></svg></button></pre>
+</li>
+<li data-line="12" dir="auto">
+<p>Further, as the weeks progress, you will learn about algorithms.</p>
+</li>
+<li data-line="13" dir="auto">
+<p>You will learn about memory.</p>
+</li>
+<li data-line="14" dir="auto">
+<p>You will learn about buggy code and what causes computer crashes.</p>
+</li>
+<li data-line="15" dir="auto">
+<p>You will learn about data structures such as a hash table.</p>
+</li>
+<li data-line="16" dir="auto">
+<p>Then, we will transition to a new, higher-level language called <em>Python</em>. Your code will look something like this:</p>
+</li>
+<li data-line="18" dir="auto">
+<p>This class will give you a strong understanding of how recent programming languages developed from the earlier ones.</p>
+</li>
+<li data-line="19" dir="auto">
+<p>We will also be looking at how we can use databases and third-party frameworks to build web applications.</p>
+</li>
+</ul></div></div></div><div class="el-h2 heading-wrapper"><h2 data-heading="Community!" dir="auto" class="heading" id="Community!"><div class="heading-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle"><path d="M3 8L12 17L21 8"></path></svg></div>Community!</h2><div class="heading-children"><div class="el-ul"><ul>
+<li data-line="0" dir="auto">You are part of a community of those taking this course at Harvard College, Harvard Extension School, and via edX.org.</li>
+<li data-line="1" dir="auto">Puzzle Day and the CS50 Fair</li>
+</ul></div></div></div><div class="el-h2 heading-wrapper"><h2 data-heading="Computational Thinking" dir="auto" class="heading" id="Computational_Thinking"><div class="heading-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle"><path d="M3 8L12 17L21 8"></path></svg></div>Computational Thinking</h2><div class="heading-children"><div class="el-ul"><ul>
+<li data-line="0" dir="auto">
+<p>Essentially, computer programming is about taking some input and creating some output - thus solving a problem. What happens in between the input and output, what we could call <em>a black box,</em> is the focus of this course.</p>
+<p><img title="Black box with input and output" alt="Black box with input and output" src="https://cs50.harvard.edu/x/2023/notes/0/cs50Week0Slide38.png" referrerpolicy="no-referrer"></p>
+</li>
+<li data-line="4" dir="auto">
+<p>For example, we may need to take attendance for a class. We could use a system called <em>unary</em> to count, one finger at a time. Computers today count using a system called <em>binary</em>. It’s from the term <em>binary digit</em> that we get a familiar term called <em>bit</em>. A <em>bit</em> is a zero or one.</p>
+</li>
+<li data-line="5" dir="auto">
+<p>Computers only speak in terms of zeros and ones. Zeros represent <em>off.</em> Ones represent <em>on.</em> Computers are millions, and perhaps billions, of transistors that are being turned on and off.</p>
+</li>
+<li data-line="6" dir="auto">
+<p>If you imagine using a light bulb, a single bulb can only count from zero to one.</p>
+</li>
+<li data-line="7" dir="auto">
+<p>However, if you were to have three light bulbs, there are more options open to you!</p>
+</li>
+<li data-line="8" dir="auto">
+<p>Using three light bulbs, the following could represent zero:</p>
+</li>
+<li data-line="9" dir="auto">
+<p>Similarly, the following would represent one:</p>
+</li>
+<li data-line="10" dir="auto">
+<p>By this logic, we could propose that the following equals two:</p>
+</li>
+<li data-line="11" dir="auto">
+<p>Extending this logic further, the following represents three:</p>
+</li>
+<li data-line="12" dir="auto">
+<p>Four would appear as:</p>
+</li>
+<li data-line="13" dir="auto">
+<p>We could, in fact, using only three light bulbs count as high as seven!</p>
+</li>
+<li data-line="14" dir="auto">
+<p>As a heuristic, we could imagine that the following values represent each possible place in our <em>binary digit</em>:</p>
+</li>
+<li data-line="15" dir="auto">
+<p>Computers use ‘base-2’ to count. This can be pictured as follows:</p>
+</li>
+<li data-line="16" dir="auto">
+<p>Therefore, you could say that it would require three bits (the four’s place, the two’s place, and the one’s place) to represent a number as high as seven.</p>
+</li>
+<li data-line="17" dir="auto">
+<p>Computers generally use eight bits to represent a number. For example, <code>00000101</code> is the number 5 in <em>binary</em>.</p>
+</li>
+</ul></div></div></div><div class="el-h2 heading-wrapper"><h2 data-heading="Bites" dir="auto" class="heading" id="Bites"><div class="heading-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle"><path d="M3 8L12 17L21 8"></path></svg></div>Bites</h2><div class="heading-children"><div class="el-p"><p dir="auto">cada casa do bite consegue "contar" até 255, onde cada casa representa um intervalo de valores:</p></div><div class="el-table" dir="auto" style="overflow-x: auto;"><table>
+<thead>
+<tr>
+<th dir="auto">0</th>
+<th dir="auto">0</th>
+<th dir="auto">0</th>
+<th dir="auto">0</th>
+<th dir="auto">0</th>
+<th dir="auto">0</th>
+<th dir="auto">0</th>
+<th dir="auto">0</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td dir="auto">128</td>
+<td dir="auto">64</td>
+<td dir="auto">32</td>
+<td dir="auto">16</td>
+<td dir="auto">8</td>
+<td dir="auto">4</td>
+<td dir="auto">2</td>
+<td dir="auto">1</td>
+</tr>
+</tbody>
+</table></div></div></div><div class="el-h2 heading-wrapper"><h2 data-heading="Text" dir="auto" class="heading" id="Text"><div class="heading-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle"><path d="M3 8L12 17L21 8"></path></svg></div>Text</h2><div class="heading-children"><div class="el-ul"><ul>
+<li data-line="0" dir="auto">Just as numbers are binary patterns of ones and zeros, letters are represented using ones and zeros too!</li>
+<li data-line="1" dir="auto">Since there is an overlap between the ones and zeros that represent numbers and letters, the <em>ASCII</em> standard was created to map specific letters to specific numbers.</li>
+<li data-line="2" dir="auto">For example, the letter <code>A</code> was decided to map to the number 65.</li>
+<li data-line="3" dir="auto">If you received a text message, the binary under that message might represent the numbers 72, 73, and 33. Mapping these out to ASCII, your message would look as follows:</li>
+<li data-line="4" dir="auto">Thank goodness for standards like ASCII that allow us to agree upon these values!</li>
+<li data-line="5" dir="auto">Here is an expanded map of ASCII values:<br>
+<img title="ASCII map" alt="ASCII map" src="https://cs50.harvard.edu/x/2023/notes/0/cs50Week0Slide93.png" referrerpolicy="no-referrer"></li>
+<li data-line="8" dir="auto">If you wish, you can learn more about <a data-tooltip-position="top" aria-label="https://en.wikipedia.org/wiki/ASCII" rel="noopener nofollow" class="external-link" href="https://en.wikipedia.org/wiki/ASCII" target="_blank">ASCII</a>.</li>
+</ul></div></div></div><div class="el-h2 heading-wrapper"><h2 data-heading="Emojis" dir="auto" class="heading" id="Emojis"><div class="heading-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle"><path d="M3 8L12 17L21 8"></path></svg></div>Emojis</h2><div class="heading-children"><div class="el-ul"><ul>
+<li data-line="0" dir="auto">
+<p>As time has rolled on, there are more and more ways to communicate via text.</p>
+</li>
+<li data-line="1" dir="auto">
+<p>Since there were not enough digits in binary to represent all the various characters that could be represented by humans, the <em>Unicode</em> standard expanded the number of bits that can be transmitted and understood by computers.</p>
+</li>
+<li data-line="2" dir="auto">
+<p>There are emojis that you probably use every day. The following may look familiar to you:</p>
+<p><img title="emojis" alt="emojis" src="https://cs50.harvard.edu/x/2023/notes/0/cs50Week0Slide103.png" referrerpolicy="no-referrer"></p>
+</li>
+<li data-line="6" dir="auto">
+<p>Computer scientists faced a challenge when wanting to assign various skin tones to each emoji to allow the communication to be further personalized. In this case, the creators and contributors of emojis decided that the initial bits would be the structure of the emoji itself, followed by skin tone.</p>
+</li>
+<li data-line="7" dir="auto">
+<p>More and more features are being added to the Unicode standard to represent further characters and emojis.</p>
+</li>
+<li data-line="8" dir="auto">
+<p>If you wish, you can learn more about <a data-tooltip-position="top" aria-label="https://en.wikipedia.org/wiki/Unicode" rel="noopener nofollow" class="external-link" href="https://en.wikipedia.org/wiki/Unicode" target="_blank">Unicode</a>.</p>
+</li>
+<li data-line="9" dir="auto">
+<p>If you wish, you can learn more about <a data-tooltip-position="top" aria-label="https://en.wikipedia.org/wiki/Emoji" rel="noopener nofollow" class="external-link" href="https://en.wikipedia.org/wiki/Emoji" target="_blank">emojis</a>.</p>
+</li>
+</ul></div></div></div><div class="el-h2 heading-wrapper"><h2 data-heading="RGB" dir="auto" class="heading" id="RGB"><div class="heading-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle"><path d="M3 8L12 17L21 8"></path></svg></div>RGB</h2><div class="heading-children"><div class="el-ul"><ul>
+<li data-line="0" dir="auto">
+<p>Red, green, and blue (called <code>RGB</code>) is a combination of three numbers.</p>
+<p><img title="red green blue boxes" alt="red green blue boxes" src="https://cs50.harvard.edu/x/2023/notes/0/cs50Week0Slide118.png" referrerpolicy="no-referrer"></p>
+</li>
+<li data-line="4" dir="auto">
+<p>Taking our previously used 72, 73, and 33, which said <code>HI!</code> via text, would be interpreted by image readers as a light shade of yellow. The red value would be 72, the green value would be 73, and the blue would be 33.</p>
+<p><img title="yellow box" alt="yellow box" src="https://cs50.harvard.edu/x/2023/notes/0/cs50Week0Slide120.png" referrerpolicy="no-referrer"></p>
+</li>
+</ul></div></div></div><div class="el-h2 heading-wrapper"><h2 data-heading="Images, Video and Sound" dir="auto" class="heading" id="Images,_Video_and_Sound"><div class="heading-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle"><path d="M3 8L12 17L21 8"></path></svg></div>Images, Video and Sound</h2><div class="heading-children"><div class="el-ul"><ul>
+<li data-line="0" dir="auto">Images are simply collections of RGB values.</li>
+<li data-line="1" dir="auto">Videos are sequences of many images that are stored together, just like a flipbook.</li>
+<li data-line="2" dir="auto">Music can be represented through MIDI data.</li>
+</ul></div></div></div><div class="el-h2 heading-wrapper"><h2 data-heading="Algorithms" dir="auto" class="heading" id="Algorithms"><div class="heading-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle"><path d="M3 8L12 17L21 8"></path></svg></div>Algorithms</h2><div class="heading-children"><div class="el-ul"><ul>
+<li data-line="0" dir="auto">
+<p>Problem-solving is central to computer science and computer programming.</p>
+</li>
+<li data-line="1" dir="auto">
+<p>Imagine the basic problem of trying to locate a single name in a phone book.</p>
+</li>
+<li data-line="2" dir="auto">
+<p>How might you go about this?</p>
+</li>
+<li data-line="3" dir="auto">
+<p>One approach could be to simply read from page one to the next to the next until reaching the last page.</p>
+</li>
+<li data-line="4" dir="auto">
+<p>Another approach could be to search two pages at a time.</p>
+</li>
+<li data-line="5" dir="auto">
+<p>A final and perhaps better approach could be to go to the middle of the phone book and ask, “Is the name I am looking for to the left or to the right?” Then, repeat this process, cutting the problem in half and half and half.</p>
+</li>
+<li data-line="6" dir="auto">
+<p>Each of these approaches could be called algorithms. The speed of each of these algorithms can be pictured as follows in what is called <em>big-O notation</em>:</p>
+<p><img title="big o notation" alt="big o notation" src="https://cs50.harvard.edu/x/2023/notes/0/cs50Week0Slide141.png" referrerpolicy="no-referrer"> Notice that the first algorithm, highlighted in red, has a big-O of <code>n</code> because if there are 100 names in the phone book, it could take up to 100 tries to find the correct name. The second algorithm, where two pages were searched at a time, has a big-O of ‘n/2’ because we searched twice as fast through the pages. The final algorithm has a big-O of log<sub>2</sub>n as doubling the problem would only result in one more step to solve the problem.</p>
+</li>
+</ul></div></div></div><div class="el-h2 heading-wrapper"><h2 data-heading="Pseudocode and the Basic Building Blocks of Programming" dir="auto" class="heading" id="Pseudocode_and_the_Basic_Building_Blocks_of_Programming"><div class="heading-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle"><path d="M3 8L12 17L21 8"></path></svg></div>Pseudocode and the Basic Building Blocks of Programming</h2><div class="heading-children"><div class="el-ul"><ul>
+<li data-line="0" dir="auto">
+<p>The ability to create <em>pseudocode</em> is central to one’s success in both this class and in computer programming.</p>
+</li>
+<li data-line="1" dir="auto">
+<p>Pseudocode is a human-readable version of your code. For example, considering the third algorithm above, we could compose pseudocode as follows:</p>
+<pre><code data-line="3">  1  Pick up phone book
+  2  Open to middle of phone book
+  3  Look at page
+  4  If person is on page
+  5      Call person
+  6  Else if person is earlier in book
+  7      Open to middle of left half of book
+  8      Go back to line 3
+  9  Else if person is later in book
+  10     Open to middle of right half of book
+  11     Go back to line 3
+  12 Else
+  13     Quit
+</code><button class="copy-code-button"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon lucide-copy"><rect x="8" y="8" width="14" height="14" rx="2" ry="2"></rect><path d="M4 16c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2"></path></svg></button></pre>
+</li>
+<li data-line="19" dir="auto">
+<p>Pseudocoding is such an important skill for at least two reasons. First, when you pseudocode before you create formal code, it allows you to think through the logic of your problem in advance. Second, when you pseudocode, you can later provide this information to others that are seeking to understand your coding decisions and how your code works.</p>
+</li>
+<li data-line="20" dir="auto">
+<p>Notice that the language within our pseudocode has some unique features. First, some of these lines begin with verbs like <em>pick up,</em> <em>open,</em> <em>look at.</em> Later, we will call these <em>functions</em>.</p>
+</li>
+<li data-line="21" dir="auto">
+<p>Second, notice that some lines include statements like <code>if</code> or <code>else if.</code> These are called <em>conditionals</em>.</p>
+</li>
+<li data-line="22" dir="auto">
+<p>Third, notice how there are expressions that can be stated as <em>true</em> or <em>false,</em> such as “person is earlier in the book.” We call these <em>boolean expressions</em>.</p>
+</li>
+<li data-line="23" dir="auto">
+<p>Finally, notice how these statements like “go back to line 3.” We call these <em>loops</em>.</p>
+</li>
+<li data-line="24" dir="auto">
+<p>In the context of <em>Scratch</em>, which is discussed below, we will use each of the above basic building blocks of programming.</p>
+</li>
+</ul></div></div></div><div class="el-h2 heading-wrapper"><h2 data-heading="Scratch" dir="auto" class="heading" id="Scratch"><div class="heading-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle"><path d="M3 8L12 17L21 8"></path></svg></div>Scratch</h2><div class="heading-children"><div class="el-ul"><ul>
+<li data-line="0" dir="auto">
+<p><em>Scratch</em> is a visual programming language developed by MIT.</p>
+</li>
+<li data-line="1" dir="auto">
+<p>Scratch utilizes the same essential coding building blocks that we covered earlier in this lecture.</p>
+</li>
+<li data-line="2" dir="auto">
+<p>Scatch is a great way to get into computer programming because it allows you to play with these building blocks in a visual manner, not having to be concerned about the syntax of curly braces, semicolons, parentheses, and the like.</p>
+</li>
+<li data-line="3" dir="auto">
+<p>Scatch <code>IDE</code> (integrated development environment) looks like the following:</p>
+<p><img title="scratch interface" alt="scratch interface" src="https://cs50.harvard.edu/x/2023/notes/0/cs50Week0Slide162.png" referrerpolicy="no-referrer"> Notice that on the left, there are <em>building blocks</em> that you can use in your programming. To the immediate right of the building blocks, there is the area to which you can drag blocks to build a program. To the right of that, you see the <em>stage</em> where a cat stands. The stage is where your programming comes to life.</p>
+</li>
+<li data-line="7" dir="auto">
+<p>Scratch operates on a coordinate system as follows:</p>
+<p><img title="scratch coordinate system" alt="scratch coordinate system" src="https://cs50.harvard.edu/x/2023/notes/0/cs50Week0Slide167.png" referrerpolicy="no-referrer"> Notice that the center of the stage is at coordinate (0,0). Right now, the cat’s position is at that same position.</p>
+</li>
+<li data-line="11" dir="auto">
+<p>To begin, drag the “when green flag clicked” building block to the programming area. Then, drag the <code>say</code> building block to the programming area and attach it to the previous block.</p>
+<p>whenclickedsayhello, world</p>
+<p>Notice that when you click the green flag now, on the stage, the cat says, “hello world.”</p>
+</li>
+<li data-line="17" dir="auto">
+<p>This illustrates quite well what we were discussing earlier regarding programming:</p>
+<p><img title="scratch with black box" alt="scratch with black box" src="https://cs50.harvard.edu/x/2023/notes/0/cs50Week0Slide172.png" referrerpolicy="no-referrer"> Notice that the input <code>hello world</code> is passed to the function <code>say</code>, and the <em>side effect</em> of that function running is the cat saying <code>hello world</code>.</p>
+</li>
+<li data-line="21" dir="auto">
+<p>We can make your program more interactive by having the cat say <code>hello</code> to someone specific. Modify your program as below:</p>
+<p>whenclickedaskWhat's your name?andwaitsayjoinhello,answer</p>
+<p>Notice that when the green flag is clicked, the function <code>ask</code> is run. The program prompts you, the user, <code>What's your name?</code> It then stores that name in the <em>variable</em> called <code>answer</code>. The program then passes <code>answer</code> to a special function called <code>join</code>, which combines two strings of text <code>hello</code>, and whatever name was provided. These collectively are passed to the <code>say</code> function. The cat says, <code>Hello,</code> and a name. Your program is now interactive.</p>
+</li>
+<li data-line="27" dir="auto">
+<p>Quite similarly, we can modify our program as follows:</p>
+<p>whenclickedaskWhat's your name?andwaitspeakjoinhello,answer</p>
+<p>Notice that this program, when the green flag is clicked, passes the same variable, joined with <code>hello</code>, to a function called <code>speak</code>.</p>
+</li>
+</ul></div></div></div><div class="el-h2 heading-wrapper"><h2 data-heading="Abstraction" dir="auto" class="heading" id="Abstraction"><div class="heading-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle"><path d="M3 8L12 17L21 8"></path></svg></div>Abstraction</h2><div class="heading-children"><div class="el-ul"><ul>
+<li data-line="0" dir="auto">
+<p>Along with pseudocoding, <em>abstraction</em> is an essential skill and concept within computer programming.</p>
+</li>
+<li data-line="1" dir="auto">
+<p>Abstraction is the act of simplifying a problem into smaller and smaller problems.</p>
+</li>
+<li data-line="2" dir="auto">
+<p>For example, if you were hosting a huge dinner for your friends, the <em>problem</em> of having to cook the entire meal could be quite overwhelming! However, if you break down the task of cooking the meal into smaller and smaller tasks (or problems), the big task of creating this delicious meal might feel less challenging.</p>
+</li>
+<li data-line="3" dir="auto">
+<p>In programming, and even within Scratch, we can see abstraction in action. In your programming area, program as follows:</p>
+<p>whenclickedplaysoundMeowuntildonewait1secondsplaysoundMeowuntildonewait1secondsplaysoundMeowuntildone</p>
+<p>Notice that you are doing the same thing over and over again. Indeed, if you see yourself repeatedly coding the same statements, it’s likely the case that you could program more artfully – abstracting away this repetitive code.</p>
+</li>
+<li data-line="9" dir="auto">
+<p>You can modify your code as follows:</p>
+<p>whenclickedrepeat3playsoundMeowuntildonewait1seconds</p>
+<p>Notice that the loop does exactly as the previous program did. However, the problem is simplified by abstracting away the repetition to a block that <em>repeats</em> the code for us.</p>
+</li>
+<li data-line="15" dir="auto">
+<p>We can even advance this further by using the <code>define</code> block, where you can create your own block (your own function)! Write code as follows:</p>
+<p><img title="scratch define" alt="scratch define" src="https://cs50.harvard.edu/x/2023/notes/0/cs50Week0Scratch6.png" referrerpolicy="no-referrer"> Notice that we are defining our own block called <code>meow</code>. The function plays the sound <code>meow</code>, then waits one second. Below that, you can see that when the green flag is clicked, our meow function is repeated three times.</p>
+</li>
+<li data-line="19" dir="auto">
+<p>We can even provide a way by which the function can take an input <code>n</code> and repeat a number of times:</p>
+<p>definemeowplaysoundMeowuntildonewait1secondswhenclickedrepeat3meow</p>
+<p>Notice how <code>n</code> is taken from “meow n times.” <code>n</code> is passed to the meow function through the <code>define</code> block.</p>
+</li>
+<li data-line="25" dir="auto">
+<p>The cat, by the way, we can call a <code>sprite</code> – a general term used in game programming for an object or character on the screen with which the player will interact.</p>
+</li>
+</ul></div></div></div><div class="el-h2 heading-wrapper"><h2 data-heading="If" dir="auto" class="heading" id="If"><div class="heading-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle"><path d="M3 8L12 17L21 8"></path></svg></div>If</h2><div class="heading-children"><div class="el-ul"><ul>
+<li data-line="0" dir="auto">
+<p><em>conditionals</em> are an essential building block of programming, where the program looks to see if a specific condition has been met. If a condition is met, the program does something.</p>
+</li>
+<li data-line="1" dir="auto">
+<p>To illustrate a conditional, write code as follows:</p>
+<p>whenclickedforeveriftouchingmouse-pointer?thenplaysoundMeowuntildone</p>
+<p>Notice that the <code>forever</code> block is utilized such that the <code>if</code> block is triggered over and over again, such that it can check continuously if the cat is touching the mouse pointer.</p>
+</li>
+<li data-line="7" dir="auto">
+<p>We can modify our program as follows to integrate video sensing:</p>
+<p>whenvideomotion&gt;50playsoundMeowuntildone</p>
+</li>
+<li data-line="11" dir="auto">
+<p>Remember, programming is often a process of trial and error. If you get frustrated, take time to talk yourself through the problem at hand. What is the specific problem that you are working on right now? What is working? What is not working?</p>
+</li>
+</ul></div></div></div><div class="el-h2 heading-wrapper"><h2 data-heading="Expanding Your Imagination" dir="auto" class="heading" id="Expanding_Your_Imagination"><div class="heading-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle"><path d="M3 8L12 17L21 8"></path></svg></div>Expanding Your Imagination</h2><div class="heading-children"><div class="el-ul"><ul>
+<li data-line="0" dir="auto">
+<p>We showed you in this lecture a number of Scratch programs to stoke your imagination.</p>
+</li>
+<li data-line="1" dir="auto">
+<p><em>Oscartime</em> is one of David’s own Scratch programs – though the music may haunt him because of the number of hours he listened to it while creating this program. Take a few moments to play through the game yourself.</p>
+</li>
+<li data-line="2" dir="auto">
+<p>Building Oscartime ourselves, we first add the lamp post.</p>
+<p><img title="oscartime interface" alt="oscartime interface" src="https://cs50.harvard.edu/x/2023/notes/0/cs50Week0Scratch10.png" referrerpolicy="no-referrer"></p>
+</li>
+<li data-line="6" dir="auto">
+<p>Then, write code as follows:</p>
+<p>whenclickedswitchcostumetooscar1foreveriftouchingmouse-pointer?thenswitchcostumetooscar2elseswitchcostumetooscar1</p>
+<p>Notice that moving your mouse over Oscar changes his costume. You can learn more by <a data-tooltip-position="top" aria-label="https://scratch.mit.edu/projects/565100517" rel="noopener nofollow" class="external-link" href="https://scratch.mit.edu/projects/565100517" target="_blank">exploring these code blocks</a>.</p>
+</li>
+<li data-line="12" dir="auto">
+<p>Then, modify your code as follow to create a falling piece of trash:</p>
+<p>whenclickedgotox:pickrandom-240to240y:180foreverifdistancetofloor&gt;0thenchangeyby-3</p>
+<p>Notice that the trash’s position on the y-axis always begins at 180. The x position is randomized. While the trash is above the floor, it goes down 3 pixels at a time. You can learn more by <a data-tooltip-position="top" aria-label="https://scratch.mit.edu/projects/565117390" rel="noopener nofollow" class="external-link" href="https://scratch.mit.edu/projects/565117390" target="_blank">exploring these code blocks</a>.</p>
+</li>
+<li data-line="18" dir="auto">
+<p>Next, modify your code as follows to allow for the possibility of dragging trash.</p>
+<p>whenclickedforeverifmousedown?andtouchingmouse-pointer?thengotomouse-pointer</p>
+<p>You can learn more by <a data-tooltip-position="top" aria-label="https://scratch.mit.edu/projects/565119737" rel="noopener nofollow" class="external-link" href="https://scratch.mit.edu/projects/565119737" target="_blank">exploring these code blocks</a>.</p>
+</li>
+<li data-line="24" dir="auto">
+<p>Next, we can implement the scoring variables as follows:</p>
+<p>whenclickedforeveriftouchingOscar?thenchangescoreby1gotox:pickrandom-240to240y:180</p>
+<p>You can learn more by <a data-tooltip-position="top" aria-label="https://scratch.mit.edu/projects/565472267" rel="noopener nofollow" class="external-link" href="https://scratch.mit.edu/projects/565472267" target="_blank">exploring these code blocks</a>.</p>
+</li>
+</ul></div></div></div><div class="el-h2 heading-wrapper"><h2 data-heading="Sprite Movement" dir="auto" class="heading" id="Sprite_Movement"><div class="heading-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle"><path d="M3 8L12 17L21 8"></path></svg></div>Sprite Movement</h2><div class="heading-children"><div class="el-ul"><ul>
+<li data-line="0" dir="auto">
+<p>Moving away from Oscartime to Ivy’s Hardest Game, we can now imagine how to implement movement within our program.</p>
+</li>
+<li data-line="1" dir="auto">
+<p>Our program has three main components.</p>
+</li>
+<li data-line="2" dir="auto">
+<p>First, write code as follows:</p>
+<p>whenclickedgotox:0y:0foreverlistenforkeyboardfeelforwalls</p>
+<p>Notice that when the green flag is clicked, our sprite moves to the center of the stage at coordinates (0,0) and then listens for the keyboard and checks for walls forever.</p>
+</li>
+<li data-line="8" dir="auto">
+<p>Second, add this second group of code blocks:</p>
+<p>definelistenforkeyboardifkeyup arrowpressed?thenchangeyby1ifkeydown arrowpressed?thenchangeyby-1ifkeyright arrowpressed?thenchangexby1ifkeyleft arrowpressed?thenchangexby-1</p>
+<p>Notice how we have created a custom <code>listen for keyboard</code> script. For each of our arrow keys on the keyboard, it will move the sprite around the screen.</p>
+</li>
+<li data-line="14" dir="auto">
+<p>Finally, add this group of code blocks:</p>
+<p>definefeelforwallsiftouchingleft wall?thenchangexby1iftouchingright wall?thenchangexby-1</p>
+<p>Notice how we also have a custom <code>feel for walls</code> script. When a sprite touches a wall, it moves it back to a safe position – preventing it from walking off the screen.</p>
+</li>
+<li data-line="20" dir="auto">
+<p>You can learn more by <a data-tooltip-position="top" aria-label="https://scratch.mit.edu/projects/565121265" rel="noopener nofollow" class="external-link" href="https://scratch.mit.edu/projects/565121265" target="_blank">exploring these code blocks</a>.</p>
+</li>
+<li data-line="21" dir="auto">
+<p>Go try the full game <a data-tooltip-position="top" aria-label="https://scratch.mit.edu/projects/277537196" rel="noopener nofollow" class="external-link" href="https://scratch.mit.edu/projects/277537196" target="_blank">Oscartime</a>.</p>
+</li>
+</ul></div></div></div><div class="el-h2 heading-wrapper"><h2 data-heading="More Sprites" dir="auto" class="heading" id="More_Sprites"><div class="heading-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle"><path d="M3 8L12 17L21 8"></path></svg></div>More Sprites</h2><div class="heading-children"><div class="el-ul"><ul>
+<li data-line="0" dir="auto">
+<p>Scratch allows for many sprites to be on the screen at once.</p>
+</li>
+<li data-line="1" dir="auto">
+<p>Adding another sprite, add the following code blocks to your program:</p>
+<p>whenclickedgotox:0y:0pointindirection90foreveriftouchingleft wall?ortouchingright wall?thenturn180degreesmove1steps</p>
+<p>Notice how the Yale sprite seems to get in the way of the Harvard sprite by moving back and forth. When it bumps into a wall, it turns around until it bumps the wall again. You can learn more by <a data-tooltip-position="top" aria-label="https://scratch.mit.edu/projects/565127193" rel="noopener nofollow" class="external-link" href="https://scratch.mit.edu/projects/565127193" target="_blank">exploring these code blocks</a>.</p>
+</li>
+<li data-line="7" dir="auto">
+<p>You can even make a sprite follow another sprite. Adding another sprite, add the following code blocks to your program:</p>
+<p>whenclickedgotorandom positionforeverpointtowardsHarvardmove1steps</p>
+<p>Notice how the MIT logo now seems to follow around the Harvard one. You can learn more by <a data-tooltip-position="top" aria-label="https://scratch.mit.edu/projects/565479840" rel="noopener nofollow" class="external-link" href="https://scratch.mit.edu/projects/565479840" target="_blank">exploring these code blocks</a>.</p>
+</li>
+<li data-line="13" dir="auto">
+<p>Go try the full game <a data-tooltip-position="top" aria-label="https://scratch.mit.edu/projects/565742837" rel="noopener nofollow" class="external-link" href="https://scratch.mit.edu/projects/565742837" target="_blank">Ivy’s Hardest Game</a>.</p>
+</li>
+</ul></div></div></div><div class="el-h2 heading-wrapper"><h2 data-heading="Summing Up" dir="auto" class="heading" id="Summing_Up"><div class="heading-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle"><path d="M3 8L12 17L21 8"></path></svg></div>Summing Up</h2><div class="heading-children"><div class="el-p"><p dir="auto">In this lesson, you learned how this course sits in the wide world of computer science and programming. You learned…</p></div><div class="el-ul"><ul>
+<li data-line="0" dir="auto">Few students come to this class with prior coding experience!</li>
+<li data-line="1" dir="auto">You are not alone! You are part of a community.</li>
+<li data-line="2" dir="auto">Problem solving is the essence of the work of computer scientists.</li>
+<li data-line="3" dir="auto">This course is not simply about programming – this course will introduce you to a new way of learning that you can apply to almost every area of life.</li>
+<li data-line="4" dir="auto">How numbers, text, images, music, and video are understood by computers.</li>
+<li data-line="5" dir="auto">The fundamental programming skill of pseudocoding.</li>
+<li data-line="6" dir="auto">How abstraction will play a role in your future work in this course.</li>
+<li data-line="7" dir="auto">The basic building blocks of programming, including functions, conditionals, loops, and variables.</li>
+<li data-line="8" dir="auto">How to build a project in Scratch.</li>
+</ul></div><div class="el-p"><p dir="auto">See you next time!</p></div><div class="el-hr"><hr></div></div></div><div class="el-h2 heading-wrapper"><h2 data-heading="[Problem Set 0 - Scratch](./problem_set0.md)" dir="auto" class="heading" id="[Problem_Set_0_-_Scratch](./problem_set0.md)"><div class="heading-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle"><path d="M3 8L12 17L21 8"></path></svg></div><a class="internal-link" data-href="./problem_set0.md" href="courses/cs50x/week0/problem_set0.html" target="_self" rel="noopener nofollow">Problem Set 0 - Scratch</a></h2><div class="heading-children"><div class="mod-footer mod-ui"></div></div></div></div></div></div></div></div><div class="sidebar-right sidebar"><div class="sidebar-handle"></div><div class="sidebar-topbar"><div class="topbar-content"></div><div class="clickable-icon sidebar-collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" class="svg-icon"><path d="M21 3H3C1.89543 3 1 3.89543 1 5V19C1 20.1046 1.89543 21 3 21H21C22.1046 21 23 20.1046 23 19V5C23 3.89543 22.1046 3 21 3Z"></path><path d="M10 4V20"></path><path d="M4 7H7"></path><path d="M4 10H7"></path><path d="M4 13H7"></path></svg></div></div><div class="sidebar-content"><div class="graph-view-wrapper"><div class="sidebar-section-header">Interactive Graph</div><div class="graph-view-placeholder">
+		<div class="graph-view-container">
+			<div class="graph-icon graph-expand" role="button" aria-label="Expand" data-tooltip-position="top"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon"><line x1="7" y1="17" x2="17" y2="7"></line><polyline points="7 7 17 7 17 17"></polyline></svg></div>
+			<canvas id="graph-canvas" class="hide" width="512px" height="512px"></canvas>
+		</div>
+		</div></div><div class="tree-container mod-root nav-folder tree-item outline-tree" data-depth="0"><div class="tree-header"><span class="sidebar-section-header">Table Of Contents</span><button class="clickable-icon collapse-tree-button" aria-label="Collapse All"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></svg></button></div><div class="tree-scroll-area tree-item-children nav-folder-children"><div class="tree-item mod-tree-folder nav-folder mod-collapsible is-collapsed" style="display: none;"></div><div class="tree-item" data-depth="1"><a class="tree-link" href="gab\estudos-trabalhos\programação\programming-studies\courses\cs50x\week0\readme.html#CS50 - Week 0"><div class="tree-item-contents heading-link" heading-name="CS50 - Week 0"><span class="tree-item-title">CS50 - Week 0</span></div></a><div class="tree-item-children nav-folder-children"><div class="tree-item" data-depth="2"><a class="tree-link" href="gab\estudos-trabalhos\programação\programming-studies\courses\cs50x\week0\readme.html#Welcome!"><div class="tree-item-contents heading-link" heading-name="Welcome!"><span class="tree-item-title">Welcome!</span></div></a><div class="tree-item-children nav-folder-children"></div></div><div class="tree-item" data-depth="2"><a class="tree-link" href="gab\estudos-trabalhos\programação\programming-studies\courses\cs50x\week0\readme.html#What’s_Ahead"><div class="tree-item-contents heading-link" heading-name="What’s Ahead"><span class="tree-item-title">What’s Ahead</span></div></a><div class="tree-item-children nav-folder-children"></div></div><div class="tree-item" data-depth="2"><a class="tree-link" href="gab\estudos-trabalhos\programação\programming-studies\courses\cs50x\week0\readme.html#Community!"><div class="tree-item-contents heading-link" heading-name="Community!"><span class="tree-item-title">Community!</span></div></a><div class="tree-item-children nav-folder-children"></div></div><div class="tree-item" data-depth="2"><a class="tree-link" href="gab\estudos-trabalhos\programação\programming-studies\courses\cs50x\week0\readme.html#Computational_Thinking"><div class="tree-item-contents heading-link" heading-name="Computational Thinking"><span class="tree-item-title">Computational Thinking</span></div></a><div class="tree-item-children nav-folder-children"></div></div><div class="tree-item" data-depth="2"><a class="tree-link" href="gab\estudos-trabalhos\programação\programming-studies\courses\cs50x\week0\readme.html#Bites"><div class="tree-item-contents heading-link" heading-name="Bites"><span class="tree-item-title">Bites</span></div></a><div class="tree-item-children nav-folder-children"></div></div><div class="tree-item" data-depth="2"><a class="tree-link" href="gab\estudos-trabalhos\programação\programming-studies\courses\cs50x\week0\readme.html#Text"><div class="tree-item-contents heading-link" heading-name="Text"><span class="tree-item-title">Text</span></div></a><div class="tree-item-children nav-folder-children"></div></div><div class="tree-item" data-depth="2"><a class="tree-link" href="gab\estudos-trabalhos\programação\programming-studies\courses\cs50x\week0\readme.html#Emojis"><div class="tree-item-contents heading-link" heading-name="Emojis"><span class="tree-item-title">Emojis</span></div></a><div class="tree-item-children nav-folder-children"></div></div><div class="tree-item" data-depth="2"><a class="tree-link" href="gab\estudos-trabalhos\programação\programming-studies\courses\cs50x\week0\readme.html#RGB"><div class="tree-item-contents heading-link" heading-name="RGB"><span class="tree-item-title">RGB</span></div></a><div class="tree-item-children nav-folder-children"></div></div><div class="tree-item" data-depth="2"><a class="tree-link" href="gab\estudos-trabalhos\programação\programming-studies\courses\cs50x\week0\readme.html#Images,_Video_and_Sound"><div class="tree-item-contents heading-link" heading-name="Images, Video and Sound"><span class="tree-item-title">Images, Video and Sound</span></div></a><div class="tree-item-children nav-folder-children"></div></div><div class="tree-item" data-depth="2"><a class="tree-link" href="gab\estudos-trabalhos\programação\programming-studies\courses\cs50x\week0\readme.html#Algorithms"><div class="tree-item-contents heading-link" heading-name="Algorithms"><span class="tree-item-title">Algorithms</span></div></a><div class="tree-item-children nav-folder-children"></div></div><div class="tree-item" data-depth="2"><a class="tree-link" href="gab\estudos-trabalhos\programação\programming-studies\courses\cs50x\week0\readme.html#Pseudocode_and_the_Basic_Building_Blocks_of_Programming"><div class="tree-item-contents heading-link" heading-name="Pseudocode and the Basic Building Blocks of Programming"><span class="tree-item-title">Pseudocode and the Basic Building Blocks of Programming</span></div></a><div class="tree-item-children nav-folder-children"></div></div><div class="tree-item" data-depth="2"><a class="tree-link" href="gab\estudos-trabalhos\programação\programming-studies\courses\cs50x\week0\readme.html#Scratch"><div class="tree-item-contents heading-link" heading-name="Scratch"><span class="tree-item-title">Scratch</span></div></a><div class="tree-item-children nav-folder-children"></div></div><div class="tree-item" data-depth="2"><a class="tree-link" href="gab\estudos-trabalhos\programação\programming-studies\courses\cs50x\week0\readme.html#Abstraction"><div class="tree-item-contents heading-link" heading-name="Abstraction"><span class="tree-item-title">Abstraction</span></div></a><div class="tree-item-children nav-folder-children"></div></div><div class="tree-item" data-depth="2"><a class="tree-link" href="gab\estudos-trabalhos\programação\programming-studies\courses\cs50x\week0\readme.html#If"><div class="tree-item-contents heading-link" heading-name="If"><span class="tree-item-title">If</span></div></a><div class="tree-item-children nav-folder-children"></div></div><div class="tree-item" data-depth="2"><a class="tree-link" href="gab\estudos-trabalhos\programação\programming-studies\courses\cs50x\week0\readme.html#Expanding_Your_Imagination"><div class="tree-item-contents heading-link" heading-name="Expanding Your Imagination"><span class="tree-item-title">Expanding Your Imagination</span></div></a><div class="tree-item-children nav-folder-children"></div></div><div class="tree-item" data-depth="2"><a class="tree-link" href="gab\estudos-trabalhos\programação\programming-studies\courses\cs50x\week0\readme.html#Sprite_Movement"><div class="tree-item-contents heading-link" heading-name="Sprite Movement"><span class="tree-item-title">Sprite Movement</span></div></a><div class="tree-item-children nav-folder-children"></div></div><div class="tree-item" data-depth="2"><a class="tree-link" href="gab\estudos-trabalhos\programação\programming-studies\courses\cs50x\week0\readme.html#More_Sprites"><div class="tree-item-contents heading-link" heading-name="More Sprites"><span class="tree-item-title">More Sprites</span></div></a><div class="tree-item-children nav-folder-children"></div></div><div class="tree-item" data-depth="2"><a class="tree-link" href="gab\estudos-trabalhos\programação\programming-studies\courses\cs50x\week0\readme.html#Summing_Up"><div class="tree-item-contents heading-link" heading-name="Summing Up"><span class="tree-item-title">Summing Up</span></div></a><div class="tree-item-children nav-folder-children"></div></div><div class="tree-item" data-depth="2"><a class="tree-link" href="gab\estudos-trabalhos\programação\programming-studies\courses\cs50x\week0\readme.html#[Problem_Set_0_-_Scratch](./problem_set0.md)"><div class="tree-item-contents heading-link" heading-name="[Problem Set 0 - Scratch](./problem_set0.md)"><span class="tree-item-title"><a class="internal-link" data-href="./problem_set0.md" href="./problem_set0.md" target="_blank" rel="noopener nofollow">Problem Set 0 - Scratch</a></span></div></a><div class="tree-item-children nav-folder-children"></div></div></div></div></div></div></div><script defer="">let rs = document.querySelector(".sidebar-right"); rs.classList.add("is-collapsed"); if (window.innerWidth > 768) rs.classList.remove("is-collapsed"); rs.style.setProperty("--sidebar-width", localStorage.getItem("sidebar-right-width"));</script></div></div></body></html>

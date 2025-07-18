@@ -1,0 +1,41 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Sell Shares
+{% endblock %}
+
+{% block main %}
+    <h1>Sell Shares</h1>
+    <hr>
+    <form action="/sell" method="post">
+        <div class="form-group" class="mb-3">
+            <label for="symbol" class="form-label">Stock Ticket:</label>
+            <select id="symbol" name="symbol" class="form-select mx-auto w-auto" required>
+                <option disabled selected value="">Choose stock to sell...</option>
+                {% for stock in portfolio_data %}
+                    <option value="{{ stock['symbol'] }}">{{ stock['symbol'] }} - {{ stock['name'] }}</option>
+                {% endfor %}
+            </select>
+        </div>
+        <div class="form-group mb-3">
+            <label for="shares" class="form-label">Number of Shares:</label>
+            <input id="shares" name="shares" class="form-control mx-auto w-auto" min="1" type="number" required>
+        </div>
+        <button class="btn btn-primary" type="submit">Sell</button>
+    </form>
+{% endblock %}
+
+
+<!--Improvements Made:
+
+Added the <h1> heading to provide a clear title for the page.
+Used the Bootstrap form-group class to style the form elements.
+Added the required attribute to the <select> element to enforce client-side validation for selecting
+a symbol.
+Provided better labeling and placeholders for the input fields to guide the user.
+Updated the option values in the <select> element to be the stock symbol, which will be used in the
+server-side code when processing the form submission.
+These improvements make the "sell" form more user-friendly and consistent with standard design
+practices. The form will not be submitted until the required fields are filled, providing better
+feedback to the user when trying to proceed with the sell action.
+-->

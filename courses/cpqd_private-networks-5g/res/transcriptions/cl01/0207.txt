@@ -1,0 +1,919 @@
+03.06.2025 Aula 7 Interpretar Parâmetros de Core Arquitetura de Core para redes 4G e 5G
+
+2:03
+Boa tarde, Gabriel, tudo bem? E aí, professor, tranquilo? OPA, melhor agora com os alunos, pô, professor sem aluno não é ninguém, é isso aí. Mas estava, estava estava com aquelas confusões todas do, do, do pessoal lá, do da aluna e do da é do.
+
+2:29
+Da fiap, mas conseguiram tirar aí as as dúvidas, as Pendências pra gente seguir em frente, importa pra gente a seguir em frente. Eu tô aqui pra passar pro conteúdo EE mostrar coisa interessante, aliás, hoje eu vou mostrar um negócio muito legal pra vocês, Hein? Pois é, pois é, mas rapaz, aquilo ali que mostravam na aula passada era pra ter sido feito no início do curso, né? Que era explicar como é que funcionava, explicar como é que funcionava a dinâmica do curso e tudo mais é.
+
+2:56
+É, eu entendo que que foi um pouquinho fora do do time, mas tudo bem, eu acho que assim vamos pra para as questões práticas. O importante é a gente seguir com com com OOO previsto no conteúdo. O mais importante pra gente é que vocês recebam a instrução, que a gente possa ter essa troca. E o legal dessa turma que tem bastante troca, tem sempre gente trazendo ideias e dúvidas. Eu acho que isso é importante.
+
+3:22
+EEE, seguirmos em frente porque tem aí, pô, tem coisa legal ainda pra gente ver, sabe? Tem bastante coisa legal, né? Hoje nós vamos fazer aí Na Na segunda parte da aula eu vou, eu vou mostrar um como que como que é feito um grampo telefônico em voz, sobre IP e como que a gente protege e é protege a comunicação. Como é possível proteger a comunicação com criptografia aplicada mesmo?
+
+3:49
+Pra pra que vocês possam entender o que que deve ser o futuro das redes de telecomunicações, porque tudo tende AA se tornar VoIP. Tudo tende a se tornar VoIP em termos de voz dentro de uma de uma rede de telefonia, mesmo que que que lá já já já tem essa previsão pra outros protocolos e formatos. A tendência é que tudo seja VoIP na parte de voz e o restante é tudo dados. É um canal de dados, né?
+
+4:15
+EE vamos falar um pouquinho também sobre SDN, né? Sobre redes definidas por software, que vai ter um pouco a ver com essa primeira parte da aula que eu vou falar hoje que é a arquitetura core, hoje nós vamos de fato pro centro da rede.
+
+4:31
+Vamos falar um pouquinho de como que o 5G está utilizando APIs pra pra pra fazer a comunicação e como a parte de software passa a ser mais importante do que necessariamente a parte de hardware. Nesse momento vamos falar como que são gerados alguns identificadores IMEI. É ESDNE outras questões, né? Vamos falar um pouquinho mais de QoS e depois eu vou falar sobre criptografia, né? Então.
+
+5:00
+Vamos lá, tem tem bastante conteúdo aí. Deixa eu, é, deixa eu chegar um pouquinho mais de gente, mas a gente já vai. Já vou até compartilhar, primeira tela da aula, a gente chegou indo aí, isso aqui eu tenho que fechar, beleza? Acho que é.
+
+5:29
+É por aí, deixa eu compartilhar aqui, né? Incluir o som. Me digam se o compartilhamento tá ok pra vocês, beleza aqui, beleza, beleza é se vocês vou, vou começar a falar, eu sei que são 5 horas em ponto, tem gente que ainda vai chegar, mas vamos lá, é, vocês devem ter percebido nas aulas que a gente tem feito aí, as últimas 2, principalmente.
+
+5:59
+Que eu estou falando sobre a arquitetura e a sinalização nas redes de telefonia. Falei de protocolos, falei de interfaces e tudo mais. Mas se vocês analisarem, a gente começou lá na borda falando de run, EEE de user é equipamente, né? Uê e a RAM? E depois a gente foi para 11. Segunda camada, né? Que é?
+
+6:27
+Essa parte entre a antena EEA, gestão, né? Parte MMESGSWSGWEEESGF. Mas agora a gente vai falar de fato sobre o que acontece no centro da rede, no core da rede, e como isso é muito por software. Hoje a gente vai falar um pouquinho das interfaces, mas depois eu vou.
+
+6:56
+Dá um overview sobre sdn e vocês vão ver que muitas coisas que são feitas lá Na Na parte do core hoje são chamadas de APIs, são serviços, são aplicações EEO. Quanto isso acaba sendo? É interessante do ponto de vista de flexibilidade, porque quando a gente fala na rede até o 4 GA gente tem que ter uma preocupação muito grande.
+
+7:26
+Com toda aquela parte dos hardwares das interfaces físicas, né? No 5 GA gente abstrai isso pra uma camada de serviços chamada de API desenvolvimento de de serviços que rodam é em cima de estruturas web. Por isso que tem lá o HTTP2, a gente vai.
+
+7:55
+Vai vai ver tudo isso já na logo na, na primeira parte da aula. E aí depois a gente entra com Oo os quesitos mais de tecnologias, né? Porque para você ter uma rede orientada a serviços, é importante que você entenda o conceito de rede definida por software, né? Que é o sdn. E dentro desse contexto, é importante que a gente relembre um aspecto importante que é o networks licin, né? Aquela divisão.
+
+8:24
+Do espaço é tanto de controle quanto do usuário em fatias que eu posso gerenciar e em cada fatia eu posso ter um nível de serviço, um nível de priorização e um nível de segurança bem segmentados, né? A gente vai até falar um pouquinho sobre um conceito é muito usado hoje em segurança de de Cyber segurança, eu diria que é o conceito de micro segmentação. O networks licin permite isso.
+
+8:54
+Né? Então vamos falar sobre essas questões. Então, beleza, agora já tem um pouco mais de gente Na Na turma, vamos lá, vamos seguir em frente aí. O pessoal aí da CPqD, da lura, fiap, deve ter conversado com vocês que provavelmente essa semana a gente vai ter a transição. Na semana que vem, que a gente tem aula também, a gente vai é ter toda uma migração lá para o Teams, a gente não vai mais usar o.
+
+9:20
+Oo Discord na outra semana, então a gente está preparando o ambiente, as aulas todas já estão No No naqueles links que eu passo pra vocês, tá? Depois eu passo novamente pra vocês poderem acompanhar e vamos lá, vamos em frente aí. Bom, eu já me apresentei 1000 vezes aqui, né? E a gente vai falar um pouquinho sobre é o core da rede, tá?
+
+9:47
+Que que tem no centro da rede 4G, que que tem no centro da rede 5 GE como que como é que isso é chamado, né? Então, por exemplo, o core da rede 4G é isso que tá do lado direito, é o epc, que é o evolved packet core, ou seja, o core do 4G tem esse nome. Dentro desse contexto do epc, a gente vai ter alguns parâmetros e nomenclaturas importantes, né? O IMS, o Gucci, o tad.
+
+10:16
+Né? OEBOEBIE aí a gente vai falar do 5 GE. Veja que a gente tem um conceito no 5G, que é o sba, que é o service based arttecture EE, tanto no 4G quanto no 5 GA gente tem alguns parâmetros críticos de operação, a gente tem que levar em conta. Mas antes de falar disso, eu queria mostrar para vocês uma aplicação, um sitezinho.
+
+10:43
+Bem bacana. Deixa eu ver, ele tá aqui. Olha só, pessoal, esse aqui é o site cellmaper.net, tá? Aí quando você eu vou passar o link para vocês aqui. E aí quando vocês colocam ele para funcionar, ele pede a sua localização, né? Se você aceita a localização próxima a sua, então eu moro aqui no ABC, aqui em Santo André, eu moro aqui perto, nesse trecho aqui da cidade, tá?
+
+11:12
+E aí você vem aqui e você escolhe o seu provedor, olha que legalzinho isso aqui, ó, peguei a vivo tem uma numeração específica, tem algumas numerações da vivo, né? Você vai colocar aqui, vivo, colocar aqui, chamar mais gente, se você colocar aqui, OPA, espera aí, vivo, tem alguns modelos de vivo, vou pegar esse, que é o que eu já estou trabalhando. E aí ele pergunta, que rede que eu quero?
+
+11:40
+Né? Deixa eu só pegar a outra aqui, que aí ele vai permitir que eu, OPA, deixa de novo, vivo legal, 72, 411. Aí ele vai perguntar que tipo de gente que eu quero, ó, 5G, eu vou mudar pra vivo 410 aqui e olha que legal. Ele começa AA mostrar quais são as antenas da minha região, tá, e aí?
+
+12:09
+Se eu quiser saber o seguinte, tá, mas aqui é o 5G, new radio, tecnologia nova, tem alguma coisa de 4G, eu falo, tem, deixa eu voltar aqui, ó, pegar o 4G aqui. Ah, ele vai perguntar aqui, deixa eu pegar a vida, ok, ó, isso aqui é 4G na minha região. Essa antena aqui especificamente que eu tô mexendo é bem pertinho da minha casa. Eu moro bem pertinho daqui, tá bem pertinho mesmo.
+
+12:38
+Eu olho pra essa antena daqui, da da minha, da minha janela. Se eu olhar pro lado esquerdo, eu estou olhando essa antena essa aqui, ó, esse cara aqui, tá? E aí ele expande, olha a área de cobertura dela, tá exatamente aqui, então eu tô aqui pertinho, eu consigo pegar essa antena, e aqui eu ainda tenho. Eu moro bem nesse trecho aqui e ela tá servindo pra mim. No caso da vivo, Ah, mas tem alguma coisa da claro, tem.
+
+13:07
+Vamos procurar claro aqui da claro Brasil, tá ó, essas são as antenas 4G da claro, tá aqui também, bem pertinho da minha casa, então eu consigo ver, ó, vou ver a área de cobertura dessa antena aqui, ó, vê na hora, mais pro pro lado de cima que é aqui em cima, aqui é a prefeitura de Santo André, bem aqui, aliás, pinto, deixa eu ver, aqui é a prefeitura de Santo André do lado esquerdo.
+
+13:34
+Essa antena até olha para lá, ó, essa aqui é a que pega o centro mesmo, ó, quer ver, tem essa, essa aqui, pega o centro, tá, então veja, a claro cobre essas regiões aqui, então esse site, ele é bem legal para você ver algumas informações que que eu vou pegar uma antena aqui e olha o que que ele me dá, quais são as bandas, quando que Ela Foi montada, né? Quando foi a última vez que pegou essa informação? Qual é a tecnologia aqui? Acho que eu tô pegando 4G, né?
+
+14:04
+Então veja, deixa eu pegar as antenas da claro de 5G, deixa eu ver aqui, claro, OPA de novo, Brasil, só que eu quero pegar ver se eu tenho 5G aqui. Ela, ela não tá lida, deixa eu pegar aqui a tecnologia primeiro. Eita, esse site tá meio bugado hoje. Peneira é bem legal.
+
+14:34
+É, não está me dando as redes na com a vivo eu consigo selecionar aí 4G, eu vou passar pra 5G. Então aqui na região as antenas estão um pouquinho mais distantes de 5G, 4G tem aqui pertinho, tá? Então esse é um site bem legal pra você poder fazer esse mapeamento. Ele tem algumas estatísticas interessantes, tem que registrar, evidentemente.
+
+15:03
+Você pode fazer alguns filtros dentro dele, tá? Por Torres e tudo mais, mas ele não fala que assim ele é legal, porque ele é. Ele é bem visual, pra você ver qual qual a melhor área de cobertura, onde você eventualmente tem uma área de sombra ou com menos, é com menos capacidade de atendimento. Tá aqui no centro de Santo André, essa parte aqui, ó, do lado esquerdo tem mais os pontinhos. É uma região bastante nobre da cidade, tá?
+
+15:30
+Então é normal que essa área tenha uma cobertura muito boa. Aqui onde eu estou, que é mais no centro, você vê que tem menos antenas, por que que são regiões mais antigas? Não tem tanto lugar pra colocar a antena, embora tem um aperto aqui pro lado de dentro do centro, tem menos antenas e aí conforme você vai se afastando, você vai tendo menos, vai chegar AAA cobrir bem, eu vou dizer a área de cobertura.
+
+15:53
+Aqui da da região é bem boa, mas fica aí como uma ferramenta para vocês brincarem um pouco aí nas regiões onde vocês moram. Então vamos lá, material está postado lá já para vocês, deixa eu pegar esse link aqui, deixa eu ver se consigo pegar ele já passo para vocês, deixa eu pegar o link, copiar o link. Então se alguém quiser pegar esta aula, deixa eu colar com isso em formatação.
+
+16:21
+Vejam se vocês conseguem acessar, senão eu coloco novamente pra vocês e vamos pro objetivo da nossa aula de hoje. Então o objetivo é falar um pouco sobre Oo core da rede, sobre arquitetura core, mas principalmente vamos dar ênfase.
+
+16:45
+Pra pra essa questão dos parâmetros críticos de operação, que que é importante é já te passo a palavra, Clodoaldo e a análise de sinalização, aí eu vou falar um pouquinho. É dessa questão da análise, eu vou. Eu peguei alguns arquivinhos do arishart, vamos trabalhar em cima deles. Mas eu quero falar um pouquinho sobre sinalização também. Quando a gente analisa um pacote de voz sobre IP, pode falar, Clodoaldo.
+
+17:14
+É 2 assuntinhos. Primeiro esse esse link continua com aquele problema de pedindo OE mail da fiap, então pera aí que eu pego outro, tem um outro lá também, tá? Ficar tranquilo, EOO, segundo semana passada você tinha posto esse material, não sei se você acrescentou mais coisas, não, não, eu tinha posto, mas eu não tinha dado a aula, né? Então então eu acho que eu me antecipei porque eu comecei AA olhar o material.
+
+17:42
+De seria aula do dia que foi. É aquela conversa que vocês tiveram do onboarding, que a previsão era que vocês ficassem 1 hora lá e 1 hora comigo, porque eu já postei, tudo bem, você vai falar hoje, oi, perdão, aquele o open 5 GS Oo ir assim, você vai falar hoje tudo isso?
+
+18:10
+Eu vou falar mais na próxima aula, hoje eu quero falar de SDN, depois eu volto, porque dá para entender ele melhor se você entender o conceito do SDN, tá, tá bom, legal, obrigada, valeu, então vamos lá, gente, deixa eu só pegar aqui a minha telinha de apoio, tá aqui, tá aqui isso, então vamos lá, primeira coisa que a gente vai fazer, a gente vai olhar para dentro da arquitetura cor do 4G, tá, que é chamada de EPC, então veja que tá aqui circulado em vermelho.
+
+18:39
+O que é o cor da rede 4G? Nós já vimos anteriormente quem são todos esses caras, né? Vimos que, por exemplo, o hss é o cara que registra o usuário lá Na Na, na o assinante na sua região local. A gente viu que OPCFR é o cara que faz a comunicação pra fora, né? EOPG dado também é os caras que conversam com a partir de é que quando você estabelece a sessão de dados, são esses caras que te.
+
+19:09
+Colocam pra fora, tá? A gente viu que o MME é o cara que faz o gerenciamento do usuário, que lá no caso do 5G é o Austin, tá que é o MME. E a gente viu que o cara que conversa com as antenas mais diretamente é OS gse, ok, dito isso, vamos lá, dentro do core, a gente tem esses caras como componentes principais, então MME tá aqui, deixa eu pegar o.
+
+19:40
+Caneta aqui, tá NME tá aqui, OSGW tá aqui, OPGW tá aqui. E o hss? Eles são os componentes principais, mas eles não são os únicos, tá? Quando a gente fala da arquitetura core, do ponto g, deixa eu só dar um s daqui.
+
+20:08
+A gente tem que levar em conta algumas questões importantes. A gente tem algumas interfaces que eu já comentei também com vocês, que são as as interfaces críticas pro funcionamento do core. Então a gente vai ver aí S1, NNES1, UE também o S5, S8, na verdade o S5 aqui, então essas interfaces são as principais. Então vamos lá que que cada uma face tá?
+
+20:36
+AS um MME é a que conversa entre as antenas e o gerenciamento, porque OMEOMME é quem faz gerenciamento desses usuários. O S1 UO Ed user, ele cuida do transporte de dados entre a antena e o core. E essa interface aqui, S5, ela é só dentro do core, ela trabalha.
+
+21:04
+Ou ela é o caminho para que os protocolos de sinalização que falam sobre o roaming, por exemplo, entre node é um e node 2, ou entre o node dessa célula com node de outra célula seja feito? Ó, o S8 é para roaming, EOS 5 é para estabelecer a comunicação entre esses 2 caras. E uma outra coisa importante que nós temos aqui também são os procedimentos. O que que o cor faz de fato?
+
+21:35
+O cor é necessário pra fazer OA taxa e a autenticação então é o cara que faz o registro do usuário. A rede é quem gerencia a criação da sessão de dados, estabelece as portadoras, né, que são os bearers pra tráfego e também faz a manutenção durante o deslocamento. Então o cor ele de fato faz a gestão.
+
+22:02
+Ele coloca o cara na e o Antônio tá colocando o trabalho dele de novo, coloca o link pra acesso, não só a imagem OOO Antônio, tem o link pra gente acessar aí coloca aí, por favor. Então esses caras aqui, essas interfaces são super importantes, mas é importante a gente entender o seguinte, voltando um slide aí, tá, deixa eu voltar um slide aqui a gente tem então o core.
+
+22:30
+Dentro do core, nós temos os componentes principais do core que estão circulados aqui e eles são importantes para fazer o quê? Comutação de pacote, então, Oo Antônio, você colocou no Discord, se você puder colocar aqui, a gente está saindo do Discord, se não tiver agora pode ser depois, tá? Não precisa parar o que você está fazendo, não tá? Mas vamos lá. Então, quando a gente fala do core, nós estamos falando de comutação de pacotes, autenticação, controle de mobilidade e iOS, tá?
+
+22:58
+E também a conectividade IP, que é algo que a gente vai ver quando tiver falando de SDN lá na frente, tá? Então nós vimos quais são as interfaces e os procedimentos chaves. Então isso é gestão. Então o core, ele é importante pra fazer todo, é toda essa gestão dos usuários na rede. Pra que nós como usuários, quando a gente se coloca como usuário, não precisa se preocupar com nada nos bastidores, né?
+
+23:28
+Literalmente, o que a gente quer é pegar o nosso dispositivo e usar, né? Agora vamos lá, eu falei um pouquinho do core. Dentro do core, a gente tem alguns parâmetros que são relevantes. Por exemplo, quando o usuário se autentica, ele se autentica com um código, tá? Um código mais fixo, permanente.
+
+23:56
+E um código temporário, tá? Então vamos falar um pouquinho sobre esses caras. E são chamados parâmetros relevantes do 4G, tá? Um deles, que é o IM SI International mobile, sobre spibers identity, é a identificação do assinante, tá? Então esse cara é um número que tem até 15 dígitos, em geral 15 dígitos, tá que tem?
+
+24:25
+4 tem 5 dígitos mais de controle e 5 de identificação do usuário e 10 de identificação do usuário. Tá? Então aqui é só um exemplo, tá de MSI. Então se você puxar esse parâmetro lá da rede, por exemplo, com um analisador de pacotes e protocolos, e aparecer lá uma informação sobre MSI, ele vai te dar um número parecido com isso aqui, tá?
+
+24:54
+Aliás, eu peguei tudo isso desse link aqui, tá? Do for no forg Nation forg Nation, tá? E esse valor aqui é um valor permanente de autenticação, só que toda vez que você se autentica, além do imsi, é gerado também um identificador temporário. OPA, tem alguém que tá faltando, pessoal? Tem alguém com áudio vazando aí?
+
+25:23
+Ou se quiser fazer uma pergunta, fique à vontade, tá? Então vamos lá, gerei o identificador permanente conectei agora identifiquei, agora na rede ele vai gerar um Gucci, né, que é o globaly unic tempor are identify, né? O identificador temporário atribuído por quem? Pelo elemento de gestão que é o NME esse cara vai vai manter é esse cara, vai vai manter esse Gucci durante a sessão desse usuário.
+
+25:52
+Aí ele, por algum motivo desconectou seja por quem desligou o aparelho, seja porque perdeu, é, pegou uma área de sombra, depois teve que reconectar. Esse Gucci muda a cada sessão, tá? Não, a cada ligação, a cada sessão estabeleci uma conexão. Ele me dá um Gucci, fiquei lá nesse Gucci de tempos em tempos, ele pode renovar o Gucci igual um DHCP renova OIP de uma máquina, mas.
+
+26:21
+Se eu desconectar e conectar de novo o Gucci volta diferente, porque provavelmente eu vou estar numa outra célula atribuída por um outro MME, eu vou estar numa outra herba e tudo isso daí muda, tá? Então esses 2 caras são os identificadores e só falando um pouquinho da diferença entre eles. A gente tem então que OINSI é permanente, o Gucci é temporário AO propósito, a função do INSI é só.
+
+26:49
+Autenticação e colocar lá o perfil de de de assinante, né? O perfil de acesso do assinante. O Gucci também permite que eu entre com parâmetros de segurança. Inicialmente, quando eu conecto o ins, o responsável né? Pelo a tachi pela autenticação inicial e o Gucci pela comunicação subsequente. Olha como é interessante essa questão do Gucci, eu.
+
+27:16
+Entrei na rede, o IMS está lá, permanente é meu, eu tenho um Gucci atribuído, então o IMS me coloca na rede e fala, ó, estou vivo. O Gucci fala, beleza, você está vivo. Eu vou atribuir alguns parâmetros de segurança e vou permitir a comunicação daqui pra frente, tá, mas tem uma questão de segurança importante aqui também, tá? O IMS é mais vulnerável à interceptação, por isso é importante que ele.
+
+27:46
+Sempre que for possível na rede possa ser protegido ou via é anonimização ou criptografia em banco de dados ou com criptografia na rede. Tá já o Gucci? Ele por padrão já é. Ele já prevê é elementos de segurança, como por exemplo, essa anonimização e criptografia, tá ok? Tem mais 2 caras aí.
+
+28:15
+Que a gente tem que analisar que são OTIDEOEBI. Vamos falar um pouquinho deles 2, ó, isso aqui é um negócio que eu acho bem interessante, que é OTID, né? OTID Tunel, end point e dent five, tá? Olha só, na rede 4 GA, gente, tem um elemento de gestão que é OSGSE, viu? Falou dele nas aulas passadas, tá?
+
+28:43
+Quando a gente vai estabelecer comunicação, por exemplo, entre o os elementos mais da da da borda da rede, né? AAA antena junto com OOO rnc, que é o que vai puxar aí os recursos do usuário e o centro da rede. A minha comunicação pode passar de 2 formas.
+
+29:12
+Pode passar sinalização e comunicação por dentro da rede toda, o que me dá maior controle, porém, me onera mais a rede, porque todo tráfego tá passando por dentro do SGSN. Eu tenho que ter uma capacidade de troput muito grande aqui. Troput é a capacidade de atendimento, por exemplo, de um roteador de um suíte. Quanto que ele aguenta de tráfego, tá?
+
+29:43
+Nesse caso, toda a comunicação, todos os dados, toda a voz, tudo tá passando por dentro da SGSE. Novamente, é ótimo para controle, mas é péssimo para desempenho porque pode me causar gargalo na rede mais rapidamente. Existe 11 recurso que é OTIDO, Tunel and point and Dante fire.
+
+30:07
+Ele identifica túneis entre a run, né? Que é mais a borda da rede perto da antena e o cor da antena e a saída para internet. Ele só faz a sinalização para OSGSN, mas ele libera um túnel direto para que essa comunicação caia, por exemplo, na internet. Então imagina que eu tô usando o meu aparelho celular para assistir um vídeo da Netflix?
+
+30:37
+Cara, ele vai consumir gigabytes ali por hora. Imagina como isso poderia onerar a rede? Não se eu estiver usando, mas se 10000 pessoas estiverem usando, vai onerar a rede. Agora, se eu tiver só sinalizando pra rede, falando assim, ó, eu vou abrir uma sessão de streaming. Eu já estou registrado, já foi criada a sessão de PDU. Vou começar a trafegar dados e a rede tirar esse recurso do Ted.
+
+31:06
+E falar assim, beleza, nós estamos criando um túnel ponto a ponto aqui. And to end falando assim, ó, pode trafegar esses dados por aqui. De repente você pega um canal mais limpo de fibra, alguma coisa por dentro da da da parte mais limpa da rede e te joga direto na internet. E eu só mantenho a sinalização aqui pelo centro para saber o seguinte, a sessão continua ativa. Você ainda está utilizando esse recurso?
+
+31:35
+Na hora que você parar aí eu te desconecto, eu fecho o túnel. Isso, gente, é muito útil, tá? Eu eu fiz aqui uma ressalva, coloquei uma observação aqui, ó, can renvit VoIP, que que é isso, tá? Deixa eu ver se eu tenho aqui um servidorzinho de VoIP para mostrar para vocês, acho que o meu deixa eu ver se ele está aqui, espera aí, espera aí, deixa eu ver, será que eu fechei?
+
+32:04
+Ele está aqui, ó, ó, esse aqui é um servidor de VoIP, tá que eu tenho? Tem comunicação segura e não segura aqui. E olha só, esse Ken reinviet, tá aqui é uma configuração de um ramal do VoIP, tá uma configuração do ramal. Então o que que tem nesse cara? Ó, eu estou usando protocolo CIP pra autenticação, eu estou usando comunicação UDP.
+
+32:33
+Ela pode ser ODPTCPTLS se na hora que eu for mostrar para vocês, vou mostrar um exemplo de TLSA porta de sinalização, a porta de tráfego ela é outra. Mas aqui, espera aí que teve alguém que chegou, mas aqui o meu can Rain vite, deixa eu voltar nele. Aqui ele está como No No caso do no.
+
+32:59
+Ele vai passar todo o tráfego por dentro do servidor, por dentro do servidor. Então, se eu tiver 50 chamadas simultâneas, a 50 vão passar pela placa de rede do servidor. Se eu colocar o IES aqui, o que que é o Ken reinvite? Ele faz o invite falando, ó, estou iniciando uma sessão, estou sinalizando. A rede entende quem é a origem, quem é o destino e cria um túnel pra essa comunicação acontecer.
+
+33:27
+Que é exatamente o que o tad faz na rede 5G. Na rede 4G, aqui, no caso, tá. Então esse tad é o equivalente ao can reinvite, do voit, tá? Já o chamado EBI. Ele tem um conceito de túnel, mas ele é baseado em importadora, tá? Então vamos lá, ó.
+
+33:53
+Então OEBI é OEPS Bear ardente, né? O identificador de portadoras de EPSOEPS é o evolved packet system. Então vamos lá, tecnologia da rede é da rede 4G, tá? Então veja, ele cria como se fosse uma comunicação and twand ponta a ponta entre o usuário.
+
+34:16
+E a borda da rede pra internet? Então ele cria uma portadora que meio que perpassa toda essa infraestrutura da antena, da gestão e de quem faz a borda com a rede externa e me coloca lá dentro. Então, quando eu falo de tad ou eu falo de EBI, eu tô falando de conceitos semelhantes, tá? Conceitos semelhantes. Só que o tad, ele já começa dentro da rede.
+
+34:46
+Veja do rnc lá pro esse access gator e equivale aqui ao PGW, tá? Então ele vai mais de dentro já OOEBI, ele considera como é uma espécie de um túnel de comunicação direta, desde a interface do usuário até a interface pra saída pra internet, então?
+
+35:12
+É é bastante eficiente esse conceito de ebi e é uma coisa difícil achar essa informação na internet, tá pessoal, precisei cavar pra pra pra pra buscar esse conceito, tá? Então peguem essa informação. Então, até aqui o que a gente falou foi da arquitetura cor do 4G novamente. Ele tem um conceito de túnel.
+
+35:41
+Ele tem o conceito de elementos que precisam de certa forma, se conversar pra estabelecer essa sessão, essa comunicação, pra te colocar, por exemplo, num canal de dados, pra estabelecer um túnel pra fazer esses. É é todos esses aspectos que a gente viu até agora. Mas veja que essa rede em nenhum momento tá. Eu tô falando que ela é orientada a serviços.
+
+36:10
+Ela é orientada a liberar recursos de conectividade EE troca de dados, mas ela é bastante dependente da infraestrutura física. Pode falar, crudo, pra variar, eu não entendendo né, professor AOTID é, é como se fosse a sinalização número 7, me parece agora eu.
+
+36:38
+Ficou difícil de entender, OEBI essa porta, essa noção de portadora não é na no sentido de portadora de modulação. É um é um sentido, não sei dizer informático da vida, não envolve todas as coisas. Olha aqui embaixo, na imagem, eu estou destacando o verdinho radio birer não tem.
+
+37:02
+Essa é a portadora de rádio mesmo, é a portadora de sinalização lá AAA onda frequência, que vai te colocar na rede. Só que aqui a gente tem que abstrair aquilo que é portadora de rádio, que é portadora de criação de túnel, considera que é uma coisa só. Então, desde o teu aparelho até a saída pra internet, é como se eu tivesse uma VPN te colocando lá pra saída. Conseguiu entender o conceito?
+
+37:32
+Entendi e não interessa o que tem dentro da VPN, não interessa se tem um roteador. 10 roteadores, 1000 roteadores. Se eu tenho suíte pensando em rede aqui, não importa se é OA minha sinalização, a minha portadora de rádio com a antena e o que tem da antena para lá. Para mim é como se eu abrisse um túnel, uma VPN entre o meu aparelho e a porta da operadora para internet, é isso?
+
+38:00
+Mas aí vai, pode falar, desculpe, aí vai sinalização, vai dados, vai tudo, vai tudo, vai tudo atender. No caso do tad você separa, vai ser só dados, entendeu? No caso do tad, a sinalização vai aqui por cima pra poder falar pra rede, ó, eu tô, eu tô vivo, mas a rede fala, beleza, mas manda seus dados direto, eu não quero que passa por mim não.
+
+38:30
+No EBI vai tudo vai, Ah, tá, então é mais eficiente a tá, não entendi, perdão, beleza, obrigado, é isso, beleza. Então vamos dizer assim, aqui no EBI ele manda tudo e aí cada etapa, cada cada setor da linha rede vai retirar aquilo que ele precisa. Então, se o enoudibi precisar de um elemento de sinalização, ele retira, se o sgw precisar de um elemento de autenticação, ele retira.
+
+38:58
+O pgw e fala, olha, que tipo de sessão você está abrindo lá? Eu estou abrindo uma sessão de streaming. Ele retira essa informação de sinalização e aí o que passa é é, é a parte de dados pra gente, beleza, é isso. Vamos lá, então aqui até agora, 4G novamente. Veja como os elementos da infraestrutura são importantes até este momento.
+
+39:21
+A partir de agora, nós vamos falar um pouco sobre 5G, então a gente vai falar sobre uma arquitetura que é baseada em serviços. Então vai ficar muito mais parecido com o conceito de rede de de é rede de dados, rede TCPIPE, aplicações, aplicação web e outras coisas que a gente está acostumado enquanto usuário de internet. Então veja só.
+
+39:50
+Quando eu falei de 5G anteriormente, eu tinha falado do 5. GE, aparecia um termo lá que era OSA, que era o standalone, tá, é o 5G raiz, vamos chamar assim. Então, o 5G raiz, ele tem uma característica pouco mais próxima do 4G no quesito é importância da infraestrutura física.
+
+40:17
+Só que o 5G ele já foi pensado para evoluir para o chamado sba, que é a arquitetura baseada em serviços. Então a gente tem, ó, no lugar lá do MME, entra OAMF aqui, tá? Então a gente tem aqui algumas estruturas físicas AMFSMSSMF.
+
+40:44
+E a gente tem uma camada aqui embaixo que é como se fosse 11 Barramento, esse cara aqui ó. E ele tem o suporte nativo a serviços. Então a gente consegue fazer a comunicação com outros elementos da rede fazendo chamadas de API. Qual a vantagem de você fazer chamada de API?
+
+41:13
+A vantagem de você fazer chamada de OPA, espera aí, deixa eu descart, OPA, deixa eu voltar. Eu acabei marcando errado. Quando a gente faz chamada de API, qual é a vantagem? A chamada de API. Ela é muito leve. Eu vou, eu, autêntico, eu consumo aquele recurso e beleza, depois eu vou embora.
+
+41:39
+Então, eu não preciso ter uma dependência muito física e muito forte de infraestrutura. Por outro lado, quando eu trabalho com API, outras questões vem à tona. Primeiro é, quem é o dono daquela API? Se eu estou consumindo uma API própria? Beleza, você tem o controle se eu tiver consumindo uma API de terceiro.
+
+42:04
+Eu tenho que ter é cuidado com conteúdo, eu tenho que ter cuidado com o processo de autenticação. Eu tenho que ter é cuidado com o tipo de dado que eu estou consumindo e eu tenho principalmente que ter cuidado com a segurança. É, vou dar um exemplo de uma reunião que eu tive logo antes de de dar aula com vocês às 3:30 da tarde. Tem uma reunião com uma empresa e tem uma plataforma de de de conteúdo, né, de curso. Tipo é, é um concorrente da hotmart no Brasil.
+
+42:34
+E os caras sofreram um ataque cibernético, é EE, isso causou fraude em meio em em operações de pagamento por cartão de crédito, tá, e aí eu tava conversando com o cara e falei, mas o que que aconteceu, né? Porque já faz um tempinho. Agora eles estão refazendo lá toda a infraestrutura e tudo mais. E o cara falou, sabe por que que a gente sofreu esse essa fraude? Porque tinha uma API que tava exposta para internet, puta bingo.
+
+43:00
+Então, quando alguém acessava, conseguia pegar essa informação, e olha que loucura, na API vinha o dado do cartão de crédito sem criptografia. Pô, aí pinga o cara só fala assim, beleza, vem o dado de cartão de crédito, eu Gero uma operação financeira, só que ao invés de eu pagar a plataforma, o dinheiro Vem Pra Mim. Então você consumir API? Tem essa questão é da segurança muito nativa, mas a gente tem que entender que.
+
+43:30
+É fazer uma arquitetura orientada a serviço, isso ajuda bastante, olha só, então aqui é onde a gente tem essa interface com a API, é, é a mesma coisa, tá mesmo? Lugar, tá, mas é que eu quis destacar, então veja o que tá da do API, né? Do vermelhinho pra baixo ainda é importante como interface física, tá que é uma MF SMFPCFAFA, antena.
+
+44:00
+Né? E usuário? Tudo isso é físico, mas o que está para cima pode ser serviço, pode ser só consumo de serviço. Então daí aparece a questão da escalabilidade. Então se eu tiver que aumentar a capacidade de atendimento, pô, coloco mais uma caixinha aqui de NSSF, coloco mais um auster, eu vou plugando os caras aqui.
+
+44:27
+E aí eu aumento a minha capacidade de atendimento, desde que eu tenha é condições de atender AAA ao aumento da sinalização, a criação das interfaces e o processo de autenticação e liberação de serviços. Cara, eu só vou plugando a escalabilidade da minha rede. Pois não é. O senhor tava comentando desse ataque cibernético. Uma dúvida no cenário de redes privativas.
+
+44:56
+E no neste mercado é comum essas falhas de segurança por ausência de scanner de vulnerabilidade de times vermelhos ou coisas do tipo não ou é, digamos assim, é uma normose e isso sempre vai acontecer. E não há scanner de vulnerabilidade, não há protocolos pra isso ou é menosprezado essas soluções? Não, não. Eu vou dizer que no core das redes é até que.
+
+45:23
+A preocupação em em manter a segurança desses ambientes é grande, tá? Eu vou falar o seguinte, hoje, no Brasil, as empresas que têm a maior maturidade é em segurança e que são proprietárias de infraestruturas que justifiquem isso. São os bancos e as operadoras de telecom, tá? Então, quando você fala, por exemplo, vou vou citar o exemplo, você pega aí, é uma telefônica ou você pega uma?
+
+45:49
+Vivo, né? Uma claro, eles têm muito essa preocupação e eles têm times de cibersegurança enormes, tá, só a telefônica, ela tem 11, outra empresa do grupo, que é a telefônica tech. Só de cibersegurança, eles têm 400 profissionais, tem mais gente do que o Banco do Brasil tem em cibersegurança, então, sim, eles têm essa preocupação. Agora você fala assim, tem scanner pra pegar, tem, tem scanner, só que qual que é a grande, o grande desafio hoje?
+
+46:19
+É você identificar qual é a sua superfície de ataque ou a superfície de vulnerabilidade. Isso alguém entrou com um áudio aberto aí, OPA, tem alguém que tá com o Viva-voz aí, beleza, ó. Então é o seguinte, gente, é a superfície do ataque. É o seguinte, imagina que você tem uma, você tá numa rede privativa, numa rede telecom, e ela tem 10000 ativos de rede, tá?
+
+46:49
+Tanto rede de dados quanto rede de telecom. Então eu tenho potencialmente 10000 pontos de falha. Então eu tenho que ter um inventário de ativos que possa me dizer exatamente é quem são esses ativos. Eu não consigo proteger aquilo que eu não conheço. Então AO primeiro passo para saber a eficiência de alguma coisa é, eu tenho tudo mapeado. Se eu tenho tudo mapeado, beleza.
+
+47:18
+Eu tenho que saber qual é o ativo, qual é a versão de hardware, qual é a versão de software, qual é o protocolo que roda e saber o quão é o qual update está minha é é minha rede nesse momento, em relação a PEC de segurança API exposta é em relação a ferramentas de controle, de monitoramento, scanners, cien, soar XDRDR, que são essas tecnologias que fazem a proteção. Sabendo disso, eu consigo ter uma.
+
+47:48
+Foto e aí entra Red team, entra a blue team, entra na lista de gestão de vulnerabilidades pra te falar, olha, a sua foto atual é essa da sua superfície de ataque, 98% delas tem um bom nível de segurança. Então você vai ter que se preocupar prioritariamente com esses 2% aqui que são. Vamos dar um exemplo, ó, imagina que.
+
+48:08
+Lá no na, na minha rede. Aí voltando pra esse desenho aqui, lá na minha rede, eu descubra que o udm tem uma, sei lá, ele tem algum firmware, algum software que tem uma versão mais desatualizada, tá, pô, eu sei que eu tenho que dar prioridade em relação a esse, nesse cara, em relação aos outros. Então existe sim essa preocupação. Sabe por quê?
+
+48:33
+Porque quando eu tô, por exemplo, numa rede corporativa e eu sofro um ataque cibernético que ele mira, por exemplo, OOO meu site de e Commerce, ele ataca um alvo que me traz um prejuízo quando eu tô numa rede privativa de telecomunicações.
+
+48:51
+O alvo pode paralisar uma parte importante da operação. Imagina se de repente eu consigo, através de um ataque de de, de de, sei lá, contra uma API, eu consigo paralisar o centro da cidade de Santo André, que é onde eu moro e que pode afetar imediatamente 150 a 200000 pessoas.
+
+49:12
+Então é, é é esse nível de escala que a gente tem que pensar. EE, isso dá a resposta de por que que as equipes das operadoras tem essa preocupação de proteger, tá, então eu sei que foi uma resposta mais longa, mas acho que ela era importante para ter esse entendimento. Professor, Oo intuito era assim, vamos pensar na nossa turma aqui, né? Quanto mais pessoas se formando e tendo conhecimento de redes privativas, vai ter profissionais de vamos por assim iniciando com boa teórica.
+
+49:42
+Vamos por assim, uma carga moderada prática no mercado forma cada um formando as suas redes privativas. Então, a maternidade tecnológica daquela rede privativa pode ser que venha ter diversas vulnerabilidades que um você pegar um time telefônica não teria e aí isso aumentaria a superfície de ataque. Redes industriais, onde você vai ter milhões de o ti trocando informação em tempo real?
+
+50:05
+E aí, AAAO, garantia da questão, se a gente pensa em longo caso, né? Ataques quânticos e tudo mais, então é um mercado dentro desses leitos privativos que vai ter que alguém parar e olhar e falar, pô, vai ter várias maturidade deles, vários tipos, desde uma mais personalizada, um mercado financeiro regulado que vai ser extremamente difícil de penetrar, mas uma com a segurança similar. É no Wi-Fi de casa que você penetra no WPA 2 da vida, então há um mercado dentro disso.
+
+50:35
+Pode falar é, me permita complementar professor assim é Oo que mais vemos hoje. Eu eu trabalho na operadora, né? O que mais vemos hoje é você colocar 11 core inteiro dentro do cliente quando você fala de rede privativa, tá? Então eu vou lá na Ericsson, compro lá um Mini core e coloco dentro da Gerdau, por exemplo. Quando eu coloco esse Mini core, do jeito que o professor tá explicando aqui dentro da Gerdau, eu tenho é aquela aquele esquema da cebola, né?
+
+51:03
+Eu estou colocando ele para dentro do firel da gerdal, entendeu? Então assim, Ah, eu, eu eu tenho que me preocupar com a segurança do 5 GO 5G nativamente, ele é criptografado, né? Ali na parte do supsus ali você não consegue fazer o ataque no na interface aérea, mas eu estou dentro de um ecossistema que teoricamente já é protegido, entendeu? Então mesmo que eu exponha 11 API pra fora, por exemplo, que eu queira fazer uma interface com banco, né? É, ele vai ter que ele vai ter que passar pelas regras.
+
+51:33
+De segurança que já estão inerentes ali, entendeu? Então, se você fala em rede privativa, com um core inteiro lá dentro, é mais uma camada de segurança, entendeu? Você não precisa ficar assim tão preocupado dele estar na internet, porque ele tem um firewall maior ali, tá? É o que a gente vê hoje, ali é o que mais se vende no mercado, entendeu? Obrigado, professor EEE, só já te passo a palavra Antônio e só uma coisa, mas você falou, você citou o firewall e tudo mais. Cara, eu falo o seguinte.
+
+52:01
+OA empresa mede e grande que falar que a segurança dela está focada no firewall. Puta a gente. Se a gente mastiga com com com farinha de manhã, tá um ecossistema de segurança ali por trás. O que eu quis dizer é que ele vai estar atrás de uma segurança, entendeu? Esse corte assim, né? Pode falar, Antônio.
+
+52:24
+Então é, é mais ou menos assim. AA, existe todas essas preocupações aí tudo, mas vê só, é uma hora dessas. Tem toda essa segurança, tudo armado, tudo funcionando, ninguém invadindo é impossível de invadir. Aí os caras precisam de um refaturamento num código lá, abre pundev Júnior.
+
+52:52
+Aí o cara vai lá e deixa 3 porta aberta e fecha o programa e sobe sobe o programa pra produção, tá funcionando? Quer dizer, vocês entendem que OOO sistema, ele é fechado e tudo, tudo dá certo? O problema vai ser sempre a falha humana sempre não deve vai entrar o problema depois com tudo funcionando, ó, ninguém tá invadindo a gente.
+
+53:21
+Há 3 anos ninguém consegue passar. Ah, tudo bem, abriram a porta, alguém passa se abrir a porta, alguém passa. Tem 1000000 de hackers no mundo só tentando abrir a porta de alguém, é isso que tá acontecendo. E se a se a porta for aberta, os caras descobre. E se eles descobrir, eles entram de fininho, não fazem nada, às vezes copiam toda a área de segurança.
+
+53:51
+Dança e depois arrumam um jeito para estourar para arrombar a porta de vez. Porque às vezes o firewall detecta a presença deles. Eles não conseguem nem fazer nada. Mas se por acaso eles entram e de mansinho e ninguém detectar, eles não entram para apagar, para estourar tudo. Eles entram para conhecimento da rede e depois do conhecimento da rede, eles vem com força bruta.
+
+54:21
+É isso que acontece, mas tudo acontece porque alguém abriu uma porta exato. EE tem uma coisa, eu coloquei um item aí no chat que é o chamado easmin, né? Que é o espojor. Ataques Surface management. Esse é o conceito mais atual de proteção. É proteção cibernética, tá, o que que é isso?
+
+54:44
+Hoje, as ferramentas de proteção, elas também têm bastante conexão com inteligência artificial e outras coisas, tá? Então quando você tem o conceito de expojor management, você fala assim pra empresa, ó, me fornece um dado seu nome, do seu domínio ou endereço IP. Deixa que o resto eu faço. As ferramentas são tão legais, tão interessantes.
+
+55:06
+Elas conseguem pegar tudo isso que o Antônio falou. Ela pega as portas abertas, ela pega os pets atualizados, ela pega um pouco. É, é, é. Faz 111 varredura mais ampla e consegue pegar problema em conta de e-mail, problema em conta de usuário. É um é um inferno, cara. E é uma tecnologia emergente.
+
+55:27
+Que tá chegando agora no mundo, Ela Foi desenvolvida mais em Israel e eu já, né? Na minha empresa já tem parceria com essa empresa pra trazer essa tecnologia, é pra capacitação no Brasil. Deixa eu ver se eu tenho alguma coisa aqui, deixa eu ver se eu tenho. Eu acho que a gente até tem 11. Alias, espera aí, o outro pode falar aqui, ó, essa aqui é uma ferramenta de easmin, tá?
+
+55:56
+Chamada, sai cognita, então aqui, Ah, espera aí que deu um time out aí deixa ele logar novamente, deixa eu logar novamente. Aí essa ferramenta aqui é que aqui eu só tenho como é pra capacitação, só tenho um caso, é, é hipotético, tá, mas olha só, a gente tem.
+
+56:31
+É a questão do do ataques Surface. Deixa eu ver se eu se eu pego aqui a lista de ativos que ele gerou. Então olha só, ele tem aqui, ó, 4287 ativos em risco, só que é uma única empresa, então tem 4000 ativos em risco, 3300 ips, André, 6600 aplicações web. Então ó, olha como a coisa vai andando, né? Ele analisa.
+
+57:02
+Bancos de dados, protocolos, servidores da NSE, assim por diante. E aí eu posso buscar em cada um desses caras, né, os filtros ou as questões que eu quero pra poder analisar. Então esse tipo de tecnologia é o que provavelmente vai pautar essa questão da proteção contra exatamente esse deve Júnior, que abre uma porta, porque na hora que ele abrir a porta vai vai ter um alarme numa ferramenta como essa que vai mostrar pra vocês, tá?
+
+57:30
+Então isso que eu estou, eu acho que vocês devem ser provavelmente o primeiro grupo brasileiro que viu essa, essa plataforma, porque eu tive acesso a ela ontem. Estou analisando e é bem interessante, pois não uma coisa interessante. Essa semana eu estava vendo alguns papers e apareceu essa ferramenta e aí isso me veio na cabeça, montar um servidor, MCPE expor ela aqui. Eu tinha olhado alguns repositórios do Git hup e ainda não vi nenhum servidor MCP expondo ela.
+
+58:00
+E fazer aberto que aí todo mundo poderia entrar ali, cada um criaria Oo teu agente com o teu caso de uso e um vai melhorando o outro. O senhor já viu alguma solução assim? Ou eu que não tá não tem os repositórios corretos, mas os meus strawers nenhum conseguiu achar nenhuma solução dela em sobre OMCP ou Vin docquer ou vinculbernetes, mas nada dentro de um MCP server.
+
+58:24
+Não pra te falar assim imediatamente, eu falo que não, mas eu vou tentar pegar essa informação e te respondo na próxima aula, tá? Tá bom, obrigado. Mas vamos lá, eu sei que assim a conversa Ela Foi um pouco mais pra pra parte de segurança, vamos voltar um pouquinho aqui, porque eu vou falar de segurança mais pra frente de novo, tá? Mas eu quis chamar atenção porque, porque no momento você coloca uma API, você tem que ter esse, esse, esse cuidado da segurança cibernética, porque você tá consumindo serviço, tá? Vamos lá.
+
+58:53
+Olha só, a gente tem alguns modos de operação do 5G, tem OMSA, que é quando você tem a rede 5G conversando com corda 4G, ou seja, você tem SBA mais EPC falando e você tem Oo stand alone, que é quando é só 5G, só 5 GO que que é o mais normal, é o 5G falando com 4G, mais a tendência evolução de, de, de.
+
+59:20
+De tecnologias e redes é que o que me dá mais performance, o que me dá mais eficiência, o que me dá mais segurança é se a rede for full 5G, tá? E a gente tem lá as interfaces, tá? Essas interfaces aqui embaixo destacadas, são aquelas que tem as é é que tem interface com a parte de EPI. Então, se eu voltar aqui, ó, essas interfaces estão aqui em.
+
+59:49
+Nessa faixa na interface com a partir do 5G, tá? Então é importante conhecer quem são as interfaces que que vão permitir essas chamadas de API. Ok, vamos lá. Isso é, é. Essas são características importantes do 5G.
+
+1:00:08
+Vamos falar um pouquinho também sobre alguns parâmetros críticos de operação e coisas que a gente conhece no nosso dia a dia com uma nomenclatura e que, de repente, elas passam a ter uma nomenclatura mais técnica dentro da rede, tá? Então vai parâmetros críticos de operação. Então a gente tem os identificadores de usuário lá no 4G eu mostrei quem, o imsi e o Gucci, né? Então a gente tem aqui o SUP.
+
+1:00:36
+Que é o equivalente ao imsi, aquele código de 15 dígitos. Lá tá, o sussi é o sub criptografado, então veja que ele já tem por padrão, já by default, uma versão criptografada de identificação permanente. Lembra que o imsi não era tão seguro? Quem era mais seguro era o Gucci. Ó, aqui eu já tenho uma versão.
+
+1:01:03
+Mas segura, ó. Já desde a do dispositivo do usuário, ele usa o sub criptografado dentro do susse. Ok, é isso aí, eu tenho os identificadores permanentes, a gente conhece o deles, né, que é o IMEI, mas tecnicamente o nome desse cara dentro da rede, né? AA classificação dele é o pei permanente equipamente dent fire. Isso aqui é Oo CPF do cara, né?
+
+1:01:33
+E quando a gente fala de principalmente quando a gente fala dessa interface, né, desse, dessa transição entre telefonia e dados, a gente tem OGPSI, que é essa identificação pra ESDN, tá? Então todos esses caras, de certa forma, eles são citados aqui mais nesse primeiro momento, nessa imagem, é nessa imagem que tá aqui, fala mais do supi.
+
+1:02:01
+E sussi no 5G. Olha só, se eu tiver uma interface com 4G, eu tenho Gucci aqui, tá verdinho também. E aqui a gente tá vendo exatamente quem a gente tá vendo. Um exemplo de NSA são parâmetros críticos de operação entre 5 GE 4G. Por isso que entra Gucci. Por isso que tem supi, que tem sussi, olha só.
+
+1:02:31
+Aqui, ó, a gente tá vendo uma situação, eu tenho OOAMF no 5G, eu tenho o MME lá no 4G. Então veja aqui há um exemplo de que eu preciso entrar mais pra dentro da rede pra poder gerar.
+
+1:02:49
+O pra pra poder mapear o Gucci do 4G, pro SUP do 5G, então ele tá falando aqui ó, esse cara não é capaz de mapear, então eu tenho que entrar mais dentro da rede pra fazer esse mapeamento e liberar essa autenticação, então esses são parâmetros críticos de operação. SUP e o sussi? Vamos ver, os outros 2 caras são caras que a gente conhece bastante, né?
+
+1:03:14
+Mas que tem aí 111 elemento importante que é Oo pei, né, que é o nosso IMEI. Aliás, desculpa, aqui ainda é Oo SUP e o SUS, só eu? Eu olhei aqui do meu lado esquerdo e já estou olhando lá na frente, tá? Então o SUP. Ele é equivalente ao IMS 15 ou 16 dígitos. Veja que o IMS i ele tem uma limitação, no máximo 15 dígitos, aqui pode ter até 16, tá o sussi.
+
+1:03:43
+Ele já é o equivalente lá, o Gucci ele tem mais dígitos, né? Só que ele tem um valor aqui, ele tem uma chave pública, veja que tem essa questão da da criptografia, que que ele se protege, e a gente tem os outros parâmetros OPEOGPSI, tá? Então OPI é o nosso conhecido e lei, tá? Então ele tem 6 dígitos pro código de alocação, né? Do tipo de alocação.
+
+1:04:10
+Ele tem 6 dígitos pro serial number e ele tem Oo check né? Pra pra pra poder fazer aí é paridade EEE checagem já o chamado MSSDN ele tem no máximo 15 dígitos, mas qual que é AAA questão? Ele entra com códigos interessantes e quando se fala de SDNA gente também não pode esquecer da rede telefônica, ele tem aqueles códigos importantes.
+
+1:04:40
+Código do país, qual é o código de área e qual que é OOOO número do assinante? Então veja, são parâmetros críticos porque você identifica o cara pelo IMEI e pelo número dele. Isso é importantíssimo. Eu tenho um IMEI que é único para o meu dispositivo ou para o meu é, é.
+
+1:05:08
+Pra minha, pra pra minha assinatura enquanto usuário da rede. E eu tenho meu número e me identifico enquanto cliente daquela operadora que tem o número, que é público, que pode ser compartilhado com outras pessoas que podem realizar chamadas pra mim. Então esses são os identificadores de usuário, ok? O 5G. Ele também tem uma questão muito importante com o iOS.
+
+1:05:38
+Então vamos falar um pouquinho de iOS. O iOS. Ele é aquele cara que fala sobre melhor utilização e priorização da minha banda, tá? Então veja uma vez que eu criei uma sessão de dados do meu usuário.
+
+1:06:02
+Eu tenho lá a minha largura de banda. Uma vez que eu criei essa sessão sessão de usuários, eu tenho esse cara aqui que é o QoS flow IDQFI, que ele define o fluxo de dados com os os parâmetros de QoS específicos. Lembra que eu falei na aula anterior que o QoS, ele é um label lá no cabeçalho do pacote, onde eu defino lá parâmetros de qualidade de serviço que eu tenho lá.
+
+1:06:28
+AF 41 com prioridade maior, CS 3 com prioridade intermediária, EAEE best affort ou CS um pra prioridades menores. Então é como se eu tivesse uma largura de banda e eu vou ter tráfego de vídeo, internet e por exemplo jogos online quando eu tenho esses 3 serviços, se eu não coloco Oo que a Oeste falou, aí disse eu não Marco.
+
+1:06:57
+Lá no cabeçalho esse label de QoS, ele vai usar essa largura de banda meio que sob demanda, ou seja, 1 hora eu vou precisar de mais banda pra vídeo, 1 hora pra internet, ou se eu estou na internet eu começo a fazer um uso mais pesado. Ele aloca mais banda e pro vídeo e pro game a mesma coisa. Qual é o problema de você não ter QoS se de repente eu estou utilizando a internet?
+
+1:07:24
+E eu começo a fazer um grande download aqui. Esse download pode ocupar parte importante do meu, da minha largura de banda que de repente eu estou utilizando pra um vídeo ou pra um jogo ou pra qualquer outra coisa. Quando eu faço esse label de iOS, 2 possibilidades podem acontecer. A primeira é, o label me define uma prioridade.
+
+1:07:51
+Mas ele não me define uma largura de banda específica para aquela prioridade. Nesse caso, se chegar em pacotes dos 3 serviços aqui ao mesmo tempo, na entrada da minha infraestrutura por priorização de label, ele vai falar, olha, se chegar os 3 juntos, vai primeiro vídeo, depois internet, depois gay, por exemplo. Ok, mas existe. Aí entra a questão do network slicing, em que eu faço reservas de banda.
+
+1:08:21
+Pra atendimento prioritário baseado em iOS. Então eu falo assim, olha aqui eu tenho por exemplo 10 megabits, eu vou deixar 4 pra vídeo, eu vou deixar 4 pra game, eu vou deixar 2 pra internet total, tá? Internet de uso geral. E aí eu vou alocando os meus canais de utilização se em algum momento eu tiver um gargalo, por exemplo, de internet de uso geral.
+
+1:08:48
+Essa internet de uso em geral vai cair o seu desempenho, porque ela não pode afetar streaming de vídeo e nem serviço de game. Mas eu estou dando a prioridade e definindo faixas EEEEE reservas de banda para os serviços mais prioritários, tá? Então essa questão do iOS é super importante.
+
+1:09:12
+Deixa eu ver se eu tenho aqui OOA parte da do que é OS lá Na Na minha aplicação deixa eu ver se eu tenho ele aqui Quality, deixa eu ver se tem Oo Quality of service aqui é a vídeo suporte, pera, pera, deixa eu ver se eu tenho aqui? Eu acho que nessa aplicação aqui eu não tenho direto, eu tenho que fazer ele na mão, deixa eu ver, deixa eu ver.
+
+1:09:40
+Nation typ friend a NAT porte malify transporte não, não tá aqui. Deixa eu ver não, não tá nessa aplicação, nessa eu não, eu não mexi com com a questão de iOS, deixa eu só confirmar.
+
+1:10:13
+Deixa eu ver se eu tenho. Eu acho que eu tenho um arquivo que fala sobre isso. É pra VoIP. Me dá um segundinho aqui. Acho que é legal de ver isso. Deixa eu ver se eu tenho aqui dos ramais.
+
+1:10:45
+Aqui não é nesse, ó ele, esse cara aqui ele tem só falando. Ele tem criptografia, ele tem suporte a vídeo. Então eu consigo fazer vídeo, chama, mas deixa eu ver num outro arquivo que eu acho que talvez eu tenha. Pera, pera.
+
+1:11:11
+É esse espera aí. Eu acho que eu tenho isso aqui. Seria legal mostrar para vocês aqui, ó, uma coisa interessante, tá? Esse aqui é um arquivo. Deixa eu ver se eu aumento ele um pouquinho.
+
+1:11:37
+De configuração de de VoIP, né? De de servidores VoIP. Deixa eu ver se eu consigo exibir um pouco mais aqui está Oo mais aqui, ó, aqui eu estou liberando os codecs, então o lá OA lá OGSMG 729 são protocolo, são codecs de áudio.
+
+1:12:04
+H 26426-3261 são codex de vídeo aqui a parte de criptografia ó, esse daqui já tá, esse daqui é um arquivo de 2021 TLS dele já tá depreciado, tem que ser 1.2 pelo menos, tá, deixa eu ver se eu tenho a parte de aqui, ó, ó, o que? EOS, aqui, ó exatamente o que eu falei para vocês, vídeo tem o maior que EOS sinalização.
+
+1:12:33
+Tem OQOS intermediário e áudio EF, aliás, é ao contrário, OEF é o maior AF 41, depois CS 3. Então aqui tem OQOS aplicado. Então aqui eu estou dando exatamente esse contexto de marcar o label. E essa informação que eu mostrei é justamente o que vai virar o label. OPA, deixa eu pegar ele de novo aqui, que vai virar justamente o label.
+
+1:13:01
+Lá no pacote, ele pega essa informação e ele grava lá no cabeçalho do pacote, tá? Então é isso, então tá essa questão do QoS, ok, agora que a gente viu isso, eu queria passar rapidinho pra vocês. Deixa eu ver se está aqui, deixa eu ver se é esse, não, não é esse. Me dá só um segundinho que eu vou pegar.
+
+1:13:29
+Dá um segundo, deixa eu pegar aqui ele direitinho, eu já passo pra vocês, vocês não é isso que eu quero, é isso, é esse aqui, tá? Eu vou passar roupa, não é isso não, gente.
+
+1:13:57
+Então esse é esse, eu vou por esse esse vídeo, ele é curtinho, mas eu vou por ele com com legenda porque ele tá em inglês. Eu sei que não deve ser problema pra maioria de vocês, mas eu achei ele bem legal aqui, tá? Deixa eu executar, me fala se o áudio vai ser compartilhado, tá? Pessoal tá passando o áudio junto, beleza então.
+
+1:14:25
+Presta atenção nesse conceito. Depois a gente vai fazer uma correlação com o que a gente viu aí de arquitetura orientada a serviços e networks. Light, Ah, então é, é, é minha internet, tá, pessoal? Se tá aí agora, vou.
+
+1:14:53
+Researcher's that's for the Creed it with Creed in i the of the prin in a virtual osation to The New working and that creating the software the find the working market working was is in The Great it Rod where and software to direct trafic a cross the series of what does and swatches the reginal you is case forest yen was the very's The New work by sapper in the managers The New work from the date a plaing what trafic flows ó vou parar aqui só para explicar uma coisa.
+
+1:15:22
+Na parte de redes privativas, a gente fala sobre plano de controle e plano do usuário. Aqui é a separação do plano de controle, gerenciamento da rede do data planning, onde você tem o tráfego de dados. Então existe uma similaridade entre o conceito da rede privativa de telecomunicações com o sdn aqui. Então o que é plano de controle? É gerenciamento da rede.
+
+1:15:48
+O que é plano de dados, né? O data plan é onde o existe o fluxo de dados das aplicações, por exemplo. Então vamos lá, voltando aqui, esse smart controller. No nosso caso, o smart controller é o core da rede.
+
+1:16:13
+É quem vai controlar o estabelecimento de sessão, conexão ipdu, liberar o tráfego de dados, registrar o cara na rede, manter a sinalização, entender a sinalização. Então no sdn é chamado de smart controler, no nosso caso é chamado de corda rede where is of rathers and switches that for pack its of trafic virtualising in the work comes with the managers.
+
+1:16:41
+Mais uma relação entre sdn e é a rede privativa. Veja que ali tem um tráfego pra VoIP aqui do lado esquerdo, o tráfico pra banco de dados. No nosso caso, isso tem a ver com 22 questões da rede privativa, o network slicing e também a parte de iOS.
+
+1:17:10
+E também, né? A gente é quando você fala da rede normal. A gente viu lá No No começo da das nossas aulas eu falei um pouquinho sobre vlan e tudo mais. Aqui a gente abstrai o conceito pra rede privativa EE, no que seria a vlan, seria o networks light, então toda essa separação, né, os casos de uso tem uma relação entre sdn e rede privativa. Então vamos lá.
+
+1:17:37
+Thirty been stoled on it, EAT and ventul new work that Yes, the and morged resold and it's breaking are they's in, they're in, they're in the work they'es connect to the buent offsess this to scall só um outro exemplo aqui é aquilo que, se eu não me engano, o Antônio comentou o Antônio Haddad, eu acho que é a questão lá de você ter uma rede privativa dentro da infraestrutura do cliente.
+
+1:18:04
+É isso, eu posso ter 111, sdn é privativo, tá? Eu vou dar um exemplo, tá? AA minha empresa utiliza um sdn, é nosso pra algumas aplicações, pra algum pra alguns ativos. Então a gente tem lá um roteador que tem a função de sdn. Então Oo os nossos servidores, as nossas aplicações, elas estão em várias nuvens ou onpremices?
+
+1:18:34
+Com a nossa, o nosso desenvolvimento, do nosso SDNA gente agregou todos esses caras que estão espaçados, localizados em lugares diferentes, como uma única rede que a gente tem, nível de controle, alto nível de segurança, alto EE consegue ter um acesso a um gerenciamento muito eficiente. Então é como se a gente é abstraísse. A função do data center pode até em qualquer lugar, pode estar na nuvem.
+
+1:19:02
+Mas que a gente tivesse o controle total de dentro do nosso escritório, que é essa questão de você ter uma wan corporativa gerenciada por software, que é o caso das the wan, que é o que está na tela, aí vou continuar. What is software they mout fall TIP of The New or connections soccers borless to creating cost defections.
+
+1:19:27
+Microssegmentations the RG vising aske and for security so in the workskemby. Olha lá o networks lighting. Aqui no sdn ele é representado por microsegmentação, onde também tem a questão do iOS, onde eu defino qual é o tráfego, qual é o nível de priorização, qual é a largura de banda, quais são os ativos.
+
+1:19:55
+Quais são as aplicações que eu vou rodar em cada Slice, em cada fatia da minha rede aqui? No caso específico do sdn, o conceito de microsegmentação é muito interessante pra agregar segurança em vários níveis, porque aí eu eu posso ter uma única estratégia de segurança, mas aplicada a diversos níveis, cada uma com seu nível de profundidade, tá?
+
+1:20:25
+So if a hackage and to a populkfacing webserver there was trect to the surver segment of The New work this lament the hackers, the Belo de access and other segment socchus secure dadys and the works was is all so you's you're I'm workf function voctal lesation or an if they this diary over placem e essa parte do do da função virtualizada.
+
+1:20:49
+A gente pode, de certa forma, abstrair pra o que a gente viu no começo da aula sobre a arquitetura orientada a serviços do 5G, só que aqui como uma função de rede virtualizada, né? Aqui é essa questão do NFV, é pra substituir o hardware por é funções equivalentes em software. Lá, no nosso caso, é substituir.
+
+1:21:18
+A é a amarra com uma infraestrutura física para uma infraestrutura orientada a serviços, que é controlada por chamada de API. Então existe essa correlação aí que a gente pode aproximar.
+
+1:21:37
+Some beendores of using asty and to knect that soners to public proviors creating a hybird Club include Michael segmentation or Tin amxcain a belad is o the restoy and CUT do you's the all minuve the day of traffic from the in underver things segment in the World traffic and help então organis the data was the has houve formus passiff your skase to being of light and meanied of the Harris of new working but with And I at the cloud and in The New World.
+
+1:22:06
+Has softwares is to control the network that goms more Edge is your the manage and trade to the Apple whatever was cases of legendas feature. Então essa visão do SDN, ela tem muito a ver com o que a gente tá falando dessa questão da operação. Por quê? Porque tá pra traçar paralelo com arquitetura orientada a serviços iOS segurança.
+
+1:22:34
+E toda a parte de gerenciamento, que é o que o cor de fato tem que fazer bem feito. Tá aí agora, antes de de falar de algumas lições aprendidas, a gente tem um tempinho de ver 11 questão interessantíssima aqui, que é analisar uma situação bem bacana, tá? Eu tô trazendo aqui pra tela uma aplicação de telefonia IP, isso é uma.
+
+1:23:01
+Solução, uma tecnologia que eu peguei a partir do VoIP, desenvolver uma solução de criptografia em múltiplas camadas, tá? Dessa eu tenho inclusive a propriedade intelectual, tá? Propriedade do como se fosse a patente, tá? E aí, qual que é a ideia? Aqui? Vamos falar um pouquinho sobre o que é sinalização e o que é voz.
+
+1:23:29
+Alguém falou No No numa das aulas anteriores? Eu não lembro se foi o Antônio que comentou isso, o Carlos não lembro exatamente que quando você estabelece a sessão EE, você abre o canal de dados, aquela sinalização inicial realmente é isso mesmo. Então eu vou dar um exemplo aqui antes de de fazer o exemplo da chamada mesmo, eu quero mostrar um negócio pra vocês aqui, tá?
+
+1:23:56
+Eu fiz uma captura de uma chamada de voz sobre IP aqui criptografado, tá? Então, Como Ele É criptografado ponta a ponta, ele estabeleceu essa conexão utilizando OTLS. É uma conexão TCPEOTLS over TCP. Aqui no TLS over TCP ele conseguiu me né abrindo esse pacote, tá? Eu tenho a aplicação.
+
+1:24:26
+É o protocolo da aplicação, tá? Que é o protocolo CIP session iniciation protocol. O CIP é o cara que registra o ramal ou Oo número telefônico voit na rede. É ele que permite que eu envie o dtmf, ou seja, que eu digite e mande Oo os dígitos pra rede. É ele que faz tocar do outro lado.
+
+1:24:54
+E é ele que permite que a chamada seja atendida, tá? Então veja, mesmo que eu tenha lá um TLS dentro dele, eu consigo entender quem é o protocolo que está permitindo essa sessão. Na verdade, veja, não é uma conexão VoIP, é sessão, veja que é session Edition, não é conection endistiation certo? Então estou usando uma sessão.
+
+1:25:23
+A versão do TLS é 1.2, o que é bom, e ele tem uma aplicação encriptada que vem logo depois. Então aqui, ó, tudo que tá aqui no TLS é a parte de autenticação da chamada, só que aí dentro lá, depois que atende aqui é o momento em que atende. É o último pacote de atendimento aqui, a partir deste momento aqui.
+
+1:25:52
+Veja, olha só que interessante, nesse momento aqui, ó, estou usando a porta 5061, que é a porta do protocolo CIP 5060-5061, tá? A partir daqui, veja que já desaparece a porta 5061, ou seja, atendeu nesse momento, começou AA sessão de voz, tá?
+
+1:26:16
+Aí eu vou decodificar esse protocolo aqui, porque o UDP não é um protocolo, é uma família. Eu vou decodificar o UDP no protocolo RTP, tá, real time protocolo, e olha que coisa legal, aí virou uma chamada RTP real time, o protocolo. Vamos dar uma olhada no RTP. Vou ver o que ele traz pra mim de informação, ó, ele viu que tem um codec lá.
+
+1:26:46
+Que é OG 711, gente. O codec g 711 é o mesmo utilizado na telefonia normal, não é só VoIP, ele é um codec universal, tá? Então eu tenho essa informação, porém, olha que legal, apesar dele me falar qual é o codec, o pailode está criptografado. Ah, mas eu quero ver essa aqui, eu quero entender essa criptografia, vamos fazer isso.
+
+1:27:15
+Vou pegar esse RTPE, vou analisar esse stream, então eu vou pegar a ida, vou pegar a volta, eu vou analisar essa análise, tá aqui quando o pacote atinge a largura de banda de aproximadamente 80 k, que é o que OG 711 consome, aí eu consigo pegar um pacote desse e ele expande pra eu dar um play streams. Olha que legal isso aqui.
+
+1:27:45
+Tá, então eu tenho 2 canais, eu tenho a né, AA ida e a volta, né? OREOR como se fosse os 2 canais do meu microfone, presta atenção, deixa eu ver se se tá só um aqui, espera aí, é, olha só que interessante, eu vou voltar aqui, deixa eu parar. Prestem atenção que no começo da execução isso está criptografado, a gente não vai conseguir ouvir o grampo.
+
+1:28:11
+Mas isso que eu fiz é o grampo, tá pessoal, só que tá criptografado, não vai dar pra ouvir. Veja que aqui no começo tá só o azulzinho e a partir de um certo ponto entra esse Pretinho aqui, então esta diferença aqui, ó de tempo, é o delay entre a ida e a volta. Ah, mas tá tá alto, tá? Mas a minha rede não é a mais indicada pra isso. Eu tenho 11, eu tenho muito tráfego aqui, então no momento que eu capturei não tava legal, tá?
+
+1:28:39
+Então quando eu vou decodificar, eu vou conseguir ouvir AA claro chiado da ida e na hora que vocês ouvirem um pouco mais alto é a hora que os 2 canais estão juntos, que é a ida e a volta, então eu vou executar aqui. Olha só, beleza. E aí, parou. Então isso seria um processo de um grampo, mas isso que eu fiz aqui.
+
+1:29:09
+É um exemplo que eu já tinha capturado previamente. Deixa eu trazer a aplicação de volta aqui e eu vou fazer uma chamada de um outro ramal que está no meu celular, para ela, para ele, e vou começar uma captura. Aliás, deixa eu começar a captura problema e eu vou capturar também. OPA, pera aí que eu coloquei aqui.
+
+1:29:38
+Deixa eu pegar o WeChat aqui de novo e eu vou fazer uma chamada pra Sky, tá, então tá aqui, vou ligar Pra Ele, ele deu 1018, deixa eu ver se eu é, deixa eu ver se o outro aplicação tá aqui, ok? Então eu vou ligar pro você. Quer ligar pro 1018? Ok, ó.
+
+1:30:07
+Ele tá me dando. Se eu quero atender só com áudio ou com vídeo, vou tentar atender com vídeo, tá? Vamos ver se ele vai abrir esse canalzinho, esse canal b, se ele vai abrir pra mim ou não. Deixa eu ver, deixa eu ver aqui, OK, mas tô capturando. Tô vendo que tem um estoo aqui, ó.
+
+1:30:32
+É um servidor necessário pra poder fazer essa comunicação. E tô capturando e tô capturando, então vou parar aqui, ok? Muito bem, aí parei a captura, ok? Aí eu vou pegar aqui o destination, deixa eu pegar os pacotes aqui que foram pro servidor.
+
+1:31:04
+Deixa eu pegar aqui IP ponto ADDR igual 16 7.9 9.15 7.17 5. Ah, beleza. Então essa aqui foi a comunicação que eu estabeleci.
+
+1:31:28
+Esse 192 é o meu meia máquina local e esse 167 é o meu servidor, tá? Então veja, ó, aqui é onde eu estabeleci a chamada. Aqui vai aparecer, né? Oo protocolo, ó CIP. E a partir daqui foi a chamada. E aí novamente eu vou decodifico esse cara.
+
+1:31:56
+Essa é essa é a chamada que eu acabei de fazer, tá? Estou capturando ela, então, ok, eu peguei RTPC, Ah, não vou ter que decodificar. Tem umas outras sinalizações aqui, deixa eu decodificar RTP, ver se ele vai pegar RTP. Era isso que eu queria.
+
+1:32:24
+Então aqui eu posso e aí ele pegou ORTP streaming, então aqui está chamada, então vamos analisar, passaria 80 AK, eu posso dar um play streams, deixa ele montar, deixa eu ver se ele vai pegar, aí pegou, e aí eu posso exibir, ó, a chamada aqui, ó.
+
+1:33:00
+Pessoal, primeira coisa, deu para entender porque que a criptografia é importante? Porque aquilo lá é uma chamada. É quase impossível de evitar que você é. Tenha uma captura de um pacote, pacote, tá aí, tá na rede, tá no ar, tá num Monte de lugar. Eu tenho que impedir que a pessoa tenha acesso ao conteúdo, tá?
+
+1:33:27
+Então pra fazer isso, tá? Existem alguns, é alguns protocolos de segurança e que garantem a aplicação dessa criptografia. O desenvolvimento que a gente fez aqui, que eu fiz com a minha outra empresa, trabalha na base do RTP. O RTP tem uma avaliação segura chamada srtp, que é o securi real time protocolo.
+
+1:33:57
+Só que ORTP ele, ele permite que essa criptografia seja aplicada com algoritmos de chave simétrica. Ou seja, embora a criptografia seja eficiente, É Ela exige que a mesma chave que codifica decodifique a de criptografia a informação do outro lado. Beleza. Entendido isso, a gente viu o seguinte, cara.
+
+1:34:26
+É pouco. E aí a gente falou, beleza, vamos fazer autenticação por TLS, porque aí OTLS, além de de de criar a sessão pra cada ramal, vamos chamar assim, ele protege a chave do RTP. Ok, mas como é que eu protejo esse TLS 1.2 aqui? Aí é que a gente fez o nosso diferencial. Nós criamos mais 2 camadas criptográficas.
+
+1:34:55
+Diferentes e a gente consegue encapsular essas 2 camadas. É alguém comentou, não sei se foi o Antônio que falou sobre a proteção igual a uma cebola com várias camadas. A gente fez a mesma coisa aqui. Só que ao invés de usar o firewall da da solução que a gente tem, né? Roda roda plataforma Linux? Lá é a gente resolveu fazer isso diretamente na aplicação.
+
+1:35:22
+Porque se você cria uma camada, uma cebola criptográfica, é muito improvável que alguém consiga quebrar a segurança. Pô, posso ser vítima de um ataque DDoS parar o meu serviço? Posso? A gente até se preocupou com isso. EEE faz alguma proteção, mas é, é uma forma que a gente tem. Deixa eu restartar aqui uma sessão, eu quero mostrar um negócio pra vocês, deixa só eu logar aqui, não é isso?
+
+1:35:53
+Deixa eu abrir aqui 11 arquivo deixa eu compartilhar só um segundinho que eu preciso abrir um arquivo aqui? Como ele tem formação sensível, né?
+
+1:36:23
+Achei que ele abre. Deixa eu ver se eu consigo logar. Aí eu já compartilho de novo, beleza? É isso mesmo que eu queria mostrar. Ser bem legal de de ver isso aqui agora. Bom.
+
+1:36:54
+Gente, eu mudar as cores, quando eu mostrar para você, já vai estar um pouco melhor de visualizar, deixa eu compartilhar de novo essa parte da criptografia é a cebola que eu mostrei para vocês, mas aí a gente desenvolveu, a gente trabalhou em cima de uma solução, o pensor se de ips e firewall dinâmico.
+
+1:37:33
+A gente agregou alguns recursos, quase que de é. É uma inteligência artificial preditiva. Ela não é generativa, tá? Pra poder analisar o comportamento da borda dos nossos servidores pra poder criar automaticamente regras de firewall. Então quando eu venho aqui, ó, por exemplo, firewall do Linux, tá? Então quando eu listo, olha, que interessante.
+
+1:38:01
+Ele vai mostrar um Monte de regras aí, tá? Deixa ele abrir um pouco mais. Tá vendo que ele tá mostrando algumas regras aí? Eu não criei nenhuma dessas regras. O firewall analisou o comportamento em torno da rede e criou essas regras de bloqueio contra todos esses endereços, Ipês. Então, quando a gente fala de uma gestão.
+
+1:38:30
+Mais integrada da segurança. Isso poderia ser numa rede privativa que tivesse por trás de um firewall, poderia ter 1111 firewall que tivesse esse comportamento. Então esse foi um trabalho que a gente fez aqui. Então bloqueou todos esses caras, tá? Por quê? Porque você pôs um servidor na internet, você vai sofrer a TAP, tá? Então eu sei que todos esses endereços ipes aqui tentaram me atacar de alguma forma. Olha, ele tentou dar Ping.
+
+1:38:59
+Ele tentou analisar a porta, ó lá. Então tudo isso daqui é, são questões que a gente tem que analisar quando vai fazer a proteção. Aqui é um exemplo do é o mesmo servidor e me gerou essa chamada que eu refiz aí o grampo vamos chamar assim, né? Então, quando a gente tem essa preocupação e quando a gente volta, por exemplo, para um core 5G.
+
+1:39:28
+E a gente vai falar de de segurança, por exemplo, nessa questão da criptografia, ó separação de plano de controle de usuário é importante pra segurança proteger a camada de API. É importante pra segurança oferecer tonelamento, porque no tonelamento eu posso aplicar a segurança especificamente ponta a ponta me garante o nível de de de segurança maior.
+
+1:39:59
+E essa nossa solução aqui da empresa que eu mostrei para vocês, agora, essa que você é o servidor, ele tem um outro elemento interessante, tá? É quando a gente inicia as chamadas. É na verdade, quando a gente registra os ramais no ambiente. Cada vez que eu inicio uma chamada, ele gera uma chave criptográfica para proteger aquela chamada.
+
+1:40:26
+Então é, eu. Eu poderia ter o ter o risco de alguém capturar a chamada, pegar aquela chave e fazer um spoofing e tentar. É, é clonar a minha, a minha, a minha conexão, a minha sessão aberta e se passar por mim. Então, o que a gente pensou em termos de segurança foi gerar chaves a cada chamada que são enviadas o servidor para os terminais.
+
+1:40:54
+Porque no momento em que isso estabelece, aí existe uma comunicação segura, fim a fim para aquela chamada e no final da chamada chave é descartada, tá? Então esse é o contexto de sinalização segura com TLS proteção multicamadas, com criptografia. E isso é vem da nossa percepção.
+
+1:41:17
+Da da necessidade de segurança em redes de telefonia. Pô, a gente tinha uma rede fixa que era extremamente insegura, permitia que você fizesse grampo sem grandes dificuldades técnicas. Aí vieram as redes celulares. No começo era bem inseguro, até o 3G bem inseguro. Melhorou bastante no 4G. Foi quando a gente começou a desenvolver. É esse projeto que depois se tornou até a empresa, quando entrou 5G.
+
+1:41:44
+Muito da parte de criptografia estava resolvida, mas qual que é? OA questão que hoje pega pra uma é pra uma comunicação um pouco mais isolada numa rede 5G. Em tese, qualquer pessoa pode fazer uma ligação pra mim, qualquer pessoa pode fazer uma ligação pra mim. Então eu não consigo impedir que uma pessoa se comunique com a outra. Mas se eu quiser criar um silo?
+
+1:42:14
+Ali eu quero criar uma rede em que somente aquelas pessoas estritamente autorizadas e parte daquele core possam se falar ou se comunicar ou trocar dados. Foi isso que a gente pensou aqui. Então é essa nossa solução. Ela não é conectada à rede da operadora, ela é isolada e a gente cria os chamados grupos de segurança, tá? Que é o conceito que a gente traz da rede privativa e com o networks licin.
+
+1:42:43
+Então veja, a gente tá traçando vários parâmetros equivalentes aqui, tá? Então quando a gente fala dessa questão da evolução do cor das redes, de uma arquitetura mais dependente de hardware pra uma arquitetura mais baseada em serviços, é porque os serviços me me permitem essa granularidade, tá? Isso é super importante. Deixa eu só pedir uma coisa aqui que me falaram antes.
+
+1:43:12
+E eu acho que não passaram aqui, que é o link para pesquisa de satisfação para hoje. Ah, só um minuto. AI, deixa eu ver se ela me manda aqui, deixa eu ver, deixa eu ver.
+
+1:43:52
+Eu tenho do, do, do, da apresentação, mas se ela me mandar o link, eu passo pra vocês, tá? Então vamos lá. Então, gente, esses conceitos que eu quis passar pra vocês, eu dei um foco na segurança. Por quê? Porque o 5G é mais seguro que as outras redes, é fato. Tá uma coisa que que é importante, que a gente vai falar um pouco mais à frente, a importância.
+
+1:44:17
+Do 5G já já nativamente ter suporte ao ipv 6. E quando a gente fala de rede privativa, a gente está falando aí de IoT outi. Vocês conhecem o termo ou ti sabem o que é o alguém não sabe outi é tecnologia operacional.
+
+1:44:45
+Por exemplo, quando você fala de TI, eu estou falando de rede de dados e tudo mais. Quando eu estou falando de UTI, eu estou falando de tecnologias usadas nas indústrias, nas fábricas. Então, quando eu falo, por exemplo, de IUT, internet das coisas, imagina que eu tenho uma montadora, sei lá, Volkswagen? Ela tem, é.
+
+1:45:08
+500 máquinas lá no seu, na sua planta industrial, sendo que dessas 100 são robôs, mas eu tenho 10000 sensores. Esses sensores são os i olts os robôs e as esteiras mais são os olts, tá? EE tem outros elementos que que que complementam e eu consigo ter uma conectividade com a rede de dados, tá hoje.
+
+1:45:32
+Quando a gente fala de de de uma rede privativa, por exemplo, de 5G falando TC, é ipv 6, eu tô falando que estas é é instalações, fábrica, infraestrutura crítica, como água, esgoto, saneamento, óleo, gás, energia elétrica, hospitais, portos e aeroportos. Todos eles.
+
+1:46:01
+É o mais rapidamente possível. Devem ser todos migrados pra serem compatíveis com o 5G já com o ipv 6. Por que que isso é importante? Porque fazendo isso a gente vai ter é serviços críticos funcionando com que há de mais moderno numa arquitetura orientada a serviços, com o uso do protocolo da versão mais segura, que é o ipv 6, em que.
+
+1:46:29
+Todo e qualquer dispositivo pode ter um IP público, mas eu posso pegar esse IP público e criar os meus silos dentro das chamadas redes privativas, tá? Então isso é, é, é, é, é sempre importante. OOO Antônio falou dos atuadores, sim, sensores e atuadores, né? O sensor, ele te manda um dado atuador, é o que faz o robô mexer, né? Sensores e atuadores, sim.
+
+1:46:57
+Eu sou engenheiro eletrônico, então eu já fiz projeto de máquina aí com atuador pra caramba nessa vida, gosto muito dessa brincadeira também, tá? Então é, é, é. É algo importantíssimo nos dias de hoje que as indústrias, os ramos industriais críticos, né, os ICSS, né? As infraestruturas críticas, sistemas de infraestruturas críticas rapidamente estejam é.
+
+1:47:25
+Compatíveis com o 5. GE hoje, na minha área de cibersegurança, o os temas mais comentados como sendo os focos de ataques cibernéticos hoje são, outi, IoT e empresas que estão migrando muito rapidamente para inteligência artificial são os principais focos de ataque. Tá, por quê? Porque se eu paro um aeroporto?
+
+1:47:55
+Eu posso parar potencialmente um país inteiro em termos aéreos. Se eu paro um Porto, eu posso mexer com o comércio entre países. Se eu paro uma instalação de energia, como aconteceu lá na guerra da Ucrânia, ou parou energia, parou tudo, né? Outro elemento importante de infraestrutura crítica é operadora de telecomunicações. Imagina se eu paro o core de uma operadora de telecom?
+
+1:48:26
+Por isso que é importante pensar na segurança quando se fala desse tipo de é de rede, de assunto, de tema, tá, e eu queria trazer essa visão para vocês porque é, primeiro é é aquela que eu consigo contribuir mais e segundo, é o que nós estamos vendo, né, que a arquitetura é baseada em serviço. O serviço tem que ser protegido. Então o que que eu peço para que vocês façam?
+
+1:48:51
+Eu peço para que vocês analisem esse termo que eu coloquei aqui, né, que é o easm, né? Coloquei aqui no chat, é quando puderem revejam esse conteúdo, tá? Tem 11 link, eu acho que eu tenho esse link, tá? Para baixar as aulas, me dá um segundo, deixa eu descompartilhar que eu acho que eu tenho, deixa eu ver se ele tá aqui, deixa eu ver aqui.
+
+1:49:21
+Professor, uma dúvida, o senhor estava dizendo que hoje, na tua área, um dos grandes riscos são as presos? Estão fazendo as transições muito rápida, sem tratar dados, sem olhar a base, só fazer uma transição, é neste caso, seria muito similar ano passado, quando as empresas estavam trocando as operações de telefonia delas para as avaias e trocando inserindo cloud em blackbery pra Nextel e nesse momento apresentava as vulnerabilidades então, digamos assim.
+
+1:49:51
+Hoje, basicamente, muitas empresas têm um VoIP com a vaia da vida e aí não tem proprietário a hora que ele for migrar. Nessa troca dos avaia por uma rede privativa, a gente tem que ficar com cuidado dobrado, porque pode vir alguma coisa, algum kinder ovo no meio. Sabe? Quando você levanta o tapete e bate, ele não sai sempre uma poeira sai. Então você tá levantando o tapete, literalmente. Entendi, fala o Clodoaldo.
+
+1:50:20
+Professor, é só é só para colaborar que é o seguinte, esse arquivo que você, esse link que você colocou, tá também pedindo e-mail. O que eu tenho usado para entrar no seu material é aquele link que você coloca sempre no início das suas Apresentações em PDFE. Esse aluno não vive problema nenhum a hora que você bloqueou, porque lá não tem as aulas, tem as gravações.
+
+1:50:48
+Tentou a gravação da aula? Não, só tem OPT, é não. Então o pessoal me falou que que tá fazendo a transição essa semana, então eu vou pedir só pra vocês terem um pouquinho mais de paciência. Eu sei que já demorou pra isso resolver, mas mas vamos lá, vou pedir só essa compreensão aí de mais um essa semana pra resolver, porque aí quando vocês forem lá pro pro pra equipe do Teams, é as aulas já vão, tá todas lá.
+
+1:51:17
+Mas é isso, precisaria ser colocado rápido pra vocês, porque a gente tá passando, já passou da metade do conteúdo, né? É importante que vocês tenham isso, pessoal, beleza, estamos chegando no final, né? De lições apreendidas aqui pra gente poder é terminar esse é esse conteúdo, deixa eu ver o que que vem pela frente aqui. A gente tá na aula 7.
+
+1:51:47
+Na aula 7, ela tem um tema que eu acho que ele é um pouquinho redundante com os parâmetros de core que a gente tá vendo hoje. Ele fala só das funções, é de rede no 4G, EE interface com 5G. Eu vou tentar trazer pra próxima aula também um cara que é o mininete. O mininete é uma solução? É uma.
+
+1:52:16
+É um ambiente prático que permite que eu crie uma rede SDNA partir de uma única máquina virtual, tá? Eu vou ver se eu consigo trazer isso pra nossa próxima aula, porque se vier, deixa eu ver um negócio aqui. Ah, tá aqui. Esse aqui é o da pesquisa de satisfação. Me mandaram aqui, tá? Deixa eu pegar aqui.
+
+1:52:45
+Então depois vocês, por favor responda, deixa eu colocar aqui a pesquisa de satisfação, tá beijando, se abre pra vocês, mas eu acho que vai abrir, tá? Deixa eu só dar um, ok, beleza. Então a gente falou nessa aula de hoje, foram 4G é o que tá do lado esquerdo, epc, toda aquela parte dos elementos que compõem ele.
+
+1:53:11
+Falando de parâmetros, é relevantes, né? De identificação, IMSI, Guti page EMIE, eu acho que a gente deu bastante foco nessa questão da da arquitetura baseada em serviços, que é o contexto principal do 5 GE, que diferencia ele do epc, porque ele permite que eu tenha uma escalabilidade, maior uso de APIs, consumo como serviço e é uma definição interessante sobre parâmetros críticos de operação com um foco.
+
+1:53:41
+Bastante grande é em iOS e segurança sobre do ponto de vista de é isolamento das redes privativas, o uso de criptografia, autenticação segura e tudo isso pode ser é, a gente pode transferir isso para proteção daquela camada de serviços do 5G ou em qualquer situação. Eu estou citando aqui o 5G, mas poderia ser uma rede de dados, tá?
+
+1:54:12
+Então esse foi o nosso conteúdo de hoje. A gente tem mais alguns minutos, se alguém quiser abrir aí pra pra pergunta ou fazer algum comentário, a gente tem aí 10 minutinhos ainda, 11 pergunta, e eu tenho uma pergunta pra vocês, é, tem aqui da turma hoje está envolvido em projeto de implantação de é rede privativa em ambiente, é de cliente.
+
+1:54:41
+E por que que eu tô perguntando isso essa semana? Semana passada eu eu tive que fazer algumas coisas em São Paulo e eu não tô muito assim. Eu adoro dirigir, mas eu ultimamente é, eu tô usando mais trem, metrô do que carro, porque os lugares que eu tenho aqui são bem atendidos por transporte público. Isso pra mim tá sendo bom. Então eu tive que pegar as diversas linhas de trem metrô da grande São Paulo, né? Trem aqui no ABC.
+
+1:55:09
+E lá em São Paulo, aí eu peguei é linha verde, peguei linha azul, peguei linha amarela e peguei linha lilás, tá? Quando você tá numa, é num modal de transporte público que ele é de superfície com trem, por exemplo, aqui no ABC, beleza, você tem o sinal da rede pública lá e tudo certo. E quando você entra no metrô?
+
+1:55:36
+Você tem a questão de boa parte deles ser subterrâneo. Quem mora em São Paulo sabe mais quem for de outra cidade, de repente vem um pouco pra São Paulo, tá? Aí é. Eu tava analisando o seguinte, a linha verde, que é a linha da da Avenida Paulista. Boa parte do trecho tem cobertura de internet mesmo na parte que fica subterrâneo, tá a linha azul, que é a mais antiga.
+
+1:56:04
+Também tem uma cobertura relativamente boa, tá? Agora, quando você fala de linhas mais recentes, como é o caso aí da linha lilás e da linha amarela, primeiro, elas são mais profundas do que as outras linhas, tá? Então, quando você pensa Na Na profundidade delas em relação à rua, elas são mais profundas. Você vai na linha lilás.
+
+1:56:32
+Ela é praticamente Oo, telefone mudo, cara, você não consegue pegar sinal em quase lugar nenhum, a linha amarela em alguns poucos trechos, normalmente a linha amarela funciona, o sinal de internet é aonde ela cruza com as outras linhas, onde é só linha amarela. O sinal de internet é péssimo também. Tá, e por que que eu tô falando isso? Porque eu acho, eu particularmente eu acho um absurdo uma cidade igual São Paulo.
+
+1:57:03
+Não ter o sinal de internet minimamente decente numa linha de metrô. Isso seria um caso de uma redezinha privativa do metrô ou dos trens ou de cada um deles, né? Porque você tem concessões. Você tem algumas empresas que atuam no mercado, né? Você tem linha 8 e 9, é uma linha 58 e 9 é uma concessão, uma parte que é do metrô, uma parte que é da da CPTM, então você tem provedores diferentes do serviço.
+
+1:57:28
+Mas pra mim não pode faltar internet, é, não pode faltar internet numa linha de metrô, numa cidade igual São Paulo ou Rio de Janeiro, onde você tem metrô, sei lá, tem umas coisas que que não me cabe ainda, tá? Pode falar, professor, é, não tem como quitar o processo de implantação. Mas no ano passado era a Nine lá e tinha saído com AIHS com a vivo. Eles vinham fazer em sistema das.
+
+1:57:59
+Eu acho que na já já tava funcionando, eu não acompanhei, mas eu lembro do edital na época que eu tava escraleando eles e eu lembro que quem levou foi AHS com a vivo e na época a tecnologia descrita no edital era fazer em das de tanto, tanto, tanto, tanto a metragem, entendeu? Em alguns eu já até vi os repetidores instalados, se o senhor olhar ali, tá, mas ele não tá aceso, né? Então eu já vi os repetidores também e isso me deixa mais p da vida ainda. Pessoal meu tá lá, mas não tá, entendeu?
+
+1:58:27
+O importante é você usar, se puxar OLED no zoom, não está com OLED de sinal, recebendo entendi depois, olha, vai do lado dele, puxa, no LED você vai ver que os LED não estão trocando. Não sei se é só instalou ali e não puxou cabeamento pra cima, enfim, mas tem alguma coisa ali? Não, não, ainda não está funcionando, então vai se.
+
+1:58:53
+Vamos lá, OOOO, metrô trafega, se eu não me engano, tem alguma coisa em torno de 4000000 de pessoas por dia. O tá para você ignorar uma quantidade dessas de usuário que precisa ter conectividade, precisa ter. Então tem coisas que já não me cabem +2025. A gente não ter isso no metrô tem que ter, sabe? EE tem que ser minimamente uma qualidade razoável, porque.
+
+1:59:21
+Já tem tecnologia pra isso, eles têm capacidade de investimento, as operadoras conseguiriam é implantar. Então são umas coisas assim que você fala, meu, não é possível que não funcione bem, né? Mas isso assim é, é a realidade. Mas quando a gente fala assim, tem tecnologia bem definida, é, tem quem possa fazer a gestão, mas aí você tem a questão do dos contratos, né, da uma questão de contrato no final das contas, infelizmente.
+
+1:59:51
+Pessoal, mais algum tema? Aí fui eu que levantei esse caos aí do metrô, alguém que comentar mais alguma coisa. Estamos chegando no final da aula, ô professor, eu joguei o carino. Que isso aqui para o pessoal conhecer o pessoal, fazer algumas penetrações aí, testar em casa numa VMO cari, o cari é legal.
+
+2:00:20
+Oi, pode falar, desculpa aí cortou, não, eu tô dizendo. Você tem uma ferramenta ali aberta, já validada pelo especialista, a gente dá um problema na tua mão, é menor sim, pô, até pode ser o interessante, você me deu uma boa ideia, acho que vou trazer 11 negócio bacana usando o kalel Linux pra pra aula de quinta-feira essa semana, acho que a gente tem aula na quinta e na sexta é pra gente poder poder trabalhar. Então já você me deu uma ideia, eu vou só transformar isso em em conteúdo, beleza?
+
+2:00:49
+Dia 20 eles lançaram a atualização, daí já tem um novo eu ainda é eu ainda não não baixei a atualização, os materiais e as atividades. Deixa eu por aqui um link para vocês pegarem pelo menos os materiais aqui e já pode ser um pouco melhor. Deixa eu ver se eu tô na rede certa, eu tô, deixa eu ver até que a aula que tá nesse conteúdo aqui nos arquivos.
+
+2:01:19
+Professora, aquele firewall que você estava mostrando, ele tem alguma chine learning ali por trás? Algum modelo ou vocês fizerem algoritmo? Fizemos inicialmente algoritmo, estamos tentando usar o machine learning agora a Microsoft lançou esse mês ela abriu o machine learning de Red time delas. Se o senhor quiser, eu passo o link aqui, tá open source, só repositar.
+
+2:01:41
+Pode passar no chat que depois ele fica, né? Fica pra gente, ó. Passei o link aí por Eriberto, que pediu o link da dos materiais, tá? E tem os materiais de apoio, tem até deixa eu ver de redes privativas tem instalador, deixa eu ver que Linux que eu coloquei lá ó pus o packt tracer eu pus, deixa eu ver o que mais o Ubuntu virtual box ver m where?
+
+2:02:10
+Foi bastante coisa. Se puser alguns arquivos no pack tracer e aí OOOO Gabriel, acho que vai colocar a questão aí do cale aí estou colocando da Microsoft, que dá para o pessoal fazer isso, buscar vulnerabilidade dentro da LLM boa. Isso é importante que é, é, é, é uma das preocupações.
+
+2:02:33
+Que você tem a segurança AIA para cibersegurança, mas você também tem que aplicar cibersegurança para proteger AIA, né? Tem muito ataque de contexto que tá acontecendo agora, não de contexto. Injeção de de prompt malicioso, os caras tocam a conta de isso, você vai a falência. Exato, tem até um tem até um projeto já validado do oasp, né, que é aquele grupo.
+
+2:02:59
+Aquele projeto que que analisa as vulnerabilidades, que é o top 10 LLM é vulnerabilities, ou seja, já identificaram quais são as 10 principais vulnerabilidades neste momento? Em é tecnologias de de IA e já tem até as mitigações e tal. É bem legal, pode falar, Francis é professor, é boa noite a todos, é OPA, não sei se vocês estão me ouvindo bem, oi, tô te ouvindo.
+
+2:03:29
+Sim, então é. Nós falamos bastante aí sobre os protocolos em si, falamos aí sobre as APIs, né? 11 questão aí das capturas aí também. Interessante é essa questão do do funcionário Júnior, como o Antônio mencionou também, de que é a fale humana ali e nos diversos protocolos de rede, falamos sobre rede de computadores e acredito em tudo isso, na segurança e tudo mais. Envolve redes privativas, é.
+
+2:03:56
+Tem esse sistema também e asma, né? Formou aí é, é, é um conceito, é uma tecnologia, vamos chamar assim isso, isso e essa questão do Faro produtivo aí é, eu queria saber assim, se no geral é, eu já percebi muitas empresas aí No No Brasil que elas funcionam e com uma estrutura, digamos assim, bastante fraca. É empresas, principalmente porte média e menores.
+
+2:04:25
+É isso, seria esse termo dentro da segurança aí que é dito, como a segurança aí no design, nesse tempo que vai designer, porque eu acho que isso toca muito na infraestrutura da empresa em todos os sentidos, quanto ela software, quanto na questão da das mais avançadas de virtualização e tudo mais. Seria esse um ponto crítico? Sim. Vamos lá, é eu. Eu tenho alguns números relativamente recentes.
+
+2:04:53
+Cerca de 15% das empresas médias e grandes tem um bom nível de segurança. Tem empresa média, empresa média que eu falo não é nem de faturamento. Aqui Na Na cesiber a gente já conversou com uma empresa de energia. Empresa operadora de energia, né? Concessionária de energia, que fatura 1.5 bilhões por ano.
+
+2:05:22
+Que não tinha área de segurança, não tinha área de segurança, só tinha área de ti, tá? Então veja, é como mesmo uma empresa bilionária, ela é frágil. E por que que essa empresa conversou com a gente? Porque ela sofreu um ataque que afetou o sistema de atendimento telefônico dele. Sabe quando você liga para a operadora, você liga para fazer um agendamento para fazer um, pegar uma informação sobre a sua conta de luz e tal.
+
+2:05:51
+Eles tiveram problema e ficaram 8 dias sem o sistema, e aí eles eu falo o seguinte, aí a água bateu no bumbum, eles falava meu, e se acontecesse na rede é industrial, né? Na rede crítica, aí vieram conversar com a gente, fatura um bilhão e meio, a gente conversou com uma outra empresa de e Commerce, tá? Fatura 500000000 por ano, os caras não têm. A preocupação é, não tinham, né? Agora começaram a ter de desenvolver o software seguro by design by the fool.
+
+2:06:21
+A gente viu com eles o seguinte, eles queriam que que a gente desse um treinamento sobre resposta, incidentes, uma coisa mais ligada à Infra. Quando a gente viu a natureza da empresa, a gente falou, mas como é que vocês desenvolvem software? Quando a gente entende, a gente fala não, o problema de vocês tem que dar uns 2 passos pra trás, porque mesmo se a gente proteger a infraestrutura, treinamento for voltado pra resposta a incidentes na camada de software, vai continuar acontecendo.
+
+2:06:49
+E aí eles entenderam e começaram o trabalho com capacitação em software seguro, em ter a segura de software. Eles não tinham nem ferramenta para escanear o código e ver as vulnerabilidades. Empresa que fatura 500000000 por ano é é isso. O tamanho do quando eu falo dos dos números, é para que se tenha uma dimensão do tamanho do problema.
+
+2:07:18
+Então a gente tem que pensar quando você pensa em estratégia de segurança, seja em redes de dados, aplicação web, cloud, rede privativa ou mesmo a rede pública de telecomunicações, o pensamento tem que ser muito +360°, tá? Você tem que olhar pro pro road map, vamos chamar assim, é de segurança e proteger gestão de identidade e acesso, operações técnicas, governança.
+
+2:07:48
+Operações de segurança, aplicações, você tem que proteger. Infraestrutura é local, infraestrutura em nuvem, infraestrutura híbrida. Você tem que mexer em política de segurança, controles de segurança, tá? E quando você de repente vai montar o teu time de segurança e você não tem uma liderança?
+
+2:08:11
+Bem definida, em que você de repente tem uma equipe que tecnicamente é até boa, mas ela não tem a maturidade necessária. Você já começa errado, tá? É, você não pode pensar em segurança como sendo apenas um gasto, né? Um custo. Ele pode ser um investimento mais importante para manter a continuidade dos seus negócios, que são baseados em informação. Hoje é isso.
+
+2:08:42
+De forma bem simples, é isso, tá? A gente é conversa com muita empresa todo dia, porque a gente consegue ter uma boa penetração em grandes empresas. E quando a gente passa, dá essa real pro cara, fala, meu, você tá batalhando de repente por 20030 1000 a mais ou a menos num budget, no orçamento, eu falo, gente, se você perder o core da tua empresa.
+
+2:09:07
+Que é informação, que é um banco de dados. Quanto vai custar isso pra você? É onde normalmente os caras tomam chopp de realidade e acaba entendendo que puta não pode ser uma empresa que fatura 500000000, não pode brigar por 20000 numa capacitação de cibersegurança, sabe? Isso está sendo um trabalho de educar o mercado. Pode falar, Francis, é sim, professor, então é exatamente por isso, é, eu já tive uma experiência.
+
+2:09:36
+Ela tinha bastante essa, essas, essas. Eu falo como uma falha muito grave, desprotegidos e de um ambiente enorme. E a empresa era grande é seria o número de dispositivos conectados, quanto em faturamento. Então assim, a gente vê muito essa questão aí, dessa falha, dessa.
+
+2:10:08
+Entre software e hardware, né? As redes físicas e os softwares utilizados. Então são casas, coisas. E quando era a verdade do mesmo jeito, sim, olha só, é essa essa empresa que eu falei hoje, antes da aula de vocês, que é da plataforma, os caras me falaram que tem código deles que tá rodando, que não é inspecionada há 10 anos.
+
+2:10:35
+Gente, o código web de 10 anos é um queijo suíço. Na hora que ele me falou isso, eu falei, tá bom, beleza, entendi, entendi, processei aqui. Aí falei, deixa eu desenhar o que vocês precisam? E eu respondo até amanhã, porque tem bastante coisa pra ser feita aí, porque não é só um treinamento, nós vamos ter que mudar a mentalidade, é uma empresa pequena, mas que tem clientes grandes.
+
+2:10:59
+Então eu falo, meu, pra atender um cliente do nível que vocês é, atendem, vocês vão ter que pensar com uma empresa grande, mesmo sendo pequena, porque senão vocês, imagina, vai vazar a base do teu, do teu cliente e você vai se ferrar com ele, fala Antônio professor. Mas pensa bem, se coloca no lugar do administrador, o cara entra lá, tem tem só sem APP rodando, isso aí ele pega e fala assim, bom.
+
+2:11:28
+EE as ele nem sabe quem que tá lincado com quem e quem, que é o quê e faz o quê porque não tem nem imagina um software desse, não tem nem documentação, é tudo legado e não tem documentação aí, só que é o seguinte, tá tudo rodando e ninguém da área de cima, A diretoria, ninguém tá falando nada Pra Ele, então tá tudo nas 1000 Maravilhas. O cara viu OBO que ele entrou, às vezes o cara é gerente numa empresa.
+
+2:11:58
+Aí ele sai de lá pra ganhar 10000 a mais, aí ele fala, não vou perceber o aí porque eu vou ganhar 10000 a mais. E só pensa no dinheiro porque quando a gente entra numa empresa, a gente não sabe o que que vai, o que que a gente espera.
+
+2:12:14
+Aí quando chega lá, o cara fala, olha a bomba que eu peguei. Se parar qualquer coisa aqui para 10, aplicação ao mesmo tempo e eu só tenho 4 deve e desses 43 não sabe programar. Não estou metendo a lenha nos cara. Eu estou dizendo que como é legado é essa mesmo, a real é essa.
+
+2:12:34
+Eu estou dizendo que como é legado, os caras não querem meter a mão e o cara não está errado, porque o cara, se ele levantar a Bandeira, falar ó, é o seguinte.
+
+2:12:44
+Vamos refaturar tudo aqui e vamos fazer o negócio de gente, porque o que tem aqui é um serviço porco. Se o cara levantar a cabeça e falar assim, sabe o que que os cara fala? Vai para o departamento pessoal, vai, vai, vai lá que estão te chamando para tomar um café. Entendi é que nessa então é que nesse caso do meio específico falaram do negócio, foi uma preocupação do cara que ele é o sítio, mas agora ele ele virou o sócio, então ele tem essa preocupação real. Só que eu falei para ele, cara.
+
+2:13:14
+Que vocês vão ter que fazer, porque no caso dele, não é uma possibilidade de sofrer a fraude. Eles já sofreram, entendeu? Então, se não resolver agora, eles vão ter mais perda financeira ainda. E aí outra coisa, outra coisa, professora, aí o cara vai lá ou vai na, na, na, na vossa empresa ou vai? Vamos pegar uma empresa aí mais conhecida pra gente pegar e entender o cenário, porque esses caras eu já trabalhei lá, eu conheço.
+
+2:13:44
+Esses caras eles têm, eles têm um time de 30 caras bons, muito bons. Vamos colocar ply, sweaterhouse coopers, que foi onde eu trabalhei.
+
+2:13:56
+Aí o cara pega e fala assim, ó. O cara pega e fala assim, ó, me faz uma proposta, eu estou com um sistema legado aqui. Ele manda lá. Sabe quem vai visitar AA empresa dele? O cara mais mais das galáxias que tem em software que tem aqui no Brasil. O cara vai lá e fala, não precisa resolver isso aí.
+
+2:14:20
+Aí o cara manda uma proposta para ele e fala assim, ó, então seu seu problema tem solução, entendeu? Ou vamos colocar um SAP ou senão vamos refaturar tudo e vai custar 200000000. E a empresa tem bala para pagar. Pega uma empresa grande aí que tem bala para pagar. Só que os caras, se não tiver visão, eles não faz, entendeu? Porque uma refaturação de software custa 100000000.
+
+2:14:48
+E o cara não vai dependendo do software também, não é? Sim, sim, mas eu acho que quando chega no ponto de você chamar uma das big four pra pra fazer essa consultoria, porque a água já bateu muito forte e o cara fala, meu, preciso trazer alguém aqui, porque senão eu vou perder o negócio. Se ele aguenta pagar os 100000000, ele fala, puta, eu vou pagar porque a minha empresa vale um bilhão ou 2 bilhões, entendeu? Aí ele paga normalmente. Quando a big four entra na história, consultoria forte entra na história.
+
+2:15:18
+Ela vem com números caros e ela vem com projetos caros e ela fala, meu, essa é a minha visão resolve, resolve se dessa forma, se for assim é com a gente, se não for assim a gente não vai fazer, é isso, vamos lá só pra gente poder finalizar que daqui a pouco eu tenho que ir. Gabriel, Teodoro, vamos lá, diga aí.
+
+2:15:41
+Professor, eu acho que isso está mudando e mudará ainda mais nos próximos meses. Eu vou trazer alguns exemplos clássicos. Eu lembro meados do do começo do ano, o Nubank contratou a devin. Ele aumentou a refaturação dele em 12 vezes de eficiência, se eu não me engano, era 20 ou 19 vezes o custo menor, e ele migrou toda a itl deles, e era uma bucha de canhão que ninguém queria pegar. Ele já faturou a itl inteira e pô.
+
+2:16:08
+Não é um cobol da vida, do finanças, mas você pegar uma etel do Nubank, deve ser é bruto, ele repaturou e vamos, por que aí ela não estava no nível que está no mês 6 lá no começo do ano. Então se no começo do ano eles já estavam usando um devem pra fazer isso, imagina você pegar um agente de repositório, um codex, um cloud code da vida. Então AA tendência vai mais além, mas AA questão que eu queria te dizer é o seguinte.
+
+2:16:34
+Essa cultura do que o Antônio falou, que o senhor tá pontuando dos caras não assinar o cheque sabendo a necessidade. Ela vem um pouco das big techs pegarem e lançarem tanta featuring, tantos guard raios que quem tá na direção se sente seguro. Por que que eu te digo isso? A gente prestou a consultoria pra uma empresa um tempo atrás e todo o servidor, toda a operação deles era Linux, só tinha um Clau rodando a hora que eu fosse. Falei Pra Ele, cara, mas você não tem um Faro, não tem nada não, não precisa Linux.
+
+2:17:03
+A gente já contratou tudo isso segurando aí eu, eu, a maior humildade para ele. Assim, eu falei, não, mas como é que não precisa porque é Linux? Ele falou, não é seguro, os servidores, tá tudo em minuus, o clow que roda ali é o suficiente? Eu já contratei tudo isso, a gente foi viu, a gente tinha vários pacotes de segurança contratado, mas um para cada coisa e ele seu conhecimento profundo, ele achava que pela quantidade de ferramenta contratado ele tava seguro.
+
+2:17:25
+Sendo que tinha várias brechas, quando você olhava a pilha, a estéck dele, brecha para todo lado, porque cada fornecedor fez um login nele de uma forma e ninguém fez a solução para codeb's dele, entendeu? Então a questão é, OOO, problema não são as soluções standalone, o problema é quando elas tem que se conversar. É justamente nessas interfaces que acontecem os gaps. Você tem que pensar segurança 360°. Você deu o exemplo clássico de uma segurança compartimentada.
+
+2:17:55
+Com silos e pouca preocupação é da continuidade entre 1 e outro fornecedor. Isso é a chave pro fracasso, né? Pra dar problema. É isso, porque quando comecei a apontar lá, o pessoal fica bravo porque um comprou um indicou a ferramenta tal pra comprar. Daí quando você mostra, mas não conversa entre si, cada um tem um louquinho de um vendedor diferente. Quem comprou a ferramenta acha que você está ofendendo e não foca no vira um só de skill, um hard skill ali no negócio, entendeu? Ou seja, é um nada skill, né?
+
+2:18:26
+É, é, vamos lá, Gabriel, é Nóbrega, dá, dá teu teu recado, aí é rápido, é rápido. Eu sou um adendo do do que os 2 colegas falaram. É esse negócio de de de de contratar ferramentas que está protegido como Monte de ferramenta. Acontece em todo todo, todo canto. E o cara vai, não era o mais fraco, vai, vai, não era o mais fraco. Não podemos ir no ataque.
+
+2:18:52
+E é exatamente supply que você às vezes a ferramenta é o vetor de ataque, né? É por é Por Ela que entra, né? É isso e o que, o que, o que, o que o Antônio estava falando também essa questão de de de ter várias experiências. Eu trabalhei alguns anos como engenheiro civil e eu tenho um professor que que ele falou um negócio que que eu que eu lembrei agora quando você estava falando.
+
+2:19:14
+É que quando ele IA fazer um reparo estrutural numa numa obra, ele cobrava 3 vezes o valor do que ele cobraria para fazer inicialmente. Porque ele está bom do erro. Provavelmente no cara que projetou ou no cara que executou, ou no cara que fiscalizou, entendeu? Então, tipo, quando está corrigindo um negócio, está corrigindo um erro de tipo, 12345 profissionais ao mesmo tempo. Ele cobrava o tempo.
+
+2:19:37
+EE tem uma justificativa boa pra isso, que é o seguinte, quando você faz o projeto desde o início e você tem essa preocupação de fazer a coisa bem feita, você fala assim, não. Se seguir o procedimento que eu entendo ser melhores práticas e tal, eu eu garanto. Eu assino isso porque o engenheiro tem que assinar. Quando você vai corrigir um problema feito por outro, você fala, meu, onde será que eu vou pisar? Só de você fazer essa pergunta, você tem que cobrar mais caro.
+
+2:20:04
+Porque depois é a sua assinatura, que tá na reta, literalmente, tá. Então o que ele fez é perfeitamente compreensível. Eu também sou engenheiro. Quando eu fiz projetos em que eu tive que analisar coisas feitas por outros, eu cobrei mais caro também, porque não faz sentido você cobrar igual pra poder corrigir a correção. Ela é sempre mais cara do que a primeira implantação. Isso é é normal, tá?
+
+2:20:31
+Então é, é, é Oo que esse professor seu fez? É, é. Eu acho que é até pra dar um recado do tipo olha, procura quem tem competência pra fazer certo da primeira vez, analisa. Pesquisa gasta, gasta um pouco? É, é gasta um pouco mais de tempo pra poder fazer uma boa análise inicial e você evita retrabalho e custo posterior.
+
+2:20:58
+Pois é, pois é, se você está me chamando aqui é porque você já sabe que você tem *****. Exato, e uma vez eu recusei um trabalho grande até na implantação de telefonia IP em vários lugares, vários lugares era um projeto, eu lembro até hoje do valor era 600000. Aí teve uma mudança de gerente, é da empresa no meio do caminho e o cara que entrou, ele gostou do projeto, gostou tanto que arrumou um cara dele pra fazer tudo bem, você vai fazer, só que.
+
+2:21:28
+Eu tô saindo da jogada, eram 6 meses, depois ele me ligou que era pra corrigir, Oo pra pra ver se eu pegaria a correção do projeto e não sei o quê. Eu falei, pô, eu pego, pego, só que agora são 2000000, aí eu quero, não, não, eu falei, então eu cobrei, eu eu cobrei nada, o projeto não era só eu, era várias pessoas, falei, o projeto custava 600000. Se a gente fizesse desde o começo, como pelo jeito fizeram por um pouco menos e fizeram mal feito, a correção é sempre mais cara.
+
+2:21:58
+E eu já joguei esse preço pra não pegar, não queria fazer pra eles, não queria fazer, não fizemos, falei meu, agora você literalmente se vira com o cara que fez e resolve seu problema, porque não dá. Você não pode garantir qualidade no serviço do outro se não fosse. Se você não acompanha desde o começo, faz, faz, faz parte do processo. Você tem que saber que ninguém tem que colocar preço no seu serviço, ele vai contratar ou não. Uma escolha é dele, mas o preço é você que forma.
+
+2:22:28
+Claro, não pode fugir do mercado, mas é você que forma pessoal vou precisar encerrar por conta do horário. Eu tenho uma outra aula começando às 7:30, eu preciso só tomar uma água antes, beleza pessoal, ótima discussão. Achei que essa última parte foi muito proveitosa, obrigado aí pela participação de todos, foi excelente e a gente se vê aí na próxima aula, forte abraço a todos, tenha uma boa noite aí, valeu, boa noite, boa noite, tchau, tchau.
+
+2:22:58
+Boa noite.

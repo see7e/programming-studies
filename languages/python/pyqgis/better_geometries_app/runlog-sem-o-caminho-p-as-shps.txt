@@ -1,0 +1,36 @@
+QGIS version: 3.22.4-Bia?owie?a
+QGIS code revision: ce8e65e9
+Qt version: 5.15.2
+Python version: 3.9.5
+GDAL version: 3.4.1
+GEOS version: 3.10.2-CAPI-1.16.0
+PROJ version: Rel. 8.2.1, January 1st, 2022
+PDAL version: 2.3.0 (git-version: 9f35b7)
+Algorithm started at: 2022-12-27T08:45:09
+Algorithm 'Better Geometries' starting…
+Input parameters:
+{ 'Snapped_aerialboxes' : 'TEMPORARY_OUTPUT', 'Snapped_dcables' : 'TEMPORARY_OUTPUT', 'Snapped_dducts' : 'TEMPORARY_OUTPUT', 'Snapped_dropcables' : 'TEMPORARY_OUTPUT', 'Snapped_fcables' : 'TEMPORARY_OUTPUT' }
+
+Results: {'OUTPUT': 'Snapped_geometry_73be9cb9_0868_4392_9c9f_295ae3930aec'}
+Results: {'OUTPUT': 'Snapped_geometry_6accd584_b712_4f7d_8fb5_42dd9ebfd6b5'}
+Fixing geometry for feature 833 resulted in MultiPoint, geometry has been dropped.
+Results: {'OUTPUT': 'Fixed_geometries_2ff13ce9_dd7e_4672_b6c2_5f43641a05f7'}
+Results: {'OUTPUT': 'Snapped_geometry_902a5fb3_ba6c_4b19_ac80_383ac4aafa44'}
+Results: {'OUTPUT': 'Snapped_geometry_626b136b_cea2_4a0e_998c_fe9097484240'}
+Results: {'OUTPUT': 'Snapped_geometry_d3747c52_6cec_4fd9_acb8_0970e22d9e25'}
+Results: {'OUTPUT': 'Snapped_geometry_b6f88a1a_d305_4523_801a_ab00daeae3ce'}
+Results: {'OUTPUT': 'Fixed_geometries_5346a928_194e_4e0f_89fc_b0a1809823ec'}
+Results: {'OUTPUT': 'Snapped_geometry_4146b7f4_f99c_479f_83e3_cf847343a357'}
+Results: {'OUTPUT': 'Fixed_geometries_8c50741f_20e1_40ec_a978_eff47e514553'}
+Results: {'OUTPUT': 'Snapped_geometry_eb64903d_9c2c_4657_9a4b_7fc8021663a0'}
+Results: {'OUTPUT': 'Snapped_geometry_f016ab08_91a9_45c3_9f34_c79cbc267682'}
+Execution completed in 2.48 seconds
+Results:
+{'Snapped_aerialboxes': 'Snapped_geometry_73be9cb9_0868_4392_9c9f_295ae3930aec',
+'Snapped_dcables': 'Snapped_geometry_b6f88a1a_d305_4523_801a_ab00daeae3ce',
+'Snapped_dducts': 'Snapped_geometry_6accd584_b712_4f7d_8fb5_42dd9ebfd6b5',
+'Snapped_dropcables': 'Snapped_geometry_f016ab08_91a9_45c3_9f34_c79cbc267682',
+'Snapped_fcables': 'Snapped_geometry_4146b7f4_f99c_479f_83e3_cf847343a357'}
+
+Loading resulting layers
+Algorithm 'Better Geometries' finished

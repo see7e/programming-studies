@@ -1,0 +1,46 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Portifolio / Wallet
+{% endblock %}
+
+{% block main %}
+            <div class="container-fluid py-5 text-center">
+                <table class="table table-striped">
+                    <thead>
+                        <tr>
+                            <th class="text-start">Symbol</th>
+                            <th class="text-start">Name</th>
+                            <th class="text-end">Shares</th>
+                            <th class="text-end">Price</th>
+                            <th class="text-end">TOTAL</th>
+                        </tr>
+                    </thead>
+    
+                    <tbody>
+                            
+                    </tbody>
+                        {% for row in rows %}
+                            {% if row %}
+                                <tr>
+                                    <td class="text-start">{{ row["symbol"] }}</td>        <!-- symbol -->
+                                    <td class="text-start">{{ row["name"] }}</td>          <!-- name -->
+                                    <td class="text-end">{{ row["shares"] }}</td>        <!-- shares -->
+                                    <td class="text-end">{{ row["price"] | usd }}</td>   <!-- price -->
+                                    <td class="text-end">{{ row["total"] | usd }}</td>   <!-- total -->
+                                </tr>
+                            {% endif %}
+                        {% endfor %}
+                    <tfoot>
+                        <tr>
+                            <td class="border-0 fw-bold text-end" colspan="4">Cash</td>
+                            <td class="border-0 text-end">{{ cash | usd }}</td>   <!-- cash -->
+                        </tr>
+                        <tr>
+                            <td class="border-0 fw-bold text-end" colspan="4">TOTAL</td>
+                            <td class="border-0 text-end">{{ total_value | usd }}</td>   <!-- current -->
+                        </tr>
+                    </tfoot>
+                </table>
+            </div>
+{% endblock %}

@@ -1,0 +1,697 @@
+<!DOCTYPE html> <html><head>
+		<title>Problem Set 3 - Runoff</title>
+		<base href="..\..\..\..\..\..\../">
+		<meta id="root-path" root-path="..\..\..\..\..\..\../">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes, minimum-scale=1.0, maximum-scale=5.0">
+		<meta charset="UTF-8">
+		<meta name="description" content="DRIVE - Problem Set 3 - Runoff">
+		<meta property="og:title" content="Problem Set 3 - Runoff">
+		<meta property="og:description" content="DRIVE - Problem Set 3 - Runoff">
+		<meta property="og:type" content="website">
+		<meta property="og:url" content="courses/cs50x/week3/runoff.html">
+		<meta property="og:image" content="https://cs50.harvard.edu/x/2023/psets/3/runoff/../fptp_ballot_1.png">
+		<meta property="og:site_name" content="DRIVE">
+		<meta name="author" content="Gabryel Nóbrega"><link rel="alternate" type="application/rss+xml" title="RSS Feed" href="lib/rss.xml"><script async="" id="webpage-script" src="lib/scripts/webpage.js" onload="this.onload=null;this.setAttribute(&quot;loaded&quot;, &quot;true&quot;)"></script><script type="module" async="" id="graph-view-script" src="lib/scripts/graph-view.js"></script><script async="" id="graph-wasm-script" src="lib/scripts/graph-wasm.js" onload="this.onload=null;this.setAttribute(&quot;loaded&quot;, &quot;true&quot;)"></script><script async="" id="graph-render-worker-script" src="lib/scripts/graph-render-worker.js" onload="this.onload=null;this.setAttribute(&quot;loaded&quot;, &quot;true&quot;)"></script><script async="" id="tinycolor-script" src="lib/scripts/tinycolor.js" onload="this.onload=null;this.setAttribute(&quot;loaded&quot;, &quot;true&quot;)"></script><script async="" id="pixi-script" src="https://cdnjs.cloudflare.com/ajax/libs/pixi.js/7.4.0/pixi.min.js" onload="this.onload=null;this.setAttribute(&quot;loaded&quot;, &quot;true&quot;)"></script><script async="" id="minisearch-script" src="https://cdn.jsdelivr.net/npm/minisearch@6.3.0/dist/umd/index.min.js" onload="this.onload=null;this.setAttribute(&quot;loaded&quot;, &quot;true&quot;)"></script><link rel="icon" href="lib/media/favicon.png"><script async="" id="graph-data-script" src="lib/scripts/graph-data.js" onload="this.onload=null;this.setAttribute(&quot;loaded&quot;, &quot;true&quot;)"></script><style>body{--line-width:40em;--line-width-adaptive:40em;--file-line-width:40em;--sidebar-width:min(20em, 80vw);--collapse-arrow-size:11px;--tree-horizontal-spacing:0.6em;--tree-vertical-spacing:0.6em;--sidebar-margin:12px}.sidebar{height:100%;min-width:calc(var(--sidebar-width) + var(--divider-width-hover));max-width:calc(var(--sidebar-width) + var(--divider-width-hover));font-size:14px;z-index:10;position:relative;overflow:hidden;transition:min-width ease-in-out,max-width ease-in-out;transition-duration:.2s;contain:size}.sidebar-left{left:0}.sidebar-right{right:0}.sidebar.is-collapsed{min-width:0;max-width:0}body.floating-sidebars .sidebar{position:absolute}.sidebar-content{height:100%;min-width:calc(var(--sidebar-width) - var(--divider-width-hover));top:0;padding:var(--sidebar-margin);padding-top:4em;line-height:var(--line-height-tight);background-color:var(--background-secondary);transition:background-color,border-right,border-left,box-shadow;transition-duration:var(--color-fade-speed);transition-timing-function:ease-in-out;position:absolute;display:flex;flex-direction:column}.sidebar:not(.is-collapsed) .sidebar-content{min-width:calc(max(100%,var(--sidebar-width)) - 3px);max-width:calc(max(100%,var(--sidebar-width)) - 3px)}.sidebar-left .sidebar-content{left:0;border-top-right-radius:var(--radius-l);border-bottom-right-radius:var(--radius-l)}.sidebar-right .sidebar-content{right:0;border-top-left-radius:var(--radius-l);border-bottom-left-radius:var(--radius-l)}.sidebar:has(.sidebar-content:empty):has(.topbar-content:empty){display:none}.sidebar-topbar{height:2em;width:var(--sidebar-width);top:var(--sidebar-margin);padding-inline:var(--sidebar-margin);z-index:1;position:fixed;display:flex;align-items:center;transition:width ease-in-out;transition-duration:inherit}.sidebar.is-collapsed .sidebar-topbar{width:calc(2.3em + var(--sidebar-margin) * 2)}.sidebar .sidebar-topbar.is-collapsed{width:0}.sidebar-left .sidebar-topbar{left:0}.sidebar-right .sidebar-topbar{right:0}.topbar-content{overflow:hidden;overflow:clip;width:100%;height:100%;display:flex;align-items:center;transition:inherit}.sidebar.is-collapsed .topbar-content{width:0;transition:inherit}.clickable-icon.sidebar-collapse-icon{background-color:transparent;color:var(--icon-color-focused);padding:0!important;margin:0!important;height:100%!important;width:2.3em!important;margin-inline:0.14em!important;position:absolute}.sidebar-left .clickable-icon.sidebar-collapse-icon{transform:rotateY(180deg);right:var(--sidebar-margin)}.sidebar-right .clickable-icon.sidebar-collapse-icon{transform:rotateY(180deg);left:var(--sidebar-margin)}.clickable-icon.sidebar-collapse-icon svg.svg-icon{width:100%;height:100%}.sidebar-section-header{margin:0 0 1em 0;text-transform:uppercase;letter-spacing:.06em;font-weight:600}body{transition:background-color var(--color-fade-speed) ease-in-out}.webpage-container{display:flex;flex-direction:row;height:100%;width:100%;align-items:stretch;justify-content:center}.document-container{opacity:1;flex-basis:100%;max-width:100%;width:100%;height:100%;display:flex;flex-direction:column;align-items:center;transition:opacity .2s ease-in-out;contain:inline-size}.hide{opacity:0;transition:opacity .2s ease-in-out}.document-container>.markdown-preview-view{margin:var(--sidebar-margin);margin-bottom:0;width:100%;width:-webkit-fill-available;width:-moz-available;width:fill-available;background-color:var(--background-primary);transition:background-color var(--color-fade-speed) ease-in-out;border-top-right-radius:var(--window-radius,var(--radius-m));border-top-left-radius:var(--window-radius,var(--radius-m));overflow-x:hidden!important;overflow-y:auto!important;display:flex!important;flex-direction:column!important;align-items:center!important;contain:inline-size}.document-container>.markdown-preview-view>.markdown-preview-sizer{padding-bottom:80vh!important;width:100%!important;max-width:var(--line-width)!important;flex-basis:var(--line-width)!important;transition:background-color var(--color-fade-speed) ease-in-out;contain:inline-size}.markdown-rendered img:not([width]),.view-content img:not([width]){max-width:100%;outline:0}.document-container>.view-content.embed{display:flex;padding:1em;height:100%;width:100%;align-items:center;justify-content:center}.document-container>.view-content.embed>*{max-width:100%;max-height:100%;object-fit:contain}:has(> :is(.math,table)){overflow-x:auto!important}.document-container>.view-content{overflow-x:auto;contain:content;padding:0;margin:0;height:100%}.scroll-highlight{position:absolute;width:100%;height:100%;pointer-events:none;z-index:1000;background-color:hsla(var(--color-accent-hsl),.25);opacity:0;padding:1em;inset:50%;translate:-50% -50%;border-radius:var(--radius-s)}</style><script defer="">async function loadIncludes(){if("file:"!=location.protocol){let e=document.querySelectorAll("include");for(let t=0;t<e.length;t++){let o=e[t],l=o.getAttribute("src");try{const e=await fetch(l);if(!e.ok){console.log("Could not include file: "+l),o?.remove();continue}let t=await e.text(),n=document.createRange().createContextualFragment(t),i=Array.from(n.children);for(let e of i)e.classList.add("hide"),e.style.transition="opacity 0.5s ease-in-out",setTimeout((()=>{e.classList.remove("hide")}),10);o.before(n),o.remove(),console.log("Included file: "+l)}catch(e){o?.remove(),console.log("Could not include file: "+l,e);continue}}}else{if(document.querySelectorAll("include").length>0){var e=document.createElement("div");e.id="error",e.textContent="Web server exports must be hosted on an http / web server to be viewed correctly.",e.style.position="fixed",e.style.top="50%",e.style.left="50%",e.style.transform="translate(-50%, -50%)",e.style.fontSize="1.5em",e.style.fontWeight="bold",e.style.textAlign="center",document.body.appendChild(e),document.querySelector(".document-container")?.classList.remove("hide")}}}document.addEventListener("DOMContentLoaded",(()=>{loadIncludes()}));let isFileProtocol="file:"==location.protocol;function waitLoadScripts(e,t){let o=e.map((e=>document.getElementById(e+"-script"))),l=0;!function e(){let n=o[l];l++,n&&"true"!=n.getAttribute("loaded")||l<o.length&&e(),l<o.length?n.addEventListener("load",e):t()}()}</script><link rel="stylesheet" href="lib/styles/obsidian.css"><link rel="stylesheet" href="lib/styles/theme.css"><link rel="preload" href="lib/styles/global-variable-styles.css" as="style" onload="this.onload=null;this.rel='stylesheet'"><noscript><link rel="stylesheet" href="lib/styles/global-variable-styles.css"></noscript><link rel="preload" href="lib/styles/supported-plugins.css" as="style" onload="this.onload=null;this.rel='stylesheet'"><noscript><link rel="stylesheet" href="lib/styles/supported-plugins.css"></noscript><link rel="preload" href="lib/styles/main-styles.css" as="style" onload="this.onload=null;this.rel='stylesheet'"><noscript><link rel="stylesheet" href="lib/styles/main-styles.css"></noscript><link rel="preload" href="lib/styles/snippets.css" as="style" onload="this.onload=null;this.rel='stylesheet'"><noscript><link rel="stylesheet" href="lib/styles/snippets.css"></noscript></head><body class="publish css-settings-manager theme-dark"><script defer="">let theme=localStorage.getItem("theme")||(window.matchMedia("(prefers-color-scheme: dark)").matches?"dark":"light");"dark"==theme?(document.body.classList.add("theme-dark"),document.body.classList.remove("theme-light")):(document.body.classList.add("theme-light"),document.body.classList.remove("theme-dark")),window.innerWidth<480?document.body.classList.add("is-phone"):window.innerWidth<768?document.body.classList.add("is-tablet"):window.innerWidth<1024?document.body.classList.add("is-small-screen"):document.body.classList.add("is-large-screen")</script><div class="webpage-container workspace"><div class="sidebar-left sidebar"><div class="sidebar-handle"></div><div class="sidebar-topbar"><div class="topbar-content"><label class="theme-toggle-container" for="theme_toggle"><input class="theme-toggle-input" type="checkbox" id="theme_toggle"><div class="toggle-background"></div></label></div><div class="clickable-icon sidebar-collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" class="svg-icon"><path d="M21 3H3C1.89543 3 1 3.89543 1 5V19C1 20.1046 1.89543 21 3 21H21C22.1046 21 23 20.1046 23 19V5C23 3.89543 22.1046 3 21 3Z"></path><path d="M10 4V20"></path><path d="M4 7H7"></path><path d="M4 10H7"></path><path d="M4 13H7"></path></svg></div></div><div class="sidebar-content"><div class="search-input-container"><input enterkeyhint="search" type="search" spellcheck="false" placeholder="Search..."><div class="search-input-clear-button" aria-label="Clear search"></div></div><include src="lib/html/file-tree.html"></include></div><script defer="">let ls = document.querySelector(".sidebar-left"); ls.classList.add("is-collapsed"); if (window.innerWidth > 768) ls.classList.remove("is-collapsed"); ls.style.setProperty("--sidebar-width", localStorage.getItem("sidebar-left-width"));</script></div><div class="document-container markdown-reading-view hide"><div class="markdown-preview-view markdown-rendered allow-fold-headings allow-fold-lists is-readable-line-width"><style id="MJX-CHTML-styles">mjx-msup{display:inline-block;text-align:left}mjx-texatom{display:inline-block;text-align:left}mjx-c.mjx-c1D442.TEX-I::before{padding:.704em .763em .022em 0;content:"O"}mjx-c.mjx-c28::before{padding:.75em .389em .25em 0;content:"("}mjx-c.mjx-c1D45B.TEX-I::before{padding:.442em .6em .011em 0;content:"n"}mjx-c.mjx-c32::before{padding:.666em .5em 0 0;content:"2"}mjx-c.mjx-c29::before{padding:.75em .389em .25em 0;content:")"}mjx-c.mjx-c1D459.TEX-I::before{padding:.694em .298em .011em 0;content:"l"}mjx-c.mjx-c1D45C.TEX-I::before{padding:.441em .485em .011em 0;content:"o"}mjx-c.mjx-c1D454.TEX-I::before{padding:.442em .477em .205em 0;content:"g"}mjx-c.mjx-c2061::before{padding:0;content:""}mjx-c.mjx-c1D6FA.TEX-I::before{padding:.704em .786em 0 0;content:"Ω"}mjx-c.mjx-c1D6E9.TEX-I::before{padding:.704em .763em .022em 0;content:"Θ"}mjx-c.mjx-c2B::before{padding:.583em .778em .082em 0;content:"+"}mjx-c.mjx-c33::before{padding:.665em .5em .022em 0;content:"3"}mjx-c.mjx-c2E::before{padding:.12em .278em 0 0;content:"."}mjx-c.mjx-c2F::before{padding:.75em .5em .25em 0;content:"/"}mjx-c.mjx-c30::before{padding:.666em .5em .022em 0;content:"0"}mjx-c.mjx-c39::before{padding:.666em .5em .022em 0;content:"9"}mjx-c.mjx-c2212::before{padding:.583em .778em .082em 0;content:"−"}mjx-container[jax=CHTML]{line-height:0}mjx-container [space="1"]{margin-left:.111em}mjx-container [space="2"]{margin-left:.167em}mjx-container [space="3"]{margin-left:.222em}mjx-container [space="4"]{margin-left:.278em}mjx-container [space="5"]{margin-left:.333em}mjx-container [rspace="1"]{margin-right:.111em}mjx-container [rspace="2"]{margin-right:.167em}mjx-container [rspace="3"]{margin-right:.222em}mjx-container [rspace="4"]{margin-right:.278em}mjx-container [rspace="5"]{margin-right:.333em}mjx-container [size="s"]{font-size:70.7%}mjx-container [size=ss]{font-size:50%}mjx-container [size=Tn]{font-size:60%}mjx-container [size=sm]{font-size:85%}mjx-container [size=lg]{font-size:120%}mjx-container [size=Lg]{font-size:144%}mjx-container [size=LG]{font-size:173%}mjx-container [size=hg]{font-size:207%}mjx-container [size=HG]{font-size:249%}mjx-container [width=full]{width:100%}mjx-box{display:inline-block}mjx-block{display:block}mjx-itable{display:inline-table}mjx-row{display:table-row}mjx-row>*{display:table-cell}mjx-mtext{display:inline-block}mjx-mstyle{display:inline-block}mjx-merror{display:inline-block;color:red;background-color:#ff0}mjx-mphantom{visibility:hidden}mjx-assistive-mml{top:0;left:0;clip:rect(1px,1px,1px,1px);user-select:none;position:absolute!important;padding:1px 0 0!important;border:0!important;display:block!important;width:auto!important;overflow:hidden!important}mjx-assistive-mml[display=block]{width:100%!important}mjx-math{display:inline-block;text-align:left;line-height:0;text-indent:0;font-style:normal;font-weight:400;font-size:100%;font-size-adjust:none;letter-spacing:normal;border-collapse:collapse;overflow-wrap:normal;word-spacing:normal;white-space:nowrap;direction:ltr;padding:1px 0}mjx-container[jax=CHTML][display=true]{display:block;text-align:center;margin:1em 0}mjx-container[jax=CHTML][display=true][width=full]{display:flex}mjx-container[jax=CHTML][display=true] mjx-math{padding:0}mjx-container[jax=CHTML][justify=left]{text-align:left}mjx-container[jax=CHTML][justify=right]{text-align:right}mjx-mi{display:inline-block;text-align:left}mjx-c{display:inline-block}mjx-utext{display:inline-block;padding:.75em 0 .2em}mjx-msub{display:inline-block;text-align:left}mjx-mn{display:inline-block;text-align:left}mjx-mo{display:inline-block;text-align:left}mjx-stretchy-h{display:inline-table;width:100%}mjx-stretchy-h>*{display:table-cell;width:0}mjx-stretchy-h>*>mjx-c{display:inline-block;transform:scaleX(1)}mjx-stretchy-h>*>mjx-c::before{display:inline-block;width:initial}mjx-stretchy-h>mjx-ext{overflow:clip visible;width:100%}mjx-stretchy-h>mjx-ext>mjx-c::before{transform:scaleX(500)}mjx-stretchy-h>mjx-ext>mjx-c{width:0}mjx-stretchy-h>mjx-beg>mjx-c{margin-right:-.1em}mjx-stretchy-h>mjx-end>mjx-c{margin-left:-.1em}mjx-stretchy-v{display:inline-block}mjx-stretchy-v>*{display:block}mjx-stretchy-v>mjx-beg{height:0}mjx-stretchy-v>mjx-end>mjx-c{display:block}mjx-stretchy-v>*>mjx-c{transform:scaleY(1);transform-origin:left center;overflow:hidden}mjx-stretchy-v>mjx-ext{display:block;height:100%;box-sizing:border-box;border:0 solid transparent;overflow:visible clip}mjx-stretchy-v>mjx-ext>mjx-c::before{width:initial;box-sizing:border-box}mjx-stretchy-v>mjx-ext>mjx-c{transform:scaleY(500) translateY(.075em);overflow:visible}mjx-mark{display:inline-block;height:0}mjx-c::before{display:block;width:0}.MJX-TEX{font-family:MJXZERO,MJXTEX}.TEX-B{font-family:MJXZERO,MJXTEX-B}.TEX-I{font-family:MJXZERO,MJXTEX-I}.TEX-MI{font-family:MJXZERO,MJXTEX-MI}.TEX-BI{font-family:MJXZERO,MJXTEX-BI}.TEX-S1{font-family:MJXZERO,MJXTEX-S1}.TEX-S2{font-family:MJXZERO,MJXTEX-S2}.TEX-S3{font-family:MJXZERO,MJXTEX-S3}.TEX-S4{font-family:MJXZERO,MJXTEX-S4}.TEX-A{font-family:MJXZERO,MJXTEX-A}.TEX-C{font-family:MJXZERO,MJXTEX-C}.TEX-CB{font-family:MJXZERO,MJXTEX-CB}.TEX-FR{font-family:MJXZERO,MJXTEX-FR}.TEX-FRB{font-family:MJXZERO,MJXTEX-FRB}.TEX-SS{font-family:MJXZERO,MJXTEX-SS}.TEX-SSB{font-family:MJXZERO,MJXTEX-SSB}.TEX-SSI{font-family:MJXZERO,MJXTEX-SSI}.TEX-SC{font-family:MJXZERO,MJXTEX-SC}.TEX-T{font-family:MJXZERO,MJXTEX-T}.TEX-V{font-family:MJXZERO,MJXTEX-V}.TEX-VB{font-family:MJXZERO,MJXTEX-VB}mjx-stretchy-h mjx-c,mjx-stretchy-v mjx-c{font-family:MJXZERO,MJXTEX-S1,MJXTEX-S4,MJXTEX,MJXTEX-A!important}@font-face{font-family:MJXZERO;src:url("lib/fonts/mathjax_zero.woff") format("woff")}@font-face{font-family:MJXTEX;src:url("lib/fonts/mathjax_main-regular.woff") format("woff")}@font-face{font-family:MJXTEX-B;src:url("lib/fonts/mathjax_main-bold.woff") format("woff")}@font-face{font-family:MJXTEX-I;src:url("lib/fonts/mathjax_math-italic.woff") format("woff")}@font-face{font-family:MJXTEX-MI;src:url("lib/fonts/mathjax_main-italic.woff") format("woff")}@font-face{font-family:MJXTEX-BI;src:url("lib/fonts/mathjax_math-bolditalic.woff") format("woff")}@font-face{font-family:MJXTEX-S1;src:url("lib/fonts/mathjax_size1-regular.woff") format("woff")}@font-face{font-family:MJXTEX-S2;src:url("lib/fonts/mathjax_size2-regular.woff") format("woff")}@font-face{font-family:MJXTEX-S3;src:url("lib/fonts/mathjax_size3-regular.woff") format("woff")}@font-face{font-family:MJXTEX-S4;src:url("lib/fonts/mathjax_size4-regular.woff") format("woff")}@font-face{font-family:MJXTEX-A;src:url("lib/fonts/mathjax_ams-regular.woff") format("woff")}@font-face{font-family:MJXTEX-C;src:url("lib/fonts/mathjax_calligraphic-regular.woff") format("woff")}@font-face{font-family:MJXTEX-CB;src:url("lib/fonts/mathjax_calligraphic-bold.woff") format("woff")}@font-face{font-family:MJXTEX-FR;src:url("lib/fonts/mathjax_fraktur-regular.woff") format("woff")}@font-face{font-family:MJXTEX-FRB;src:url("lib/fonts/mathjax_fraktur-bold.woff") format("woff")}@font-face{font-family:MJXTEX-SS;src:url("lib/fonts/mathjax_sansserif-regular.woff") format("woff")}@font-face{font-family:MJXTEX-SSB;src:url("lib/fonts/mathjax_sansserif-bold.woff") format("woff")}@font-face{font-family:MJXTEX-SSI;src:url("lib/fonts/mathjax_sansserif-italic.woff") format("woff")}@font-face{font-family:MJXTEX-SC;src:url("lib/fonts/mathjax_script-regular.woff") format("woff")}@font-face{font-family:MJXTEX-T;src:url("lib/fonts/mathjax_typewriter-regular.woff") format("woff")}@font-face{font-family:MJXTEX-V;src:url("lib/fonts/mathjax_vector-regular.woff") format("woff")}@font-face{font-family:MJXTEX-VB;src:url("lib/fonts/mathjax_vector-bold.woff") format("woff")}mjx-c.mjx-c1D439.TEX-I::before{padding:.68em .749em 0 0;content:"F"}mjx-c.mjx-c1D447.TEX-I::before{padding:.677em .704em 0 0;content:"T"}mjx-c.mjx-c1D43F.TEX-I::before{padding:.683em .681em 0 0;content:"L"}mjx-c.mjx-c1D43C.TEX-I::before{padding:.683em .504em 0 0;content:"I"}mjx-c.mjx-c1D441.TEX-I::before{padding:.683em .888em 0 0;content:"N"}mjx-c.mjx-c1D438.TEX-I::before{padding:.68em .764em 0 0;content:"E"}mjx-c.mjx-c31::before{padding:.666em .5em 0 0;content:"1"}mjx-c.mjx-c2C::before{padding:.121em .278em .194em 0;content:","}</style><pre class="frontmatter language-yaml" tabindex="0" style="display: none;"><code class="language-yaml is-loaded"><span class="token key atrule">title</span><span class="token punctuation">:</span> Problem Set 3 <span class="token punctuation">-</span> Runoff
+<span class="token key atrule">tags</span><span class="token punctuation">:</span> programming<span class="token punctuation">,</span> cs50
+<span class="token key atrule">use</span><span class="token punctuation">:</span> Exercise
+<span class="token key atrule">languages</span><span class="token punctuation">:</span> C
+<span class="token key atrule">dependences</span><span class="token punctuation">:</span> CS50</code><button class="copy-code-button"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon lucide-copy"><rect x="8" y="8" width="14" height="14" rx="2" ry="2"></rect><path d="M4 16c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2"></path></svg></button></pre><div class="markdown-preview-sizer markdown-preview-section"><h1 class="page-title heading" id="Problem Set 3 - Runoff"><p dir="auto">Problem Set 3 - Runoff</p></h1><div class="el-details"><details> <summary>Table of Contents</summary></details></div><div class="el-ul"><ul>
+<li data-line="0" dir="auto"><div class="list-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle"><path d="M3 8L12 17L21 8"></path></svg></div><a class="internal-link" data-href="#runoff" href="#runoff" target="_self" rel="noopener nofollow">Runoff</a>
+<ul>
+<li data-line="1" dir="auto"><a class="internal-link" data-href="#background" href="#background" target="_self" rel="noopener nofollow">Background</a></li>
+<li data-line="2" dir="auto"><a class="internal-link" data-href="#getting-started" href="#getting-started" target="_self" rel="noopener nofollow">Getting Started</a></li>
+<li data-line="3" dir="auto"><a class="internal-link" data-href="#understanding" href="#understanding" target="_self" rel="noopener nofollow">Understanding</a></li>
+<li data-line="4" dir="auto"><div class="list-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle"><path d="M3 8L12 17L21 8"></path></svg></div><a class="internal-link" data-href="#specification" href="#specification" target="_self" rel="noopener nofollow">Specification</a>
+<ul>
+<li data-line="5" dir="auto"><a class="internal-link" data-href="#vote" href="#vote" target="_self" rel="noopener nofollow"><code>vote</code></a></li>
+<li data-line="6" dir="auto"><a class="internal-link" data-href="#tabulate" href="#tabulate" target="_self" rel="noopener nofollow"><code>tabulate</code></a></li>
+<li data-line="7" dir="auto"><a class="internal-link" data-href="#print_winner" href="#print_winner" target="_self" rel="noopener nofollow"><code>print_winner</code></a></li>
+<li data-line="8" dir="auto"><a class="internal-link" data-href="#find_min" href="#find_min" target="_self" rel="noopener nofollow"><code>find_min</code></a></li>
+<li data-line="9" dir="auto"><a class="internal-link" data-href="#is_tie" href="#is_tie" target="_self" rel="noopener nofollow"><code>is_tie</code></a></li>
+<li data-line="10" dir="auto"><a class="internal-link" data-href="#eliminate" href="#eliminate" target="_self" rel="noopener nofollow"><code>eliminate</code></a></li>
+</ul>
+</li>
+<li data-line="11" dir="auto"><a class="internal-link" data-href="#usage" href="#usage" target="_self" rel="noopener nofollow">Usage</a></li>
+<li data-line="12" dir="auto"><a class="internal-link" data-href="#testing" href="#testing" target="_self" rel="noopener nofollow">Testing</a></li>
+<li data-line="13" dir="auto"><a class="internal-link" data-href="#how-to-submit" href="#how-to-submit" target="_self" rel="noopener nofollow">How to Submit</a></li>
+</ul>
+</li>
+<li data-line="14" dir="auto"><div class="list-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle"><path d="M3 8L12 17L21 8"></path></svg></div><a class="internal-link" data-href="#walkthrough" href="#walkthrough" target="_self" rel="noopener nofollow">Walkthrough</a>
+<ul>
+<li data-line="15" dir="auto"><a class="internal-link" data-href="#log-trace" href="#log-trace" target="_self" rel="noopener nofollow">Log Trace</a></li>
+<li data-line="16" dir="auto"><a class="internal-link" data-href="#check-style" href="#check-style" target="_self" rel="noopener nofollow">Check Style</a></li>
+<li data-line="17" dir="auto"><a class="internal-link" data-href="#submited" href="#submited" target="_self" rel="noopener nofollow">Submited</a></li>
+</ul>
+</li>
+</ul></div><div></div><div class="el-hr"><hr></div><div class="el-h1 heading-wrapper"><div class="heading-children"><div class="el-p"><p dir="auto">For this program, you’ll implement a program that runs a runoff election, per the below.</p></div><div class="el-pre has-run-code-button"><pre class="language-bash" tabindex="0"><code data-line="0" class="language-bash is-loaded">./runoff Alice Bob Charlie
+Number of voters: <span class="token number">5</span>
+Rank <span class="token number">1</span>: Alice
+Rank <span class="token number">2</span>: Bob
+Rank <span class="token number">3</span>: Charlie
+
+Rank <span class="token number">1</span>: Alice
+Rank <span class="token number">2</span>: Charlie
+Rank <span class="token number">3</span>: Bob
+
+Rank <span class="token number">1</span>: Bob
+Rank <span class="token number">2</span>: Charlie
+Rank <span class="token number">3</span>: Alice
+
+Rank <span class="token number">1</span>: Bob
+Rank <span class="token number">2</span>: Alice
+Rank <span class="token number">3</span>: Charlie
+
+Rank <span class="token number">1</span>: Charlie
+Rank <span class="token number">2</span>: Alice
+Rank <span class="token number">3</span>: Bob
+
+Alice
+</code><button class="copy-code-button"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon lucide-copy"><rect x="8" y="8" width="14" height="14" rx="2" ry="2"></rect><path d="M4 16c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2"></path></svg></button><button class="run-code-button">Run</button></pre></div><div class="el-h2 heading-wrapper"><h2 data-heading="Background" dir="auto" class="heading" id="Background"><div class="heading-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle"><path d="M3 8L12 17L21 8"></path></svg></div>Background</h2><div class="heading-children"><div class="el-p"><p dir="auto">You already know about plurality elections, which follow a very simple algorithm for determining the winner of an election: every voter gets one vote, and the candidate with the most votes wins.</p></div><div class="el-p"><p dir="auto">But the plurality vote does have some disadvantages. What happens, for instance, in an election with three candidates, and the ballots below are cast?</p></div><div class="el-p"><p dir="auto"><img alt="Five ballots, tie betweeen Alice and Bob" src="https://cs50.harvard.edu/x/2023/psets/3/runoff/../fptp_ballot_1.png" referrerpolicy="no-referrer"></p></div><div class="el-p"><p dir="auto">A plurality vote would here declare a tie between Alice and Bob, since each has two votes. But is that the right outcome?</p></div><div class="el-p"><p dir="auto">There’s another kind of voting system known as a ranked-choice voting system. In a ranked-choice system, voters can vote for more than one candidate. Instead of just voting for their top choice, they can rank the candidates in order of preference. The resulting ballots might therefore look like the below.</p></div><div class="el-p"><p dir="auto"><img alt="Three ballots, with ranked preferences" src="https://cs50.harvard.edu/x/2023/psets/3/runoff/../ranked_ballot_1.png" referrerpolicy="no-referrer"></p></div><div class="el-p"><p dir="auto">Here, each voter, in addition to specifying their first preference candidate, has also indicated their second and third choices. And now, what was previously a tied election could now have a winner. The race was originally tied between Alice and Bob, so Charlie was out of the running. But the voter who chose Charlie preferred Alice over Bob, so Alice could here be declared the winner.</p></div><div class="el-p"><p dir="auto">Ranked choice voting can also solve yet another potential drawback of plurality voting. Take a look at the following ballots.</p></div><div class="el-p"><p dir="auto"><img alt="Nine ballots, with ranked preferences" src="https://cs50.harvard.edu/x/2023/psets/3/runoff/../ranked_ballot_3.png" referrerpolicy="no-referrer"></p></div><div class="el-p"><p dir="auto">Who should win this election? In a plurality vote where each voter chooses their first preference only, Charlie wins this election with four votes compared to only three for Bob and two for Alice. But a majority of the voters (5 out of the 9) would be happier with either Alice or Bob instead of Charlie. By considering ranked preferences, a voting system may be able to choose a winner that better reflects the preferences of the voters.</p></div><div class="el-p"><p dir="auto">One such ranked choice voting system is the instant runoff system. In an instant runoff election, voters can rank as many candidates as they wish. If any candidate has a majority (more than 50%) of the first preference votes, that candidate is declared the winner of the election.</p></div><div class="el-p"><p dir="auto">If no candidate has more than 50% of the vote, then an “instant runoff” occurrs. The candidate who received the fewest number of votes is eliminated from the election, and anyone who originally chose that candidate as their first preference now has their second preference considered. Why do it this way? Effectively, this simulates what would have happened if the least popular candidate had not been in the election to begin with.</p></div><div class="el-p"><p dir="auto">The process repeats: if no candidate has a majority of the votes, the last place candidate is eliminated, and anyone who voted for them will instead vote for their next preference (who hasn’t themselves already been eliminated). Once a candidate has a majority, that candidate is declared the winner.</p></div><div class="el-p"><p dir="auto">Let’s consider the nine ballots above and examine how a runoff election would take place.</p></div><div class="el-p"><p dir="auto">Alice has two votes, Bob has three votes, and Charlie has four votes. To win an election with nine people, a majority (five votes) is required. Since nobody has a majority, a runoff needs to be held. Alice has the fewest number of votes (with only two), so Alice is eliminated. The voters who originally voted for Alice listed Bob as second preference, so Bob gets the extra two vote. Bob now has five votes, and Charlie still has four votes. Bob now has a majority, and Bob is declared the winner.</p></div><div class="el-p"><p dir="auto">What corner cases do we need to consider here?</p></div><div class="el-p"><p dir="auto">One possibility is that there’s a tie for who should get eliminated. We can handle that scenario by saying all candidates who are tied for last place will be eliminated. If every remaining candidate has the exact same number of votes, though, eliminating the tied last place candidates means eliminating everyone! So in that case, we’ll have to be careful not to eliminate everyone, and just declare the election a tie between all remaining candidates.</p></div><div class="el-p"><p dir="auto">Some instant runoff elections don’t require voters to rank all of their preferences — so there might be five candidates in an election, but a voter might only choose two. For this problem’s purposes, though, we’ll ignore that particular corner case, and assume that all voters will rank all of the candidates in their preferred order.</p></div><div class="el-p"><p dir="auto">Sounds a bit more complicated than a plurality vote, doesn’t it? But it arguably has the benefit of being an election system where the winner of the election more accurately represents the preferences of the voters.</p></div></div></div><div class="el-h2 heading-wrapper"><h2 data-heading="Getting Started" dir="auto" class="heading" id="Getting_Started"><div class="heading-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle"><path d="M3 8L12 17L21 8"></path></svg></div>Getting Started</h2><div class="heading-children"><div class="el-p"><p dir="auto">Log into <a data-tooltip-position="top" aria-label="https://code.cs50.io/" rel="noopener nofollow" class="external-link" href="https://code.cs50.io/" target="_blank">code.cs50.io</a>, click on your terminal window, and execute <code>cd</code> by itself. You should find that your terminal window’s prompt resembles the below:</p></div><div class="el-pre has-run-code-button"><pre class="language-bash" tabindex="0"><code data-line="0" class="language-bash is-loaded">$
+</code><button class="copy-code-button"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon lucide-copy"><rect x="8" y="8" width="14" height="14" rx="2" ry="2"></rect><path d="M4 16c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2"></path></svg></button><button class="run-code-button">Run</button></pre></div><div class="el-p"><p dir="auto">Next execute</p></div><div class="el-pre has-run-code-button"><pre class="language-bash" tabindex="0"><code data-line="0" class="language-bash is-loaded"><span class="token function">wget</span> https://cdn.cs50.net/2022/fall/psets/3/runoff.zip
+</code><button class="copy-code-button"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon lucide-copy"><rect x="8" y="8" width="14" height="14" rx="2" ry="2"></rect><path d="M4 16c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2"></path></svg></button><button class="run-code-button">Run</button></pre></div><div class="el-p"><p dir="auto">in order to download a ZIP called <code>runoff.zip</code> into your codespace.</p></div><div class="el-p"><p dir="auto">Then execute</p></div><div class="el-pre has-run-code-button"><pre class="language-bash" tabindex="0"><code data-line="0" class="language-bash is-loaded"><span class="token function">unzip</span> runoff.zip
+</code><button class="copy-code-button"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon lucide-copy"><rect x="8" y="8" width="14" height="14" rx="2" ry="2"></rect><path d="M4 16c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2"></path></svg></button><button class="run-code-button">Run</button></pre></div><div class="el-p"><p dir="auto">to create a folder called <code>runoff</code>. You no longer need the ZIP file, so you can execute</p></div><div class="el-pre has-run-code-button"><pre class="language-bash" tabindex="0"><code data-line="0" class="language-bash is-loaded"><span class="token function">rm</span> runoff.zip
+</code><button class="copy-code-button"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon lucide-copy"><rect x="8" y="8" width="14" height="14" rx="2" ry="2"></rect><path d="M4 16c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2"></path></svg></button><button class="run-code-button">Run</button></pre></div><div class="el-p"><p dir="auto">and respond with “y” followed by Enter at the prompt to remove the ZIP file you downloaded.</p></div><div class="el-p"><p dir="auto">Now type</p></div><div class="el-pre has-run-code-button"><pre class="language-bash" tabindex="0"><code data-line="0" class="language-bash is-loaded"><span class="token builtin class-name">cd</span> runoff
+</code><button class="copy-code-button"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon lucide-copy"><rect x="8" y="8" width="14" height="14" rx="2" ry="2"></rect><path d="M4 16c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2"></path></svg></button><button class="run-code-button">Run</button></pre></div><div class="el-p"><p dir="auto">followed by Enter to move yourself into (i.e., open) that directory. Your prompt should now resemble the below.</p></div><div class="el-pre has-run-code-button"><pre class="language-bash" tabindex="0"><code data-line="0" class="language-bash is-loaded">runoff/ $
+</code><button class="copy-code-button"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon lucide-copy"><rect x="8" y="8" width="14" height="14" rx="2" ry="2"></rect><path d="M4 16c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2"></path></svg></button><button class="run-code-button">Run</button></pre></div><div class="el-p"><p dir="auto">If all was successful, you should execute</p></div><div class="el-pre has-run-code-button"><pre class="language-bash" tabindex="0"><code data-line="0" class="language-bash is-loaded"><span class="token function">ls</span>
+</code><button class="copy-code-button"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon lucide-copy"><rect x="8" y="8" width="14" height="14" rx="2" ry="2"></rect><path d="M4 16c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2"></path></svg></button><button class="run-code-button">Run</button></pre></div><div class="el-p"><p dir="auto">and see a file named <code>runoff.c</code>. Executing <code>code runoff.c</code> should open the file where you will type your code for this problem set. If not, retrace your steps and see if you can determine where you went wrong!</p></div><div class="el-pre has-run-code-button"><pre class="language-c" tabindex="0"><code data-line="0" class="language-c is-loaded"><span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">include</span> <span class="token string">&lt;cs50.h&gt;</span></span>
+<span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">include</span> <span class="token string">&lt;stdio.h&gt;</span></span>
+
+<span class="token comment">// Max voters and candidates</span>
+<span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">define</span> <span class="token macro-name">MAX_VOTERS</span> <span class="token expression"><span class="token number">100</span></span></span>
+<span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">define</span> <span class="token macro-name">MAX_CANDIDATES</span> <span class="token expression"><span class="token number">9</span></span></span>
+
+<span class="token comment">// preferences[i][j] is jth preference for voter i</span>
+<span class="token keyword">int</span> preferences<span class="token punctuation">[</span>MAX_VOTERS<span class="token punctuation">]</span><span class="token punctuation">[</span>MAX_CANDIDATES<span class="token punctuation">]</span><span class="token punctuation">;</span>
+
+<span class="token comment">// Candidates have name, vote count, eliminated status</span>
+<span class="token keyword">typedef</span> <span class="token keyword">struct</span>
+<span class="token punctuation">{</span>
+	string name<span class="token punctuation">;</span>
+	<span class="token keyword">int</span> votes<span class="token punctuation">;</span>
+	bool eliminated<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+candidate<span class="token punctuation">;</span>
+
+<span class="token comment">// Array of candidates</span>
+candidate candidates<span class="token punctuation">[</span>MAX_CANDIDATES<span class="token punctuation">]</span><span class="token punctuation">;</span>
+
+<span class="token comment">// Numbers of voters and candidates</span>
+<span class="token keyword">int</span> voter_count<span class="token punctuation">;</span>
+<span class="token keyword">int</span> candidate_count<span class="token punctuation">;</span>
+
+<span class="token comment">// Function prototypes</span>
+bool <span class="token function">vote</span><span class="token punctuation">(</span><span class="token keyword">int</span> voter<span class="token punctuation">,</span> <span class="token keyword">int</span> rank<span class="token punctuation">,</span> string name<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token keyword">void</span> <span class="token function">tabulate</span><span class="token punctuation">(</span><span class="token keyword">void</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+bool <span class="token function">print_winner</span><span class="token punctuation">(</span><span class="token keyword">void</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token keyword">int</span> <span class="token function">find_min</span><span class="token punctuation">(</span><span class="token keyword">void</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+bool <span class="token function">is_tie</span><span class="token punctuation">(</span><span class="token keyword">int</span> min<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token keyword">void</span> <span class="token function">eliminate</span><span class="token punctuation">(</span><span class="token keyword">int</span> min<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token keyword">int</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token keyword">int</span> argc<span class="token punctuation">,</span> string argv<span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
+<span class="token punctuation">{</span>
+<span class="token comment">// Check for invalid usage</span>
+<span class="token keyword">if</span> <span class="token punctuation">(</span>argc <span class="token operator">&lt;</span> <span class="token number">2</span><span class="token punctuation">)</span>
+<span class="token punctuation">{</span>
+	<span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"Usage: runoff [candidate ...]\n"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+	<span class="token keyword">return</span> <span class="token number">1</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token comment">// Populate array of candidates</span>
+candidate_count <span class="token operator">=</span> argc <span class="token operator">-</span> <span class="token number">1</span><span class="token punctuation">;</span>
+<span class="token keyword">if</span> <span class="token punctuation">(</span>candidate_count <span class="token operator">&gt;</span> MAX_CANDIDATES<span class="token punctuation">)</span>
+<span class="token punctuation">{</span>
+	<span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"Maximum number of candidates is %i\n"</span><span class="token punctuation">,</span> MAX_CANDIDATES<span class="token punctuation">)</span><span class="token punctuation">;</span>
+	<span class="token keyword">return</span> <span class="token number">2</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+<span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">int</span> i <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> i <span class="token operator">&lt;</span> candidate_count<span class="token punctuation">;</span> i<span class="token operator">++</span><span class="token punctuation">)</span>
+<span class="token punctuation">{</span>
+	candidates<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">.</span>name <span class="token operator">=</span> argv<span class="token punctuation">[</span>i <span class="token operator">+</span> <span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+	candidates<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">.</span>votes <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>
+	candidates<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">.</span>eliminated <span class="token operator">=</span> false<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+voter_count <span class="token operator">=</span> <span class="token function">get_int</span><span class="token punctuation">(</span><span class="token string">"Number of voters: "</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token keyword">if</span> <span class="token punctuation">(</span>voter_count <span class="token operator">&gt;</span> MAX_VOTERS<span class="token punctuation">)</span>
+<span class="token punctuation">{</span>
+	<span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"Maximum number of voters is %i\n"</span><span class="token punctuation">,</span> MAX_VOTERS<span class="token punctuation">)</span><span class="token punctuation">;</span>
+	<span class="token keyword">return</span> <span class="token number">3</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token comment">// Keep querying for votes</span>
+<span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">int</span> i <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> i <span class="token operator">&lt;</span> voter_count<span class="token punctuation">;</span> i<span class="token operator">++</span><span class="token punctuation">)</span>
+<span class="token punctuation">{</span>
+	<span class="token comment">// Query for each rank</span>
+	<span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">int</span> j <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> j <span class="token operator">&lt;</span> candidate_count<span class="token punctuation">;</span> j<span class="token operator">++</span><span class="token punctuation">)</span>
+	<span class="token punctuation">{</span>
+		string name <span class="token operator">=</span> <span class="token function">get_string</span><span class="token punctuation">(</span><span class="token string">"Rank %i: "</span><span class="token punctuation">,</span> j <span class="token operator">+</span> <span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+		
+		<span class="token comment">// Record vote, unless it's invalid</span>
+		<span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token operator">!</span><span class="token function">vote</span><span class="token punctuation">(</span>i<span class="token punctuation">,</span> j<span class="token punctuation">,</span> name<span class="token punctuation">)</span><span class="token punctuation">)</span>
+		<span class="token punctuation">{</span>
+			<span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"Invalid vote.\n"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+			<span class="token keyword">return</span> <span class="token number">4</span><span class="token punctuation">;</span>
+		<span class="token punctuation">}</span>
+	<span class="token punctuation">}</span>
+
+	<span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"\n"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token comment">// Keep holding runoffs until winner exists</span>
+<span class="token keyword">while</span> <span class="token punctuation">(</span>true<span class="token punctuation">)</span>
+<span class="token punctuation">{</span>
+	<span class="token comment">// Calculate votes given remaining candidates</span>
+	<span class="token function">tabulate</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+	
+	<span class="token comment">// Check if election has been won</span>
+	bool won <span class="token operator">=</span> <span class="token function">print_winner</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+	<span class="token keyword">if</span> <span class="token punctuation">(</span>won<span class="token punctuation">)</span>
+	<span class="token punctuation">{</span>
+		<span class="token keyword">break</span><span class="token punctuation">;</span>
+	<span class="token punctuation">}</span>
+	
+	<span class="token comment">// Eliminate last-place candidates</span>
+	<span class="token keyword">int</span> min <span class="token operator">=</span> <span class="token function">find_min</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+	bool tie <span class="token operator">=</span> <span class="token function">is_tie</span><span class="token punctuation">(</span>min<span class="token punctuation">)</span><span class="token punctuation">;</span>
+	
+	<span class="token comment">// If tie, everyone wins</span>
+	<span class="token keyword">if</span> <span class="token punctuation">(</span>tie<span class="token punctuation">)</span>
+	<span class="token punctuation">{</span>
+		<span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">int</span> i <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> i <span class="token operator">&lt;</span> candidate_count<span class="token punctuation">;</span> i<span class="token operator">++</span><span class="token punctuation">)</span>
+		<span class="token punctuation">{</span>
+			<span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token operator">!</span>candidates<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">.</span>eliminated<span class="token punctuation">)</span>
+			<span class="token punctuation">{</span>
+				<span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"%s\n"</span><span class="token punctuation">,</span> candidates<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">.</span>name<span class="token punctuation">)</span><span class="token punctuation">;</span>
+			<span class="token punctuation">}</span>
+		<span class="token punctuation">}</span>
+		<span class="token keyword">break</span><span class="token punctuation">;</span>
+	<span class="token punctuation">}</span>
+	
+	<span class="token comment">// Eliminate anyone with minimum number of votes</span>
+	<span class="token function">eliminate</span><span class="token punctuation">(</span>min<span class="token punctuation">)</span><span class="token punctuation">;</span>
+	
+	<span class="token comment">// Reset vote counts back to zero</span>
+	<span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">int</span> i <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> i <span class="token operator">&lt;</span> candidate_count<span class="token punctuation">;</span> i<span class="token operator">++</span><span class="token punctuation">)</span>
+	<span class="token punctuation">{</span>
+		candidates<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">.</span>votes <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>
+	<span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+<span class="token keyword">return</span> <span class="token number">0</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token comment">// Record preference if vote is valid</span>
+bool <span class="token function">vote</span><span class="token punctuation">(</span><span class="token keyword">int</span> voter<span class="token punctuation">,</span> <span class="token keyword">int</span> rank<span class="token punctuation">,</span> string name<span class="token punctuation">)</span>
+<span class="token punctuation">{</span>
+	<span class="token comment">// TODO</span>
+	<span class="token keyword">return</span> false<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token comment">// Tabulate votes for non-eliminated candidates</span>
+<span class="token keyword">void</span> <span class="token function">tabulate</span><span class="token punctuation">(</span><span class="token keyword">void</span><span class="token punctuation">)</span>
+<span class="token punctuation">{</span>
+	<span class="token comment">// TODO</span>
+	<span class="token keyword">return</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token comment">// Print the winner of the election, if there is one</span>
+bool <span class="token function">print_winner</span><span class="token punctuation">(</span><span class="token keyword">void</span><span class="token punctuation">)</span>
+<span class="token punctuation">{</span>
+	<span class="token comment">// TODO</span>
+	<span class="token keyword">return</span> false<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token comment">// Return the minimum number of votes any remaining candidate has</span>
+<span class="token keyword">int</span> <span class="token function">find_min</span><span class="token punctuation">(</span><span class="token keyword">void</span><span class="token punctuation">)</span>
+<span class="token punctuation">{</span>
+	<span class="token comment">// TODO</span>
+	<span class="token keyword">return</span> <span class="token number">0</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token comment">// Return true if the election is tied between all candidates, false otherwise</span>
+bool <span class="token function">is_tie</span><span class="token punctuation">(</span><span class="token keyword">int</span> min<span class="token punctuation">)</span>
+<span class="token punctuation">{</span>
+	<span class="token comment">// TODO</span>
+	<span class="token keyword">return</span> false<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token comment">// Eliminate the candidate (or candidates) in last place</span>
+<span class="token keyword">void</span> <span class="token function">eliminate</span><span class="token punctuation">(</span><span class="token keyword">int</span> min<span class="token punctuation">)</span>
+<span class="token punctuation">{</span>
+	<span class="token comment">// TODO</span>
+	<span class="token keyword">return</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code><button class="copy-code-button"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon lucide-copy"><rect x="8" y="8" width="14" height="14" rx="2" ry="2"></rect><path d="M4 16c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2"></path></svg></button><button class="run-code-button">Run</button></pre></div></div></div><div class="el-h2 heading-wrapper"><h2 data-heading="Understanding" dir="auto" class="heading" id="Understanding"><div class="heading-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle"><path d="M3 8L12 17L21 8"></path></svg></div>Understanding</h2><div class="heading-children"><div class="el-details"><details> <summary>Let's break down the code and simplify the explanation:</summary> </details></div><div class="el-ol"><ol>
+<li data-line="0" dir="auto">
+<p>The code defines the maximum number of voters and candidates allowed in the election using the constants <code>MAX_VOTERS</code> and <code>MAX_CANDIDATES</code>.</p>
+</li>
+<li data-line="2" dir="auto">
+<p>The preferences of voters are stored in a two-dimensional array called <code>preferences</code>. Each element <code>preferences[i][j]</code> represents the index of the candidate that is the <code>j</code>th preference for voter <code>i</code>.</p>
+</li>
+<li data-line="4" dir="auto">
+<p>The candidates are defined using a struct called <code>candidate</code>. Each candidate has a name, vote count, and an eliminated status.</p>
+</li>
+<li data-line="6" dir="auto">
+<p>An array <code>candidates</code> is used to store all the candidate objects.</p>
+</li>
+<li data-line="8" dir="auto">
+<p>Global variables <code>voter_count</code> and <code>candidate_count</code> keep track of the number of voters and candidates, respectively.</p>
+</li>
+<li data-line="10" dir="auto">
+<p>The code defines function prototypes for various functions used in the program.</p>
+</li>
+<li data-line="12" dir="auto">
+<p>In the <code>main</code> function, the code checks for valid command-line arguments and sets up the candidates' data structure. It also prompts the user for the number of voters and their preferences.</p>
+</li>
+<li data-line="14" dir="auto">
+<p>After gathering all the votes, the program enters a loop that continues until a winner is determined. In each iteration, it calculates the votes for the remaining candidates using the <code>tabulate</code> function.</p>
+</li>
+<li data-line="16" dir="auto">
+<p>The <code>print_winner</code> function checks if there is a winner by checking if any candidate has more than 50% of the total votes.</p>
+</li>
+<li data-line="18" dir="auto">
+<p>The <code>find_min</code> function finds the minimum number of votes among the remaining candidates.</p>
+</li>
+<li data-line="20" dir="auto">
+<p>The <code>is_tie</code> function checks if there is a tie by comparing the vote count of the remaining candidates with the minimum number of votes.</p>
+</li>
+<li data-line="22" dir="auto">
+<p>The <code>eliminate</code> function eliminates the candidate(s) with the minimum number of votes.</p>
+</li>
+<li data-line="24" dir="auto">
+<p>The loop continues until a winner is found or the election is declared a tie.</p>
+</li>
+<li data-line="26" dir="auto">
+<p>Finally, the program returns 0 to indicate successful execution.</p>
+</li>
+</ol></div><div class="el-p"><p dir="auto">To complete the program, you need to implement the functions <code>vote</code>, <code>tabulate</code>, <code>print_winner</code>, <code>find_min</code>, <code>is_tie</code>, and <code>eliminate</code> as per the specifications of the program.</p></div><div></div><div class="el-p"><p dir="auto">Let’s take a look at <code>runoff.c</code>. We’re defining two constants: <code>MAX_CANDIDATES</code> for the maximum number of candidates in the election, and <code>MAX_VOTERS</code> for the maximum number of voters in the election.</p></div><div class="el-p"><p dir="auto">Next up is a two-dimensional array <code>preferences</code>. The array <code>preferences[i]</code> will represent all of the preferences for voter number <code>i</code>, and the integer <code>preferences[i][j]</code> here will store the index of the candidate who is the <code>j</code>th preference for voter <code>i</code>.</p></div><div class="el-p"><p dir="auto">Next up is a <code>struct</code> called <code>candidate</code>. Every <code>candidate</code> has:</p></div><div class="el-ul"><ul>
+<li data-line="0" dir="auto">a <code>string</code> field for their <code>name</code>,</li>
+<li data-line="1" dir="auto">an <code>int</code> representing the number of <code>votes</code> they currently have,</li>
+<li data-line="2" dir="auto">and a <code>bool</code> value called <code>eliminated</code> that indicates whether the candidate has been eliminated from the election.<br>
+The array <code>candidates</code> will keep track of all of the candidates in the election.</li>
+</ul></div><div class="el-p"><p dir="auto">The program also has two global variables: <code>voter_count</code> and <code>candidate_count</code>.</p></div><div class="el-p"><p dir="auto">Now onto <code>main</code>. Notice that after determining the number of candidates and the number of voters. </p></div><div class="el-p"><p dir="auto">The main voting loop begins, giving every voter a chance to vote. As the voter enters their preferences, the <code>vote</code> function is called to keep track of all of the preferences. If at any point, the ballot is deemed to be invalid, the program exits.</p></div><div class="el-p"><p dir="auto">Once all of the votes are in, another loop begins: this one’s going to keep looping through the runoff process of checking for a winner and eliminating the last place candidate until there is a winner.</p></div><div class="el-p"><p dir="auto">The first call here is to a function called <code>tabulate</code>, which should look at all of the voters’ preferences and compute the current vote totals, by looking at each voter’s top choice candidate who hasn’t yet been eliminated. Next, the <code>print_winner</code> function should print out the winner if there is one; if there is, the program is over. But otherwise, the program needs to determine the fewest number of votes anyone still in the election received (via a call to <code>find_min</code>). If it turns out that everyone in the election is tied with the same number of votes (as determined by the <code>is_tie</code> function), the election is declared a tie; otherwise, the last-place candidate (or candidates) is eliminated from the election via a call to the <code>eliminate</code> function.</p></div><div class="el-p"><p dir="auto">If you look a bit further down in the file, you’ll see that these functions — <code>vote</code>, <code>tabulate</code>, <code>print_winner</code>, <code>find_min</code>, <code>is_tie</code>, and <code>eliminate</code> — are all left to up to you to complete!</p></div></div></div><div class="el-h2 heading-wrapper"><h2 data-heading="Specification" dir="auto" class="heading" id="Specification"><div class="heading-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle"><path d="M3 8L12 17L21 8"></path></svg></div>Specification</h2><div class="heading-children"><div class="el-p"><p dir="auto">Complete the implementation of <code>runoff.c</code> in such a way that it simulates a runoff election. You should complete the implementations of the <code>vote</code>, <code>tabulate</code>, <code>print_winner</code>, <code>find_min</code>, <code>is_tie</code>, and <code>eliminate</code> functions, and you should not modify anything else in <code>runoff.c</code> (and the inclusion of additional header files, if you’d like).</p></div><div class="el-h3 heading-wrapper"><h3 data-heading="`vote`" dir="auto" class="heading" id="`vote`"><div class="heading-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle"><path d="M3 8L12 17L21 8"></path></svg></div><code>vote</code></h3><div class="heading-children"><div class="el-p"><p dir="auto">Complete the <code>vote</code> function.</p></div><div class="el-ul"><ul>
+<li data-line="0" dir="auto">The function takes arguments <code>voter</code>, <code>rank</code>, and <code>name</code>. If <code>name</code> is a match for the name of a valid candidate, then you should update the global preferences array to indicate that the voter <code>voter</code> has that candidate as their <code>rank</code> preference (where <code>0</code> is the first preference, <code>1</code> is the second preference, etc.).</li>
+<li data-line="1" dir="auto">If the preference is successfully recorded, the function should return <code>true</code>; the function should return <code>false</code> otherwise (if, for instance, <code>name</code> is not the name of one of the candidates).</li>
+<li data-line="2" dir="auto">You may assume that no two candidates will have the same name.</li>
+</ul></div><div class="el-p"><p dir="auto">Hints</p></div><div class="el-ul"><ul>
+<li data-line="0" dir="auto">Recall that <code>candidate_count</code> stores the number of candidates in the election.</li>
+<li data-line="1" dir="auto">Recall that you can use <a data-tooltip-position="top" aria-label="https://man.cs50.io/3/strcmp" rel="noopener nofollow" class="external-link" href="https://man.cs50.io/3/strcmp" target="_blank"><code>strcmp</code></a> to compare two strings.</li>
+<li data-line="2" dir="auto">Recall that <code>preferences[i][j]</code> stores the index of the candidate who is the <code>j</code>th ranked preference for the <code>i</code>th voter.</li>
+</ul></div></div></div><div class="el-h3 heading-wrapper"><h3 data-heading="`tabulate`" dir="auto" class="heading" id="`tabulate`"><div class="heading-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle"><path d="M3 8L12 17L21 8"></path></svg></div><code>tabulate</code></h3><div class="heading-children"><div class="el-p"><p dir="auto">Complete the <code>tabulate</code> function.</p></div><div class="el-ul"><ul>
+<li data-line="0" dir="auto">The function should update the number of <code>votes</code> each candidate has at this stage in the runoff.</li>
+<li data-line="1" dir="auto">Recall that at each stage in the runoff, every voter effectively votes for their top-preferred candidate who has not already been eliminated.</li>
+</ul></div><div class="el-p"><p dir="auto">Hints</p></div><div class="el-ul"><ul>
+<li data-line="0" dir="auto">Recall that <code>voter_count</code> stores the number of voters in the election and that, for each voter in our election, we want to count one ballot.</li>
+<li data-line="1" dir="auto">Recall that for a voter <code>i</code>, their top choice candidate is represented by <code>preferences[i][0]</code>, their second choice candidate by <code>preferences[i][1]</code>, etc.</li>
+<li data-line="2" dir="auto">Recall that the <code>candidate</code> <code>struct</code> has a field called <code>eliminated</code>, which will be <code>true</code> if the candidate has been eliminated from the election.</li>
+<li data-line="3" dir="auto">Recall that the <code>candidate</code> <code>struct</code> has a field called <code>votes</code>, which you’ll likely want to update for each voter’s preferred candidate.</li>
+<li data-line="4" dir="auto">Once you’ve cast a vote for a voter’s first non-eliminated candidate, you’ll want to stop there, not continue down their ballot! Recall that you can break out of a loop early using <code>break</code> inside of a conditional.</li>
+</ul></div></div></div><div class="el-h3 heading-wrapper"><h3 data-heading="`print_winner`" dir="auto" class="heading" id="`print_winner`"><div class="heading-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle"><path d="M3 8L12 17L21 8"></path></svg></div><code>print_winner</code></h3><div class="heading-children"><div class="el-p"><p dir="auto">Complete the <code>print_winner</code> function.</p></div><div class="el-ul"><ul>
+<li data-line="0" dir="auto">If any candidate has more than half of the vote, their name should be printed and the function should return <code>true</code>.</li>
+<li data-line="1" dir="auto">If nobody has won the election yet, the function should return <code>false</code>.</li>
+</ul></div><div class="el-p"><p dir="auto">Hints</p></div><div class="el-ul"><ul>
+<li data-line="0" dir="auto">Recall that <code>voter_count</code> stores the number of voters in the election. Given that, how would you express the number of votes needed to win the election?</li>
+</ul></div></div></div><div class="el-h3 heading-wrapper"><h3 data-heading="`find_min`" dir="auto" class="heading" id="`find_min`"><div class="heading-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle"><path d="M3 8L12 17L21 8"></path></svg></div><code>find_min</code></h3><div class="heading-children"><div class="el-p"><p dir="auto">Complete the <code>find_min</code> function.</p></div><div class="el-ul"><ul>
+<li data-line="0" dir="auto">The function should return the minimum vote total for any candidate who is still in the election.</li>
+</ul></div><div class="el-p"><p dir="auto">Hints</p></div><div class="el-ul"><ul>
+<li data-line="0" dir="auto">You’ll likely want to loop through the candidates to find the one who is both still in the election and has the fewest number of votes. What information should you keep track of as you loop through the candidates?</li>
+</ul></div></div></div><div class="el-h3 heading-wrapper"><h3 data-heading="`is_tie`" dir="auto" class="heading" id="`is_tie`"><div class="heading-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle"><path d="M3 8L12 17L21 8"></path></svg></div><code>is_tie</code></h3><div class="heading-children"><div class="el-p"><p dir="auto">Complete the <code>is_tie</code> function.</p></div><div class="el-ul"><ul>
+<li data-line="0" dir="auto">The function takes an argument <code>min</code>, which will be the minimum number of votes that anyone in the election currently has.</li>
+<li data-line="1" dir="auto">The function should return <code>true</code> if every candidate remaining in the election has the same number of votes, and should return <code>false</code> otherwise.</li>
+</ul></div><div class="el-p"><p dir="auto">Hints</p></div><div class="el-ul"><ul>
+<li data-line="0" dir="auto">Recall that a tie happens if every candidate still in the election has the same number of votes. Note, too, that the <code>is_tie</code> function takes an argument <code>min</code>, which is the smallest number of votes any candidate currently has. How might you use that information to determine if the election is a tie (or, conversely, not a tie)?</li>
+</ul></div></div></div><div class="el-h3 heading-wrapper"><h3 data-heading="`eliminate`" dir="auto" class="heading" id="`eliminate`"><div class="heading-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle"><path d="M3 8L12 17L21 8"></path></svg></div><code>eliminate</code></h3><div class="heading-children"><div class="el-p"><p dir="auto">Complete the <code>eliminate</code> function.</p></div><div class="el-ul"><ul>
+<li data-line="0" dir="auto">The function takes an argument <code>min</code>, which will be the minimum number of votes that anyone in the election currently has.</li>
+<li data-line="1" dir="auto">The function should eliminate the candidate (or candidates) who have <code>min</code> number of votes.</li>
+</ul></div></div></div></div></div><div class="el-h2 heading-wrapper"><h2 data-heading="Usage" dir="auto" class="heading" id="Usage"><div class="heading-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle"><path d="M3 8L12 17L21 8"></path></svg></div>Usage</h2><div class="heading-children"><div class="el-p"><p dir="auto">Your program should behave per the example below:</p></div><div class="el-pre has-run-code-button"><pre class="language-bash" tabindex="0"><code data-line="0" class="language-bash is-loaded">./runoff Alice Bob Charlie
+Number of voters: <span class="token number">5</span>
+Rank <span class="token number">1</span>: Alice
+Rank <span class="token number">2</span>: Charlie
+Rank <span class="token number">3</span>: Bob
+
+Rank <span class="token number">1</span>: Alice
+Rank <span class="token number">2</span>: Charlie
+Rank <span class="token number">3</span>: Bob
+
+Rank <span class="token number">1</span>: Bob
+Rank <span class="token number">2</span>: Charlie
+Rank <span class="token number">3</span>: Alice
+
+Rank <span class="token number">1</span>: Bob
+Rank <span class="token number">2</span>: Charlie
+Rank <span class="token number">3</span>: Alice
+
+Rank <span class="token number">1</span>: Charlie
+Rank <span class="token number">2</span>: Alice
+Rank <span class="token number">3</span>: Bob
+
+Alice
+</code><button class="copy-code-button"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon lucide-copy"><rect x="8" y="8" width="14" height="14" rx="2" ry="2"></rect><path d="M4 16c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2"></path></svg></button><button class="run-code-button">Run</button></pre></div></div></div><div class="el-h2 heading-wrapper"><h2 data-heading="Testing" dir="auto" class="heading" id="Testing"><div class="heading-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle"><path d="M3 8L12 17L21 8"></path></svg></div>Testing</h2><div class="heading-children"><div class="el-p"><p dir="auto">Be sure to test your code to make sure it handles…</p></div><div class="el-ul"><ul>
+<li data-line="0" dir="auto">An election with any number of candidate (up to the <code>MAX</code> of <code>9</code>)</li>
+<li data-line="1" dir="auto">Voting for a candidate by name</li>
+<li data-line="2" dir="auto">Invalid votes for candidates who are not on the ballot</li>
+<li data-line="3" dir="auto">Printing the winner of the election if there is only one</li>
+<li data-line="4" dir="auto">Not eliminating anyone in the case of a tie between all remaining candidates</li>
+</ul></div><div class="el-p"><p dir="auto">Execute the below to evaluate the correctness of your code using <code>check50</code>. But be sure to compile and test it yourself as well!</p></div><div class="el-pre has-run-code-button"><pre class="language-bash" tabindex="0"><code data-line="0" class="language-bash is-loaded">check50 cs50/problems/2023/x/runoff
+</code><button class="copy-code-button"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon lucide-copy"><rect x="8" y="8" width="14" height="14" rx="2" ry="2"></rect><path d="M4 16c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2"></path></svg></button><button class="run-code-button">Run</button></pre></div><div class="el-p"><p dir="auto">Execute the below to evaluate the style of your code using <code>style50</code>.</p></div><div class="el-pre has-run-code-button"><pre class="language-bash" tabindex="0"><code data-line="0" class="language-bash is-loaded">style50 runoff.c
+</code><button class="copy-code-button"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon lucide-copy"><rect x="8" y="8" width="14" height="14" rx="2" ry="2"></rect><path d="M4 16c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2"></path></svg></button><button class="run-code-button">Run</button></pre></div></div></div><div class="el-h2 heading-wrapper"><h2 data-heading="How to Submit" dir="auto" class="heading" id="How_to_Submit"><div class="heading-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle"><path d="M3 8L12 17L21 8"></path></svg></div>How to Submit</h2><div class="heading-children"><div class="el-p"><p dir="auto">In your terminal, execute the below to submit your work.</p></div><div class="el-pre has-run-code-button"><pre class="language-bash" tabindex="0"><code data-line="0" class="language-bash is-loaded">submit50 cs50/problems/2023/x/runoff
+</code><button class="copy-code-button"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon lucide-copy"><rect x="8" y="8" width="14" height="14" rx="2" ry="2"></rect><path d="M4 16c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2"></path></svg></button><button class="run-code-button">Run</button></pre></div><div class="el-hr"><hr></div></div></div></div></div><div class="el-h1 heading-wrapper"><h1 data-heading="Walkthrough" dir="auto" class="heading" id="Walkthrough">Walkthrough</h1><div class="heading-children"><div class="el-ol node-insert-event"><ol>
+<li data-line="0" dir="auto" class="has-run-code-button"><div class="list-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle"><path d="M3 8L12 17L21 8"></path></svg></div>
+<p><code>bool vote(...)</code> function:<br>
+is responsible for recording the preference of a voter. It takes three parameters:</p>
+<ul>
+<li data-line="2" dir="auto"><code>voter</code> (the index of the voter),</li>
+<li data-line="3" dir="auto"><code>rank</code> (the preference rank of the candidate), and</li>
+<li data-line="4" dir="auto"><code>name</code> (the name of the candidate).</li>
+</ul>
+<p>The validation is similar to <strong>Plurality</strong>, we need to check if the given candidate name is valid and matches one of the candidates in the <code>candidates</code> array using the <code>strcmp()</code> function. If it is valid, we will update the <code>preferences</code> array to store the index of the candidate as the preference for the corresponding voter and rank.</p>
+<pre class="language-c" tabindex="0"><code data-line="8" class="language-c is-loaded">bool <span class="token function">vote</span><span class="token punctuation">(</span><span class="token keyword">int</span> voter<span class="token punctuation">,</span> <span class="token keyword">int</span> rank<span class="token punctuation">,</span> string name<span class="token punctuation">)</span>
+<span class="token punctuation">{</span>
+    <span class="token comment">// Check if the candidate name is valid</span>
+    <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">int</span> i <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> i <span class="token operator">&lt;</span> candidate_count<span class="token punctuation">;</span> i<span class="token operator">++</span><span class="token punctuation">)</span>
+    <span class="token punctuation">{</span>
+        <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token function">strcmp</span><span class="token punctuation">(</span>candidates<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">.</span>name<span class="token punctuation">,</span> name<span class="token punctuation">)</span> <span class="token operator">==</span> <span class="token number">0</span><span class="token punctuation">)</span>
+        <span class="token punctuation">{</span>
+            <span class="token comment">// Update the preferences array</span>
+            preferences<span class="token punctuation">[</span>voter<span class="token punctuation">]</span><span class="token punctuation">[</span>rank<span class="token punctuation">]</span> <span class="token operator">=</span> i<span class="token punctuation">;</span>
+            <span class="token keyword">return</span> true<span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+    <span class="token keyword">return</span> false<span class="token punctuation">;</span> <span class="token comment">// For an invalid vote</span>
+<span class="token punctuation">}</span>
+</code><button class="copy-code-button"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon lucide-copy"><rect x="8" y="8" width="14" height="14" rx="2" ry="2"></rect><path d="M4 16c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2"></path></svg></button><button class="run-code-button">Run</button></pre>
+<p>Is called in:</p>
+<pre class="language-c" tabindex="0"><code data-line="26" class="language-c is-loaded"><span class="token comment">// Record vote, unless it's invalid</span>
+<span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token operator">!</span><span class="token function">vote</span><span class="token punctuation">(</span>i<span class="token punctuation">,</span> j<span class="token punctuation">,</span> name<span class="token punctuation">)</span><span class="token punctuation">)</span>
+<span class="token punctuation">{</span>
+	<span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"Invalid vote.\n"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+	<span class="token keyword">return</span> <span class="token number">4</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code><button class="copy-code-button"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon lucide-copy"><rect x="8" y="8" width="14" height="14" rx="2" ry="2"></rect><path d="M4 16c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2"></path></svg></button></pre>
+<p>Where:</p>
+<ul>
+<li data-line="36" dir="auto"><code>i</code>, iterates over the number of votes,</li>
+<li data-line="37" dir="auto"><code>j</code>, iterates over the number of candidates</li>
+<li data-line="38" dir="auto"><code>name</code>, receives the string to compute the vote.</li>
+</ul>
+</li>
+<li data-line="40" dir="auto" class="has-run-code-button"><div class="list-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle"><path d="M3 8L12 17L21 8"></path></svg></div>
+<p><code>void tabulate()</code> function:<br>
+is responsible for calculating the vote counts for each non-eliminated candidate.</p>
+<pre class="language-c" tabindex="0"><code data-line="43" class="language-c is-loaded"><span class="token keyword">void</span> <span class="token function">tabulate</span><span class="token punctuation">(</span><span class="token keyword">void</span><span class="token punctuation">)</span>
+<span class="token punctuation">{</span>
+    <span class="token comment">// Reset vote counts for all candidates</span>
+    <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">int</span> i <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> i <span class="token operator">&lt;</span> candidate_count<span class="token punctuation">;</span> i<span class="token operator">++</span><span class="token punctuation">)</span>
+    <span class="token punctuation">{</span>
+        candidates<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">.</span>votes <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+    <span class="token comment">// Iterate through each voter's preferences</span>
+    <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">int</span> i <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> i <span class="token operator">&lt;</span> voter_count<span class="token punctuation">;</span> i<span class="token operator">++</span><span class="token punctuation">)</span>
+    <span class="token punctuation">{</span>
+        <span class="token comment">// Iterate through each preference rank</span>
+        <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">int</span> j <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> j <span class="token operator">&lt;</span> candidate_count<span class="token punctuation">;</span> j<span class="token operator">++</span><span class="token punctuation">)</span>
+        <span class="token punctuation">{</span>
+            <span class="token comment">// Get the candidate index based on the current preference rank</span>
+            <span class="token keyword">int</span> candidate_index <span class="token operator">=</span> preferences<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">[</span>j<span class="token punctuation">]</span><span class="token punctuation">;</span>
+            
+            <span class="token comment">// If the candidate is not eliminated, increment their vote count and break the loop</span>
+            <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token operator">!</span>candidates<span class="token punctuation">[</span>candidate_index<span class="token punctuation">]</span><span class="token punctuation">.</span>eliminated<span class="token punctuation">)</span>
+            <span class="token punctuation">{</span>
+                candidates<span class="token punctuation">[</span>candidate_index<span class="token punctuation">]</span><span class="token punctuation">.</span>votes<span class="token operator">++</span><span class="token punctuation">;</span>
+                <span class="token keyword">break</span><span class="token punctuation">;</span>
+            <span class="token punctuation">}</span>
+        <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code><button class="copy-code-button"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon lucide-copy"><rect x="8" y="8" width="14" height="14" rx="2" ry="2"></rect><path d="M4 16c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2"></path></svg></button><button class="run-code-button">Run</button></pre>
+<ol>
+<li data-line="71" dir="auto">
+<p>Firstly, we reset the vote counts for all candidates to zero (<em>is necessary to ensure accurate vote counting for the current round of the runoff election</em>). We iterate through the <code>candidates</code> array and set the <code>votes</code> field of each candidate to zero.</p>
+</li>
+<li data-line="73" dir="auto">
+<p>Next, we iterate through each voter's preferences using a nested loop. The outer loop iterates over each voter (using <code>i</code> for <code>voter_count</code>), and the inner loop iterates over each candidate (using <code>j</code> for <code>candidate_count</code>) and it's preference rank.</p>
+</li>
+<li data-line="75" dir="auto">
+<p>Inside the nested loop, we get the candidate index for the current preference rank using <code>preferences[i][j]</code> and the loops indexes (<code>i</code> and <code>j</code>).</p>
+</li>
+<li data-line="77" dir="auto">
+<p>We check if the candidate at the obtained index is eliminated. If not, we increment their vote count by one and break out of the inner loop since we have found the highest-ranked non-eliminated candidate for that voter.</p>
+</li>
+<li data-line="79" dir="auto">
+<p>The process continues for all voters and their preference ranks.</p>
+</li>
+</ol>
+<p>After executing the <code>tabulate</code> function, the <code>candidates</code> array will have updated vote counts for each non-eliminated candidate.</p>
+</li>
+<li data-line="83" dir="auto" class="has-run-code-button"><div class="list-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle"><path d="M3 8L12 17L21 8"></path></svg></div>
+<p><code>bool print_winner()</code> function:<br>
+is responsible for determining if there is a clear winner in the election.</p>
+<pre class="language-c" tabindex="0"><code data-line="86" class="language-c is-loaded">bool <span class="token function">print_winner</span><span class="token punctuation">(</span><span class="token keyword">void</span><span class="token punctuation">)</span>
+<span class="token punctuation">{</span>
+    <span class="token comment">// Calculate the majority threshold</span>
+    <span class="token keyword">int</span> majority_limit <span class="token operator">=</span> voter_count <span class="token operator">/</span> <span class="token number">2</span> <span class="token operator">+</span> <span class="token number">1</span><span class="token punctuation">;</span>
+    <span class="token comment">// Iterate through each candidate</span>
+    <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">int</span> i <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> i <span class="token operator">&lt;</span> candidate_count<span class="token punctuation">;</span> i<span class="token operator">++</span><span class="token punctuation">)</span>
+    <span class="token punctuation">{</span>
+        <span class="token comment">// Check if the candidate has more than half of available votes</span>
+        <span class="token keyword">if</span> <span class="token punctuation">(</span>candidates<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">.</span>votes <span class="token operator">&gt;=</span> majority_limit<span class="token punctuation">)</span>
+        <span class="token punctuation">{</span>
+            <span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"%s\n"</span><span class="token punctuation">,</span> candidates<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">.</span>name<span class="token punctuation">)</span><span class="token punctuation">;</span>
+            <span class="token keyword">return</span> true<span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+    <span class="token keyword">return</span> false<span class="token punctuation">;</span> <span class="token comment">// If no winner found</span>
+<span class="token punctuation">}</span>
+</code><button class="copy-code-button"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon lucide-copy"><rect x="8" y="8" width="14" height="14" rx="2" ry="2"></rect><path d="M4 16c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2"></path></svg></button><button class="run-code-button">Run</button></pre>
+<ol>
+<li data-line="105" dir="auto">
+<p>We calculate the <a data-tooltip-position="top" aria-label="https://en.wikipedia.org/wiki/Electoral_threshold" rel="noopener nofollow" class="external-link" href="https://en.wikipedia.org/wiki/Electoral_threshold" target="_blank">majority threshold</a> by dividing the total number of voters (<code>voter_count</code>) by 2 and adding 1. This threshold represents the minimum number of votes needed to win the election (more than half of the total votes).</p>
+</li>
+<li data-line="107" dir="auto">
+<p>We iterate through each candidate using a loop.</p>
+</li>
+<li data-line="109" dir="auto">
+<p>For each candidate, we check if their vote count (<code>candidates[i].votes</code>) is greater than the majority threshold. If it is, that means the candidate has received more votes than the threshold required to win.</p>
+</li>
+<li data-line="111" dir="auto">
+<p>If we find a candidate with more than the majority threshold votes, we print their name using <code>printf</code> and return <code>true</code> to indicate that a clear winner has been found.</p>
+</li>
+<li data-line="113" dir="auto">
+<p>If we finish iterating through all the candidates and no candidate has more than the majority threshold votes, we return <code>false</code> to indicate that there is no clear winner yet.</p>
+</li>
+</ol>
+<p>The <code>print_winner</code> function checks if any candidate has received more votes than the half of the available number of votes, indicating that they have won the election directly. </p>
+<p>If a winner is found, their name is printed, and <code>true</code> is returned. Otherwise, it returns <code>false</code> to indicate that there is no clear winner yet. This boolean is used to break or not the main loop.</p>
+</li>
+<li data-line="119" dir="auto" class="has-run-code-button"><div class="list-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle"><path d="M3 8L12 17L21 8"></path></svg></div>
+<p><code>find_min()</code> function:<br>
+is responsible for finding the minimum number of votes received by any non-eliminated candidate.</p>
+<pre class="language-c" tabindex="0"><code data-line="122" class="language-c is-loaded"><span class="token keyword">int</span> <span class="token function">find_min</span><span class="token punctuation">(</span><span class="token keyword">void</span><span class="token punctuation">)</span>
+<span class="token punctuation">{</span>
+<span class="token comment">// Set an initial minimum vote count to a large value</span>
+<span class="token keyword">int</span> min_votes <span class="token operator">=</span> MAX_VOTERS <span class="token operator">+</span> <span class="token number">1</span><span class="token punctuation">;</span>
+
+<span class="token comment">// Iterate through each candidate</span>
+<span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">int</span> i <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> i <span class="token operator">&lt;</span> candidate_count<span class="token punctuation">;</span> i<span class="token operator">++</span><span class="token punctuation">)</span>
+<span class="token punctuation">{</span>
+    <span class="token comment">// Check if the candidate is not eliminated and their vote count is less than the current minimum</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token operator">!</span>candidates<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">.</span>eliminated <span class="token operator">&amp;&amp;</span> candidates<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">.</span>votes <span class="token operator">&lt;</span> min_votes<span class="token punctuation">)</span>
+    <span class="token punctuation">{</span>
+        min_votes <span class="token operator">=</span> candidates<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">.</span>votes<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+<span class="token keyword">return</span> min_votes<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code><button class="copy-code-button"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon lucide-copy"><rect x="8" y="8" width="14" height="14" rx="2" ry="2"></rect><path d="M4 16c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2"></path></svg></button><button class="run-code-button">Run</button></pre>
+<ol>
+<li data-line="141" dir="auto" class="has-run-code-button"><div class="list-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle"><path d="M3 8L12 17L21 8"></path></svg></div>
+<p>We set an initial minimum vote count (<code>min_votes</code>) to a value larger than the maximum possible number of voters. <strong>This ensures that any valid vote count will be smaller than the initial minimum value</strong>.</p>
+<ul>
+<li data-line="142" dir="auto">Other path is to initialize <code>min_votes</code> with a negative integer (e.g. <span class="dataview dataview-inline-query"><span>-1</span></span>), this will change the <code>if</code> conditional: </li>
+</ul>
+<pre class="language-c" tabindex="0"><code data-line="143" class="language-c is-loaded"><span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token operator">!</span>candidates<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">.</span>eliminated <span class="token operator">&amp;&amp;</span> <span class="token punctuation">(</span>min_votes <span class="token operator">==</span> <span class="token operator">-</span><span class="token number">1</span> <span class="token operator">||</span> candidates<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">.</span>votes <span class="token operator">&gt;</span> min_votes<span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">{</span><span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">}</span>
+</code><button class="copy-code-button"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon lucide-copy"><rect x="8" y="8" width="14" height="14" rx="2" ry="2"></rect><path d="M4 16c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2"></path></svg></button><button class="run-code-button">Run</button></pre>
+</li>
+<li data-line="147" dir="auto">
+<p>We iterate through each candidate using a loop.</p>
+</li>
+<li data-line="149" dir="auto">
+<p>For each candidate, we check if they are not eliminated (<code>!candidates[i].eliminated</code>) and if their vote count (<code>candidates[i].votes</code>) is less than the current minimum (<code>min_votes</code>).</p>
+</li>
+<li data-line="151" dir="auto">
+<p>If both conditions are true, we update the <code>min_votes</code> variable with the current candidate's vote count.</p>
+</li>
+<li data-line="153" dir="auto">
+<p>After iterating through all the candidates, the <code>min_votes</code> variable will contain the minimum vote count among the non-eliminated candidates.</p>
+</li>
+<li data-line="155" dir="auto">
+<p>We return the <code>min_votes</code> value, representing the minimum number of votes received by any non-eliminated candidate.</p>
+</li>
+</ol>
+</li>
+<li data-line="157" dir="auto" class="has-run-code-button"><div class="list-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle"><path d="M3 8L12 17L21 8"></path></svg></div>
+<p><code>is_tie()</code> function:<br>
+determines whether the election is tied between all non-eliminated candidates. </p>
+<pre class="language-c" tabindex="0"><code data-line="160" class="language-c is-loaded">bool <span class="token function">is_tie</span><span class="token punctuation">(</span><span class="token keyword">int</span> min<span class="token punctuation">)</span>
+<span class="token punctuation">{</span>
+<span class="token comment">// Iterate through each candidate</span>
+<span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">int</span> i <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> i <span class="token operator">&lt;</span> candidate_count<span class="token punctuation">;</span> i<span class="token operator">++</span><span class="token punctuation">)</span>
+<span class="token punctuation">{</span>
+    <span class="token comment">// Check if the candidate is not eliminated and their vote count is different from the minimum</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token operator">!</span>candidates<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">.</span>eliminated <span class="token operator">&amp;&amp;</span> candidates<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">.</span>votes <span class="token operator">!=</span> min<span class="token punctuation">)</span>
+    <span class="token punctuation">{</span>
+        <span class="token keyword">return</span> false<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+<span class="token comment">// If all non-eliminated candidates have the same vote count as the minimum, it is a tie</span>
+<span class="token keyword">return</span> true<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code><button class="copy-code-button"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon lucide-copy"><rect x="8" y="8" width="14" height="14" rx="2" ry="2"></rect><path d="M4 16c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2"></path></svg></button><button class="run-code-button">Run</button></pre>
+<ol>
+<li data-line="177" dir="auto">
+<p>The function takes the <code>min</code> parameter, which represents the minimum number of votes received by any non-eliminated candidate.</p>
+</li>
+<li data-line="179" dir="auto">
+<p>We iterate through each candidate using a loop.</p>
+</li>
+<li data-line="181" dir="auto">
+<p>For each candidate, we check if they are not eliminated (<code>!candidates[i].eliminated</code>) and if their vote count (<code>candidates[i].votes</code>) is different from the minimum (<code>min</code>).</p>
+</li>
+<li data-line="183" dir="auto">
+<p>If we find any non-eliminated candidate with a vote count different from the minimum, we immediately return <code>false</code>, indicating that the election is not tied.</p>
+</li>
+<li data-line="185" dir="auto">
+<p>If the loop completes without finding any non-eliminated candidate with a different vote count than the minimum, it means that all non-eliminated candidates have the same vote count as the minimum. In this case, we return <code>true</code>, indicating a tie.</p>
+</li>
+</ol>
+</li>
+<li data-line="187" dir="auto" class="has-run-code-button"><div class="list-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle"><path d="M3 8L12 17L21 8"></path></svg></div>
+<p><code>eliminate()</code> function:<br>
+will eliminate the candidate(s) with the minimum votes (parameter) so that they are no longer considered in the subsequent rounds of the election.</p>
+<pre class="language-c" tabindex="0"><code data-line="189" class="language-c is-loaded"><span class="token keyword">void</span> <span class="token function">eliminate</span><span class="token punctuation">(</span><span class="token keyword">int</span> min<span class="token punctuation">)</span>
+<span class="token punctuation">{</span>
+    <span class="token comment">// Iterate through each candidate</span>
+    <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">int</span> i <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> i <span class="token operator">&lt;</span> candidate_count<span class="token punctuation">;</span> i<span class="token operator">++</span><span class="token punctuation">)</span>
+    <span class="token punctuation">{</span>
+        <span class="token comment">// Check if the candidate is not eliminated and their vote count is equal to the minimum</span>
+        <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token operator">!</span>candidates<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">.</span>eliminated <span class="token operator">&amp;&amp;</span> candidates<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">.</span>votes <span class="token operator">==</span> min<span class="token punctuation">)</span>
+        <span class="token punctuation">{</span>
+            candidates<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">.</span>eliminated <span class="token operator">=</span> true<span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code><button class="copy-code-button"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon lucide-copy"><rect x="8" y="8" width="14" height="14" rx="2" ry="2"></rect><path d="M4 16c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2"></path></svg></button><button class="run-code-button">Run</button></pre>
+<ol>
+<li data-line="204" dir="auto">
+<p>The function takes the <code>min</code> parameter, which represents the minimum number of votes received by any non-eliminated candidate.</p>
+</li>
+<li data-line="206" dir="auto">
+<p>We iterate through each candidate using a loop.</p>
+</li>
+<li data-line="208" dir="auto">
+<p>For each candidate, we check if they are not already eliminated (<code>!candidates[i].eliminated</code>) and if their vote count is equal to the minimum (<code>candidates[i].votes == min</code>).</p>
+</li>
+<li data-line="210" dir="auto">
+<p>If a candidate meets both conditions, it means they have the minimum number of votes and should be eliminated from the election. We update their <code>eliminated</code> status to <code>true</code> by setting <code>candidates[i].eliminated = true</code>.</p>
+</li>
+<li data-line="212" dir="auto">
+<p>After iterating through all the candidates, the <code>eliminate</code> function will have marked all the candidates who received the minimum number of votes as eliminated.</p>
+</li>
+</ol>
+</li>
+</ol></div><div class="el-h2 heading-wrapper"><h2 data-heading="Log Trace" dir="auto" class="heading" id="Log_Trace"><div class="heading-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle"><path d="M3 8L12 17L21 8"></path></svg></div>Log Trace</h2><div class="heading-children"><div class="el-pre has-run-code-button"><pre class="language-bash" tabindex="0"><code data-line="0" class="language-bash is-loaded">runoff/ $ check50 cs50/problems/2023/x/runoff
+Connecting<span class="token punctuation">..</span><span class="token punctuation">..</span><span class="token punctuation">..</span>
+Authenticating<span class="token punctuation">..</span>.
+Verifying<span class="token punctuation">..</span><span class="token punctuation">..</span><span class="token punctuation">..</span><span class="token punctuation">..</span>
+Preparing<span class="token punctuation">..</span><span class="token punctuation">..</span>.
+Uploading<span class="token punctuation">..</span><span class="token punctuation">..</span><span class="token punctuation">..</span>.
+Waiting <span class="token keyword">for</span> results<span class="token punctuation">..</span><span class="token punctuation">..</span><span class="token punctuation">..</span><span class="token punctuation">..</span><span class="token punctuation">..</span><span class="token punctuation">..</span><span class="token punctuation">..</span><span class="token punctuation">..</span><span class="token punctuation">..</span><span class="token punctuation">..</span><span class="token punctuation">..</span><span class="token punctuation">..</span>.
+Results <span class="token keyword">for</span> cs50/problems/2023/x/runoff generated by check50 v3.3.7
+<span class="token string">':) runoff.c exists
+:) runoff compiles
+:) vote returns true when given name of candidate
+:) vote returns false when given name of invalid candidate
+:) vote correctly sets first preference for first voter
+:) vote correctly sets third preference for second voter
+:) vote correctly sets all preferences for voter
+:) tabulate counts votes when all candidates remain in election
+:) tabulate counts votes when one candidate is eliminated
+:) tabulate counts votes when multiple candidates are eliminated
+:) tabulate handles multiple rounds of preferences
+'</span>:<span class="token punctuation">(</span> print_winner prints name when someone has a majority
+    print_winner did not print winner of election
+:<span class="token punctuation">(</span> print_winner returns <span class="token boolean">true</span> when someone has a majority
+    print_winner did not print winner and <span class="token keyword">then</span> <span class="token builtin class-name">return</span> <span class="token boolean">true</span>
+<span class="token string">':) print_winner returns false when nobody has a majority
+:) print_winner returns false when leader has exactly 50% of vote
+:) find_min returns minimum number of votes for candidate
+:) find_min returns minimum when all candidates are tied
+:) find_min ignores eliminated candidates
+:) is_tie returns true when election is tied
+:) is_tie returns false when election is not tied
+:) is_tie returns false when only some of the candidates are tied
+:) is_tie detects tie after some candidates have been eliminated
+:) eliminate eliminates candidate in last place
+:) eliminate eliminates multiple candidates in tie for last
+:) eliminate eliminates candidates after some already eliminated
+'</span>To see the results <span class="token keyword">in</span> your browser go to https://submit.cs50.io/check50/<span class="token comment">######################################</span>
+</code><button class="copy-code-button"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon lucide-copy"><rect x="8" y="8" width="14" height="14" rx="2" ry="2"></rect><path d="M4 16c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2"></path></svg></button><button class="run-code-button">Run</button></pre></div><div class="el-blockquote"><blockquote dir="auto">
+<p>:( print_winner prints name when someone has a majority<br>
+<strong>Cause</strong><br>
+print_winner&nbsp;did&nbsp;not&nbsp;print&nbsp;winner&nbsp;of&nbsp;election  </p>
+<p>:( print_winner returns true when someone has a majority<br>
+<strong>Cause</strong><br>
+print_winner&nbsp;did&nbsp;not&nbsp;print&nbsp;winner&nbsp;and&nbsp;then&nbsp;return&nbsp;true</p>
+</blockquote></div><div class="el-p"><p dir="auto">As noted we had a problem in the <code>print_winner()</code> function. The problem was just the <code>&gt;</code> that didn't count the limited included, the correct conditional is <code>if (candidates[i].votes &gt;= majority_limit)</code></p></div><div class="el-pre has-run-code-button"><pre class="language-bash" tabindex="0"><code data-line="0" class="language-bash is-loaded">runoff/ $ check50 cs50/problems/2023/x/runoff
+Connecting<span class="token punctuation">..</span><span class="token punctuation">..</span><span class="token punctuation">..</span>.
+Authenticating<span class="token punctuation">..</span>.
+Verifying<span class="token punctuation">..</span><span class="token punctuation">..</span><span class="token punctuation">..</span>
+Preparing<span class="token punctuation">..</span><span class="token punctuation">..</span>.
+Uploading<span class="token punctuation">..</span><span class="token punctuation">..</span><span class="token punctuation">..</span>
+Waiting <span class="token keyword">for</span> results<span class="token punctuation">..</span><span class="token punctuation">..</span><span class="token punctuation">..</span><span class="token punctuation">..</span><span class="token punctuation">..</span><span class="token punctuation">..</span><span class="token punctuation">..</span><span class="token punctuation">..</span><span class="token punctuation">..</span><span class="token punctuation">..</span><span class="token punctuation">..</span><span class="token punctuation">..</span><span class="token punctuation">..</span><span class="token punctuation">..</span>.
+Results <span class="token keyword">for</span> cs50/problems/2023/x/runoff generated by check50 v3.3.7
+<span class="token string">':) runoff.c exists
+:) runoff compiles
+:) vote returns true when given name of candidate
+:) vote returns false when given name of invalid candidate
+:) vote correctly sets first preference for first voter
+:) vote correctly sets third preference for second voter
+:) vote correctly sets all preferences for voter
+:) tabulate counts votes when all candidates remain in election
+:) tabulate counts votes when one candidate is eliminated
+:) tabulate counts votes when multiple candidates are eliminated
+:) tabulate handles multiple rounds of preferences
+:) print_winner prints name when someone has a majority
+:) print_winner returns true when someone has a majority
+:) print_winner returns false when nobody has a majority
+:) print_winner returns false when leader has exactly 50% of vote
+:) find_min returns minimum number of votes for candidate
+:) find_min returns minimum when all candidates are tied
+:) find_min ignores eliminated candidates
+:) is_tie returns true when election is tied
+:) is_tie returns false when election is not tied
+:) is_tie returns false when only some of the candidates are tied
+:) is_tie detects tie after some candidates have been eliminated
+:) eliminate eliminates candidate in last place
+:) eliminate eliminates multiple candidates in tie for last
+:) eliminate eliminates candidates after some already eliminated
+'</span>To see the results <span class="token keyword">in</span> your browser go to https://submit.cs50.io/check50/<span class="token comment">######################################</span>
+runoff/ $ 
+</code><button class="copy-code-button"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon lucide-copy"><rect x="8" y="8" width="14" height="14" rx="2" ry="2"></rect><path d="M4 16c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2"></path></svg></button><button class="run-code-button">Run</button></pre></div></div></div><div class="el-h2 heading-wrapper"><h2 data-heading="Check Style" dir="auto" class="heading" id="Check_Style"><div class="heading-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle"><path d="M3 8L12 17L21 8"></path></svg></div>Check Style</h2><div class="heading-children"><div class="el-pre has-run-code-button"><pre class="language-bash" tabindex="0"><code data-line="0" class="language-bash is-loaded">runoff/ $ style50 runoff.c
+Results generated by style50 v2.7.5
+Looks good<span class="token operator">!</span>
+</code><button class="copy-code-button"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon lucide-copy"><rect x="8" y="8" width="14" height="14" rx="2" ry="2"></rect><path d="M4 16c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2"></path></svg></button><button class="run-code-button">Run</button></pre></div></div></div><div class="el-h2 heading-wrapper"><h2 data-heading="Submited" dir="auto" class="heading" id="Submited"><div class="heading-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle"><path d="M3 8L12 17L21 8"></path></svg></div>Submited</h2><div class="heading-children"><div class="el-pre has-run-code-button"><pre class="language-bash" tabindex="0"><code data-line="0" class="language-bash is-loaded">runoff/ $ submit50 cs50/problems/2023/x/runoff
+Connecting<span class="token punctuation">..</span><span class="token punctuation">..</span><span class="token punctuation">..</span>
+Authenticating<span class="token punctuation">..</span>.
+Verifying<span class="token punctuation">..</span><span class="token punctuation">..</span><span class="token punctuation">..</span>
+Preparing<span class="token punctuation">..</span><span class="token punctuation">..</span>.
+Files that will be submitted:
+./runoff.c
+Keeping <span class="token keyword">in</span> mind the course's policy on academic honesty, are you sure you want to submit these files <span class="token punctuation">(</span>yes/no<span class="token punctuation">)</span>? <span class="token function">yes</span>
+Uploading<span class="token punctuation">..</span><span class="token punctuation">..</span><span class="token punctuation">..</span>
+Go to https://submit.cs50.io/users/see7e/cs50/problems/2023/x/runoff to see your results.
+runoff/ $ 
+</code><button class="copy-code-button"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon lucide-copy"><rect x="8" y="8" width="14" height="14" rx="2" ry="2"></rect><path d="M4 16c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2"></path></svg></button><button class="run-code-button">Run</button></pre></div><div class="mod-footer mod-ui"></div></div></div></div></div></div></div></div><div class="sidebar-right sidebar"><div class="sidebar-handle"></div><div class="sidebar-topbar"><div class="topbar-content"></div><div class="clickable-icon sidebar-collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" class="svg-icon"><path d="M21 3H3C1.89543 3 1 3.89543 1 5V19C1 20.1046 1.89543 21 3 21H21C22.1046 21 23 20.1046 23 19V5C23 3.89543 22.1046 3 21 3Z"></path><path d="M10 4V20"></path><path d="M4 7H7"></path><path d="M4 10H7"></path><path d="M4 13H7"></path></svg></div></div><div class="sidebar-content"><div class="graph-view-wrapper"><div class="sidebar-section-header">Interactive Graph</div><div class="graph-view-placeholder">
+		<div class="graph-view-container">
+			<div class="graph-icon graph-expand" role="button" aria-label="Expand" data-tooltip-position="top"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon"><line x1="7" y1="17" x2="17" y2="7"></line><polyline points="7 7 17 7 17 17"></polyline></svg></div>
+			<canvas id="graph-canvas" class="hide" width="512px" height="512px"></canvas>
+		</div>
+		</div></div><div class="tree-container mod-root nav-folder tree-item outline-tree" data-depth="0"><div class="tree-header"><span class="sidebar-section-header">Table Of Contents</span><button class="clickable-icon collapse-tree-button" aria-label="Collapse All"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></svg></button></div><div class="tree-scroll-area tree-item-children nav-folder-children"><div class="tree-item mod-tree-folder nav-folder mod-collapsible is-collapsed" style="display: none;"></div><div class="tree-item" data-depth="1"><a class="tree-link" href="gab\estudos-trabalhos\programação\programming-studies\courses\cs50x\week3\runoff.html#Problem Set 3 - Runoff"><div class="tree-item-contents heading-link" heading-name="Problem Set 3 - Runoff"><span class="tree-item-title">Problem Set 3 - Runoff</span></div></a><div class="tree-item-children nav-folder-children"><div class="tree-item" data-depth="2"><a class="tree-link" href="gab\estudos-trabalhos\programação\programming-studies\courses\cs50x\week3\runoff.html#Background"><div class="tree-item-contents heading-link" heading-name="Background"><span class="tree-item-title">Background</span></div></a><div class="tree-item-children nav-folder-children"></div></div><div class="tree-item" data-depth="2"><a class="tree-link" href="gab\estudos-trabalhos\programação\programming-studies\courses\cs50x\week3\runoff.html#Getting_Started"><div class="tree-item-contents heading-link" heading-name="Getting Started"><span class="tree-item-title">Getting Started</span></div></a><div class="tree-item-children nav-folder-children"></div></div><div class="tree-item" data-depth="2"><a class="tree-link" href="gab\estudos-trabalhos\programação\programming-studies\courses\cs50x\week3\runoff.html#Understanding"><div class="tree-item-contents heading-link" heading-name="Understanding"><span class="tree-item-title">Understanding</span></div></a><div class="tree-item-children nav-folder-children"></div></div><div class="tree-item mod-collapsible" data-depth="2"><a class="tree-link" href="gab\estudos-trabalhos\programação\programming-studies\courses\cs50x\week3\runoff.html#Specification"><div class="tree-item-contents heading-link" heading-name="Specification"><div class="collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle"><path d="M3 8L12 17L21 8"></path></svg></div><span class="tree-item-title">Specification</span></div></a><div class="tree-item-children nav-folder-children"><div class="tree-item" data-depth="3"><a class="tree-link" href="gab\estudos-trabalhos\programação\programming-studies\courses\cs50x\week3\runoff.html#`vote`"><div class="tree-item-contents heading-link" heading-name="`vote`"><span class="tree-item-title"><code>vote</code></span></div></a><div class="tree-item-children nav-folder-children"></div></div><div class="tree-item" data-depth="3"><a class="tree-link" href="gab\estudos-trabalhos\programação\programming-studies\courses\cs50x\week3\runoff.html#`tabulate`"><div class="tree-item-contents heading-link" heading-name="`tabulate`"><span class="tree-item-title"><code>tabulate</code></span></div></a><div class="tree-item-children nav-folder-children"></div></div><div class="tree-item" data-depth="3"><a class="tree-link" href="gab\estudos-trabalhos\programação\programming-studies\courses\cs50x\week3\runoff.html#`print_winner`"><div class="tree-item-contents heading-link" heading-name="`print_winner`"><span class="tree-item-title"><code>print_winner</code></span></div></a><div class="tree-item-children nav-folder-children"></div></div><div class="tree-item" data-depth="3"><a class="tree-link" href="gab\estudos-trabalhos\programação\programming-studies\courses\cs50x\week3\runoff.html#`find_min`"><div class="tree-item-contents heading-link" heading-name="`find_min`"><span class="tree-item-title"><code>find_min</code></span></div></a><div class="tree-item-children nav-folder-children"></div></div><div class="tree-item" data-depth="3"><a class="tree-link" href="gab\estudos-trabalhos\programação\programming-studies\courses\cs50x\week3\runoff.html#`is_tie`"><div class="tree-item-contents heading-link" heading-name="`is_tie`"><span class="tree-item-title"><code>is_tie</code></span></div></a><div class="tree-item-children nav-folder-children"></div></div><div class="tree-item" data-depth="3"><a class="tree-link" href="gab\estudos-trabalhos\programação\programming-studies\courses\cs50x\week3\runoff.html#`eliminate`"><div class="tree-item-contents heading-link" heading-name="`eliminate`"><span class="tree-item-title"><code>eliminate</code></span></div></a><div class="tree-item-children nav-folder-children"></div></div></div></div><div class="tree-item" data-depth="2"><a class="tree-link" href="gab\estudos-trabalhos\programação\programming-studies\courses\cs50x\week3\runoff.html#Usage"><div class="tree-item-contents heading-link" heading-name="Usage"><span class="tree-item-title">Usage</span></div></a><div class="tree-item-children nav-folder-children"></div></div><div class="tree-item" data-depth="2"><a class="tree-link" href="gab\estudos-trabalhos\programação\programming-studies\courses\cs50x\week3\runoff.html#Testing"><div class="tree-item-contents heading-link" heading-name="Testing"><span class="tree-item-title">Testing</span></div></a><div class="tree-item-children nav-folder-children"></div></div><div class="tree-item" data-depth="2"><a class="tree-link" href="gab\estudos-trabalhos\programação\programming-studies\courses\cs50x\week3\runoff.html#How_to_Submit"><div class="tree-item-contents heading-link" heading-name="How to Submit"><span class="tree-item-title">How to Submit</span></div></a><div class="tree-item-children nav-folder-children"></div></div></div></div><div class="tree-item" data-depth="1"><a class="tree-link" href="gab\estudos-trabalhos\programação\programming-studies\courses\cs50x\week3\runoff.html#Walkthrough"><div class="tree-item-contents heading-link" heading-name="Walkthrough"><span class="tree-item-title">Walkthrough</span></div></a><div class="tree-item-children nav-folder-children"><div class="tree-item" data-depth="2"><a class="tree-link" href="gab\estudos-trabalhos\programação\programming-studies\courses\cs50x\week3\runoff.html#Log_Trace"><div class="tree-item-contents heading-link" heading-name="Log Trace"><span class="tree-item-title">Log Trace</span></div></a><div class="tree-item-children nav-folder-children"></div></div><div class="tree-item" data-depth="2"><a class="tree-link" href="gab\estudos-trabalhos\programação\programming-studies\courses\cs50x\week3\runoff.html#Check_Style"><div class="tree-item-contents heading-link" heading-name="Check Style"><span class="tree-item-title">Check Style</span></div></a><div class="tree-item-children nav-folder-children"></div></div><div class="tree-item" data-depth="2"><a class="tree-link" href="gab\estudos-trabalhos\programação\programming-studies\courses\cs50x\week3\runoff.html#Submited"><div class="tree-item-contents heading-link" heading-name="Submited"><span class="tree-item-title">Submited</span></div></a><div class="tree-item-children nav-folder-children"></div></div></div></div></div></div></div><script defer="">let rs = document.querySelector(".sidebar-right"); rs.classList.add("is-collapsed"); if (window.innerWidth > 768) rs.classList.remove("is-collapsed"); rs.style.setProperty("--sidebar-width", localStorage.getItem("sidebar-right-width"));</script></div></div></body></html>

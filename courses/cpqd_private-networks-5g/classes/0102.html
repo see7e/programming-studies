@@ -1,0 +1,530 @@
+<!DOCTYPE html> <html><head>
+		<title>Private Networks - MOD01CL02</title>
+		<base href="..\..\..\..\..\..\../">
+		<meta id="root-path" root-path="..\..\..\..\..\..\../">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes, minimum-scale=1.0, maximum-scale=5.0">
+		<meta charset="UTF-8">
+		<meta name="description" content="DRIVE - Private Networks - MOD01CL02">
+		<meta property="og:title" content="Private Networks - MOD01CL02">
+		<meta property="og:description" content="DRIVE - Private Networks - MOD01CL02">
+		<meta property="og:type" content="website">
+		<meta property="og:url" content="courses/cpqd_private-networks-5g/classes/0102.html">
+		<meta property="og:image" content="undefined">
+		<meta property="og:site_name" content="DRIVE">
+		<meta name="author" content="Gabryel Nóbrega"><link rel="alternate" type="application/rss+xml" title="RSS Feed" href="lib/rss.xml"><script async="" id="webpage-script" src="lib/scripts/webpage.js" onload="this.onload=null;this.setAttribute(&quot;loaded&quot;, &quot;true&quot;)"></script><script type="module" async="" id="graph-view-script" src="lib/scripts/graph-view.js"></script><script async="" id="graph-wasm-script" src="lib/scripts/graph-wasm.js" onload="this.onload=null;this.setAttribute(&quot;loaded&quot;, &quot;true&quot;)"></script><script async="" id="graph-render-worker-script" src="lib/scripts/graph-render-worker.js" onload="this.onload=null;this.setAttribute(&quot;loaded&quot;, &quot;true&quot;)"></script><script async="" id="tinycolor-script" src="lib/scripts/tinycolor.js" onload="this.onload=null;this.setAttribute(&quot;loaded&quot;, &quot;true&quot;)"></script><script async="" id="pixi-script" src="https://cdnjs.cloudflare.com/ajax/libs/pixi.js/7.4.0/pixi.min.js" onload="this.onload=null;this.setAttribute(&quot;loaded&quot;, &quot;true&quot;)"></script><script async="" id="minisearch-script" src="https://cdn.jsdelivr.net/npm/minisearch@6.3.0/dist/umd/index.min.js" onload="this.onload=null;this.setAttribute(&quot;loaded&quot;, &quot;true&quot;)"></script><link rel="icon" href="lib/media/favicon.png"><script async="" id="graph-data-script" src="lib/scripts/graph-data.js" onload="this.onload=null;this.setAttribute(&quot;loaded&quot;, &quot;true&quot;)"></script><style>body{--line-width:40em;--line-width-adaptive:40em;--file-line-width:40em;--sidebar-width:min(20em, 80vw);--collapse-arrow-size:11px;--tree-horizontal-spacing:0.6em;--tree-vertical-spacing:0.6em;--sidebar-margin:12px}.sidebar{height:100%;min-width:calc(var(--sidebar-width) + var(--divider-width-hover));max-width:calc(var(--sidebar-width) + var(--divider-width-hover));font-size:14px;z-index:10;position:relative;overflow:hidden;transition:min-width ease-in-out,max-width ease-in-out;transition-duration:.2s;contain:size}.sidebar-left{left:0}.sidebar-right{right:0}.sidebar.is-collapsed{min-width:0;max-width:0}body.floating-sidebars .sidebar{position:absolute}.sidebar-content{height:100%;min-width:calc(var(--sidebar-width) - var(--divider-width-hover));top:0;padding:var(--sidebar-margin);padding-top:4em;line-height:var(--line-height-tight);background-color:var(--background-secondary);transition:background-color,border-right,border-left,box-shadow;transition-duration:var(--color-fade-speed);transition-timing-function:ease-in-out;position:absolute;display:flex;flex-direction:column}.sidebar:not(.is-collapsed) .sidebar-content{min-width:calc(max(100%,var(--sidebar-width)) - 3px);max-width:calc(max(100%,var(--sidebar-width)) - 3px)}.sidebar-left .sidebar-content{left:0;border-top-right-radius:var(--radius-l);border-bottom-right-radius:var(--radius-l)}.sidebar-right .sidebar-content{right:0;border-top-left-radius:var(--radius-l);border-bottom-left-radius:var(--radius-l)}.sidebar:has(.sidebar-content:empty):has(.topbar-content:empty){display:none}.sidebar-topbar{height:2em;width:var(--sidebar-width);top:var(--sidebar-margin);padding-inline:var(--sidebar-margin);z-index:1;position:fixed;display:flex;align-items:center;transition:width ease-in-out;transition-duration:inherit}.sidebar.is-collapsed .sidebar-topbar{width:calc(2.3em + var(--sidebar-margin) * 2)}.sidebar .sidebar-topbar.is-collapsed{width:0}.sidebar-left .sidebar-topbar{left:0}.sidebar-right .sidebar-topbar{right:0}.topbar-content{overflow:hidden;overflow:clip;width:100%;height:100%;display:flex;align-items:center;transition:inherit}.sidebar.is-collapsed .topbar-content{width:0;transition:inherit}.clickable-icon.sidebar-collapse-icon{background-color:transparent;color:var(--icon-color-focused);padding:0!important;margin:0!important;height:100%!important;width:2.3em!important;margin-inline:0.14em!important;position:absolute}.sidebar-left .clickable-icon.sidebar-collapse-icon{transform:rotateY(180deg);right:var(--sidebar-margin)}.sidebar-right .clickable-icon.sidebar-collapse-icon{transform:rotateY(180deg);left:var(--sidebar-margin)}.clickable-icon.sidebar-collapse-icon svg.svg-icon{width:100%;height:100%}.sidebar-section-header{margin:0 0 1em 0;text-transform:uppercase;letter-spacing:.06em;font-weight:600}body{transition:background-color var(--color-fade-speed) ease-in-out}.webpage-container{display:flex;flex-direction:row;height:100%;width:100%;align-items:stretch;justify-content:center}.document-container{opacity:1;flex-basis:100%;max-width:100%;width:100%;height:100%;display:flex;flex-direction:column;align-items:center;transition:opacity .2s ease-in-out;contain:inline-size}.hide{opacity:0;transition:opacity .2s ease-in-out}.document-container>.markdown-preview-view{margin:var(--sidebar-margin);margin-bottom:0;width:100%;width:-webkit-fill-available;width:-moz-available;width:fill-available;background-color:var(--background-primary);transition:background-color var(--color-fade-speed) ease-in-out;border-top-right-radius:var(--window-radius,var(--radius-m));border-top-left-radius:var(--window-radius,var(--radius-m));overflow-x:hidden!important;overflow-y:auto!important;display:flex!important;flex-direction:column!important;align-items:center!important;contain:inline-size}.document-container>.markdown-preview-view>.markdown-preview-sizer{padding-bottom:80vh!important;width:100%!important;max-width:var(--line-width)!important;flex-basis:var(--line-width)!important;transition:background-color var(--color-fade-speed) ease-in-out;contain:inline-size}.markdown-rendered img:not([width]),.view-content img:not([width]){max-width:100%;outline:0}.document-container>.view-content.embed{display:flex;padding:1em;height:100%;width:100%;align-items:center;justify-content:center}.document-container>.view-content.embed>*{max-width:100%;max-height:100%;object-fit:contain}:has(> :is(.math,table)){overflow-x:auto!important}.document-container>.view-content{overflow-x:auto;contain:content;padding:0;margin:0;height:100%}.scroll-highlight{position:absolute;width:100%;height:100%;pointer-events:none;z-index:1000;background-color:hsla(var(--color-accent-hsl),.25);opacity:0;padding:1em;inset:50%;translate:-50% -50%;border-radius:var(--radius-s)}</style><script defer="">async function loadIncludes(){if("file:"!=location.protocol){let e=document.querySelectorAll("include");for(let t=0;t<e.length;t++){let o=e[t],l=o.getAttribute("src");try{const e=await fetch(l);if(!e.ok){console.log("Could not include file: "+l),o?.remove();continue}let t=await e.text(),n=document.createRange().createContextualFragment(t),i=Array.from(n.children);for(let e of i)e.classList.add("hide"),e.style.transition="opacity 0.5s ease-in-out",setTimeout((()=>{e.classList.remove("hide")}),10);o.before(n),o.remove(),console.log("Included file: "+l)}catch(e){o?.remove(),console.log("Could not include file: "+l,e);continue}}}else{if(document.querySelectorAll("include").length>0){var e=document.createElement("div");e.id="error",e.textContent="Web server exports must be hosted on an http / web server to be viewed correctly.",e.style.position="fixed",e.style.top="50%",e.style.left="50%",e.style.transform="translate(-50%, -50%)",e.style.fontSize="1.5em",e.style.fontWeight="bold",e.style.textAlign="center",document.body.appendChild(e),document.querySelector(".document-container")?.classList.remove("hide")}}}document.addEventListener("DOMContentLoaded",(()=>{loadIncludes()}));let isFileProtocol="file:"==location.protocol;function waitLoadScripts(e,t){let o=e.map((e=>document.getElementById(e+"-script"))),l=0;!function e(){let n=o[l];l++,n&&"true"!=n.getAttribute("loaded")||l<o.length&&e(),l<o.length?n.addEventListener("load",e):t()}()}</script><link rel="stylesheet" href="lib/styles/obsidian.css"><link rel="stylesheet" href="lib/styles/theme.css"><link rel="preload" href="lib/styles/global-variable-styles.css" as="style" onload="this.onload=null;this.rel='stylesheet'"><noscript><link rel="stylesheet" href="lib/styles/global-variable-styles.css"></noscript><link rel="preload" href="lib/styles/supported-plugins.css" as="style" onload="this.onload=null;this.rel='stylesheet'"><noscript><link rel="stylesheet" href="lib/styles/supported-plugins.css"></noscript><link rel="preload" href="lib/styles/main-styles.css" as="style" onload="this.onload=null;this.rel='stylesheet'"><noscript><link rel="stylesheet" href="lib/styles/main-styles.css"></noscript><link rel="preload" href="lib/styles/snippets.css" as="style" onload="this.onload=null;this.rel='stylesheet'"><noscript><link rel="stylesheet" href="lib/styles/snippets.css"></noscript></head><body class="publish css-settings-manager theme-dark"><script defer="">let theme=localStorage.getItem("theme")||(window.matchMedia("(prefers-color-scheme: dark)").matches?"dark":"light");"dark"==theme?(document.body.classList.add("theme-dark"),document.body.classList.remove("theme-light")):(document.body.classList.add("theme-light"),document.body.classList.remove("theme-dark")),window.innerWidth<480?document.body.classList.add("is-phone"):window.innerWidth<768?document.body.classList.add("is-tablet"):window.innerWidth<1024?document.body.classList.add("is-small-screen"):document.body.classList.add("is-large-screen")</script><div class="webpage-container workspace"><div class="sidebar-left sidebar"><div class="sidebar-handle"></div><div class="sidebar-topbar"><div class="topbar-content"><label class="theme-toggle-container" for="theme_toggle"><input class="theme-toggle-input" type="checkbox" id="theme_toggle"><div class="toggle-background"></div></label></div><div class="clickable-icon sidebar-collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" class="svg-icon"><path d="M21 3H3C1.89543 3 1 3.89543 1 5V19C1 20.1046 1.89543 21 3 21H21C22.1046 21 23 20.1046 23 19V5C23 3.89543 22.1046 3 21 3Z"></path><path d="M10 4V20"></path><path d="M4 7H7"></path><path d="M4 10H7"></path><path d="M4 13H7"></path></svg></div></div><div class="sidebar-content"><div class="search-input-container"><input enterkeyhint="search" type="search" spellcheck="false" placeholder="Search..."><div class="search-input-clear-button" aria-label="Clear search"></div></div><include src="lib/html/file-tree.html"></include></div><script defer="">let ls = document.querySelector(".sidebar-left"); ls.classList.add("is-collapsed"); if (window.innerWidth > 768) ls.classList.remove("is-collapsed"); ls.style.setProperty("--sidebar-width", localStorage.getItem("sidebar-left-width"));</script></div><div class="document-container markdown-reading-view hide"><div class="markdown-preview-view markdown-rendered allow-fold-headings allow-fold-lists is-readable-line-width"><style id="MJX-CHTML-styles">mjx-c.mjx-c30::before{padding:.666em .5em .022em 0;content:"0"}mjx-c.mjx-c39::before{padding:.666em .5em .022em 0;content:"9"}mjx-c.mjx-c2212::before{padding:.583em .778em .082em 0;content:"−"}mjx-container[jax=CHTML]{line-height:0}mjx-container [space="1"]{margin-left:.111em}mjx-container [space="2"]{margin-left:.167em}mjx-container [space="3"]{margin-left:.222em}mjx-container [space="4"]{margin-left:.278em}mjx-container [space="5"]{margin-left:.333em}mjx-container [rspace="1"]{margin-right:.111em}mjx-container [rspace="2"]{margin-right:.167em}mjx-container [rspace="3"]{margin-right:.222em}mjx-container [rspace="4"]{margin-right:.278em}mjx-container [rspace="5"]{margin-right:.333em}mjx-container [size="s"]{font-size:70.7%}mjx-container [size=ss]{font-size:50%}mjx-container [size=Tn]{font-size:60%}mjx-container [size=sm]{font-size:85%}mjx-container [size=lg]{font-size:120%}mjx-container [size=Lg]{font-size:144%}mjx-container [size=LG]{font-size:173%}mjx-container [size=hg]{font-size:207%}mjx-container [size=HG]{font-size:249%}mjx-container [width=full]{width:100%}mjx-box{display:inline-block}mjx-block{display:block}mjx-itable{display:inline-table}mjx-row{display:table-row}mjx-row>*{display:table-cell}mjx-mtext{display:inline-block}mjx-mstyle{display:inline-block}mjx-merror{display:inline-block;color:red;background-color:#ff0}mjx-mphantom{visibility:hidden}mjx-assistive-mml{top:0;left:0;clip:rect(1px,1px,1px,1px);user-select:none;position:absolute!important;padding:1px 0 0!important;border:0!important;display:block!important;width:auto!important;overflow:hidden!important}mjx-assistive-mml[display=block]{width:100%!important}mjx-math{display:inline-block;text-align:left;line-height:0;text-indent:0;font-style:normal;font-weight:400;font-size:100%;font-size-adjust:none;letter-spacing:normal;border-collapse:collapse;overflow-wrap:normal;word-spacing:normal;white-space:nowrap;direction:ltr;padding:1px 0}mjx-container[jax=CHTML][display=true]{display:block;text-align:center;margin:1em 0}mjx-container[jax=CHTML][display=true][width=full]{display:flex}mjx-container[jax=CHTML][display=true] mjx-math{padding:0}mjx-container[jax=CHTML][justify=left]{text-align:left}mjx-container[jax=CHTML][justify=right]{text-align:right}mjx-mi{display:inline-block;text-align:left}mjx-c{display:inline-block}mjx-utext{display:inline-block;padding:.75em 0 .2em}mjx-msub{display:inline-block;text-align:left}mjx-mn{display:inline-block;text-align:left}mjx-mo{display:inline-block;text-align:left}mjx-stretchy-h{display:inline-table;width:100%}mjx-stretchy-h>*{display:table-cell;width:0}mjx-stretchy-h>*>mjx-c{display:inline-block;transform:scaleX(1)}mjx-stretchy-h>*>mjx-c::before{display:inline-block;width:initial}mjx-stretchy-h>mjx-ext{overflow:clip visible;width:100%}mjx-stretchy-h>mjx-ext>mjx-c::before{transform:scaleX(500)}mjx-stretchy-h>mjx-ext>mjx-c{width:0}mjx-stretchy-h>mjx-beg>mjx-c{margin-right:-.1em}mjx-stretchy-h>mjx-end>mjx-c{margin-left:-.1em}mjx-stretchy-v{display:inline-block}mjx-stretchy-v>*{display:block}mjx-stretchy-v>mjx-beg{height:0}mjx-stretchy-v>mjx-end>mjx-c{display:block}mjx-stretchy-v>*>mjx-c{transform:scaleY(1);transform-origin:left center;overflow:hidden}mjx-stretchy-v>mjx-ext{display:block;height:100%;box-sizing:border-box;border:0 solid transparent;overflow:visible clip}mjx-stretchy-v>mjx-ext>mjx-c::before{width:initial;box-sizing:border-box}mjx-stretchy-v>mjx-ext>mjx-c{transform:scaleY(500) translateY(.075em);overflow:visible}mjx-mark{display:inline-block;height:0}mjx-c::before{display:block;width:0}.MJX-TEX{font-family:MJXZERO,MJXTEX}.TEX-B{font-family:MJXZERO,MJXTEX-B}.TEX-I{font-family:MJXZERO,MJXTEX-I}.TEX-MI{font-family:MJXZERO,MJXTEX-MI}.TEX-BI{font-family:MJXZERO,MJXTEX-BI}.TEX-S1{font-family:MJXZERO,MJXTEX-S1}.TEX-S2{font-family:MJXZERO,MJXTEX-S2}.TEX-S3{font-family:MJXZERO,MJXTEX-S3}.TEX-S4{font-family:MJXZERO,MJXTEX-S4}.TEX-A{font-family:MJXZERO,MJXTEX-A}.TEX-C{font-family:MJXZERO,MJXTEX-C}.TEX-CB{font-family:MJXZERO,MJXTEX-CB}.TEX-FR{font-family:MJXZERO,MJXTEX-FR}.TEX-FRB{font-family:MJXZERO,MJXTEX-FRB}.TEX-SS{font-family:MJXZERO,MJXTEX-SS}.TEX-SSB{font-family:MJXZERO,MJXTEX-SSB}.TEX-SSI{font-family:MJXZERO,MJXTEX-SSI}.TEX-SC{font-family:MJXZERO,MJXTEX-SC}.TEX-T{font-family:MJXZERO,MJXTEX-T}.TEX-V{font-family:MJXZERO,MJXTEX-V}.TEX-VB{font-family:MJXZERO,MJXTEX-VB}mjx-stretchy-h mjx-c,mjx-stretchy-v mjx-c{font-family:MJXZERO,MJXTEX-S1,MJXTEX-S4,MJXTEX,MJXTEX-A!important}@font-face{font-family:MJXZERO;src:url("lib/fonts/mathjax_zero.woff") format("woff")}@font-face{font-family:MJXTEX;src:url("lib/fonts/mathjax_main-regular.woff") format("woff")}@font-face{font-family:MJXTEX-B;src:url("lib/fonts/mathjax_main-bold.woff") format("woff")}@font-face{font-family:MJXTEX-I;src:url("lib/fonts/mathjax_math-italic.woff") format("woff")}@font-face{font-family:MJXTEX-MI;src:url("lib/fonts/mathjax_main-italic.woff") format("woff")}@font-face{font-family:MJXTEX-BI;src:url("lib/fonts/mathjax_math-bolditalic.woff") format("woff")}@font-face{font-family:MJXTEX-S1;src:url("lib/fonts/mathjax_size1-regular.woff") format("woff")}@font-face{font-family:MJXTEX-S2;src:url("lib/fonts/mathjax_size2-regular.woff") format("woff")}@font-face{font-family:MJXTEX-S3;src:url("lib/fonts/mathjax_size3-regular.woff") format("woff")}@font-face{font-family:MJXTEX-S4;src:url("lib/fonts/mathjax_size4-regular.woff") format("woff")}@font-face{font-family:MJXTEX-A;src:url("lib/fonts/mathjax_ams-regular.woff") format("woff")}@font-face{font-family:MJXTEX-C;src:url("lib/fonts/mathjax_calligraphic-regular.woff") format("woff")}@font-face{font-family:MJXTEX-CB;src:url("lib/fonts/mathjax_calligraphic-bold.woff") format("woff")}@font-face{font-family:MJXTEX-FR;src:url("lib/fonts/mathjax_fraktur-regular.woff") format("woff")}@font-face{font-family:MJXTEX-FRB;src:url("lib/fonts/mathjax_fraktur-bold.woff") format("woff")}@font-face{font-family:MJXTEX-SS;src:url("lib/fonts/mathjax_sansserif-regular.woff") format("woff")}@font-face{font-family:MJXTEX-SSB;src:url("lib/fonts/mathjax_sansserif-bold.woff") format("woff")}@font-face{font-family:MJXTEX-SSI;src:url("lib/fonts/mathjax_sansserif-italic.woff") format("woff")}@font-face{font-family:MJXTEX-SC;src:url("lib/fonts/mathjax_script-regular.woff") format("woff")}@font-face{font-family:MJXTEX-T;src:url("lib/fonts/mathjax_typewriter-regular.woff") format("woff")}@font-face{font-family:MJXTEX-V;src:url("lib/fonts/mathjax_vector-regular.woff") format("woff")}@font-face{font-family:MJXTEX-VB;src:url("lib/fonts/mathjax_vector-bold.woff") format("woff")}mjx-c.mjx-c1D439.TEX-I::before{padding:.68em .749em 0 0;content:"F"}mjx-c.mjx-c1D447.TEX-I::before{padding:.677em .704em 0 0;content:"T"}mjx-c.mjx-c1D43F.TEX-I::before{padding:.683em .681em 0 0;content:"L"}mjx-c.mjx-c1D43C.TEX-I::before{padding:.683em .504em 0 0;content:"I"}mjx-c.mjx-c1D441.TEX-I::before{padding:.683em .888em 0 0;content:"N"}mjx-c.mjx-c1D438.TEX-I::before{padding:.68em .764em 0 0;content:"E"}mjx-c.mjx-c31::before{padding:.666em .5em 0 0;content:"1"}mjx-c.mjx-c2C::before{padding:.121em .278em .194em 0;content:","}</style><pre class="frontmatter language-yaml" tabindex="0" style="display: none;"><code class="language-yaml is-loaded"><span class="token key atrule">title</span><span class="token punctuation">:</span> Private Networks <span class="token punctuation">-</span> MOD01CL02
+<span class="token key atrule">tags</span><span class="token punctuation">:</span>
+  <span class="token punctuation">-</span> studies
+  <span class="token punctuation">-</span> programming
+  <span class="token punctuation">-</span> CPQD
+  <span class="token punctuation">-</span> 5G
+<span class="token key atrule">use</span><span class="token punctuation">:</span> Documentation<span class="token punctuation">,</span> Course
+<span class="token key atrule">languages</span><span class="token punctuation">:</span> 
+dependences<span class="token punctuation">:</span></code><button class="copy-code-button"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon lucide-copy"><rect x="8" y="8" width="14" height="14" rx="2" ry="2"></rect><path d="M4 16c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2"></path></svg></button></pre><div class="markdown-preview-sizer markdown-preview-section"><h1 class="page-title heading" id="Private Networks - MOD01CL02"><p dir="auto">Private Networks - MOD01CL02</p></h1><div class="el-details"><details> <summary>Table of Contents 🔖</summary></details></div><div class="el-ul"><ul>
+<li data-line="0" dir="auto"><div class="list-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle"><path d="M3 8L12 17L21 8"></path></svg></div><a class="internal-link" data-href="#course-overview" href="#course-overview" target="_self" rel="noopener nofollow">Course Overview</a>
+<ul>
+<li data-line="1" dir="auto"><div class="list-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle"><path d="M3 8L12 17L21 8"></path></svg></div><a class="internal-link" data-href="#chapters--topics" href="#chapters--topics" target="_self" rel="noopener nofollow">Chapters &amp; Topics</a>
+<ul>
+<li data-line="2" dir="auto"><a class="internal-link" data-href="#past-class-recap" href="#past-class-recap" target="_self" rel="noopener nofollow">Past Class Recap</a></li>
+<li data-line="3" dir="auto"><a class="internal-link" data-href="#challenges-and-advances-of-5g" href="#challenges-and-advances-of-5g" target="_self" rel="noopener nofollow">Challenges and Advances of 5G</a></li>
+<li data-line="4" dir="auto"><a class="internal-link" data-href="#levels-of-automation-in-vehicles" href="#levels-of-automation-in-vehicles" target="_self" rel="noopener nofollow">Levels of Automation in Vehicles</a></li>
+<li data-line="5" dir="auto"><div class="list-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle"><path d="M3 8L12 17L21 8"></path></svg></div><a class="internal-link" data-href="#private-networks" href="#private-networks" target="_self" rel="noopener nofollow">Private Networks</a>
+<ul>
+<li data-line="6" dir="auto"><a class="internal-link" data-href="#resource-optimization" href="#resource-optimization" target="_self" rel="noopener nofollow">Resource Optimization</a></li>
+<li data-line="7" dir="auto"><a class="internal-link" data-href="#5g-challenges" href="#5g-challenges" target="_self" rel="noopener nofollow">5G Challenges</a></li>
+<li data-line="8" dir="auto"><a class="internal-link" data-href="#voip-communication" href="#voip-communication" target="_self" rel="noopener nofollow">VoIP Communication</a></li>
+<li data-line="9" dir="auto"><a class="internal-link" data-href="#challenges-and-opportunities" href="#challenges-and-opportunities" target="_self" rel="noopener nofollow">Challenges and Opportunities</a></li>
+<li data-line="10" dir="auto"><a class="internal-link" data-href="#sharing" href="#sharing" target="_self" rel="noopener nofollow">Sharing</a></li>
+<li data-line="11" dir="auto"><a class="internal-link" data-href="#new-business-models" href="#new-business-models" target="_self" rel="noopener nofollow">New Business Models</a></li>
+</ul>
+</li>
+<li data-line="12" dir="auto"><a class="internal-link" data-href="#frequency-auction-and-advances-in-connectivity" href="#frequency-auction-and-advances-in-connectivity" target="_self" rel="noopener nofollow">Frequency Auction and Advances in Connectivity</a></li>
+<li data-line="13" dir="auto"><a class="internal-link" data-href="#challenges" href="#challenges" target="_self" rel="noopener nofollow">Challenges</a></li>
+</ul>
+</li>
+<li data-line="14" dir="auto"><div class="list-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle"><path d="M3 8L12 17L21 8"></path></svg></div><a class="internal-link" data-href="#topic-correlations-" href="#topic-correlations-" target="_self" rel="noopener nofollow">Topic Correlations 📡🔗</a>
+<ul>
+<li data-line="15" dir="auto"><a class="internal-link" data-href="#mentioned-concepts" href="#mentioned-concepts" target="_self" rel="noopener nofollow">Mentioned Concepts</a></li>
+</ul>
+</li>
+<li data-line="16" dir="auto"><a class="internal-link" data-href="#recommended-next-steps-" href="#recommended-next-steps-" target="_self" rel="noopener nofollow">Recommended Next Steps 🚀</a><br>
+- <a class="internal-link" data-href="#for-students" href="#for-students" target="_self" rel="noopener nofollow"><strong>For Students:</strong></a><br>
+- <a class="internal-link" data-href="#for-educators" href="#for-educators" target="_self" rel="noopener nofollow"><strong>For Educators:</strong></a></li>
+</ul>
+</li>
+<li data-line="19" dir="auto"><a class="internal-link" data-href="#highlights" href="#highlights" target="_self" rel="noopener nofollow">Highlights</a></li>
+<li data-line="20" dir="auto"><a class="internal-link" data-href="#references" href="#references" target="_self" rel="noopener nofollow">References</a></li>
+</ul></div><div></div><div class="el-hr"><hr></div><div class="el-h1 heading-wrapper"><h1 data-heading="Course Overview" dir="auto" class="heading" id="Course_Overview">Course Overview</h1><div class="heading-children"><div class="el-p"><p dir="auto">Today's class dived in a deeper view, covered various technical and strategic aspects shaping the future of telecommunications. <strong>Eduardo Moreno</strong> began the presentation by reviewing the <em>evolution of telecommunications</em> and the <em>importance of 5G</em>, highlighting its specifications such as low latency and massive communication capacity. He emphasized the <em>need for continuous innovation</em> in the sector and mentioned the relevance of primary information sources like the <a data-tooltip-position="top" aria-label="https://www.itu.int/en/about/Pages/default.aspx" rel="noopener nofollow" class="external-link" href="https://www.itu.int/en/about/Pages/default.aspx" target="_blank">ITU</a> and <a data-tooltip-position="top" aria-label="https://www.gsma.com/about-us/" rel="noopener nofollow" class="external-link" href="https://www.gsma.com/about-us/" target="_blank">GSMA</a> to keep up with market trends.​</p></div><div class="el-p"><p dir="auto">During the meeting, Moreno presented a chart relating <a class="internal-link" data-href="#" href="#" target="_self" rel="noopener nofollow">latency and throughput</a>, discussing the challenges that 5G still faces, especially in critical applications like autonomous vehicles. The architecture of 5G, including <a class="internal-link" data-href="#" href="#" target="_self" rel="noopener nofollow">virtualization</a> and <a class="internal-link" data-href="#" href="#" target="_self" rel="noopener nofollow">standardized communication between devices</a>, was a central point of the discussion.​</p></div><div class="el-p"><p dir="auto">The dynamic allocation of resources in artificial intelligence was addressed, with Moreno explaining the <em>importance of algorithm efficiency</em>. About the communication between autonomous devices, he suggested the <em>use of emulated networks to facilitate this interaction</em>. He also discussed the replication of systems in different data centers as a strategy to reduce delay and increase application reliability, in addition to mentioning the high investments required for the implementation of private networks.​</p></div><div class="el-p"><p dir="auto">Finally, the meeting highlighted the complexity of the infrastructure needed for private networks, including the importance of towers and distributed antenna systems. Eduardo Moreno detailed the 700 MHz frequency auction and Brazil's competitiveness in the 5G scenario, as well as addressing the issue of coverage in remote areas, acknowledging the financial challenges and the need for solutions like low-orbit satellites. The discussion emphasized the importance of resource sharing and the evolution of private networks to meet new connectivity demands.</p></div><div class="el-h2 heading-wrapper"><h2 data-heading="Chapters &amp; Topics" dir="auto" class="heading" id="Chapters_&amp;_Topics"><div class="heading-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle"><path d="M3 8L12 17L21 8"></path></svg></div>Chapters &amp; Topics</h2><div class="heading-children"><div class="el-h3 heading-wrapper"><h3 data-heading="Past Class Recap" dir="auto" class="heading" id="Past_Class_Recap"><div class="heading-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle"><path d="M3 8L12 17L21 8"></path></svg></div>Past Class Recap</h3><div class="heading-children"><div class="el-p"><p dir="auto">Revision of the topics discussed in the previous class, such as the evolution of telecommunications and the importance of private networks. He mentioned the competition in the telecommunications market and the evolution of 5G, highlighting its specifications and new use cases emerging with this technology.</p></div><div class="el-ul"><ul>
+<li data-line="0" dir="auto">Evolution of telecommunications technologies and their complexities.</li>
+<li data-line="1" dir="auto">Evolution of technologies and their impact on the telecommunications ecosystem.</li>
+<li data-line="2" dir="auto">Listed some of the technical naming of the current technologies such as <code>IMT2000</code> for 3G, <code>IMTAdvanced</code> for 4G and <code>IMT2020</code> for 5G (ITU).</li>
+</ul></div></div></div><div class="el-h3 heading-wrapper"><h3 data-heading="Challenges and Advances of 5G" dir="auto" class="heading" id="Challenges_and_Advances_of_5G"><div class="heading-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle"><path d="M3 8L12 17L21 8"></path></svg></div>Challenges and Advances of 5G</h3><div class="heading-children"><div class="el-p"><p dir="auto">Presented a chart relating latency in milliseconds and throughput in megabits per second for various applications. He emphasized that, although 5G brings significant advancements, there are still challenges to overcome, especially in applications requiring extremely low latencies, such as autonomous vehicles. The 5G architecture was discussed, including virtualization and the need for standardized communication between devices.</p></div><div class="el-ul"><ul>
+<li data-line="0" dir="auto">Relationship between 5G and satellite services.</li>
+<li data-line="1" dir="auto">Virtualization and physical separation of slices in the 5G architecture.</li>
+<li data-line="2" dir="auto">Importance of infrastructure sharing in private networks.</li>
+</ul></div></div></div><div class="el-h3 heading-wrapper"><h3 data-heading="Levels of Automation in Vehicles" dir="auto" class="heading" id="Levels_of_Automation_in_Vehicles"><div class="heading-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle"><path d="M3 8L12 17L21 8"></path></svg></div>Levels of Automation in Vehicles</h3><div class="heading-children"><div class="el-p"><p dir="auto">Discussed the evolution of automation in vehicles, mentioning that there are cars with varying levels of autonomy, such as those from Tesla. He emphasized that, although there have been significant advancements, full autonomy still depends on standardizations and a controlled environment.</p></div></div></div><div class="el-h3 heading-wrapper"><h3 data-heading="Private Networks" dir="auto" class="heading" id="Private_Networks"><div class="heading-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle"><path d="M3 8L12 17L21 8"></path></svg></div>Private Networks</h3><div class="heading-children"><div class="el-p"><p dir="auto">Carlos raised the issue of a concession for a road without coverage, suggesting that a private network could be a solution. Eduardo responded that road coverage is a challenge in Brazil, especially in more remote regions, and that Anatel is aware of this. He emphasized that the solution requires investment and that the use of satellites can help improve coverage.</p></div><div class="el-p"><p dir="auto">Also regarding Private Networks another topics were raised, as follows:</p></div><div class="el-h4 heading-wrapper"><h4 data-heading="Resource Optimization" dir="auto" class="heading" id="Resource_Optimization"><div class="heading-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle"><path d="M3 8L12 17L21 8"></path></svg></div>Resource Optimization</h4><div class="heading-children"><div class="el-p"><p dir="auto">Presented concepts of MIMO and smart cells, highlighting how these technologies improve network efficiency. He mentioned that, in low coverage situations, neighboring cells can help provide additional data, optimizing system performance. Latency is another crucial point, where the proximity of cells is fundamental for services requiring quick responses.</p></div><div class="el-p"><p dir="auto">Also explained that resource allocation in artificial intelligence is dynamic and depends on demand. Clodoaldo Callogero sought clarifications about the system interface and interaction between autonomous devices, while Moreno suggested that this communication can occur through an emulated network.</p></div></div></div><div class="el-h4 heading-wrapper"><h4 data-heading="5G Challenges" dir="auto" class="heading" id="5G_Challenges"><div class="heading-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle"><path d="M3 8L12 17L21 8"></path></svg></div>5G Challenges</h4><div class="heading-children"><div class="el-p"><p dir="auto">Addressed the challenges of implementing private 5G networks, highlighting the need for significant investments and consideration of sponsors' interests. He emphasized that the capital expenditure for wireless networks is high and that customized solutions are essential to make smaller projects viable.</p></div><div class="el-ul"><ul>
+<li data-line="0" dir="auto">Infrastructure and investment challenges for 5G implementation.</li>
+</ul></div></div></div><div class="el-h4 heading-wrapper"><h4 data-heading="VoIP Communication" dir="auto" class="heading" id="VoIP_Communication"><div class="heading-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle"><path d="M3 8L12 17L21 8"></path></svg></div>VoIP Communication</h4><div class="heading-children"><div class="el-p"><p dir="auto">Detailed how private networks can operate without a valid phone number, responding to Antônio's question about WhatsApp authentication. He explained that it is possible to have an agreement with an operator to obtain valid numbers, but this involves complications and licenses.</p></div></div></div><div class="el-h4 heading-wrapper"><h4 data-heading="Challenges and Opportunities" dir="auto" class="heading" id="Challenges_and_Opportunities"><div class="heading-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle"><path d="M3 8L12 17L21 8"></path></svg></div>Challenges and Opportunities</h4><div class="heading-children"><div class="el-p"><p dir="auto">Addressed the growing demand for transmission capacity in Brazil, especially outside major urban centers, where fiber optic infrastructure is still insufficient. He also mentioned challenges related to electricity and the impact of vandalism on operators' operations, which affect service continuity.</p></div></div></div><div class="el-h4 heading-wrapper"><h4 data-heading="Sharing" dir="auto" class="heading" id="Sharing"><div class="heading-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle"><path d="M3 8L12 17L21 8"></path></svg></div>Sharing</h4><div class="heading-children"><div class="el-p"><p dir="auto">Discussed the relevance of resource sharing for the viability of private networks, explaining that this can result in savings of up to 40%. He detailed a sharing structure that includes various resources, such as towers and access equipment, and emphasized that sharing is fundamental to maximize efficiency and reduce costs.</p></div></div></div><div class="el-h4 heading-wrapper"><h4 data-heading="New Business Models" dir="auto" class="heading" id="New_Business_Models"><div class="heading-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle"><path d="M3 8L12 17L21 8"></path></svg></div>New Business Models</h4><div class="heading-children"><div class="el-p"><p dir="auto">Eduardo Moreno highlighted the trend of private network evolution, emphasizing the creation of a new service ecosystem. Gabriel Theodoro brought examples of companies that expanded their business models, such as Heineken and iFood, questioning other opportunities in this segment. Moreno responded that service specialization allows diversification and the offering of new services.</p></div><div class="el-ul"><ul>
+<li data-line="0" dir="auto">Examples of service diversification by traditional companies. <a data-tooltip-position="top" aria-label="https://agenciabrasil.ebc.com.br/en/economia/noticia/2021-11/brazils-first-5g-auction-brings-84-bi" rel="noopener nofollow" class="external-link" href="https://agenciabrasil.ebc.com.br/en/economia/noticia/2021-11/brazils-first-5g-auction-brings-84-bi" target="_blank">Agência Brasil</a></li>
+</ul></div></div></div></div></div><div class="el-h3 heading-wrapper"><h3 data-heading="Frequency Auction and Advances in Connectivity" dir="auto" class="heading" id="Frequency_Auction_and_Advances_in_Connectivity"><div class="heading-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle"><path d="M3 8L12 17L21 8"></path></svg></div>Frequency Auction and Advances in Connectivity</h3><div class="heading-children"><div class="el-p"><p dir="auto">During the presentation, Eduardo Moreno explained that the 700 MHz auction was the largest in the world and internationally praised. He mentioned the migration from 4G to 5G, highlighting Anatel's requirement for system modernization, which resulted in an advanced 5G network in Brazil. Additionally, he addressed the competition among equipment suppliers, emphasizing the importance of fiber optics for new companies.</p></div><div class="el-ul"><ul>
+<li data-line="0" dir="auto">Challenges of 4G and 5G coverage in remote areas.</li>
+<li data-line="1" dir="auto">Frequency auction and its economic impacts.</li>
+</ul></div></div></div><div class="el-h3 heading-wrapper"><h3 data-heading="Challenges" dir="auto" class="heading" id="Challenges"><div class="heading-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle"><path d="M3 8L12 17L21 8"></path></svg></div>Challenges</h3><div class="heading-children"><div class="el-ul"><ul>
+<li data-line="0" dir="auto">Investments</li>
+<li data-line="1" dir="auto">Taxes</li>
+<li data-line="2" dir="auto">Frequency</li>
+<li data-line="3" dir="auto">Infrastructure</li>
+<li data-line="4" dir="auto">Transmission</li>
+<li data-line="5" dir="auto">Energy</li>
+<li data-line="6" dir="auto">Operation</li>
+</ul></div></div></div></div></div><div class="el-h2 heading-wrapper"><h2 data-heading="Topic Correlations 📡🔗" dir="auto" class="heading" id="Topic_Correlations_📡🔗"><div class="heading-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle"><path d="M3 8L12 17L21 8"></path></svg></div>Topic Correlations 📡🔗</h2><div class="heading-children"><div class="el-h3 heading-wrapper"><h3 data-heading="Mentioned Concepts" dir="auto" class="heading" id="Mentioned_Concepts"><div class="heading-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle"><path d="M3 8L12 17L21 8"></path></svg></div>Mentioned Concepts</h3><div class="heading-children"><div class="el-ul"><ul>
+<li data-line="0" dir="auto"><strong>MBB</strong> - Mobile Broadband: is a term used to describe the use of mobile networks to provide high-speed internet access to users on the move. It encompasses various technologies, including 3G, 4G, and 5G, and is characterized by its ability to deliver fast data rates and support a wide range of applications, such as video streaming, online gaming, and social media.</li>
+<li data-line="1" dir="auto"><strong>eMBB</strong> - Enhanced Mobile Broadband: is a key feature of 5G technology that aims to provide significantly higher data rates and improved user experiences compared to previous generations of mobile networks. eMBB is designed to support applications such as ultra-high-definition video streaming, virtual reality, and augmented reality, enabling users to access rich multimedia content seamlessly.</li>
+<li data-line="2" dir="auto"><div class="list-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle"><path d="M3 8L12 17L21 8"></path></svg></div>Scope
+<ul>
+<li data-line="3" dir="auto"><strong>Massive MTC</strong>: is a term used to describe the ability of 5G networks to connect a vast number of devices simultaneously, enabling applications such as smart cities, industrial IoT, and smart agriculture. This capability is essential for supporting the growing number of connected devices and sensors in various sectors.</li>
+<li data-line="4" dir="auto"><strong>Low-latency MTC</strong>: is a critical feature of 5G technology that enables real-time communication between devices with minimal delay. This capability is essential for applications such as autonomous vehicles, remote surgery, and industrial automation, where timely data exchange is crucial for safety and efficiency.</li>
+<li data-line="5" dir="auto"><strong>Advanced Mobile Band</strong>: is a term used to describe the frequency bands allocated for mobile communication, particularly in the context of 5G networks. These bands are designed to support high data rates, low latency, and massive connectivity, enabling a wide range of applications and services.</li>
+</ul>
+</li>
+<li data-line="6" dir="auto"><div class="list-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle"><path d="M3 8L12 17L21 8"></path></svg></div><strong>Delay vs Bandwidth Throughput</strong>: (Services and Applications Capacity) 
+<ul>
+<li data-line="7" dir="auto"><strong>Latency</strong>: is the time it takes for data to travel from one point to another in a network. It is a critical factor in determining the performance of applications, especially those requiring real-time communication, such as online gaming, video conferencing, and autonomous vehicles.</li>
+<li data-line="8" dir="auto"><strong>Throughput</strong>: is the amount of data transmitted over a network in a given period. It is typically measured in bits per second (bps) and is influenced by factors such as bandwidth, latency, and network congestion. High throughput is essential for applications that require large amounts of data transfer, such as video streaming and file downloads.</li>
+</ul>
+</li>
+<li data-line="9" dir="auto"><div class="list-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle"><path d="M3 8L12 17L21 8"></path></svg></div>Architecture
+<ul>
+<li data-line="10" dir="auto"><strong>RAT</strong>: Radio Access Technology: refers to the various technologies used to connect mobile devices to the core network. Examples include GSM, UMTS, LTE, and 5G NR. Each RAT has its own specifications and capabilities, enabling different types of communication and services.</li>
+<li data-line="11" dir="auto"><strong>Access Node</strong>: is a component of the telecommunications network that connects end-user devices to the core network. It is responsible for managing radio resources, handling user authentication, and providing access to various services. Access nodes can be base stations, small cells, or other types of radio equipment.</li>
+<li data-line="12" dir="auto"><strong>Cloud Node</strong>: is a virtualized component of the telecommunications network that provides computing resources and services in a cloud environment. It enables the deployment of network functions and applications in a flexible and scalable manner, allowing operators to optimize resource utilization and improve service delivery.</li>
+<li data-line="13" dir="auto"><strong>Networking Node</strong>: is a component of the telecommunications network that manages data routing and switching between different parts of the network. It is responsible for ensuring efficient data transmission, maintaining network performance, and providing connectivity to end-user devices.</li>
+<li data-line="14" dir="auto"><strong>Virtualized Elements</strong>: are software-based components of the telecommunications network that can be deployed and managed in a virtualized environment. This approach allows for greater flexibility, scalability, and cost-effectiveness in network management, as virtualized elements can be easily updated, replicated, or moved as needed.</li>
+</ul>
+</li>
+<li data-line="15" dir="auto"><div class="list-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle"><path d="M3 8L12 17L21 8"></path></svg></div>Technology
+<ul>
+<li data-line="16" dir="auto"><strong>Frequency Zone</strong>: is a specific range of frequencies allocated for communication in a telecommunications network. Different frequency zones are used for various applications, such as mobile communication, satellite communication, and broadcasting. The allocation of frequency zones is regulated by national and international authorities to ensure efficient use of the radio spectrum.</li>
+<li data-line="17" dir="auto">Virtualized slicing: is a technique used in telecommunications networks to create multiple virtual networks on a single physical infrastructure. Each virtual network, or slice, can be tailored to meet specific requirements, such as bandwidth, latency, and security. This approach allows operators to optimize resource utilization and provide customized services to different users or applications.</li>
+<li data-line="18" dir="auto"><strong>FD-MIMO</strong>: Frequency Division Multiple Input Multiple Output: is a technology used in wireless communication systems to improve data transmission efficiency and capacity. It employs multiple antennas at both the transmitter and receiver ends, allowing for simultaneous transmission of multiple data streams over different frequency channels. This technique enhances signal quality, reduces interference, and increases overall network performance.</li>
+<li data-line="19" dir="auto"><strong>Smart Cells</strong>: (wireless backhaul, previous virtual cell, updated virtual cell) are advanced wireless communication nodes that utilize intelligent algorithms and technologies to optimize network performance. They can adapt to changing network conditions, manage resources dynamically, and provide improved coverage and capacity in various environments. Smart cells are essential for enhancing the efficiency of modern telecommunications networks, particularly in dense urban areas or challenging terrains.</li>
+</ul>
+</li>
+</ul></div><div class="el-table" dir="ltr" style="overflow-x: auto;"><table>
+<thead>
+<tr>
+<th dir="ltr">Theme</th>
+<th dir="ltr">Correlated Area</th>
+<th dir="ltr">Insight</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td dir="ltr"><strong>5G Architecture and Private Networks</strong></td>
+<td dir="ltr">Virtualization and Network Slicing</td>
+<td dir="ltr">The discussion on 5G architecture, including virtualization and standardized communication between devices, aligns with the concept of network slicing. This allows for the creation of multiple virtual networks on a single physical infrastructure, each tailored to specific needs. ​<a data-tooltip-position="top" aria-label="https://www.linkedin.com/pulse/network-slicing-5g-architecting-virtual-networks-1uyxc" rel="noopener nofollow" class="external-link" href="https://www.linkedin.com/pulse/network-slicing-5g-architecting-virtual-networks-1uyxc" target="_blank">LinkedIn</a> <a data-tooltip-position="top" aria-label="https://en.wikipedia.org/wiki/5G_network_slicing" rel="noopener nofollow" class="external-link" href="https://en.wikipedia.org/wiki/5G_network_slicing" target="_blank">Wikipedia</a></td>
+</tr>
+<tr>
+<td dir="auto"></td>
+<td dir="ltr">Private Network Implementation</td>
+<td dir="ltr">The emphasis on private networks and their infrastructure complexities, such as the need for towers and distributed antenna systems, correlates with the challenges and strategies in deploying private 5G networks. ​</td>
+</tr>
+<tr>
+<td dir="ltr"><strong>Automation and AI Integration</strong></td>
+<td dir="ltr">Autonomous Vehicles</td>
+<td dir="ltr">The analysis of automation levels in vehicles and the importance of standardization reflects the broader trend of integrating AI into transportation, necessitating reliable and low-latency networks.</td>
+</tr>
+<tr>
+<td dir="auto"></td>
+<td dir="ltr">AI Resource Allocation</td>
+<td dir="ltr">The discussion on dynamic resource allocation in AI and the use of emulated networks for device communication highlights the intersection of AI and network infrastructure.</td>
+</tr>
+<tr>
+<td dir="ltr"><strong>Infrastructure and Coverage Challenges</strong></td>
+<td dir="ltr">Remote Area Connectivity</td>
+<td dir="ltr">Addressing coverage in remote areas and the potential use of low-orbit satellites ties into the global challenge of providing ubiquitous connectivity, especially in underserved regions. ​</td>
+</tr>
+<tr>
+<td dir="auto"></td>
+<td dir="ltr">Investment Requirements</td>
+<td dir="ltr">The mention of high investments for private network implementation underscores the financial considerations and the importance of strategic planning in network deployment.<br></td>
+</tr>
+</tbody>
+</table></div></div></div></div></div><div class="el-h2 heading-wrapper"><h2 data-heading="Recommended Next Steps 🚀" dir="auto" class="heading" id="Recommended_Next_Steps_🚀"><div class="heading-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle"><path d="M3 8L12 17L21 8"></path></svg></div>Recommended Next Steps 🚀</h2><div class="heading-children"><div class="el-h4 heading-wrapper"><h4 data-heading="**For Students:**" dir="auto" class="heading" id="**For_Students:**"><div class="heading-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle"><path d="M3 8L12 17L21 8"></path></svg></div><strong>For Students:</strong></h4><div class="heading-children"><div class="el-ol"><ol>
+<li data-line="0" dir="auto"><strong>Research Network Slicing</strong>: Understand how network slicing enables multiple virtual networks on a single physical infrastructure and its implications for private networks.<a data-tooltip-position="top" aria-label="https://en.wikipedia.org/wiki/5G_network_slicing" rel="noopener nofollow" class="external-link" href="https://en.wikipedia.org/wiki/5G_network_slicing" target="_blank">Wikipedia</a></li>
+<li data-line="1" dir="auto"><strong>Explore AI and 5G Integration</strong>: Investigate how AI applications, especially in automation and autonomous vehicles, rely on 5G capabilities.</li>
+<li data-line="2" dir="auto"><strong>Study Infrastructure Challenges</strong>: Examine the technical and financial challenges in deploying private networks, particularly in remote areas.</li>
+</ol></div></div></div><div class="el-h4 heading-wrapper"><h4 data-heading="**For Educators:**" dir="auto" class="heading" id="**For_Educators:**"><div class="heading-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle"><path d="M3 8L12 17L21 8"></path></svg></div><strong>For Educators:</strong></h4><div class="heading-children"><div class="el-ol"><ol>
+<li data-line="0" dir="auto"><strong>Provide Case Studies</strong>: Offer real-world examples of private network implementations and their outcomes.</li>
+<li data-line="1" dir="auto"><strong>Facilitate Discussions</strong>: Encourage debates on the trade-offs between public and private networks, especially concerning cost, control, and customization.</li>
+<li data-line="2" dir="auto"><strong>Update on Standards</strong>: Keep students informed about the latest developments from standardization bodies like ITU and GSMA.<a data-tooltip-position="top" aria-label="https://www.itu.int/dms_pub/itu-t/opb/tut/T-TUT-ICTS-2022-2-PDF-E.pdf" rel="noopener nofollow" class="external-link" href="https://www.itu.int/dms_pub/itu-t/opb/tut/T-TUT-ICTS-2022-2-PDF-E.pdf" target="_blank">ITU</a></li>
+</ol></div></div></div></div></div></div></div><div class="el-h1 heading-wrapper"><h1 data-heading="Highlights" dir="auto" class="heading" id="Highlights">Highlights</h1><div class="heading-children"><div class="el-table" dir="ltr" style="overflow-x: auto;"><table>
+<thead>
+<tr>
+<th dir="ltr">Timestamp</th>
+<th dir="ltr">Topic</th>
+<th dir="ltr">Type</th>
+<th dir="ltr">Summary</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td dir="auto">08:12</td>
+<td dir="ltr">5G for Massive Communication Devices<br></td>
+<td dir="ltr">Fact</td>
+<td dir="ltr">Low latency and high reliability needs were not met by 4G.</td>
+</tr>
+<tr>
+<td dir="auto">11:24</td>
+<td dir="ltr">New 5G Use Cases</td>
+<td dir="ltr">Fact</td>
+<td dir="ltr">5G includes enhanced broadband, massive M2M, and low-latency reliable systems.</td>
+</tr>
+<tr>
+<td dir="auto">11:24</td>
+<td dir="auto"></td>
+<td dir="ltr">Fact</td>
+<td dir="ltr">5G enables direct device-to-device communication without the network.</td>
+</tr>
+<tr>
+<td dir="auto">13:11</td>
+<td dir="ltr">New Radio Access Technologies</td>
+<td dir="ltr">Fact</td>
+<td dir="ltr">DSMA hosts Mobile Congress, key for global tech decisions.</td>
+</tr>
+<tr>
+<td dir="auto">13:11</td>
+<td dir="auto"></td>
+<td dir="ltr">Fact</td>
+<td dir="ltr">DSMA provides free and premium reports useful for research.</td>
+</tr>
+<tr>
+<td dir="auto">13:11</td>
+<td dir="auto"></td>
+<td dir="ltr">Concern</td>
+<td dir="ltr">Quick disaster response demands tech that supports rapid decision-making.</td>
+</tr>
+<tr>
+<td dir="auto">18:19</td>
+<td dir="ltr">Challenges for 5G</td>
+<td dir="ltr">Fact</td>
+<td dir="ltr">Machine-to-machine comms will outnumber human comms.</td>
+</tr>
+<tr>
+<td dir="auto">18:19</td>
+<td dir="auto"></td>
+<td dir="ltr">Fact</td>
+<td dir="ltr">Network functions are being virtualized into software.</td>
+</tr>
+<tr>
+<td dir="auto">23:01</td>
+<td dir="ltr">5G and mmWave Development</td>
+<td dir="ltr">Concern</td>
+<td dir="ltr">Lack of mmWave-compatible devices; spectrum underused.</td>
+</tr>
+<tr>
+<td dir="auto">23:01</td>
+<td dir="auto"></td>
+<td dir="ltr">Fact</td>
+<td dir="ltr">US uses mmWave for fixed telephony, proving feasibility.</td>
+</tr>
+<tr>
+<td dir="auto">23:01</td>
+<td dir="auto"></td>
+<td dir="ltr">Fact</td>
+<td dir="ltr">Network slicing allows better allocation of 5G resources.</td>
+</tr>
+<tr>
+<td dir="auto">31:30</td>
+<td dir="ltr">Network Virtualization and Slicing</td>
+<td dir="ltr">Fact</td>
+<td dir="ltr">Slicing can be physical or virtual depending on the client.</td>
+</tr>
+<tr>
+<td dir="auto">31:30</td>
+<td dir="auto"></td>
+<td dir="ltr">Concern</td>
+<td dir="ltr">Economic feasibility of private networks is a concern for managers.</td>
+</tr>
+<tr>
+<td dir="auto">36:01</td>
+<td dir="ltr">Automation and 5G</td>
+<td dir="ltr">Concern</td>
+<td dir="ltr">Uncontrolled environments challenge autonomous vehicle deployment.</td>
+</tr>
+<tr>
+<td dir="auto">39:55</td>
+<td dir="ltr">5G Advances and Automation</td>
+<td dir="ltr">Fact</td>
+<td dir="ltr">5G will enable mission-critical automation over the next 5 years.</td>
+</tr>
+<tr>
+<td dir="auto">41:15</td>
+<td dir="ltr">MIMO Technology and Smart Cells</td>
+<td dir="ltr">Fact</td>
+<td dir="ltr">MIMO improves signal efficiency; smart cells boost coverage.</td>
+</tr>
+<tr>
+<td dir="auto">43:28</td>
+<td dir="ltr">Latency in Critical Services</td>
+<td dir="ltr">Concern</td>
+<td dir="ltr">Latency of 1–5 ms is required; physics limits long-distance delay.</td>
+</tr>
+<tr>
+<td dir="auto">45:12</td>
+<td dir="ltr">Network Optimization</td>
+<td dir="ltr">Fact</td>
+<td dir="ltr">Off-peak hours (night) optimize data costs and efficiency.</td>
+</tr>
+<tr>
+<td dir="auto">48:26</td>
+<td dir="ltr">Dynamic Resource Allocation</td>
+<td dir="ltr">Concern</td>
+<td dir="ltr">Understanding the resource allocation algorithm is essential.</td>
+</tr>
+<tr>
+<td dir="auto">51:40</td>
+<td dir="ltr">Data Center and 5G Trends</td>
+<td dir="ltr">Concern</td>
+<td dir="ltr">Skepticism remains about software-based reliability.</td>
+</tr>
+<tr>
+<td dir="auto">51:40</td>
+<td dir="auto"></td>
+<td dir="ltr">Fact</td>
+<td dir="ltr">Brazilian telecoms invest billions annually in infrastructure.</td>
+</tr>
+<tr>
+<td dir="auto">55:46</td>
+<td dir="ltr">5G Investment and Capex</td>
+<td dir="ltr">Concern</td>
+<td dir="ltr">High investment needs challenge small operators.</td>
+</tr>
+<tr>
+<td dir="auto">55:46</td>
+<td dir="auto"></td>
+<td dir="ltr">Fact</td>
+<td dir="ltr">Wireless capex includes transport; core cost is low for large carriers.</td>
+</tr>
+<tr>
+<td dir="auto">55:46</td>
+<td dir="auto"></td>
+<td dir="ltr">Decision</td>
+<td dir="ltr">Small carriers may adopt cores from bigger operators to save costs.</td>
+</tr>
+<tr>
+<td dir="auto">60:39</td>
+<td dir="ltr">Private Networks and Tax Burden</td>
+<td dir="ltr">Fact</td>
+<td dir="ltr">Brazil’s telecom tax is 41%, the world’s highest.</td>
+</tr>
+<tr>
+<td dir="auto">61:30</td>
+<td dir="ltr">Private Network Topology</td>
+<td dir="ltr">Info</td>
+<td dir="auto"></td>
+</tr>
+<tr>
+<td dir="auto">65:00</td>
+<td dir="auto"></td>
+<td dir="ltr">Fact</td>
+<td dir="ltr">Private networks lack numbering resources unlike personal mobile.</td>
+</tr>
+<tr>
+<td dir="auto">69:28</td>
+<td dir="ltr">Frequency Distribution and Infrastructure</td>
+<td dir="ltr">Fact</td>
+<td dir="ltr">Operators bought national and regional frequency blocks.</td>
+</tr>
+<tr>
+<td dir="auto">69:28</td>
+<td dir="auto"></td>
+<td dir="ltr">Concern</td>
+<td dir="ltr">Tower construction is costly and now handled by 'Torcoles'.</td>
+</tr>
+<tr>
+<td dir="auto">69:28</td>
+<td dir="auto"></td>
+<td dir="ltr">Fact</td>
+<td dir="ltr">DAS systems improve coverage in venues like malls and stadiums.</td>
+</tr>
+<tr>
+<td dir="auto">69:28</td>
+<td dir="auto"></td>
+<td dir="ltr">Concern</td>
+<td dir="ltr">ISPs increase demand but face fiber investment challenges.</td>
+</tr>
+<tr>
+<td dir="auto">75:03</td>
+<td dir="ltr">Transmission and Coverage Challenges</td>
+<td dir="ltr">Concern</td>
+<td dir="ltr">Rural areas lack proper transmission infrastructure.</td>
+</tr>
+<tr>
+<td dir="auto">75:03</td>
+<td dir="auto"></td>
+<td dir="ltr">Fact</td>
+<td dir="ltr">Fiber transmission is critical for capacity in remote areas.</td>
+</tr>
+<tr>
+<td dir="auto">75:03</td>
+<td dir="auto"></td>
+<td dir="ltr">Concern</td>
+<td dir="ltr">Electricity shortages prevent new site deployment.</td>
+</tr>
+<tr>
+<td dir="auto">75:03</td>
+<td dir="auto"></td>
+<td dir="ltr">Concern</td>
+<td dir="ltr">Vandalism causes operators to abandon some areas.</td>
+</tr>
+<tr>
+<td dir="auto">75:03</td>
+<td dir="auto"></td>
+<td dir="ltr">Concern</td>
+<td dir="ltr">Local technicians are vital to maintaining operations.</td>
+</tr>
+<tr>
+<td dir="auto">79:42</td>
+<td dir="ltr">Spectrum Auction and Connectivity</td>
+<td dir="ltr">Fact</td>
+<td dir="ltr">Brazil’s $47B spectrum auction was the largest in the world.</td>
+</tr>
+<tr>
+<td dir="auto">79:42</td>
+<td dir="auto"></td>
+<td dir="ltr">Concern</td>
+<td dir="ltr">4G→5G migration is hard due to new core requirements.</td>
+</tr>
+<tr>
+<td dir="auto">79:42</td>
+<td dir="auto"></td>
+<td dir="ltr">Fact</td>
+<td dir="ltr">Regulation accelerated Brazil’s 5G rollout.</td>
+</tr>
+<tr>
+<td dir="auto">79:42</td>
+<td dir="auto"></td>
+<td dir="ltr">Fact</td>
+<td dir="ltr">ISPs have more fiber deployment than legacy carriers.</td>
+</tr>
+<tr>
+<td dir="auto">85:15</td>
+<td dir="ltr">Fiber Transmission and Resource Sharing</td>
+<td dir="ltr">Fact</td>
+<td dir="ltr">82.8% of towns in Brazil are served by fiber.</td>
+</tr>
+<tr>
+<td dir="auto">85:15</td>
+<td dir="auto"></td>
+<td dir="ltr">Fact</td>
+<td dir="ltr">Higher sharing = higher economic efficiency in private networks.</td>
+</tr>
+<tr>
+<td dir="auto">85:15</td>
+<td dir="auto"></td>
+<td dir="ltr">Fact</td>
+<td dir="ltr">Spectrum/resource sharing yields cost savings.</td>
+</tr>
+<tr>
+<td dir="auto">90:20</td>
+<td dir="ltr">Operations Models and Network Ecosystems</td>
+<td dir="ltr">Fact</td>
+<td dir="ltr">New network models include services, systems, and impact economies.</td>
+</tr>
+<tr>
+<td dir="auto">94:38</td>
+<td dir="ltr">Innovation in Diversified Markets</td>
+<td dir="ltr">Info</td>
+<td dir="auto"></td>
+</tr>
+<tr>
+<td dir="auto">95:33</td>
+<td dir="ltr">Infrastructure and Correlated Services</td>
+<td dir="ltr">Fact</td>
+<td dir="ltr">Hospitals need 24/7 support and IoT for surgeries.</td>
+</tr>
+<tr>
+<td dir="auto">95:33</td>
+<td dir="auto"></td>
+<td dir="ltr">Fact</td>
+<td dir="ltr">Private networks can support core and adjacent services.</td>
+</tr>
+<tr>
+<td dir="auto">95:33</td>
+<td dir="auto"></td>
+<td dir="ltr">Fact</td>
+<td dir="ltr">Sem Parar evolved from toll tags to condo access and loyalty.</td>
+</tr>
+<tr>
+<td dir="auto">99:51</td>
+<td dir="ltr">Connectivity and Related Services</td>
+<td dir="ltr">Fact</td>
+<td dir="ltr">Connectivity enables diverse services like security and monitoring.</td>
+</tr>
+<tr>
+<td dir="auto">99:51</td>
+<td dir="auto"></td>
+<td dir="ltr">Concern</td>
+<td dir="ltr">High telecom rates hurt business efficiency.</td>
+</tr>
+<tr>
+<td dir="auto">99:51</td>
+<td dir="auto"></td>
+<td dir="ltr">Decision</td>
+<td dir="ltr">Private networks can support remote sensing for security.</td>
+</tr>
+<tr>
+<td dir="auto">99:51</td>
+<td dir="auto"></td>
+<td dir="ltr">Fact</td>
+<td dir="ltr">High-quality connectivity fosters new, unforeseen applications.</td>
+</tr>
+<tr>
+<td dir="auto">104:18</td>
+<td dir="ltr">Specialized App Development</td>
+<td dir="ltr">Concern</td>
+<td dir="ltr">Connectivity gaps affect sensor and app performance.</td>
+</tr>
+<tr>
+<td dir="auto">104:18</td>
+<td dir="auto"></td>
+<td dir="ltr">Next Steps</td>
+<td dir="ltr">Gabriel Theodoro encouraged to research the topic further.</td>
+</tr>
+<tr>
+<td dir="auto">106:07</td>
+<td dir="ltr">Information Sources and References</td>
+<td dir="ltr">Fact</td>
+<td dir="ltr">Reliable sources include ITU, GMSI, IEEE, Huawei, Ericsson, etc.</td>
+</tr>
+<tr>
+<td dir="auto">108:38</td>
+<td dir="ltr">Road Coverage and Connectivity Challenges</td>
+<td dir="ltr">Concern</td>
+<td dir="ltr">Remote highway coverage is poor, especially in central/northern Brazil.</td>
+</tr>
+<tr>
+<td dir="auto">108:38</td>
+<td dir="auto"></td>
+<td dir="ltr">Fact</td>
+<td dir="ltr">Anatel mapped 1,500 highway points needing improvements.</td>
+</tr>
+<tr>
+<td dir="auto">108:38</td>
+<td dir="auto"></td>
+<td dir="ltr">Decision</td>
+<td dir="ltr">Low-orbit satellites may be the best solution.</td>
+</tr>
+</tbody>
+</table></div></div></div><div class="el-h1 heading-wrapper"><h1 data-heading="References" dir="auto" class="heading" id="References">References</h1><div class="heading-children"><div class="el-ul"><ul>
+<li data-line="0" dir="auto"><strong>GSMA - Private 5G Industrial Networks</strong>: Provides analysis and guidelines for 5G private networks, including deployment options and use cases. <a data-tooltip-position="top" aria-label="https://www.gsma.com/solutions-and-impact/technologies/internet-of-things/wp-content/uploads/2023/06/GSMA-Private-5G-Industrial-Networks-Report-June-2023.pdf" rel="noopener nofollow" class="external-link" href="https://www.gsma.com/solutions-and-impact/technologies/internet-of-things/wp-content/uploads/2023/06/GSMA-Private-5G-Industrial-Networks-Report-June-2023.pdf" target="_blank">gsma.com</a></li>
+<li data-line="1" dir="auto"><strong>Ericsson - The Art of 5G Network Slicing Explained</strong>: Discusses how network slicing creates virtual private 5G networks that are flexible, secure, and scalable. <a data-tooltip-position="top" aria-label="https://www.ericsson.com/en/blog/2021/2/the-art-of-5g-network-slicing-explained" rel="noopener nofollow" class="external-link" href="https://www.ericsson.com/en/blog/2021/2/the-art-of-5g-network-slicing-explained" target="_blank">Ericsson</a></li>
+<li data-line="2" dir="auto"><strong>ITU-T Technical Paper on 5G Security Standardization Roadmap</strong>: Outlines the roadmap for 5G security standardization, crucial for private network deployments. <a data-tooltip-position="top" aria-label="https://www.itu.int/dms_pub/itu-t/opb/tut/T-TUT-ICTS-2022-2-PDF-E.pdf" rel="noopener nofollow" class="external-link" href="https://www.itu.int/dms_pub/itu-t/opb/tut/T-TUT-ICTS-2022-2-PDF-E.pdf" target="_blank">ITU</a></li>
+<li data-line="3" dir="auto"><strong>Siradel - Deploying 5G Private Networks: 5 Common Challenges and How to Address Them</strong>: Explores major challenges of deploying 5G private networks and provides insights on overcoming them. <a data-tooltip-position="top" aria-label="https://www.siradel.com/5g-private-networks-challenges/" rel="noopener nofollow" class="external-link" href="https://www.siradel.com/5g-private-networks-challenges/" target="_blank">Siradel</a></li>
+<li data-line="4" dir="auto"><strong>Enea - What You Need to Know About 5G Network Slicing Versus Private Networks</strong>: Compares private networks and network slicing, highlighting their respective advantages and use cases. <a data-tooltip-position="top" aria-label="https://www.enea.com/insights/what-you-need-to-know-about-5g-network-slicing-versus-private-networks" rel="noopener nofollow" class="external-link" href="https://www.enea.com/insights/what-you-need-to-know-about-5g-network-slicing-versus-private-networks" target="_blank">Enea</a></li>
+</ul></div><div class="mod-footer mod-ui"></div></div></div></div></div></div><div class="sidebar-right sidebar"><div class="sidebar-handle"></div><div class="sidebar-topbar"><div class="topbar-content"></div><div class="clickable-icon sidebar-collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" class="svg-icon"><path d="M21 3H3C1.89543 3 1 3.89543 1 5V19C1 20.1046 1.89543 21 3 21H21C22.1046 21 23 20.1046 23 19V5C23 3.89543 22.1046 3 21 3Z"></path><path d="M10 4V20"></path><path d="M4 7H7"></path><path d="M4 10H7"></path><path d="M4 13H7"></path></svg></div></div><div class="sidebar-content"><div class="graph-view-wrapper"><div class="sidebar-section-header">Interactive Graph</div><div class="graph-view-placeholder">
+		<div class="graph-view-container">
+			<div class="graph-icon graph-expand" role="button" aria-label="Expand" data-tooltip-position="top"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon"><line x1="7" y1="17" x2="17" y2="7"></line><polyline points="7 7 17 7 17 17"></polyline></svg></div>
+			<canvas id="graph-canvas" class="hide" width="512px" height="512px"></canvas>
+		</div>
+		</div></div><div class="tree-container mod-root nav-folder tree-item outline-tree" data-depth="0"><div class="tree-header"><span class="sidebar-section-header">Table Of Contents</span><button class="clickable-icon collapse-tree-button" aria-label="Collapse All"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></svg></button></div><div class="tree-scroll-area tree-item-children nav-folder-children"><div class="tree-item mod-tree-folder nav-folder mod-collapsible is-collapsed" style="display: none;"></div><div class="tree-item" data-depth="1"><a class="tree-link" href="gab\estudos-trabalhos\programação\programming-studies\courses\cpqd_private-networks-5g\classes\0102.html#Private Networks - MOD01CL02"><div class="tree-item-contents heading-link" heading-name="Private Networks - MOD01CL02"><span class="tree-item-title">Private Networks - MOD01CL02</span></div></a><div class="tree-item-children nav-folder-children"></div></div><div class="tree-item" data-depth="1"><a class="tree-link" href="gab\estudos-trabalhos\programação\programming-studies\courses\cpqd_private-networks-5g\classes\0102.html#Course_Overview"><div class="tree-item-contents heading-link" heading-name="Course Overview"><span class="tree-item-title">Course Overview</span></div></a><div class="tree-item-children nav-folder-children"><div class="tree-item mod-collapsible" data-depth="2"><a class="tree-link" href="gab\estudos-trabalhos\programação\programming-studies\courses\cpqd_private-networks-5g\classes\0102.html#Chapters_&amp;_Topics"><div class="tree-item-contents heading-link" heading-name="Chapters &amp; Topics"><div class="collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle"><path d="M3 8L12 17L21 8"></path></svg></div><span class="tree-item-title">Chapters &amp; Topics</span></div></a><div class="tree-item-children nav-folder-children"><div class="tree-item" data-depth="3"><a class="tree-link" href="gab\estudos-trabalhos\programação\programming-studies\courses\cpqd_private-networks-5g\classes\0102.html#Past_Class_Recap"><div class="tree-item-contents heading-link" heading-name="Past Class Recap"><span class="tree-item-title">Past Class Recap</span></div></a><div class="tree-item-children nav-folder-children"></div></div><div class="tree-item" data-depth="3"><a class="tree-link" href="gab\estudos-trabalhos\programação\programming-studies\courses\cpqd_private-networks-5g\classes\0102.html#Challenges_and_Advances_of_5G"><div class="tree-item-contents heading-link" heading-name="Challenges and Advances of 5G"><span class="tree-item-title">Challenges and Advances of 5G</span></div></a><div class="tree-item-children nav-folder-children"></div></div><div class="tree-item" data-depth="3"><a class="tree-link" href="gab\estudos-trabalhos\programação\programming-studies\courses\cpqd_private-networks-5g\classes\0102.html#Levels_of_Automation_in_Vehicles"><div class="tree-item-contents heading-link" heading-name="Levels of Automation in Vehicles"><span class="tree-item-title">Levels of Automation in Vehicles</span></div></a><div class="tree-item-children nav-folder-children"></div></div><div class="tree-item mod-collapsible" data-depth="3"><a class="tree-link" href="gab\estudos-trabalhos\programação\programming-studies\courses\cpqd_private-networks-5g\classes\0102.html#Private_Networks"><div class="tree-item-contents heading-link" heading-name="Private Networks"><div class="collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle"><path d="M3 8L12 17L21 8"></path></svg></div><span class="tree-item-title">Private Networks</span></div></a><div class="tree-item-children nav-folder-children"><div class="tree-item" data-depth="4"><a class="tree-link" href="gab\estudos-trabalhos\programação\programming-studies\courses\cpqd_private-networks-5g\classes\0102.html#Resource_Optimization"><div class="tree-item-contents heading-link" heading-name="Resource Optimization"><span class="tree-item-title">Resource Optimization</span></div></a><div class="tree-item-children nav-folder-children"></div></div><div class="tree-item" data-depth="4"><a class="tree-link" href="gab\estudos-trabalhos\programação\programming-studies\courses\cpqd_private-networks-5g\classes\0102.html#5G_Challenges"><div class="tree-item-contents heading-link" heading-name="5G Challenges"><span class="tree-item-title">5G Challenges</span></div></a><div class="tree-item-children nav-folder-children"></div></div><div class="tree-item" data-depth="4"><a class="tree-link" href="gab\estudos-trabalhos\programação\programming-studies\courses\cpqd_private-networks-5g\classes\0102.html#VoIP_Communication"><div class="tree-item-contents heading-link" heading-name="VoIP Communication"><span class="tree-item-title">VoIP Communication</span></div></a><div class="tree-item-children nav-folder-children"></div></div><div class="tree-item" data-depth="4"><a class="tree-link" href="gab\estudos-trabalhos\programação\programming-studies\courses\cpqd_private-networks-5g\classes\0102.html#Challenges_and_Opportunities"><div class="tree-item-contents heading-link" heading-name="Challenges and Opportunities"><span class="tree-item-title">Challenges and Opportunities</span></div></a><div class="tree-item-children nav-folder-children"></div></div><div class="tree-item" data-depth="4"><a class="tree-link" href="gab\estudos-trabalhos\programação\programming-studies\courses\cpqd_private-networks-5g\classes\0102.html#Sharing"><div class="tree-item-contents heading-link" heading-name="Sharing"><span class="tree-item-title">Sharing</span></div></a><div class="tree-item-children nav-folder-children"></div></div><div class="tree-item" data-depth="4"><a class="tree-link" href="gab\estudos-trabalhos\programação\programming-studies\courses\cpqd_private-networks-5g\classes\0102.html#New_Business_Models"><div class="tree-item-contents heading-link" heading-name="New Business Models"><span class="tree-item-title">New Business Models</span></div></a><div class="tree-item-children nav-folder-children"></div></div></div></div><div class="tree-item" data-depth="3"><a class="tree-link" href="gab\estudos-trabalhos\programação\programming-studies\courses\cpqd_private-networks-5g\classes\0102.html#Frequency_Auction_and_Advances_in_Connectivity"><div class="tree-item-contents heading-link" heading-name="Frequency Auction and Advances in Connectivity"><span class="tree-item-title">Frequency Auction and Advances in Connectivity</span></div></a><div class="tree-item-children nav-folder-children"></div></div><div class="tree-item" data-depth="3"><a class="tree-link" href="gab\estudos-trabalhos\programação\programming-studies\courses\cpqd_private-networks-5g\classes\0102.html#Challenges"><div class="tree-item-contents heading-link" heading-name="Challenges"><span class="tree-item-title">Challenges</span></div></a><div class="tree-item-children nav-folder-children"></div></div></div></div><div class="tree-item mod-collapsible" data-depth="2"><a class="tree-link" href="gab\estudos-trabalhos\programação\programming-studies\courses\cpqd_private-networks-5g\classes\0102.html#Topic_Correlations_📡🔗"><div class="tree-item-contents heading-link" heading-name="Topic Correlations 📡🔗"><div class="collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle"><path d="M3 8L12 17L21 8"></path></svg></div><span class="tree-item-title">Topic Correlations 📡🔗</span></div></a><div class="tree-item-children nav-folder-children"><div class="tree-item" data-depth="3"><a class="tree-link" href="gab\estudos-trabalhos\programação\programming-studies\courses\cpqd_private-networks-5g\classes\0102.html#Mentioned_Concepts"><div class="tree-item-contents heading-link" heading-name="Mentioned Concepts"><span class="tree-item-title">Mentioned Concepts</span></div></a><div class="tree-item-children nav-folder-children"></div></div></div></div><div class="tree-item mod-collapsible" data-depth="2"><a class="tree-link" href="gab\estudos-trabalhos\programação\programming-studies\courses\cpqd_private-networks-5g\classes\0102.html#Recommended_Next_Steps_🚀"><div class="tree-item-contents heading-link" heading-name="Recommended Next Steps 🚀"><div class="collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle"><path d="M3 8L12 17L21 8"></path></svg></div><span class="tree-item-title">Recommended Next Steps 🚀</span></div></a><div class="tree-item-children nav-folder-children"><div class="tree-item" data-depth="4"><a class="tree-link" href="gab\estudos-trabalhos\programação\programming-studies\courses\cpqd_private-networks-5g\classes\0102.html#**For_Students:**"><div class="tree-item-contents heading-link" heading-name="**For Students:**"><span class="tree-item-title"><strong>For Students:</strong></span></div></a><div class="tree-item-children nav-folder-children"></div></div><div class="tree-item" data-depth="4"><a class="tree-link" href="gab\estudos-trabalhos\programação\programming-studies\courses\cpqd_private-networks-5g\classes\0102.html#**For_Educators:**"><div class="tree-item-contents heading-link" heading-name="**For Educators:**"><span class="tree-item-title"><strong>For Educators:</strong></span></div></a><div class="tree-item-children nav-folder-children"></div></div></div></div></div></div><div class="tree-item" data-depth="1"><a class="tree-link" href="gab\estudos-trabalhos\programação\programming-studies\courses\cpqd_private-networks-5g\classes\0102.html#Highlights"><div class="tree-item-contents heading-link" heading-name="Highlights"><span class="tree-item-title">Highlights</span></div></a><div class="tree-item-children nav-folder-children"></div></div><div class="tree-item" data-depth="1"><a class="tree-link" href="gab\estudos-trabalhos\programação\programming-studies\courses\cpqd_private-networks-5g\classes\0102.html#References"><div class="tree-item-contents heading-link" heading-name="References"><span class="tree-item-title">References</span></div></a><div class="tree-item-children nav-folder-children"></div></div></div></div></div><script defer="">let rs = document.querySelector(".sidebar-right"); rs.classList.add("is-collapsed"); if (window.innerWidth > 768) rs.classList.remove("is-collapsed"); rs.style.setProperty("--sidebar-width", localStorage.getItem("sidebar-right-width"));</script></div></div></body></html>

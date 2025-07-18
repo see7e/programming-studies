@@ -1,0 +1,735 @@
+<!DOCTYPE html> <html><head>
+		<title>QGIS - Settings</title>
+		<base href="..\..\..\..\..\../">
+		<meta id="root-path" root-path="..\..\..\..\..\../">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes, minimum-scale=1.0, maximum-scale=5.0">
+		<meta charset="UTF-8">
+		<meta name="description" content="DRIVE - QGIS - Settings">
+		<meta property="og:title" content="QGIS - Settings">
+		<meta property="og:description" content="DRIVE - QGIS - Settings">
+		<meta property="og:type" content="website">
+		<meta property="og:url" content="programs/qgis/qgssettings.html">
+		<meta property="og:image" content="undefined">
+		<meta property="og:site_name" content="DRIVE">
+		<meta name="author" content="Gabryel Nóbrega"><link rel="alternate" type="application/rss+xml" title="RSS Feed" href="lib/rss.xml"><script async="" id="webpage-script" src="lib/scripts/webpage.js" onload="this.onload=null;this.setAttribute(&quot;loaded&quot;, &quot;true&quot;)"></script><script type="module" async="" id="graph-view-script" src="lib/scripts/graph-view.js"></script><script async="" id="graph-wasm-script" src="lib/scripts/graph-wasm.js" onload="this.onload=null;this.setAttribute(&quot;loaded&quot;, &quot;true&quot;)"></script><script async="" id="graph-render-worker-script" src="lib/scripts/graph-render-worker.js" onload="this.onload=null;this.setAttribute(&quot;loaded&quot;, &quot;true&quot;)"></script><script async="" id="tinycolor-script" src="lib/scripts/tinycolor.js" onload="this.onload=null;this.setAttribute(&quot;loaded&quot;, &quot;true&quot;)"></script><script async="" id="pixi-script" src="https://cdnjs.cloudflare.com/ajax/libs/pixi.js/7.4.0/pixi.min.js" onload="this.onload=null;this.setAttribute(&quot;loaded&quot;, &quot;true&quot;)"></script><script async="" id="minisearch-script" src="https://cdn.jsdelivr.net/npm/minisearch@6.3.0/dist/umd/index.min.js" onload="this.onload=null;this.setAttribute(&quot;loaded&quot;, &quot;true&quot;)"></script><link rel="icon" href="lib/media/favicon.png"><script async="" id="graph-data-script" src="lib/scripts/graph-data.js" onload="this.onload=null;this.setAttribute(&quot;loaded&quot;, &quot;true&quot;)"></script><style>body{--line-width:40em;--line-width-adaptive:40em;--file-line-width:40em;--sidebar-width:min(20em, 80vw);--collapse-arrow-size:11px;--tree-horizontal-spacing:0.6em;--tree-vertical-spacing:0.6em;--sidebar-margin:12px}.sidebar{height:100%;min-width:calc(var(--sidebar-width) + var(--divider-width-hover));max-width:calc(var(--sidebar-width) + var(--divider-width-hover));font-size:14px;z-index:10;position:relative;overflow:hidden;transition:min-width ease-in-out,max-width ease-in-out;transition-duration:.2s;contain:size}.sidebar-left{left:0}.sidebar-right{right:0}.sidebar.is-collapsed{min-width:0;max-width:0}body.floating-sidebars .sidebar{position:absolute}.sidebar-content{height:100%;min-width:calc(var(--sidebar-width) - var(--divider-width-hover));top:0;padding:var(--sidebar-margin);padding-top:4em;line-height:var(--line-height-tight);background-color:var(--background-secondary);transition:background-color,border-right,border-left,box-shadow;transition-duration:var(--color-fade-speed);transition-timing-function:ease-in-out;position:absolute;display:flex;flex-direction:column}.sidebar:not(.is-collapsed) .sidebar-content{min-width:calc(max(100%,var(--sidebar-width)) - 3px);max-width:calc(max(100%,var(--sidebar-width)) - 3px)}.sidebar-left .sidebar-content{left:0;border-top-right-radius:var(--radius-l);border-bottom-right-radius:var(--radius-l)}.sidebar-right .sidebar-content{right:0;border-top-left-radius:var(--radius-l);border-bottom-left-radius:var(--radius-l)}.sidebar:has(.sidebar-content:empty):has(.topbar-content:empty){display:none}.sidebar-topbar{height:2em;width:var(--sidebar-width);top:var(--sidebar-margin);padding-inline:var(--sidebar-margin);z-index:1;position:fixed;display:flex;align-items:center;transition:width ease-in-out;transition-duration:inherit}.sidebar.is-collapsed .sidebar-topbar{width:calc(2.3em + var(--sidebar-margin) * 2)}.sidebar .sidebar-topbar.is-collapsed{width:0}.sidebar-left .sidebar-topbar{left:0}.sidebar-right .sidebar-topbar{right:0}.topbar-content{overflow:hidden;overflow:clip;width:100%;height:100%;display:flex;align-items:center;transition:inherit}.sidebar.is-collapsed .topbar-content{width:0;transition:inherit}.clickable-icon.sidebar-collapse-icon{background-color:transparent;color:var(--icon-color-focused);padding:0!important;margin:0!important;height:100%!important;width:2.3em!important;margin-inline:0.14em!important;position:absolute}.sidebar-left .clickable-icon.sidebar-collapse-icon{transform:rotateY(180deg);right:var(--sidebar-margin)}.sidebar-right .clickable-icon.sidebar-collapse-icon{transform:rotateY(180deg);left:var(--sidebar-margin)}.clickable-icon.sidebar-collapse-icon svg.svg-icon{width:100%;height:100%}.sidebar-section-header{margin:0 0 1em 0;text-transform:uppercase;letter-spacing:.06em;font-weight:600}body{transition:background-color var(--color-fade-speed) ease-in-out}.webpage-container{display:flex;flex-direction:row;height:100%;width:100%;align-items:stretch;justify-content:center}.document-container{opacity:1;flex-basis:100%;max-width:100%;width:100%;height:100%;display:flex;flex-direction:column;align-items:center;transition:opacity .2s ease-in-out;contain:inline-size}.hide{opacity:0;transition:opacity .2s ease-in-out}.document-container>.markdown-preview-view{margin:var(--sidebar-margin);margin-bottom:0;width:100%;width:-webkit-fill-available;width:-moz-available;width:fill-available;background-color:var(--background-primary);transition:background-color var(--color-fade-speed) ease-in-out;border-top-right-radius:var(--window-radius,var(--radius-m));border-top-left-radius:var(--window-radius,var(--radius-m));overflow-x:hidden!important;overflow-y:auto!important;display:flex!important;flex-direction:column!important;align-items:center!important;contain:inline-size}.document-container>.markdown-preview-view>.markdown-preview-sizer{padding-bottom:80vh!important;width:100%!important;max-width:var(--line-width)!important;flex-basis:var(--line-width)!important;transition:background-color var(--color-fade-speed) ease-in-out;contain:inline-size}.markdown-rendered img:not([width]),.view-content img:not([width]){max-width:100%;outline:0}.document-container>.view-content.embed{display:flex;padding:1em;height:100%;width:100%;align-items:center;justify-content:center}.document-container>.view-content.embed>*{max-width:100%;max-height:100%;object-fit:contain}:has(> :is(.math,table)){overflow-x:auto!important}.document-container>.view-content{overflow-x:auto;contain:content;padding:0;margin:0;height:100%}.scroll-highlight{position:absolute;width:100%;height:100%;pointer-events:none;z-index:1000;background-color:hsla(var(--color-accent-hsl),.25);opacity:0;padding:1em;inset:50%;translate:-50% -50%;border-radius:var(--radius-s)}</style><script defer="">async function loadIncludes(){if("file:"!=location.protocol){let e=document.querySelectorAll("include");for(let t=0;t<e.length;t++){let o=e[t],l=o.getAttribute("src");try{const e=await fetch(l);if(!e.ok){console.log("Could not include file: "+l),o?.remove();continue}let t=await e.text(),n=document.createRange().createContextualFragment(t),i=Array.from(n.children);for(let e of i)e.classList.add("hide"),e.style.transition="opacity 0.5s ease-in-out",setTimeout((()=>{e.classList.remove("hide")}),10);o.before(n),o.remove(),console.log("Included file: "+l)}catch(e){o?.remove(),console.log("Could not include file: "+l,e);continue}}}else{if(document.querySelectorAll("include").length>0){var e=document.createElement("div");e.id="error",e.textContent="Web server exports must be hosted on an http / web server to be viewed correctly.",e.style.position="fixed",e.style.top="50%",e.style.left="50%",e.style.transform="translate(-50%, -50%)",e.style.fontSize="1.5em",e.style.fontWeight="bold",e.style.textAlign="center",document.body.appendChild(e),document.querySelector(".document-container")?.classList.remove("hide")}}}document.addEventListener("DOMContentLoaded",(()=>{loadIncludes()}));let isFileProtocol="file:"==location.protocol;function waitLoadScripts(e,t){let o=e.map((e=>document.getElementById(e+"-script"))),l=0;!function e(){let n=o[l];l++,n&&"true"!=n.getAttribute("loaded")||l<o.length&&e(),l<o.length?n.addEventListener("load",e):t()}()}</script><link rel="stylesheet" href="lib/styles/obsidian.css"><link rel="stylesheet" href="lib/styles/theme.css"><link rel="preload" href="lib/styles/global-variable-styles.css" as="style" onload="this.onload=null;this.rel='stylesheet'"><noscript><link rel="stylesheet" href="lib/styles/global-variable-styles.css"></noscript><link rel="preload" href="lib/styles/supported-plugins.css" as="style" onload="this.onload=null;this.rel='stylesheet'"><noscript><link rel="stylesheet" href="lib/styles/supported-plugins.css"></noscript><link rel="preload" href="lib/styles/main-styles.css" as="style" onload="this.onload=null;this.rel='stylesheet'"><noscript><link rel="stylesheet" href="lib/styles/main-styles.css"></noscript><link rel="preload" href="lib/styles/snippets.css" as="style" onload="this.onload=null;this.rel='stylesheet'"><noscript><link rel="stylesheet" href="lib/styles/snippets.css"></noscript></head><body class="publish css-settings-manager theme-dark"><script defer="">let theme=localStorage.getItem("theme")||(window.matchMedia("(prefers-color-scheme: dark)").matches?"dark":"light");"dark"==theme?(document.body.classList.add("theme-dark"),document.body.classList.remove("theme-light")):(document.body.classList.add("theme-light"),document.body.classList.remove("theme-dark")),window.innerWidth<480?document.body.classList.add("is-phone"):window.innerWidth<768?document.body.classList.add("is-tablet"):window.innerWidth<1024?document.body.classList.add("is-small-screen"):document.body.classList.add("is-large-screen")</script><div class="webpage-container workspace"><div class="sidebar-left sidebar"><div class="sidebar-handle"></div><div class="sidebar-topbar"><div class="topbar-content"><label class="theme-toggle-container" for="theme_toggle"><input class="theme-toggle-input" type="checkbox" id="theme_toggle"><div class="toggle-background"></div></label></div><div class="clickable-icon sidebar-collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" class="svg-icon"><path d="M21 3H3C1.89543 3 1 3.89543 1 5V19C1 20.1046 1.89543 21 3 21H21C22.1046 21 23 20.1046 23 19V5C23 3.89543 22.1046 3 21 3Z"></path><path d="M10 4V20"></path><path d="M4 7H7"></path><path d="M4 10H7"></path><path d="M4 13H7"></path></svg></div></div><div class="sidebar-content"><div class="search-input-container"><input enterkeyhint="search" type="search" spellcheck="false" placeholder="Search..."><div class="search-input-clear-button" aria-label="Clear search"></div></div><include src="lib/html/file-tree.html"></include></div><script defer="">let ls = document.querySelector(".sidebar-left"); ls.classList.add("is-collapsed"); if (window.innerWidth > 768) ls.classList.remove("is-collapsed"); ls.style.setProperty("--sidebar-width", localStorage.getItem("sidebar-left-width"));</script></div><div class="document-container markdown-reading-view hide"><div class="markdown-preview-view markdown-rendered allow-fold-headings allow-fold-lists is-readable-line-width"><style id="MJX-CHTML-styles">mjx-c.mjx-c210E.TEX-I::before{padding:.694em .576em .011em 0;content:"h"}mjx-c.mjx-c1D458.TEX-I::before{padding:.694em .521em .011em 0;content:"k"}mjx-c.mjx-c2032::before{padding:.56em .275em 0 0;content:"′"}mjx-c.mjx-c1D45A.TEX-I::before{padding:.442em .878em .011em 0;content:"m"}mjx-c.mjx-c1D451.TEX-I::before{padding:.694em .52em .01em 0;content:"d"}mjx-c.mjx-c1D450.TEX-I::before{padding:.442em .433em .011em 0;content:"c"}mjx-c.mjx-c1D436.TEX-I::before{padding:.705em .76em .022em 0;content:"C"}mjx-c.mjx-c1D443.TEX-I::before{padding:.683em .751em 0 0;content:"P"}mjx-c.mjx-c1D448.TEX-I::before{padding:.683em .767em .022em 0;content:"U"}mjx-c.mjx-c1D44E.TEX-I::before{padding:.441em .529em .01em 0;content:"a"}mjx-c.mjx-c1D45D.TEX-I::before{padding:.442em .503em .194em 0;content:"p"}mjx-c.mjx-c1D44B.TEX-I::before{padding:.683em .852em 0 0;content:"X"}mjx-c.mjx-c1D466.TEX-I::before{padding:.442em .49em .205em 0;content:"y"}mjx-c.mjx-c25::before{padding:.75em .833em .056em 0;content:"%"}mjx-c.mjx-cD7::before{padding:.491em .778em 0 0;content:"×"}mjx-c.mjx-c35::before{padding:.666em .5em .022em 0;content:"5"}mjx-c.mjx-c1D435.TEX-I::before{padding:.683em .759em 0 0;content:"B"}mjx-c.mjx-c38::before{padding:.666em .5em .022em 0;content:"8"}mjx-c.mjx-cF7::before{padding:.537em .778em .036em 0;content:"÷"}mjx-c.mjx-c3D::before{padding:.583em .778em .082em 0;content:"="}mjx-c.mjx-c2217::before{padding:.465em .5em 0 0;content:"∗"}mjx-c.mjx-c34::before{padding:.677em .5em 0 0;content:"4"}mjx-c.mjx-c1D44F.TEX-I::before{padding:.694em .429em .011em 0;content:"b"}mjx-c.mjx-c1D456.TEX-I::before{padding:.661em .345em .011em 0;content:"i"}mjx-c.mjx-c1D461.TEX-I::before{padding:.626em .361em .011em 0;content:"t"}mjx-c.mjx-c1D452.TEX-I::before{padding:.442em .466em .011em 0;content:"e"}mjx-c.mjx-c1D460.TEX-I::before{padding:.442em .469em .01em 0;content:"s"}mjx-c.mjx-c1D465.TEX-I::before{padding:.442em .572em .011em 0;content:"x"}mjx-c.mjx-c36::before{padding:.666em .5em .022em 0;content:"6"}mjx-c.mjx-c37::before{padding:.676em .5em .022em 0;content:"7"}mjx-msup{display:inline-block;text-align:left}mjx-texatom{display:inline-block;text-align:left}mjx-c.mjx-c1D442.TEX-I::before{padding:.704em .763em .022em 0;content:"O"}mjx-c.mjx-c28::before{padding:.75em .389em .25em 0;content:"("}mjx-c.mjx-c1D45B.TEX-I::before{padding:.442em .6em .011em 0;content:"n"}mjx-c.mjx-c32::before{padding:.666em .5em 0 0;content:"2"}mjx-c.mjx-c29::before{padding:.75em .389em .25em 0;content:")"}mjx-c.mjx-c1D459.TEX-I::before{padding:.694em .298em .011em 0;content:"l"}mjx-c.mjx-c1D45C.TEX-I::before{padding:.441em .485em .011em 0;content:"o"}mjx-c.mjx-c1D454.TEX-I::before{padding:.442em .477em .205em 0;content:"g"}mjx-c.mjx-c2061::before{padding:0;content:""}mjx-c.mjx-c1D6FA.TEX-I::before{padding:.704em .786em 0 0;content:"Ω"}mjx-c.mjx-c1D6E9.TEX-I::before{padding:.704em .763em .022em 0;content:"Θ"}mjx-c.mjx-c2B::before{padding:.583em .778em .082em 0;content:"+"}mjx-c.mjx-c33::before{padding:.665em .5em .022em 0;content:"3"}mjx-c.mjx-c2E::before{padding:.12em .278em 0 0;content:"."}mjx-c.mjx-c2F::before{padding:.75em .5em .25em 0;content:"/"}mjx-c.mjx-c30::before{padding:.666em .5em .022em 0;content:"0"}mjx-c.mjx-c39::before{padding:.666em .5em .022em 0;content:"9"}mjx-c.mjx-c2212::before{padding:.583em .778em .082em 0;content:"−"}mjx-container[jax=CHTML]{line-height:0}mjx-container [space="1"]{margin-left:.111em}mjx-container [space="2"]{margin-left:.167em}mjx-container [space="3"]{margin-left:.222em}mjx-container [space="4"]{margin-left:.278em}mjx-container [space="5"]{margin-left:.333em}mjx-container [rspace="1"]{margin-right:.111em}mjx-container [rspace="2"]{margin-right:.167em}mjx-container [rspace="3"]{margin-right:.222em}mjx-container [rspace="4"]{margin-right:.278em}mjx-container [rspace="5"]{margin-right:.333em}mjx-container [size="s"]{font-size:70.7%}mjx-container [size=ss]{font-size:50%}mjx-container [size=Tn]{font-size:60%}mjx-container [size=sm]{font-size:85%}mjx-container [size=lg]{font-size:120%}mjx-container [size=Lg]{font-size:144%}mjx-container [size=LG]{font-size:173%}mjx-container [size=hg]{font-size:207%}mjx-container [size=HG]{font-size:249%}mjx-container [width=full]{width:100%}mjx-box{display:inline-block}mjx-block{display:block}mjx-itable{display:inline-table}mjx-row{display:table-row}mjx-row>*{display:table-cell}mjx-mtext{display:inline-block}mjx-mstyle{display:inline-block}mjx-merror{display:inline-block;color:red;background-color:#ff0}mjx-mphantom{visibility:hidden}mjx-assistive-mml{top:0;left:0;clip:rect(1px,1px,1px,1px);user-select:none;position:absolute!important;padding:1px 0 0!important;border:0!important;display:block!important;width:auto!important;overflow:hidden!important}mjx-assistive-mml[display=block]{width:100%!important}mjx-math{display:inline-block;text-align:left;line-height:0;text-indent:0;font-style:normal;font-weight:400;font-size:100%;font-size-adjust:none;letter-spacing:normal;border-collapse:collapse;overflow-wrap:normal;word-spacing:normal;white-space:nowrap;direction:ltr;padding:1px 0}mjx-container[jax=CHTML][display=true]{display:block;text-align:center;margin:1em 0}mjx-container[jax=CHTML][display=true][width=full]{display:flex}mjx-container[jax=CHTML][display=true] mjx-math{padding:0}mjx-container[jax=CHTML][justify=left]{text-align:left}mjx-container[jax=CHTML][justify=right]{text-align:right}mjx-mi{display:inline-block;text-align:left}mjx-c{display:inline-block}mjx-utext{display:inline-block;padding:.75em 0 .2em}mjx-msub{display:inline-block;text-align:left}mjx-mn{display:inline-block;text-align:left}mjx-mo{display:inline-block;text-align:left}mjx-stretchy-h{display:inline-table;width:100%}mjx-stretchy-h>*{display:table-cell;width:0}mjx-stretchy-h>*>mjx-c{display:inline-block;transform:scaleX(1)}mjx-stretchy-h>*>mjx-c::before{display:inline-block;width:initial}mjx-stretchy-h>mjx-ext{overflow:clip visible;width:100%}mjx-stretchy-h>mjx-ext>mjx-c::before{transform:scaleX(500)}mjx-stretchy-h>mjx-ext>mjx-c{width:0}mjx-stretchy-h>mjx-beg>mjx-c{margin-right:-.1em}mjx-stretchy-h>mjx-end>mjx-c{margin-left:-.1em}mjx-stretchy-v{display:inline-block}mjx-stretchy-v>*{display:block}mjx-stretchy-v>mjx-beg{height:0}mjx-stretchy-v>mjx-end>mjx-c{display:block}mjx-stretchy-v>*>mjx-c{transform:scaleY(1);transform-origin:left center;overflow:hidden}mjx-stretchy-v>mjx-ext{display:block;height:100%;box-sizing:border-box;border:0 solid transparent;overflow:visible clip}mjx-stretchy-v>mjx-ext>mjx-c::before{width:initial;box-sizing:border-box}mjx-stretchy-v>mjx-ext>mjx-c{transform:scaleY(500) translateY(.075em);overflow:visible}mjx-mark{display:inline-block;height:0}mjx-c::before{display:block;width:0}.MJX-TEX{font-family:MJXZERO,MJXTEX}.TEX-B{font-family:MJXZERO,MJXTEX-B}.TEX-I{font-family:MJXZERO,MJXTEX-I}.TEX-MI{font-family:MJXZERO,MJXTEX-MI}.TEX-BI{font-family:MJXZERO,MJXTEX-BI}.TEX-S1{font-family:MJXZERO,MJXTEX-S1}.TEX-S2{font-family:MJXZERO,MJXTEX-S2}.TEX-S3{font-family:MJXZERO,MJXTEX-S3}.TEX-S4{font-family:MJXZERO,MJXTEX-S4}.TEX-A{font-family:MJXZERO,MJXTEX-A}.TEX-C{font-family:MJXZERO,MJXTEX-C}.TEX-CB{font-family:MJXZERO,MJXTEX-CB}.TEX-FR{font-family:MJXZERO,MJXTEX-FR}.TEX-FRB{font-family:MJXZERO,MJXTEX-FRB}.TEX-SS{font-family:MJXZERO,MJXTEX-SS}.TEX-SSB{font-family:MJXZERO,MJXTEX-SSB}.TEX-SSI{font-family:MJXZERO,MJXTEX-SSI}.TEX-SC{font-family:MJXZERO,MJXTEX-SC}.TEX-T{font-family:MJXZERO,MJXTEX-T}.TEX-V{font-family:MJXZERO,MJXTEX-V}.TEX-VB{font-family:MJXZERO,MJXTEX-VB}mjx-stretchy-h mjx-c,mjx-stretchy-v mjx-c{font-family:MJXZERO,MJXTEX-S1,MJXTEX-S4,MJXTEX,MJXTEX-A!important}@font-face{font-family:MJXZERO;src:url("lib/fonts/mathjax_zero.woff") format("woff")}@font-face{font-family:MJXTEX;src:url("lib/fonts/mathjax_main-regular.woff") format("woff")}@font-face{font-family:MJXTEX-B;src:url("lib/fonts/mathjax_main-bold.woff") format("woff")}@font-face{font-family:MJXTEX-I;src:url("lib/fonts/mathjax_math-italic.woff") format("woff")}@font-face{font-family:MJXTEX-MI;src:url("lib/fonts/mathjax_main-italic.woff") format("woff")}@font-face{font-family:MJXTEX-BI;src:url("lib/fonts/mathjax_math-bolditalic.woff") format("woff")}@font-face{font-family:MJXTEX-S1;src:url("lib/fonts/mathjax_size1-regular.woff") format("woff")}@font-face{font-family:MJXTEX-S2;src:url("lib/fonts/mathjax_size2-regular.woff") format("woff")}@font-face{font-family:MJXTEX-S3;src:url("lib/fonts/mathjax_size3-regular.woff") format("woff")}@font-face{font-family:MJXTEX-S4;src:url("lib/fonts/mathjax_size4-regular.woff") format("woff")}@font-face{font-family:MJXTEX-A;src:url("lib/fonts/mathjax_ams-regular.woff") format("woff")}@font-face{font-family:MJXTEX-C;src:url("lib/fonts/mathjax_calligraphic-regular.woff") format("woff")}@font-face{font-family:MJXTEX-CB;src:url("lib/fonts/mathjax_calligraphic-bold.woff") format("woff")}@font-face{font-family:MJXTEX-FR;src:url("lib/fonts/mathjax_fraktur-regular.woff") format("woff")}@font-face{font-family:MJXTEX-FRB;src:url("lib/fonts/mathjax_fraktur-bold.woff") format("woff")}@font-face{font-family:MJXTEX-SS;src:url("lib/fonts/mathjax_sansserif-regular.woff") format("woff")}@font-face{font-family:MJXTEX-SSB;src:url("lib/fonts/mathjax_sansserif-bold.woff") format("woff")}@font-face{font-family:MJXTEX-SSI;src:url("lib/fonts/mathjax_sansserif-italic.woff") format("woff")}@font-face{font-family:MJXTEX-SC;src:url("lib/fonts/mathjax_script-regular.woff") format("woff")}@font-face{font-family:MJXTEX-T;src:url("lib/fonts/mathjax_typewriter-regular.woff") format("woff")}@font-face{font-family:MJXTEX-V;src:url("lib/fonts/mathjax_vector-regular.woff") format("woff")}@font-face{font-family:MJXTEX-VB;src:url("lib/fonts/mathjax_vector-bold.woff") format("woff")}mjx-c.mjx-c1D439.TEX-I::before{padding:.68em .749em 0 0;content:"F"}mjx-c.mjx-c1D447.TEX-I::before{padding:.677em .704em 0 0;content:"T"}mjx-c.mjx-c1D43F.TEX-I::before{padding:.683em .681em 0 0;content:"L"}mjx-c.mjx-c1D43C.TEX-I::before{padding:.683em .504em 0 0;content:"I"}mjx-c.mjx-c1D441.TEX-I::before{padding:.683em .888em 0 0;content:"N"}mjx-c.mjx-c1D438.TEX-I::before{padding:.68em .764em 0 0;content:"E"}mjx-c.mjx-c31::before{padding:.666em .5em 0 0;content:"1"}mjx-c.mjx-c2C::before{padding:.121em .278em .194em 0;content:","}</style><pre class="frontmatter language-yaml" tabindex="0" style="display: none;"><code class="language-yaml is-loaded"><span class="token key atrule">title</span><span class="token punctuation">:</span> QGIS <span class="token punctuation">-</span> Settings
+<span class="token key atrule">tags</span><span class="token punctuation">:</span> programming<span class="token punctuation">,</span> QGis
+<span class="token key atrule">use</span><span class="token punctuation">:</span> Reference
+<span class="token key atrule">languages</span><span class="token punctuation">:</span> Python
+<span class="token key atrule">dependences</span><span class="token punctuation">:</span> QGis</code><button class="copy-code-button"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon lucide-copy"><rect x="8" y="8" width="14" height="14" rx="2" ry="2"></rect><path d="M4 16c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2"></path></svg></button></pre><div class="markdown-preview-sizer markdown-preview-section"><h1 class="page-title heading" id="QGIS - Settings"><p dir="auto">QGIS - Settings</p></h1><div class="el-blockquote"><blockquote dir="auto">
+<p><a rel="noopener nofollow" class="external-link" href="https://qgis.org/pyqgis/3.4/core/QgsSettings.html" target="_blank">https://qgis.org/pyqgis/3.4/core/QgsSettings.html</a></p>
+</blockquote></div><div class="el-pre has-run-code-button"><pre class="language-python" tabindex="0"><code data-line="0" class="language-python is-loaded"><span class="token operator">&gt;&gt;</span><span class="token operator">&gt;</span><span class="token keyword">print</span><span class="token punctuation">(</span>QSettings<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span>allKeys<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+<span class="token punctuation">[</span>
+	<span class="token string">'Cad/Floater'</span><span class="token punctuation">,</span>
+	<span class="token string">'DB_Manager/mainWindow/geometry'</span><span class="token punctuation">,</span> <span class="token string">'DB_Manager/mainWindow/windowState'</span><span class="token punctuation">,</span>
+	<span class="token string">'Error/dialog/detail'</span><span class="token punctuation">,</span>
+	<span class="token string">'MSSQL/connections/selected'</span><span class="token punctuation">,</span>
+	
+	<span class="token string">'Map/highlight/buffer'</span><span class="token punctuation">,</span><span class="token string">'Map/highlight/color'</span><span class="token punctuation">,</span><span class="token string">'Map/highlight/colorAlpha'</span><span class="token punctuation">,</span><span class="token string">'Map/highlight/minWidth'</span><span class="token punctuation">,</span><span class="token string">'Map/identifyMode'</span><span class="token punctuation">,</span>
+	<span class="token string">'Map/logCanvasRefreshEvent'</span><span class="token punctuation">,</span><span class="token string">'Map/scales'</span><span class="token punctuation">,</span> <span class="token string">'Map/searchRadiusMM'</span><span class="token punctuation">,</span>
+	
+	<span class="token string">'Oracle/connections/selected'</span><span class="token punctuation">,</span>
+	
+	<span class="token string">'Plugin-DelimitedText/booleanFalse'</span><span class="token punctuation">,</span><span class="token string">'Plugin-DelimitedText/booleanTrue'</span><span class="token punctuation">,</span><span class="token string">'Plugin-DelimitedText/crs'</span><span class="token punctuation">,</span><span class="token string">'Plugin-DelimitedText/csv/booleanFalse'</span><span class="token punctuation">,</span>
+	<span class="token string">'Plugin-DelimitedText/csv/booleanTrue'</span><span class="token punctuation">,</span><span class="token string">'Plugin-DelimitedText/csv/crs'</span><span class="token punctuation">,</span><span class="token string">'Plugin-DelimitedText/csv/decimalPoint'</span><span class="token punctuation">,</span>
+	<span class="token string">'Plugin-DelimitedText/csv/delimiterRegexp'</span><span class="token punctuation">,</span><span class="token string">'Plugin-DelimitedText/csv/delimiterType'</span><span class="token punctuation">,</span><span class="token string">'Plugin-DelimitedText/csv/delimiters'</span><span class="token punctuation">,</span>
+	<span class="token string">'Plugin-DelimitedText/csv/detectTypes'</span><span class="token punctuation">,</span><span class="token string">'Plugin-DelimitedText/csv/encoding'</span><span class="token punctuation">,</span><span class="token string">'Plugin-DelimitedText/csv/escapeChars'</span><span class="token punctuation">,</span>
+	<span class="token string">'Plugin-DelimitedText/csv/geomColumnType'</span><span class="token punctuation">,</span><span class="token string">'Plugin-DelimitedText/csv/geometry'</span><span class="token punctuation">,</span><span class="token string">'Plugin-DelimitedText/csv/quoteChars'</span><span class="token punctuation">,</span>
+	<span class="token string">'Plugin-DelimitedText/csv/skipEmptyFields'</span><span class="token punctuation">,</span><span class="token string">'Plugin-DelimitedText/csv/spatialIndex'</span><span class="token punctuation">,</span><span class="token string">'Plugin-DelimitedText/csv/startFrom'</span><span class="token punctuation">,</span>
+	<span class="token string">'Plugin-DelimitedText/csv/subsetIndex'</span><span class="token punctuation">,</span><span class="token string">'Plugin-DelimitedText/csv/trimFields'</span><span class="token punctuation">,</span><span class="token string">'Plugin-DelimitedText/csv/useHeader'</span><span class="token punctuation">,</span>
+	<span class="token string">'Plugin-DelimitedText/csv/watchFile'</span><span class="token punctuation">,</span><span class="token string">'Plugin-DelimitedText/csv/xyDms'</span><span class="token punctuation">,</span><span class="token string">'Plugin-DelimitedText/decimalPoint'</span><span class="token punctuation">,</span>
+	<span class="token string">'Plugin-DelimitedText/delimiterRegexp'</span><span class="token punctuation">,</span><span class="token string">'Plugin-DelimitedText/delimiterType'</span><span class="token punctuation">,</span><span class="token string">'Plugin-DelimitedText/delimiters'</span><span class="token punctuation">,</span>
+	<span class="token string">'Plugin-DelimitedText/detectTypes'</span><span class="token punctuation">,</span><span class="token string">'Plugin-DelimitedText/encoding'</span><span class="token punctuation">,</span><span class="token string">'Plugin-DelimitedText/escapeChars'</span><span class="token punctuation">,</span>
+	<span class="token string">'Plugin-DelimitedText/file_filter'</span><span class="token punctuation">,</span><span class="token string">'Plugin-DelimitedText/geomColumnType'</span><span class="token punctuation">,</span><span class="token string">'Plugin-DelimitedText/geometry'</span><span class="token punctuation">,</span>
+	<span class="token string">'Plugin-DelimitedText/quoteChars'</span><span class="token punctuation">,</span><span class="token string">'Plugin-DelimitedText/skipEmptyFields'</span><span class="token punctuation">,</span><span class="token string">'Plugin-DelimitedText/spatialIndex'</span><span class="token punctuation">,</span>
+	<span class="token string">'Plugin-DelimitedText/startFrom'</span><span class="token punctuation">,</span><span class="token string">'Plugin-DelimitedText/subsetIndex'</span><span class="token punctuation">,</span><span class="token string">'Plugin-DelimitedText/text_path'</span><span class="token punctuation">,</span>
+	<span class="token string">'Plugin-DelimitedText/trimFields'</span><span class="token punctuation">,</span><span class="token string">'Plugin-DelimitedText/useHeader'</span><span class="token punctuation">,</span><span class="token string">'Plugin-DelimitedText/watchFile'</span><span class="token punctuation">,</span>
+	<span class="token string">'Plugin-DelimitedText/xyDms'</span><span class="token punctuation">,</span><span class="token string">'PluginReloader/extraCommands'</span><span class="token punctuation">,</span><span class="token string">'PluginReloader/extraCommandsEnabled'</span><span class="token punctuation">,</span>
+	<span class="token string">'PluginReloader/notify'</span><span class="token punctuation">,</span><span class="token string">'PluginReloader/plugin'</span><span class="token punctuation">,</span>
+
+	<span class="token string">'PostgreSQL/connections/selected'</span><span class="token punctuation">,</span><span class="token string">'PostgreSQL/connections/unifiber_scope_list/allowGeometrylessTables'</span><span class="token punctuation">,</span>
+	<span class="token string">'PostgreSQL/connections/unifiber_scope_list/authcfg'</span><span class="token punctuation">,</span><span class="token string">'PostgreSQL/connections/unifiber_scope_list/database'</span><span class="token punctuation">,</span>
+	<span class="token string">'PostgreSQL/connections/unifiber_scope_list/dontResolveType'</span><span class="token punctuation">,</span><span class="token string">'PostgreSQL/connections/unifiber_scope_list/estimatedMetadata'</span><span class="token punctuation">,</span>
+	<span class="token string">'PostgreSQL/connections/unifiber_scope_list/geometryColumnsOnly'</span><span class="token punctuation">,</span><span class="token string">'PostgreSQL/connections/unifiber_scope_list/host'</span><span class="token punctuation">,</span>
+	<span class="token string">'PostgreSQL/connections/unifiber_scope_list/metadataInDatabase'</span><span class="token punctuation">,</span><span class="token string">'PostgreSQL/connections/unifiber_scope_list/password'</span><span class="token punctuation">,</span>
+	<span class="token string">'PostgreSQL/connections/unifiber_scope_list/port'</span><span class="token punctuation">,</span><span class="token string">'PostgreSQL/connections/unifiber_scope_list/projectsInDatabase'</span><span class="token punctuation">,</span>
+	<span class="token string">'PostgreSQL/connections/unifiber_scope_list/publicOnly'</span><span class="token punctuation">,</span><span class="token string">'PostgreSQL/connections/unifiber_scope_list/savePassword'</span><span class="token punctuation">,</span>
+	<span class="token string">'PostgreSQL/connections/unifiber_scope_list/saveUsername'</span><span class="token punctuation">,</span><span class="token string">'PostgreSQL/connections/unifiber_scope_list/service'</span><span class="token punctuation">,</span>
+	<span class="token string">'PostgreSQL/connections/unifiber_scope_list/sslmode'</span><span class="token punctuation">,</span><span class="token string">'PostgreSQL/connections/unifiber_scope_list/username'</span><span class="token punctuation">,</span>
+	
+	<span class="token string">'Processing/Configuration/ACTIVATE_GDAL'</span><span class="token punctuation">,</span><span class="token string">'Processing/Configuration/DefaultOutputRasterLayerExt'</span><span class="token punctuation">,</span>
+	<span class="token string">'Processing/Configuration/DefaultOutputVectorLayerExt'</span><span class="token punctuation">,</span><span class="token string">'Processing/Configuration/FILTER_INVALID_GEOMETRIES'</span><span class="token punctuation">,</span>
+	<span class="token string">'Processing/Configuration/GRASS7_LOG_COMMANDS'</span><span class="token punctuation">,</span><span class="token string">'Processing/Configuration/GRASS7_LOG_CONSOLE'</span><span class="token punctuation">,</span>
+	<span class="token string">'Processing/Configuration/GRASS_HELP_PATH'</span><span class="token punctuation">,</span><span class="token string">'Processing/Configuration/GRASS_USE_REXTERNAL'</span><span class="token punctuation">,</span>
+	<span class="token string">'Processing/Configuration/GRASS_USE_VEXTERNAL'</span><span class="token punctuation">,</span><span class="token string">'Processing/Configuration/KEEP_DIALOG_OPEN'</span><span class="token punctuation">,</span>
+	<span class="token string">'Processing/Configuration/MAX_THREADS'</span><span class="token punctuation">,</span><span class="token string">'Processing/Configuration/MODELS_FOLDER'</span><span class="token punctuation">,</span>
+	<span class="token string">'Processing/Configuration/OUTPUTS_FOLDER'</span><span class="token punctuation">,</span><span class="token string">'Processing/Configuration/POST_EXECUTION_SCRIPT'</span><span class="token punctuation">,</span>
+	<span class="token string">'Processing/Configuration/PREFER_FILENAME_AS_LAYER_NAME'</span><span class="token punctuation">,</span><span class="token string">'Processing/Configuration/PRE_EXECUTION_SCRIPT'</span><span class="token punctuation">,</span>
+	<span class="token string">'Processing/Configuration/RASTER_STYLE'</span><span class="token punctuation">,</span><span class="token string">'Processing/Configuration/RESULTS_GROUP_NAME'</span><span class="token punctuation">,</span>
+	<span class="token string">'Processing/Configuration/SAGA_IMPORT_EXPORT_OPTIMIZATION'</span><span class="token punctuation">,</span><span class="token string">'Processing/Configuration/SAGA_LOG_COMMANDS'</span><span class="token punctuation">,</span>
+	<span class="token string">'Processing/Configuration/SAGA_LOG_CONSOLE'</span><span class="token punctuation">,</span><span class="token string">'Processing/Configuration/SCRIPTS_FOLDERS'</span><span class="token punctuation">,</span>
+	<span class="token string">'Processing/Configuration/SHOW_ALGORITHMS_KNOWN_ISSUES'</span><span class="token punctuation">,</span><span class="token string">'Processing/Configuration/SHOW_CRS_DEF'</span><span class="token punctuation">,</span>
+	<span class="token string">'Processing/Configuration/SHOW_PROVIDERS_TOOLTIP'</span><span class="token punctuation">,</span><span class="token string">'Processing/Configuration/TEMP_PATH2'</span><span class="token punctuation">,</span>
+	<span class="token string">'Processing/Configuration/VECTOR_FEATURE_COUNT'</span><span class="token punctuation">,</span><span class="token string">'Processing/Configuration/VECTOR_LINE_STYLE'</span><span class="token punctuation">,</span>
+	<span class="token string">'Processing/Configuration/VECTOR_POINT_STYLE'</span><span class="token punctuation">,</span><span class="token string">'Processing/Configuration/VECTOR_POLYGON_STYLE'</span><span class="token punctuation">,</span>
+	<span class="token string">'Processing/Configuration/WARN_UNMATCHING_CRS'</span><span class="token punctuation">,</span><span class="token string">'Processing/LastOutputPath'</span><span class="token punctuation">,</span>
+	<span class="token string">'Processing/LastVectorOutputExt'</span><span class="token punctuation">,</span><span class="token string">'Processing/geometryScriptEditor'</span><span class="token punctuation">,</span><span class="token string">'Processing/hasPortedOldLog'</span><span class="token punctuation">,</span>
+	<span class="token string">'Processing/lastModelsDir'</span><span class="token punctuation">,</span><span class="token string">'Processing/lastScriptsDir'</span><span class="token punctuation">,</span><span class="token string">'Processing/lastUsedLogDirectory'</span><span class="token punctuation">,</span>
+	<span class="token string">'Processing/modelParametersDefinitionDialogGeometry'</span><span class="token punctuation">,</span><span class="token string">'Processing/multipleInputDialogGeometry'</span><span class="token punctuation">,</span>
+	<span class="token string">'Processing/stateScriptEditor'</span><span class="token punctuation">,</span><span class="token string">'Projections/layerDefaultCrs'</span><span class="token punctuation">,</span>
+	
+	<span class="token string">'PythonPlugins/GdalTools'</span><span class="token punctuation">,</span><span class="token string">'PythonPlugins/LoadQSS'</span><span class="token punctuation">,</span><span class="token string">'PythonPlugins/MetaSearch'</span><span class="token punctuation">,</span><span class="token string">'PythonPlugins/QuickOSM'</span><span class="token punctuation">,</span>
+	<span class="token string">'PythonPlugins/StreetView'</span><span class="token punctuation">,</span><span class="token string">'PythonPlugins/db_manager'</span><span class="token punctuation">,</span><span class="token string">'PythonPlugins/fiberklarprocesssuit'</span><span class="token punctuation">,</span><span class="token string">'PythonPlugins/grassprovider'</span><span class="token punctuation">,</span>
+	<span class="token string">'PythonPlugins/joinmultiplelines'</span><span class="token punctuation">,</span><span class="token string">'PythonPlugins/kmltools'</span><span class="token punctuation">,</span><span class="token string">'PythonPlugins/latlontools'</span><span class="token punctuation">,</span><span class="token string">'PythonPlugins/lftools'</span><span class="token punctuation">,</span>
+	<span class="token string">'PythonPlugins/plugin_reloader'</span><span class="token punctuation">,</span><span class="token string">'PythonPlugins/processing'</span><span class="token punctuation">,</span><span class="token string">'PythonPlugins/quick_map_services'</span><span class="token punctuation">,</span><span class="token string">'PythonPlugins/refFunctions'</span><span class="token punctuation">,</span>
+	<span class="token string">'PythonPlugins/sagaprovider'</span><span class="token punctuation">,</span><span class="token string">'PythonPlugins/unifiberprocesssuit'</span><span class="token punctuation">,</span><span class="token string">'PythonPlugins/watchDog/lftools'</span><span class="token punctuation">,</span>
+	
+	<span class="token string">'QgsCollapsibleGroupBox/QgisApp/groupLayerRendering/collapsed'</span><span class="token punctuation">,</span>
+	<span class="token string">'QgsCollapsibleGroupBox/QgsBookmarkEditorDialog/mExtentGroupBox/collapsed'</span><span class="token punctuation">,</span>
+	<span class="token string">'QgsCollapsibleGroupBox/QgsDataSourceManagerDialog/fileFormatGroupBox/collapsed'</span><span class="token punctuation">,</span>
+	<span class="token string">'QgsCollapsibleGroupBox/QgsDataSourceManagerDialog/geometryDefinitionGroupBox/collapsed'</span><span class="token punctuation">,</span>
+	<span class="token string">'QgsCollapsibleGroupBox/QgsDataSourceManagerDialog/layerSettingsGroupBox/collapsed'</span><span class="token punctuation">,</span>
+	<span class="token string">'QgsCollapsibleGroupBox/QgsDataSourceManagerDialog/recordOptionsGroupBox/collapsed'</span><span class="token punctuation">,</span>
+	<span class="token string">'QgsCollapsibleGroupBox/QgsFieldCalculatorBase/groupBox/collapsed'</span><span class="token punctuation">,</span>
+	<span class="token string">'QgsCollapsibleGroupBox/QgsJoinDialogBase/mEditableJoinLayer/collapsed'</span><span class="token punctuation">,</span>
+	<span class="token string">'QgsCollapsibleGroupBox/QgsJoinDialogBase/mUseCustomPrefix/collapsed'</span><span class="token punctuation">,</span>
+	<span class="token string">'QgsCollapsibleGroupBox/QgsJoinDialogBase/mUseJoinFieldsSubset/collapsed'</span><span class="token punctuation">,</span>
+	<span class="token string">'QgsCollapsibleGroupBox/QgsMeasureBase/groupBox/collapsed'</span><span class="token punctuation">,</span>
+	<span class="token string">'QgsCollapsibleGroupBox/QgsNewGeoPackageLayerDialog/groupBox/collapsed'</span><span class="token punctuation">,</span>
+	<span class="token string">'QgsCollapsibleGroupBox/QgsOptionsBase/groupBox/collapsed'</span><span class="token punctuation">,</span>
+	<span class="token string">'QgsCollapsibleGroupBox/QgsOptionsBase/groupBoxAutoCompletion/checked'</span><span class="token punctuation">,</span>
+	<span class="token string">'QgsCollapsibleGroupBox/QgsOptionsBase/groupBoxAutoCompletion/collapsed'</span><span class="token punctuation">,</span>
+	<span class="token string">'QgsCollapsibleGroupBox/QgsOptionsBase/groupBoxRunDebugEditor/collapsed'</span><span class="token punctuation">,</span>
+	<span class="token string">'QgsCollapsibleGroupBox/QgsOptionsBase/groupBox_11/collapsed'</span><span class="token punctuation">,</span>
+	<span class="token string">'QgsCollapsibleGroupBox/QgsOptionsBase/groupBox_2/collapsed'</span><span class="token punctuation">,</span>
+	<span class="token string">'QgsCollapsibleGroupBox/QgsOptionsBase/groupBox_29/collapsed'</span><span class="token punctuation">,</span>
+	<span class="token string">'QgsCollapsibleGroupBox/QgsOptionsBase/groupBox_4/collapsed'</span><span class="token punctuation">,</span>
+	<span class="token string">'QgsCollapsibleGroupBox/QgsOptionsBase/grpLocale/collapsed'</span><span class="token punctuation">,</span>
+	<span class="token string">'QgsCollapsibleGroupBox/QgsOptionsBase/mCurrentVariablesGrpBx/collapsed'</span><span class="token punctuation">,</span>
+	<span class="token string">'QgsCollapsibleGroupBox/QgsOptionsBase/mEnvironmentGrpBx/collapsed'</span><span class="token punctuation">,</span>
+	<span class="token string">'QgsCollapsibleGroupBox/QgsOptionsBase/mQSettingsGrpBx/collapsed'</span><span class="token punctuation">,</span>
+	<span class="token string">'QgsCollapsibleGroupBox/QgsPluginManagerBase/ckbDeprecated/checked'</span><span class="token punctuation">,</span>
+	<span class="token string">'QgsCollapsibleGroupBox/QgsPluginManagerBase/ckbDeprecated/collapsed'</span><span class="token punctuation">,</span>
+	<span class="token string">'QgsCollapsibleGroupBox/QgsPluginManagerBase/ckbExperimental/checked'</span><span class="token punctuation">,</span>
+	<span class="token string">'QgsCollapsibleGroupBox/QgsPluginManagerBase/ckbExperimental/collapsed'</span><span class="token punctuation">,</span>
+	<span class="token string">'QgsCollapsibleGroupBox/QgsProcessingDialogBase/grpAdvanced/collapsed'</span><span class="token punctuation">,</span>
+	<span class="token string">'QgsCollapsibleGroupBox/QgsProjectPropertiesBase/btnGrpMeasureEllipsoid/collapsed'</span><span class="token punctuation">,</span>
+	<span class="token string">'QgsCollapsibleGroupBox/QgsProjectPropertiesBase/groupBox/collapsed'</span><span class="token punctuation">,</span>
+	<span class="token string">'QgsCollapsibleGroupBox/QgsProjectPropertiesBase/groupBox_2/collapsed'</span><span class="token punctuation">,</span>
+	<span class="token string">'QgsCollapsibleGroupBox/QgsProjectPropertiesBase/groupBox_7/collapsed'</span><span class="token punctuation">,</span>
+	<span class="token string">'QgsCollapsibleGroupBox/QgsProjectPropertiesBase/grpProjectScales/collapsed'</span><span class="token punctuation">,</span>
+	<span class="token string">'QgsCollapsibleGroupBox/QgsProjectPropertiesBase/grpWMSExt/collapsed'</span><span class="token punctuation">,</span>
+	<span class="token string">'QgsCollapsibleGroupBox/QgsProjectPropertiesBase/grpWMSList/collapsed'</span><span class="token punctuation">,</span>
+	<span class="token string">'QgsCollapsibleGroupBox/QgsProjectPropertiesBase/mCoordinateDisplayGroup/collapsed'</span><span class="token punctuation">,</span>
+	<span class="token string">'QgsCollapsibleGroupBox/QgsProjectPropertiesBase/mExtentGroupBox/collapsed'</span><span class="token punctuation">,</span>
+	<span class="token string">'QgsCollapsibleGroupBox/QgsProjectPropertiesBase/mGroupBoxStyleDatabases/collapsed'</span><span class="token punctuation">,</span>
+	<span class="token string">'QgsCollapsibleGroupBox/QgsProjectPropertiesBase/mLayerCapabilitiesGrpBox/collapsed'</span><span class="token punctuation">,</span>
+	<span class="token string">'QgsCollapsibleGroupBox/QgsProjectPropertiesBase/mLayerRestrictionsGroupBox/collapsed'</span><span class="token punctuation">,</span>
+	<span class="token string">'QgsCollapsibleGroupBox/QgsProjectPropertiesBase/mWMSInspire/collapsed'</span><span class="token punctuation">,</span>
+	<span class="token string">'QgsCollapsibleGroupBox/QgsProjectPropertiesBase/mWMSPrintLayoutGroupBox/collapsed'</span><span class="token punctuation">,</span>
+	<span class="token string">'QgsCollapsibleGroupBox/QgsProjectPropertiesBase/titleBox/collapsed'</span><span class="token punctuation">,</span>
+	<span class="token string">'QgsCollapsibleGroupBox/QgsProviderSublayersDialogBase/groupBox/collapsed'</span><span class="token punctuation">,</span>
+	<span class="token string">'QgsCollapsibleGroupBox/QgsQueryBuilderBase/groupBox4/collapsed'</span><span class="token punctuation">,</span>
+	<span class="token string">'QgsCollapsibleGroupBox/QgsTextAnnotationDialogBase/mMarginsGroupBox/collapsed'</span><span class="token punctuation">,</span>
+	<span class="token string">'QgsCollapsibleGroupBox/QgsVectorLayerPropertiesBase/groupBox/collapsed'</span><span class="token punctuation">,</span>
+	<span class="token string">'QgsCollapsibleGroupBox/QgsVectorLayerPropertiesBase/groupBoxActionList/collapsed'</span><span class="token punctuation">,</span>
+	<span class="token string">'QgsCollapsibleGroupBox/QgsVectorLayerPropertiesBase/groupBox_2/collapsed'</span><span class="token punctuation">,</span>
+	<span class="token string">'QgsCollapsibleGroupBox/QgsVectorLayerPropertiesBase/groupBox_3/collapsed'</span><span class="token punctuation">,</span>
+	<span class="token string">'QgsCollapsibleGroupBox/QgsVectorLayerPropertiesBase/groupBox_4/collapsed'</span><span class="token punctuation">,</span>
+	<span class="token string">'QgsCollapsibleGroupBox/QgsVectorLayerPropertiesBase/groupBox_60/collapsed'</span><span class="token punctuation">,</span>
+	<span class="token string">'QgsCollapsibleGroupBox/QgsVectorLayerPropertiesBase/groupLayerRendering/collapsed'</span><span class="token punctuation">,</span>
+	<span class="token string">'QgsCollapsibleGroupBox/QgsVectorLayerPropertiesBase/mCrsGroupBox/collapsed'</span><span class="token punctuation">,</span>
+	<span class="token string">'QgsCollapsibleGroupBox/QgsVectorLayerPropertiesBase/mFilterGroupBox/collapsed'</span><span class="token punctuation">,</span>
+	<span class="token string">'QgsCollapsibleGroupBox/QgsVectorLayerPropertiesBase/mGeomGroupBox/collapsed'</span><span class="token punctuation">,</span>
+	<span class="token string">'QgsCollapsibleGroupBox/QgsVectorLayerPropertiesBase/mMetaAttributionGrpBx/collapsed'</span><span class="token punctuation">,</span>
+	<span class="token string">'QgsCollapsibleGroupBox/QgsVectorLayerPropertiesBase/mMetaDescriptionGrpBx/collapsed'</span><span class="token punctuation">,</span>
+	<span class="token string">'QgsCollapsibleGroupBox/QgsVectorLayerPropertiesBase/mMetaLegendGrpBx/collapsed'</span><span class="token punctuation">,</span>
+	<span class="token string">'QgsCollapsibleGroupBox/QgsVectorLayerPropertiesBase/mScaleVisibilityGroupBox/collapsed'</span><span class="token punctuation">,</span>
+	<span class="token string">'QgsCollapsibleGroupBox/QgsVectorLayerPropertiesBase/mShowInAttributeTable/collapsed'</span><span class="token punctuation">,</span>
+	<span class="token string">'QgsCollapsibleGroupBox/QgsVectorLayerPropertiesBase/mSubsetGroupBox/collapsed'</span><span class="token punctuation">,</span>
+	<span class="token string">'QgsCollapsibleGroupBox/QgsVectorLayerPropertiesBase/mUseReferenceScaleGroupBox/collapsed'</span><span class="token punctuation">,</span>
+	<span class="token string">'QgsCollapsibleGroupBox/QgsVectorLayerPropertiesBase/mWmsDimensionsGrpBx/collapsed'</span><span class="token punctuation">,</span>
+	<span class="token string">'QgsCollapsibleGroupBox/QgsVectorLayerSaveAsDialogBase/mAttributesSelection/collapsed'</span><span class="token punctuation">,</span>
+	<span class="token string">'QgsCollapsibleGroupBox/QgsVectorLayerSaveAsDialogBase/mDatasourceOptionsGroupBox/collapsed'</span><span class="token punctuation">,</span>
+	<span class="token string">'QgsCollapsibleGroupBox/QgsVectorLayerSaveAsDialogBase/mExtentGroupBox/collapsed'</span><span class="token punctuation">,</span>
+	<span class="token string">'QgsCollapsibleGroupBox/QgsVectorLayerSaveAsDialogBase/mGeometryGroupBox/collapsed'</span><span class="token punctuation">,</span>
+	<span class="token string">'QgsCollapsibleGroupBox/QgsVectorLayerSaveAsDialogBase/mLayerOptionsGroupBox/collapsed'</span><span class="token punctuation">,</span>
+	<span class="token string">'QgsCollapsibleGroupBox/QgsVectorLayerSaveAsDialogBase/mOgrOptionsGroupBox/collapsed'</span><span class="token punctuation">,</span>
+	<span class="token string">'QgsCollapsibleGroupBox/mAdvLabelingDlg/groupBox_mPreview/collapsed'</span><span class="token punctuation">,</span>
+	<span class="token string">'QgsCollapsibleGroupBox/mAdvLabelingDlg/mPlacementOverrunGroupBox_2/collapsed'</span><span class="token punctuation">,</span>
+	<span class="token string">'QgsCollapsibleGroupBox/mAdvLabelingDlg/mRenderingLabelGrpBx/collapsed'</span><span class="token punctuation">,</span>
+
+	<span class="token string">'QgsVariableEditor/Global/expanded'</span><span class="token punctuation">,</span><span class="token string">'QgsVariableEditorTree/globalOptions/column0width'</span><span class="token punctuation">,</span>
+	<span class="token string">'QgsVariableEditorTree/mVariablesEditor/column0width'</span><span class="token punctuation">,</span><span class="token string">'QgsVariableEditorTree/projectProperties/column0width'</span><span class="token punctuation">,</span>
+	
+	<span class="token string">'QuickOSM/copyright_dialog'</span><span class="token punctuation">,</span><span class="token string">'QuickOSM/defaultNominatimAPI'</span><span class="token punctuation">,</span><span class="token string">'QuickOSM/defaultOAPI'</span><span class="token punctuation">,</span>
+
+	<span class="token string">'Raster/cumulativeCutLower'</span><span class="token punctuation">,</span><span class="token string">'Raster/cumulativeCutUpper'</span><span class="token punctuation">,</span><span class="token string">'Raster/defaultBlueBand'</span><span class="token punctuation">,</span>
+	<span class="token string">'Raster/defaultContrastEnhancementAlgorithm/multiBandMultiByte'</span><span class="token punctuation">,</span>
+	<span class="token string">'Raster/defaultContrastEnhancementAlgorithm/multiBandSingleByte'</span><span class="token punctuation">,</span><span class="token string">'Raster/defaultContrastEnhancementAlgorithm/singleBand'</span><span class="token punctuation">,</span>
+	<span class="token string">'Raster/defaultContrastEnhancementLimits/multiBandMultiByte'</span><span class="token punctuation">,</span><span class="token string">'Raster/defaultContrastEnhancementLimits/multiBandSingleByte'</span><span class="token punctuation">,</span>
+	<span class="token string">'Raster/defaultContrastEnhancementLimits/singleBand'</span><span class="token punctuation">,</span><span class="token string">'Raster/defaultEarlyResampling'</span><span class="token punctuation">,</span><span class="token string">'Raster/defaultGreenBand'</span><span class="token punctuation">,</span>
+	<span class="token string">'Raster/defaultOversampling'</span><span class="token punctuation">,</span><span class="token string">'Raster/defaultRedBand'</span><span class="token punctuation">,</span><span class="token string">'Raster/defaultStandardDeviation'</span><span class="token punctuation">,</span><span class="token string">'Raster/defaultZoomedInResampling'</span><span class="token punctuation">,</span>
+	<span class="token string">'Raster/defaultZoomedOutResampling'</span><span class="token punctuation">,</span>
+
+	<span class="token string">'UI/UITheme'</span><span class="token punctuation">,</span><span class="token string">'UI/annotationTool'</span><span class="token punctuation">,</span><span class="token string">'UI/defaultAddDbLayerAction'</span><span class="token punctuation">,</span><span class="token string">'UI/defaultNewLayer'</span><span class="token punctuation">,</span><span class="token string">'UI/defaultVertexTool'</span><span class="token punctuation">,</span>
+	<span class="token string">'UI/deselectionTool'</span><span class="token punctuation">,</span><span class="token string">'UI/encoding'</span><span class="token punctuation">,</span><span class="token string">'UI/geometry'</span><span class="token punctuation">,</span><span class="token string">'UI/lastFileNameWidgetDir'</span><span class="token punctuation">,</span><span class="token string">'UI/lastProjectDir'</span><span class="token punctuation">,</span><span class="token string">'UI/lastVectorFileFilter'</span><span class="token punctuation">,</span>
+	<span class="token string">'UI/lastVectorFileFilterDir'</span><span class="token punctuation">,</span><span class="token string">'UI/lastVectorFormat'</span><span class="token punctuation">,</span><span class="token string">'UI/measureTool'</span><span class="token punctuation">,</span><span class="token string">'UI/openTableTool'</span><span class="token punctuation">,</span><span class="token string">'UI/recentProjectionsAuthId'</span><span class="token punctuation">,</span>
+	<span class="token string">'UI/recentProjectionsProj4'</span><span class="token punctuation">,</span><span class="token string">'UI/recentProjectionsWkt'</span><span class="token punctuation">,</span><span class="token string">'UI/recentProjects/1/crs'</span><span class="token punctuation">,</span><span class="token string">'UI/recentProjects/1/path'</span><span class="token punctuation">,</span>
+	<span class="token string">'UI/recentProjects/1/pin'</span><span class="token punctuation">,</span><span class="token string">'UI/recentProjects/1/previewImage'</span><span class="token punctuation">,</span><span class="token string">'UI/recentProjects/1/title'</span><span class="token punctuation">,</span><span class="token string">'UI/recentProjects/10/crs'</span><span class="token punctuation">,</span>
+	<span class="token string">'UI/recentProjects/10/path'</span><span class="token punctuation">,</span><span class="token string">'UI/recentProjects/10/pin'</span><span class="token punctuation">,</span><span class="token string">'UI/recentProjects/10/previewImage'</span><span class="token punctuation">,</span><span class="token string">'UI/recentProjects/10/title'</span><span class="token punctuation">,</span>
+	<span class="token string">'UI/recentProjects/11/crs'</span><span class="token punctuation">,</span><span class="token string">'UI/recentProjects/11/path'</span><span class="token punctuation">,</span><span class="token string">'UI/recentProjects/11/pin'</span><span class="token punctuation">,</span><span class="token string">'UI/recentProjects/11/previewImage'</span><span class="token punctuation">,</span>
+	<span class="token string">'UI/recentProjects/11/title'</span><span class="token punctuation">,</span><span class="token string">'UI/recentProjects/12/crs'</span><span class="token punctuation">,</span><span class="token string">'UI/recentProjects/12/path'</span><span class="token punctuation">,</span><span class="token string">'UI/recentProjects/12/pin'</span><span class="token punctuation">,</span>
+	<span class="token string">'UI/recentProjects/12/previewImage'</span><span class="token punctuation">,</span><span class="token string">'UI/recentProjects/12/title'</span><span class="token punctuation">,</span><span class="token string">'UI/recentProjects/13/crs'</span><span class="token punctuation">,</span><span class="token string">'UI/recentProjects/13/path'</span><span class="token punctuation">,</span>
+	<span class="token string">'UI/recentProjects/13/pin'</span><span class="token punctuation">,</span><span class="token string">'UI/recentProjects/13/previewImage'</span><span class="token punctuation">,</span><span class="token string">'UI/recentProjects/13/title'</span><span class="token punctuation">,</span><span class="token string">'UI/recentProjects/14/crs'</span><span class="token punctuation">,</span>
+	<span class="token string">'UI/recentProjects/14/path'</span><span class="token punctuation">,</span><span class="token string">'UI/recentProjects/14/pin'</span><span class="token punctuation">,</span><span class="token string">'UI/recentProjects/14/previewImage'</span><span class="token punctuation">,</span><span class="token string">'UI/recentProjects/14/title'</span><span class="token punctuation">,</span>
+	<span class="token string">'UI/recentProjects/15/crs'</span><span class="token punctuation">,</span><span class="token string">'UI/recentProjects/15/path'</span><span class="token punctuation">,</span><span class="token string">'UI/recentProjects/15/pin'</span><span class="token punctuation">,</span><span class="token string">'UI/recentProjects/15/previewImage'</span><span class="token punctuation">,</span>
+	<span class="token string">'UI/recentProjects/15/title'</span><span class="token punctuation">,</span><span class="token string">'UI/recentProjects/16/crs'</span><span class="token punctuation">,</span><span class="token string">'UI/recentProjects/16/path'</span><span class="token punctuation">,</span><span class="token string">'UI/recentProjects/16/pin'</span><span class="token punctuation">,</span>
+	<span class="token string">'UI/recentProjects/16/previewImage'</span><span class="token punctuation">,</span><span class="token string">'UI/recentProjects/16/title'</span><span class="token punctuation">,</span><span class="token string">'UI/recentProjects/17/crs'</span><span class="token punctuation">,</span><span class="token string">'UI/recentProjects/17/path'</span><span class="token punctuation">,</span>
+	<span class="token string">'UI/recentProjects/17/pin'</span><span class="token punctuation">,</span><span class="token string">'UI/recentProjects/17/previewImage'</span><span class="token punctuation">,</span><span class="token string">'UI/recentProjects/17/title'</span><span class="token punctuation">,</span><span class="token string">'UI/recentProjects/18/crs'</span><span class="token punctuation">,</span>
+	<span class="token string">'UI/recentProjects/18/path'</span><span class="token punctuation">,</span><span class="token string">'UI/recentProjects/18/pin'</span><span class="token punctuation">,</span><span class="token string">'UI/recentProjects/18/previewImage'</span><span class="token punctuation">,</span><span class="token string">'UI/recentProjects/18/title'</span><span class="token punctuation">,</span>
+	<span class="token string">'UI/recentProjects/19/crs'</span><span class="token punctuation">,</span><span class="token string">'UI/recentProjects/19/path'</span><span class="token punctuation">,</span><span class="token string">'UI/recentProjects/19/pin'</span><span class="token punctuation">,</span><span class="token string">'UI/recentProjects/19/previewImage'</span><span class="token punctuation">,</span>
+	<span class="token string">'UI/recentProjects/19/title'</span><span class="token punctuation">,</span><span class="token string">'UI/recentProjects/2/crs'</span><span class="token punctuation">,</span><span class="token string">'UI/recentProjects/2/path'</span><span class="token punctuation">,</span><span class="token string">'UI/recentProjects/2/pin'</span><span class="token punctuation">,</span>
+	<span class="token string">'UI/recentProjects/2/previewImage'</span><span class="token punctuation">,</span><span class="token string">'UI/recentProjects/2/title'</span><span class="token punctuation">,</span><span class="token string">'UI/recentProjects/20/crs'</span><span class="token punctuation">,</span><span class="token string">'UI/recentProjects/20/path'</span><span class="token punctuation">,</span>
+	<span class="token string">'UI/recentProjects/20/pin'</span><span class="token punctuation">,</span><span class="token string">'UI/recentProjects/20/previewImage'</span><span class="token punctuation">,</span><span class="token string">'UI/recentProjects/20/title'</span><span class="token punctuation">,</span><span class="token string">'UI/recentProjects/3/crs'</span><span class="token punctuation">,</span>
+	<span class="token string">'UI/recentProjects/3/path'</span><span class="token punctuation">,</span><span class="token string">'UI/recentProjects/3/pin'</span><span class="token punctuation">,</span><span class="token string">'UI/recentProjects/3/previewImage'</span><span class="token punctuation">,</span><span class="token string">'UI/recentProjects/3/title'</span><span class="token punctuation">,</span>
+	<span class="token string">'UI/recentProjects/4/crs'</span><span class="token punctuation">,</span><span class="token string">'UI/recentProjects/4/path'</span><span class="token punctuation">,</span><span class="token string">'UI/recentProjects/4/pin'</span><span class="token punctuation">,</span><span class="token string">'UI/recentProjects/4/previewImage'</span><span class="token punctuation">,</span>
+	<span class="token string">'UI/recentProjects/4/title'</span><span class="token punctuation">,</span><span class="token string">'UI/recentProjects/5/crs'</span><span class="token punctuation">,</span><span class="token string">'UI/recentProjects/5/path'</span><span class="token punctuation">,</span><span class="token string">'UI/recentProjects/5/pin'</span><span class="token punctuation">,</span>
+	<span class="token string">'UI/recentProjects/5/previewImage'</span><span class="token punctuation">,</span><span class="token string">'UI/recentProjects/5/title'</span><span class="token punctuation">,</span><span class="token string">'UI/recentProjects/6/crs'</span><span class="token punctuation">,</span><span class="token string">'UI/recentProjects/6/path'</span><span class="token punctuation">,</span>
+	<span class="token string">'UI/recentProjects/6/pin'</span><span class="token punctuation">,</span><span class="token string">'UI/recentProjects/6/previewImage'</span><span class="token punctuation">,</span><span class="token string">'UI/recentProjects/6/title'</span><span class="token punctuation">,</span><span class="token string">'UI/recentProjects/7/crs'</span><span class="token punctuation">,</span>
+	<span class="token string">'UI/recentProjects/7/path'</span><span class="token punctuation">,</span><span class="token string">'UI/recentProjects/7/pin'</span><span class="token punctuation">,</span><span class="token string">'UI/recentProjects/7/previewImage'</span><span class="token punctuation">,</span><span class="token string">'UI/recentProjects/7/title'</span><span class="token punctuation">,</span>
+	<span class="token string">'UI/recentProjects/8/crs'</span><span class="token punctuation">,</span><span class="token string">'UI/recentProjects/8/path'</span><span class="token punctuation">,</span><span class="token string">'UI/recentProjects/8/pin'</span><span class="token punctuation">,</span><span class="token string">'UI/recentProjects/8/previewImage'</span><span class="token punctuation">,</span>
+	<span class="token string">'UI/recentProjects/8/title'</span><span class="token punctuation">,</span><span class="token string">'UI/recentProjects/9/crs'</span><span class="token punctuation">,</span><span class="token string">'UI/recentProjects/9/path'</span><span class="token punctuation">,</span><span class="token string">'UI/recentProjects/9/pin'</span><span class="token punctuation">,</span>
+	<span class="token string">'UI/recentProjects/9/previewImage'</span><span class="token punctuation">,</span><span class="token string">'UI/recentProjects/9/title'</span><span class="token punctuation">,</span><span class="token string">'UI/selectTool'</span><span class="token punctuation">,</span><span class="token string">'UI/selectionTool'</span><span class="token punctuation">,</span>
+	<span class="token string">'UI/showInstallFromZipWarning'</span><span class="token punctuation">,</span><span class="token string">'UI/state'</span><span class="token punctuation">,</span>
+
+	<span class="token string">'Windows/AttributeDialog/geometry'</span><span class="token punctuation">,</span><span class="token string">'Windows/BetterAttributeTable/geometry'</span><span class="token punctuation">,</span><span class="token string">'Windows/Bookmarks/headerstateV2'</span><span class="token punctuation">,</span>
+	<span class="token string">'Windows/CodeEditorOptions/splitterState'</span><span class="token punctuation">,</span>
+	<span class="token string">'Windows/ColorDialog/activeComponent'</span><span class="token punctuation">,</span><span class="token string">'Windows/ColorDialog/activeScheme'</span><span class="token punctuation">,</span><span class="token string">'Windows/ColorDialog/activeTab'</span><span class="token punctuation">,</span>
+	<span class="token string">'Windows/ColorDialog/customColor1'</span><span class="token punctuation">,</span><span class="token string">'Windows/ColorDialog/customColor10'</span><span class="token punctuation">,</span><span class="token string">'Windows/ColorDialog/customColor11'</span><span class="token punctuation">,</span>
+	<span class="token string">'Windows/ColorDialog/customColor12'</span><span class="token punctuation">,</span><span class="token string">'Windows/ColorDialog/customColor13'</span><span class="token punctuation">,</span><span class="token string">'Windows/ColorDialog/customColor14'</span><span class="token punctuation">,</span>
+	<span class="token string">'Windows/ColorDialog/customColor15'</span><span class="token punctuation">,</span><span class="token string">'Windows/ColorDialog/customColor16'</span><span class="token punctuation">,</span><span class="token string">'Windows/ColorDialog/customColor2'</span><span class="token punctuation">,</span>
+	<span class="token string">'Windows/ColorDialog/customColor3'</span><span class="token punctuation">,</span><span class="token string">'Windows/ColorDialog/customColor4'</span><span class="token punctuation">,</span><span class="token string">'Windows/ColorDialog/customColor5'</span><span class="token punctuation">,</span>
+	<span class="token string">'Windows/ColorDialog/customColor6'</span><span class="token punctuation">,</span><span class="token string">'Windows/ColorDialog/customColor7'</span><span class="token punctuation">,</span><span class="token string">'Windows/ColorDialog/customColor8'</span><span class="token punctuation">,</span>
+	<span class="token string">'Windows/ColorDialog/customColor9'</span><span class="token punctuation">,</span><span class="token string">'Windows/ColorDialog/sampleRadius'</span><span class="token punctuation">,</span>
+	<span class="token string">'Windows/Data Source Manager/geometry'</span><span class="token punctuation">,</span><span class="token string">'Windows/Data Source Manager/splitState'</span><span class="token punctuation">,</span><span class="token string">'Windows/Data Source Manager/tab'</span><span class="token punctuation">,</span>
+	<span class="token string">'Windows/DatumTransformDialog/columnWidths/0'</span><span class="token punctuation">,</span><span class="token string">'Windows/DatumTransformDialog/columnWidths/1'</span><span class="token punctuation">,</span>
+	<span class="token string">'Windows/DatumTransformDialog/hideDeprecated'</span><span class="token punctuation">,</span>
+	<span class="token string">'Windows/DatumTransformTable/headerState'</span><span class="token punctuation">,</span>
+	<span class="token string">'Windows/Diagrams/OptionsSplitState'</span><span class="token punctuation">,</span><span class="token string">'Windows/Diagrams/Tab'</span><span class="token punctuation">,</span>
+	<span class="token string">'Windows/DlgHistory/geometry'</span><span class="token punctuation">,</span>
+	<span class="token string">'Windows/HanaSourceSelect/HoldDialogOpen'</span><span class="token punctuation">,</span><span class="token string">'Windows/HanaSourceSelect/columnWidths/0'</span><span class="token punctuation">,</span><span class="token string">'Windows/HanaSourceSelect/columnWidths/1'</span><span class="token punctuation">,</span>
+	<span class="token string">'Windows/HanaSourceSelect/columnWidths/2'</span><span class="token punctuation">,</span><span class="token string">'Windows/HanaSourceSelect/columnWidths/3'</span><span class="token punctuation">,</span><span class="token string">'Windows/HanaSourceSelect/columnWidths/4'</span><span class="token punctuation">,</span>
+	<span class="token string">'Windows/HanaSourceSelect/columnWidths/5'</span><span class="token punctuation">,</span><span class="token string">'Windows/HanaSourceSelect/columnWidths/6'</span><span class="token punctuation">,</span><span class="token string">'Windows/HanaSourceSelect/columnWidths/7'</span><span class="token punctuation">,</span>
+	<span class="token string">'Windows/HanaSourceSelect/columnWidths/8'</span><span class="token punctuation">,</span><span class="token string">'Windows/HanaSourceSelect/geometry'</span><span class="token punctuation">,</span>
+	<span class="token string">'Windows/Identify/columnWidth'</span><span class="token punctuation">,</span>
+	<span class="token string">'Windows/Labeling/FontPreviewSplitState'</span><span class="token punctuation">,</span><span class="token string">'Windows/Labeling/OptionsSplitState'</span><span class="token punctuation">,</span><span class="token string">'Windows/Labeling/Tab'</span><span class="token punctuation">,</span>
+	<span class="token string">'Windows/MSSQLSourceSelect/HoldDialogOpen'</span><span class="token punctuation">,</span><span class="token string">'Windows/MSSQLSourceSelect/columnWidths/0'</span><span class="token punctuation">,</span><span class="token string">'Windows/MSSQLSourceSelect/columnWidths/1'</span><span class="token punctuation">,</span>
+	<span class="token string">'Windows/MSSQLSourceSelect/columnWidths/2'</span><span class="token punctuation">,</span><span class="token string">'Windows/MSSQLSourceSelect/columnWidths/3'</span><span class="token punctuation">,</span><span class="token string">'Windows/MSSQLSourceSelect/columnWidths/4'</span><span class="token punctuation">,</span>
+	<span class="token string">'Windows/MSSQLSourceSelect/columnWidths/5'</span><span class="token punctuation">,</span><span class="token string">'Windows/MSSQLSourceSelect/columnWidths/6'</span><span class="token punctuation">,</span><span class="token string">'Windows/MSSQLSourceSelect/columnWidths/7'</span><span class="token punctuation">,</span>
+	<span class="token string">'Windows/MSSQLSourceSelect/columnWidths/8'</span><span class="token punctuation">,</span>
+	<span class="token string">'Windows/MainWindow/geometry'</span><span class="token punctuation">,</span>
+	<span class="token string">'Windows/Measure/h'</span><span class="token punctuation">,</span>
+	<span class="token string">'Windows/ModelerParametersDialog/geometry'</span><span class="token punctuation">,</span>
+	<span class="token string">'Windows/Options/geometry'</span><span class="token punctuation">,</span><span class="token string">'Windows/Options/splitState'</span><span class="token punctuation">,</span><span class="token string">'Windows/Options/tab'</span><span class="token punctuation">,</span>
+	<span class="token string">'Windows/OracleSourceSelect/HoldDialogOpen'</span><span class="token punctuation">,</span><span class="token string">'Windows/OracleSourceSelect/columnWidths/0'</span><span class="token punctuation">,</span><span class="token string">'Windows/OracleSourceSelect/columnWidths/1'</span><span class="token punctuation">,</span>
+	<span class="token string">'Windows/OracleSourceSelect/columnWidths/2'</span><span class="token punctuation">,</span><span class="token string">'Windows/OracleSourceSelect/columnWidths/3'</span><span class="token punctuation">,</span><span class="token string">'Windows/OracleSourceSelect/columnWidths/4'</span><span class="token punctuation">,</span>
+	<span class="token string">'Windows/OracleSourceSelect/columnWidths/5'</span><span class="token punctuation">,</span><span class="token string">'Windows/OracleSourceSelect/columnWidths/6'</span><span class="token punctuation">,</span><span class="token string">'Windows/OracleSourceSelect/columnWidths/7'</span><span class="token punctuation">,</span>
+	<span class="token string">'Windows/PgSourceSelect/HoldDialogOpen'</span><span class="token punctuation">,</span><span class="token string">'Windows/PgSourceSelect/columnWidths/0'</span><span class="token punctuation">,</span><span class="token string">'Windows/PgSourceSelect/columnWidths/1'</span><span class="token punctuation">,</span>
+	<span class="token string">'Windows/PgSourceSelect/columnWidths/10'</span><span class="token punctuation">,</span><span class="token string">'Windows/PgSourceSelect/columnWidths/2'</span><span class="token punctuation">,</span><span class="token string">'Windows/PgSourceSelect/columnWidths/3'</span><span class="token punctuation">,</span>
+	<span class="token string">'Windows/PgSourceSelect/columnWidths/4'</span><span class="token punctuation">,</span><span class="token string">'Windows/PgSourceSelect/columnWidths/5'</span><span class="token punctuation">,</span><span class="token string">'Windows/PgSourceSelect/columnWidths/6'</span><span class="token punctuation">,</span>
+	<span class="token string">'Windows/PgSourceSelect/columnWidths/7'</span><span class="token punctuation">,</span><span class="token string">'Windows/PgSourceSelect/columnWidths/8'</span><span class="token punctuation">,</span><span class="token string">'Windows/PgSourceSelect/columnWidths/9'</span><span class="token punctuation">,</span>
+	<span class="token string">'Windows/PluginManager/geometry'</span><span class="token punctuation">,</span><span class="token string">'Windows/PluginManager/option'</span><span class="token punctuation">,</span><span class="token string">'Windows/PluginManager/secondSplitterState'</span><span class="token punctuation">,</span>
+	<span class="token string">'Windows/PluginManager/splitState'</span><span class="token punctuation">,</span><span class="token string">'Windows/PluginManager/tab'</span><span class="token punctuation">,</span>
+	<span class="token string">'Windows/ProjectProperties/geometry'</span><span class="token punctuation">,</span><span class="token string">'Windows/ProjectProperties/splitState'</span><span class="token punctuation">,</span><span class="token string">'Windows/ProjectProperties/tab'</span><span class="token punctuation">,</span>
+	<span class="token string">'Windows/ProjectionSelector/splitterState'</span><span class="token punctuation">,</span>
+	<span class="token string">'Windows/ProjectionSelectorDialog/splitterState'</span><span class="token punctuation">,</span>
+	<span class="token string">'Windows/QWidget/geometry'</span><span class="token punctuation">,</span>
+	<span class="token string">'Windows/QgsBookmarkEditorDialog/geometry'</span><span class="token punctuation">,</span>
+	<span class="token string">'Windows/QgsColorDialogBase/geometry'</span><span class="token punctuation">,</span>
+	<span class="token string">'Windows/QgsConfigureShortcutsDialog/geometry'</span><span class="token punctuation">,</span>
+	<span class="token string">'Windows/QgsDataSourceSelectDialog/geometry'</span><span class="token punctuation">,</span>
+	<span class="token string">'Windows/QgsDatumTransformDialogBase/geometry'</span><span class="token punctuation">,</span>
+	<span class="token string">'Windows/QgsDelAttrDialogBase/geometry'</span><span class="token punctuation">,</span>
+	<span class="token string">'Windows/QgsDxfExportDialogBase/geometry'</span><span class="token punctuation">,</span>
+	<span class="token string">'Windows/QgsExpressionBuilderDialogBase/geometry'</span><span class="token punctuation">,</span>
+	<span class="token string">'Windows/QgsExpressionBuilderWidget/editorsplitter'</span><span class="token punctuation">,</span>
+	<span class="token string">'Windows/QgsExpressionBuilderWidget/functionsplitter'</span><span class="token punctuation">,</span>
+	<span class="token string">'Windows/QgsExpressionBuilderWidget/splitter'</span><span class="token punctuation">,</span>
+	<span class="token string">'Windows/QgsExpressionSelectionDialogBase/geometry'</span><span class="token punctuation">,</span>
+	<span class="token string">'Windows/QgsFieldCalculatorBase/geometry'</span><span class="token punctuation">,</span>
+	<span class="token string">'Windows/QgsMeasureBase/geometry'</span><span class="token punctuation">,</span>
+	<span class="token string">'Windows/QgsMessageViewer/geometry'</span><span class="token punctuation">,</span>
+	<span class="token string">'Windows/QgsModelDesignerDialogBase/geometry'</span><span class="token punctuation">,</span>
+	<span class="token string">'Windows/QgsNewGeoPackageLayerDialog/geometry'</span><span class="token punctuation">,</span>
+	<span class="token string">'Windows/QgsNewMemoryLayerDialogBase/geometry'</span><span class="token punctuation">,</span>
+	<span class="token string">'Windows/QgsNewVectorLayerDialogBase/geometry'</span><span class="token punctuation">,</span>
+	<span class="token string">'Windows/QgsOrganizeTableColumnsDialog/geometry'</span><span class="token punctuation">,</span>
+	<span class="token string">'Windows/QgsPgNewConnectionBase/geometry'</span><span class="token punctuation">,</span>
+	<span class="token string">'Windows/QgsPluginInstallerFetchingDialogBase/geometry'</span><span class="token punctuation">,</span>
+	<span class="token string">'Windows/QgsProcessingDialogBase/geometry'</span><span class="token punctuation">,</span>
+	<span class="token string">'Windows/QgsProcessingParameterDefinitionDialog/geometry'</span><span class="token punctuation">,</span>
+	<span class="token string">'Windows/QgsProviderSublayersDialogBase/geometry'</span><span class="token punctuation">,</span>
+	<span class="token string">'Windows/QgsQueryBuilderBase/geometry'</span><span class="token punctuation">,</span>
+	<span class="token string">'Windows/QgsRendererRulePropsDialog/geometry'</span><span class="token punctuation">,</span>
+	<span class="token string">'Windows/QgsSelectByFormDialog/geometry'</span><span class="token punctuation">,</span>
+	<span class="token string">'Windows/QgsStyleManagerDialogBase/geometry'</span><span class="token punctuation">,</span>
+	<span class="token string">'Windows/QgsStyleSaveDialog/geometry'</span><span class="token punctuation">,</span>
+	<span class="token string">'Windows/QgsTextAnnotationDialogBase/geometry'</span><span class="token punctuation">,</span>
+	<span class="token string">'Windows/QgsVectorLayerLoadStyleDialog/geometry'</span><span class="token punctuation">,</span>
+	<span class="token string">'Windows/QgsVectorLayerSaveAsDialogBase/geometry'</span><span class="token punctuation">,</span>
+	<span class="token string">'Windows/QgsVectorLayerSaveStyleDialog/geometry'</span><span class="token punctuation">,</span>
+	<span class="token string">'Windows/RuleBasedTree/sectionWidth/0'</span><span class="token punctuation">,</span>
+	<span class="token string">'Windows/RuleBasedTree/sectionWidth/1'</span><span class="token punctuation">,</span>
+	<span class="token string">'Windows/RuleBasedTree/sectionWidth/2'</span><span class="token punctuation">,</span>
+	<span class="token string">'Windows/RuleBasedTree/sectionWidth/3'</span><span class="token punctuation">,</span>
+	<span class="token string">'Windows/RuleBasedTree/sectionWidth/4'</span><span class="token punctuation">,</span>
+	<span class="token string">'Windows/SQLCommandsDialog/geometry'</span><span class="token punctuation">,</span>
+	<span class="token string">'Windows/SnappingWidget/geometry'</span><span class="token punctuation">,</span>
+	<span class="token string">'Windows/SpatiaLiteSourceSelect/HoldDialogOpen'</span><span class="token punctuation">,</span>
+	<span class="token string">'Windows/StyleV2Manager/splitter'</span><span class="token punctuation">,</span>
+	<span class="token string">'Windows/SubLayers/headerState'</span><span class="token punctuation">,</span>
+	<span class="token string">'Windows/SymbolSelectorDialog/geometry'</span><span class="token punctuation">,</span>
+	<span class="token string">'Windows/VectorLayerProperties/geometry'</span><span class="token punctuation">,</span>
+	<span class="token string">'Windows/VectorLayerProperties/splitState'</span><span class="token punctuation">,</span>
+	<span class="token string">'Windows/VectorLayerProperties/tab'</span><span class="token punctuation">,</span>
+	<span class="token string">'Windows/VirtualLayer/layerTableHeaderState'</span><span class="token punctuation">,</span>
+	<span class="token string">'Windows/WFSSourceSelect/FeatureCurrentViewExtent'</span><span class="token punctuation">,</span>
+	<span class="token string">'Windows/WFSSourceSelect/HoldDialogOpen'</span><span class="token punctuation">,</span>
+	<span class="token string">'Windows/WFSSourceSelect/UseTitleLayerName'</span><span class="token punctuation">,</span>
+	<span class="token string">'Windows/about/geometry'</span><span class="token punctuation">,</span>
+	<span class="token string">'Windows/about/splitState'</span><span class="token punctuation">,</span>
+	<span class="token string">'Windows/about/tab'</span><span class="token punctuation">,</span>
+
+	<span class="token string">'app/ModelDesigner/state'</span><span class="token punctuation">,</span>
+	<span class="token string">'app/Windows/WelcomePage/SplitState'</span><span class="token punctuation">,</span>
+	<span class="token string">'app/Windows/WelcomePage/SplitState2'</span><span class="token punctuation">,</span>
+	<span class="token string">'app/askToDeleteFeatures'</span><span class="token punctuation">,</span>
+	<span class="token string">'app/map3d/axisInversion'</span><span class="token punctuation">,</span>
+	<span class="token string">'app/map3d/defaultFieldOfView'</span><span class="token punctuation">,</span>
+	<span class="token string">'app/map3d/defaultMovementSpeed'</span><span class="token punctuation">,</span>
+	<span class="token string">'app/map3d/defaultNavigation'</span><span class="token punctuation">,</span>
+	<span class="token string">'app/map3d/defaultProjection'</span><span class="token punctuation">,</span>
+	<span class="token string">'app/plugin_installer/allowDeprecated'</span><span class="token punctuation">,</span>
+	<span class="token string">'app/plugin_installer/allowExperimental'</span><span class="token punctuation">,</span>
+	<span class="token string">'app/plugin_installer/checkOnStart'</span><span class="token punctuation">,</span>
+	<span class="token string">'app/plugin_installer/checkOnStartInterval'</span><span class="token punctuation">,</span>
+	<span class="token string">'app/plugin_installer/checkOnStartLastDate'</span><span class="token punctuation">,</span>
+	<span class="token string">'app/plugin_installer/lastZipDirectory'</span><span class="token punctuation">,</span>
+	<span class="token string">'app/plugin_installer/seen_plugins'</span><span class="token punctuation">,</span>
+	<span class="token string">'app/plugin_repositories/Repositório oficial de módulos do QGIS/url'</span><span class="token punctuation">,</span>
+	<span class="token string">'app/projections/crsAccuracyWarningThreshold'</span><span class="token punctuation">,</span>
+
+	<span class="token string">'browser/expandedPaths'</span><span class="token punctuation">,</span>
+	<span class="token string">'browser/hiddenPaths'</span><span class="token punctuation">,</span>
+
+	<span class="token string">'cache/size'</span><span class="token punctuation">,</span>
+
+	<span class="token string">'colors/recent'</span><span class="token punctuation">,</span>
+
+	<span class="token string">'core/Layout/searchPathsForTemplates'</span><span class="token punctuation">,</span>
+	<span class="token string">'core/NewsFeed/httpsfeedqgisorg/49/content'</span><span class="token punctuation">,</span>
+	<span class="token string">'core/NewsFeed/httpsfeedqgisorg/49/imageUrl'</span><span class="token punctuation">,</span>
+	<span class="token string">'core/NewsFeed/httpsfeedqgisorg/49/link'</span><span class="token punctuation">,</span>
+	<span class="token string">'core/NewsFeed/httpsfeedqgisorg/49/sticky'</span><span class="token punctuation">,</span>
+	<span class="token string">'core/NewsFeed/httpsfeedqgisorg/49/title'</span><span class="token punctuation">,</span>
+	<span class="token string">'core/NewsFeed/httpsfeedqgisorg/62/content'</span><span class="token punctuation">,</span>
+	<span class="token string">'core/NewsFeed/httpsfeedqgisorg/62/expiry'</span><span class="token punctuation">,</span>
+	<span class="token string">'core/NewsFeed/httpsfeedqgisorg/62/imageUrl'</span><span class="token punctuation">,</span>
+	<span class="token string">'core/NewsFeed/httpsfeedqgisorg/62/link'</span><span class="token punctuation">,</span>
+	<span class="token string">'core/NewsFeed/httpsfeedqgisorg/62/sticky'</span><span class="token punctuation">,</span>
+	<span class="token string">'core/NewsFeed/httpsfeedqgisorg/62/title'</span><span class="token punctuation">,</span>
+	<span class="token string">'core/NewsFeed/httpsfeedqgisorg/65/content'</span><span class="token punctuation">,</span>
+	<span class="token string">'core/NewsFeed/httpsfeedqgisorg/65/expiry'</span><span class="token punctuation">,</span>
+	<span class="token string">'core/NewsFeed/httpsfeedqgisorg/65/imageUrl'</span><span class="token punctuation">,</span>
+	<span class="token string">'core/NewsFeed/httpsfeedqgisorg/65/link'</span><span class="token punctuation">,</span>
+	<span class="token string">'core/NewsFeed/httpsfeedqgisorg/65/sticky'</span><span class="token punctuation">,</span>
+	<span class="token string">'core/NewsFeed/httpsfeedqgisorg/65/title'</span><span class="token punctuation">,</span>
+	<span class="token string">'core/NewsFeed/httpsfeedqgisorg/72/content'</span><span class="token punctuation">,</span>
+	<span class="token string">'core/NewsFeed/httpsfeedqgisorg/72/expiry'</span><span class="token punctuation">,</span>
+	<span class="token string">'core/NewsFeed/httpsfeedqgisorg/72/imageUrl'</span><span class="token punctuation">,</span>
+	<span class="token string">'core/NewsFeed/httpsfeedqgisorg/72/link'</span><span class="token punctuation">,</span>
+	<span class="token string">'core/NewsFeed/httpsfeedqgisorg/72/sticky'</span><span class="token punctuation">,</span>
+	<span class="token string">'core/NewsFeed/httpsfeedqgisorg/72/title'</span><span class="token punctuation">,</span>
+	<span class="token string">'core/NewsFeed/httpsfeedqgisorg/74/content'</span><span class="token punctuation">,</span>
+	<span class="token string">'core/NewsFeed/httpsfeedqgisorg/74/expiry'</span><span class="token punctuation">,</span>
+	<span class="token string">'core/NewsFeed/httpsfeedqgisorg/74/imageUrl'</span><span class="token punctuation">,</span>
+	<span class="token string">'core/NewsFeed/httpsfeedqgisorg/74/link'</span><span class="token punctuation">,</span>
+	<span class="token string">'core/NewsFeed/httpsfeedqgisorg/74/sticky'</span><span class="token punctuation">,</span>
+	<span class="token string">'core/NewsFeed/httpsfeedqgisorg/74/title'</span><span class="token punctuation">,</span>
+	<span class="token string">'core/NewsFeed/httpsfeedqgisorg/disabled'</span><span class="token punctuation">,</span>
+	<span class="token string">'core/NewsFeed/httpsfeedqgisorg/lastFetchTime'</span><span class="token punctuation">,</span>
+	<span class="token string">'core/OpenClDefaultDevice'</span><span class="token punctuation">,</span>
+	<span class="token string">'core/OpenClEnabled'</span><span class="token punctuation">,</span>
+	<span class="token string">'core/layer-tree/show_feature_count_for_new_layers'</span><span class="token punctuation">,</span>
+
+	<span class="token string">'defaults/bearing_format/decimal_separator'</span><span class="token punctuation">,</span>
+	<span class="token string">'defaults/bearing_format/decimals'</span><span class="token punctuation">,</span>
+	<span class="token string">'defaults/bearing_format/direction_format'</span><span class="token punctuation">,</span>
+	<span class="token string">'defaults/bearing_format/rounding_type'</span><span class="token punctuation">,</span>
+	<span class="token string">'defaults/bearing_format/show_plus'</span><span class="token punctuation">,</span>
+	<span class="token string">'defaults/bearing_format/show_thousand_separator'</span><span class="token punctuation">,</span>
+	<span class="token string">'defaults/bearing_format/show_trailing_zeros'</span><span class="token punctuation">,</span>
+	<span class="token string">'defaults/bearing_format/thousand_separator'</span><span class="token punctuation">,</span>
+	<span class="token string">'defaults/coordinate_format/angle_format'</span><span class="token punctuation">,</span>
+	<span class="token string">'defaults/coordinate_format/decimal_separator'</span><span class="token punctuation">,</span>
+	<span class="token string">'defaults/coordinate_format/decimals'</span><span class="token punctuation">,</span>
+	<span class="token string">'defaults/coordinate_format/rounding_type'</span><span class="token punctuation">,</span>
+	<span class="token string">'defaults/coordinate_format/show_leading_degree_zeros'</span><span class="token punctuation">,</span>
+	<span class="token string">'defaults/coordinate_format/show_leading_zeros'</span><span class="token punctuation">,</span>
+	<span class="token string">'defaults/coordinate_format/show_plus'</span><span class="token punctuation">,</span>
+	<span class="token string">'defaults/coordinate_format/show_suffix'</span><span class="token punctuation">,</span>
+	<span class="token string">'defaults/coordinate_format/show_thousand_separator'</span><span class="token punctuation">,</span>
+	<span class="token string">'defaults/coordinate_format/show_trailing_zeros'</span><span class="token punctuation">,</span>
+	<span class="token string">'defaults/coordinate_format/thousand_separator'</span><span class="token punctuation">,</span>
+
+	<span class="token string">'expressions/recent/fieldcalc'</span><span class="token punctuation">,</span>
+	<span class="token string">'expressions/recent/generic'</span><span class="token punctuation">,</span>
+	<span class="token string">'expressions/recent/selection'</span><span class="token punctuation">,</span>
+
+	<span class="token string">'fonts/downloadMissingFonts'</span><span class="token punctuation">,</span>
+	<span class="token string">'fonts/fontFamilyReplacements'</span><span class="token punctuation">,</span>
+
+	<span class="token string">'gps/acquisitionInterval'</span><span class="token punctuation">,</span>
+	<span class="token string">'gps/applyLeapSeconds'</span><span class="token punctuation">,</span>
+	<span class="token string">'gps/autoAddVertices'</span><span class="token punctuation">,</span>
+	<span class="token string">'gps/autoCommit'</span><span class="token punctuation">,</span>
+	<span class="token string">'gps/babelDeviceList'</span><span class="token punctuation">,</span>
+	<span class="token string">'gps/babelDevices/Garmin serial/rtedownload'</span><span class="token punctuation">,</span>
+	<span class="token string">'gps/babelDevices/Garmin serial/rteupload'</span><span class="token punctuation">,</span>
+	<span class="token string">'gps/babelDevices/Garmin serial/trkdownload'</span><span class="token punctuation">,</span>
+	<span class="token string">'gps/babelDevices/Garmin serial/trkupload'</span><span class="token punctuation">,</span>
+	<span class="token string">'gps/babelDevices/Garmin serial/wptdownload'</span><span class="token punctuation">,</span>
+	<span class="token string">'gps/babelDevices/Garmin serial/wptupload'</span><span class="token punctuation">,</span>
+	<span class="token string">'gps/bearingLineSymbol'</span><span class="token punctuation">,</span>
+	<span class="token string">'gps/calculateBearingFromTravel'</span><span class="token punctuation">,</span>
+	<span class="token string">'gps/distanceThreshold'</span><span class="token punctuation">,</span>
+	<span class="token string">'gps/gpsdDevice'</span><span class="token punctuation">,</span>
+	<span class="token string">'gps/gpsdHost'</span><span class="token punctuation">,</span>
+	<span class="token string">'gps/gpsdPort'</span><span class="token punctuation">,</span>
+	<span class="token string">'gps/lastPort'</span><span class="token punctuation">,</span>
+	<span class="token string">'gps/location-marker-symbol'</span><span class="token punctuation">,</span>
+	<span class="token string">'gps/mapExtentMultiplier'</span><span class="token punctuation">,</span>
+	<span class="token string">'gps/markerSize'</span><span class="token punctuation">,</span>
+	<span class="token string">'gps/panMode'</span><span class="token punctuation">,</span>
+	<span class="token string">'gps/portMode'</span><span class="token punctuation">,</span>
+	<span class="token string">'gps/rotate-location-marker'</span><span class="token punctuation">,</span>
+	<span class="token string">'gps/rotateMap'</span><span class="token punctuation">,</span>
+	<span class="token string">'gps/rotateMapInterval'</span><span class="token punctuation">,</span>
+	<span class="token string">'gps/showBearingLine'</span><span class="token punctuation">,</span>
+	<span class="token string">'gps/showMarker'</span><span class="token punctuation">,</span>
+	<span class="token string">'gps/timestampFormat'</span><span class="token punctuation">,</span>
+	<span class="token string">'gps/timestampTimeZone'</span><span class="token punctuation">,</span>
+	<span class="token string">'gps/trackColor'</span><span class="token punctuation">,</span>
+	<span class="token string">'gps/trackWidth'</span><span class="token punctuation">,</span>
+
+	<span class="token string">'gui/LayoutDesigner/defaultSnapGridOffsetX'</span><span class="token punctuation">,</span>
+	<span class="token string">'gui/LayoutDesigner/defaultSnapGridOffsetY'</span><span class="token punctuation">,</span>
+	<span class="token string">'gui/LayoutDesigner/defaultSnapGridResolution'</span><span class="token punctuation">,</span>
+	<span class="token string">'gui/LayoutDesigner/defaultSnapTolerancePixels'</span><span class="token punctuation">,</span>
+	<span class="token string">'gui/LayoutDesigner/gridAlpha'</span><span class="token punctuation">,</span>
+	<span class="token string">'gui/LayoutDesigner/gridBlue'</span><span class="token punctuation">,</span>
+	<span class="token string">'gui/LayoutDesigner/gridGreen'</span><span class="token punctuation">,</span>
+	<span class="token string">'gui/LayoutDesigner/gridRed'</span><span class="token punctuation">,</span>
+	<span class="token string">'gui/LayoutDesigner/gridStyle'</span><span class="token punctuation">,</span>
+	<span class="token string">'gui/UI/symbolsList/lastIconView'</span><span class="token punctuation">,</span>
+	<span class="token string">'gui/UI/symbolsList/treeState'</span><span class="token punctuation">,</span>
+	<span class="token string">'gui/Windows/StyleV2Manager/lastIconView'</span><span class="token punctuation">,</span>
+	<span class="token string">'gui/Windows/StyleV2Manager/thumbnailSize'</span><span class="token punctuation">,</span>
+	<span class="token string">'gui/Windows/StyleV2Manager/treeState'</span><span class="token punctuation">,</span>
+	<span class="token string">'gui/codeEditor/caretLineColor'</span><span class="token punctuation">,</span>
+	<span class="token string">'gui/codeEditor/classFontColor'</span><span class="token punctuation">,</span>
+	<span class="token string">'gui/codeEditor/colorScheme'</span><span class="token punctuation">,</span>
+	<span class="token string">'gui/codeEditor/commentBlockFontColor'</span><span class="token punctuation">,</span>
+	<span class="token string">'gui/codeEditor/commentFontColor'</span><span class="token punctuation">,</span>
+	<span class="token string">'gui/codeEditor/commentLineFontColor'</span><span class="token punctuation">,</span>
+	<span class="token string">'gui/codeEditor/cursorColor'</span><span class="token punctuation">,</span>
+	<span class="token string">'gui/codeEditor/decoratorFontColor'</span><span class="token punctuation">,</span>
+	<span class="token string">'gui/codeEditor/defaultFontColor'</span><span class="token punctuation">,</span>
+	<span class="token string">'gui/codeEditor/doubleQuoteFontColor'</span><span class="token punctuation">,</span>
+	<span class="token string">'gui/codeEditor/edgeColor'</span><span class="token punctuation">,</span>
+	<span class="token string">'gui/codeEditor/foldColor'</span><span class="token punctuation">,</span>
+	<span class="token string">'gui/codeEditor/foldIconForeground'</span><span class="token punctuation">,</span>
+	<span class="token string">'gui/codeEditor/foldIconHalo'</span><span class="token punctuation">,</span>
+	<span class="token string">'gui/codeEditor/identifierFontColor'</span><span class="token punctuation">,</span>
+	<span class="token string">'gui/codeEditor/indentationGuide'</span><span class="token punctuation">,</span>
+	<span class="token string">'gui/codeEditor/keywordFontColor'</span><span class="token punctuation">,</span>
+	<span class="token string">'gui/codeEditor/marginBackgroundColor'</span><span class="token punctuation">,</span>
+	<span class="token string">'gui/codeEditor/marginForegroundColor'</span><span class="token punctuation">,</span>
+	<span class="token string">'gui/codeEditor/matchedBraceBackground'</span><span class="token punctuation">,</span>
+	<span class="token string">'gui/codeEditor/matchedBraceColor'</span><span class="token punctuation">,</span>
+	<span class="token string">'gui/codeEditor/methodFontColor'</span><span class="token punctuation">,</span>
+	<span class="token string">'gui/codeEditor/numberFontColor'</span><span class="token punctuation">,</span>
+	<span class="token string">'gui/codeEditor/operatorFontColor'</span><span class="token punctuation">,</span>
+	<span class="token string">'gui/codeEditor/overrideColors'</span><span class="token punctuation">,</span>
+	<span class="token string">'gui/codeEditor/paperBackgroundColor'</span><span class="token punctuation">,</span>
+	<span class="token string">'gui/codeEditor/quotedIdentifierFontColor'</span><span class="token punctuation">,</span>
+	<span class="token string">'gui/codeEditor/quotedOperatorFontColor'</span><span class="token punctuation">,</span>
+	<span class="token string">'gui/codeEditor/selectionBackgroundColor'</span><span class="token punctuation">,</span>
+	<span class="token string">'gui/codeEditor/selectionForegroundColor'</span><span class="token punctuation">,</span>
+	<span class="token string">'gui/codeEditor/singleQuoteFontColor'</span><span class="token punctuation">,</span>
+	<span class="token string">'gui/codeEditor/stderrBackgroundColor'</span><span class="token punctuation">,</span>
+	<span class="token string">'gui/codeEditor/stderrFontColor'</span><span class="token punctuation">,</span>
+	<span class="token string">'gui/codeEditor/tagFontColor'</span><span class="token punctuation">,</span>
+	<span class="token string">'gui/codeEditor/tripleDoubleQuoteFontColor'</span><span class="token punctuation">,</span>
+	<span class="token string">'gui/codeEditor/tripleSingleQuoteFontColor'</span><span class="token punctuation">,</span>
+	<span class="token string">'gui/codeEditor/unknownTagFontColor'</span><span class="token punctuation">,</span>
+	<span class="token string">'gui/processing/recentAlgorithms'</span><span class="token punctuation">,</span>
+	<span class="token string">'gui/qgis/respect_screen_dpi'</span><span class="token punctuation">,</span>
+
+	<span class="token string">'locale/globalLocale'</span><span class="token punctuation">,</span>
+	<span class="token string">'locale/overrideFlag'</span><span class="token punctuation">,</span>
+	<span class="token string">'locale/showGroupSeparator'</span><span class="token punctuation">,</span>
+	<span class="token string">'locale/userLocale'</span><span class="token punctuation">,</span>
+	
+	<span class="token string">'myStyles/Activated'</span><span class="token punctuation">,</span>
+	<span class="token string">'myStyles/BlueGlass/name'</span><span class="token punctuation">,</span>
+	<span class="token string">'myStyles/BlueGlass/path'</span><span class="token punctuation">,</span>
+	<span class="token string">'myStyles/Coffee/name'</span><span class="token punctuation">,</span>
+	<span class="token string">'myStyles/Coffee/path'</span><span class="token punctuation">,</span>
+	<span class="token string">'myStyles/Dark Blue (FreeCAD)/name'</span><span class="token punctuation">,</span>
+	<span class="token string">'myStyles/Dark Blue (FreeCAD)/path'</span><span class="token punctuation">,</span>
+	<span class="token string">'myStyles/Dark Green (FreeCAD)/name'</span><span class="token punctuation">,</span>
+	<span class="token string">'myStyles/Dark Green (FreeCAD)/path'</span><span class="token punctuation">,</span>
+	<span class="token string">'myStyles/Dark Orange (FreeCAD)/name'</span><span class="token punctuation">,</span>
+	<span class="token string">'myStyles/Dark Orange (FreeCAD)/path'</span><span class="token punctuation">,</span>
+	<span class="token string">'myStyles/Dark/name'</span><span class="token punctuation">,</span>
+	<span class="token string">'myStyles/Dark/path'</span><span class="token punctuation">,</span>
+	<span class="token string">'myStyles/DarkOrange/name'</span><span class="token punctuation">,</span>
+	<span class="token string">'myStyles/DarkOrange/path'</span><span class="token punctuation">,</span>
+	<span class="token string">'myStyles/Light Blue (FreeCAD)/name'</span><span class="token punctuation">,</span>
+	<span class="token string">'myStyles/Light Blue (FreeCAD)/path'</span><span class="token punctuation">,</span>
+	<span class="token string">'myStyles/Light Green (FreeCAD)/name'</span><span class="token punctuation">,</span>
+	<span class="token string">'myStyles/Light Green (FreeCAD)/path'</span><span class="token punctuation">,</span>
+	<span class="token string">'myStyles/Light Orange (FreeCAD)/name'</span><span class="token punctuation">,</span>
+	<span class="token string">'myStyles/Light Orange (FreeCAD)/path'</span><span class="token punctuation">,</span>
+	<span class="token string">'myStyles/Minimalist/name'</span><span class="token punctuation">,</span>
+	<span class="token string">'myStyles/Minimalist/path'</span><span class="token punctuation">,</span>
+	<span class="token string">'myStyles/Preview'</span><span class="token punctuation">,</span>
+	<span class="token string">'myStyles/Wombat/name'</span><span class="token punctuation">,</span>
+	<span class="token string">'myStyles/Wombat/path'</span><span class="token punctuation">,</span>
+	<span class="token string">'myStyles/light/name'</span><span class="token punctuation">,</span>
+	<span class="token string">'myStyles/light/path'</span><span class="token punctuation">,</span>
+	<span class="token string">'myStyles/machinery/name'</span><span class="token punctuation">,</span>
+	<span class="token string">'myStyles/machinery/path'</span><span class="token punctuation">,</span>
+
+	<span class="token string">'plugins/automatically-check-for-updates'</span><span class="token punctuation">,</span>
+	<span class="token string">'plugins/plugin_topology'</span><span class="token punctuation">,</span>
+	<span class="token string">'plugins/searchPathsForPlugins'</span><span class="token punctuation">,</span>
+	<span class="token string">'plugins/topolplugin'</span><span class="token punctuation">,</span>
+
+	<span class="token string">'providers/ogr/GPKGSourceSelect/HoldDialogOpen'</span><span class="token punctuation">,</span>
+
+	<span class="token string">'proxy/authcfg'</span><span class="token punctuation">,</span>
+	<span class="token string">'proxy/noProxyUrls'</span><span class="token punctuation">,</span>
+	<span class="token string">'proxy/proxyEnabled'</span><span class="token punctuation">,</span>
+	<span class="token string">'proxy/proxyHost'</span><span class="token punctuation">,</span>
+	<span class="token string">'proxy/proxyPassword'</span><span class="token punctuation">,</span>
+	<span class="token string">'proxy/proxyPort'</span><span class="token punctuation">,</span>
+	<span class="token string">'proxy/proxyType'</span><span class="token punctuation">,</span>
+	<span class="token string">'proxy/proxyUser'</span><span class="token punctuation">,</span>
+
+	<span class="token string">'pythonConsole/accessTokenGithub'</span><span class="token punctuation">,</span>
+	<span class="token string">'pythonConsole/autoCloseBracket'</span><span class="token punctuation">,</span>
+	<span class="token string">'pythonConsole/autoCompThreshold'</span><span class="token punctuation">,</span>
+	<span class="token string">'pythonConsole/autoCompleteEnabled'</span><span class="token punctuation">,</span>
+	<span class="token string">'pythonConsole/autoCompleteSource'</span><span class="token punctuation">,</span>
+	<span class="token string">'pythonConsole/autoInsertionImport'</span><span class="token punctuation">,</span>
+	<span class="token string">'pythonConsole/autoSaveScript'</span><span class="token punctuation">,</span>
+	<span class="token string">'pythonConsole/enableObjectInsp'</span><span class="token punctuation">,</span>
+	<span class="token string">'pythonConsole/lastDirPath'</span><span class="token punctuation">,</span>
+	<span class="token string">'pythonConsole/preloadAPI'</span><span class="token punctuation">,</span>
+	<span class="token string">'pythonConsole/preparedAPIFile'</span><span class="token punctuation">,</span>
+	<span class="token string">'pythonConsole/splitterConsole'</span><span class="token punctuation">,</span>
+	<span class="token string">'pythonConsole/splitterEditor'</span><span class="token punctuation">,</span>
+	<span class="token string">'pythonConsole/splitterObj'</span><span class="token punctuation">,</span>
+	<span class="token string">'pythonConsole/tabScripts'</span><span class="token punctuation">,</span>
+	<span class="token string">'pythonConsole/usePreparedAPIFile'</span><span class="token punctuation">,</span>
+	<span class="token string">'pythonConsole/userAPI'</span><span class="token punctuation">,</span>
+
+	<span class="token string">'qgis/askToDeleteLayers'</span><span class="token punctuation">,</span>
+	<span class="token string">'qgis/askToSaveProjectChanges'</span><span class="token punctuation">,</span>
+	<span class="token string">'qgis/attributeTable/splitterState'</span><span class="token punctuation">,</span>
+	<span class="token string">'qgis/attributeTableBehavior'</span><span class="token punctuation">,</span>
+	<span class="token string">'qgis/attributeTableLastAddFeatureMethod'</span><span class="token punctuation">,</span>
+	<span class="token string">'qgis/attributeTableRowCache'</span><span class="token punctuation">,</span>
+	<span class="token string">'qgis/attributeTableView'</span><span class="token punctuation">,</span>
+	<span class="token string">'qgis/connections-wcs/selected'</span><span class="token punctuation">,</span>
+	<span class="token string">'qgis/connections-xyz/selected'</span><span class="token punctuation">,</span>
+	<span class="token string">'qgis/copyFeatureFormat'</span><span class="token punctuation">,</span>
+	<span class="token string">'qgis/customEnvVars'</span><span class="token punctuation">,</span>
+	<span class="token string">'qgis/customEnvVarsUse'</span><span class="token punctuation">,</span>
+	<span class="token string">'qgis/dataSourceManagerNonModal'</span><span class="token punctuation">,</span>
+	<span class="token string">'qgis/defaultCapabilitiesExpiry'</span><span class="token punctuation">,</span>
+	<span class="token string">'qgis/defaultLegendGraphicResolution'</span><span class="token punctuation">,</span>
+	<span class="token string">'qgis/defaultProjectFileFormat'</span><span class="token punctuation">,</span>
+	<span class="token string">'qgis/defaultTileExpiry'</span><span class="token punctuation">,</span>
+	<span class="token string">'qgis/defaultTileMaxRetry'</span><span class="token punctuation">,</span>
+	<span class="token string">'qgis/default_canvas_color_blue'</span><span class="token punctuation">,</span>
+	<span class="token string">'qgis/default_canvas_color_green'</span><span class="token punctuation">,</span>
+	<span class="token string">'qgis/default_canvas_color_red'</span><span class="token punctuation">,</span>
+	<span class="token string">'qgis/default_measure_color_blue'</span><span class="token punctuation">,</span>
+	<span class="token string">'qgis/default_measure_color_green'</span><span class="token punctuation">,</span>
+	<span class="token string">'qgis/default_measure_color_red'</span><span class="token punctuation">,</span>
+	<span class="token string">'qgis/default_selection_color_alpha'</span><span class="token punctuation">,</span>
+	<span class="token string">'qgis/default_selection_color_blue'</span><span class="token punctuation">,</span>
+	<span class="token string">'qgis/default_selection_color_green'</span><span class="token punctuation">,</span>
+	<span class="token string">'qgis/default_selection_color_red'</span><span class="token punctuation">,</span>
+	<span class="token string">'qgis/digitizing/convert_to_curve'</span><span class="token punctuation">,</span>
+	<span class="token string">'qgis/digitizing/convert_to_curve_angle_tolerance'</span><span class="token punctuation">,</span>
+	<span class="token string">'qgis/digitizing/convert_to_curve_distance_tolerance'</span><span class="token punctuation">,</span>
+	<span class="token string">'qgis/digitizing/default_m_value'</span><span class="token punctuation">,</span>
+	<span class="token string">'qgis/digitizing/default_snap_type'</span><span class="token punctuation">,</span>
+	<span class="token string">'qgis/digitizing/default_snapping_tolerance'</span><span class="token punctuation">,</span>
+	<span class="token string">'qgis/digitizing/default_z_value'</span><span class="token punctuation">,</span>
+	<span class="token string">'qgis/digitizing/disable_enter_attribute_values_dialog'</span><span class="token punctuation">,</span>
+	<span class="token string">'qgis/digitizing/fill_color_alpha'</span><span class="token punctuation">,</span>
+	<span class="token string">'qgis/digitizing/fill_color_blue'</span><span class="token punctuation">,</span>
+	<span class="token string">'qgis/digitizing/fill_color_green'</span><span class="token punctuation">,</span>
+	<span class="token string">'qgis/digitizing/fill_color_red'</span><span class="token punctuation">,</span>
+	<span class="token string">'qgis/digitizing/line_color_alpha'</span><span class="token punctuation">,</span>
+	<span class="token string">'qgis/digitizing/line_color_blue'</span><span class="token punctuation">,</span>
+	<span class="token string">'qgis/digitizing/line_color_green'</span><span class="token punctuation">,</span>
+	<span class="token string">'qgis/digitizing/line_color_red'</span><span class="token punctuation">,</span>
+	<span class="token string">'qgis/digitizing/line_ghost'</span><span class="token punctuation">,</span>
+	<span class="token string">'qgis/digitizing/line_width'</span><span class="token punctuation">,</span>
+	<span class="token string">'qgis/digitizing/marker_only_for_selected'</span><span class="token punctuation">,</span>
+	<span class="token string">'qgis/digitizing/marker_size_mm'</span><span class="token punctuation">,</span>
+	<span class="token string">'qgis/digitizing/marker_style'</span><span class="token punctuation">,</span>
+	<span class="token string">'qgis/digitizing/offset_join_style'</span><span class="token punctuation">,</span>
+	<span class="token string">'qgis/digitizing/offset_miter_limit'</span><span class="token punctuation">,</span>
+	<span class="token string">'qgis/digitizing/offset_quad_seg'</span><span class="token punctuation">,</span>
+	<span class="token string">'qgis/digitizing/reuseLastValues'</span><span class="token punctuation">,</span>
+	<span class="token string">'qgis/digitizing/search_radius_vertex_edit'</span><span class="token punctuation">,</span>
+	<span class="token string">'qgis/digitizing/search_radius_vertex_edit_unit'</span><span class="token punctuation">,</span>
+	<span class="token string">'qgis/digitizing/shape-map-tools/Circle/default'</span><span class="token punctuation">,</span>
+	<span class="token string">'qgis/digitizing/shape-map-tools/Curve/default'</span><span class="token punctuation">,</span>
+	<span class="token string">'qgis/digitizing/shape-map-tools/Ellipse/default'</span><span class="token punctuation">,</span>
+	<span class="token string">'qgis/digitizing/shape-map-tools/Rectangle/default'</span><span class="token punctuation">,</span>
+	<span class="token string">'qgis/digitizing/shape-map-tools/RegularPolygon/default'</span><span class="token punctuation">,</span>
+	<span class="token string">'qgis/digitizing/snap_color'</span><span class="token punctuation">,</span>
+	<span class="token string">'qgis/digitizing/snap_tooltip'</span><span class="token punctuation">,</span>
+	<span class="token string">'qgis/digitizing/validate_geometries'</span><span class="token punctuation">,</span>
+	<span class="token string">'qgis/dockAttributeTable'</span><span class="token punctuation">,</span>
+	<span class="token string">'qgis/enableMacros'</span><span class="token punctuation">,</span>
+	<span class="token string">'qgis/enable_anti_aliasing'</span><span class="token punctuation">,</span>
+	<span class="token string">'qgis/enable_render_caching'</span><span class="token punctuation">,</span>
+	<span class="token string">'qgis/hideSplash'</span><span class="token punctuation">,</span>
+	<span class="token string">'qgis/iconSize'</span><span class="token punctuation">,</span>
+	<span class="token string">'qgis/lastDxfCrs'</span><span class="token punctuation">,</span>
+	<span class="token string">'qgis/lastDxfDir'</span><span class="token punctuation">,</span>
+	<span class="token string">'qgis/lastDxfEncoding'</span><span class="token punctuation">,</span>
+	<span class="token string">'qgis/lastDxfLayerTitleAsName'</span><span class="token punctuation">,</span>
+	<span class="token string">'qgis/lastDxfMapRectangle'</span><span class="token punctuation">,</span>
+	<span class="token string">'qgis/lastDxfSymbologyMode'</span><span class="token punctuation">,</span>
+	<span class="token string">'qgis/lastDxfUseMText'</span><span class="token punctuation">,</span>
+	<span class="token string">'qgis/lastSymbologyExportScale'</span><span class="token punctuation">,</span>
+	<span class="token string">'qgis/legendDoubleClickAction'</span><span class="token punctuation">,</span>
+	<span class="token string">'qgis/legendsymbolMaximumSize'</span><span class="token punctuation">,</span>
+	<span class="token string">'qgis/legendsymbolMinimumSize'</span><span class="token punctuation">,</span>
+	<span class="token string">'qgis/localized_data_paths'</span><span class="token punctuation">,</span>
+	<span class="token string">'qgis/magnifier_factor_default'</span><span class="token punctuation">,</span>
+	<span class="token string">'qgis/mainSnappingWidgetMode'</span><span class="token punctuation">,</span>
+	<span class="token string">'qgis/main_canvas_preview_jobs'</span><span class="token punctuation">,</span>
+	<span class="token string">'qgis/mapTipsDelay'</span><span class="token punctuation">,</span>
+	<span class="token string">'qgis/map_update_interval'</span><span class="token punctuation">,</span>
+	<span class="token string">'qgis/max_threads'</span><span class="token punctuation">,</span>
+	<span class="token string">'qgis/measure/angleunits'</span><span class="token punctuation">,</span>
+	<span class="token string">'qgis/measure/areaunits'</span><span class="token punctuation">,</span>
+	<span class="token string">'qgis/measure/decimalplaces'</span><span class="token punctuation">,</span>
+	<span class="token string">'qgis/measure/displayunits'</span><span class="token punctuation">,</span>
+	<span class="token string">'qgis/measure/keepbaseunit'</span><span class="token punctuation">,</span>
+	<span class="token string">'qgis/messageTimeout'</span><span class="token punctuation">,</span>
+	<span class="token string">'qgis/native_color_dialogs'</span><span class="token punctuation">,</span>
+	<span class="token string">'qgis/networkAndProxy/networkTimeout'</span><span class="token punctuation">,</span>
+	<span class="token string">'qgis/networkAndProxy/userAgent'</span><span class="token punctuation">,</span>
+	<span class="token string">'qgis/newProjectDefault'</span><span class="token punctuation">,</span>
+	<span class="token string">'qgis/new_layers_visible'</span><span class="token punctuation">,</span>
+	<span class="token string">'qgis/openSublayersInGroup'</span><span class="token punctuation">,</span>
+	<span class="token string">'qgis/overwriteStyle'</span><span class="token punctuation">,</span>
+	<span class="token string">'qgis/parallel_rendering'</span><span class="token punctuation">,</span>
+	<span class="token string">'qgis/projOpenAtLaunch'</span><span class="token punctuation">,</span>
+	<span class="token string">'qgis/projOpenAtLaunchPath'</span><span class="token punctuation">,</span>
+	<span class="token string">'qgis/projOpenedOKAtLaunch'</span><span class="token punctuation">,</span>
+	<span class="token string">'qgis/projectTemplateDir'</span><span class="token punctuation">,</span>
+	<span class="token string">'qgis/promptForSublayers'</span><span class="token punctuation">,</span>
+	<span class="token string">'qgis/scanItemsInBrowser2'</span><span class="token punctuation">,</span>
+	<span class="token string">'qgis/scanZipInBrowser2'</span><span class="token punctuation">,</span>
+	<span class="token string">'qgis/segmentationTolerance'</span><span class="token punctuation">,</span>
+	<span class="token string">'qgis/segmentationToleranceType'</span><span class="token punctuation">,</span>
+	<span class="token string">'qgis/showLegendClassifiers'</span><span class="token punctuation">,</span>
+	<span class="token string">'qgis/simplifyAlgorithm'</span><span class="token punctuation">,</span>
+	<span class="token string">'qgis/simplifyDrawingHints'</span><span class="token punctuation">,</span>
+	<span class="token string">'qgis/simplifyDrawingTol'</span><span class="token punctuation">,</span>
+	<span class="token string">'qgis/simplifyLocal'</span><span class="token punctuation">,</span>
+	<span class="token string">'qgis/simplifyMaxScale'</span><span class="token punctuation">,</span>
+	<span class="token string">'qgis/style'</span><span class="token punctuation">,</span>
+	<span class="token string">'qgis/symbolsListGroupsIndex'</span><span class="token punctuation">,</span>
+	<span class="token string">'qgis/warnOldProjectVersion'</span><span class="token punctuation">,</span>
+	<span class="token string">'qgis/zoom_factor'</span><span class="token punctuation">,</span>
+
+	<span class="token string">'qgsbrowserwidgetbase/expandedPaths'</span><span class="token punctuation">,</span>
+	<span class="token string">'qgsbrowserwidgetbase/propertiesWidgetEnabled'</span><span class="token punctuation">,</span>
+	<span class="token string">'qgsbrowserwidgetbase/propertiesWidgetHeight'</span><span class="token punctuation">,</span>
+
+	<span class="token string">'shortcuts/Add Delimited Text Layer…'</span><span class="token punctuation">,</span>
+	<span class="token string">'shortcuts/Add Oracle Spatial Layer…'</span><span class="token punctuation">,</span>
+	<span class="token string">'shortcuts/Add Point Feature'</span><span class="token punctuation">,</span>
+	<span class="token string">'shortcuts/Add PostGIS Layers…'</span><span class="token punctuation">,</span>
+	<span class="token string">'shortcuts/Add Raster Layer…'</span><span class="token punctuation">,</span>
+	<span class="token string">'shortcuts/Add SpatiaLite Layer…'</span><span class="token punctuation">,</span>
+	<span class="token string">'shortcuts/Add Vector Layer…'</span><span class="token punctuation">,</span>
+	<span class="token string">'shortcuts/Add WMS/WMTS Layer…'</span><span class="token punctuation">,</span>
+	<span class="token string">'shortcuts/Deselect Features from All Layers'</span><span class="token punctuation">,</span>
+	<span class="token string">'shortcuts/Deselect Features from the Current Active Layer'</span><span class="token punctuation">,</span>
+	<span class="token string">'shortcuts/Digitize with Curve'</span><span class="token punctuation">,</span>
+	<span class="token string">'shortcuts/Enable Tracing'</span><span class="token punctuation">,</span>
+	<span class="token string">'shortcuts/Exit QGIS'</span><span class="token punctuation">,</span>
+	<span class="token string">'shortcuts/Filter…'</span><span class="token punctuation">,</span>
+	<span class="token string">'shortcuts/Help Contents'</span><span class="token punctuation">,</span>
+	<span class="token string">'shortcuts/Hide All Layers'</span><span class="token punctuation">,</span>
+	<span class="token string">'shortcuts/Identify Features'</span><span class="token punctuation">,</span>
+	<span class="token string">'shortcuts/Layer Styling'</span><span class="token punctuation">,</span>
+	<span class="token string">'shortcuts/Measure Area'</span><span class="token punctuation">,</span>
+	<span class="token string">'shortcuts/Measure Line'</span><span class="token punctuation">,</span>
+	<span class="token string">'shortcuts/Modify Attributes of Selected Features'</span><span class="token punctuation">,</span>
+	<span class="token string">'shortcuts/Move Label, Diagram or Callout'</span><span class="token punctuation">,</span>
+	<span class="token string">'shortcuts/New GeoPackage Layer…'</span><span class="token punctuation">,</span>
+	<span class="token string">'shortcuts/New Spatial Bookmark…'</span><span class="token punctuation">,</span>
+	<span class="token string">'shortcuts/Open Attribute Table (Selected Features)'</span><span class="token punctuation">,</span>
+	<span class="token string">'shortcuts/Open Attribute Table (Visible Features)'</span><span class="token punctuation">,</span>
+	<span class="token string">'shortcuts/Python Console'</span><span class="token punctuation">,</span>
+	<span class="token string">'shortcuts/QGIS Home Page'</span><span class="token punctuation">,</span>
+	<span class="token string">'shortcuts/Refresh'</span><span class="token punctuation">,</span>
+	<span class="token string">'shortcuts/Remove Layer/Group'</span><span class="token punctuation">,</span>
+	<span class="token string">'shortcuts/Rotate Label'</span><span class="token punctuation">,</span>
+	<span class="token string">'shortcuts/Rotate Point Symbols'</span><span class="token punctuation">,</span>
+	<span class="token string">'shortcuts/Save for All Layers'</span><span class="token punctuation">,</span>
+	<span class="token string">'shortcuts/Select Feature(s)'</span><span class="token punctuation">,</span>
+	<span class="token string">'shortcuts/Select Features by Expression…'</span><span class="token punctuation">,</span>
+	<span class="token string">'shortcuts/Select Features by Value…'</span><span class="token punctuation">,</span>
+	<span class="token string">'shortcuts/Set CRS of Layer(s)'</span><span class="token punctuation">,</span>
+	<span class="token string">'shortcuts/Show All Layers'</span><span class="token punctuation">,</span>
+	<span class="token string">'shortcuts/Show Spatial Bookmarks'</span><span class="token punctuation">,</span>
+	<span class="token string">'shortcuts/Split Features'</span><span class="token punctuation">,</span>
+	<span class="token string">'shortcuts/Stream Digitizing'</span><span class="token punctuation">,</span>
+	<span class="token string">'shortcuts/Temporary Scratch Layer…'</span><span class="token punctuation">,</span>
+	<span class="token string">'shortcuts/Text Annotation'</span><span class="token punctuation">,</span>
+	<span class="token string">'shortcuts/Toggle Editing'</span><span class="token punctuation">,</span>
+	<span class="token string">'shortcuts/Toggle Map Only'</span><span class="token punctuation">,</span>
+	<span class="token string">'shortcuts/Topological Editing'</span><span class="token punctuation">,</span>
+	<span class="token string">'shortcuts/Vertex Tool (All Layers)'</span><span class="token punctuation">,</span>
+	<span class="token string">'shortcuts/Zoom In'</span><span class="token punctuation">,</span>
+	<span class="token string">'shortcuts/Zoom Out'</span><span class="token punctuation">,</span>
+	<span class="token string">'shortcuts/mActionCatchForCustomization'</span><span class="token punctuation">,</span>
+
+	<span class="token string">'style/lastLoadStyleTypeSelection'</span><span class="token punctuation">,</span>
+	<span class="token string">'style/lastStyleCategories'</span><span class="token punctuation">,</span>
+
+	<span class="token string">'svg/searchPathsForSVG'</span>
+<span class="token punctuation">]</span>
+</code><button class="copy-code-button"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon lucide-copy"><rect x="8" y="8" width="14" height="14" rx="2" ry="2"></rect><path d="M4 16c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2"></path></svg></button><button class="run-code-button">Run</button></pre></div><div class="mod-footer mod-ui"></div></div></div></div><div class="sidebar-right sidebar"><div class="sidebar-handle"></div><div class="sidebar-topbar"><div class="topbar-content"></div><div class="clickable-icon sidebar-collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" class="svg-icon"><path d="M21 3H3C1.89543 3 1 3.89543 1 5V19C1 20.1046 1.89543 21 3 21H21C22.1046 21 23 20.1046 23 19V5C23 3.89543 22.1046 3 21 3Z"></path><path d="M10 4V20"></path><path d="M4 7H7"></path><path d="M4 10H7"></path><path d="M4 13H7"></path></svg></div></div><div class="sidebar-content"><div class="graph-view-wrapper"><div class="sidebar-section-header">Interactive Graph</div><div class="graph-view-placeholder">
+		<div class="graph-view-container">
+			<div class="graph-icon graph-expand" role="button" aria-label="Expand" data-tooltip-position="top"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon"><line x1="7" y1="17" x2="17" y2="7"></line><polyline points="7 7 17 7 17 17"></polyline></svg></div>
+			<canvas id="graph-canvas" class="hide" width="512px" height="512px"></canvas>
+		</div>
+		</div></div><div class="tree-container mod-root nav-folder tree-item outline-tree" data-depth="0"><div class="tree-header"><span class="sidebar-section-header">Table Of Contents</span><button class="clickable-icon collapse-tree-button" aria-label="Collapse All"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></svg></button></div><div class="tree-scroll-area tree-item-children nav-folder-children"><div class="tree-item mod-tree-folder nav-folder mod-collapsible is-collapsed" style="display: none;"></div><div class="tree-item" data-depth="1"><a class="tree-link" href="gab\estudos-trabalhos\programação\programming-studies\programs\qgis\qgssettings.html#QGIS - Settings"><div class="tree-item-contents heading-link" heading-name="QGIS - Settings"><span class="tree-item-title">QGIS - Settings</span></div></a><div class="tree-item-children nav-folder-children"></div></div></div></div></div><script defer="">let rs = document.querySelector(".sidebar-right"); rs.classList.add("is-collapsed"); if (window.innerWidth > 768) rs.classList.remove("is-collapsed"); rs.style.setProperty("--sidebar-width", localStorage.getItem("sidebar-right-width"));</script></div></div></body></html>

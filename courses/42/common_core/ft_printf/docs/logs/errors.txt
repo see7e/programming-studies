@@ -1,0 +1,205 @@
+For /home/codespace/francinette/tests/printf/printfTester/tests/c_test.cpp:
+25: 	TEST(1, print("%c", '0'));
+26: 	TEST(2, print(" %c ", '0'));
+27: 	TEST(3, print(" %c", '0' - 256));
+28: 	TEST(4, print("%c ", '0' + 256));
+29: 	TEST(5, print(" %c %c %c ", '0', 0, '1'));
+30: 	TEST(6, print(" %c %c %c ", ' ', ' ', ' '));
+31: 	TEST(7, print(" %c %c %c ", '1', '2', '3'));
+32: 	TEST(8, print(" %c %c %c ", '2', '1', 0));
+33: 	TEST(9, print(" %c %c %c ", 0, '1', '2'));
+
+For /home/codespace/francinette/tests/printf/printfTester/tests/s_test.cpp:
+27: 	TEST(1, print("%s", ""));
+28: 	TEST(2, print(" %s", ""));
+29: 	TEST(3, print("%s ", ""));
+30: 	TEST(4, print(" %s ", ""));
+31: 	TEST(5, print(" %s ", "-"));
+32: 	TEST(6, print(" %s %s ", "", "-"));
+33: 	TEST(7, print(" %s %s ", " - ", ""));
+34: 	TEST(8, print(" %s %s %s %s %s", " - ", "", "4", "", s2));
+35: 	TEST(9, print(" %s %s %s %s %s ", " - ", "", "4", "", "2 "));
+36: 	TEST(10, print(" NULL %s NULL ", NULL));
+
+For /home/codespace/francinette/tests/printf/printfTester/tests/p_test.cpp:
+25: 	TEST(1, print(" %p ", -1));
+26: 	TEST(2, print(" %p ", 1));
+27: 	TEST(3, print(" %p ", 15));
+28: 	TEST(4, print(" %p ", 16));
+29: 	TEST(5, print(" %p ", 17));
+30: 	TEST(6, print(" %p %p ", LONG_MIN, LONG_MAX));
+31: 	TEST(7, print(" %p %p ", INT_MIN, INT_MAX));
+32: 	TEST(8, print(" %p %p ", ULONG_MAX, -ULONG_MAX));
+33: 	TEST(9, print(" %p %p ", 0, 0));
+
+For /home/codespace/francinette/tests/printf/printfTester/tests/d_test.cpp:
+25: 	TEST(1, print(" %d ", 0));
+26: 	TEST(2, print(" %d ", -1));
+27: 	TEST(3, print(" %d ", 1));
+28: 	TEST(4, print(" %d ", 9));
+29: 	TEST(5, print(" %d ", 10));
+30: 	TEST(6, print(" %d ", 11));
+31: 	TEST(7, print(" %d ", 15));
+32: 	TEST(8, print(" %d ", 16));
+33: 	TEST(9, print(" %d ", 17));
+34: 	TEST(10, print(" %d ", 99));
+35: 	TEST(11, print(" %d ", 100));
+36: 	TEST(12, print(" %d ", 101));
+37: 	TEST(13, print(" %d ", -9));
+38: 	TEST(14, print(" %d ", -10));
+39: 	TEST(15, print(" %d ", -11));
+40: 	TEST(16, print(" %d ", -14));
+41: 	TEST(17, print(" %d ", -15));
+42: 	TEST(18, print(" %d ", -16));
+43: 	TEST(19, print(" %d ", -99));
+44: 	TEST(20, print(" %d ", -100));
+45: 	TEST(21, print(" %d ", -101));
+46: 	TEST(22, print(" %d ", INT_MAX));
+47: 	TEST(23, print(" %d ", INT_MIN));
+48: 	TEST(24, print(" %d ", LONG_MAX));
+49: 	TEST(25, print(" %d ", LONG_MIN));
+50: 	TEST(26, print(" %d ", UINT_MAX));
+51: 	TEST(27, print(" %d ", ULONG_MAX));
+52: 	TEST(28, print(" %d ", 9223372036854775807LL));
+53: 	TEST(29, print(" %d %d %d %d %d %d %d", INT_MAX, INT_MIN, LONG_MAX, LONG_MIN, ULONG_MAX, 0, -42));
+
+For /home/codespace/francinette/tests/printf/printfTester/tests/i_test.cpp:
+25: 	TEST(1, print(" %i ", 0));
+26: 	TEST(2, print(" %i ", -1));
+27: 	TEST(3, print(" %i ", 1));
+28: 	TEST(4, print(" %i ", 9));
+29: 	TEST(5, print(" %i ", 10));
+30: 	TEST(6, print(" %i ", 11));
+31: 	TEST(7, print(" %i ", 15));
+32: 	TEST(8, print(" %i ", 16));
+33: 	TEST(9, print(" %i ", 17));
+34: 	TEST(10, print(" %i ", 99));
+35: 	TEST(11, print(" %i ", 100));
+36: 	TEST(12, print(" %i ", 101));
+37: 	TEST(13, print(" %i ", -9));
+38: 	TEST(14, print(" %i ", -10));
+39: 	TEST(15, print(" %i ", -11));
+40: 	TEST(16, print(" %i ", -14));
+41: 	TEST(17, print(" %i ", -15));
+42: 	TEST(18, print(" %i ", -16));
+43: 	TEST(19, print(" %i ", -99));
+44: 	TEST(20, print(" %i ", -100));
+45: 	TEST(21, print(" %i ", -101));
+46: 	TEST(22, print(" %i ", INT_MAX));
+47: 	TEST(23, print(" %i ", INT_MIN));
+48: 	TEST(24, print(" %i ", LONG_MAX));
+49: 	TEST(25, print(" %i ", LONG_MIN));
+50: 	TEST(26, print(" %i ", UINT_MAX));
+51: 	TEST(27, print(" %i ", ULONG_MAX));
+52: 	TEST(28, print(" %i ", 9223372036854775807LL));
+53: 	TEST(29, print(" %i %i %i %i %i %i %i", INT_MAX, INT_MIN, LONG_MAX, LONG_MIN, ULONG_MAX, 0, -42));
+
+For /home/codespace/francinette/tests/printf/printfTester/tests/u_test.cpp:
+25: 	TEST(1, print(" %u ", 0));
+26: 	TEST(2, print(" %u ", -1));
+27: 	TEST(3, print(" %u ", 1));
+28: 	TEST(4, print(" %u ", 9));
+29: 	TEST(5, print(" %u ", 10));
+30: 	TEST(6, print(" %u ", 11));
+31: 	TEST(7, print(" %u ", 15));
+32: 	TEST(8, print(" %u ", 16));
+33: 	TEST(9, print(" %u ", 17));
+34: 	TEST(10, print(" %u ", 99));
+35: 	TEST(11, print(" %u ", 100));
+36: 	TEST(12, print(" %u ", 101));
+37: 	TEST(13, print(" %u ", -9));
+38: 	TEST(14, print(" %u ", -10));
+39: 	TEST(15, print(" %u ", -11));
+40: 	TEST(16, print(" %u ", -14));
+41: 	TEST(17, print(" %u ", -15));
+42: 	TEST(18, print(" %u ", -16));
+43: 	TEST(19, print(" %u ", -99));
+44: 	TEST(20, print(" %u ", -100));
+45: 	TEST(21, print(" %u ", -101));
+46: 	TEST(22, print(" %u ", INT_MAX));
+47: 	TEST(23, print(" %u ", INT_MIN));
+48: 	TEST(24, print(" %u ", LONG_MAX));
+49: 	TEST(25, print(" %u ", LONG_MIN));
+50: 	TEST(26, print(" %u ", UINT_MAX));
+51: 	TEST(27, print(" %u ", ULONG_MAX));
+52: 	TEST(28, print(" %u ", 9223372036854775807LL));
+53: 	TEST(29, print(" %u %u %u %u %u %u %u", INT_MAX, INT_MIN, LONG_MAX, LONG_MIN, ULONG_MAX, 0, -42));
+
+For /home/codespace/francinette/tests/printf/printfTester/tests/x_test.cpp:
+25: 	TEST(1, print(" %x ", 0));
+26: 	TEST(2, print(" %x ", -1));
+27: 	TEST(3, print(" %x ", 1));
+28: 	TEST(4, print(" %x ", 9));
+29: 	TEST(5, print(" %x ", 10));
+30: 	TEST(6, print(" %x ", 11));
+31: 	TEST(7, print(" %x ", 15));
+32: 	TEST(8, print(" %x ", 16));
+33: 	TEST(9, print(" %x ", 17));
+34: 	TEST(10, print(" %x ", 99));
+35: 	TEST(11, print(" %x ", 100));
+36: 	TEST(12, print(" %x ", 101));
+37: 	TEST(13, print(" %x ", -9));
+38: 	TEST(14, print(" %x ", -10));
+39: 	TEST(15, print(" %x ", -11));
+40: 	TEST(16, print(" %x ", -14));
+41: 	TEST(17, print(" %x ", -15));
+42: 	TEST(18, print(" %x ", -16));
+43: 	TEST(19, print(" %x ", -99));
+44: 	TEST(20, print(" %x ", -100));
+45: 	TEST(21, print(" %x ", -101));
+46: 	TEST(22, print(" %x ", INT_MAX));
+47: 	TEST(23, print(" %x ", INT_MIN));
+48: 	TEST(24, print(" %x ", LONG_MAX));
+49: 	TEST(25, print(" %x ", LONG_MIN));
+50: 	TEST(26, print(" %x ", UINT_MAX));
+51: 	TEST(27, print(" %x ", ULONG_MAX));
+52: 	TEST(28, print(" %x ", 9223372036854775807LL));
+53: 	TEST(29, print(" %x %x %x %x %x %x %x", INT_MAX, INT_MIN, LONG_MAX, LONG_MIN, ULONG_MAX, 0, -42));
+54: 	TEST(30, print(" %x ", 42));
+55: 	TEST(31, print(" %x ", -42));
+
+For /home/codespace/francinette/tests/printf/printfTester/tests/upperx_test.cpp:
+25: 	TEST(1, print(" %X ", 0));
+26: 	TEST(2, print(" %X ", -1));
+27: 	TEST(3, print(" %X ", 1));
+28: 	TEST(4, print(" %X ", 9));
+29: 	TEST(5, print(" %X ", 10));
+30: 	TEST(6, print(" %X ", 11));
+31: 	TEST(7, print(" %X ", 15));
+32: 	TEST(8, print(" %X ", 16));
+33: 	TEST(9, print(" %X ", 17));
+34: 	TEST(10, print(" %X ", 99));
+35: 	TEST(11, print(" %X ", 100));
+36: 	TEST(12, print(" %X ", 101));
+37: 	TEST(13, print(" %X ", -9));
+38: 	TEST(14, print(" %X ", -10));
+39: 	TEST(15, print(" %X ", -11));
+40: 	TEST(16, print(" %X ", -14));
+41: 	TEST(17, print(" %X ", -15));
+42: 	TEST(18, print(" %X ", -16));
+43: 	TEST(19, print(" %X ", -99));
+44: 	TEST(20, print(" %X ", -100));
+45: 	TEST(21, print(" %X ", -101));
+46: 	TEST(22, print(" %X ", INT_MAX));
+47: 	TEST(23, print(" %X ", INT_MIN));
+48: 	TEST(24, print(" %X ", LONG_MAX));
+49: 	TEST(25, print(" %X ", LONG_MIN));
+50: 	TEST(26, print(" %X ", UINT_MAX));
+51: 	TEST(27, print(" %X ", ULONG_MAX));
+52: 	TEST(28, print(" %X ", 9223372036854775807LL));
+53: 	TEST(29, print(" %X %X %X %X %X %X %X", INT_MAX, INT_MIN, LONG_MAX, LONG_MIN, ULONG_MAX, 0, -42));
+54: 	TEST(30, print(" %X ", 42));
+55: 	TEST(31, print(" %X ", -42));
+
+For /home/codespace/francinette/tests/printf/printfTester/tests/percent_test.cpp:
+25: 	TEST(1, print(" %% "));
+26: 	TEST(2, print(" %%%% "));
+27: 	TEST(3, print(" %% %% %% "));
+28: 	TEST(4, print(" %%  %%  %% "));
+29: 	TEST(5, print(" %%   %%   %% "));
+30: 	TEST(6, print("%%"));
+31: 	TEST(7, print("%% %%"));
+
+For /home/codespace/francinette/tests/printf/printfTester/tests/mix_test.cpp:
+25: 	TEST(1, print("%%%c%%%s%%%d%%%i%%%u%%%x%%%X%%%% %%%c%%%s%%%d%%%i%%%u%%%x%%%X%%%% %%%c%%%s%%%d%%%i%%%u%%%x%%%X%%%% %c%%", 'A', "42", 42, 42 ,42 , 42, 42, 'B', "-42", -42, -42 ,-42 ,-42, 42, 'C', "0", 0, 0 ,0 ,0, 42, 0));
+

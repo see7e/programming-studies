@@ -1,0 +1,39 @@
+{% extends 'base_layout.html' %}
+
+{% load static %}
+
+{% block title %}Invetory List{% endblock title %}
+
+{% block content %}
+
+<!-- Placeholder for the modal -->
+<div id="modal" class="modal fade">
+    <div id="dialog" class="modal-dialog" hx-target="this"></div>
+</div>
+
+
+<h1>Orders</h1>
+
+<button class="btn btn-primary btn-sm mb-4"
+    hx-get="{% url 'warehouse:new' %}"
+    hx-target="#dialog">Add Order
+</button>
+
+<table id="htmxDataTable"
+    hx-get="{% url 'warehouse:list' %}"
+    hx-trigger="load, orderListChanged from:body"
+    hx-target="this"
+>
+    <tr>
+        <td colspan="7">
+            <div class="text-center">
+                <div class="spinner-border" role="status">
+                    <span class="visually-hidden">Loading...</span>
+                </div>
+            </div>
+        </td>
+    </tr>
+</table>
+
+<script src={% static "core/js/data-table.js" %}></script>
+{% endblock %}

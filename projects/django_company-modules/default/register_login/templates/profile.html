@@ -1,0 +1,14 @@
+{% extends "base_layout.html" %}
+{% load crispy_forms_tags %}
+
+{% load static %}
+
+{% block title %}My Profile{% endblock title %}
+
+{% block content %}
+<div class="my-3">
+    <h2>My Profile</h2>
+
+    {% crispy form %}
+</div>
+{% endblock %}

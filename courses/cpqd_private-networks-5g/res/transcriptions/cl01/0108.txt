@@ -1,0 +1,521 @@
+Redes Privativas | Turma 1 
+quinta, 8/05/2025
+
+0:00 - Loreno 
+Eu acho que deve ter em dois lugares. Nesse Francisco Packet Tracer, ele deve ter alguma coisa. Eu não sei se eu divulguei para vocês, mas tem um link da Francisco onde ele está fazendo isso, o VLAN, não é para a rede privativa celular, é para a rede privativa.
+
+0:25 - FAGUNDES Felipe 
+Opa, Clodoaldo, eu peguei a conversa meio que andando aí, mas o Francisco Tempo, na página Academy do Francisco Packet Tracer, tem vários exercícios. Eles começam na programação antiga mesmo, na convencional, mas o passar dos níveis, quando vai aumentando um pouco a dificuldade, A pergunta é se tem exercício de rede privativa.
+
+0:58 - Loreno 
+Sim, tem. Agora, sim, tem.
+
+1:01 - FAGUNDES Felipe 
+Porém, por exemplo, eu uso a minha conta grátis porque eu uso o da UFRM, né, que é a da Universidade Federal aqui do Rio Grande do Norte. Eu não sei se qualquer e-mail externo vai ter os mesmos privilégios que mas não é da minha conta.
+
+1:25 - Clodoaldo Callogero 
+Pode até dar isso pra gente, né? Não, então, eu me inscrevi nos cursos, mas eu acho que eu não cheguei lá, mas tem alguns gratuitos e alguns pagos, né? Então eu tô começando dos gratuitos agora. Vamos ver, já fiz alguns exerciciosinhos, seguindo, mas eu não vi de terminais, mas você disse que lá pra frente tem de terminais, eu vou estamos indo lá. Eu queria fazer com terminal mesmo, porque no YouTube tem bastante que você faz a ligação automática, ele escolhe a rede, mas não deve ser esse o nosso objetivo, né? Já chegou o povo aí, a hora que o senhor quiser começar, professor, é só falar e vamos lá.
+
+2:10 - Loreno 
+Vocês que sabem, mas acho que ainda dá para começar. Estão enxergando aí a primeira tela?
+
+2:17 - Loreno 
+Tela inteira.
+
+2:18 - Clodoaldo Callogero 
+Então tá.
+
+2:19 - Loreno 
+Vamos em frente, então. Podemos começar? Quantas pessoas tem aí? Eu vi que tem mais de 50 pessoas escritas, mas até agora eu não vi. Tem 12 aqui, pelo meu...
+
+2:31 - Clodoaldo Callogero 
+Tá, vamos começar assim.
+
+2:33 - Loreno 
+Eu achei engraçado que tem mais de 50 pessoas escritas, mas o que eu tinha sabido é que o curso que é para umas 20 pessoas.
+
+2:45 - Clodoaldo Callogero 
+Tudo bem. O que eu tenho acompanhado é que tem 30, 33 participando. Deve estar por aí.
+
+2:55 - Loreno 
+Eu fui lá no cadastro da rede, que eles chamam, e no cadastro estava constando 53 pessoas, uma coisa assim. Bom, vamos começar, pessoal. Hoje o que a gente vai tratar é, na verdade, falar um pouco sobre o espectro de frequências de um modo geral e, em particular, falar um pouquinho das bandas que estão licenciadas e não licenciadas no Brasil. Aqui está o sumário do que a gente vai tratar. A gente vai tratar genericamente o espectro de radiofrequência para quem nunca trabalhou com isso antes. Vamos tentar alinhar alguns pontos básicos sobre comprimento de onda. Depois vamos entrar na lei geral de telecomunicações e o papel da Anatel. Depois, em particular, vamos falar sobre a lei geral e sobre a Anatel. E depois vamos falar da regulação do espectro, do uso de sensores. Finalmente vamos abordar um pouquinho melhor, mais detalhe, o espectro e a abrangência do SMC e do SMP. São os dois serviços de telefonia de comunicações móveis que existem no Brasil. E depois vamos falar um pouquinho do SMP, que é outra licença que é importante aí. Ok? Depois vamos falar, aqui está, Acho que até vou inverter a ordem, mas vamos manter essa ordem. É um tipo de operadora, acho que vocês conhecem, eu ouvi falar, que é virtual. Então vamos falar um pouquinho dela, só para situar ela no contexto da Anatel. E depois vamos falar também dessa licença temporária para fins suprimentais, que é UTE. Não é uma licença para você comercial, é uma licença para você usar em dois meses. Eles falam que não prorrogam, mas eu vi eles prorrogarem até para um ano. Perdão, pessoal. Bom, agora eu vou citar Vamos consultar um pouquinho essa questão da radiofrequência. Radiofrequência, vocês entendem, são ondas eletromagnéticas. E essas ondas vão desde poucos hertz até 10, 16 hertz, que seria uma enormidade. Então essas faixas, A faixa de voz, por exemplo, o som não é uma onda eletromagnética, é uma onda física, uma onda do ar. Se tiver ar, tirar o ar fora não tem som. Mas o som fica aqui situado entre 30, 50 Hz até 300 Hz. Mais ou menos, 3.400 Hz, essa é a faixa de som. E depois, a partir das faixas de 10.000 Hz, começa o rádio, micro-ondas, infravermelho, a própria luz visível, ultravioleta, o raio-x e os raios gama. Então vocês veem que a diferença entre esses elementos é realmente a frequência. Aqui ele deu um detalhe no que seria essa faixa que vai do rádio até a outra violeta. Nessa primeira faixa, até 10⁸, que seria 100 MHz, Ele usa isso, é muito usado, ele não. Na verdade o Tannenbaum que está publicando isso. Ele publicou que isso aí é muito usado para par de cobre, par trançado. Depois a outra faixa, a coaxial, a faixa que vai de 10 giga para cima, é usada para satélite. Ou para ondas de micro-ondas também, que é o caso até dos nossos sistemas. E aí tem várias faixas, faixa marítima, faixa de AM, que eram as ondas médias. A gente vai ver essa nomenclatura no próximo slide. Low Frequency, Medium Frequency, High Frequency, Very High Frequency, outra High Frequency. E a fibra óptica lá na casa dos 10 a 14, vale a pena mostrar isso. Então, vamos até primeiro pular para a nomenclatura. A questão da nomenclatura está feita dessa forma aqui. Até 300 Hz, nem aparece lá na tabela, Extremely Low Frequency. De 300 a 3K é a faixa de frequência de voz. De 3K a 30K é a Very Low Frequency, PNF. De 30K até 300K, Low Frequency. E assim vai até essa Super High Frequency, Ultra High Frequency, Extremely High Frequency. As ondas do 5G estão aqui nessa faixa. Super High Frequency. E vai até 30GB. E do 5G também tem bastante coisa nessa faixa e também na faixa de baixo. Bom, aqui só uma curiosidade que eu não sei se vocês têm. Faz tempo que eu peguei já, de um curso de dois mil e poucos, eu peguei lá essa tabelinha, Nebuletricity and Electronics Training Series. Achei bem interessante porque tira uma porção de dúvida quanto a isso. Agora, não sei se vocês têm essa curiosidade, o espectro visível, né? O espectro visível, ele tá na faixa de terahertz, 428 a 750 terahertz, tá? Tera, vocês estão lembrados, o Giga é 10 na nono, o Tera é 10 na 12. E o comprimento de onda, ele fica na faixa de... O comprimento de onda tem uma relação direta com a frequência, vocês conhecem essa relação. O comprimento de onda vezes a frequência é igual a velocidade da luz. Daqui você tira, para cada frequência, você pode tirar o comprimento de onda respectivo. E aí, no caso do espectro visível nosso, está entre 0,74 e 0,44, a faixa do espectro visível. Níquel, né? Esqueci de comentar. Tá bom? Só para... A gente situar aqui, né? Aqui dá para situar, tá vendo? É a partida, até aqui é mega, né? A partir daqui é giga, depois tera. Então repara que fica quase no final da banda de tera, o espelho visível. Bom, aqui eu fiz uma tabelinha para vocês avaliando o lambda e a frequência para cada faixa, ou para as principais faixas desse daí. Então, por exemplo, o VLF, que seria de de 3K até 30K, o comprimento de onda é da ordem de 100 mil metros, são 100 quilômetros. Então quando você está com uma onda desse tipo, quando você está com uma propagação de micro-ondas, nem micro-ondas não são, são very low frequency, são ondas de rádio nessa banda, você está com de onda da ordem de 100km a 10km. Imagina 100km, passa bem longe da gente. E por aí vai, pra low frequency também é a mesma coisa, né? Também é interessante porque eles falam muito que o 5G tem ondas centimétricas e milimétricas, né? Então na verdade é assim, se tiver na faixa de até 30GB, isso aqui é 30GB, né? 30 vezes 10⁹. O máximo passa a ser centimétrico. Na ordem de centímetros, aqui em metros. E se tiver um pouquinho mais, tipo 50, que tem especificação para 50 giga, aí ele está na fase dos milimétricos, acima disso. É só para... Trazer essa informação para vocês terem uma noção, mais ou menos, do que representam esses comprimentos e faixas de frequência. Agora, resumindo o espectro, 60 Hz você conhece a intensidade, ou 50 Hz, de 300 Hz a 3400 Hz o áudio, depois vem as ondas. Amplitude modulada, TV, etc. Frequência modulada, luz visível, etc. Aqui é só um resumindo do que a gente viu antes. Vocês tinham essa noção já, ou chovendo molhado, ou isso aí dá uma nivelada na turma?
+
+14:17 - Clodoaldo Callogero 
+É bem provável que alguns já tinham, professor, e outros não, eu já tinha, É bom reforçar.
+
+14:26 - Loreno 
+Também achei que alguns deveriam ter, mas pelo que falaram da primeira aula, achei que alguns não iam ter não. Isso é bom para quem vem de computação, por exemplo, e nunca mexeu com a parte de rádio frequência, é uma boa organização das informações.
+
+14:49 - Palestrante Não Identificado 
+Época de faculdade, fechou. E da telefônica.
+
+14:53 - Loreno 
+As vezes que eu dei esse tipo de aula foi também na faculdade. Agora a questão da lei geral. A lei geral, acho que não sei se vocês sabem da história, foi considerada um grande marco do governo FHC. Ela era necessária para privatizar as telecomunicações. E aí foi finalizada de julho de 1997, e aí as principais sessões dela falam dos princípios, o órgão regulador, a organização dos serviços, e aí no final tem uma sessão grande que fala como é que vai estruturar e desestatizar as empresas. E no fundo era o grande objetivo político. Falando um pouco mais da lei, Repara que o artigo primeiro aqui é bem significativo. Complete a união por intermédio do órgão regulador, que é a Natel, e nos termos das políticas estabelecidas pelos poderes executivos e legislativos, organizar a exploração dos serviços de telecomunicações. Aí o artigo número dois também é falando do dever, dos deveres do poder público. Então é garantir a toda população acesso às telecomunicações, tarifas e preços razoáveis, em condições adequadas, estimular a expansão do uso de redes e serviços, incentivar a competitividade. Isso é uma outra sessão bem separada da Anatel, porque além da universalização, existe a questão da competitividade. É muito importante que um grupo ou uma empresa não adote práticas que são que não são competitivas, que são monopolistas, digamos. O que mais? Aqui é aquela história, aquela conversa, como dizia um colega meu, da Paz Mundial. Criar oportunidade de investimento, ou seja, tem que fazer isso de maneira a chamar empresas para o Brasil, para investir, para para o Brasil, para elas mesmas investirem no desenvolvimento etc.
+
+17:17 - Palestrante Não Identificado 
+Ok?
+
+17:18 - Loreno 
+Os direitos do usuário. Também eu acho interessante dar uma reforçada, tá? Acesso aos serviços com padrões de fazidade e regularidade adequados à natureza do serviço, em todo o território nacional. Liberdade de escolha da prestadora. Então, isso aqui, desde o começo, É aquela história que é casada com a competitividade. Você tem que ter mais de uma escolha. No mundo já havia essa escolha de operadora local e operadora de longa distância. Então, o muito importante é você poder escolher a sua prestadora, tanto local quanto a de longa distância. A local, principalmente para telefonia, era muito baseada na rede Incumente, que era a proprietária da linha do assinante. Mas logo em seguida já começou a ver o DSL, o tipo ADSL, VDSL, todas as modalidades que compartilham a própria linha mesmo. Então isso também foi aberto desde então. A não discriminação, a informação adequada, a questão do segredo da comunicação. Sempre foi uma questão da privacidade que está em jogo da pessoa. Então tem que haver inviolabilidade das comunicações. Agora, claro que a lei pode expor essa violação. A lei, por algum motivo, crime ou coisa parecida, pode ser pedido que a linha seja monitorada e supervisionada. Vocês sabem disso também. É interceptação legal, que eles chamam. E se o cara não quiser ter o código de acesso dele não divulgado, também ele tem esse direito. Se ele tiver um serviço no regime público, a gente vai ver depois o que é isso melhor, a menos que ele tenha um débito grande, etc., ele não pode ser suspenso. Então, tem que pensar duas vezes antes de suspender o cara, porque ele pode recorrer, essas coisas assim. Respeito da privacidade, prévio conhecimento, resposta das suas reclamações. Pode ver que a própria Anatel, e hoje a regra é essa, não sei se vocês já tiveram essa oportunidade, você reclamou com a prestadora, ela não deu resposta ou te enrolou, foi aquela macanatela. Fica uma macanatela que rapidinho eles te dão resposta. Bom, a macanatela é a Agência Nacional de Telecomunicações, é o símbolo, e tem esse logo que é o órgão estatal designado, concebido, para ser o regulador do serviço. Esse regulador... Bom, vamos ler uma frase completa aqui. Na defesa dos interesses do Estado e do cidadão, estimulando a competição, a universalização, a qualidade e a atualização tecnológica. Na verdade, é assim. Até o propósito dela não é, como a Telebrás tinha esse propósito, de trazer normas. De estipular normas e padrões para as interfaces, para os serviços. O objetivo da Natel é estipular normas para usufruição pública do serviço, usufruição pela população. Ela está preocupada com coisas que ferem, não que ferem interface, faça, mas que ferem o direito do cidadão e do usuário. É esse que é o ponto. Eu compareci em algumas audiências da Atel, sempre estava presente o PROCON lá e sempre estava presente reclamantes ou o próprio PROCON reclamando de coisas que não eram atendidas, etc. Então assim, é muito importante essa essa interface, ela foi feita para isso, ela não foi feita para fazer norma. Lá para cá as normas ficaram bem abertas, não tem uma norma. Na BNT, não sei como é que está, aliás, você podia, do áudio que estava comigo antes, você podia até me dar um, porque eu não tenho muito essa informação da BNT, você até podia comentar depois qual é o papel da BNT, até que ponto que a BNT se sente comprometida, a ajuda nesse negócio de norma. Mas eu senti uma lacuna muito grande nessa parte de norma, depois que a Telebrásis abandonou e ficou só com a Anatel. Eles realmente não têm interesse. Só que isso cria problemas. A curta e médio prazo acaba criando problemas, porque usam padrões diferentes, começa a dar conflito, esse tipo de coisa.
+
+22:33 - Clodoaldo Callogero 
+Você quer comentar alguma coisa, Clodoaldo? A minha experiência, seria 2021, 2022, mais ou menos. Mas a verdade foi o seguinte, a impressão que passava é que eles estavam desregulamentando tudo. Eu não estava nessa área de tele nessa época, eu estava na área de automação e eletrônica. Então muita coisa que se usava ou que se usa no dia a dia, eles estavam abolindo as normas. Ficava a critério de cada empresa. Então, por exemplo, diagramas elétricos, que é um negócio mais ou menos universal, elétrico e eletrônico, eles aboliram algumas normas. Então, eu acho que o caminho foi o mesmo. Tentou interferir, que na época era a Senai.
+
+23:30 - Loreno 
+O público da BRT são os fornecedores. Exatamente.
+
+23:33 - Clodoaldo Callogero 
+E o público da Anatel são as prestadoras de telecomunicações.
+
+23:38 - Loreno 
+É isso mesmo.
+
+23:40 - Clodoaldo Callogero 
+A diferença é mais ou menos essa.
+
+23:43 - Loreno 
+E sempre cabe ao Ministério, a questão de políticas públicas, etc, que passam a ser a autoridade do Ministério. Vou pensar aqui. Vou falar um pouquinho mais da função da Anatel e do Ministério. A Anatel possui independência administrativa e autonomia financeira. Não existe subordinação, mas ela está vinculada ministério, se reporta a ela, ela não faz nada sem pedir autorização para o ministério. Eu digo em termos de serviços novos, em termos de coisas novas, tipo vai em todos os 5G. A Anatel não vai em todos os 5G se o ministério não autorizar. Entendeu? Isso aí é pacífico, porque é uma política, né? E até foi um motivo aí de conflito, porque o e tinha interesse, por exemplo, no próprio 5G. O próprio 5G foi introduzido em 2021, por aí, e havia uma boataria das prestadoras, também dizendo que o 5G, e as pessoas que usassem o 5G iam morrer do coração, iam ter o cérebro deslacerado, iam ser transformados em jacaré. E coisas do gênero. E quem estava fazendo essa propaganda eram bastante os americanos, na verdade. Porque os americanos queriam segurar o mercado chinês, que estava estourando com 5G. Então é aquela briga de política que não vamos nos meter aqui. Mas, em suma, isso é decisão de governo. Não é decisão de prestadora nem de anatel. Tem quatro conselheiros e eles são escolhidos e nomeados por prisões repúblicas, depois de aprovação pelo Senado. É aquela história. Tem Sabatina também, como o pessoal de outras estatais. E os mandatos dos conselheiros são temporários, mas nem todos têm o mesmo ao mesmo tempo, e pode perder por renúncia ou por algum problema, claro. Aqui, de novo, aquela história que o Ministério das Comunicações está incumbido de formular procuras políticas, diretrizes, estudos públicos na implementação dos projetos. E a Anatel, deve desenvolver projetos e ações para atingir esses serviços e mantendo aqueles requisitos de universalização e também de competitividade. Aqui eu acho que todo mundo se lembra disso, né? Até 2015, 2016, tinha o Minicompo separado. Mas a partir de 2016 ele passou a ser uma secretaria da MCTI. Bom, o que interessa na regulação para nós é mais a questão... Espera aí que eu acho que... Vamos tratar disso aqui primeiro, que isso aqui é mais geral. Erro no slide ali. O serviço da... De acordo com a TEL, os serviços têm diversas classificações. Uma delas é quanto à abrangência. Existe o serviço de interesse coletivo e o serviço de interesse restrito. Qual é a diferença entre eles? O coletivo é para qualquer cidadão. Não dá para fazer a discriminação, criar um serviço de telefonia móvel, por exemplo, em São Paulo, que seja somente para o pessoal do Borugui. Não dá. Esse serviço, porque aí não é um serviço coletivo, tá? Agora, o incrível ser restrito é assim, são grupos. Ou é um grupo de investidores, ou é um grupo de pessoas que têm atividades a fim. A gente vai ver isso no SLP, né? A gente vai ver bastante disso. É um serviço de interesse restrito. O serviço coletivo é um serviço preponderante, é o serviço das massas, é um serviço que não existe, o cara não precisa ter currículo para entrar nele, basta pedir o serviço E quanto ao regime que eles chamam, o serviço pode ser público ou privado. Ele vai ser público se ele consistir numa concessão ou numa permissão com obrigações de universalização e de continuidade. Então o serviço de voz era um desses casos. Havia uma concessão. O que significa isso? Aquela empresa lá é uma concessionária, ela é uma empresa tipo as iniciais da Telefônica, Telemarge, certamente, elas eram consideradas concessionárias do governo. Ou seja, o governo dá uma concessão pra ele durante 20 anos, que foi o caso inicial, e ele tem obrigações. Tipo assim, você tem que colocar telefone público em toda a cidade, você tem que colocar posto de serviço em toda a cidade, você tem que atingir 90% da população daqui a três anos, 100% daqui a cinco anos. Qualquer coisa assim, são as metas da diversificação. Então isso caracteriza bem o serviço público. E o serviço privado é aquele que não tem essas metas. Existe uma autorização que é concedida no serviço privado, ou mais autorização, as obrigações, geralmente tem mais. Além das frequências, tem a do próprio serviço. E as empresas que representam os proprietários desse serviço vão ter obrigações também, mas não de universalização nem de continuidade. Eles podem apertar esse, sim. Podem apertar, digamos, que nem o Caso Quebra até eu fiz em São Paulo. Praticamente trabalhava serviço de rádio invisibilidade ou serviço de rádio com alta potência para empresas que eram empresas executivas, que tinham uma renda, digamos, acima de, sei lá, 30 milhões por mês, por exemplo, coisas desse tipo, ou por ano. Então esse é o caso dos serviços privados. Você está lá, você sabe que vai ter essa concessão, e aí essa autorização, digamos, você oferece para quem é rico, por exemplo. Então é para quem vai te dar lucro. E você não tem obrigações de oferecer para todo mundo, não. Não precisa oferecer para uma fazenda, um sítio que está a três quilômetros da cidade, qualquer coisa assim, não. Só para quem quer. Agora, por exemplo, talvez vocês tenham essa pergunta, né? Ah, mas como é que a Ibratel fazia? Ela tinha interesse coletivo, ela tinha serviço público de escolha de longa distância. Ela prestava serviço público de longa distância e prestava serviço privado de acesso local. Então ela pode separar, ela pode ter várias autorizações, uma mesma empresa pode ter. Claro que vai ter vai ter que ter uma pessoa jurídica diferente ou não para essas coisas, tá bom? O interesse coletivo, assim, quem são os proletários aí? Na disputa dessas coisas aqui, que são consideradas esses itens, que são considerados os itens escassos, o espectro de frequência e órbita, aluguel de linhas, iluminação, são recursos limitados. Então, quem tem essa Essa prioridade aí é o interesse coletivo e o serviço público. Então, assim, se tiver que disputar um serviço público com um serviço não privado, no mesmo espectro, o serviço público, no princípio, vai ganhar. Ok? Vamos voltar um pouquinho e falar um pouquinho de frequências. Eu vou orientar mais da apresentação aqui para a parte de frequência. Até agora foi bastante geral. Então assim, a questão da regulamentação, o espectro, como a gente viu antes, por isso que eu achei importante pular para aquela lá, ele é um recurso ilimitado. Então ele é um bem público administrado pela Anatel. Então a agência mantém, a cada ano sai praticamente um plano de atribuição, distribuição e destinação das rádiofrequências. Então ele atribui, distribui e ainda destina. Tipo, essa rádiofrequência é só para esse cidadão, digamos, ou para essa empresa nessa localidade. Então existe esse plano e para 2025 já saiu esse plano também. E o plano deve estimar. Frequências exclusivamente militares, serviços de telecomunicações, serviços de radiodifusão, serviços de emergência e segurança pública e outras atividades, por exemplo, rádio amadora, etc. Então, esse é o objetivo. Vocês percebem que essa disputa das frequências não é muito simples, porque tem que vencer essas transistantes aí. Bom, aqui é praticamente a mesma frase que repete a importância da autógrafa da agência, que o uso de rádiofrequências, inclusivamente ou não, depende da autógrafa da agência. O cara subscreveu a licença lá, vai ter que pedir a otorga dessa licença numa área também. E tem um preço por esse uso, claro. E existem faixas de frequências que não necessitam autorização para serem utilizadas. Então não pagam essa otorga aí. Quais são essas faixas? O que o pessoal chama de comunicação Eu não sei se na sequência vai ter, se não me engano sim, mas nós vamos ver com mais detalhes isso. Isso, é essa transparência aqui. Então assim, em que caso se dá uso não licenciado? Esse uso que não tem que obter licença para ele, para utilização das frequências. Claro que a regra é regulamentar o espectro, mas tem utilizações, por exemplo, quando você abre um carro, você usa uma chave ou você usa um rádio para se comunicar com o carro hoje em dia. Então a abertura automática com chave, isso aí é uma forma de rádio. Então vai licenciar esse tipo de rádio? Claro que não, esse rádio é para uso no máximo 50 metros. Eu lembro que eu cheguei a testar uma vez e chegou a 100 metros, mas não é muito longe disso. Então é um uso que o Amatel pensa assim, ao invés de eu ficar fazendo licença e burocratizando, é melhor dar uma licença. Consegui usar essa faixa de frequência que eu padronizo aqui e ele pode usar à vontade. Bom, e quais, por exemplo, os outros exemplos que existem, né? Telefone sem fio dentro de uma residência, controle aqui, ele botou lá nos veiculares, sistema de sonorização ambiental, e principalmente, porque até aqui era firuma, né? Mas o que pode ter um pouquinho, que pode ser um pouquinho maior são os equipamentos para redes locais sem fio. Então é LAN, né, que a gente tinha. Para uso em LAN. Então o que aconteceu? Com essa abertura da Telo, diversas emprestadoras, diversas empresas tiveram a ideia de prestar serviços para um ambiente, para algumas cidadezinhas, usando as frequências típicas de 2.400 ou 5.400 MHz. Então eles passaram a ser prestadores também. Então eu conheci, já trabalhei até pra um cara desse, já fiz projeto pra ele. Então assim, é um cara que atua na área, pra dar um exemplo aqui pra vocês, tá? Perto de Campinas tem Montemor, Rafa, Capivari, tem várias... Portolândia, tem várias cidadezinhas. Portolândia nem tanto, mas cidadezinhas menores aí que não tinha internet, telefônica não tinha interesse, de levar a internet lá, na década de 90, ou 100, ou na década de 2000, 2010. Então esses caras entraram com essa oportunidade e ficaram felizes, e são prestadores hoje de serviços de telecomunicações. E tem uma rede grande, viu? Não é uma rede pequena, não. Então foi uma abertura aí. E foi muito Teve muito advogado envolvido nisso, muitas empresas. Eu cheguei a comparecer em algumas reuniões. Eles conseguiram se tornar uma força perante a Anatel. Mas é porque os outros não tinham interesse. O que mais eu ia comentar? Essas faixas de frequência pertencem à banda que eles chamam de ESM, que é Instrumentations. Então ela também, em outros países, também é liberada. E tem esses segmentos aqui que a gente está citando. De 900 MB a 928 MB, 2,400 MB até 2,480 MB e 5,700 MB até 5,850 MB. E também a banda, essa banda Licensed National Records, Formation Infrastructure, que contém faixas entre 5 e 180. Aqui vocês vão encontrar isso nesse site do Teleco. Então deu para ver que faz sentido isso e fez sentido também a comercialização. Quem está na chuva pode se molhar. Bom, agora vamos começar a analisar. O espectro de cada serviço móvel. Eu não sei se vocês conhecem a história do serviço móvel celular e do serviço móvel pessoal. Conhecem? A história é assim, antes da lei geral, estava uma pressão muito grande para implantar o serviço móvel, e aí, a Anatel criou uma concessão, concessão mesmo, que ela chamou de, não é um serviço inautorizado, é uma concessão, que ela chamou de Serviço Móvel Celular, SMC. Então isso foi criado... Quando foi mesmo que eu... Esqueci aqui a data. Foi em 97, 98, na Banda B. Foi antes. Tem aqui, mas eu tenho até um parecido lá. E aí foi criado esse serviço móvel celular e esse serviço, como é que ele funcionava? Ele funcionava assim, dentro de uma área de prestação, que a gente vai ver a seguir, o cara podia discar direto para qualquer operador e aí era feita a conversão. Não tinha não tinha escolha da prestadora de longa distância. Só que ele tinha que dizer, claro, que ele tinha que identificar a arte de estilo. Essa é uma característica do serviço móvel celular. Quando criaram o serviço móvel pessoal, já foi criada a semelhança do serviço definindo áreas semelhantes e definindo um critério semelhante. Ou seja, o cara que usa o SMP, que deve ser a grande maioria hoje em dia, para discar para um colega dele, mesmo que seja da Vivo, ele vai ter que escolher a prestadora, que no caso da Vivo é 015, mas ele pode escolher 021, por exemplo, e discar. E depois descala o código diário e o código telefônico. Então essa é a regra do serviço móvel pessoal. Aqui então, só comparando as duas áreas de prestação, a do serviço móvel é essa que estão maiores aqui. Então tinha uma região bem grande aqui, que era a região norte, depois a região centro-oeste, depois tinha a região do nordeste, e tinha a região do Rio Grande do Sul, depois Santa Catarina e Paraná, São Paulo era uma região que realmente caracteriza, e aquela região do Triângulo Mineiro, onde Algarve impera, é claro que foram divididas também em regiões separadas. Na verdade, na época, o pessoal da Cercontel, que era da Indrina, também passou a ser uma área, a Taquita criou aqui. E bem no início, o pessoal da CTMR também de Pelotas. Mas depois eu acho que já foi assimilando. Já o SNP, como vocês podem ver aqui à direita, ele teve essas regiões aqui. Então tem a região 3, que é A região 3 é o sul e mais a mesma do STFC. Para quem não lembra, não sabe, é o Serviço Telefônico e Fim de Comunicado. Então, para a telefonia, essa região 3 aqui que está em vermelho, que vai desde o Amapá até o Rio Grande do Sul, essa região desde o Acre até o Rio Grande do Sul, É uma região. A região de São Paulo é a região 2. E a região da Pedemar é essa região em azul aqui, a região 1. Então é igual à telefonia, né? E a própria regra para seleção de prestadora também é a mesma regra. A questão do SBC, como é que a Anatel decidiu descontinuar? Não emitindo novas licenças para esse serviço. E as licenças existentes estão sendo sugeridas ou incentivadas a serem substituídas por licenças do SMP. Não sei se eu pulei alguma coisa aqui. Não. Ah, sim. Então repara que esse aqui era um serviço público e esse aqui passou a ser um serviço privado de interesse coletivo. Desculpa, falei besteira para vocês. O serviço móvel era a concessão, mas foi a única concessão que foi estabelecida em regime privado. Então tinha um contrato de concessão. Isso aí é o que são aquelas, como é que o pessoal chama, aqueles enganos que acontecem em todo lugar. Ou seja, como eles criaram o SMC antes da LGT, eles acabaram fazendo uma coisa que a LGT depois ia proibir. Que é a existência do serviço móvel privado e com concessão. Só quem tem concessão hoje são serviços públicos. Bom, as áreas locais. Eu falei que o SMP foi criado a imagem de semelhança do STFC, né? Aqui aparece a mesma coisa. As áreas de código DDD do STFC foram mantidas. São essas áreas aí. Independentemente da concessão. A grande São Paulo está na área 11, vocês conhecem. Aqui só para dar uma história. Não estabeleceu, ou melhor, os contratos, não foi bem a LGT. Os contratos que se seguiram depois, eles não se limitaram a estabelecer a frequência para serem operados. Eles estabeleceram também a banda que seria utilizada e estabeleceram também a limitação de caso de uso. Então, por exemplo, Eles limitaram, por exemplo, que a subfaixa de 800 MHz só pudesse utilizar a banda de 12,5 para subir e 12,5 para descer. 12,5 uplink, 12,5 downlink.
+
+47:42 - Palestrante Não Identificado 
+Para 900 Hz a mesma coisa.
+
+47:46 - Loreno 
+12,5 downlink, 12,5 uplink. Para 1800 MHz também. E para 1900, 2100. Mais em mais cantos. E aqui ele tem uma tabelinha das primeiras bandas. A chamada Banda A era a banda do SMC. Então o SMC era a Banda A A Banda B foi feita em 97, 98. A Banda D a partir de 2001. Aí sobrou, houve um leilão que teve sobras. Em 2002 se reaproveitaram essas sobras. Em 2004, as sobras da banda E, houve novas sobras, aí houve um novo leilão de 3G, agora em 2007 já orientando a 3G. Daí para frente, até que em 2012 apareceu a 4G e em 2021, 5G. Aqui é um quadro dessas frequências. Aquelas que foram citadas em 2002. Quando o SMC foi criado, ele foi criado com essas bandas aí, para a banda A820, A banda B só começou a operar mais tarde, só começou a operar em 1997. Mas no início foi só a banda A que existia com essa faixa de frequência. E aí fizeram essa previsão para o Uplink e Downlink. E vocês podem ver aí que isso foi tudo utilizado. Então aqui já aparece, a partir de 2002, quais foram as novas frequências. Então teve essas bandas D, E, M, etc., que foram citadas com essas faixas de frequência, entre 1.700 e 1.900 MHz. Depois teve a licitação de 2007, solicitou para 3G a partir de 1800 para 2600 MHz. Depois teve a licitação do 4G em 2012, a primeira. O 4G foi meio prejudicado no início. Havia muitas dessas faixas que estavam ocupadas por outras bandas e aí deram uma carregada no 4G. Mas isso é normal. O que é importante é que a partir de 2012 ele começou a operar, em alguns lugares, com essas faixas de 2500 a 2700. Essas bandas. E a banda de 700 mega que tinha sido criada para o 3G também, que acabou sendo licenciada para o 4G a partir de 2014. Então é esse tipo de configuração aí. Então aqui é para resumir o uso das principais frequências que entraram nas primeiras, no 2G e 3G. Frequências de 850 e 800 E aí as empresas que acabaram usando, isso é feito um leilão e no leilão é decidido que parte que a Claro ganha, que parte que a Vivo ganha, que parte que a TIM ganha, etc. Nem tem muito comentário, isso aí é só questão de pesquisar e de analisar. Vamos ver um pouquinho como essa faixa de 700. Por que essa faixa se tornou importante e houve tanta disputa em cima dela? Porque é uma faixa que permite uma mesma radiobase atender coisas de 10 quilômetros, por exemplo. Então, essa banda é muito interessante para você colocar poucas radiobases e atender uma área bem grande. Então, no início teve três lotes nacionais, claro, tinha em vivo, tá? E depois teve os lotes correspondentes à área da CTBC, Circuntelo, CTBC é lá a área do Triângulo, né? É o Algar, basicamente. E o segundo lote era o nome tinha lugar na época, não sei se hoje, mudou o nome inclusive. E ficou um lote vago. Então essa foi a distribuição. Esses últimos três lotes aqui são os que foram distribuídos para as empresas menores e deixou um deles vago. A banda inicialmente era 10 mais 10 e depois para as que não foram vendidas no primeiro leilão que teve, passou a ser vendida com o 5+, que é a banda menor aqui. Bom, aqui só um resuminho. As bandas que estão atualizadas para o 4G, serviço SMP, claro, no Brasil, são essas aí. 700 desde 2014 e 2.500 desde 2012. A cobertura do 4G já atingiu 100% dos municípios. Isso não quer dizer que ela tenha atingido 100% dos lares, claro que não. Nem 100% do território. Ela atingiu 100% dos municípios. Então todo município tem uma prestadora 4G. Mas não quer dizer que... O município inteiro esteja coberto por 4G, certo? Só pra mostrar essa diferença. E a banda 700 desempenhou um papel importantíssimo aí, porque esses municípios que têm uma cidade, depois daquele interiorzão grandão lá, nada como botar um 700 mega aí pra entender o interiorzão. O 5G, já desde 2021. A data que está marcando aqui é de 2022, porque o Leilão foi em dezembro de 2021, mas a operação real foi a partir de 2022. Então, a cobertura 5G atinge hoje 20% dos municípios. Atinge alguma coisa como 1.064 municípios. Só que esses municípios representam 70% da população. Então, 70% da população está dentro desses municípios. E o total de celulares 5G está na ordem de 43 milhões de celulares, chegando a uma necessidade de quase 20 celulares por 100 habitantes. Só que desses 40, Então, essa é a situação. Como é que está a principal banda do 5G, essa 3,5? Ela é o principal relativo, porque a 2,3 também permite uma quebra em sub-bandas. De bem pesadas, tipo 100 MHz, etc. Mas a 3,5 é a mais visada, porque ela é muito completa em termos de espectro. Então, o que acontece? A 3,5 não está liberada em todos os lugares do Brasil ainda por 5G. Então, o que aconteceu? Existe um cronograma que diz que todos os municípios acima de 100 mil habitantes, ou seja, 50% dos municípios brasileiros têm que estar liberados até 30 de junho de 2024. Tinha que estar. Já foram liberados, então, né? E 75% até junho de 2025. E a proposta é que todos os municípios devam ter 5G dezembro de 2026. Essas são as estatísticas do 5G. Bom, vamos falar um pouquinho sobre o serviço limitado privado. O serviço limitado primeiro é o serviço destinada ao outro executante ou a prestação, ou a terceiros, desde que eles sejam uma mesma pessoa jurídica ou parte de um grupo de pessoas caracterizadas por alguma coisa. Por exemplo, motorista de táxi, por exemplo, é caracterizado por uma atividade específica. Existem duas modalidades. O serviço limitado privado, que é o SLP, que é o serviço limitado telefônico, telegráfico, transição de dados ou qualquer outra forma, destinado ao uso executante ou de uma pessoa jurídica. Então, por exemplo, qualquer uma dessas empresas que tem rede privativa pode ter um SLP. Como é que pode ter? Por exemplo, mesmo a CPFL. Não tem uma empresa privativa. Aqui em São Paulo, por exemplo. Mas ela tem uma rede, ela usa frequências, ela usa rádio nas torres dela. E ela coloca a licença desse rádio dentro da categoria serviço limitado privado. Entenderam? Então, nem todos os serviços serviço limitado privado vai criar uma rede privativa celular 4G, 5G. Mas toda rede privativa 4G, 5G exige ou a licença do serviço limitado privado. Ok? Professor...
+
+59:17 - Loreno 
+Pode perguntar.
+
+59:19 - FAGUNDES Felipe 
+Eu entendi a diferença, tá? Só para me compreender melhor, se eu poderia dar uma justificativa de quando usar ou um ou outro, no caso da empresa. O senhor deu o exemplo da empresa, não foi?
+
+59:38 - Palestrante Não Identificado 
+Sim.
+
+59:39 - FAGUNDES Felipe 
+O senhor poderia justificar porque ela escolheu e em quais quesitos o SLP seria melhor? Vou falar um pouquinho sobre isso.
+
+59:49 - Loreno 
+Imagine que a CPFL, a empresa de energia elétrica, aqui em São Paulo, ela queira colocar uma rede privativa. Ela trabalha hoje com 145 MB nos rádios dela, então ela não pode usar essa faixa, porque ela já está usando para outra finalidade. Mas tem faixas que ela pode usar, que a gente vai ver a seguir aqui. São essas faixas em azulzinho aqui. Essas são as faixas que a Anatel autorizou para serem usadas por serviço privativo. Então, qualquer empresa que a CSFPL quiser criar uma rede privativa para ela, ela vai ter que usar uma dessas faixas aqui. Não sei se ela já é assinante de alguma delas, mas seria o caso de pedir uma licença para um desses finalidades aí. Agora, ela vai continuar com a licença corporativa. Vamos chamar assim, a rede corporativa dela... O que eu tentei dizer aqui é justamente isso. A empresa pode usar outras frequências, mas não para rede privativa. Ela pode usar para fins corporativos. Então, se você olhar lá nesse plano que a Anatel fez a atribuição e a designação e a destinação das frequências, você vai ver que em licença do SLP existem as pencas. Toda rede corporativa pode ter essa licença de serviço limitado privado. Só que é um serviço restrito, só as pessoas daquela Então é feito em nome da empresa corporativa. Um caso particular desses é a rede privativa 4G e 5G, só que as faixas de frequência já são outras, não as usadas de um modo geral. Vocês vão ver que aqui eu botei como exemplos várias Essas faixas não são da rede privativa celular 4G ou 5G, mas são muito usadas pelas redes corporativas. Respondi a sua pergunta? Sim, professor.
+
+1:03:00 - FAGUNDES Felipe 
+Acredito que agora ficou bem claro para mim.
+
+1:03:06 - Loreno 
+Existe também o serviço limitado especializado. Muito similar. A diferença básica é essa aqui. O executante tem que ser pessoa natural ou jurídica. Mesma pessoa, grupo de pessoas naturais, jurídicas, caracterizado pela realização de atividade específica. Então, por exemplo, é muito comum esses SMR para serviços da navegação, marítimo, esse tipo de coisa aí, ok? Existiu também antigamente o SMR, serviço móvel especializado, que era o antigo Trang, então também já para SLP e SMP. E as frequências utilizadas são várias, conforme vocês podem ver. Agora aqui, só dando um detalhe, as modalidades mais utilizadas do SLP, rádio táxi privado, de rede privada, serviço limitado serviço móvel, privado, serviço de rádio chamado, privado. E dentro do SLE, o serviço de rádio TAC especializado e equipamentos de rádio comunicação. Além do serviço móvel marítimo e rádio cidadão. Existem várias modalidades de serviços aí. Que são prestados. Agora eu ia focar mais na questão das frequências. Uma coisa que está dita lá no nosso relatório é que os sistemas de comunicação ferroviária usam a faixa de 148 mega. Eles poderiam usar a rede privativa em cima disso? Poderiam. Mas não são essas frequências que a Anatel pede que dê preferência. Então o que acontece? A energia elétrica, por exemplo, elas gostam da faixa 410, 415 até 425 megawatts. Então cada uma tem a sua preferência aí. Agora, as redes privativas que a Anatel deseja ter no Brasil, Elas estão nessas faixas aqui. 451, 458, 461, 468, 1.400 a 1.500, 1.900 a 1.910, 2.390 a 2.400, 3.700 a 3.800 e 27.5GB até 27.9GB. Então, qual é a diferença? Vou ler a última frase que a gente vai entender. Os sistemas terrestres de interesse coletivo, por exemplo, se eu tiver um SMP bombando aqui em Campinas e quiser implantar, na faixa de R$13.700,00, eu posso implantar? Não, se já tiver sido usado por uma rede privativa nessa faixa aí. Ou seja, estresse não pode causar interferência. Ou falar assim, não, essa faixa aqui é minha, não pode fazer isso. Então, qual que é a diferença que eu estava falando antes? As pessoas que estiverem usando a rede corporativa, privativa ou não, celular, nessas faixas aqui, se essa faixa for solicitada por uma empresa, por uma faixa de uma prestatora, ela vai perder. Mas nessa faixa aqui ela ganha, porque são as faixas que a Anatel autorizou preferencialmente para uso. Quer dizer, quando eu falei isso de ganha, é sempre com outros parênteses, porque ganharia pelo direito, mas existem outros métodos que vocês conhecem, o tapetão e outros, né? Ela pode ganhar por outros métodos, mas pedir direito ganharia o cara pedir uma rede privativa usando essas faixas aqui.
+
+1:07:44 - ANTONIO ADADE DE CASTRO BATISTA 
+Professor, como que ficaria o caráter de uso secundário do espectro para redes privativas?
+
+1:07:55 - Loreno 
+Significa justamente isso, que ele é uso secundário no sentido que qualquer outra ele perderia, para qualquer empresa, ele não é uso primário, para qualquer outra autorização, de um modo geral. Porém, nessa banda aqui, ele é uso secundário, mas ele tem uso preferencial. Entendeu? Ele é secundário porque não é mais importante que um serviço de uso coletivo. Entendeu? Serviço de uso coletivo, Lembra o que a gente falou antes. O interesse coletivo e o serviço público são prioritários na disputa de recursos. Então, se você tiver uma disputa, em geral, como regra, numa faixa de frequência, onde tem uma pessoa privativa e tem um outro cara que quer um serviço do tipo SMP, vai ganhar o SMP, porque é interesse coletivo. Porém, não nessas faixas aqui. Essas faixas foram, devido à grande procura, tá? Isso aqui é uma coisa nova, devido à grande procura pelo privativo, porque o que começou a acontecer? As empresas pedindo para a Telefônica, pedindo para as prestadoras para colocar rede privativa virtual, 5G, por exemplo, a prestadora falava que não tinha disponível, que não tinha banda, que não dava para ser. Aí a pressão começou a ser tão grande que agora, em 2025, o pessoal estabeleceu e falou que vai ter um conjunto de frequências que a rede corporativa vai ser prioritária. O cara que não instalou a rede dele numa cidade, numa localidade. Mas repara que isso é coisa de agora, tá? Se vocês virem aqui, ó. Ops. De novo. Se vocês forem ver isso aqui, ó.
+
+1:10:19 - Loreno 
+Aqui, ó.
+
+1:10:20 - Loreno 
+Isso é coisa recente, porque repara que Havia um objetivo aqui de até junho de 2024, 50% dos municípios brasileiros estarem com 5G. Não estão. A gente viu antes que é menos, né? 20% dos municípios estão com 5G. As empresas barrigaram um pouquinho essa plantação de 5G. Por que elas barrigaram? Porque se puder usar a planta existente, Se eu puder empurrar o que eu já tenho, eles que fiquem com isso. Então eu acho que em função disso, e aqui é o meu arxômetro, houve uma decisão ainda da TEL, que não vamos reservar frequências para o privativo, porque o privativo está permitindo que empresas tenham a tecnologia que elas querem ter. Vocês estão coibindo a tecnologia. O avanço da tecnologia nessas empresas. Todas as empresas que estão usando a rede privativa 4G, 5G. Então, para impedir isso, preservaram frequências.
+
+1:11:34 - ANTONIO ADADE DE CASTRO BATISTA 
+Não sei se você entendeu.
+
+1:11:37 - Palestrante Não Identificado 
+Entendeu?
+
+1:11:38 - Loreno 
+Entendi sim, professor.
+
+1:11:40 - Palestrante Não Identificado 
+Obrigado.
+
+1:11:40 - Palestrante Não Identificado 
+Tá bom.
+
+1:11:41 - Loreno 
+Agora eu vou falar um pouquinho do... Isso aqui é... Também está no programa de vocês, é o chamado uso temporário do Espectro. Já cheguei a usar isso também na Anatel. Isso aí é o seguinte, você pode pedir como prestadora, ou mesmo a Anatel pode criar um evento onde ela vai designar alguém, etc., para experimentar uma frequência. Digamos que a gente quiser experimentar a frequência de 90 GB em Brasília, ou em outra localidade. Você pode fazer isso. Então você vai fazer isso, você vai ter cobertura, você vai ter um prazo para você fazer isso e tem que ter alguns condicionantes. Ou você vai fazer isso para um evento, por exemplo. Esse caso que eu citei aí seria um experimento com 5G a 90 gigas. Seria um experimento interessante, pode ter um evento, um show, festival, etc, que mostre a vantagem de usar essa frequência mesmo não estando padronizada internacionalmente. Mesmo que se tivesse também poderia ver essa UTR aí, poderia ver esse tipo de licença. Um outro caso é a demonstração de produtos. O telefone quer fazer uma demonstração das máscaras dela de realidade aumentada, por exemplo. Aí ela pode pegar e separar uma área lá e fazer o teste e dizer, olha, vou precisar de dois meses, três meses. Eu não sei se mudou isso, mas no meu tempo a gente pedia por dois meses, depois pedia mais dois. O prazo vai ficando, sabe? Mas não pode passar de um ano, um ano e meio, não pode passar, porque senão descaracteriza. E também em caso de visita oficial, imagina que venha uma delegação dos Estados Unidos para cá, por exemplo. Fique num navio ali no porto do Rio, qualquer coisa assim, Então ele pode ter essa licença. Tem que ser pedido com 30 dias de antecedência, viu? Não pode ser pedido assim, cinco dias antes. Tem que ser pedido com prazo mínimo de cinco dias. E eles dizem que o prazo máximo é 60 dias. Mas é prologado, tá? Não é 60 dias tão cravado, não. Bom, aqui o detalhe que você perguntou, tá? Essa autorização também, aliás, perguntei em relação a outra, tá? Essa autorização também é cara da secundária. Então não tem proteção, o cara não tem direito a proteção contra interferências. Se ele chegar depois, se já existe uma empresa operando nesses 90 GB, por exemplo, ele não teria... Proteção contra isso. E se for aqueles coletivos, é claro, eu comentei antes. E não pode causar interferência nas bandas do tráfico de mar. E a grande vantagem, pode perguntar.
+
+1:15:20 - ANTONIO ADADE DE CASTRO BATISTA 
+Não, eu queria perguntar para o senhor, O que o senhor acha dessas conversas da Anatel de fazer o re-farm das frequências de 2G para 4G? Não sei se o senhor tem acompanhado essas discussões e o que o senhor acha?
+
+1:15:40 - Loreno 
+Alguma coisa. Eu acho que é válido, porque o 2G está acabando. Pouca gente tem 2G ainda. Deve ter no interiorzão. Existe uma estatística de uso eu até passei por ela, eu não quis mostrar o 2G e o 3G porque eu achei que ia ficar, mas no site da Teleco vocês podem consultar lá, qual é a parte da população que tem acesso.
+
+1:16:09 - Antonio Carlos Ferreira de Almeida 
+Professor, uma coisa, 2G é muito usado por maquininha de cartão.
+
+1:16:15 - Loreno 
+Exatamente. Então teria que tirar essas maquininhas Essas maquininhas novas, tem algumas maquininhas da Cielo que já vêm abertas até 4G. Inclusive ela permite você migrar. Você tenta em 4G, se não conseguir, ele usa a banda menor, que é o downsize para 3G, porque se não conseguir, vai para 2G.
+
+1:16:47 - Icaro Castro 
+Mas, inclusive, essa questão aí da maquininha, ela já está sendo atualizada no sentido de pessoal já está utilizando o celular como maquininha. Então, já está mostrando, inclusive, a utilização dessas maquininhas.
+
+1:17:03 - Loreno 
+Sim, a maquininha está sendo feita de cada vez mais tipos. Tem maquininhas, hoje em dia, que ela não imprime papel, só manda a conta para um celular que você selecione. Isso já está mudando bastante. Agora, ainda tem bastante dessas maquininhas M2M, que o pessoal chama? Tem sim. Mas eu espero que... A minha expectativa é que 2G que eu considero uma aberração, porque ele é proprietário, é completamente diferente dos sistemas que foram, não foi especificado pelo ITUT, né? Foi especificado de forma privativa, né?
+
+1:17:50 - Antonio Carlos Ferreira de Almeida 
+Uma coisa, o lance da maquininha é só porque ela cobre áreas que o 3, o 4 e o 5 não cobre, na verdade não é custo, não é nada, mas como o 2G cobre uma área muito grande e tem áreas que o 3, o 4 e o 5 ainda não cobre, então é a garantia de funcionamento da máquina, entendeu?
+
+1:18:18 - Loreno 
+Então, mas deixa eu te falar, a gente chegou a especificar para a Cielo uma maquininha que ela tenta, primeiro ela tenta o rádio, o rádio dela tenta se conectar em 4G, não consegue, cai para 3G, não consegue, cai para 2G, aí se não conseguir, aAntonioe tem erro, que não tem portadora para ele, tá?
+
+1:18:43 - Antonio Carlos Ferreira de Almeida 
+Perfeito, mas aí ele tem três chips, ele tem três cartões?
+
+1:18:47 - ANTONIO ADADE DE CASTRO BATISTA 
+Ô Antônio, mas assim, cara, se você faz o re-farm do 2G para 3G, a frequência é a mesma, né? Então a área de cobertura é a mesma, o que vai mudar é a tecnologia, talvez você tenha Sei lá, um release 15, 16...
+
+1:19:05 - Loreno 
+Tem dois cartões às vezes. A Azusa tem dois cartões. Normalmente tem dois cartões, tá? Que é o padrão aí. Não, é, eu acho que, vamos dizer assim, o caminho é esse, o caminho das pedras é esse. Tá bom? Bom. Vamos falar um pouquinho para finalizar o modelo da Natel do MVNO, que o pessoal chama também. Então o MVNO é um operador virtual. E ele permite uma graduação entre diversas formas de prestação do serviço. Em geral, ele compra no atacado, os minutos, e aí vende para... No varejo, né? Então, quais são as modalidades que ele permite, tá? A primeira modalidade que o pessoal chama de MVNE, né? Que é o... Seria quando ele assume, por exemplo, ele não só ele vende, ele trabalha para uma prestadora, por exemplo, digamos que ele trabalhe mas ele quer ter o centro de gerência, ele gosta da gerência, dá claro. Aí ele pede pra claro ter um OS pra ele vender junto pro usuário dele esse OS, OSS. Se sabe, né? Operation Support System. É o sistema de operações. Ou então, digamos que ele tenha o serviço de valor adicionado, VAS. Ou que ele tenha esse CRM empresarial, de gerência de mercado. Ou que ele tenha o billing, por exemplo. É muito comum o cara ter o billing de alguém e aí ele fala pro assinante, ó, você é usuário meu e você me paga os minutos e mais o billing. É isso. Então são essas as modalidades aí. E ele pode também ter aplicações, conteúdo, etc. Seria também um MVNE, né? E ele pode também vender a marca. Digamos que a marca Embratel, que alguém queira vender a marca Embratel agora, que é claro, não existe mais a marca Embratel, o cara diz, não, aqui só tinha a gente da Embratel, vou vender a marca da Embratel. Ele pode também. Eu não tô falando que esse caso pode especificamente, tá? Só tô dando como exemplo, né? Mas ele poderia vender a marca, digamos, da, sei lá, uma camiseta Hering, vender a marca da Hering, por exemplo. Entendeu? Então ele pode vender qualquer marca que ele quiser, sendo um prestador. E ele tem que ter a infraestrutura dele para executar as funções. Ele pode comprar, por exemplo, só os minutos da operadora, ou pode comprar tudo da operadora. Ele pode pegar a operadora e dizer, não, me dá tudo isso aqui. Se ele fizer isso, ele vai ser Naver aqui. Então, aqui é o histórico. Foi desde 2010 que existe isso. Usando essa rede virtual. É um contrato privado entre credenciado e prestadora. É como se fosse uma franquia que define um modelo de negócio. E o contrato é homologado pelo Anatel. Esse credenciado não precisa nem ter sido qualificado pelo Anatel antes. E aí se torna um prestador do SNP. Porém ele não tem radiofrequência. Vocês têm contato Oi, já viram? Então, seria legal comentar nesse modelo de operadores virtuais, né?
+
+1:23:58 - ANTONIO ADADE DE CASTRO BATISTA 
+As realidade de ranchering da rede, da operadora principal ali que vai prestar o serviço? Não, que vai alugar a infraestrutura, né?
+
+1:24:11 - Loreno 
+Ela vai alugar os minutos, mas pode ter um aluguel de rede também. Com 5G, com slicing, ela pode dizer, não, me aluga uma fatia aí que tem aí, essa Entendeu? Mas aqui, só para brincar um pouquinho com o modelo, aqui está mostrando, porque assim, alguém pode perguntar, mas qual é a vantagem que o usuário leva? Ele leva a vantagem de que o cara vai oferecer minutos mais baratos para ele. E por que ele vai oferecer minutos mais baratos? Porque ele vai comprar um lote grande de várias prestadoras, não precisa ser uma, e aí ele vai vender esses minutos conforme a carteira ou o portfólio dele. E aí vende mais barato e esse cara consegue oferecer para o assinante mais barato. A prestadora tem as obrigações dela de autorização, radiofrequência, PG&Q e outras regulações. Agora, o credenciado vai ter bem menos que isso. Ele vai ter autorização de rádio frequência, SMP, PGNQ e as demais regulamentações. E o consumidor vai ter que se inscrever nesse serviço. Regulamentado e também na questão do CDC, Prefeito de Acompanhamento. Então essa que é a coisa aí. Ele consegue, a gente pode parecer difícil, mas a gente negociou uma vez com um argentino eles faziam isso na Argentina. Eles compravam, era uma empresa sem... Digamos, eles tinham um gateway no máximo, um ponto de presença na Argentina no máximo. E aí eles compravam minutos, alocavam circuitos, etc., e vendiam mais barato. Conseguiam fazer isso. Significa que o preço que é comprado hoje é um preço meio acima, certo? Então é mais ou menos isso que eu queria passar para vocês hoje. Professor, essa é a última aula? Ainda tem mais uma aula, né? Tem mais uma que vai tratar de como é que a gente faz, especificamente, como é que a gente entra na TEL e pede as frequências, esse tipo de coisa.
+
+1:27:17 - Icaro Castro 
+E a parte mais prática, né?
+
+1:27:20 - Loreno 
+É, vai ser... Então, eu acho que vai ter uma parte mais prática e vai ter uma parte também que a gente vai tentar exercitar um pouquinho o planejamento de rede mesmo. Mas é pouca coisa, tá? Que, aliás, nós tínhamos ficado com isso pendente de ontem, né? Se vocês permitirem, eu dou uma passadinha nisso. Pode ser? Aqui depois dos conceitos básicos, aqui tem coisas que a gente apresenta isso às vezes, por exemplo, para pessoa que não é de engenheiro de telecomunicações. Explicando o que é a frequência, como é que funciona a propagação, essas coisas assim. E a diferença entre TDD e FDD. E depois esses conceitos aqui que não estavam explícitos lá, mas aí tem uma... Nossa, aqui tem um erro. Estão explícitos aqui agora. Era o que eu tinha previsto, era isso, mas a minha sugestão era a gente tentar dar organizada em umas redes aí. O que vocês acham?
+
+1:28:41 - Clodoaldo Callogero 
+Boa ideia, professor.
+
+1:28:42 - Palestrante Não Identificado 
+Fantástico.
+
+1:28:42 - Clodoaldo Callogero 
+Deixa eu tirar uma dúvida antes, que talvez a gente tá... Eu não sei se o senhor tem condição de dizer isso, é FIAP ou é o CPQD, mas é o seguinte, eu tava dando uma olhada no regulamento do curso, porque talvez, particularmente eu, não sei como é que tá o pessoal, objetivo principal do curso. Por exemplo, a sua matéria englobou uma vasta área, desde conceitos, estrutura, infraestrutura. Agora, o que de fato é o fundamental que vai ser avaliado para a gente conseguir acompanhar a parte prática? Porque, por exemplo, talvez o que eu te pedi no começo da aula de uma rede através do PACT3, talvez não seja nem o objetivo e a gente tá saindo do foco. O senhor tem condição de dar essa, ou seria FIAP ou CPQD? Como é que poderia ser isso?
+
+1:29:52 - Loreno 
+Olha, na verdade é assim, essa resposta é da FIAP, tá? Porém, o que analisando o que eu vi quando analisei o currículo, etc. Quando eu analisei o objetivo das aulas, as minhas e as do Moreno, eu entendi que o objetivo era, primeiro, dar uma noção do que é a telefonia celular, se é que alguém não tem esse grupo, e dar uma noção, em particular, do que é o sistema 4G, do sistema 5G e também das redes celulares privativas 4G e 5G. Então eu achei que isso que é o foco. Ele fala muito no VLAN também, mas e antes do VLAN também eu acho que dentro daquilo que eu passei para vocês, a questão de trabalhar com IPs, numeração dos IPs, a numeração das redes, como configurar os switches, toda essa questão aí seria, como eu tinha comentado antes, acho que é interessante ter um curso sobre isso. Assim, estou falando isso do ponto de vista bem acadêmico, tá? Eu não sei se o CPQD vai precisar disso, entendeu? A ideia é selecionar alguns de vocês para ir para o CPQD, não é isso?
+
+1:31:20 - Clodoaldo Callogero 
+Isso, exatamente. E eu estava dando uma olhada no o conteúdo do curso, na distribuição da aula, e não tem, na verdade, tem bastante a parte de protocolos, de verificação de êxodo, eu não sei se o pessoal que já trabalha com isso pode me ajudar, mas eu não consegui...
+
+1:31:46 - Loreno 
+No Curriculum da Fiat?
+
+1:31:48 - Clodoaldo Callogero 
+Não, no Chroma eu acompanhei cronograma de aula. Deixa eu ver se eu consigo abrir ele aqui, ó. Entendi. Mais pra frente, além das suas aulas, porque no seu caso tem... É foco, mas a partir da semana...
+
+1:32:06 - Loreno 
+Deixa eu parar de partilhar pra gente conversar.
+
+1:32:10 - Clodoaldo Callogero 
+Tô abrindo aqui o meu calendário.
+
+1:32:13 - Palestrante Não Identificado 
+Aí você pode partilhar também.
+
+1:32:15 - Clodoaldo Callogero 
+Ah, eu posso partilhar?
+
+1:32:17 - Icaro Castro 
+Você Uma dúvida que me surgiu com o colega abordando essa parte aí. No caso, as pessoas que não foram, não sei se o senhor vai ter essa informação, mas as pessoas que não foram selecionadas, existe um banco de vagas dentro da CPQD, que quem fez o curso, eles enviam direciona algo do tipo?
+
+1:32:46 - Loreno 
+Acho que sim, mas também não tem informação.
+
+1:32:52 - Loreno 
+Eu não sei se eu estou compartilhando, eu fiz alguma coisa aqui.
+
+1:33:02 - Palestrante Não Identificado 
+Deixa eu só começar a mexer aqui.
+
+1:33:08 - Loreno 
+Deixa eu ver se você tá compartilhando.
+
+1:33:11 - Clodoaldo Callogero 
+Eu compartilhei o cronograma de aulas aqui.
+
+1:33:14 - Loreno 
+Não tô vendo, não.
+
+1:33:16 - Clodoaldo Callogero 
+Acho que ninguém tá. Eu acho que só o senhor consegue compartilhar.
+
+1:33:22 - Loreno 
+Só eu consigo? Eu acho que eu tenho o cronograma aqui.
+
+1:33:26 - Palestrante Não Identificado 
+Você tava compartilhando, Clodoaldo. Foi o que eu fiz, então.
+
+1:33:31 - Clodoaldo Callogero 
+Você parou de compartilhar.
+
+1:33:33 - Loreno 
+É problema de views, então, viu?
+
+1:33:36 - Clodoaldo Callogero 
+Compartilhar a tela.
+
+1:33:38 - Loreno 
+Camada 8, exatamente. Agora tá. Agora tá. Será que quando eu clico nele eu paro de compartilhar?
+
+1:33:49 - Clodoaldo Callogero 
+Então, deixa eu ver aqui, turma 1.
+
+1:33:54 - Loreno 
+Seria bom aumentar um pouquinho aí a visibilidade. Isso. Esse é o curso do Moreno e meu, né?
+
+1:34:06 - Clodoaldo Callogero 
+A sua tela está em cima, se o senhor quiser...
+
+1:34:12 - Loreno 
+Vou esconder, pronto. Não, não.
+
+1:34:14 - Clodoaldo Callogero 
+É problema de BIOS de novo aqui. Como dizem, é camada 8 agora, modelo 8 é camada 8.
+
+1:34:25 - Clodoaldo Callogero 
+Nossa senhora, hein?
+
+1:34:28 - Loreno 
+É o que estava faltando para o modelo 11.
+
+1:34:33 - Clodoaldo Callogero 
+Então, na turma, a partir da sua turma, deixa eu ver aqui. Nós vamos manter a aula 7, a partir da turma da aula 9, aí o professor Almeida. Acho que todo mundo está vendo isso aqui.
+
+1:34:54 - Loreno 
+Aqui ele está com ferramenta do troubleshooting, acho que vai entrar bem no ping. Então, eu tinha pensado até em dar uma passada por isso. Ainda bem que realmente não ia ter sentido, porque já tem um professor que vai ver isso.
+
+1:35:12 - Clodoaldo Callogero 
+Então talvez a gente veja a parte prática aqui, Sherby.
+
+1:35:16 - Loreno 
+Imagino que sim. Nas próximas também, segmentação.
+
+1:35:20 - Clodoaldo Callogero 
+Então talvez a sua parte seja mesmo mais teórica. Acho que sim.
+
+1:35:30 - Loreno 
+Acho que o objetivo da minha parte é dar uma base teórica para vocês. Agora é. Vocês sabem a origem dessa palavra teoria, né? Eu não sei, não. É grego, né?
+
+1:35:53 - Clodoaldo Callogero 
+Deve ser de Deus.
+
+1:35:55 - Clodoaldo Callogero 
+Deus é Deus.
+
+1:35:57 - Loreno 
+Então, o Pitágoras dizia que quando ele entrava em teoria, ele entrava em uníssono com os deuses, sintonizava com os deuses. Então, o que eu quero dizer assim, teoria é muito importante. Agora, você tem que preencher, eu vou dar um exemplo bem claro para vocês aqui. Se você preencher a teoria com coisas concretas, ela vira a realidade, está muito próxima da realidade. Então, a teoria é um esboço, digamos, é uma É um aparelho onde você vai botar os tijolos. Então é importante você sentar os tijolos um a um. O exemplo que eu dou foi ontem. Eu estava citando lá o snowball, etc., e dei a explicação do snowball correto, teórica. Mas nada como uma pessoa que já trabalhou com o snowball trazer o que é o snowball de verdade. Então, assim, acho que... Super válido. Mas a teoria é também importante, porque se você for para lá e ficar... Se você for atrás de nomenclatura de todos os fabricantes, você vai virar... A tua cabeça vai virar uma torre de Babel, né? Você fala um monte de língua e ninguém se entende.
+
+1:37:25 - Clodoaldo Callogero 
+Ser executor não adianta, né? Tem que ser um pensador para executar. Eu tenho um exemplo muito prático de álgebra linear, que eu lembrava na faculdade, que eu falava, nossa senhora, isso aqui é abstrato demais, é grego.
+
+1:37:40 - Loreno 
+E é abstrato mesmo, né?
+
+1:37:42 - Clodoaldo Callogero 
+Então, depois quando a gente vê no dia a dia, você fala, poxa, é um plano, várias dimensões de um plano, hoje a gente faz gráfico em 10 dimensões aí.
+
+1:37:55 - Loreno 
+É que assim, não foi o meu caso na faculdade, mas no científico, Eu aprendi geometria analítica, que é uma maneira bem prática de ver a algebra linear. E aí a gente já tinha essa noção, a gente percebeu, quando teve o curso de algebra linear, que era uma coisa muito mais geral. Eu estava falando de matrizes, vetores e vários elementos, por exemplo, nomes, As próprias equações diferenciais, por exemplo, elas podem ter a sua álgebra linear. Vamos brincar um pouquinho então das redes? Eu vou tentar compartilhar, vou aumentar o tamanho da minha tela. Um pouquinho menos. Tá, agora eu vou compartilhar. Vou apagar aqui. Tá, screen. Tá, screen. Ops, fiz um erro. Eu queria que tal estar em screen. Agora nunca mais ele vai me deixar aqui. Vocês estão enxergando já um PowerPoint aí? Ainda não, pessoal.
+
+1:39:54 - Marcelo 
+Agora sim.
+
+1:39:55 - Loreno 
+Bom, eu vou fazer um ride aqui. Então, repara o seguinte aqui. Peguei aqui, por exemplo, um exemplo de planta. Esse exemplo a gente vai ver no... Mas vamos pensar Imagina tirar essa quilometragem aqui. Imagina que você tenha uma empresa onde as coisas são assim. Então, que equipamento você vai botar aqui? A primeira coisa que você vai ter que fazer é analisar a planta. Aqui eu botei sementos, mas vamos pensar que é pertinho. Não precisa ser 100 metros não. É tão pertinho que dá para botar access points, ou então dá para colocar access points de Wi-Fi, ou dá para colocar o 4G, 5G pico-celas. Então, suponha que é essa tua disposição, você tem um prédio aqui que é a portaria e mais o prédio administrativo, tem um prédio lá que é o prédio da diretoria e tem um prédio aqui que é a fábrica. E se não for a fábrica, vai ser a fazenda, a farm. Ou qualquer outra aplicação. Então, que tipo de equipamento que a gente vai botar aí? A primeira decisão, eu acho, é aquela história das frequências. Vai ter que analisar as frequências. Por exemplo, se for tudo próximo aqui, a gente pode dizer o seguinte, olha, uma rádio base que dá para uma macrocélula ou que dá para uma microcélula é muito cara. Então, vamos apresentar, vamos trabalhar com... Espera aí, gente. Nossa, eu tô na aula 9. Eu vou fazer o seguinte. Desculpa que eu fiz besteira. Clope. Não foi pra lá o 8 ainda. Fechagem. Salvagem. E aí se eu compartilhar de novo. Stop sharing.
+
+1:42:24 - Palestrante Não Identificado 
+Share.
+
+1:42:25 - Loreno 
+Então vamos ver lá. É a 8 que tá aqui. Ah, era essa. Eu coloquei a coisa errada para mostrar para vocês. Ou essa aqui vocês já estavam vendo? Pessoal? Professor, acho que o Carlos Batista queria falar alguma coisa.
+
+1:42:44 - Clodoaldo Callogero 
+Acho que o professor não vê quando está com a mão levantada. Não.
+
+1:42:50 - Loreno 
+A menos que ele vier aqui, eu posso ver. Agora eu posso ver.
+
+1:42:55 - Palestrante Não Identificado 
+Temos que ser deselegantes com ele.
+
+1:42:57 - Loreno 
+Pode ir, pode ir. Não, acho que pode ter. Mas quem levantou a mão?
+
+1:43:05 - Palestrante Não Identificado 
+Carlos Batista.
+
+1:43:06 - Palestrante Não Identificado 
+Carlos Batista.
+
+1:43:07 - Loreno 
+Ah, estou vendo quem levantou a mão. Pode falar, Carlos. Carlos, pode falar.
+
+1:43:22 - Palestrante Não Identificado 
+Acho que ele está mudo lá e falando.
+
+1:43:27 - Palestrante Não Identificado 
+Deve estar mudo.
+
+1:43:29 - Loreno 
+Por isso que era importante ver o rosto das pessoas. Bom, se bem que tem a marquinha aqui, né? Agora está dizendo que ele não está mudo não. Só que, acho que... Eu não estou conseguindo ouvir ele, não. Obrigado. Vocês estão vendo a empresa lá? O Carlos, você conseguiu ver o que está acontecendo aí? Bom, o Carlos, coloca no chat. A sua dúvida, que daí já visitamos ela. Imagina que tem essas três prédios aqui, que eu já tinha citado o que era, o prédio de administração, o prédio da diretoria e mais a fábrica, e eles estejam próximos. Se eles estiverem próximos, talvez não haja necessidade de colocar uma radiobase de grande porte. Então, talvez consiga colocar as radiobases de pequeno porte.
+
+1:45:19 - Palestrante Não Identificado 
+Certo?
+
+1:45:20 - Loreno 
+Eu tenho algum exemplo aqui? Se não tiver, a gente providencia. Aqui, né? Isso. Olha, então assim, essa alternativa de uma estação de grande porte, que ficaria aqui ou em qualquer lugar, ela pode ser descartada se os prédios estiverem próximos aí. Então o que você vai botar vai replicar esses prestadores, esses pontos de acesso, Prestadores. Eu vou começar a colocar aqui, dentro, dizendo que tem vários aqui dentro. E aqui também vou colocar aqui, para dar a entender que tem vários. E do mesmo jeito pode ter vários aqui, né? Na fábrica. Certo, gente? Estão acompanhando aqui?
+
+1:46:58 - Palestrante Não Identificado 
+Ok.
+
+1:46:58 - Loreno 
+Pessoal, o Carlos conseguiu Vou colocar no chat.
+
+1:47:05 - Palestrante Não Identificado 
+Deixa eu ver.
+
+1:47:07 - Palestrante Não Identificado 
+Acho que ele não está conseguindo falar, professor.
+
+1:47:13 - Clodoaldo Callogero 
+Ele pôs uma mensagem no chat. Deixa eu ver.
+
+1:47:19 - Loreno 
+Essa do exercício de empreendimento é uma delegação, né? É, uma dificuldade aí eu estudo. O estudo na viabilidade técnica, entendeu? Mas obviamente que seria o caso de colocar no Santos Dumont, por exemplo, se eles forem ficar no Santos Dumont ou se eles forem ficar na Bahia, digamos que eles fiquem na Bahia de Guanabara, aí você vai ter dois sites separados. Então, respondendo ao Carlos, o estudo de viabilidade, para agora, mas teria que levantar os custos aí. Mas em uma situação normal, o que aconteceria é você colocar uma parte da rede no aeroporto ou nos próprios navios, por exemplo. Ou então no próprio porto. Eu vou pegar essa planta aqui e nós vamos brincar um pouquinho. Tá bom? Porque vale a pena. Voltando à planta. Suponha esse exemplo aqui. O que dá para depender daqui? Que vai ter rede 5G em todos esses locais aqui. Agora, como eu comentei com vocês, é interessante, vou apresentar uma outra coisa aqui. Acho que tem um objeto aqui. Acho que vou representar assim. Vou representar com esse coisinha. Vai ser interessante você botar switches aqui, onde essas rádio-bases se interliguem. Agora pico-celos, né? Se interliguem. Eu já colocaria três logo. Como é que você vai integrar isso? Você vai integrar isso num router, por exemplo. Então, você colocaria um router. Vou inventar um símbolo para o router aqui, para não ter que pegar lá o routerzinho do vídeo. Vamos apresentar o router como Essa caixinha aqui. Aí você vai ter que montar um router em algum lugar. Por exemplo, dois routers você pode ter. E aí que tem acesso para a nuvem. Provavelmente, como a cabeação vai chegar nesse prédio da administração aqui, talvez seja o local para você montar o router. Então esse seria o projeto de bom senso de uma rede pequena. Uma rede, sei lá, pode perguntar.
+
+1:50:19 - ANTONIO ADADE DE CASTRO BATISTA 
+Esse router que o senhor colocou aí, seria o router da IPRAM ou do UPF já?
+
+1:50:25 - Loreno 
+Ele é o router da IPRAM que eu tinha falado, tá? Para integrar os vários switches. Mas ao mesmo tempo, ele pode ser o router que acessa, ou você pode botar um outro, né? Que acessa a nuvem, por exemplo, tá? Entendeu? Obrigado, professor.
+
+1:50:47 - Palestrante Não Identificado 
+Tá bom.
+
+1:50:48 - Loreno 
+Eu acho que, por possibilidade, poderia ter um outro aqui. Seria colocado, tipo, isso. Tipo, perto do ambiente de fábrica aqui. Professor, esse dimensionamento levaria em conta o tráfego, com certeza.
+
+1:51:08 - Clodoaldo Callogero 
+Por exemplo, as três suítes, você colocou em função e fazer três...
+
+1:51:15 - Loreno 
+Eu imaginei que tem três grupos de tráfego aqui. O tráfego da diretoria e relações externas, o tráfego da administração e o tráfego da pianzada, digamos. Mas você tem toda a razão, é dimensionamento. Pode ser que não seja, Se necessário, um só. Pode ser que seja... Se isso aqui for pouca coisa, de repente isso aqui não existe, entendeu?
+
+1:51:50 - Clodoaldo Callogero 
+Essa é uma dúvida. Como é que eu vou dimensionar, por exemplo, o tamanho, o tanto de pacotes que eu vou trafegar nisso daí? Não é o objetivo do curso? Eu estou viajando muito.
+
+1:52:05 - Loreno 
+Não, não é o objetivo. É o objetivo do curso, o curso é muito delimitado. Mas uma coisa você tem que sair daqui sabendo, eu acho. Primeiro, você vai ter que fazer um estudo de dimensionamento dessa rede aí. Isso a gente falou lá no começo, não sei se você está lembrado. Lembro, lembro, sim. Então, você vai ter que fazer um estudo e vai chegar à conclusão, por exemplo, que aqui para o diretoria não precisa de ralte, por exemplo. E esse estudo que você vai fazer vai ser com base, consultando, digamos, você vai chegar e perguntar lá para, digamos, que tem uma secretária que comanda a diretoria, a diretora-presidente. Não, eu quero dizer, a secretária que conhece tudo, conhece tudo que o pool de secretárias conhece. Digamos que é um pool. E aí você vai entrevistar ela e vai dizer, olha, mas vem cá, aqui cada diretora fala, Liga quantas vezes por dia, como ele acessa a internet, como. Tem muitos que ficam olhando sites que não interessam. Aí ela vai te falar mais ou menos isso e com base nisso você vai fazer a estimativa. Existem sites externos, mas existem também, por exemplo, a Ericsson. E não só a Ericsson, tem vários prestadores de serviços que dizem que se você usa o browser 15 minutos por hora, você gera tal tráfego. Se você usa transferência de arquivo durante 10 minutos, você gera tal tráfego. Existem essas tabelas. Na verdade, como é que eu vou chamar? São indicadores de uso da rede. Entendi.
+
+1:54:09 - Palestrante Não Identificado 
+Tá bom. Obrigado, professor.
+
+1:54:11 - Francis 
+Professor, se eu vou tirar uma dúvida? Claro. Em relação a isso que o professor perguntou, isso aí é uma questão de feeling também, de entender para projetar, o uso, o porte das operações também seria isso, mais ou menos?
+
+1:54:34 - Loreno 
+Eu não entendi a primeira parte da pergunta.
+
+1:54:38 - Francis 
+Esse dimensionamento seria da questão de feeling, de saber interpretar o porte das operações, a quantidade de pessoas...
+
+1:54:47 - Loreno 
+O feeling pega pra caramba, mas não só o feeling. Você coloca... Falei ali antes, existem fatos, tipo assim, se você ficar usando tal arquivo, o FTP, por exemplo, durante 15 minutos, você vai ter tal tráfego. Existem esses indicadores. O cara que for fazer a dimensão da nosAntonio vai ter que pegar os tipos de tráfego qAntonioretoria usa e ver a quantidade para qualificar isso em megabits. Entendeu? Vamos ver um outro exemplo aí?
+
+1:55:31 - Clodoaldo Callogero 
+O que vocês acham? Eu disse, acho que foi o Antônio da outra vez, quanto mais, melhor, né, Antônio? Quanto mais, melhor.
+
+1:55:48 - Loreno 
+É isso aí. Vamos pensar o que pode mudar aqui. Vamos pensar que essa fábrica ou esse dispositivo, esse field, ele está distante. Primeiro vamos ver dois casos. Muito distante, por exemplo. Acho que o colega estava comentando lá, imagina que você tem no aeroporto uma área de produção e a outra área de produção esteja, digamos, lá no Porto do Rio, no Rio de Janeiro, em outros locais, que dá para ir no Governador. Alguma coisa, até vou diminuir aqui. Alguma coisa assim, ó. E aqui, digamos que essa distância aqui é de... Aqui no caso do Rio vai dar uns 20 quilômetros, talvez, ou 30 quilômetros. Mas imagina que essa distância é da ordem de centenas de quilômetros, por exemplo. São Paulo e Campinas, por exemplo. Seriam as duas fábricas aqui. E aí, digamos que... Vamos pegar aqui um exemplo. Essa aqui também tem um prédio de tintoria ou coisa parecida, que está próxima também. Então, provavelmente você vai ter que apelar para a Radiomassi. Então, uma rádio base de maior porte. Eu até vou fazer a partir daqui, vou fazer assim. Você vai ter que botar uma rádio base mais cara aqui e outra aqui. Porque elas vão ter que pegar essas áreas aqui e vão ter que conversar uma com a outra de alguma forma. Estamos no mesmo nível de rádio base. Isso é outro caso de uma outra topologia. E pode ter uma topologia intermediária?
+
+1:58:19 - Clodoaldo Callogero 
+Pode falar.
+
+1:58:20 - Clodoaldo Callogero 
+É o seguinte, você colocou entre São Paulo e Campinas duas rádios bases. Não sei se a palavra correta é concorrer com as operadoras, isso não tem problema legal? Eu posso dimensionar?
+
+1:58:41 - Loreno 
+Não, a tua rede privativa pode estender por todo o território nacional. Só que você vai ter que estabelecer links dedicados entre elas. Aqui não vai ter um link, invisibilidade, se for Porto Alegre e São Paulo. Mas pode ter um link aqui de fibra ótica, qualquer coisa assim, né?
+
+1:59:08 - Clodoaldo Callogero 
+Ah, então o senhor já respondeu outra pergunta, porque eu imaginei que aquela... Ficou meio confuso pra mim, o front hall e o back hall. Eu imaginei que as redes privativas teriam só front hall centralizado, mas pelo jeito não precisa ser. Pode ser assim, né?
+
+1:59:28 - Loreno 
+Não, pode ser igual também. Depende do tamanho da empresa.
+
+1:59:33 - Clodoaldo Callogero 
+Não deve ser a realidade do país, mas...
+
+1:59:37 - Loreno 
+Eu não sei como é que... Pelo que eu entendi, na maioria desses... Dessa leitura que eu fiz, né? Na maioria desses sites aí está tendo um nível único de prestadoras. Mas acho que tem alguns que estão usando, de prestadores não, de rádio base, mas tem prestadores que estão usando mais de um nível.
+
+2:00:04 - FAGUNDES Felipe 
+Professor, nesses exemplos que o senhor está dando aí, o senhor pode acrescentar também o core, por exemplo? Nessa situação atual que o senhor está aí, uma configuração mais ideal de onde onde ficaria instalado?
+
+2:00:21 - Loreno 
+Vamos dar uma pensada nisso. Onde ficaria instalado o CORE? O importante para o CORE é que ele seja instalado em uma sala de equipamentos. Ele não pode ser instalado em uma sala com teto baixo. Ele tem que ser instalado com teto alto. Sala de laboratório, onde tem a calha de cabos, esse tipo de coisa. Então assim, parece que o lugar mais adequado para o CORE é junto dessas fábricas aqui, onde teria mais espaço. Nesse contexto que eu fiz aqui. Agora você pode dizer que esse prédio aqui é um prédio que tem um pé direito alto. Se tivesse um pé direito alto, claro que comportaria aqui também o 5G, o CORE.
+
+2:01:17 - Clodoaldo Callogero 
+Carlos Batista, acho que está sem microfone, ele pôs uma pergunta no chat, professor. Ele disse o seguinte... Pode falar. No caso de São Paulo e Arampinas, não seriam duas rádio-base convisadas? Seria uma solução híbrida, backbone de fibra ótica e rádio-base?
+
+2:01:40 - Loreno 
+Isso, exatamente. Uma solução híbrida de fibra ótica e rádio-base. É, porque a rede privativa em si, ela dificilmente vai ter... Não existe visibilidade, eu acho, de São Paulo para Campinas. Linha direta, né? O máximo que você vai encontrar é talvez de Jundiaí ou de... Ali do monte, daquela montanha lá, que existe lá, que realmente existe. Esqueci o nome. Dois Irmãos, acho que chama, né? Vamos colocar Dois Irmãos para São Paulo. Está ali aí sim, mas aqui não. Então, essa aqui é a colocação aí. Mas aonde que está se dando a rede? Repare que aqui nesse trecho, junto à fábrica aqui, junto aos prédios, vai ter que ter bastante dessa costadura menorzinha aqui para dar cobertura, né? Entendeu?
+
+2:02:43 - Palestrante Não Identificado 
+Legal.
+
+2:02:44 - Loreno 
+E um outro exemplo que eu ia fazer com vocês, que eu pensei em fazer, é assim, não está a dois quilômetros mais. Agora está uma centena de metros, ou algumas centenas de metros, que é um exemplo que a gente vai ver lá. Mas a gente pode ver outros exemplos, sem problema. Digamos que aqui tenha um quilômetro. Passar para a mesma área. Ixi, vai ter que ir lá embaixo. Isso. Digamos que é o senso de um quilômetro. Vai caber também a aplicação, tanto faz aqui ou aqui, de uma rádio base que pegue essa região maior e que onde todas as pequenininhas vão se interligar. Com a história do Cláudio Rã, né?
+
+2:04:09 - Clodoaldo Callogero 
+Carlos, eu entendi, eu sei que você quer que eu fale para o professor, mas eu não entendi a pergunta. Eu não vi a sua pergunta. O Carlos quer fazer uma pergunta, mas eu não... Melhor o senhor ler por aí.
+
+2:04:29 - Clodoaldo Callogero 
+Ele fez o chat?
+
+2:04:31 - Clodoaldo Callogero 
+É, ele colocou no chat, mas eu não achei. Deixa eu ver se eu acho. Acho que foi essa daqui. Poderia usar repetidores 5G na BR?
+
+2:04:44 - Loreno 
+É isso? O que a BR?
+
+2:04:47 - Clodoaldo Callogero 
+A estrada? São Paulo-Campinas seria a Bandeirantes. A Bandeirantes? Imagino que sim.
+
+2:04:53 - Loreno 
+Linha EMUERA e Bandeirantes.
+
+2:04:54 - Loreno 
+É, imagino que seja.
+
+2:04:56 - Loreno 
+Não, aí para a rede privativa, se você quer criar um corredor da rede privativa, provavelmente as frequências não vão bater com as frequências que são usadas pelas operadoras, porque elas já estão usando essas frequências. Mas a princípio poderia. Boa noite, Carlos. Voltando à história, aí que vem a história da competição. Ele teria que ter essa frequência dedicada Se o SMP já tem local, ele não consegue entrar. E com certeza o SMC e o SMP já invadiram esse ambiente. Esse aqui é outro caso. Você teria uma rádio base e várias pequenas são ligadas nela.
+
+2:06:09 - Clodoaldo Callogero 
+Nesse caso, mesmo sendo tradução via rádio, eu posso chamar de front hall isso?
+
+2:06:19 - Loreno 
+O que é front hall e back hall? Essa que é a sua dúvida?
+
+2:06:28 - Palestrante Não Identificado 
+Isso.
+
+2:06:29 - Loreno 
+Então, primeiro, o front hall, O backhaul é parte do backhaul. Só que é uma parte separada que não está integrada no backhaul total. Ele é uma parte que pode constituir um backhaul de algumas radiobases. Aquele desenhozinho que a gente... Entendeu? E aí até comentei com vocês que ele teve muita... Tinha muitos estudos como deveria ser constituído. Eu li pelo menos uns oito artigos de sugestão e comparação de front hall com fibra, com par trançado, usando MMDS, usando uma série de técnicas. Então é... Então basicamente é isso. Pessoal, espero que vocês tenham aproveitado a aula e já vou compartilhar com você. Tá? Tá bom. Obrigado.
+
+2:07:40 - Palestrante Não Identificado 
+Obrigado.
+
+2:07:41 - Loreno 
+Acho que aqui por hoje encerramos, né? Passamos da hora.
+
+2:07:46 - Clodoaldo Callogero 
+Boa noite, pessoal.
+
+2:07:48 - Loreno 
+Obrigado aí pelo tempo.
+
+2:07:50 - Loreno 
+Obrigado a você. Até mais. Obrigado, professor. Boa noite a todos aí.
+
+2:08:02 - Palestrante Não Identificado 
+Tchau, boa noite.
+
+2:08:05 - Palestrante Não Identificado 
+Legendas pela comunidade Amara.org Legendas pela comunidade Amara.org E aí

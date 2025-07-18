@@ -1,0 +1,611 @@
+<!DOCTYPE html> <html><head>
+		<title>Private Networks - MOD01CL04</title>
+		<base href="..\..\..\..\..\..\../">
+		<meta id="root-path" root-path="..\..\..\..\..\..\../">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes, minimum-scale=1.0, maximum-scale=5.0">
+		<meta charset="UTF-8">
+		<meta name="description" content="DRIVE - Private Networks - MOD01CL04">
+		<meta property="og:title" content="Private Networks - MOD01CL04">
+		<meta property="og:description" content="DRIVE - Private Networks - MOD01CL04">
+		<meta property="og:type" content="website">
+		<meta property="og:url" content="courses/cpqd_private-networks-5g/classes/0104.html">
+		<meta property="og:image" content="undefined">
+		<meta property="og:site_name" content="DRIVE">
+		<meta name="author" content="Gabryel Nóbrega"><link rel="alternate" type="application/rss+xml" title="RSS Feed" href="lib/rss.xml"><script async="" id="webpage-script" src="lib/scripts/webpage.js" onload="this.onload=null;this.setAttribute(&quot;loaded&quot;, &quot;true&quot;)"></script><script type="module" async="" id="graph-view-script" src="lib/scripts/graph-view.js"></script><script async="" id="graph-wasm-script" src="lib/scripts/graph-wasm.js" onload="this.onload=null;this.setAttribute(&quot;loaded&quot;, &quot;true&quot;)"></script><script async="" id="graph-render-worker-script" src="lib/scripts/graph-render-worker.js" onload="this.onload=null;this.setAttribute(&quot;loaded&quot;, &quot;true&quot;)"></script><script async="" id="tinycolor-script" src="lib/scripts/tinycolor.js" onload="this.onload=null;this.setAttribute(&quot;loaded&quot;, &quot;true&quot;)"></script><script async="" id="pixi-script" src="https://cdnjs.cloudflare.com/ajax/libs/pixi.js/7.4.0/pixi.min.js" onload="this.onload=null;this.setAttribute(&quot;loaded&quot;, &quot;true&quot;)"></script><script async="" id="minisearch-script" src="https://cdn.jsdelivr.net/npm/minisearch@6.3.0/dist/umd/index.min.js" onload="this.onload=null;this.setAttribute(&quot;loaded&quot;, &quot;true&quot;)"></script><link rel="icon" href="lib/media/favicon.png"><script async="" id="graph-data-script" src="lib/scripts/graph-data.js" onload="this.onload=null;this.setAttribute(&quot;loaded&quot;, &quot;true&quot;)"></script><style>body{--line-width:40em;--line-width-adaptive:40em;--file-line-width:40em;--sidebar-width:min(20em, 80vw);--collapse-arrow-size:11px;--tree-horizontal-spacing:0.6em;--tree-vertical-spacing:0.6em;--sidebar-margin:12px}.sidebar{height:100%;min-width:calc(var(--sidebar-width) + var(--divider-width-hover));max-width:calc(var(--sidebar-width) + var(--divider-width-hover));font-size:14px;z-index:10;position:relative;overflow:hidden;transition:min-width ease-in-out,max-width ease-in-out;transition-duration:.2s;contain:size}.sidebar-left{left:0}.sidebar-right{right:0}.sidebar.is-collapsed{min-width:0;max-width:0}body.floating-sidebars .sidebar{position:absolute}.sidebar-content{height:100%;min-width:calc(var(--sidebar-width) - var(--divider-width-hover));top:0;padding:var(--sidebar-margin);padding-top:4em;line-height:var(--line-height-tight);background-color:var(--background-secondary);transition:background-color,border-right,border-left,box-shadow;transition-duration:var(--color-fade-speed);transition-timing-function:ease-in-out;position:absolute;display:flex;flex-direction:column}.sidebar:not(.is-collapsed) .sidebar-content{min-width:calc(max(100%,var(--sidebar-width)) - 3px);max-width:calc(max(100%,var(--sidebar-width)) - 3px)}.sidebar-left .sidebar-content{left:0;border-top-right-radius:var(--radius-l);border-bottom-right-radius:var(--radius-l)}.sidebar-right .sidebar-content{right:0;border-top-left-radius:var(--radius-l);border-bottom-left-radius:var(--radius-l)}.sidebar:has(.sidebar-content:empty):has(.topbar-content:empty){display:none}.sidebar-topbar{height:2em;width:var(--sidebar-width);top:var(--sidebar-margin);padding-inline:var(--sidebar-margin);z-index:1;position:fixed;display:flex;align-items:center;transition:width ease-in-out;transition-duration:inherit}.sidebar.is-collapsed .sidebar-topbar{width:calc(2.3em + var(--sidebar-margin) * 2)}.sidebar .sidebar-topbar.is-collapsed{width:0}.sidebar-left .sidebar-topbar{left:0}.sidebar-right .sidebar-topbar{right:0}.topbar-content{overflow:hidden;overflow:clip;width:100%;height:100%;display:flex;align-items:center;transition:inherit}.sidebar.is-collapsed .topbar-content{width:0;transition:inherit}.clickable-icon.sidebar-collapse-icon{background-color:transparent;color:var(--icon-color-focused);padding:0!important;margin:0!important;height:100%!important;width:2.3em!important;margin-inline:0.14em!important;position:absolute}.sidebar-left .clickable-icon.sidebar-collapse-icon{transform:rotateY(180deg);right:var(--sidebar-margin)}.sidebar-right .clickable-icon.sidebar-collapse-icon{transform:rotateY(180deg);left:var(--sidebar-margin)}.clickable-icon.sidebar-collapse-icon svg.svg-icon{width:100%;height:100%}.sidebar-section-header{margin:0 0 1em 0;text-transform:uppercase;letter-spacing:.06em;font-weight:600}body{transition:background-color var(--color-fade-speed) ease-in-out}.webpage-container{display:flex;flex-direction:row;height:100%;width:100%;align-items:stretch;justify-content:center}.document-container{opacity:1;flex-basis:100%;max-width:100%;width:100%;height:100%;display:flex;flex-direction:column;align-items:center;transition:opacity .2s ease-in-out;contain:inline-size}.hide{opacity:0;transition:opacity .2s ease-in-out}.document-container>.markdown-preview-view{margin:var(--sidebar-margin);margin-bottom:0;width:100%;width:-webkit-fill-available;width:-moz-available;width:fill-available;background-color:var(--background-primary);transition:background-color var(--color-fade-speed) ease-in-out;border-top-right-radius:var(--window-radius,var(--radius-m));border-top-left-radius:var(--window-radius,var(--radius-m));overflow-x:hidden!important;overflow-y:auto!important;display:flex!important;flex-direction:column!important;align-items:center!important;contain:inline-size}.document-container>.markdown-preview-view>.markdown-preview-sizer{padding-bottom:80vh!important;width:100%!important;max-width:var(--line-width)!important;flex-basis:var(--line-width)!important;transition:background-color var(--color-fade-speed) ease-in-out;contain:inline-size}.markdown-rendered img:not([width]),.view-content img:not([width]){max-width:100%;outline:0}.document-container>.view-content.embed{display:flex;padding:1em;height:100%;width:100%;align-items:center;justify-content:center}.document-container>.view-content.embed>*{max-width:100%;max-height:100%;object-fit:contain}:has(> :is(.math,table)){overflow-x:auto!important}.document-container>.view-content{overflow-x:auto;contain:content;padding:0;margin:0;height:100%}.scroll-highlight{position:absolute;width:100%;height:100%;pointer-events:none;z-index:1000;background-color:hsla(var(--color-accent-hsl),.25);opacity:0;padding:1em;inset:50%;translate:-50% -50%;border-radius:var(--radius-s)}</style><script defer="">async function loadIncludes(){if("file:"!=location.protocol){let e=document.querySelectorAll("include");for(let t=0;t<e.length;t++){let o=e[t],l=o.getAttribute("src");try{const e=await fetch(l);if(!e.ok){console.log("Could not include file: "+l),o?.remove();continue}let t=await e.text(),n=document.createRange().createContextualFragment(t),i=Array.from(n.children);for(let e of i)e.classList.add("hide"),e.style.transition="opacity 0.5s ease-in-out",setTimeout((()=>{e.classList.remove("hide")}),10);o.before(n),o.remove(),console.log("Included file: "+l)}catch(e){o?.remove(),console.log("Could not include file: "+l,e);continue}}}else{if(document.querySelectorAll("include").length>0){var e=document.createElement("div");e.id="error",e.textContent="Web server exports must be hosted on an http / web server to be viewed correctly.",e.style.position="fixed",e.style.top="50%",e.style.left="50%",e.style.transform="translate(-50%, -50%)",e.style.fontSize="1.5em",e.style.fontWeight="bold",e.style.textAlign="center",document.body.appendChild(e),document.querySelector(".document-container")?.classList.remove("hide")}}}document.addEventListener("DOMContentLoaded",(()=>{loadIncludes()}));let isFileProtocol="file:"==location.protocol;function waitLoadScripts(e,t){let o=e.map((e=>document.getElementById(e+"-script"))),l=0;!function e(){let n=o[l];l++,n&&"true"!=n.getAttribute("loaded")||l<o.length&&e(),l<o.length?n.addEventListener("load",e):t()}()}</script><link rel="stylesheet" href="lib/styles/obsidian.css"><link rel="stylesheet" href="lib/styles/theme.css"><link rel="preload" href="lib/styles/global-variable-styles.css" as="style" onload="this.onload=null;this.rel='stylesheet'"><noscript><link rel="stylesheet" href="lib/styles/global-variable-styles.css"></noscript><link rel="preload" href="lib/styles/supported-plugins.css" as="style" onload="this.onload=null;this.rel='stylesheet'"><noscript><link rel="stylesheet" href="lib/styles/supported-plugins.css"></noscript><link rel="preload" href="lib/styles/main-styles.css" as="style" onload="this.onload=null;this.rel='stylesheet'"><noscript><link rel="stylesheet" href="lib/styles/main-styles.css"></noscript><link rel="preload" href="lib/styles/snippets.css" as="style" onload="this.onload=null;this.rel='stylesheet'"><noscript><link rel="stylesheet" href="lib/styles/snippets.css"></noscript></head><body class="publish css-settings-manager theme-dark"><script defer="">let theme=localStorage.getItem("theme")||(window.matchMedia("(prefers-color-scheme: dark)").matches?"dark":"light");"dark"==theme?(document.body.classList.add("theme-dark"),document.body.classList.remove("theme-light")):(document.body.classList.add("theme-light"),document.body.classList.remove("theme-dark")),window.innerWidth<480?document.body.classList.add("is-phone"):window.innerWidth<768?document.body.classList.add("is-tablet"):window.innerWidth<1024?document.body.classList.add("is-small-screen"):document.body.classList.add("is-large-screen")</script><div class="webpage-container workspace"><div class="sidebar-left sidebar"><div class="sidebar-handle"></div><div class="sidebar-topbar"><div class="topbar-content"><label class="theme-toggle-container" for="theme_toggle"><input class="theme-toggle-input" type="checkbox" id="theme_toggle"><div class="toggle-background"></div></label></div><div class="clickable-icon sidebar-collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" class="svg-icon"><path d="M21 3H3C1.89543 3 1 3.89543 1 5V19C1 20.1046 1.89543 21 3 21H21C22.1046 21 23 20.1046 23 19V5C23 3.89543 22.1046 3 21 3Z"></path><path d="M10 4V20"></path><path d="M4 7H7"></path><path d="M4 10H7"></path><path d="M4 13H7"></path></svg></div></div><div class="sidebar-content"><div class="search-input-container"><input enterkeyhint="search" type="search" spellcheck="false" placeholder="Search..."><div class="search-input-clear-button" aria-label="Clear search"></div></div><include src="lib/html/file-tree.html"></include></div><script defer="">let ls = document.querySelector(".sidebar-left"); ls.classList.add("is-collapsed"); if (window.innerWidth > 768) ls.classList.remove("is-collapsed"); ls.style.setProperty("--sidebar-width", localStorage.getItem("sidebar-left-width"));</script></div><div class="document-container markdown-reading-view hide"><div class="markdown-preview-view markdown-rendered allow-fold-headings allow-fold-lists is-readable-line-width"><style id="MJX-CHTML-styles">mjx-c.mjx-c30::before{padding:.666em .5em .022em 0;content:"0"}mjx-c.mjx-c39::before{padding:.666em .5em .022em 0;content:"9"}mjx-c.mjx-c2212::before{padding:.583em .778em .082em 0;content:"−"}mjx-container[jax=CHTML]{line-height:0}mjx-container [space="1"]{margin-left:.111em}mjx-container [space="2"]{margin-left:.167em}mjx-container [space="3"]{margin-left:.222em}mjx-container [space="4"]{margin-left:.278em}mjx-container [space="5"]{margin-left:.333em}mjx-container [rspace="1"]{margin-right:.111em}mjx-container [rspace="2"]{margin-right:.167em}mjx-container [rspace="3"]{margin-right:.222em}mjx-container [rspace="4"]{margin-right:.278em}mjx-container [rspace="5"]{margin-right:.333em}mjx-container [size="s"]{font-size:70.7%}mjx-container [size=ss]{font-size:50%}mjx-container [size=Tn]{font-size:60%}mjx-container [size=sm]{font-size:85%}mjx-container [size=lg]{font-size:120%}mjx-container [size=Lg]{font-size:144%}mjx-container [size=LG]{font-size:173%}mjx-container [size=hg]{font-size:207%}mjx-container [size=HG]{font-size:249%}mjx-container [width=full]{width:100%}mjx-box{display:inline-block}mjx-block{display:block}mjx-itable{display:inline-table}mjx-row{display:table-row}mjx-row>*{display:table-cell}mjx-mtext{display:inline-block}mjx-mstyle{display:inline-block}mjx-merror{display:inline-block;color:red;background-color:#ff0}mjx-mphantom{visibility:hidden}mjx-assistive-mml{top:0;left:0;clip:rect(1px,1px,1px,1px);user-select:none;position:absolute!important;padding:1px 0 0!important;border:0!important;display:block!important;width:auto!important;overflow:hidden!important}mjx-assistive-mml[display=block]{width:100%!important}mjx-math{display:inline-block;text-align:left;line-height:0;text-indent:0;font-style:normal;font-weight:400;font-size:100%;font-size-adjust:none;letter-spacing:normal;border-collapse:collapse;overflow-wrap:normal;word-spacing:normal;white-space:nowrap;direction:ltr;padding:1px 0}mjx-container[jax=CHTML][display=true]{display:block;text-align:center;margin:1em 0}mjx-container[jax=CHTML][display=true][width=full]{display:flex}mjx-container[jax=CHTML][display=true] mjx-math{padding:0}mjx-container[jax=CHTML][justify=left]{text-align:left}mjx-container[jax=CHTML][justify=right]{text-align:right}mjx-mi{display:inline-block;text-align:left}mjx-c{display:inline-block}mjx-utext{display:inline-block;padding:.75em 0 .2em}mjx-msub{display:inline-block;text-align:left}mjx-mn{display:inline-block;text-align:left}mjx-mo{display:inline-block;text-align:left}mjx-stretchy-h{display:inline-table;width:100%}mjx-stretchy-h>*{display:table-cell;width:0}mjx-stretchy-h>*>mjx-c{display:inline-block;transform:scaleX(1)}mjx-stretchy-h>*>mjx-c::before{display:inline-block;width:initial}mjx-stretchy-h>mjx-ext{overflow:clip visible;width:100%}mjx-stretchy-h>mjx-ext>mjx-c::before{transform:scaleX(500)}mjx-stretchy-h>mjx-ext>mjx-c{width:0}mjx-stretchy-h>mjx-beg>mjx-c{margin-right:-.1em}mjx-stretchy-h>mjx-end>mjx-c{margin-left:-.1em}mjx-stretchy-v{display:inline-block}mjx-stretchy-v>*{display:block}mjx-stretchy-v>mjx-beg{height:0}mjx-stretchy-v>mjx-end>mjx-c{display:block}mjx-stretchy-v>*>mjx-c{transform:scaleY(1);transform-origin:left center;overflow:hidden}mjx-stretchy-v>mjx-ext{display:block;height:100%;box-sizing:border-box;border:0 solid transparent;overflow:visible clip}mjx-stretchy-v>mjx-ext>mjx-c::before{width:initial;box-sizing:border-box}mjx-stretchy-v>mjx-ext>mjx-c{transform:scaleY(500) translateY(.075em);overflow:visible}mjx-mark{display:inline-block;height:0}mjx-c::before{display:block;width:0}.MJX-TEX{font-family:MJXZERO,MJXTEX}.TEX-B{font-family:MJXZERO,MJXTEX-B}.TEX-I{font-family:MJXZERO,MJXTEX-I}.TEX-MI{font-family:MJXZERO,MJXTEX-MI}.TEX-BI{font-family:MJXZERO,MJXTEX-BI}.TEX-S1{font-family:MJXZERO,MJXTEX-S1}.TEX-S2{font-family:MJXZERO,MJXTEX-S2}.TEX-S3{font-family:MJXZERO,MJXTEX-S3}.TEX-S4{font-family:MJXZERO,MJXTEX-S4}.TEX-A{font-family:MJXZERO,MJXTEX-A}.TEX-C{font-family:MJXZERO,MJXTEX-C}.TEX-CB{font-family:MJXZERO,MJXTEX-CB}.TEX-FR{font-family:MJXZERO,MJXTEX-FR}.TEX-FRB{font-family:MJXZERO,MJXTEX-FRB}.TEX-SS{font-family:MJXZERO,MJXTEX-SS}.TEX-SSB{font-family:MJXZERO,MJXTEX-SSB}.TEX-SSI{font-family:MJXZERO,MJXTEX-SSI}.TEX-SC{font-family:MJXZERO,MJXTEX-SC}.TEX-T{font-family:MJXZERO,MJXTEX-T}.TEX-V{font-family:MJXZERO,MJXTEX-V}.TEX-VB{font-family:MJXZERO,MJXTEX-VB}mjx-stretchy-h mjx-c,mjx-stretchy-v mjx-c{font-family:MJXZERO,MJXTEX-S1,MJXTEX-S4,MJXTEX,MJXTEX-A!important}@font-face{font-family:MJXZERO;src:url("lib/fonts/mathjax_zero.woff") format("woff")}@font-face{font-family:MJXTEX;src:url("lib/fonts/mathjax_main-regular.woff") format("woff")}@font-face{font-family:MJXTEX-B;src:url("lib/fonts/mathjax_main-bold.woff") format("woff")}@font-face{font-family:MJXTEX-I;src:url("lib/fonts/mathjax_math-italic.woff") format("woff")}@font-face{font-family:MJXTEX-MI;src:url("lib/fonts/mathjax_main-italic.woff") format("woff")}@font-face{font-family:MJXTEX-BI;src:url("lib/fonts/mathjax_math-bolditalic.woff") format("woff")}@font-face{font-family:MJXTEX-S1;src:url("lib/fonts/mathjax_size1-regular.woff") format("woff")}@font-face{font-family:MJXTEX-S2;src:url("lib/fonts/mathjax_size2-regular.woff") format("woff")}@font-face{font-family:MJXTEX-S3;src:url("lib/fonts/mathjax_size3-regular.woff") format("woff")}@font-face{font-family:MJXTEX-S4;src:url("lib/fonts/mathjax_size4-regular.woff") format("woff")}@font-face{font-family:MJXTEX-A;src:url("lib/fonts/mathjax_ams-regular.woff") format("woff")}@font-face{font-family:MJXTEX-C;src:url("lib/fonts/mathjax_calligraphic-regular.woff") format("woff")}@font-face{font-family:MJXTEX-CB;src:url("lib/fonts/mathjax_calligraphic-bold.woff") format("woff")}@font-face{font-family:MJXTEX-FR;src:url("lib/fonts/mathjax_fraktur-regular.woff") format("woff")}@font-face{font-family:MJXTEX-FRB;src:url("lib/fonts/mathjax_fraktur-bold.woff") format("woff")}@font-face{font-family:MJXTEX-SS;src:url("lib/fonts/mathjax_sansserif-regular.woff") format("woff")}@font-face{font-family:MJXTEX-SSB;src:url("lib/fonts/mathjax_sansserif-bold.woff") format("woff")}@font-face{font-family:MJXTEX-SSI;src:url("lib/fonts/mathjax_sansserif-italic.woff") format("woff")}@font-face{font-family:MJXTEX-SC;src:url("lib/fonts/mathjax_script-regular.woff") format("woff")}@font-face{font-family:MJXTEX-T;src:url("lib/fonts/mathjax_typewriter-regular.woff") format("woff")}@font-face{font-family:MJXTEX-V;src:url("lib/fonts/mathjax_vector-regular.woff") format("woff")}@font-face{font-family:MJXTEX-VB;src:url("lib/fonts/mathjax_vector-bold.woff") format("woff")}mjx-c.mjx-c1D439.TEX-I::before{padding:.68em .749em 0 0;content:"F"}mjx-c.mjx-c1D447.TEX-I::before{padding:.677em .704em 0 0;content:"T"}mjx-c.mjx-c1D43F.TEX-I::before{padding:.683em .681em 0 0;content:"L"}mjx-c.mjx-c1D43C.TEX-I::before{padding:.683em .504em 0 0;content:"I"}mjx-c.mjx-c1D441.TEX-I::before{padding:.683em .888em 0 0;content:"N"}mjx-c.mjx-c1D438.TEX-I::before{padding:.68em .764em 0 0;content:"E"}mjx-c.mjx-c31::before{padding:.666em .5em 0 0;content:"1"}mjx-c.mjx-c2C::before{padding:.121em .278em .194em 0;content:","}</style><pre class="frontmatter language-yaml" tabindex="0" style="display: none;"><code class="language-yaml is-loaded"><span class="token key atrule">title</span><span class="token punctuation">:</span> Private Networks <span class="token punctuation">-</span> MOD01CL04
+<span class="token key atrule">tags</span><span class="token punctuation">:</span>
+  <span class="token punctuation">-</span> studies
+  <span class="token punctuation">-</span> programming
+  <span class="token punctuation">-</span> CPQD
+  <span class="token punctuation">-</span> 5G
+<span class="token key atrule">use</span><span class="token punctuation">:</span> Documentation<span class="token punctuation">,</span> Course
+<span class="token key atrule">languages</span><span class="token punctuation">:</span> 
+dependences<span class="token punctuation">:</span></code><button class="copy-code-button"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon lucide-copy"><rect x="8" y="8" width="14" height="14" rx="2" ry="2"></rect><path d="M4 16c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2"></path></svg></button></pre><div class="markdown-preview-sizer markdown-preview-section"><h1 class="page-title heading" id="Private Networks - MOD01CL04"><p dir="auto">Private Networks - MOD01CL04</p></h1><div class="el-details"><details> <summary>Table of Contents 🔖</summary></details></div><div></div><div class="el-hr"><hr></div><div class="el-h1 heading-wrapper"><h1 data-heading="Course Overview" dir="auto" class="heading" id="Course_Overview">Course Overview</h1><div class="heading-children"><div class="el-p"><p dir="auto">The discussion on private networks covered several technical and practical aspects, with a focus on <em>segmentation</em> and its advantages. <strong>Loreno</strong> explained that segmentation is <em>crucial to the structure of networks</em>, providing benefits such as cost reduction and security in communications. He used the example of a <em>PABX</em> to illustrate how segmentation can be more economical than installing separate lines. The importance of leveling knowledge about the <em>ISO model</em> and techniques such as <em>VLAN</em> and <em>VRF</em> was also emphasized.</p></div><div class="el-p"><p dir="auto">Loreno detailed the structure of local and metropolitan networks, in addition to discussing technologies such as <em>VoIP</em> and 4G/5G. Ícaro raised questions about <em>encryption with tokens</em>, while Clodoaldo mentioned the relevance of <em>ATM and H323 networks</em>. Carlos Batista brought up the application of private networks in less favored areas, leading Loreno to discuss the implications of security and necessary authorization. The conversation also included the evolution of the internet and the importance of the OSI model for communication between different systems.</p></div><div class="el-p"><p dir="auto">The presentation ended with an explanation of <em>DHCP</em> and <em>DNS</em>, in addition to the concept of the Internet of Things (<em>IoT</em>). Loreno highlighted segmentation as a way to optimize traffic and ensure privacy, while Gabryel asked about <em>protocol regulation</em>. Loreno confirmed the existence of open source options for some protocols. The discussion on segmentation techniques, such as the logical configuration of VLAN's, was in-depth, highlighting the importance of security and efficiency in corporate and educational environments.</p></div><div class="el-h2 heading-wrapper"><h2 data-heading="Chapters &amp; Topics" dir="auto" class="heading" id="Chapters_&amp;_Topics"><div class="heading-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle"><path d="M3 8L12 17L21 8"></path></svg></div>Chapters &amp; Topics</h2><div class="heading-children"><div class="el-ol"><ol>
+<li data-line="0" dir="auto"><div class="list-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle"><path d="M3 8L12 17L21 8"></path></svg></div><strong>Segmentation in Private Networks</strong>  
+<ul>
+<li data-line="1" dir="auto">Loreno discussed segmentation as intrinsic to private networks, vital for cost-efficiency, security, and user comfort, using PABX as an example.  </li>
+<li data-line="2" dir="auto">He clarified the distinction between “privative” and “private.”</li>
+</ul>
+</li>
+<li data-line="3" dir="auto"><div class="list-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle"><path d="M3 8L12 17L21 8"></path></svg></div><strong>Private Networks and Their Applications</strong>  
+<ul>
+<li data-line="4" dir="auto">Loreno illustrated private-network characteristics with a telephone network example to show cost reduction.  </li>
+<li data-line="5" dir="auto">He introduced <em>LAN</em>, <em>MAN</em>, and technologies like <em>VoIP</em>, 4G/5G. Ícaro and Clodoaldo asked about encryption and market relevance.  </li>
+<li data-line="6" dir="auto"><em>Emerging technologies</em>, such as IoT, were mentioned.</li>
+</ul>
+</li>
+<li data-line="7" dir="auto"><div class="list-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle"><path d="M3 8L12 17L21 8"></path></svg></div><strong>Private Networks | Group 1 (Evolution)</strong>  
+<ul>
+<li data-line="8" dir="auto">Loreno traced Internet evolution from <em>IEEE 802.3</em> to current speeds and stressed corporate networks’ reliance on the Internet.  </li>
+<li data-line="9" dir="auto">He covered the <em>OSI model</em> for <em>heterogeneous systems interconnection</em>.</li>
+</ul>
+</li>
+<li data-line="10" dir="auto"><div class="list-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle"><path d="M3 8L12 17L21 8"></path></svg></div><strong>Layered Structure and Protocols in Private Networks</strong>  
+<ul>
+<li data-line="11" dir="auto">Starting from the physical layer up to the application layer, Loreno explained how each layer serves the one above and supports multiple protocols.  </li>
+<li data-line="12" dir="auto">Clodoaldo’s questions about protocol application led to clarifications on <em>entities vs. protocols</em>.</li>
+</ul>
+</li>
+<li data-line="13" dir="auto"><div class="list-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle"><path d="M3 8L12 17L21 8"></path></svg></div><strong>Private Networks | Group 1 (Ethernet &amp; IP)</strong>  
+<ul>
+<li data-line="14" dir="auto">Loreno detailed Ethernet’s collision detection/retransmission and IP’s origin in ARPANET, emphasizing IP’s role in connecting diverse networks.</li>
+</ul>
+</li>
+<li data-line="15" dir="auto"><div class="list-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle"><path d="M3 8L12 17L21 8"></path></svg></div><strong>Private Networks | Group 1 (IP <em>Packet</em> Structure)</strong>  
+<ul>
+<li data-line="16" dir="auto">Discussion of the <em>IPv4</em> packet: 20-byte header, 32-bit source/destination addresses, fragmentation, Type of Service for prioritization, fragment numbering, and header checksum.</li>
+</ul>
+</li>
+<li data-line="17" dir="auto"><div class="list-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle"><path d="M3 8L12 17L21 8"></path></svg></div><strong>Private Networks and Communication Protocols</strong>  
+<ul>
+<li data-line="18" dir="auto">Segmentation for traffic/economic optimization, separating corporate vs. personal data.  </li>
+<li data-line="19" dir="auto">Gabryel inquired about regulation and open-source nature of protocols like LoRa.</li>
+</ul>
+</li>
+<li data-line="20" dir="auto"><div class="list-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle"><path d="M3 8L12 17L21 8"></path></svg></div><strong>Network Segmentation Techniques</strong>  
+<ul>
+<li data-line="21" dir="auto">Loreno introduced a segmentation tool for isolating enterprise sectors, <em>VPN</em> for secure remote access, and <em>VRF</em> for efficient routing.  </li>
+<li data-line="22" dir="auto">VLAN methods include port-based and <em>MAC-address identification</em>.  </li>
+<li data-line="23" dir="auto">Security via VPNs and VLAN configuration (software management) were emphasized.</li>
+</ul>
+</li>
+<li data-line="24" dir="auto"><div class="list-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle"><path d="M3 8L12 17L21 8"></path></svg></div><strong>VLAN Characterization and Network Configuration</strong>  
+<ul>
+<li data-line="25" dir="auto">VLANs require both physical connection and software configuration on network devices.  </li>
+<li data-line="26" dir="auto">Clodoaldo’s question on VLAN setup was answered with steps for defining VLANs to route packets correctly.</li>
+</ul>
+</li>
+<li data-line="27" dir="auto"><div class="list-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle"><path d="M3 8L12 17L21 8"></path></svg></div><strong>Virtual Routing and Forwarding (VRF) &amp; VPNs</strong>  
+<ul>
+<li data-line="28" dir="auto">VRF enables differentiated packet forwarding based on origin or user class, used by service providers and data centers.  </li>
+<li data-line="29" dir="auto">VPNs create encrypted tunnels to protect user identity and secure connections, especially on public networks.  </li>
+<li data-line="30" dir="auto">Discussion of <em>Open RAN</em> and Internet protocols.</li>
+</ul>
+</li>
+</ol></div><div class="el-div"><div data-callout-metadata="" data-callout-fold="" data-callout="note" class="callout"><div class="callout-title" dir="auto"><div class="callout-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon lucide-pencil"><path d="M21.174 6.812a1 1 0 0 0-3.986-3.987L3.842 16.174a2 2 0 0 0-.5.83l-1.321 4.352a.5.5 0 0 0 .623.622l4.353-1.32a2 2 0 0 0 .83-.497z"></path><path d="m15 5 4 4"></path></svg></div><div class="callout-title-inner">Note</div></div><div class="callout-content heading-wrapper">
+<h3 data-heading="Key Questions" dir="auto" class="heading" id="Key_Questions"><div class="heading-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle"><path d="M3 8L12 17L21 8"></path></svg></div>Key Questions</h3>
+<ol>
+<li data-line="2" dir="auto">What security and cost differences exist between private and public networks?  </li>
+<li data-line="3" dir="auto">How do licensed bands differ from unlicensed ones?</li>
+<li data-line="4" dir="auto">How can private networks serve underserved areas?</li>
+<li data-line="5" dir="auto">How should VLANs be configured in software?</li>
+<li data-line="6" dir="auto">What are the use cases for <em>Virtual Routing and Forwarding (VRF)</em>?</li>
+</ol>
+<div class="heading-children"></div></div></div></div></div></div><div class="el-h2 heading-wrapper"><h2 data-heading="Topic Correlations 📡🔗" dir="auto" class="heading" id="Topic_Correlations_📡🔗"><div class="heading-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle"><path d="M3 8L12 17L21 8"></path></svg></div>Topic Correlations 📡🔗</h2><div class="heading-children"><div class="el-table" dir="ltr" style="overflow-x: auto;"><table>
+<thead>
+<tr>
+<th dir="ltr">Theme</th>
+<th dir="ltr">Correlated Area</th>
+<th dir="ltr">Insight</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td dir="ltr"><strong>Segmentation ⇄ VLAN, VRF, VPN</strong></td>
+<td dir="ltr">Network</td>
+<td dir="ltr">Network segmentation—dividing a network into smaller subnetworks—enhances security by isolating critical systems and reducing costs by limiting compliance scope  (<a data-tooltip-position="top" aria-label="https://zeronetworks.com/blog/network-segmentation-all-you-need-to-know" rel="noopener nofollow" class="external-link" href="https://zeronetworks.com/blog/network-segmentation-all-you-need-to-know" target="_blank">Network segmentation: All you need to know about its benefits</a>) (<a data-tooltip-position="top" aria-label="https://www.cisco.com/c/en/us/products/security/what-is-network-segmentation.html" rel="noopener nofollow" class="external-link" href="https://www.cisco.com/c/en/us/products/security/what-is-network-segmentation.html" target="_blank">What Is Network Segmentation? - Cisco</a>). Techniques include VLANs for Layer 2 isolation, VRF for Layer 3 routing instances, and VPNs for secure tunnels.</td>
+</tr>
+<tr>
+<td dir="ltr"><strong>OSI Model ⇄ Protocol Structure</strong></td>
+<td dir="auto"></td>
+<td dir="ltr">The OSI framework standardizes how systems interoperate, from the physical transmission of bits (Ethernet collisions and retransmissions) through IP routing (originating in ARPANET) to application-layer services.</td>
+</tr>
+<tr>
+<td dir="ltr"><strong>Private vs. Public Networks ⇄ Security &amp; Cost:</strong></td>
+<td dir="auto"></td>
+<td dir="ltr">Private networks offer tailored security controls and consistent performance at higher cost, whereas public networks provide broad accessibility and lower upfront investment but with greater vulnerability  (<a data-tooltip-position="top" aria-label="https://tech4mint.com/private-network-vs-public-network-5-key-differences/" rel="noopener nofollow" class="external-link" href="https://tech4mint.com/private-network-vs-public-network-5-key-differences/" target="_blank">Private Network vs Public Network: 5 Key Differences</a>).</td>
+</tr>
+<tr>
+<td dir="ltr"><strong>Spectrum Licensing ⇄ Technology Choice:</strong></td>
+<td dir="ltr">Regulamentation</td>
+<td dir="ltr">Licensed spectrum (e.g., cellular bands) guarantees interference protection but requires regulatory fees; unlicensed bands (e.g., 2.4 GHz, 5.8 GHz) are free to use but risk contention  (<a data-tooltip-position="top" aria-label="https://www.rfwireless-world.com/terminology/rf-basics/licensed-vs-unlicensed-frequency-bands" rel="noopener nofollow" class="external-link" href="https://www.rfwireless-world.com/terminology/rf-basics/licensed-vs-unlicensed-frequency-bands" target="_blank">Licensed vs Unlicensed Frequency Bands: Key Differences</a>).</td>
+</tr>
+<tr>
+<td dir="ltr"><strong>Emerging Technologies (IoT, 4G/5G) ⇄ Private Networks:</strong></td>
+<td dir="ltr">Machine to machine comms</td>
+<td dir="ltr">IoT applications—ranging from industrial sensors to smart grids—benefit from private 4G/5G networks’ high bandwidth, low latency, and security  (<a data-tooltip-position="top" aria-label="https://www.5gtechnologyworld.com/private-5g-networks-unlock-iot-applications/" rel="noopener nofollow" class="external-link" href="https://www.5gtechnologyworld.com/private-5g-networks-unlock-iot-applications/" target="_blank">Private 5G networks unlock IoT applications</a>).</td>
+</tr>
+<tr>
+<td dir="ltr"><strong>Open RAN ⇄ Protocol Interoperability:</strong></td>
+<td dir="ltr">Protocol</td>
+<td dir="ltr"><em>Open RAN</em> promotes multi-vendor interoperability using standardized interfaces, aligning with the class’s emphasis on heterogeneous system interconnection.</td>
+</tr>
+<tr>
+<td dir="ltr"><strong>LoRa ⇄ Open-Source Debate:</strong></td>
+<td dir="ltr">Open-source</td>
+<td dir="ltr">While LoRaWAN is an open standard with open-source implementations (e.g., The Things Stack  (<a data-tooltip-position="top" aria-label="https://github.com/TheThingsNetwork/lorawan-stack" rel="noopener nofollow" class="external-link" href="https://github.com/TheThingsNetwork/lorawan-stack" target="_blank">The Things Stack, an open source LoRaWAN Network Server</a>)), the underlying LoRa physical layer is patented by Semtech and not fully open source  (<a data-tooltip-position="top" aria-label="https://devopedia.org/lora" rel="noopener nofollow" class="external-link" href="https://devopedia.org/lora" target="_blank">LoRa - Devopedia</a>).</td>
+</tr>
+</tbody>
+</table></div><div class="el-h3 heading-wrapper"><h3 data-heading="Mentioned Concepts" dir="auto" class="heading" id="Mentioned_Concepts"><div class="heading-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle"><path d="M3 8L12 17L21 8"></path></svg></div>Mentioned Concepts</h3><div class="heading-children"><div class="el-ul"><ul>
+<li data-line="0" dir="auto"><strong>VLAN:</strong> Virtual Local Area Network, a method to create logically separate networks within the same physical network infrastructure.</li>
+<li data-line="1" dir="auto"><strong>VRF:</strong> Virtual Routing and Forwarding, a technology that allows multiple instances of a routing table to exist on the same router, enabling network segmentation.</li>
+<li data-line="2" dir="auto"><strong>VPN:</strong> Virtual Private Network, a secure connection over the internet that encrypts data and masks the user's IP address.</li>
+<li data-line="3" dir="auto"><strong>LoRa:</strong> Long Range, a low-power wide-area network (LPWAN) technology designed for long-range communication with low power consumption.</li>
+<li data-line="4" dir="auto"><strong>Open RAN:</strong> An initiative to promote open standards and interoperability in radio access networks, allowing for multi-vendor deployments.</li>
+<li data-line="5" dir="auto"><strong>PABX:</strong> Private Automatic Branch Exchange, a private telephone network used within an organization.</li>
+<li data-line="6" dir="auto"><strong>VoIP:</strong> Voice over Internet Protocol, a technology that allows voice communication over the internet.</li>
+<li data-line="7" dir="auto"><strong>DHCP:</strong> Dynamic Host Configuration Protocol, a network management protocol used to automate the process of configuring devices on IP networks.</li>
+<li data-line="8" dir="auto"><strong>DNS:</strong> Domain Name System, a hierarchical system for naming resources on the internet, translating domain names to IP addresses.</li>
+<li data-line="9" dir="auto"><strong>OSI Model:</strong> Open Systems Interconnection model, a conceptual framework used to understand and implement network protocols in seven layers.</li>
+<li data-line="10" dir="auto"><strong>MAC Address:</strong> Media Access Control address, a unique identifier assigned to network interfaces for communications on the physical network segment.</li>
+<li data-line="11" dir="auto"><strong>Ethernet:</strong> A family of computer networking technologies for local area networks (LANs), commonly used for wired connections.</li>
+<li data-line="12" dir="auto"><strong>ARPANET:</strong> The first operational packet-switching network and the predecessor of the modern internet.</li>
+<li data-line="13" dir="auto"><strong>IEEE 802.3:</strong> A working group defining standards for Ethernet networking, including physical and data link layers.</li>
+<li data-line="14" dir="auto"><strong>IPv4:</strong> Internet Protocol version 4, the fourth version of the Internet Protocol, widely used to identify devices on a network through an addressing system.</li>
+<li data-line="15" dir="auto"><strong>Type of Service (ToS):</strong> A field in the IPv4 header that specifies the priority of the packet, allowing for differentiated services in network routing.</li>
+<li data-line="16" dir="auto"><strong>Fragmentation:</strong> The process of breaking down packets into smaller pieces to fit the maximum transmission unit (MTU) of the network.</li>
+<li data-line="17" dir="auto"><strong>Packet:</strong> A formatted unit of data carried by a packet-switched network, containing both control information and user data.</li>
+<li data-line="18" dir="auto"><strong>Token:</strong> A security mechanism used to authenticate users and grant access to network resources.</li>
+<li data-line="19" dir="auto"><strong>ATM:</strong> Asynchronous Transfer Mode, a networking technology that transmits data in fixed-size packets called cells.</li>
+<li data-line="20" dir="auto"><strong>H323:</strong> A standard for audio, video, and data conferencing over IP networks.</li>
+<li data-line="21" dir="auto"><strong>LAN:</strong> Local Area Network, a network that interconnects computers within a limited area such as a residence, school, or office building</li>
+</ul></div></div></div></div></div><div class="el-h2 heading-wrapper"><h2 data-heading="Recommended Next Steps 🚀" dir="auto" class="heading" id="Recommended_Next_Steps_🚀"><div class="heading-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle"><path d="M3 8L12 17L21 8"></path></svg></div>Recommended Next Steps 🚀</h2><div class="heading-children"><div class="el-ol"><ol start="2">
+<li data-line="0" dir="auto"><strong>Distribute Lecture PDF:</strong> Save and upload the referenced PDF for class review.  </li>
+<li data-line="1" dir="auto"><strong>Confirm LoRa Licensing:</strong> Research and report whether LoRa’s PHY layer is open source.  </li>
+<li data-line="2" dir="auto"><strong>Prepare Protocol Slides:</strong> Develop additional slides on core Internet protocols (TCP/IP, BGP, etc.) as needed.  </li>
+<li data-line="3" dir="auto"><strong>Create Open RAN Presentation:</strong> Draft slides covering Open RAN architecture, benefits, and case studies.  </li>
+<li data-line="4" dir="auto"><strong>Hands-On VLAN Lab:</strong> Organize a practical exercise setting up VLANs on switches and verifying configurations.  </li>
+<li data-line="5" dir="auto"><strong>VRF Configuration Demo:</strong> Prepare a live demo of <em>VRF-Lite</em> setup on a router to illustrate multi-tenant isolation.</li>
+</ol></div></div></div></div></div><div class="el-h1 heading-wrapper"><h1 data-heading="Highlights" dir="auto" class="heading" id="Highlights">Highlights</h1><div class="heading-children"><div class="el-table" dir="ltr" style="overflow-x: auto;"><table>
+<thead>
+<tr>
+<th dir="ltr">Timestamp</th>
+<th dir="ltr">Topic</th>
+<th dir="ltr">Type</th>
+<th dir="ltr">Summary</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td dir="auto">05:18</td>
+<td dir="ltr">Importance of Segmentation</td>
+<td dir="ltr">Fact</td>
+<td dir="ltr">Loreno explained that segmentation is fundamental to understanding networks, mentioning that cost-efficiency is a primary reason for private networks, such as using a PBX which is more economical than having separate lines.</td>
+</tr>
+<tr>
+<td dir="auto">05:18</td>
+<td dir="ltr">Importance of Segmentation</td>
+<td dir="ltr">Concern</td>
+<td dir="ltr">Loreno raised concern about communication security, stating that conversations can be monitored, justifying the need for private networks to protect sensitive information.</td>
+</tr>
+<tr>
+<td dir="auto">05:18</td>
+<td dir="ltr">Importance of Segmentation</td>
+<td dir="ltr">Fact</td>
+<td dir="ltr">It was highlighted that user comfort is important, allowing users to communicate without supervision by a superior, which is essential for privacy in communications.</td>
+</tr>
+<tr>
+<td dir="auto">13:08</td>
+<td dir="ltr">User Comfort in Corporate Communications</td>
+<td dir="ltr">Concern</td>
+<td dir="ltr">The speaker expressed concern that corporate communications must always be available, which can impact user privacy and comfort.</td>
+</tr>
+<tr>
+<td dir="auto">13:08</td>
+<td dir="ltr">User Comfort in Corporate Communications</td>
+<td dir="ltr">Fact</td>
+<td dir="ltr">It was mentioned that corporate communication should be prioritized over personal communication, implying performance requirements that must be ensured by the company.</td>
+</tr>
+<tr>
+<td dir="auto">16:59</td>
+<td dir="ltr">Private Data Networks and Associated Technologies</td>
+<td dir="ltr">Fact</td>
+<td dir="ltr">It was discussed that a LAN is a network that can be applied in environments like buildings or universities, while a MAN refers to networks that connect multiple offices in the same metropolitan area.</td>
+</tr>
+<tr>
+<td dir="auto">16:59</td>
+<td dir="ltr">Private Data Networks and Associated Technologies</td>
+<td dir="ltr">Fact</td>
+<td dir="ltr">The mentioned technologies include the Internet, TokenBus, TokenRing, and Wi-Fi, as well as references to ATM cells used for data transfer.</td>
+</tr>
+<tr>
+<td dir="auto">19:50</td>
+<td dir="ltr">Network Topologies and Communication Protocols</td>
+<td dir="ltr">Fact</td>
+<td dir="ltr">Professor Ícaro mentioned that ATM and H.323 networks still exist, although they are not common in the current market.</td>
+</tr>
+<tr>
+<td dir="auto">19:50</td>
+<td dir="ltr">Network Topologies and Communication Protocols</td>
+<td dir="ltr">Concern</td>
+<td dir="ltr">Carlos Batista expressed concern about the difference between private voice networks and public ones, questioning how maintenance and numbering work in private networks.</td>
+</tr>
+<tr>
+<td dir="auto">22:57</td>
+<td dir="ltr">Discussion on Private Networks and Telephony</td>
+<td dir="ltr">Concern</td>
+<td dir="ltr">Carlos Batista raised concern about the possibility of Internet providers being vandalized and blackmailed, affecting public security and network operations.</td>
+</tr>
+<tr>
+<td dir="auto">27:17</td>
+<td dir="ltr">Security Issues in Private Networks</td>
+<td dir="ltr">Section</td>
+<td dir="ltr">Discussion on security issues in private networks.</td>
+</tr>
+<tr>
+<td dir="auto">27:58</td>
+<td dir="ltr">Discussion on Private Voice and Data Networks</td>
+<td dir="ltr">Section</td>
+<td dir="ltr">Discussion on private voice and data networks.</td>
+</tr>
+<tr>
+<td dir="auto">28:59</td>
+<td dir="ltr">Network Concepts and Protocols</td>
+<td dir="ltr">Fact</td>
+<td dir="ltr">Loreno mentioned that the Internet accounts for about 70 % of corporate networks, although he did not have an exact figure at the moment and committed to researching it further.</td>
+</tr>
+<tr>
+<td dir="auto">30:39</td>
+<td dir="ltr">Standardization and ISO Norms</td>
+<td dir="ltr">Section</td>
+<td dir="ltr">Discussion on standardization and ISO norms.</td>
+</tr>
+<tr>
+<td dir="auto">31:56</td>
+<td dir="ltr">System Interconnection</td>
+<td dir="ltr">Fact</td>
+<td dir="ltr">ISO worked on the HDLC model until 1977, which was standardized for point-to-point communication, culminating in a seven-layer model in 1983.</td>
+</tr>
+<tr>
+<td dir="auto">31:56</td>
+<td dir="ltr">System Interconnection</td>
+<td dir="ltr">Fact</td>
+<td dir="ltr">The seven-layer model enables communication among heterogeneous processing systems, facilitating interconnection across different manufacturers.</td>
+</tr>
+<tr>
+<td dir="auto">37:44</td>
+<td dir="ltr">Layered Structure in Control Systems</td>
+<td dir="ltr">Fact</td>
+<td dir="ltr">Layer stratification divides systems into levels of interaction, with Layer 1 closest to the physical medium and higher layers depending on services from lower layers.</td>
+</tr>
+<tr>
+<td dir="auto">40:44</td>
+<td dir="ltr">Discussion on Protocols and Entity Layers</td>
+<td dir="ltr">Fact</td>
+<td dir="ltr">Loreno mentioned that peer entities maintain a protocol and use services from lower entities, implying a hierarchical communication structure among layers.</td>
+</tr>
+<tr>
+<td dir="auto">40:44</td>
+<td dir="ltr">Discussion on Protocols and Entity Layers</td>
+<td dir="ltr">Concern</td>
+<td dir="ltr">Clodoaldo expressed confusion about using the same protocol in different layers, prompting a deeper discussion on protocol hierarchy.</td>
+</tr>
+<tr>
+<td dir="auto">40:44</td>
+<td dir="ltr">Discussion on Protocols and Entity Layers</td>
+<td dir="ltr">Fact</td>
+<td dir="ltr">Loreno clarified that the IP protocol resides in Layer 3, which is technically relevant for understanding protocol structure.</td>
+</tr>
+<tr>
+<td dir="auto">44:45</td>
+<td dir="ltr">Communication Protocols among Entities</td>
+<td dir="ltr">Fact</td>
+<td dir="ltr">Cooperation among entities can be governed by one or more protocols, such as IP and TCP, allowing communication across different layers.</td>
+</tr>
+<tr>
+<td dir="auto">44:45</td>
+<td dir="ltr">Communication Protocols among Entities</td>
+<td dir="ltr">Fact</td>
+<td dir="ltr">Information exchange is carried out through an association using a specific protocol, which may include multiple protocols in the same layer.</td>
+</tr>
+<tr>
+<td dir="auto">44:45</td>
+<td dir="ltr">Communication Protocols among Entities</td>
+<td dir="ltr">Fact</td>
+<td dir="ltr">The seven communication layers have specific functions: Layer 1 handles bit transmission and Layer 2 handles error correction and frame delimitation.</td>
+</tr>
+<tr>
+<td dir="auto">48:37</td>
+<td dir="ltr">OSI Model Layers</td>
+<td dir="ltr">Fact</td>
+<td dir="ltr">Loreno explained that the network layer handles addressing and routing, the transport layer handles error correction and connectivity, the session layer manages dialogues, the presentation layer checks syntax, and the application layer handles data semantics.</td>
+</tr>
+<tr>
+<td dir="auto">53:49</td>
+<td dir="ltr">Layer 2 and Flow Control</td>
+<td dir="ltr">Fact</td>
+<td dir="ltr">Layer 2 is responsible for error correction and flow control, especially when many devices share the same connection.</td>
+</tr>
+<tr>
+<td dir="auto">53:49</td>
+<td dir="ltr">Layer 2 and Flow Control</td>
+<td dir="ltr">Concern</td>
+<td dir="ltr">There is a need to control data flow when a large volume of packets is transmitted to avoid network congestion.</td>
+</tr>
+<tr>
+<td dir="auto">53:49</td>
+<td dir="ltr">Layer 2 and Flow Control</td>
+<td dir="ltr">Fact</td>
+<td dir="ltr">MTU (Maximum Transmission Unit) is mentioned as a relevant measure for packet transmission size.</td>
+</tr>
+<tr>
+<td dir="auto">53:49</td>
+<td dir="ltr">Layer 2 and Flow Control</td>
+<td dir="ltr">Fact</td>
+<td dir="ltr">The discussion includes details about the frame structure, including bit sequence and data field size, which can vary from 46 to 1500 bytes.</td>
+</tr>
+<tr>
+<td dir="auto">59:02</td>
+<td dir="ltr">Ethernet Extension Procedure</td>
+<td dir="ltr">Fact</td>
+<td dir="ltr">The Ethernet extension procedure involves constant monitoring of the medium and collision management; a station must stop transmitting on collision and retry after a back-off period.</td>
+</tr>
+<tr>
+<td dir="auto">59:51</td>
+<td dir="ltr">IP Protocol</td>
+<td dir="ltr">Fact</td>
+<td dir="ltr">The IP protocol was developed from ARPANET, a 1960s U.S. Department of Defense project aimed at connecting disparate networks and facilitating inter-university communication.</td>
+</tr>
+<tr>
+<td dir="auto">01:03:36</td>
+<td dir="ltr">Internet Architecture and Protocols</td>
+<td dir="ltr">Fact</td>
+<td dir="ltr">The Internet architecture comprises multiple layers—including transport and network—to enable communication among LANs and the broader Internet.</td>
+</tr>
+<tr>
+<td dir="auto">01:03:36</td>
+<td dir="ltr">Internet Architecture and Protocols</td>
+<td dir="ltr">Fact</td>
+<td dir="ltr">The IP protocol is a design philosophy that allows communication across different network types (Ethernet, Token Ring, Wi-Fi, etc.).</td>
+</tr>
+<tr>
+<td dir="auto">01:03:36</td>
+<td dir="ltr">Internet Architecture and Protocols</td>
+<td dir="ltr">Fact</td>
+<td dir="ltr">IP packets have a defined format with 32-bit source/destination addresses, version, header length, and fragmentation flags.</td>
+</tr>
+<tr>
+<td dir="auto">01:07:56</td>
+<td dir="ltr">Differentiated Services and Network Layers</td>
+<td dir="ltr">Fact</td>
+<td dir="ltr">Differentiated services have been used since 1998, with each network layer having its own service class for priority handling.</td>
+</tr>
+<tr>
+<td dir="auto">01:10:34</td>
+<td dir="ltr">Network Protocols: DHCP and DNS</td>
+<td dir="ltr">Fact</td>
+<td dir="ltr">DHCP is used for dynamic IP address configuration, while DNS translates domain names into IP addresses.</td>
+</tr>
+<tr>
+<td dir="auto">01:11:17</td>
+<td dir="ltr">Internet of Things (IoT)</td>
+<td dir="ltr">Fact</td>
+<td dir="ltr">The Internet of Things is defined by the ITU as a global infrastructure that connects devices, enabling information exchange among them.</td>
+</tr>
+<tr>
+<td dir="auto">01:13:02</td>
+<td dir="ltr">IoT Communication Protocols</td>
+<td dir="ltr">Fact</td>
+<td dir="ltr">Narrowband IoT covers 5,498 of Brazil’s 5,570 municipalities, LTE covers about 4,000 (~97 %), and LoRa covers only 288 municipalities, serving a smaller population.</td>
+</tr>
+<tr>
+<td dir="auto">01:17:00</td>
+<td dir="ltr">Private Networks</td>
+<td dir="ltr">Section</td>
+<td dir="ltr">Discussion on private networks.</td>
+</tr>
+<tr>
+<td dir="auto">01:17:44</td>
+<td dir="ltr">Network Segmentation and Traffic Optimization</td>
+<td dir="ltr">Concern</td>
+<td dir="ltr">Loreno expressed concern that lack of segmentation can lead to unauthorized access to sensitive information, undermining productivity.</td>
+</tr>
+<tr>
+<td dir="auto">01:17:44</td>
+<td dir="ltr">Network Segmentation and Traffic Optimization</td>
+<td dir="ltr">Fact</td>
+<td dir="ltr">Ordinance 8666 was mentioned as an important guideline for price-comparison transparency among suppliers, which must be followed even by private companies.</td>
+</tr>
+<tr>
+<td dir="auto">01:21:21</td>
+<td dir="ltr">Private Network Protocols</td>
+<td dir="ltr">Section</td>
+<td dir="ltr">Discussion on private network protocols.</td>
+</tr>
+<tr>
+<td dir="auto">01:22:09</td>
+<td dir="ltr">Regulation and Communication Technologies</td>
+<td dir="ltr">Fact</td>
+<td dir="ltr">The Sigfox protocol operates at 900 MHz but is not regulated; LoRa is regulated by the LoRa Alliance, which oversees its operation and implementation.</td>
+</tr>
+<tr>
+<td dir="auto">01:22:09</td>
+<td dir="ltr">Regulation and Communication Technologies</td>
+<td dir="ltr">Fact</td>
+<td dir="ltr">There are open-source implementations of LoRaWAN, but LoRa itself remains proprietary technology owned by Semtech Corporation.</td>
+</tr>
+<tr>
+<td dir="auto">01:25:06</td>
+<td dir="ltr">Network Segmentation</td>
+<td dir="ltr">Fact</td>
+<td dir="ltr">VLAN is a Layer 2 segmentation technique, while VRF is a Layer 3 technique enabling routing virtualization.</td>
+</tr>
+<tr>
+<td dir="auto">01:25:06</td>
+<td dir="ltr">Network Segmentation</td>
+<td dir="ltr">Fact</td>
+<td dir="ltr">VLAN is one of the most widely used network segmentation techniques, considered strategic and useful.</td>
+</tr>
+<tr>
+<td dir="auto">01:26:36</td>
+<td dir="ltr">VPN Use and Network Security</td>
+<td dir="ltr">Concern</td>
+<td dir="ltr">Concern was raised about banning VPN use, which could impact user privacy and security, especially given high fines for unauthorized use.</td>
+</tr>
+<tr>
+<td dir="auto">01:26:36</td>
+<td dir="ltr">VPN Use and Network Security</td>
+<td dir="ltr">Fact</td>
+<td dir="ltr">It was mentioned that banning VPNs could result in fines up to BRL 50,000 for users, increasing VPN usage notoriety in Brazil.</td>
+</tr>
+<tr>
+<td dir="auto">01:28:17</td>
+<td dir="ltr">VLAN and Network Isolation</td>
+<td dir="ltr">Fact</td>
+<td dir="ltr">VLANs allow creation of virtual networks within a physical network, isolating segments such as sales and finance for improved security and efficiency.</td>
+</tr>
+<tr>
+<td dir="auto">01:31:26</td>
+<td dir="ltr">Discussion on VLANs and Network Security</td>
+<td dir="ltr">Concern</td>
+<td dir="ltr">Network device security is a central concern, particularly regarding hosts and operators who must be prioritized to ensure network integrity.</td>
+</tr>
+<tr>
+<td dir="auto">01:31:26</td>
+<td dir="ltr">Discussion on VLANs and Network Security</td>
+<td dir="ltr">Fact</td>
+<td dir="ltr">VLANs enable visitors to access the Internet without interfering with the corporate network, isolating traffic and ensuring security.</td>
+</tr>
+<tr>
+<td dir="auto">01:34:56</td>
+<td dir="ltr">VLAN Configuration and Traffic Priority</td>
+<td dir="ltr">Fact</td>
+<td dir="ltr">VLAN configuration involves assigning ports to different VLANs (e.g., Avelã 0, Avelã 1) and tagging Ethernet frames with TPID and TCI for traffic identification and prioritization.</td>
+</tr>
+<tr>
+<td dir="auto">01:34:56</td>
+<td dir="ltr">VLAN Configuration and Traffic Priority</td>
+<td dir="ltr">Fact</td>
+<td dir="ltr">Traffic priorities are assigned specific values for services like voice and videoconferencing based on their needs.</td>
+</tr>
+<tr>
+<td dir="auto">01:39:12</td>
+<td dir="ltr">VLANs and Network Protocols</td>
+<td dir="ltr">Fact</td>
+<td dir="ltr">VLANs are defined according to IP address and mask, which is essential for correct network configuration.</td>
+</tr>
+<tr>
+<td dir="auto">01:39:12</td>
+<td dir="ltr">VLANs and Network Protocols</td>
+<td dir="ltr">Fact</td>
+<td dir="ltr">Loreno highlighted that different services (HTTP, FTP) use specific VLANs, demonstrating VLAN flexibility in various contexts.</td>
+</tr>
+<tr>
+<td dir="auto">01:39:12</td>
+<td dir="ltr">VLANs and Network Protocols</td>
+<td dir="ltr">Fact</td>
+<td dir="ltr">The concept of hubs and bridges was discussed: hubs interconnect stations physically, while bridges link network segments (e.g., different floors).</td>
+</tr>
+<tr>
+<td dir="auto">01:39:12</td>
+<td dir="ltr">VLANs and Network Protocols</td>
+<td dir="ltr">Fact</td>
+<td dir="ltr">The importance of appropriate routing protocols (OSPF, BGP) was emphasized, along with the need for IP packet analysis.</td>
+</tr>
+<tr>
+<td dir="auto">01:44:02</td>
+<td dir="ltr">VLAN Configuration and Network Connections</td>
+<td dir="ltr">Concern</td>
+<td dir="ltr">Concern was raised about the complexity of managing multiple VLANs, particularly trunk reservations, which can complicate network setup.</td>
+</tr>
+<tr>
+<td dir="auto">01:44:02</td>
+<td dir="ltr">VLAN Configuration and Network Connections</td>
+<td dir="ltr">Fact</td>
+<td dir="ltr">VLAN configuration requires both physical connectivity and software setup on network devices; VLANs and their associated machines must be designated.</td>
+</tr>
+<tr>
+<td dir="auto">01:44:02</td>
+<td dir="ltr">VLAN Configuration and Network Connections</td>
+<td dir="ltr">Next Steps</td>
+<td dir="ltr">Participants agreed that VLANs must be configured on all network equipment, including switches and routers, to ensure proper device communication.</td>
+</tr>
+<tr>
+<td dir="auto">01:50:44</td>
+<td dir="ltr">Physical and Logical Connectivity</td>
+<td dir="ltr">Fact</td>
+<td dir="ltr">Physical connectivity is only part of the network setup; logical connectivity depends on manufacturer and system configuration.</td>
+</tr>
+<tr>
+<td dir="auto">01:50:44</td>
+<td dir="ltr">Physical and Logical Connectivity</td>
+<td dir="ltr">Concern</td>
+<td dir="ltr">Logical configuration complexity can lead to implementation challenges, especially when multiple cables and switches are needed for different VLANs.</td>
+</tr>
+<tr>
+<td dir="auto">01:55:13</td>
+<td dir="ltr">Network Virtualization and VRF</td>
+<td dir="ltr">Fact</td>
+<td dir="ltr">VRF technology enables multiple routing tables, allowing forwarding based on source or user—useful for service providers.</td>
+</tr>
+<tr>
+<td dir="auto">01:55:13</td>
+<td dir="ltr">Network Virtualization and VRF</td>
+<td dir="ltr">Fact</td>
+<td dir="ltr">VRF is used to deliver multiple virtual networks to different customers over the same physical infrastructure, as seen in service-provider environments.</td>
+</tr>
+<tr>
+<td dir="auto">01:55:13</td>
+<td dir="ltr">Network Virtualization and VRF</td>
+<td dir="ltr">Fact</td>
+<td dir="ltr">The discussion covered normal vs. specific forwarding in a network, illustrating how VRF can segment data-center traffic.</td>
+</tr>
+<tr>
+<td dir="auto">01:58:40</td>
+<td dir="ltr">VPN and Traffic Security</td>
+<td dir="ltr">Fact</td>
+<td dir="ltr">A VPN is a digital connection that encrypts traffic, creating a tunnel between the user’s device and a remote server to ensure security and privacy.</td>
+</tr>
+<tr>
+<td dir="auto">01:58:40</td>
+<td dir="ltr">VPN and Traffic Security</td>
+<td dir="ltr">Concern</td>
+<td dir="ltr">Concerns were raised about traffic security and the need for encryption to protect sensitive data during transmission.</td>
+</tr>
+<tr>
+<td dir="auto">01:59:42</td>
+<td dir="ltr">Data Security and VPN Use</td>
+<td dir="ltr">Concern</td>
+<td dir="ltr">Concern was expressed about security risks when using VPNs on public networks, noting that vulnerabilities remain despite encryption.</td>
+</tr>
+<tr>
+<td dir="auto">01:59:42</td>
+<td dir="ltr">Data Security and VPN Use</td>
+<td dir="ltr">Fact</td>
+<td dir="ltr">It was mentioned that VPN use improves data security and privacy on public connections, though vulnerabilities still exist.</td>
+</tr>
+<tr>
+<td dir="auto">02:04:49</td>
+<td dir="ltr">Discussion on OpenRAM</td>
+<td dir="ltr">Task</td>
+<td dir="ltr">Professor Loreno committed to preparing slides on OpenRAM for the next meeting.</td>
+</tr>
+</tbody>
+</table></div></div></div><div class="el-h1 heading-wrapper"><h1 data-heading="References" dir="auto" class="heading" id="References">References</h1><div class="heading-children"><div class="el-ol"><ol>
+<li data-line="0" dir="auto"><strong>Network Segmentation Benefits:</strong> Amir Frankel, “Network segmentation: All you need to know about its benefits,” Zero Networks (Sep 25, 2022).  (<a data-tooltip-position="top" aria-label="https://zeronetworks.com/blog/network-segmentation-all-you-need-to-know" rel="noopener nofollow" class="external-link" href="https://zeronetworks.com/blog/network-segmentation-all-you-need-to-know" target="_blank">Network segmentation: All you need to know about its benefits</a>)  </li>
+<li data-line="1" dir="auto"><strong>Cost Reduction via Segmentation:</strong> Cisco, “What Is Network Segmentation?”  (<a data-tooltip-position="top" aria-label="https://www.cisco.com/c/en/us/products/security/what-is-network-segmentation.html" rel="noopener nofollow" class="external-link" href="https://www.cisco.com/c/en/us/products/security/what-is-network-segmentation.html" target="_blank">What Is Network Segmentation? - Cisco</a>)  </li>
+<li data-line="2" dir="auto"><strong>Private vs. Public Networks:</strong> Tech4Mint, “Private Network vs Public Network: 5 Key Differences” (Mar 2025).  (<a data-tooltip-position="top" aria-label="https://tech4mint.com/private-network-vs-public-network-5-key-differences/" rel="noopener nofollow" class="external-link" href="https://tech4mint.com/private-network-vs-public-network-5-key-differences/" target="_blank">Private Network vs Public Network: 5 Key Differences</a>)  </li>
+<li data-line="3" dir="auto"><strong>Licensed vs. Unlicensed Spectrum:</strong> RF Wireless World, “Licensed vs Unlicensed Frequency Bands: Key Differences.”  (<a data-tooltip-position="top" aria-label="https://www.rfwireless-world.com/terminology/rf-basics/licensed-vs-unlicensed-frequency-bands" rel="noopener nofollow" class="external-link" href="https://www.rfwireless-world.com/terminology/rf-basics/licensed-vs-unlicensed-frequency-bands" target="_blank">Licensed vs Unlicensed Frequency Bands: Key Differences</a>)  </li>
+<li data-line="4" dir="auto"><strong>VRF Use Cases:</strong> NetworkLessons, “VRF use cases.”  (<a data-tooltip-position="top" aria-label="https://notes.networklessons.com/vrf-use-cases" rel="noopener nofollow" class="external-link" href="https://notes.networklessons.com/vrf-use-cases" target="_blank">VRF use cases - NetworkLessons Notes</a>)  </li>
+<li data-line="5" dir="auto"><strong>VLAN Configuration Commands:</strong> ComputerNetworkingNotes, “VLAN Configuration Commands Step by Step Explained” (Mar 20, 2025).  (<a data-tooltip-position="top" aria-label="https://www.computernetworkingnotes.com/ccna-study-guide/vlan-configuration-commands-step-by-step-explained.html" rel="noopener nofollow" class="external-link" href="https://www.computernetworkingnotes.com/ccna-study-guide/vlan-configuration-commands-step-by-step-explained.html" target="_blank">VLAN Configuration Commands Step by Step Explained</a>)  </li>
+<li data-line="6" dir="auto"><strong>LoRaWAN Open-Source Server:</strong> The Things Stack (GitHub), Apache-2.0 licensed LoRaWAN Network Server.  (<a data-tooltip-position="top" aria-label="https://github.com/TheThingsNetwork/lorawan-stack" rel="noopener nofollow" class="external-link" href="https://github.com/TheThingsNetwork/lorawan-stack" target="_blank">The Things Stack, an open source LoRaWAN Network Server</a>)  </li>
+<li data-line="7" dir="auto"><strong>LoRa PHY Patents:</strong> Devopedia, “LoRa” (Semtech patent status).  (<a data-tooltip-position="top" aria-label="https://devopedia.org/lora" rel="noopener nofollow" class="external-link" href="https://devopedia.org/lora" target="_blank">LoRa - Devopedia</a>)  </li>
+<li data-line="8" dir="auto"><strong>IoT on Private 5G:</strong> Marco Contento &amp; Xiaoxia Zhang, “Private 5G networks unlock IoT applications,” 5G Technology World (Jul 26, 2021).  (<a data-tooltip-position="top" aria-label="https://www.5gtechnologyworld.com/private-5g-networks-unlock-iot-applications/" rel="noopener nofollow" class="external-link" href="https://www.5gtechnologyworld.com/private-5g-networks-unlock-iot-applications/" target="_blank">Private 5G networks unlock IoT applications</a>)  </li>
+<li data-line="9" dir="auto"><strong>OSI &amp; Internet Evolution:</strong> Wikipedia, “Network segmentation” and “VLAN” articles.  (<a data-tooltip-position="top" aria-label="https://en.wikipedia.org/wiki/Network_segmentation" rel="noopener nofollow" class="external-link" href="https://en.wikipedia.org/wiki/Network_segmentation" target="_blank">Network segmentation</a>)</li>
+<li data-line="10" dir="auto"><strong>Open RAN:</strong> Open RAN Alliance, “Open RAN.”  (<a data-tooltip-position="top" aria-label="https://www.o-ran-alliance.org/" rel="noopener nofollow" class="external-link" href="https://www.o-ran-alliance.org/" target="_blank">Open RAN</a>)</li>
+<li data-line="11" dir="auto"><strong>VPNs and Security:</strong> Cisco, “What is a VPN?”  (<a data-tooltip-position="top" aria-label="https://www.cisco.com/c/en/us/products/security/what-is-a-vpn.html" rel="noopener nofollow" class="external-link" href="https://www.cisco.com/c/en/us/products/security/what-is-a-vpn.html" target="_blank">What is a VPN?</a>)</li>
+</ol></div><div class="mod-footer mod-ui"></div></div></div></div></div></div><div class="sidebar-right sidebar"><div class="sidebar-handle"></div><div class="sidebar-topbar"><div class="topbar-content"></div><div class="clickable-icon sidebar-collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" class="svg-icon"><path d="M21 3H3C1.89543 3 1 3.89543 1 5V19C1 20.1046 1.89543 21 3 21H21C22.1046 21 23 20.1046 23 19V5C23 3.89543 22.1046 3 21 3Z"></path><path d="M10 4V20"></path><path d="M4 7H7"></path><path d="M4 10H7"></path><path d="M4 13H7"></path></svg></div></div><div class="sidebar-content"><div class="graph-view-wrapper"><div class="sidebar-section-header">Interactive Graph</div><div class="graph-view-placeholder">
+		<div class="graph-view-container">
+			<div class="graph-icon graph-expand" role="button" aria-label="Expand" data-tooltip-position="top"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon"><line x1="7" y1="17" x2="17" y2="7"></line><polyline points="7 7 17 7 17 17"></polyline></svg></div>
+			<canvas id="graph-canvas" class="hide" width="512px" height="512px"></canvas>
+		</div>
+		</div></div><div class="tree-container mod-root nav-folder tree-item outline-tree" data-depth="0"><div class="tree-header"><span class="sidebar-section-header">Table Of Contents</span><button class="clickable-icon collapse-tree-button" aria-label="Collapse All"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></svg></button></div><div class="tree-scroll-area tree-item-children nav-folder-children"><div class="tree-item mod-tree-folder nav-folder mod-collapsible is-collapsed" style="display: none;"></div><div class="tree-item" data-depth="1"><a class="tree-link" href="gab\estudos-trabalhos\programação\programming-studies\courses\cpqd_private-networks-5g\classes\0104.html#Private Networks - MOD01CL04"><div class="tree-item-contents heading-link" heading-name="Private Networks - MOD01CL04"><span class="tree-item-title">Private Networks - MOD01CL04</span></div></a><div class="tree-item-children nav-folder-children"></div></div><div class="tree-item" data-depth="1"><a class="tree-link" href="gab\estudos-trabalhos\programação\programming-studies\courses\cpqd_private-networks-5g\classes\0104.html#Course_Overview"><div class="tree-item-contents heading-link" heading-name="Course Overview"><span class="tree-item-title">Course Overview</span></div></a><div class="tree-item-children nav-folder-children"><div class="tree-item mod-collapsible" data-depth="2"><a class="tree-link" href="gab\estudos-trabalhos\programação\programming-studies\courses\cpqd_private-networks-5g\classes\0104.html#Chapters_&amp;_Topics"><div class="tree-item-contents heading-link" heading-name="Chapters &amp; Topics"><div class="collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle"><path d="M3 8L12 17L21 8"></path></svg></div><span class="tree-item-title">Chapters &amp; Topics</span></div></a><div class="tree-item-children nav-folder-children"><div class="tree-item" data-depth="3"><a class="tree-link" href="gab\estudos-trabalhos\programação\programming-studies\courses\cpqd_private-networks-5g\classes\0104.html#Key_Questions"><div class="tree-item-contents heading-link" heading-name="Key Questions"><span class="tree-item-title">Key Questions</span></div></a><div class="tree-item-children nav-folder-children"></div></div></div></div><div class="tree-item mod-collapsible" data-depth="2"><a class="tree-link" href="gab\estudos-trabalhos\programação\programming-studies\courses\cpqd_private-networks-5g\classes\0104.html#Topic_Correlations_📡🔗"><div class="tree-item-contents heading-link" heading-name="Topic Correlations 📡🔗"><div class="collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle"><path d="M3 8L12 17L21 8"></path></svg></div><span class="tree-item-title">Topic Correlations 📡🔗</span></div></a><div class="tree-item-children nav-folder-children"><div class="tree-item" data-depth="3"><a class="tree-link" href="gab\estudos-trabalhos\programação\programming-studies\courses\cpqd_private-networks-5g\classes\0104.html#Mentioned_Concepts"><div class="tree-item-contents heading-link" heading-name="Mentioned Concepts"><span class="tree-item-title">Mentioned Concepts</span></div></a><div class="tree-item-children nav-folder-children"></div></div></div></div><div class="tree-item" data-depth="2"><a class="tree-link" href="gab\estudos-trabalhos\programação\programming-studies\courses\cpqd_private-networks-5g\classes\0104.html#Recommended_Next_Steps_🚀"><div class="tree-item-contents heading-link" heading-name="Recommended Next Steps 🚀"><span class="tree-item-title">Recommended Next Steps 🚀</span></div></a><div class="tree-item-children nav-folder-children"></div></div></div></div><div class="tree-item" data-depth="1"><a class="tree-link" href="gab\estudos-trabalhos\programação\programming-studies\courses\cpqd_private-networks-5g\classes\0104.html#Highlights"><div class="tree-item-contents heading-link" heading-name="Highlights"><span class="tree-item-title">Highlights</span></div></a><div class="tree-item-children nav-folder-children"></div></div><div class="tree-item" data-depth="1"><a class="tree-link" href="gab\estudos-trabalhos\programação\programming-studies\courses\cpqd_private-networks-5g\classes\0104.html#References"><div class="tree-item-contents heading-link" heading-name="References"><span class="tree-item-title">References</span></div></a><div class="tree-item-children nav-folder-children"></div></div></div></div></div><script defer="">let rs = document.querySelector(".sidebar-right"); rs.classList.add("is-collapsed"); if (window.innerWidth > 768) rs.classList.remove("is-collapsed"); rs.style.setProperty("--sidebar-width", localStorage.getItem("sidebar-right-width"));</script></div></div></body></html>

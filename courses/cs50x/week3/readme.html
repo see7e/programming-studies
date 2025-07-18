@@ -1,0 +1,972 @@
+<!DOCTYPE html> <html><head>
+		<title>CS50 - Week 3</title>
+		<base href="..\..\..\..\..\..\../">
+		<meta id="root-path" root-path="..\..\..\..\..\..\../">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes, minimum-scale=1.0, maximum-scale=5.0">
+		<meta charset="UTF-8">
+		<meta name="description" content="DRIVE - CS50 - Week 3">
+		<meta property="og:title" content="CS50 - Week 3">
+		<meta property="og:description" content="DRIVE - CS50 - Week 3">
+		<meta property="og:type" content="website">
+		<meta property="og:url" content="courses/cs50x/week3/readme.html">
+		<meta property="og:image" content="https://cs50.harvard.edu/x/2023/notes/3//cs50Week3Slide018.png">
+		<meta property="og:site_name" content="DRIVE">
+		<meta name="author" content="Gabryel Nóbrega"><link rel="alternate" type="application/rss+xml" title="RSS Feed" href="lib/rss.xml"><script async="" id="webpage-script" src="lib/scripts/webpage.js" onload="this.onload=null;this.setAttribute(&quot;loaded&quot;, &quot;true&quot;)"></script><script type="module" async="" id="graph-view-script" src="lib/scripts/graph-view.js"></script><script async="" id="graph-wasm-script" src="lib/scripts/graph-wasm.js" onload="this.onload=null;this.setAttribute(&quot;loaded&quot;, &quot;true&quot;)"></script><script async="" id="graph-render-worker-script" src="lib/scripts/graph-render-worker.js" onload="this.onload=null;this.setAttribute(&quot;loaded&quot;, &quot;true&quot;)"></script><script async="" id="tinycolor-script" src="lib/scripts/tinycolor.js" onload="this.onload=null;this.setAttribute(&quot;loaded&quot;, &quot;true&quot;)"></script><script async="" id="pixi-script" src="https://cdnjs.cloudflare.com/ajax/libs/pixi.js/7.4.0/pixi.min.js" onload="this.onload=null;this.setAttribute(&quot;loaded&quot;, &quot;true&quot;)"></script><script async="" id="minisearch-script" src="https://cdn.jsdelivr.net/npm/minisearch@6.3.0/dist/umd/index.min.js" onload="this.onload=null;this.setAttribute(&quot;loaded&quot;, &quot;true&quot;)"></script><link rel="icon" href="lib/media/favicon.png"><script async="" id="graph-data-script" src="lib/scripts/graph-data.js" onload="this.onload=null;this.setAttribute(&quot;loaded&quot;, &quot;true&quot;)"></script><style>body{--line-width:40em;--line-width-adaptive:40em;--file-line-width:40em;--sidebar-width:min(20em, 80vw);--collapse-arrow-size:11px;--tree-horizontal-spacing:0.6em;--tree-vertical-spacing:0.6em;--sidebar-margin:12px}.sidebar{height:100%;min-width:calc(var(--sidebar-width) + var(--divider-width-hover));max-width:calc(var(--sidebar-width) + var(--divider-width-hover));font-size:14px;z-index:10;position:relative;overflow:hidden;transition:min-width ease-in-out,max-width ease-in-out;transition-duration:.2s;contain:size}.sidebar-left{left:0}.sidebar-right{right:0}.sidebar.is-collapsed{min-width:0;max-width:0}body.floating-sidebars .sidebar{position:absolute}.sidebar-content{height:100%;min-width:calc(var(--sidebar-width) - var(--divider-width-hover));top:0;padding:var(--sidebar-margin);padding-top:4em;line-height:var(--line-height-tight);background-color:var(--background-secondary);transition:background-color,border-right,border-left,box-shadow;transition-duration:var(--color-fade-speed);transition-timing-function:ease-in-out;position:absolute;display:flex;flex-direction:column}.sidebar:not(.is-collapsed) .sidebar-content{min-width:calc(max(100%,var(--sidebar-width)) - 3px);max-width:calc(max(100%,var(--sidebar-width)) - 3px)}.sidebar-left .sidebar-content{left:0;border-top-right-radius:var(--radius-l);border-bottom-right-radius:var(--radius-l)}.sidebar-right .sidebar-content{right:0;border-top-left-radius:var(--radius-l);border-bottom-left-radius:var(--radius-l)}.sidebar:has(.sidebar-content:empty):has(.topbar-content:empty){display:none}.sidebar-topbar{height:2em;width:var(--sidebar-width);top:var(--sidebar-margin);padding-inline:var(--sidebar-margin);z-index:1;position:fixed;display:flex;align-items:center;transition:width ease-in-out;transition-duration:inherit}.sidebar.is-collapsed .sidebar-topbar{width:calc(2.3em + var(--sidebar-margin) * 2)}.sidebar .sidebar-topbar.is-collapsed{width:0}.sidebar-left .sidebar-topbar{left:0}.sidebar-right .sidebar-topbar{right:0}.topbar-content{overflow:hidden;overflow:clip;width:100%;height:100%;display:flex;align-items:center;transition:inherit}.sidebar.is-collapsed .topbar-content{width:0;transition:inherit}.clickable-icon.sidebar-collapse-icon{background-color:transparent;color:var(--icon-color-focused);padding:0!important;margin:0!important;height:100%!important;width:2.3em!important;margin-inline:0.14em!important;position:absolute}.sidebar-left .clickable-icon.sidebar-collapse-icon{transform:rotateY(180deg);right:var(--sidebar-margin)}.sidebar-right .clickable-icon.sidebar-collapse-icon{transform:rotateY(180deg);left:var(--sidebar-margin)}.clickable-icon.sidebar-collapse-icon svg.svg-icon{width:100%;height:100%}.sidebar-section-header{margin:0 0 1em 0;text-transform:uppercase;letter-spacing:.06em;font-weight:600}body{transition:background-color var(--color-fade-speed) ease-in-out}.webpage-container{display:flex;flex-direction:row;height:100%;width:100%;align-items:stretch;justify-content:center}.document-container{opacity:1;flex-basis:100%;max-width:100%;width:100%;height:100%;display:flex;flex-direction:column;align-items:center;transition:opacity .2s ease-in-out;contain:inline-size}.hide{opacity:0;transition:opacity .2s ease-in-out}.document-container>.markdown-preview-view{margin:var(--sidebar-margin);margin-bottom:0;width:100%;width:-webkit-fill-available;width:-moz-available;width:fill-available;background-color:var(--background-primary);transition:background-color var(--color-fade-speed) ease-in-out;border-top-right-radius:var(--window-radius,var(--radius-m));border-top-left-radius:var(--window-radius,var(--radius-m));overflow-x:hidden!important;overflow-y:auto!important;display:flex!important;flex-direction:column!important;align-items:center!important;contain:inline-size}.document-container>.markdown-preview-view>.markdown-preview-sizer{padding-bottom:80vh!important;width:100%!important;max-width:var(--line-width)!important;flex-basis:var(--line-width)!important;transition:background-color var(--color-fade-speed) ease-in-out;contain:inline-size}.markdown-rendered img:not([width]),.view-content img:not([width]){max-width:100%;outline:0}.document-container>.view-content.embed{display:flex;padding:1em;height:100%;width:100%;align-items:center;justify-content:center}.document-container>.view-content.embed>*{max-width:100%;max-height:100%;object-fit:contain}:has(> :is(.math,table)){overflow-x:auto!important}.document-container>.view-content{overflow-x:auto;contain:content;padding:0;margin:0;height:100%}.scroll-highlight{position:absolute;width:100%;height:100%;pointer-events:none;z-index:1000;background-color:hsla(var(--color-accent-hsl),.25);opacity:0;padding:1em;inset:50%;translate:-50% -50%;border-radius:var(--radius-s)}</style><script defer="">async function loadIncludes(){if("file:"!=location.protocol){let e=document.querySelectorAll("include");for(let t=0;t<e.length;t++){let o=e[t],l=o.getAttribute("src");try{const e=await fetch(l);if(!e.ok){console.log("Could not include file: "+l),o?.remove();continue}let t=await e.text(),n=document.createRange().createContextualFragment(t),i=Array.from(n.children);for(let e of i)e.classList.add("hide"),e.style.transition="opacity 0.5s ease-in-out",setTimeout((()=>{e.classList.remove("hide")}),10);o.before(n),o.remove(),console.log("Included file: "+l)}catch(e){o?.remove(),console.log("Could not include file: "+l,e);continue}}}else{if(document.querySelectorAll("include").length>0){var e=document.createElement("div");e.id="error",e.textContent="Web server exports must be hosted on an http / web server to be viewed correctly.",e.style.position="fixed",e.style.top="50%",e.style.left="50%",e.style.transform="translate(-50%, -50%)",e.style.fontSize="1.5em",e.style.fontWeight="bold",e.style.textAlign="center",document.body.appendChild(e),document.querySelector(".document-container")?.classList.remove("hide")}}}document.addEventListener("DOMContentLoaded",(()=>{loadIncludes()}));let isFileProtocol="file:"==location.protocol;function waitLoadScripts(e,t){let o=e.map((e=>document.getElementById(e+"-script"))),l=0;!function e(){let n=o[l];l++,n&&"true"!=n.getAttribute("loaded")||l<o.length&&e(),l<o.length?n.addEventListener("load",e):t()}()}</script><link rel="stylesheet" href="lib/styles/obsidian.css"><link rel="stylesheet" href="lib/styles/theme.css"><link rel="preload" href="lib/styles/global-variable-styles.css" as="style" onload="this.onload=null;this.rel='stylesheet'"><noscript><link rel="stylesheet" href="lib/styles/global-variable-styles.css"></noscript><link rel="preload" href="lib/styles/supported-plugins.css" as="style" onload="this.onload=null;this.rel='stylesheet'"><noscript><link rel="stylesheet" href="lib/styles/supported-plugins.css"></noscript><link rel="preload" href="lib/styles/main-styles.css" as="style" onload="this.onload=null;this.rel='stylesheet'"><noscript><link rel="stylesheet" href="lib/styles/main-styles.css"></noscript><link rel="preload" href="lib/styles/snippets.css" as="style" onload="this.onload=null;this.rel='stylesheet'"><noscript><link rel="stylesheet" href="lib/styles/snippets.css"></noscript></head><body class="publish css-settings-manager theme-dark"><script defer="">let theme=localStorage.getItem("theme")||(window.matchMedia("(prefers-color-scheme: dark)").matches?"dark":"light");"dark"==theme?(document.body.classList.add("theme-dark"),document.body.classList.remove("theme-light")):(document.body.classList.add("theme-light"),document.body.classList.remove("theme-dark")),window.innerWidth<480?document.body.classList.add("is-phone"):window.innerWidth<768?document.body.classList.add("is-tablet"):window.innerWidth<1024?document.body.classList.add("is-small-screen"):document.body.classList.add("is-large-screen")</script><div class="webpage-container workspace"><div class="sidebar-left sidebar"><div class="sidebar-handle"></div><div class="sidebar-topbar"><div class="topbar-content"><label class="theme-toggle-container" for="theme_toggle"><input class="theme-toggle-input" type="checkbox" id="theme_toggle"><div class="toggle-background"></div></label></div><div class="clickable-icon sidebar-collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" class="svg-icon"><path d="M21 3H3C1.89543 3 1 3.89543 1 5V19C1 20.1046 1.89543 21 3 21H21C22.1046 21 23 20.1046 23 19V5C23 3.89543 22.1046 3 21 3Z"></path><path d="M10 4V20"></path><path d="M4 7H7"></path><path d="M4 10H7"></path><path d="M4 13H7"></path></svg></div></div><div class="sidebar-content"><div class="search-input-container"><input enterkeyhint="search" type="search" spellcheck="false" placeholder="Search..."><div class="search-input-clear-button" aria-label="Clear search"></div></div><include src="lib/html/file-tree.html"></include></div><script defer="">let ls = document.querySelector(".sidebar-left"); ls.classList.add("is-collapsed"); if (window.innerWidth > 768) ls.classList.remove("is-collapsed"); ls.style.setProperty("--sidebar-width", localStorage.getItem("sidebar-left-width"));</script></div><div class="document-container markdown-reading-view hide"><div class="markdown-preview-view markdown-rendered allow-fold-headings allow-fold-lists is-readable-line-width"><style id="MJX-CHTML-styles">mjx-msup { display: inline-block; text-align: left; }
+mjx-texatom { display: inline-block; text-align: left; }
+mjx-c.mjx-c1D442.TEX-I::before { padding: 0.704em 0.763em 0.022em 0px; content: "O"; }
+mjx-c.mjx-c28::before { padding: 0.75em 0.389em 0.25em 0px; content: "("; }
+mjx-c.mjx-c1D45B.TEX-I::before { padding: 0.442em 0.6em 0.011em 0px; content: "n"; }
+mjx-c.mjx-c32::before { padding: 0.666em 0.5em 0px 0px; content: "2"; }
+mjx-c.mjx-c29::before { padding: 0.75em 0.389em 0.25em 0px; content: ")"; }
+mjx-c.mjx-c1D459.TEX-I::before { padding: 0.694em 0.298em 0.011em 0px; content: "l"; }
+mjx-c.mjx-c1D45C.TEX-I::before { padding: 0.441em 0.485em 0.011em 0px; content: "o"; }
+mjx-c.mjx-c1D454.TEX-I::before { padding: 0.442em 0.477em 0.205em 0px; content: "g"; }
+mjx-c.mjx-c2061::before { padding: 0px; content: ""; }
+mjx-c.mjx-c1D6FA.TEX-I::before { padding: 0.704em 0.786em 0px 0px; content: "Ω"; }
+mjx-c.mjx-c1D6E9.TEX-I::before { padding: 0.704em 0.763em 0.022em 0px; content: "Θ"; }
+mjx-c.mjx-c2B::before { padding: 0.583em 0.778em 0.082em 0px; content: "+"; }
+mjx-c.mjx-c33::before { padding: 0.665em 0.5em 0.022em 0px; content: "3"; }
+mjx-c.mjx-c2E::before { padding: 0.12em 0.278em 0px 0px; content: "."; }
+mjx-c.mjx-c2F::before { padding: 0.75em 0.5em 0.25em 0px; content: "/"; }
+mjx-c.mjx-c30::before { padding: 0.666em 0.5em 0.022em 0px; content: "0"; }
+mjx-c.mjx-c39::before { padding: 0.666em 0.5em 0.022em 0px; content: "9"; }
+mjx-c.mjx-c2212::before { padding: 0.583em 0.778em 0.082em 0px; content: "−"; }
+mjx-container[jax="CHTML"] { line-height: 0; }
+mjx-container [space="1"] { margin-left: 0.111em; }
+mjx-container [space="2"] { margin-left: 0.167em; }
+mjx-container [space="3"] { margin-left: 0.222em; }
+mjx-container [space="4"] { margin-left: 0.278em; }
+mjx-container [space="5"] { margin-left: 0.333em; }
+mjx-container [rspace="1"] { margin-right: 0.111em; }
+mjx-container [rspace="2"] { margin-right: 0.167em; }
+mjx-container [rspace="3"] { margin-right: 0.222em; }
+mjx-container [rspace="4"] { margin-right: 0.278em; }
+mjx-container [rspace="5"] { margin-right: 0.333em; }
+mjx-container [size="s"] { font-size: 70.7%; }
+mjx-container [size="ss"] { font-size: 50%; }
+mjx-container [size="Tn"] { font-size: 60%; }
+mjx-container [size="sm"] { font-size: 85%; }
+mjx-container [size="lg"] { font-size: 120%; }
+mjx-container [size="Lg"] { font-size: 144%; }
+mjx-container [size="LG"] { font-size: 173%; }
+mjx-container [size="hg"] { font-size: 207%; }
+mjx-container [size="HG"] { font-size: 249%; }
+mjx-container [width="full"] { width: 100%; }
+mjx-box { display: inline-block; }
+mjx-block { display: block; }
+mjx-itable { display: inline-table; }
+mjx-row { display: table-row; }
+mjx-row > * { display: table-cell; }
+mjx-mtext { display: inline-block; }
+mjx-mstyle { display: inline-block; }
+mjx-merror { display: inline-block; color: red; background-color: yellow; }
+mjx-mphantom { visibility: hidden; }
+mjx-assistive-mml { top: 0px; left: 0px; clip: rect(1px, 1px, 1px, 1px); user-select: none; position: absolute !important; padding: 1px 0px 0px !important; border: 0px !important; display: block !important; width: auto !important; overflow: hidden !important; }
+mjx-assistive-mml[display="block"] { width: 100% !important; }
+mjx-math { display: inline-block; text-align: left; line-height: 0; text-indent: 0px; font-style: normal; font-weight: normal; font-size: 100%; font-size-adjust: none; letter-spacing: normal; border-collapse: collapse; overflow-wrap: normal; word-spacing: normal; white-space: nowrap; direction: ltr; padding: 1px 0px; }
+mjx-container[jax="CHTML"][display="true"] { display: block; text-align: center; margin: 1em 0px; }
+mjx-container[jax="CHTML"][display="true"][width="full"] { display: flex; }
+mjx-container[jax="CHTML"][display="true"] mjx-math { padding: 0px; }
+mjx-container[jax="CHTML"][justify="left"] { text-align: left; }
+mjx-container[jax="CHTML"][justify="right"] { text-align: right; }
+mjx-mi { display: inline-block; text-align: left; }
+mjx-c { display: inline-block; }
+mjx-utext { display: inline-block; padding: 0.75em 0px 0.2em; }
+mjx-msub { display: inline-block; text-align: left; }
+mjx-mn { display: inline-block; text-align: left; }
+mjx-mo { display: inline-block; text-align: left; }
+mjx-stretchy-h { display: inline-table; width: 100%; }
+mjx-stretchy-h > * { display: table-cell; width: 0px; }
+mjx-stretchy-h > * > mjx-c { display: inline-block; transform: scaleX(1); }
+mjx-stretchy-h > * > mjx-c::before { display: inline-block; width: initial; }
+mjx-stretchy-h > mjx-ext { overflow: clip visible; width: 100%; }
+mjx-stretchy-h > mjx-ext > mjx-c::before { transform: scaleX(500); }
+mjx-stretchy-h > mjx-ext > mjx-c { width: 0px; }
+mjx-stretchy-h > mjx-beg > mjx-c { margin-right: -0.1em; }
+mjx-stretchy-h > mjx-end > mjx-c { margin-left: -0.1em; }
+mjx-stretchy-v { display: inline-block; }
+mjx-stretchy-v > * { display: block; }
+mjx-stretchy-v > mjx-beg { height: 0px; }
+mjx-stretchy-v > mjx-end > mjx-c { display: block; }
+mjx-stretchy-v > * > mjx-c { transform: scaleY(1); transform-origin: left center; overflow: hidden; }
+mjx-stretchy-v > mjx-ext { display: block; height: 100%; box-sizing: border-box; border: 0px solid transparent; overflow: visible clip; }
+mjx-stretchy-v > mjx-ext > mjx-c::before { width: initial; box-sizing: border-box; }
+mjx-stretchy-v > mjx-ext > mjx-c { transform: scaleY(500) translateY(0.075em); overflow: visible; }
+mjx-mark { display: inline-block; height: 0px; }
+mjx-c::before { display: block; width: 0px; }
+.MJX-TEX { font-family: MJXZERO, MJXTEX; }
+.TEX-B { font-family: MJXZERO, MJXTEX-B; }
+.TEX-I { font-family: MJXZERO, MJXTEX-I; }
+.TEX-MI { font-family: MJXZERO, MJXTEX-MI; }
+.TEX-BI { font-family: MJXZERO, MJXTEX-BI; }
+.TEX-S1 { font-family: MJXZERO, MJXTEX-S1; }
+.TEX-S2 { font-family: MJXZERO, MJXTEX-S2; }
+.TEX-S3 { font-family: MJXZERO, MJXTEX-S3; }
+.TEX-S4 { font-family: MJXZERO, MJXTEX-S4; }
+.TEX-A { font-family: MJXZERO, MJXTEX-A; }
+.TEX-C { font-family: MJXZERO, MJXTEX-C; }
+.TEX-CB { font-family: MJXZERO, MJXTEX-CB; }
+.TEX-FR { font-family: MJXZERO, MJXTEX-FR; }
+.TEX-FRB { font-family: MJXZERO, MJXTEX-FRB; }
+.TEX-SS { font-family: MJXZERO, MJXTEX-SS; }
+.TEX-SSB { font-family: MJXZERO, MJXTEX-SSB; }
+.TEX-SSI { font-family: MJXZERO, MJXTEX-SSI; }
+.TEX-SC { font-family: MJXZERO, MJXTEX-SC; }
+.TEX-T { font-family: MJXZERO, MJXTEX-T; }
+.TEX-V { font-family: MJXZERO, MJXTEX-V; }
+.TEX-VB { font-family: MJXZERO, MJXTEX-VB; }
+mjx-stretchy-v mjx-c, mjx-stretchy-h mjx-c { font-family: MJXZERO, MJXTEX-S1, MJXTEX-S4, MJXTEX, MJXTEX-A !important; }
+@font-face { font-family: MJXZERO; src: url("lib/fonts/mathjax_zero.woff") format("woff"); }
+@font-face { font-family: MJXTEX; src: url("lib/fonts/mathjax_main-regular.woff") format("woff"); }
+@font-face { font-family: MJXTEX-B; src: url("lib/fonts/mathjax_main-bold.woff") format("woff"); }
+@font-face { font-family: MJXTEX-I; src: url("lib/fonts/mathjax_math-italic.woff") format("woff"); }
+@font-face { font-family: MJXTEX-MI; src: url("lib/fonts/mathjax_main-italic.woff") format("woff"); }
+@font-face { font-family: MJXTEX-BI; src: url("lib/fonts/mathjax_math-bolditalic.woff") format("woff"); }
+@font-face { font-family: MJXTEX-S1; src: url("lib/fonts/mathjax_size1-regular.woff") format("woff"); }
+@font-face { font-family: MJXTEX-S2; src: url("lib/fonts/mathjax_size2-regular.woff") format("woff"); }
+@font-face { font-family: MJXTEX-S3; src: url("lib/fonts/mathjax_size3-regular.woff") format("woff"); }
+@font-face { font-family: MJXTEX-S4; src: url("lib/fonts/mathjax_size4-regular.woff") format("woff"); }
+@font-face { font-family: MJXTEX-A; src: url("lib/fonts/mathjax_ams-regular.woff") format("woff"); }
+@font-face { font-family: MJXTEX-C; src: url("lib/fonts/mathjax_calligraphic-regular.woff") format("woff"); }
+@font-face { font-family: MJXTEX-CB; src: url("lib/fonts/mathjax_calligraphic-bold.woff") format("woff"); }
+@font-face { font-family: MJXTEX-FR; src: url("lib/fonts/mathjax_fraktur-regular.woff") format("woff"); }
+@font-face { font-family: MJXTEX-FRB; src: url("lib/fonts/mathjax_fraktur-bold.woff") format("woff"); }
+@font-face { font-family: MJXTEX-SS; src: url("lib/fonts/mathjax_sansserif-regular.woff") format("woff"); }
+@font-face { font-family: MJXTEX-SSB; src: url("lib/fonts/mathjax_sansserif-bold.woff") format("woff"); }
+@font-face { font-family: MJXTEX-SSI; src: url("lib/fonts/mathjax_sansserif-italic.woff") format("woff"); }
+@font-face { font-family: MJXTEX-SC; src: url("lib/fonts/mathjax_script-regular.woff") format("woff"); }
+@font-face { font-family: MJXTEX-T; src: url("lib/fonts/mathjax_typewriter-regular.woff") format("woff"); }
+@font-face { font-family: MJXTEX-V; src: url("lib/fonts/mathjax_vector-regular.woff") format("woff"); }
+@font-face { font-family: MJXTEX-VB; src: url("lib/fonts/mathjax_vector-bold.woff") format("woff"); }
+mjx-c.mjx-c1D439.TEX-I::before { padding: 0.68em 0.749em 0px 0px; content: "F"; }
+mjx-c.mjx-c1D447.TEX-I::before { padding: 0.677em 0.704em 0px 0px; content: "T"; }
+mjx-c.mjx-c1D43F.TEX-I::before { padding: 0.683em 0.681em 0px 0px; content: "L"; }
+mjx-c.mjx-c1D43C.TEX-I::before { padding: 0.683em 0.504em 0px 0px; content: "I"; }
+mjx-c.mjx-c1D441.TEX-I::before { padding: 0.683em 0.888em 0px 0px; content: "N"; }
+mjx-c.mjx-c1D438.TEX-I::before { padding: 0.68em 0.764em 0px 0px; content: "E"; }
+mjx-c.mjx-c31::before { padding: 0.666em 0.5em 0px 0px; content: "1"; }
+mjx-c.mjx-c2C::before { padding: 0.121em 0.278em 0.194em 0px; content: ","; }
+</style><pre class="frontmatter language-yaml" tabindex="0" style="display: none;"><code class="language-yaml is-loaded"><span class="token key atrule">title</span><span class="token punctuation">:</span> CS50 <span class="token punctuation">-</span> Week 3
+<span class="token key atrule">tags</span><span class="token punctuation">:</span> programming<span class="token punctuation">,</span> cs50
+<span class="token key atrule">use</span><span class="token punctuation">:</span> Documentation
+<span class="token key atrule">languages</span><span class="token punctuation">:</span> C
+<span class="token key atrule">dependences</span><span class="token punctuation">:</span> CS50</code><button class="copy-code-button"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon lucide-copy"><rect x="8" y="8" width="14" height="14" rx="2" ry="2"></rect><path d="M4 16c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2"></path></svg></button></pre><div class="markdown-preview-sizer markdown-preview-section"><h1 class="page-title heading" id="CS50 - Week 3"><p dir="auto">CS50 - Week 3</p></h1><div class="el-blockquote"><blockquote dir="auto">
+<p>This material is distributed by <code>Harvard ©&nbsp;2023&nbsp;edX LLC</code>. It was copied during the execution of the Course, and have been modified due to my understanding and integrated to the previous Data Structure of <code>Programing Studies</code>.</p>
+</blockquote></div><div class="el-details"><details> <summary>Table of Contents</summary></details></div><div class="el-ul"><ul>
+<li data-line="0" dir="auto"><div class="list-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle"><path d="M3 8L12 17L21 8"></path></svg></div><a class="internal-link" data-href="#lecture-3" href="#lecture-3" target="_self" rel="noopener nofollow">Lecture 3</a>
+<ul>
+<li data-line="1" dir="auto"><a class="internal-link" data-href="#welcome-" href="#welcome-" target="_self" rel="noopener nofollow">Welcome! #</a></li>
+<li data-line="2" dir="auto"><a class="internal-link" data-href="#algorithms" href="#algorithms" target="_self" rel="noopener nofollow">Algorithms</a></li>
+<li data-line="3" dir="auto"><a class="internal-link" data-href="#running-time" href="#running-time" target="_self" rel="noopener nofollow">Running Time</a></li>
+<li data-line="4" dir="auto"><a class="internal-link" data-href="#linear-and-binary-search" href="#linear-and-binary-search" target="_self" rel="noopener nofollow">Linear and Binary Search</a></li>
+<li data-line="5" dir="auto"><a class="internal-link" data-href="#data-structures" href="#data-structures" target="_self" rel="noopener nofollow">Data Structures</a></li>
+<li data-line="6" dir="auto"><div class="list-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle"><path d="M3 8L12 17L21 8"></path></svg></div><a class="internal-link" data-href="#sorting" href="#sorting" target="_self" rel="noopener nofollow">Sorting</a>
+<ul>
+<li data-line="7" dir="auto"><a class="internal-link" data-href="#selectioninsertion-sort" href="#selectioninsertion-sort" target="_self" rel="noopener nofollow">Selection/Insertion Sort</a></li>
+<li data-line="8" dir="auto"><a class="internal-link" data-href="#bubble-sort" href="#bubble-sort" target="_self" rel="noopener nofollow">Bubble sort</a></li>
+</ul>
+</li>
+<li data-line="9" dir="auto"><a class="internal-link" data-href="#recursion" href="#recursion" target="_self" rel="noopener nofollow">Recursion</a></li>
+<li data-line="10" dir="auto"><a class="internal-link" data-href="#merge-sort" href="#merge-sort" target="_self" rel="noopener nofollow">Merge Sort</a></li>
+<li data-line="11" dir="auto"><a class="internal-link" data-href="#summing-up" href="#summing-up" target="_self" rel="noopener nofollow">Summing Up</a></li>
+</ul>
+</li>
+<li data-line="12" dir="auto"><a class="internal-link" data-href="#section" href="#section" target="_self" rel="noopener nofollow">Section</a></li>
+<li data-line="13" dir="auto"><div class="list-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle"><path d="M3 8L12 17L21 8"></path></svg></div><a class="internal-link" data-href="#shorts" href="#shorts" target="_self" rel="noopener nofollow">Shorts</a>
+<ul>
+<li data-line="14" dir="auto"><a class="internal-link" data-href="#linear-search" href="#linear-search" target="_self" rel="noopener nofollow">Linear Search</a></li>
+<li data-line="15" dir="auto"><a class="internal-link" data-href="#binary-search" href="#binary-search" target="_self" rel="noopener nofollow">Binary Search</a></li>
+<li data-line="16" dir="auto"><a class="internal-link" data-href="#bubble-sort-1" href="#bubble-sort-1" target="_self" rel="noopener nofollow">Bubble Sort</a></li>
+<li data-line="17" dir="auto"><a class="internal-link" data-href="#selection-sort" href="#selection-sort" target="_self" rel="noopener nofollow">Selection Sort</a></li>
+<li data-line="18" dir="auto"><a class="internal-link" data-href="#recursion-1" href="#recursion-1" target="_self" rel="noopener nofollow">Recursion</a></li>
+<li data-line="19" dir="auto"><a class="internal-link" data-href="#merge-sort-1" href="#merge-sort-1" target="_self" rel="noopener nofollow">Merge Sort</a></li>
+</ul>
+</li>
+<li data-line="20" dir="auto"><div class="list-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle"><path d="M3 8L12 17L21 8"></path></svg></div><a class="internal-link" data-href="#exercises" href="#exercises" target="_self" rel="noopener nofollow">Exercises</a>
+<ul>
+<li data-line="21" dir="auto"><a class="internal-link" data-href="#practice-problems-3-" href="#practice-problems-3-" target="_self" rel="noopener nofollow">Practice Problems 3 #</a></li>
+<li data-line="22" dir="auto"><a class="internal-link" data-href="#lab-3-sort" href="#lab-3-sort" target="_self" rel="noopener nofollow">Lab 3: Sort</a></li>
+<li data-line="23" dir="auto"><a class="internal-link" data-href="#problem-set-3" href="#problem-set-3" target="_self" rel="noopener nofollow">Problem Set 3</a></li>
+<li data-line="24" dir="auto"><a class="internal-link" data-href="#what-to-do" href="#what-to-do" target="_self" rel="noopener nofollow">What to Do</a></li>
+<li data-line="25" dir="auto"><a class="internal-link" data-href="#advice" href="#advice" target="_self" rel="noopener nofollow">Advice</a></li>
+</ul>
+</li>
+</ul></div><div></div><div class="el-h1 heading-wrapper"><h1 data-heading="Lecture 3" dir="auto" class="heading" id="Lecture_3">Lecture 3</h1><div class="heading-children"><div class="el-details"><details>
+<summary>Keywords, lookup in <a href="./src/transcripts/lecture3.md" target="_blank" rel="noopener nofollow">transcript</a></summary></details></div><div class="el-ul"><ul>
+<li data-line="0" dir="auto">Efficiency</li>
+<li data-line="1" dir="auto">Searching</li>
+<li data-line="2" dir="auto">Linear search</li>
+<li data-line="3" dir="auto">Running time, Imprecision</li>
+<li data-line="4" dir="auto">Big O</li>
+<li data-line="5" dir="auto">Upperbound</li>
+<li data-line="6" dir="auto">Lowerbound</li>
+<li data-line="7" dir="auto">Segmentation Fault</li>
+<li data-line="8" dir="auto">Exit codes</li>
+<li data-line="9" dir="auto">Data Structures</li>
+<li data-line="10" dir="auto">Create your own types</li>
+<li data-line="11" dir="auto">Structure</li>
+<li data-line="12" dir="auto">Atribute</li>
+<li data-line="13" dir="auto">csv</li>
+<li data-line="14" dir="auto">read dynamically</li>
+<li data-line="15" dir="auto">Sortting</li>
+<li data-line="16" dir="auto">Recursion</li>
+<li data-line="17" dir="auto">Base case</li>
+<li data-line="18" dir="auto">improve time</li>
+<li data-line="19" dir="auto">space</li>
+</ul></div><div></div><div class="el-h2 heading-wrapper"><h2 data-heading="Welcome! [#](https://cs50.harvard.edu/x/2023/notes/3/#welcome)" dir="auto" class="heading" id="Welcome!_[#](https://cs50.harvard.edu/x/2023/notes/3/#welcome)"><div class="heading-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle"><path d="M3 8L12 17L21 8"></path></svg></div>Welcome! <a data-tooltip-position="top" aria-label="https://cs50.harvard.edu/x/2023/notes/3/#welcome" rel="noopener nofollow" class="external-link" href="https://cs50.harvard.edu/x/2023/notes/3/#welcome" target="_blank">#</a></h2><div class="heading-children"><div class="el-ul"><ul>
+<li data-line="0" dir="auto">In week zero, we introduced the idea of an <em>algorithm</em>.</li>
+<li data-line="1" dir="auto">This week, we are going to expand upon our understanding of algorithms through pseudocode and into code itself.</li>
+<li data-line="2" dir="auto">Also, we are going to consider the efficiency of these algorithms. Indeed, we are going to be building upon our understanding of how to use some of the <em>lower-level</em> concepts we discussed last week in building algorithms.</li>
+</ul></div></div></div><div class="el-h2 heading-wrapper"><h2 data-heading="Algorithms" dir="auto" class="heading" id="Algorithms"><div class="heading-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle"><path d="M3 8L12 17L21 8"></path></svg></div>Algorithms</h2><div class="heading-children"><div class="el-ul"><ul>
+<li data-line="0" dir="auto">
+<p>Recall that last week you were introduced to the idea of an <em>array</em>, blocks of memory that are side-by-side with one another.</p>
+</li>
+<li data-line="1" dir="auto">
+<p>You can metaphorically imagine an array like a series of seven red lockers as follows:<br>
+<img title="lockers" alt="Seven red lockers side by side" src="https://cs50.harvard.edu/x/2023/notes/3//cs50Week3Slide018.png" referrerpolicy="no-referrer"></p>
+</li>
+<li data-line="4" dir="auto">
+<p>We can imagine that we have an essential problem of wanting to know, “Is the number 50 inside an array?”</p>
+</li>
+<li data-line="5" dir="auto">
+<p>We can potentially hand our array to an algorithm, wherein our algorithm will search through our lockers to see if the number 50 is behind one of the doors: Returning the value true or false.<br>
+<img title="lockers as algorithm" alt="seven red lockers pointing to an empty box. Out of the empty box comes and output of bool" src="https://cs50.harvard.edu/x/2023/notes/3//cs50Week3Slide022.png" referrerpolicy="no-referrer"></p>
+</li>
+<li data-line="8" dir="auto">
+<p>We can imagine various instructions we might provide our algorithm to undertake this task as follows:</p>
+<pre><code>
+For each door from left to right
+    If 50 is behind door
+        Return true
+Return false // end of the loop
+</code><button class="copy-code-button"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon lucide-copy"><rect x="8" y="8" width="14" height="14" rx="2" ry="2"></rect><path d="M4 16c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2"></path></svg></button></pre>
+<p>Notice that the above instructions are called <em>pseudocode</em>: A human-readable version of the instructions that we could provide the computer.</p>
+</li>
+<li data-line="18" dir="auto">
+<p>A computer scientist could translate that pseudocode as follows:</p>
+<pre><code>
+For i from 0 to n-1
+    If 50 is behind doors[i]
+        Return true
+Return false
+</code><button class="copy-code-button"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon lucide-copy"><rect x="8" y="8" width="14" height="14" rx="2" ry="2"></rect><path d="M4 16c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2"></path></svg></button></pre>
+<p>Notice that the above is still not code, but it is a pretty close approximation of what the final code might look like.</p>
+</li>
+<li data-line="28" dir="auto">
+<p><strong>Binary search</strong> is a <em>search algorithm</em> that could be employed in our task of finding the 50.</p>
+</li>
+<li data-line="29" dir="auto">
+<p><strong>Assuming that the values within the lockers have been arranged from smallest to largest</strong>, the pseudocode for binary search would appear as follows:</p>
+<pre><code>
+If there are no doors // error handling
+    Return false
+If 50 is behind middle door
+    Return true
+Else if 50 Less Than middle door
+    Search left half
+Else if 50 Greater Than middle door
+    Search right half
+</code><button class="copy-code-button"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon lucide-copy"><rect x="8" y="8" width="14" height="14" rx="2" ry="2"></rect><path d="M4 16c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2"></path></svg></button></pre>
+</li>
+<li data-line="41" dir="auto">
+<p>Using the nomenclature of code, we can further modify our algorithm as follows:</p>
+<pre><code>
+If no doors
+    Return false
+If 50 is behind doors[middle (n/2)]
+    Return true
+Else if 50 Less Than doors[middle]
+    Search doors[0] through doors[middle-1]
+Else if 50 Greater Than doors[middle]
+    Search doors[middle+1] through doors[n-1]
+</code><button class="copy-code-button"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon lucide-copy"><rect x="8" y="8" width="14" height="14" rx="2" ry="2"></rect><path d="M4 16c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2"></path></svg></button></pre>
+<p>Notice, looking at this approximation of code, you can nearly imagine what this might look like in actual code.</p>
+</li>
+</ul></div></div></div><div class="el-h2 heading-wrapper"><h2 data-heading="Running Time" dir="auto" class="heading" id="Running_Time"><div class="heading-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle"><path d="M3 8L12 17L21 8"></path></svg></div>Running Time</h2><div class="heading-children"><div class="el-ul"><ul>
+<li data-line="0" dir="auto">
+<p><em>running time</em> involves an analysis using <a class="internal-link" data-href="big_o_notation.md" href="docs/big_o_notation.html" target="_self" rel="noopener nofollow"><em>Big O</em></a> notation. Take a look at the following graph:</p>
+<p><img title="big o graphed" alt="chart with: &quot;size of problem&quot; as x-axis; &quot;time to solve&quot; as y-axis; red, steep straight line from origin to top of graph close to yellow, less steep straight line from origin to top of graph both labeled &quot;O(n)&quot;; green, curved line that gets less and less steep from origin to right of graph labeled &quot;O(log n)" src="https://cs50.harvard.edu/x/2023/notes/3//cs50Week3Slide042.png" referrerpolicy="no-referrer"></p>
+<p>In the above graph, the first algorithm is in <code>O(n)</code>. The second is in <code>O(n)</code> as well. The third is in <code>O(log⁡ n)</code>.</p>
+</li>
+<li data-line="6" dir="auto"><div class="list-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle"><path d="M3 8L12 17L21 8"></path></svg></div>
+<p>It’s the shape of the curve that shows the efficiency of an algorithm. Some common running times we may see are, <strong>from lowest to fastest</strong>:</p>
+<ul>
+<li data-line="7" dir="auto"><span class="math math-inline is-loaded"><mjx-container class="MathJax" jax="CHTML"><mjx-math class="MJX-TEX"><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D442 TEX-I"></mjx-c></mjx-mi><mjx-mo class="mjx-n"><mjx-c class="mjx-c28"></mjx-c></mjx-mo><mjx-msup><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D45B TEX-I"></mjx-c></mjx-mi><mjx-script style="vertical-align: 0.363em;"><mjx-mn class="mjx-n" size="s"><mjx-c class="mjx-c32"></mjx-c></mjx-mn></mjx-script></mjx-msup><mjx-mo class="mjx-n"><mjx-c class="mjx-c29"></mjx-c></mjx-mo></mjx-math></mjx-container></span> <em>e.g <a class="internal-link" data-href="#selection-sort" href="#selection-sort" target="_self" rel="noopener nofollow">selection sort</a>, <a class="internal-link" data-href="#bubble-sort" href="#bubble-sort" target="_self" rel="noopener nofollow">bubble sort</a></em></li>
+<li data-line="8" dir="auto"><span class="math math-inline is-loaded"><mjx-container class="MathJax" jax="CHTML"><mjx-math class="MJX-TEX"><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D442 TEX-I"></mjx-c></mjx-mi><mjx-mo class="mjx-n"><mjx-c class="mjx-c28"></mjx-c></mjx-mo><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D45B TEX-I"></mjx-c></mjx-mi><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D459 TEX-I"></mjx-c></mjx-mi><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D45C TEX-I"></mjx-c></mjx-mi><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D454 TEX-I"></mjx-c></mjx-mi><mjx-mo class="mjx-n"><mjx-c class="mjx-c2061"></mjx-c></mjx-mo><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D45B TEX-I"></mjx-c></mjx-mi><mjx-mo class="mjx-n"><mjx-c class="mjx-c29"></mjx-c></mjx-mo></mjx-math></mjx-container></span> <em>eg <a class="internal-link" data-href="#merge-sort" href="#merge-sort" target="_self" rel="noopener nofollow">merge sort</a></em></li>
+<li data-line="9" dir="auto"><span class="math math-inline is-loaded"><mjx-container class="MathJax" jax="CHTML"><mjx-math class="MJX-TEX"><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D442 TEX-I"></mjx-c></mjx-mi><mjx-mo class="mjx-n"><mjx-c class="mjx-c28"></mjx-c></mjx-mo><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D45B TEX-I"></mjx-c></mjx-mi><mjx-mo class="mjx-n"><mjx-c class="mjx-c29"></mjx-c></mjx-mo></mjx-math></mjx-container></span></li>
+<li data-line="10" dir="auto"><span class="math math-inline is-loaded"><mjx-container class="MathJax" jax="CHTML"><mjx-math class="MJX-TEX"><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D442 TEX-I"></mjx-c></mjx-mi><mjx-mo class="mjx-n"><mjx-c class="mjx-c28"></mjx-c></mjx-mo><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D459 TEX-I"></mjx-c></mjx-mi><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D45C TEX-I"></mjx-c></mjx-mi><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D454 TEX-I"></mjx-c></mjx-mi><mjx-mo class="mjx-n"><mjx-c class="mjx-c2061"></mjx-c></mjx-mo><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D45B TEX-I"></mjx-c></mjx-mi><mjx-mo class="mjx-n"><mjx-c class="mjx-c29"></mjx-c></mjx-mo></mjx-math></mjx-container></span></li>
+<li data-line="11" dir="auto"><span class="math math-inline is-loaded"><mjx-container class="MathJax" jax="CHTML"><mjx-math class="MJX-TEX"><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D442 TEX-I"></mjx-c></mjx-mi><mjx-mo class="mjx-n"><mjx-c class="mjx-c28"></mjx-c></mjx-mo><mjx-mn class="mjx-n"><mjx-c class="mjx-c31"></mjx-c></mjx-mn><mjx-mo class="mjx-n"><mjx-c class="mjx-c29"></mjx-c></mjx-mo></mjx-math></mjx-container></span></li>
+</ul>
+</li>
+<li data-line="13" dir="auto">
+<p>Of the running times above, <span class="math math-inline is-loaded"><mjx-container class="MathJax" jax="CHTML"><mjx-math class="MJX-TEX"><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D442 TEX-I"></mjx-c></mjx-mi><mjx-mo class="mjx-n"><mjx-c class="mjx-c28"></mjx-c></mjx-mo><mjx-msup><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D45B TEX-I"></mjx-c></mjx-mi><mjx-script style="vertical-align: 0.363em;"><mjx-mn class="mjx-n" size="s"><mjx-c class="mjx-c32"></mjx-c></mjx-mn></mjx-script></mjx-msup><mjx-mo class="mjx-n"><mjx-c class="mjx-c29"></mjx-c></mjx-mo></mjx-math></mjx-container></span> is considered the worst running time, <span class="math math-inline is-loaded"><mjx-container class="MathJax" jax="CHTML"><mjx-math class="MJX-TEX"><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D442 TEX-I"></mjx-c></mjx-mi><mjx-mo class="mjx-n"><mjx-c class="mjx-c28"></mjx-c></mjx-mo><mjx-mn class="mjx-n"><mjx-c class="mjx-c31"></mjx-c></mjx-mn><mjx-mo class="mjx-n"><mjx-c class="mjx-c29"></mjx-c></mjx-mo></mjx-math></mjx-container></span> is the fastest.</p>
+</li>
+<li data-line="14" dir="auto">
+<p>Linear search was of order <span class="math math-inline is-loaded"><mjx-container class="MathJax" jax="CHTML"><mjx-math class="MJX-TEX"><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D442 TEX-I"></mjx-c></mjx-mi><mjx-mo class="mjx-n"><mjx-c class="mjx-c28"></mjx-c></mjx-mo><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D45B TEX-I"></mjx-c></mjx-mi><mjx-mo class="mjx-n"><mjx-c class="mjx-c29"></mjx-c></mjx-mo></mjx-math></mjx-container></span> because it could take <span class="math math-inline is-loaded"><mjx-container class="MathJax" jax="CHTML"><mjx-math class="MJX-TEX"><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D45B TEX-I"></mjx-c></mjx-mi></mjx-math></mjx-container></span> steps in the worst case to run.</p>
+</li>
+<li data-line="15" dir="auto">
+<p>Binary search was of order <span class="math math-inline is-loaded"><mjx-container class="MathJax" jax="CHTML"><mjx-math class="MJX-TEX"><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D442 TEX-I"></mjx-c></mjx-mi><mjx-mo class="mjx-n"><mjx-c class="mjx-c28"></mjx-c></mjx-mo><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D459 TEX-I"></mjx-c></mjx-mi><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D45C TEX-I"></mjx-c></mjx-mi><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D454 TEX-I"></mjx-c></mjx-mi><mjx-mo class="mjx-n"><mjx-c class="mjx-c2061"></mjx-c></mjx-mo><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D45B TEX-I"></mjx-c></mjx-mi><mjx-mo class="mjx-n"><mjx-c class="mjx-c29"></mjx-c></mjx-mo></mjx-math></mjx-container></span> because it would take fewer and fewer steps to run even in the worst case.</p>
+</li>
+</ul></div><div class="el-p"><p dir="auto">Programmers are interested in both the worst case, or <em>upper bound</em>, and the best case, or <em>lower bound</em>.</p></div><div class="el-ul"><ul>
+<li data-line="0" dir="auto">The <span class="math math-inline is-loaded"><mjx-container class="MathJax" jax="CHTML"><mjx-math class="MJX-TEX"><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D6FA TEX-I"></mjx-c></mjx-mi></mjx-math></mjx-container></span> symbol is <strong>used to denote the best case of an algorithm</strong>, such as <span class="math math-inline is-loaded"><mjx-container class="MathJax" jax="CHTML"><mjx-math class="MJX-TEX"><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D6FA TEX-I"></mjx-c></mjx-mi><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D442 TEX-I"></mjx-c></mjx-mi><mjx-mo class="mjx-n"><mjx-c class="mjx-c28"></mjx-c></mjx-mo><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D45B TEX-I"></mjx-c></mjx-mi><mjx-mo class="mjx-n"><mjx-c class="mjx-c29"></mjx-c></mjx-mo></mjx-math></mjx-container></span>.</li>
+<li data-line="1" dir="auto">The <span class="math math-inline is-loaded"><mjx-container class="MathJax" jax="CHTML"><mjx-math class="MJX-TEX"><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D6E9 TEX-I"></mjx-c></mjx-mi></mjx-math></mjx-container></span> symbol is <strong>used to denote where the upper bound and lower bound are the same</strong>, where the best case and the worst case running times are the same.</li>
+</ul></div></div></div><div class="el-h2 heading-wrapper"><h2 data-heading="Linear and Binary Search" dir="auto" class="heading" id="Linear_and_Binary_Search"><div class="heading-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle"><path d="M3 8L12 17L21 8"></path></svg></div>Linear and Binary Search</h2><div class="heading-children"><div class="el-p"><p dir="auto">Transforming the pseudocode defined previously, you can implement <em>linear search</em> ourselves by typing <code>code search.c</code> in your terminal window and by writing code as follows:</p></div><div class="el-pre has-run-code-button"><pre class="language-c" tabindex="0"><code data-line="0" class="language-c is-loaded"><span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">include</span> <span class="token string">&lt;cs50.h&gt;</span></span>
+<span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">include</span> <span class="token string">&lt;stdio.h&gt;</span></span>
+
+<span class="token keyword">int</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token keyword">void</span><span class="token punctuation">)</span>
+<span class="token punctuation">{</span>
+    <span class="token comment">// An array of integers</span>
+    <span class="token keyword">int</span> numbers<span class="token punctuation">[</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token punctuation">{</span><span class="token number">20</span><span class="token punctuation">,</span> <span class="token number">500</span><span class="token punctuation">,</span> <span class="token number">10</span><span class="token punctuation">,</span> <span class="token number">5</span><span class="token punctuation">,</span> <span class="token number">100</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">50</span><span class="token punctuation">}</span><span class="token punctuation">;</span>
+
+    <span class="token comment">// Search for number</span>
+    <span class="token keyword">int</span> n <span class="token operator">=</span> <span class="token function">get_int</span><span class="token punctuation">(</span><span class="token string">"Number: "</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">int</span> i <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> i <span class="token operator">&lt;</span> <span class="token number">7</span><span class="token punctuation">;</span> i<span class="token operator">++</span><span class="token punctuation">)</span>
+    <span class="token punctuation">{</span>
+        <span class="token keyword">if</span> <span class="token punctuation">(</span>numbers<span class="token punctuation">[</span>i<span class="token punctuation">]</span> <span class="token operator">==</span> n<span class="token punctuation">)</span>
+        <span class="token punctuation">{</span>
+            <span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"Found\n"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+            <span class="token keyword">return</span> <span class="token number">0</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+    <span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"Not found\n"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">return</span> <span class="token number">1</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code><button class="copy-code-button"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon lucide-copy"><rect x="8" y="8" width="14" height="14" rx="2" ry="2"></rect><path d="M4 16c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2"></path></svg></button><button class="run-code-button">Run</button></pre></div><div class="el-p"><p dir="auto">Notice that the line beginning with <code>int numbers[]</code> allows us to define the values of each element of the array as we create it. Then, in the <code>for</code> loop, we have an implementation of linear search.</p></div><div class="el-ul"><ul>
+<li data-line="0" dir="auto">
+<p>We have now implemented linear search ourselves in C!</p>
+</li>
+<li data-line="1" dir="auto" class="has-run-code-button">
+<p>What if we wanted to search for a string within an array? Modify your code as follows:</p>
+<pre class="language-c" tabindex="0"><code data-line="3" class="language-c is-loaded"><span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">include</span> <span class="token string">&lt;cs50.h&gt;</span></span>
+<span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">include</span> <span class="token string">&lt;stdio.h&gt;</span></span>
+<span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">include</span> <span class="token string">&lt;string.h&gt;</span></span>
+
+<span class="token keyword">int</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token keyword">void</span><span class="token punctuation">)</span>
+<span class="token punctuation">{</span>
+    <span class="token comment">// An array of strings</span>
+    string strings<span class="token punctuation">[</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token punctuation">{</span><span class="token string">"battleship"</span><span class="token punctuation">,</span> <span class="token string">"boot"</span><span class="token punctuation">,</span> <span class="token string">"cannon"</span><span class="token punctuation">,</span> <span class="token string">"iron"</span><span class="token punctuation">,</span> <span class="token string">"thimble"</span><span class="token punctuation">,</span> <span class="token string">"top hat"</span><span class="token punctuation">}</span><span class="token punctuation">;</span>
+
+    <span class="token comment">// Search for string</span>
+    string s <span class="token operator">=</span> <span class="token function">get_string</span><span class="token punctuation">(</span><span class="token string">"String: "</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">int</span> i <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> i <span class="token operator">&lt;</span> <span class="token number">6</span><span class="token punctuation">;</span> i<span class="token operator">++</span><span class="token punctuation">)</span>
+    <span class="token punctuation">{</span>
+        <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token function">strcmp</span><span class="token punctuation">(</span>strings<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">,</span> s<span class="token punctuation">)</span> <span class="token operator">==</span> <span class="token number">0</span><span class="token punctuation">)</span>
+        <span class="token punctuation">{</span>
+            <span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"Found\n"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+            <span class="token keyword">return</span> <span class="token number">0</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+    <span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"Not found\n"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">return</span> <span class="token number">1</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code><button class="copy-code-button"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon lucide-copy"><rect x="8" y="8" width="14" height="14" rx="2" ry="2"></rect><path d="M4 16c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2"></path></svg></button><button class="run-code-button">Run</button></pre>
+<p>Notice that we cannot utilize <code>==</code> as in our previous iteration of this program. Instead, we have to use <code>strcmp</code>(), which comes from the <code>string.h</code> library.</p>
+<blockquote dir="auto">
+<p>In 42 Piscine, we had implemented this function <a class="internal-link" data-href="../../42/42_Walkthrugh/Lists/c03/files/ex00/ft_strcmp.c" href="courses/42/42_walkthrugh/lists/c03/files/ex00/ft_strcmp.c" target="_self" rel="noopener nofollow">here</a>.</p>
+</blockquote>
+</li>
+<li data-line="31" dir="auto">
+<p>Indeed, running this code allows us to iterate over this array of strings to see if a certain string was within it. However, if you see a <em>segmentation fault</em>, where a part of memory was touched by your program that it should not have access to, do make sure you have <code>i &lt; 6</code> noted above instead of <code>i &lt; 7</code>.</p>
+</li>
+<li data-line="33" dir="auto" class="has-run-code-button">
+<p>We can combine these ideas of both numbers and strings into a single program. Type <code>code phonebook.c</code> into your terminal window and write code as follows:</p>
+<pre class="language-c" tabindex="0"><code data-line="35" class="language-c is-loaded"><span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">include</span> <span class="token string">&lt;cs50.h&gt;</span></span>
+<span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">include</span> <span class="token string">&lt;stdio.h&gt;</span></span>
+<span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">include</span> <span class="token string">&lt;string.h&gt;</span></span>
+
+<span class="token keyword">int</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token keyword">void</span><span class="token punctuation">)</span>
+<span class="token punctuation">{</span>
+    <span class="token comment">// Arrays of strings</span>
+    string names<span class="token punctuation">[</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token punctuation">{</span><span class="token string">"Carter"</span><span class="token punctuation">,</span> <span class="token string">"David"</span><span class="token punctuation">}</span><span class="token punctuation">;</span>
+    string numbers<span class="token punctuation">[</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token punctuation">{</span><span class="token string">"+1-617-495-1000"</span><span class="token punctuation">,</span> <span class="token string">"+1-949-468-2750"</span><span class="token punctuation">}</span><span class="token punctuation">;</span>
+
+    <span class="token comment">// Search for name</span>
+    string name <span class="token operator">=</span> <span class="token function">get_string</span><span class="token punctuation">(</span><span class="token string">"Name: "</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">int</span> i <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> i <span class="token operator">&lt;</span> <span class="token number">2</span><span class="token punctuation">;</span> i<span class="token operator">++</span><span class="token punctuation">)</span>
+    <span class="token punctuation">{</span>
+        <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token function">strcmp</span><span class="token punctuation">(</span>names<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">,</span> name<span class="token punctuation">)</span> <span class="token operator">==</span> <span class="token number">0</span><span class="token punctuation">)</span>
+        <span class="token punctuation">{</span>
+            <span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"Found %s\n"</span><span class="token punctuation">,</span> numbers<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+            <span class="token keyword">return</span> <span class="token number">0</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+    <span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"Not found\n"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">return</span> <span class="token number">1</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code><button class="copy-code-button"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon lucide-copy"><rect x="8" y="8" width="14" height="14" rx="2" ry="2"></rect><path d="M4 16c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2"></path></svg></button><button class="run-code-button">Run</button></pre>
+<p>Notice that Carter’s number begins with <code>+1-617</code> and David’s phone number starts with ‘1-949’. Therefore, <code>names[0]</code> is Carter and <code>numbers[0]</code> is Carter’s number.</p>
+</li>
+<li data-line="63" dir="auto">
+<p>While this code works, there are numerous inefficiencies. Indeed, there is a chance that people’s names and numbers may not correspond. Wouldn’t be nice if we could create our own data type where we could associate a person with the phone number?</p>
+</li>
+</ul><div><pre class="dataview dataview-error">Dataview (inline field '='): Error: 
+-- PARSING FAILED --------------------------------------------------
+
+&gt; 1 | =
+    | ^
+
+Expected one of the following: 
+
+'(', 'null', boolean, date, duration, file link, list ('[1, 2, 3]'), negated field, number, object ('{ a: 1, b: 2 }'), string, variable
+</pre></div></div></div></div><div class="el-h2 heading-wrapper"><h2 data-heading="Data Structures" dir="auto" class="heading" id="Data_Structures"><div class="heading-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle"><path d="M3 8L12 17L21 8"></path></svg></div>Data Structures</h2><div class="heading-children"><div class="el-ul"><ul>
+<li data-line="0" dir="auto" class="has-run-code-button">
+<p>It turns out that C allows a way by which <strong>we can create our own data types via a <code>struct</code></strong>. Modify your code as follows:</p>
+<pre class="language-c" tabindex="0"><code data-line="2" class="language-c is-loaded"><span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">include</span> <span class="token string">&lt;cs50.h&gt;</span></span>
+<span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">include</span> <span class="token string">&lt;stdio.h&gt;</span></span>
+<span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">include</span> <span class="token string">&lt;string.h&gt;</span></span>
+
+<span class="token keyword">typedef</span> <span class="token keyword">struct</span>
+<span class="token punctuation">{</span>
+    string name<span class="token punctuation">;</span>   <span class="token comment">// atribute</span>
+    string number<span class="token punctuation">;</span> <span class="token comment">// atribute</span>
+<span class="token punctuation">}</span>
+person<span class="token punctuation">;</span> <span class="token comment">// name of the structure</span>
+
+<span class="token keyword">int</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token keyword">void</span><span class="token punctuation">)</span>
+<span class="token punctuation">{</span>
+    person people<span class="token punctuation">[</span><span class="token number">2</span><span class="token punctuation">]</span><span class="token punctuation">;</span> <span class="token comment">// array of structures</span>
+
+    people<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">.</span>name <span class="token operator">=</span> <span class="token string">"Carter"</span><span class="token punctuation">;</span>
+    people<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">.</span>number <span class="token operator">=</span> <span class="token string">"+1-617-495-1000"</span><span class="token punctuation">;</span>
+
+    people<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">.</span>name <span class="token operator">=</span> <span class="token string">"David"</span><span class="token punctuation">;</span>
+    people<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">.</span>number <span class="token operator">=</span> <span class="token string">"+1-949-468-2750"</span><span class="token punctuation">;</span>
+
+    <span class="token comment">// Search for name</span>
+    string name <span class="token operator">=</span> <span class="token function">get_string</span><span class="token punctuation">(</span><span class="token string">"Name: "</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">int</span> i <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> i <span class="token operator">&lt;</span> <span class="token number">2</span><span class="token punctuation">;</span> i<span class="token operator">++</span><span class="token punctuation">)</span>
+    <span class="token punctuation">{</span>
+        <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token function">strcmp</span><span class="token punctuation">(</span>people<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">.</span>name<span class="token punctuation">,</span> name<span class="token punctuation">)</span> <span class="token operator">==</span> <span class="token number">0</span><span class="token punctuation">)</span>
+        <span class="token punctuation">{</span>
+            <span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"Found %s\n"</span><span class="token punctuation">,</span> people<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">.</span>number<span class="token punctuation">)</span><span class="token punctuation">;</span>
+            <span class="token keyword">return</span> <span class="token number">0</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+    <span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"Not found\n"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">return</span> <span class="token number">1</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code><button class="copy-code-button"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon lucide-copy"><rect x="8" y="8" width="14" height="14" rx="2" ry="2"></rect><path d="M4 16c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2"></path></svg></button><button class="run-code-button">Run</button></pre>
+<p>Notice that the code begins with <code>typedef struct</code> where a new datatype called <code>person</code> is defined.<br>
+Inside a <code>person</code> is a string called <code>name</code> and a <code>string</code> called number, they are <strong>attributes</strong> of the struct.<br>
+In the <code>main</code> function, begin by creating an array of structures (<em>that is of type <code>person</code></em>) called <code>people</code>  that is a size of 2.<br>
+Then, we update the names and phone numbers of the two people in our <code>people</code> array. Most important, notice how the <em>dot notation</em> such as <code>people[0].name</code> allows us to access the <code>person</code> at the 0th location and assign that individual a name. </p>
+<p>In the future, the code will read from a data-base and store the information automatically in the array. </p>
+</li>
+</ul></div></div></div><div class="el-h2 heading-wrapper"><h2 data-heading="Sorting" dir="auto" class="heading" id="Sorting"><div class="heading-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle"><path d="M3 8L12 17L21 8"></path></svg></div>Sorting</h2><div class="heading-children"><div class="el-ul"><ul>
+<li data-line="0" dir="auto"><em>sorting</em> is the act of taking an unsorted list of values and transforming this list into a sorted one.</li>
+<li data-line="1" dir="auto">When a list is sorted, searching that list is far less taxing on the computer. Recall that we can use binary search on a sorted list, but not on an unsorted one.</li>
+<li data-line="2" dir="auto">It turns out that there are many different types of sort algorithms. </li>
+</ul></div><div class="el-h3 heading-wrapper"><h3 data-heading="[Selection/Insertion Sort](../../Other/algo_insertion_sort.md)" dir="auto" class="heading" id="[Selection/Insertion_Sort](../../Other/algo_insertion_sort.md)"><div class="heading-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle"><path d="M3 8L12 17L21 8"></path></svg></div><a class="internal-link" data-href="../../Other/algo_insertion_sort.md" href="../../Other/algo_insertion_sort.md" target="_self" rel="noopener nofollow">Selection/Insertion Sort</a></h3><div class="heading-children"><div class="el-p"><p dir="auto">is one such search algorithm.</p></div><div class="el-ul"><ul>
+<li data-line="0" dir="auto">
+<p>The algorithm for Selection Sort in pseudocode is:</p>
+<pre><code>
+For i from 0 to n–1
+    Find smallest number between numbers[i] and numbers[n-1]
+    Swap smallest number with numbers[i]
+</code><button class="copy-code-button"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon lucide-copy"><rect x="8" y="8" width="14" height="14" rx="2" ry="2"></rect><path d="M4 16c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2"></path></svg></button></pre>
+</li>
+<li data-line="7" dir="auto">
+<p>Consider the unsorted list as follows:</p>
+<pre><code>
+  5 2 7 4 1 6 3 0
+  ^
+</code><button class="copy-code-button"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon lucide-copy"><rect x="8" y="8" width="14" height="14" rx="2" ry="2"></rect><path d="M4 16c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2"></path></svg></button></pre>
+</li>
+<li data-line="13" dir="auto">
+<p>Selection sort will begin by looking for the smallest number in the list and swap that number with our current position in the list. In this case, the zero is located and moved to our current position.</p>
+<pre><code>
+  0 | 2 7 4 1 6 3 5
+</code><button class="copy-code-button"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon lucide-copy"><rect x="8" y="8" width="14" height="14" rx="2" ry="2"></rect><path d="M4 16c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2"></path></svg></button></pre>
+</li>
+<li data-line="18" dir="auto">
+<p>Now, our problem has gotten smaller since we know at least the beginning of our list is sorted. So we can repeat what we did, starting from the second number in the list:</p>
+<pre><code>
+  0 | 2 7 4 1 6 3 5
+      ^    
+</code><button class="copy-code-button"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon lucide-copy"><rect x="8" y="8" width="14" height="14" rx="2" ry="2"></rect><path d="M4 16c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2"></path></svg></button></pre>
+</li>
+<li data-line="24" dir="auto">
+<p>1 is the smallest number now, so we’ll swap it with the second number. We’ll repeat this again …</p>
+<pre><code>
+  0 1 | 7 4 2 6 3 5
+        ^     
+</code><button class="copy-code-button"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon lucide-copy"><rect x="8" y="8" width="14" height="14" rx="2" ry="2"></rect><path d="M4 16c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2"></path></svg></button></pre>
+</li>
+<li data-line="30" dir="auto">
+<p>… and again…</p>
+<pre><code>
+  0 1 2 | 4 7 6 3 5
+          ^
+</code><button class="copy-code-button"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon lucide-copy"><rect x="8" y="8" width="14" height="14" rx="2" ry="2"></rect><path d="M4 16c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2"></path></svg></button></pre>
+</li>
+<li data-line="36" dir="auto">
+<p>… and again…</p>
+<pre><code>
+  0 1 2 3 | 7 6 4 5
+            ^
+</code><button class="copy-code-button"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon lucide-copy"><rect x="8" y="8" width="14" height="14" rx="2" ry="2"></rect><path d="M4 16c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2"></path></svg></button></pre>
+</li>
+<li data-line="42" dir="auto">
+<p>… and again …</p>
+<pre><code>
+  0 1 2 3 4 | 6 7 5
+              ^
+</code><button class="copy-code-button"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon lucide-copy"><rect x="8" y="8" width="14" height="14" rx="2" ry="2"></rect><path d="M4 16c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2"></path></svg></button></pre>
+</li>
+<li data-line="48" dir="auto">
+<p>and so on.</p>
+</li>
+</ul></div></div></div><div class="el-h3 heading-wrapper"><h3 data-heading="[Bubble sort](../../Other/algo_bubble_sort.md)" dir="auto" class="heading" id="[Bubble_sort](../../Other/algo_bubble_sort.md)"><div class="heading-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle"><path d="M3 8L12 17L21 8"></path></svg></div><a class="internal-link" data-href="../../Other/algo_bubble_sort.md" href="../../Other/algo_bubble_sort.md" target="_self" rel="noopener nofollow">Bubble sort</a></h3><div class="heading-children"><div class="el-p"><p dir="auto">is another sorting algorithm that works by repeatedly swapping elements to “bubble” larger elements to the end.</p></div><div class="el-ul"><ul>
+<li data-line="0" dir="auto">
+<p>The pseudocode for bubble sort is:</p>
+<pre><code>
+Repeat n-1 times
+For i from 0 to n–2
+    If numbers[i] and numbers[i+1] out of order
+        Swap them
+</code><button class="copy-code-button"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon lucide-copy"><rect x="8" y="8" width="14" height="14" rx="2" ry="2"></rect><path d="M4 16c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2"></path></svg></button></pre>
+</li>
+<li data-line="8" dir="auto">
+<p>We’ll start with our unsorted list, but this time we’ll look at pairs of numbers and swap them if they are out of order:</p>
+<pre><code>
+5 2 7 4 1 6 3 0
+^ ^
+2 5 7 4 1 6 3 0
+  ^ ^
+2 5 7 4 1 6 3 0
+    ^ ^
+2 5 4 7 1 6 3 0
+      ^ ^
+2 5 4 1 7 6 3 0
+        ^ ^
+2 5 4 1 6 7 3 0
+          ^ ^
+2 5 4 1 6 3 7 0
+            ^ ^
+2 5 4 1 6 3 0 7
+</code><button class="copy-code-button"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon lucide-copy"><rect x="8" y="8" width="14" height="14" rx="2" ry="2"></rect><path d="M4 16c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2"></path></svg></button></pre>
+</li>
+<li data-line="27" dir="auto">
+<p>Now, the highest number is all the way to the right, so we’ve improved our problem. We’ll repeat this again:</p>
+<pre><code>
+2 5 4 1 6 3 0 | 7
+^ ^
+2 5 4 1 6 3 0 | 7
+  ^ ^
+2 4 5 1 6 3 0 | 7
+    ^ ^
+2 4 1 5 6 3 0 | 7
+      ^ ^
+2 4 1 5 6 3 0 | 7
+        ^ ^
+2 4 1 5 3 6 0 | 7
+          ^ ^
+2 4 1 5 3 0 6 | 7
+</code><button class="copy-code-button"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon lucide-copy"><rect x="8" y="8" width="14" height="14" rx="2" ry="2"></rect><path d="M4 16c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2"></path></svg></button></pre>
+</li>
+<li data-line="44" dir="auto">
+<p>Now the two biggest values are on the right. We’ll repeat again:</p>
+<pre><code>
+  2 4 1 5 3 0 | 6 7
+  ^ ^
+  2 4 1 5 3 0 | 6 7
+    ^ ^
+  2 1 4 5 3 0 | 6 7
+      ^ ^
+  2 1 4 5 3 0 | 6 7
+        ^ ^
+  2 1 4 3 5 0 | 6 7
+          ^ ^
+  2 1 4 3 0 5 | 6 7
+</code><button class="copy-code-button"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon lucide-copy"><rect x="8" y="8" width="14" height="14" rx="2" ry="2"></rect><path d="M4 16c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2"></path></svg></button></pre>
+</li>
+<li data-line="59" dir="auto">
+<p>… and again …</p>
+<pre><code>
+  2 1 4 3 0 | 5 6 7
+  ^ ^
+  1 2 4 3 0 | 5 6 7
+    ^ ^
+  1 2 3 4 0 | 5 6 7
+      ^ ^
+  1 2 3 4 0 | 5 6 7
+        ^ ^
+  1 2 3 0 4 | 5 6 7
+</code><button class="copy-code-button"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon lucide-copy"><rect x="8" y="8" width="14" height="14" rx="2" ry="2"></rect><path d="M4 16c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2"></path></svg></button></pre>
+</li>
+<li data-line="72" dir="auto">
+<p>… and again …</p>
+<pre><code>
+  1 2 3 0 | 4 5 6 7
+  ^ ^
+  1 2 3 0 | 4 5 6 7
+    ^ ^
+  1 2 3 0 | 4 5 6 7
+      ^ ^
+  1 2 0 3 | 4 5 6 7
+</code><button class="copy-code-button"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon lucide-copy"><rect x="8" y="8" width="14" height="14" rx="2" ry="2"></rect><path d="M4 16c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2"></path></svg></button></pre>
+</li>
+<li data-line="83" dir="auto">
+<p>… and again …</p>
+<pre><code>
+  1 2 0 | 3 4 5 6 7
+  ^ ^
+  1 2 0 | 3 4 5 6 7
+    ^ ^
+  1 0 2 | 3 4 5 6 7
+</code><button class="copy-code-button"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon lucide-copy"><rect x="8" y="8" width="14" height="14" rx="2" ry="2"></rect><path d="M4 16c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2"></path></svg></button></pre>
+</li>
+<li data-line="92" dir="auto">
+<p>… and finally …</p>
+<pre><code>
+  1 0 | 2 3 4 5 6 7
+  ^ ^
+  0 1 | 2 3 4 5 6 7
+</code><button class="copy-code-button"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon lucide-copy"><rect x="8" y="8" width="14" height="14" rx="2" ry="2"></rect><path d="M4 16c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2"></path></svg></button></pre>
+</li>
+<li data-line="99" dir="auto">
+<p>Notice that, as we go through our list, we know more and more of it becomes sorted, so we only need to look at the pairs of numbers that haven’t been sorted yet.</p>
+</li>
+<li data-line="100" dir="auto">
+<p>Analyzing selection sort, we made only seven comparisons. Representing this mathematically, where <em>n</em> represents the number of cases, it could be said that selection sort can be analyzed as:<br>
+<span class="math math-inline is-loaded"><mjx-container class="MathJax" jax="CHTML"><mjx-math class="MJX-TEX"><mjx-mo class="mjx-n"><mjx-c class="mjx-c28"></mjx-c></mjx-mo><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D45B TEX-I"></mjx-c></mjx-mi><mjx-mo class="mjx-n" space="3"><mjx-c class="mjx-c2212"></mjx-c></mjx-mo><mjx-mn class="mjx-n" space="3"><mjx-c class="mjx-c31"></mjx-c></mjx-mn><mjx-mo class="mjx-n"><mjx-c class="mjx-c29"></mjx-c></mjx-mo><mjx-mo class="mjx-n" space="3"><mjx-c class="mjx-c2B"></mjx-c></mjx-mo><mjx-mo class="mjx-n" space="3"><mjx-c class="mjx-c28"></mjx-c></mjx-mo><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D45B TEX-I"></mjx-c></mjx-mi><mjx-mo class="mjx-n" space="3"><mjx-c class="mjx-c2212"></mjx-c></mjx-mo><mjx-mn class="mjx-n" space="3"><mjx-c class="mjx-c32"></mjx-c></mjx-mn><mjx-mo class="mjx-n"><mjx-c class="mjx-c29"></mjx-c></mjx-mo><mjx-mo class="mjx-n" space="3"><mjx-c class="mjx-c2B"></mjx-c></mjx-mo><mjx-mo class="mjx-n" space="3"><mjx-c class="mjx-c28"></mjx-c></mjx-mo><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D45B TEX-I"></mjx-c></mjx-mi><mjx-mo class="mjx-n" space="3"><mjx-c class="mjx-c2212"></mjx-c></mjx-mo><mjx-mn class="mjx-n" space="3"><mjx-c class="mjx-c33"></mjx-c></mjx-mn><mjx-mo class="mjx-n"><mjx-c class="mjx-c29"></mjx-c></mjx-mo><mjx-mo class="mjx-n"><mjx-c class="mjx-c2B"></mjx-c></mjx-mo><mjx-mo class="mjx-n"><mjx-c class="mjx-c2E"></mjx-c></mjx-mo><mjx-mo class="mjx-n" space="2"><mjx-c class="mjx-c2E"></mjx-c></mjx-mo><mjx-mo class="mjx-n" space="2"><mjx-c class="mjx-c2E"></mjx-c></mjx-mo><mjx-mo class="mjx-n" space="2"><mjx-c class="mjx-c2B"></mjx-c></mjx-mo><mjx-mn class="mjx-n"><mjx-c class="mjx-c31"></mjx-c></mjx-mn></mjx-math></mjx-container></span><br>
+<span class="math math-inline is-loaded"><mjx-container class="MathJax" jax="CHTML"><mjx-math class="MJX-TEX"><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D45B TEX-I"></mjx-c></mjx-mi><mjx-mo class="mjx-n"><mjx-c class="mjx-c28"></mjx-c></mjx-mo><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D45B TEX-I"></mjx-c></mjx-mi><mjx-mo class="mjx-n" space="3"><mjx-c class="mjx-c2212"></mjx-c></mjx-mo><mjx-mn class="mjx-n" space="3"><mjx-c class="mjx-c31"></mjx-c></mjx-mn><mjx-mo class="mjx-n"><mjx-c class="mjx-c29"></mjx-c></mjx-mo><mjx-texatom texclass="ORD"><mjx-mo class="mjx-n"><mjx-c class="mjx-c2F"></mjx-c></mjx-mo></mjx-texatom><mjx-mn class="mjx-n"><mjx-c class="mjx-c32"></mjx-c></mjx-mn></mjx-math></mjx-container></span><br>
+<span class="math math-inline is-loaded"><mjx-container class="MathJax" jax="CHTML"><mjx-math class="MJX-TEX"><mjx-mo class="mjx-n"><mjx-c class="mjx-c28"></mjx-c></mjx-mo><mjx-msup><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D45B TEX-I"></mjx-c></mjx-mi><mjx-script style="vertical-align: 0.363em;"><mjx-mn class="mjx-n" size="s"><mjx-c class="mjx-c32"></mjx-c></mjx-mn></mjx-script></mjx-msup><mjx-mo class="mjx-n" space="3"><mjx-c class="mjx-c2212"></mjx-c></mjx-mo><mjx-mi class="mjx-i" space="3"><mjx-c class="mjx-c1D45B TEX-I"></mjx-c></mjx-mi><mjx-mo class="mjx-n"><mjx-c class="mjx-c29"></mjx-c></mjx-mo><mjx-texatom texclass="ORD"><mjx-mo class="mjx-n"><mjx-c class="mjx-c2F"></mjx-c></mjx-mo></mjx-texatom><mjx-mn class="mjx-n"><mjx-c class="mjx-c32"></mjx-c></mjx-mn></mjx-math></mjx-container></span><br>
+<span class="math math-inline is-loaded"><mjx-container class="MathJax" jax="CHTML"><mjx-math class="MJX-TEX"><mjx-msup><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D45B TEX-I"></mjx-c></mjx-mi><mjx-script style="vertical-align: 0.363em;"><mjx-mn class="mjx-n" size="s"><mjx-c class="mjx-c32"></mjx-c></mjx-mn></mjx-script></mjx-msup><mjx-texatom texclass="ORD"><mjx-mo class="mjx-n"><mjx-c class="mjx-c2F"></mjx-c></mjx-mo></mjx-texatom><mjx-mn class="mjx-n"><mjx-c class="mjx-c32"></mjx-c></mjx-mn><mjx-mo class="mjx-n" space="3"><mjx-c class="mjx-c2212"></mjx-c></mjx-mo><mjx-mi class="mjx-i" space="3"><mjx-c class="mjx-c1D45B TEX-I"></mjx-c></mjx-mi><mjx-texatom texclass="ORD"><mjx-mo class="mjx-n"><mjx-c class="mjx-c2F"></mjx-c></mjx-mo></mjx-texatom><mjx-mn class="mjx-n"><mjx-c class="mjx-c32"></mjx-c></mjx-mn></mjx-math></mjx-container></span>.</p>
+</li>
+<li data-line="106" dir="auto">
+<p>Considering that mathematical analysis, <span class="math math-inline is-loaded"><mjx-container class="MathJax" jax="CHTML"><mjx-math class="MJX-TEX"><mjx-msup><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D45B TEX-I"></mjx-c></mjx-mi><mjx-script style="vertical-align: 0.363em;"><mjx-mn class="mjx-n" size="s"><mjx-c class="mjx-c32"></mjx-c></mjx-mn></mjx-script></mjx-msup></mjx-math></mjx-container></span> is really the most influential factor in determining the efficiency of this algorithm. Therefore, selection sort is considered to be of the order of <span class="math math-inline is-loaded"><mjx-container class="MathJax" jax="CHTML"><mjx-math class="MJX-TEX"><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D442 TEX-I"></mjx-c></mjx-mi><mjx-mo class="mjx-n"><mjx-c class="mjx-c28"></mjx-c></mjx-mo><mjx-msup><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D45B TEX-I"></mjx-c></mjx-mi><mjx-script style="vertical-align: 0.363em;"><mjx-mn class="mjx-n" size="s"><mjx-c class="mjx-c32"></mjx-c></mjx-mn></mjx-script></mjx-msup><mjx-mo class="mjx-n"><mjx-c class="mjx-c29"></mjx-c></mjx-mo></mjx-math></mjx-container></span> in the worst case where all values are unsorted. Even when all values are sorted, it will take the same number of steps. Therefore, the best case can be noted as <span class="math math-inline is-loaded"><mjx-container class="MathJax" jax="CHTML"><mjx-math class="MJX-TEX"><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D6FA TEX-I"></mjx-c></mjx-mi><mjx-mo class="mjx-n"><mjx-c class="mjx-c28"></mjx-c></mjx-mo><mjx-msup><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D45B TEX-I"></mjx-c></mjx-mi><mjx-script style="vertical-align: 0.363em;"><mjx-mn class="mjx-n" size="s"><mjx-c class="mjx-c32"></mjx-c></mjx-mn></mjx-script></mjx-msup><mjx-mo class="mjx-n"><mjx-c class="mjx-c29"></mjx-c></mjx-mo></mjx-math></mjx-container></span>. Since both the upper bound and lower bound cases are the same, the efficiency of this algorithm as a whole can be regarded as <span class="math math-inline is-loaded"><mjx-container class="MathJax" jax="CHTML"><mjx-math class="MJX-TEX"><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D6E9 TEX-I"></mjx-c></mjx-mi><mjx-mo class="mjx-n"><mjx-c class="mjx-c28"></mjx-c></mjx-mo><mjx-msup><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D45B TEX-I"></mjx-c></mjx-mi><mjx-script style="vertical-align: 0.363em;"><mjx-mn class="mjx-n" size="s"><mjx-c class="mjx-c32"></mjx-c></mjx-mn></mjx-script></mjx-msup><mjx-mo class="mjx-n"><mjx-c class="mjx-c29"></mjx-c></mjx-mo></mjx-math></mjx-container></span>.</p>
+</li>
+<li data-line="107" dir="auto">
+<p>Analyzing bubble sort, the worst case is <span class="math math-inline is-loaded"><mjx-container class="MathJax" jax="CHTML"><mjx-math class="MJX-TEX"><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D442 TEX-I"></mjx-c></mjx-mi><mjx-mo class="mjx-n"><mjx-c class="mjx-c28"></mjx-c></mjx-mo><mjx-msup><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D45B TEX-I"></mjx-c></mjx-mi><mjx-script style="vertical-align: 0.363em;"><mjx-mn class="mjx-n" size="s"><mjx-c class="mjx-c32"></mjx-c></mjx-mn></mjx-script></mjx-msup><mjx-mo class="mjx-n"><mjx-c class="mjx-c29"></mjx-c></mjx-mo></mjx-math></mjx-container></span>. The best case is <span class="math math-inline is-loaded"><mjx-container class="MathJax" jax="CHTML"><mjx-math class="MJX-TEX"><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D6FA TEX-I"></mjx-c></mjx-mi><mjx-mo class="mjx-n"><mjx-c class="mjx-c28"></mjx-c></mjx-mo><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D45B TEX-I"></mjx-c></mjx-mi><mjx-mo class="mjx-n"><mjx-c class="mjx-c29"></mjx-c></mjx-mo></mjx-math></mjx-container></span>.</p>
+</li>
+<li data-line="108" dir="auto">
+<p>You can <a data-tooltip-position="top" aria-label="https://www.cs.usfca.edu/~galles/visualization/ComparisonSort.html" rel="noopener nofollow" class="external-link" href="https://www.cs.usfca.edu/~galles/visualization/ComparisonSort.html" target="_blank">visualize</a> a comparison of these algorithms.</p>
+</li>
+</ul></div></div></div></div></div><div class="el-h2 heading-wrapper"><h2 data-heading="Recursion" dir="auto" class="heading" id="Recursion"><div class="heading-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle"><path d="M3 8L12 17L21 8"></path></svg></div>Recursion</h2><div class="heading-children"><div class="el-ul"><ul>
+<li data-line="0" dir="auto">
+<p>How could we improve our efficiency in our sorting?</p>
+</li>
+<li data-line="1" dir="auto">
+<p><a class="internal-link" data-href="../../Other/recursion.md" href="../../Other/recursion.md" target="_self" rel="noopener nofollow"><em>Recursion</em></a> is a concept within programming where a function calls itself. We saw this earlier when we saw…</p>
+<pre><code>
+If no doors
+    Return false
+If number behind middle door
+    Return true
+Else if number Less Than middle door
+    Search left half
+Else if number Greater Than middle door
+    Search right half
+</code><button class="copy-code-button"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon lucide-copy"><rect x="8" y="8" width="14" height="14" rx="2" ry="2"></rect><path d="M4 16c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2"></path></svg></button></pre>
+<p>Notice that we are calling <code>search</code> on smaller and smaller iterations of this problem.</p>
+</li>
+<li data-line="15" dir="auto">
+<p>Similarly, in our pseudocode for Week 0, you can see where recursion was implemented:</p>
+<pre><code>
+1  Pick up phone book
+2  Open to middle of phone book
+3  Look at page
+4  If person is on page
+5      Call person
+6  Else if person is earlier in book
+7      Open to middle of left half of book
+8      Go back to line 3
+9  Else if person is later in book
+10     Open to middle of right half of book
+11     Go back to line 3
+12 Else
+13     Quit
+</code><button class="copy-code-button"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon lucide-copy"><rect x="8" y="8" width="14" height="14" rx="2" ry="2"></rect><path d="M4 16c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2"></path></svg></button></pre>
+</li>
+<li data-line="32" dir="auto">
+<p>Consider how in Week 1 we wanted to create a pyramid structure as follows:</p>
+<pre><code>
+  #
+  ##
+  ###
+  ####
+</code><button class="copy-code-button"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon lucide-copy"><rect x="8" y="8" width="14" height="14" rx="2" ry="2"></rect><path d="M4 16c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2"></path></svg></button></pre>
+</li>
+<li data-line="40" dir="auto" class="has-run-code-button">
+<p>To implement this using recursion, type <code>code recursion.c</code> into your terminal window and write code as follows:</p>
+<pre class="language-c" tabindex="0"><code data-line="42" class="language-c is-loaded"><span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">include</span> <span class="token string">&lt;cs50.h&gt;</span></span>
+<span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">include</span> <span class="token string">&lt;stdio.h&gt;</span></span>
+
+<span class="token keyword">void</span> <span class="token function">draw</span><span class="token punctuation">(</span><span class="token keyword">int</span> n<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token keyword">int</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token keyword">void</span><span class="token punctuation">)</span>
+<span class="token punctuation">{</span>
+    <span class="token function">draw</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">void</span> <span class="token function">draw</span><span class="token punctuation">(</span><span class="token keyword">int</span> n<span class="token punctuation">)</span>
+<span class="token punctuation">{</span>
+    <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">int</span> i <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> i <span class="token operator">&lt;</span> n<span class="token punctuation">;</span> i<span class="token operator">++</span><span class="token punctuation">)</span>
+    <span class="token punctuation">{</span>
+        <span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"#"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+    <span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"\n"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+    <span class="token function">draw</span><span class="token punctuation">(</span>n <span class="token operator">+</span> <span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code><button class="copy-code-button"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon lucide-copy"><rect x="8" y="8" width="14" height="14" rx="2" ry="2"></rect><path d="M4 16c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2"></path></svg></button><button class="run-code-button">Run</button></pre>
+<p>Notice that the draw function calls itself. Further, note that your code may get caught in an infinite loop or a segmentation fault.<br>
+To break from this loop, if you get stuck, hit <code>ctrl-c</code> on your keyboard. The reason this creates an infinite loop is that there is nothing telling the program to end. There is no case where the program is done.</p>
+</li>
+<li data-line="68" dir="auto" class="has-run-code-button">
+<p>We can correct our code as follows:</p>
+<pre class="language-c" tabindex="0"><code data-line="70" class="language-c is-loaded"><span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">include</span> <span class="token string">&lt;cs50.h&gt;</span></span>
+<span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">include</span> <span class="token string">&lt;stdio.h&gt;</span></span>
+
+<span class="token keyword">void</span> <span class="token function">draw</span><span class="token punctuation">(</span><span class="token keyword">int</span> n<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token keyword">int</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token keyword">void</span><span class="token punctuation">)</span>
+<span class="token punctuation">{</span>
+    <span class="token comment">// Get height of pyramid</span>
+    <span class="token keyword">int</span> height <span class="token operator">=</span> <span class="token function">get_int</span><span class="token punctuation">(</span><span class="token string">"Height: "</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+    <span class="token comment">// Draw pyramid</span>
+    <span class="token function">draw</span><span class="token punctuation">(</span>height<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">void</span> <span class="token function">draw</span><span class="token punctuation">(</span><span class="token keyword">int</span> n<span class="token punctuation">)</span>
+<span class="token punctuation">{</span>
+    <span class="token comment">// If nothing to draw - BASE CASE</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span>n <span class="token operator">&lt;=</span> <span class="token number">0</span><span class="token punctuation">)</span>
+    <span class="token punctuation">{</span>
+        <span class="token keyword">return</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+
+    <span class="token comment">// Draw pyramid of height n - 1</span>
+    <span class="token function">draw</span><span class="token punctuation">(</span>n <span class="token operator">-</span> <span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+    <span class="token comment">// Draw one more row of width n</span>
+    <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">int</span> i <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> i <span class="token operator">&lt;</span> n<span class="token punctuation">;</span> i<span class="token operator">++</span><span class="token punctuation">)</span>
+    <span class="token punctuation">{</span>
+        <span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"#"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+    <span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"\n"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code><button class="copy-code-button"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon lucide-copy"><rect x="8" y="8" width="14" height="14" rx="2" ry="2"></rect><path d="M4 16c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2"></path></svg></button><button class="run-code-button">Run</button></pre>
+<p>Notice the <em>base case</em> will ensure the code does not run forever. The line <code>if (n &lt;= 0)</code> terminates the recursion because the problem has been solved. Every time <code>draw</code> calls itself, it calls itself by <code>n-1</code>.</p>
+<p><span alt="recursion1" src="./src/img/recursion1.png" class="internal-embed media-embed image-embed is-loaded"><img alt="recursion1" src="courses/cs50x/week3/src/img/recursion1.png"></span>     <span alt="recursion1" src="./src/img/recursion2.png" class="internal-embed media-embed image-embed is-loaded"><img alt="recursion1" src="courses/cs50x/week3/src/img/recursion2.png"></span></p>
+<p>At some point, <code>n-1</code> will equal <code>0</code>, resulting in the <code>draw</code> function returning and the program will end.</p>
+</li>
+</ul></div></div></div><div class="el-h2 heading-wrapper"><h2 data-heading="[Merge Sort](../../Other/algo_merge_sort.md)" dir="auto" class="heading" id="[Merge_Sort](../../Other/algo_merge_sort.md)"><div class="heading-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle"><path d="M3 8L12 17L21 8"></path></svg></div><a class="internal-link" data-href="../../Other/algo_merge_sort.md" href="../../Other/algo_merge_sort.md" target="_self" rel="noopener nofollow">Merge Sort</a></h2><div class="heading-children"><div class="el-ul"><ul>
+<li data-line="0" dir="auto">
+<p>We can now leverage recursion in our quest for a more efficient sort algorithm and implement what is called <em>merge sort</em>, a very efficient sort algorithm.</p>
+</li>
+<li data-line="1" dir="auto">
+<p>The pseudocode for merge sort is quite short:</p>
+<pre><code>
+If only one number
+    Quit
+Else
+    Sort left half of number
+    Sort right half of number
+    Merge sorted halves
+</code><button class="copy-code-button"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon lucide-copy"><rect x="8" y="8" width="14" height="14" rx="2" ry="2"></rect><path d="M4 16c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2"></path></svg></button></pre>
+</li>
+<li data-line="12" dir="auto">
+<p>Consider the following list of numbers:</p>
+<pre><code>
+  7254
+</code><button class="copy-code-button"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon lucide-copy"><rect x="8" y="8" width="14" height="14" rx="2" ry="2"></rect><path d="M4 16c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2"></path></svg></button></pre>
+</li>
+</ul></div><div class="el-ol"><ol>
+<li data-line="0" dir="auto">
+<p>Merge sort asks, “is this one number?” The answer is “no,” so the algorithm continues.</p>
+</li>
+<li data-line="2" dir="auto">
+<p>Will now split the numbers down the middle (or as close as it can get) and sort the left half of numbers.</p>
+<pre><code>
+  72|54
+</code><button class="copy-code-button"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon lucide-copy"><rect x="8" y="8" width="14" height="14" rx="2" ry="2"></rect><path d="M4 16c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2"></path></svg></button></pre>
+</li>
+<li data-line="7" dir="auto">
+<p>Would look at these numbers on the left and ask, “is this one number?” Since the answer is no, it would then split the numbers on the left down the middle.</p>
+<pre><code>
+  7|2
+</code><button class="copy-code-button"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon lucide-copy"><rect x="8" y="8" width="14" height="14" rx="2" ry="2"></rect><path d="M4 16c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2"></path></svg></button></pre>
+</li>
+<li data-line="12" dir="auto">
+<p>Will again ask , “is this one number?” The answer is yes this time! Therefore, it will quit this task and return to the last task it was running at this point:</p>
+<pre><code>
+  72|54
+</code><button class="copy-code-button"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon lucide-copy"><rect x="8" y="8" width="14" height="14" rx="2" ry="2"></rect><path d="M4 16c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2"></path></svg></button></pre>
+</li>
+<li data-line="17" dir="auto">
+<p>Will sort the numbers on the left.</p>
+<pre><code>
+  27|54
+</code><button class="copy-code-button"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon lucide-copy"><rect x="8" y="8" width="14" height="14" rx="2" ry="2"></rect><path d="M4 16c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2"></path></svg></button></pre>
+</li>
+<li data-line="22" dir="auto">
+<p>Now, we return to where we left off in the pseudocode now that the left side has been sorted. A similar process of steps 3-5 will occur with the right-hand numbers. This will result in:</p>
+<pre><code>
+  27|45
+</code><button class="copy-code-button"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon lucide-copy"><rect x="8" y="8" width="14" height="14" rx="2" ry="2"></rect><path d="M4 16c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2"></path></svg></button></pre>
+</li>
+<li data-line="27" dir="auto">
+<p>Both halves are now sorted. Finally, the algorithm will merge both sides. It will look at the first number on the left and the first number on the right. It will put the smaller number first, then the second smallest. The algorithm will repeat this for all numbers, resulting in:</p>
+<pre><code>
+  2457
+</code><button class="copy-code-button"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon lucide-copy"><rect x="8" y="8" width="14" height="14" rx="2" ry="2"></rect><path d="M4 16c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2"></path></svg></button></pre>
+</li>
+<li data-line="32" dir="auto">
+<p>Merge sort is complete, and the program quits.</p>
+</li>
+</ol></div><div class="el-p"><p dir="auto">Merge sort is a very efficient sort algorithm with a worst case of O(nlog⁡n). The best case is still <span class="math math-inline is-loaded"><mjx-container class="MathJax" jax="CHTML"><mjx-math class="MJX-TEX"><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D6FA TEX-I"></mjx-c></mjx-mi><mjx-mo class="mjx-n"><mjx-c class="mjx-c28"></mjx-c></mjx-mo><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D45B TEX-I"></mjx-c></mjx-mi><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D459 TEX-I"></mjx-c></mjx-mi><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D45C TEX-I"></mjx-c></mjx-mi><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D454 TEX-I"></mjx-c></mjx-mi><mjx-mo class="mjx-n"><mjx-c class="mjx-c2061"></mjx-c></mjx-mo><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D45B TEX-I"></mjx-c></mjx-mi><mjx-mo class="mjx-n"><mjx-c class="mjx-c29"></mjx-c></mjx-mo></mjx-math></mjx-container></span> because the algorithm still must visit each place in the list. Therefore, merge sort is also Θ(nlog⁡n) since the best case and worst case are the same.</p></div><div class="el-ul"><ul>
+<li data-line="0" dir="auto">A final <a data-tooltip-position="top" aria-label="https://www.youtube.com/watch?v=ZZuD6iUe3Pc" rel="noopener nofollow" class="external-link" href="https://www.youtube.com/watch?v=ZZuD6iUe3Pc" target="_blank">visualization</a> was shared.</li>
+</ul></div></div></div><div class="el-h2 heading-wrapper"><h2 data-heading="Summing Up" dir="auto" class="heading" id="Summing_Up"><div class="heading-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle"><path d="M3 8L12 17L21 8"></path></svg></div>Summing Up</h2><div class="heading-children"><div class="el-p"><p dir="auto">In this lesson, you learned about algorithmic thinking and building your own data types. Specifically, you learned…</p></div><div class="el-ul"><ul>
+<li data-line="0" dir="auto">Algorithms.</li>
+<li data-line="1" dir="auto"><em>Big O</em> notation.</li>
+<li data-line="2" dir="auto">Binary search and linear search.</li>
+<li data-line="3" dir="auto">Various sort algorithms, including bubble sort, selection sort, and merge sort.</li>
+<li data-line="4" dir="auto">Recursion.</li>
+</ul></div><div class="el-hr"><hr></div></div></div></div></div><div class="el-h1 heading-wrapper"><h1 data-heading="Section" dir="auto" class="heading" id="Section">Section</h1><div class="heading-children"><div class="el-blockquote"><blockquote dir="auto">
+<p><a class="internal-link" data-href="./src/transcripts/section3.md" href="courses/cs50x/week3/src/transcripts/section3.html" target="_self" rel="noopener nofollow">Transcript</a></p>
+</blockquote></div><div class="el-ul"><ul>
+<li data-line="0" dir="auto"><div class="list-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle"><path d="M3 8L12 17L21 8"></path></svg></div>How should we compare algorithms?
+<ul>
+<li data-line="1" dir="auto">Running time</li>
+<li data-line="2" dir="auto">Number of steps (<em>Big O</em>)</li>
+</ul>
+</li>
+<li data-line="3" dir="auto">When are structs useful?</li>
+<li data-line="4" dir="auto">What is recursion?</li>
+<li data-line="5" dir="auto"><div class="list-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle"><path d="M3 8L12 17L21 8"></path></svg></div>Running Time
+<ul>
+<li data-line="6" dir="auto">For any input, what is the <strong>most number of steps</strong> my algorithm will ever take?</li>
+<li data-line="7" dir="auto">How many steps will my algorithm take for the very <strong>worst case input</strong>?</li>
+</ul>
+</li>
+</ul></div><div class="el-hr"><hr></div></div></div><div class="el-h1 heading-wrapper"><h1 data-heading="Shorts" dir="auto" class="heading" id="Shorts">Shorts</h1><div class="heading-children"><div class="el-h2 heading-wrapper"><h2 data-heading="Linear Search" dir="auto" class="heading" id="Linear_Search"><div class="heading-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle"><path d="M3 8L12 17L21 8"></path></svg></div>Linear Search</h2><div class="heading-children"><div class="el-blockquote"><blockquote dir="auto">
+<p><a class="internal-link" data-href="./src/transcripts/shorts3_linear_srch.md" href="courses/cs50x/week3/src/transcripts/shorts3_linear_srch.html" target="_self" rel="noopener nofollow">Transc</a></p>
+</blockquote></div><div class="el-ul"><ul>
+<li data-line="0" dir="auto">Worst-case scenario: We have to look through the entire array of n elements, either because the target element is the last element of the array or doesn't exist in the array at all.</li>
+<li data-line="1" dir="auto">Best-case scenario: The target element is the first element of the array, and so we can stop looking immediately after we start.</li>
+</ul></div></div></div><div class="el-h2 heading-wrapper"><h2 data-heading="Binary Search" dir="auto" class="heading" id="Binary_Search"><div class="heading-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle"><path d="M3 8L12 17L21 8"></path></svg></div>Binary Search</h2><div class="heading-children"><div class="el-blockquote"><blockquote dir="auto">
+<p><a class="internal-link" data-href="./src/transcripts/shorts3_binary_srch.md" href="courses/cs50x/week3/src/transcripts/shorts3_binary_srch.html" target="_self" rel="noopener nofollow">Transc</a></p>
+</blockquote></div><div class="el-p"><p dir="auto">Remember that Binary Srch requires that the data structure is sorted!</p></div><div class="el-ul"><ul>
+<li data-line="0" dir="auto">Worst-case scenario: We have to divide a list of n elements in half repeatedly to find the target element, either because the target element will be found at the end of the last division or doesn't exist in the array at all.</li>
+<li data-line="1" dir="auto">Best-case scenario: The target element is at the midpoint of the full array, and so we can stop looking immediately after we start.</li>
+</ul></div></div></div><div class="el-h2 heading-wrapper"><h2 data-heading="Bubble Sort" dir="auto" class="heading" id="Bubble_Sort"><div class="heading-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle"><path d="M3 8L12 17L21 8"></path></svg></div>Bubble Sort</h2><div class="heading-children"><div class="el-blockquote"><blockquote dir="auto">
+<p><a class="internal-link" data-href="./src/transcripts/shorts3_bubble_srt.md" href="courses/cs50x/week3/src/transcripts/shorts3_bubble_srt.html" target="_self" rel="noopener nofollow">Transc</a></p>
+</blockquote></div><div class="el-ul"><ul>
+<li data-line="0" dir="auto">Worst-case scenario: The array is in reverse order; we have to "bubble" each of the n elements all the way across the array, and since we can only fully bubble one element into position per pass, we must do this n times.</li>
+<li data-line="1" dir="auto">Best-case scenario: The array is already perfectly sorted, and we make no swaps on the first pass.</li>
+</ul></div></div></div><div class="el-h2 heading-wrapper"><h2 data-heading="Selection Sort" dir="auto" class="heading" id="Selection_Sort"><div class="heading-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle"><path d="M3 8L12 17L21 8"></path></svg></div>Selection Sort</h2><div class="heading-children"><div class="el-blockquote"><blockquote dir="auto">
+<p><a class="internal-link" data-href="./src/transcripts/shorts3_selection_srt.md" href="courses/cs50x/week3/src/transcripts/shorts3_selection_srt.html" target="_self" rel="noopener nofollow">Transc</a></p>
+</blockquote></div><div class="el-ul"><ul>
+<li data-line="0" dir="auto">Worst-case scenario: We have to iterate over each of the n elements of the array (to find the smallest unsorted element) and we must repeat this process n times, since only one element gets sorted on each pass.</li>
+<li data-line="1" dir="auto">Best-case scenario: Exactly the same! There's no way to guarantee the array is sorted until we go through this process for all the elements.</li>
+</ul></div></div></div><div class="el-h2 heading-wrapper"><h2 data-heading="Recursion" dir="auto" class="heading" id="Recursion"><div class="heading-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle"><path d="M3 8L12 17L21 8"></path></svg></div>Recursion</h2><div class="heading-children"><div class="el-blockquote"><blockquote dir="auto">
+<p><a class="internal-link" data-href="./src/transcripts/shorts3_recursion.md" href="courses/cs50x/week3/src/transcripts/shorts3_recursion.html" target="_self" rel="noopener nofollow">Transc</a></p>
+</blockquote></div><div class="el-ul"><ul>
+<li data-line="0" dir="auto">The definition of a recursive function is one that, as part of its execution, invokes itself. </li>
+</ul></div><div class="el-p"><p dir="auto">Every recursive function has two cases - i.e. is just two conditions which will make the process continue or stop - that could apply, given any input:</p></div><div class="el-ul"><ul>
+<li data-line="0" dir="auto">The <strong>base case</strong>, which when triggered will terminate the recursive process.</li>
+<li data-line="1" dir="auto">The <strong>recursive case</strong>, which is where the recursion will actually occur.</li>
+</ul></div><div class="el-pre has-run-code-button"><pre class="language-c" tabindex="0"><code data-line="0" class="language-c is-loaded"><span class="token keyword">int</span> <span class="token function">factorial</span><span class="token punctuation">(</span><span class="token keyword">int</span> n<span class="token punctuation">)</span>
+<span class="token punctuation">{</span>
+	<span class="token keyword">if</span> <span class="token punctuation">(</span>n <span class="token operator">==</span> <span class="token number">1</span><span class="token punctuation">)</span> <span class="token comment">// base case</span>
+	<span class="token punctuation">{</span>
+		<span class="token keyword">return</span> <span class="token number">1</span><span class="token punctuation">;</span>
+	<span class="token punctuation">}</span>
+	<span class="token keyword">else</span> <span class="token comment">// recursive case</span>
+	<span class="token punctuation">{</span>
+		<span class="token keyword">return</span> n <span class="token operator">*</span> <span class="token function">factorial</span><span class="token punctuation">(</span>n <span class="token operator">-</span> <span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+	<span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code><button class="copy-code-button"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon lucide-copy"><rect x="8" y="8" width="14" height="14" rx="2" ry="2"></rect><path d="M4 16c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2"></path></svg></button><button class="run-code-button">Run</button></pre></div><div class="el-p"><p dir="auto">In general a recursive function can replace a loop. And there's a possibility to have more than one base and recursive case, depending on the purpose of the function. E.g, a Fibonacci:</p></div><div class="el-pre has-run-code-button"><pre class="language-c" tabindex="0"><code data-line="0" class="language-c is-loaded"><span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">include</span> <span class="token string">&lt;stdio.h&gt;</span></span>
+  
+<span class="token keyword">int</span> <span class="token function">factorial</span><span class="token punctuation">(</span><span class="token keyword">int</span> n<span class="token punctuation">)</span>
+<span class="token punctuation">{</span>
+   <span class="token keyword">if</span><span class="token punctuation">(</span>n <span class="token operator">==</span> <span class="token number">0</span><span class="token punctuation">)</span> <span class="token comment">//base case</span>
+   <span class="token punctuation">{</span>
+      <span class="token keyword">return</span> <span class="token number">1</span><span class="token punctuation">;</span>
+   <span class="token punctuation">}</span>
+   <span class="token keyword">else</span> <span class="token comment">// recursive case</span>
+   <span class="token punctuation">{</span>
+      <span class="token keyword">return</span> n <span class="token operator">*</span> <span class="token function">factorial</span><span class="token punctuation">(</span>n<span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+   <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+  
+<span class="token keyword">int</span> <span class="token function">fibbonacci</span><span class="token punctuation">(</span><span class="token keyword">int</span> n<span class="token punctuation">)</span>
+<span class="token punctuation">{</span>
+   <span class="token keyword">if</span><span class="token punctuation">(</span>n <span class="token operator">==</span> <span class="token number">0</span><span class="token punctuation">)</span> <span class="token comment">// base case n.1</span>
+   <span class="token punctuation">{</span>
+      <span class="token keyword">return</span> <span class="token number">0</span><span class="token punctuation">;</span>
+   <span class="token punctuation">}</span>
+   <span class="token keyword">else</span> <span class="token keyword">if</span><span class="token punctuation">(</span>n <span class="token operator">==</span> <span class="token number">1</span><span class="token punctuation">)</span> <span class="token comment">// base case n.2</span>
+   <span class="token punctuation">{</span>
+      <span class="token keyword">return</span> <span class="token number">1</span><span class="token punctuation">;</span>
+   <span class="token punctuation">}</span>
+   <span class="token keyword">else</span> <span class="token comment">// recursive case</span>
+   <span class="token punctuation">{</span>
+      <span class="token keyword">return</span> <span class="token punctuation">(</span><span class="token function">fibbonacci</span><span class="token punctuation">(</span>n<span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">)</span> <span class="token operator">+</span> <span class="token function">fibbonacci</span><span class="token punctuation">(</span>n<span class="token operator">-</span><span class="token number">2</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+   <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+  
+<span class="token keyword">int</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token keyword">void</span><span class="token punctuation">)</span>
+<span class="token punctuation">{</span>
+   <span class="token keyword">int</span> i<span class="token punctuation">;</span>
+   <span class="token keyword">int</span> n <span class="token operator">=</span> <span class="token number">5</span><span class="token punctuation">;</span>
+
+   <span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"Factorial of %d: %d\n"</span> <span class="token punctuation">,</span> n <span class="token punctuation">,</span> <span class="token function">factorial</span><span class="token punctuation">(</span>n<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+   <span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"Fibbonacci of %d: "</span> <span class="token punctuation">,</span> n<span class="token punctuation">)</span><span class="token punctuation">;</span>
+   <span class="token keyword">for</span><span class="token punctuation">(</span>i <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> i <span class="token operator">&lt;</span> n<span class="token punctuation">;</span> i<span class="token operator">++</span><span class="token punctuation">)</span>
+   <span class="token punctuation">{</span>
+      <span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"%d "</span><span class="token punctuation">,</span><span class="token function">fibbonacci</span><span class="token punctuation">(</span>i<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>            
+   <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code><button class="copy-code-button"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon lucide-copy"><rect x="8" y="8" width="14" height="14" rx="2" ry="2"></rect><path d="M4 16c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2"></path></svg></button><button class="run-code-button">Run</button></pre></div></div></div><div class="el-h2 heading-wrapper"><h2 data-heading="Merge Sort" dir="auto" class="heading" id="Merge_Sort"><div class="heading-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle"><path d="M3 8L12 17L21 8"></path></svg></div>Merge Sort</h2><div class="heading-children"><div class="el-blockquote"><blockquote dir="auto">
+<p><a class="internal-link" data-href="./src/transcripts/shorts3_merge.srt.md" href="courses/cs50x/week3/src/transcripts/shorts3_merge.srt.html" target="_self" rel="noopener nofollow">Transc</a></p>
+</blockquote></div><div class="el-ul"><ul>
+<li data-line="0" dir="auto">Worst-case scenario: We have to split n elements up and hen recombine them, effectively doubling the sorted sub-arrays as we build them up. (combining sorted 1-element arrays into 2-element arrays, combining sorted 2-element arrays into 4-element arrays...)</li>
+<li data-line="1" dir="auto">Best-case scenario: The array is already perfectly sorted. But we still have to split and recombine it back together with this algorithm.</li>
+</ul></div><div class="el-hr"><hr></div></div></div></div></div><div class="el-h1 heading-wrapper"><h1 data-heading="Exercises" dir="auto" class="heading" id="Exercises">Exercises</h1><div class="heading-children"><div class="el-h2 heading-wrapper"><h2 data-heading="Practice Problems 3 [#](https://cs50.harvard.edu/x/2023/problems/3/#week-3-practice-problems)" dir="auto" class="heading" id="Practice_Problems_3_[#](https://cs50.harvard.edu/x/2023/problems/3/#week-3-practice-problems)"><div class="heading-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle"><path d="M3 8L12 17L21 8"></path></svg></div>Practice Problems 3 <a data-tooltip-position="top" aria-label="https://cs50.harvard.edu/x/2023/problems/3/#week-3-practice-problems" rel="noopener nofollow" class="external-link" href="https://cs50.harvard.edu/x/2023/problems/3/#week-3-practice-problems" target="_blank">#</a></h2><div class="heading-children"><div class="el-p"><p dir="auto">In addition to this week’s lab and problem set, you’re welcome to try any of these (optional!) practice problems:</p></div><div class="el-ul"><ul>
+<li data-line="0" dir="auto"><a class="internal-link" data-href="./src/recursive_atoi.c" href="courses/cs50x/week3/src/recursive_atoi.c" target="_self" rel="noopener nofollow">Recursive <code>atoi</code></a> <a data-tooltip-position="top" aria-label="https://cs50.harvard.edu/x/2023/problems/3/atoi/" rel="noopener nofollow" class="external-link" href="https://cs50.harvard.edu/x/2023/problems/3/atoi/" target="_blank">#</a>, for practice creating recursive functions
+<blockquote dir="auto">
+<p>My biggest difficulty in terms of recursion is to think backwards, to create the solution and then recreate it in a reverse manner.</p>
+</blockquote>
+</li>
+<li data-line="2" dir="auto">Average Temperatures <a data-tooltip-position="top" aria-label="https://cs50.harvard.edu/x/2023/problems/3/temps/" rel="noopener nofollow" class="external-link" href="https://cs50.harvard.edu/x/2023/problems/3/temps/" target="_blank">#</a>, for practice working with <code>struct</code>'s and sorting algorithms</li>
+<li data-line="3" dir="auto">Max <a data-tooltip-position="top" aria-label="https://cs50.harvard.edu/x/2023/problems/3/max/" rel="noopener nofollow" class="external-link" href="https://cs50.harvard.edu/x/2023/problems/3/max/" target="_blank">#</a>, for practice passing arrays to functions and finding maximum values</li>
+<li data-line="4" dir="auto">Snackbar <a data-tooltip-position="top" aria-label="https://cs50.harvard.edu/x/2023/problems/3/snackbar/" rel="noopener nofollow" class="external-link" href="https://cs50.harvard.edu/x/2023/problems/3/snackbar/" target="_blank">#</a>, for practice using <code>struct</code>'s and writing a linear search algorithm</li>
+</ul></div></div></div><div class="el-h2 heading-wrapper"><h2 data-heading="[Lab 3: Sort](./lab3.md)" dir="auto" class="heading" id="[Lab_3:_Sort](./lab3.md)"><div class="heading-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle"><path d="M3 8L12 17L21 8"></path></svg></div><a class="internal-link" data-href="./lab3.md" href="courses/cs50x/week3/lab3.html" target="_self" rel="noopener nofollow">Lab 3: Sort</a></h2><div class="heading-children"></div></div><div class="el-h2 heading-wrapper"><h2 data-heading="Problem Set 3" dir="auto" class="heading" id="Problem_Set_3"><div class="heading-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle"><path d="M3 8L12 17L21 8"></path></svg></div>Problem Set 3</h2><div class="heading-children"><div class="el-blockquote"><blockquote dir="auto">
+<p>Collaboration on problem sets is not permitted except to the extent that you may ask classmates and others for help so long as that help does not reduce to another doing your work for you, per the course’s policy on <a data-tooltip-position="top" aria-label="https://cs50.harvard.edu/x/2023/psets/3//../../syllabus/#academic-honesty" rel="noopener nofollow" class="external-link" href="https://cs50.harvard.edu/x/2023/psets/3//../../syllabus/#academic-honesty" target="_blank">academic honesty</a>.</p>
+<p>The staff conducts random audits of submissions to CS50x. Students found to be in violation of this policy will be removed from the course. Students who have already completed CS50x, if found to be in violation, will have their CS50 Certificate permanently revoked.</p>
+</blockquote></div></div></div><div class="el-h2 heading-wrapper"><h2 data-heading="What to Do" dir="auto" class="heading" id="What_to_Do"><div class="heading-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle"><path d="M3 8L12 17L21 8"></path></svg></div>What to Do</h2><div class="heading-children"><div class="el-blockquote"><blockquote dir="auto">
+<p>Be sure you have completed <a data-tooltip-position="top" aria-label="https://cs50.harvard.edu/x/2023/psets/3/../../labs/3/" rel="noopener nofollow" class="external-link" href="https://cs50.harvard.edu/x/2023/psets/3/../../labs/3/" target="_blank">Lab 3</a> before beginning this problem set.</p>
+</blockquote></div><div class="el-ol"><ol>
+<li data-line="0" dir="auto">Log into <a data-tooltip-position="top" aria-label="https://code.cs50.io" rel="noopener nofollow" class="external-link" href="https://code.cs50.io" target="_blank">code.cs50.io</a> using your GitHub account</li>
+<li data-line="1" dir="auto">Run <code>update50</code> in your codespace’s terminal window to ensure your codespace is up-to-date and, when prompted, click <strong>Rebuild now</strong></li>
+<li data-line="2" dir="auto">Submit <a class="internal-link" data-href="./plurality.md" href="courses/cs50x/week3/plurality.html" target="_self" rel="noopener nofollow">Plurality</a> <a data-tooltip-position="top" aria-label="https://cs50.harvard.edu/x/2023/psets/3/plurality/" rel="noopener nofollow" class="external-link" href="https://cs50.harvard.edu/x/2023/psets/3/plurality/" target="_blank">#</a></li>
+<li data-line="3" dir="auto"><div class="list-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle"><path d="M3 8L12 17L21 8"></path></svg></div>Submit one of:
+<ul>
+<li data-line="4" dir="auto"><a class="internal-link" data-href="./runoff.md" href="courses/cs50x/week3/runoff.html" target="_self" rel="noopener nofollow">Runoff</a> <a data-tooltip-position="top" aria-label="https://cs50.harvard.edu/x/2023/psets/3/runoff/" rel="noopener nofollow" class="external-link" href="https://cs50.harvard.edu/x/2023/psets/3/runoff/" target="_blank">#</a>, if feeling less comfortable</li>
+<li data-line="5" dir="auto"><a class="internal-link" data-href="./tidman.md" href="courses/cs50x/week3/tidman.html" target="_self" rel="noopener nofollow">Tideman</a> <a data-tooltip-position="top" aria-label="https://cs50.harvard.edu/x/2023/psets/3//tideman/" rel="noopener nofollow" class="external-link" href="https://cs50.harvard.edu/x/2023/psets/3//tideman/" target="_blank">#</a>, if feeling more comfortable</li>
+</ul>
+</li>
+</ol></div><div class="el-p"><p dir="auto">If you submit both Runoff and Tideman, we’ll record the higher of your two scores.</p></div></div></div><div class="el-h2 heading-wrapper"><h2 data-heading="Advice" dir="auto" class="heading" id="Advice"><div class="heading-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle"><path d="M3 8L12 17L21 8"></path></svg></div>Advice</h2><div class="heading-children"><div class="el-ul"><ul>
+<li data-line="0" dir="auto">
+<p>Try out any of David’s programs from class via <a data-tooltip-position="top" aria-label="https://cs50.harvard.edu/x/2023/psets/3//../../weeks/3/" rel="noopener nofollow" class="external-link" href="https://cs50.harvard.edu/x/2023/psets/3//../../weeks/3/" target="_blank">Week 3</a>’s sandboxes.</p>
+</li>
+<li data-line="1" dir="auto" class="has-run-code-button">
+<p>If you see any errors when compiling your code with <code>make</code>, focus first on fixing the very first error you see, scrolling up as needed. If unsure what it means, try asking <code>help50</code> for help. For instance, if trying to compile <code>plurality</code>, and</p>
+<pre class="language-bash" tabindex="0"><code data-line="3" class="language-bash is-loaded"><span class="token function">make</span> plurality
+</code><button class="copy-code-button"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon lucide-copy"><rect x="8" y="8" width="14" height="14" rx="2" ry="2"></rect><path d="M4 16c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2"></path></svg></button><button class="run-code-button">Run</button></pre>
+<p>is yielding errors, try running</p>
+<pre class="language-bash" tabindex="0"><code data-line="9" class="language-bash is-loaded">help50 <span class="token function">make</span> plurality
+</code><button class="copy-code-button"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon lucide-copy"><rect x="8" y="8" width="14" height="14" rx="2" ry="2"></rect><path d="M4 16c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2"></path></svg></button></pre>
+<p>instead!</p>
+</li>
+</ul></div><div class="mod-footer mod-ui"></div></div></div></div></div></div></div></div><div class="sidebar-right sidebar"><div class="sidebar-handle"></div><div class="sidebar-topbar"><div class="topbar-content"></div><div class="clickable-icon sidebar-collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" class="svg-icon"><path d="M21 3H3C1.89543 3 1 3.89543 1 5V19C1 20.1046 1.89543 21 3 21H21C22.1046 21 23 20.1046 23 19V5C23 3.89543 22.1046 3 21 3Z"></path><path d="M10 4V20"></path><path d="M4 7H7"></path><path d="M4 10H7"></path><path d="M4 13H7"></path></svg></div></div><div class="sidebar-content"><div class="graph-view-wrapper"><div class="sidebar-section-header">Interactive Graph</div><div class="graph-view-placeholder">
+		<div class="graph-view-container">
+			<div class="graph-icon graph-expand" role="button" aria-label="Expand" data-tooltip-position="top"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon"><line x1="7" y1="17" x2="17" y2="7"></line><polyline points="7 7 17 7 17 17"></polyline></svg></div>
+			<canvas id="graph-canvas" class="hide" width="512px" height="512px"></canvas>
+		</div>
+		</div></div><div class="tree-container mod-root nav-folder tree-item outline-tree" data-depth="0"><div class="tree-header"><span class="sidebar-section-header">Table Of Contents</span><button class="clickable-icon collapse-tree-button" aria-label="Collapse All"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></svg></button></div><div class="tree-scroll-area tree-item-children nav-folder-children"><div class="tree-item mod-tree-folder nav-folder mod-collapsible is-collapsed" style="display: none;"></div><div class="tree-item" data-depth="1"><a class="tree-link" href="gab\estudos-trabalhos\programação\programming-studies\courses\cs50x\week3\readme.html#CS50 - Week 3"><div class="tree-item-contents heading-link" heading-name="CS50 - Week 3"><span class="tree-item-title">CS50 - Week 3</span></div></a><div class="tree-item-children nav-folder-children"></div></div><div class="tree-item" data-depth="1"><a class="tree-link" href="gab\estudos-trabalhos\programação\programming-studies\courses\cs50x\week3\readme.html#Lecture_3"><div class="tree-item-contents heading-link" heading-name="Lecture 3"><span class="tree-item-title">Lecture 3</span></div></a><div class="tree-item-children nav-folder-children"><div class="tree-item" data-depth="2"><a class="tree-link" href="gab\estudos-trabalhos\programação\programming-studies\courses\cs50x\week3\readme.html#Welcome!_[#](https://cs50.harvard.edu/x/2023/notes/3/#welcome)"><div class="tree-item-contents heading-link" heading-name="Welcome! [#](https://cs50.harvard.edu/x/2023/notes/3/#welcome)"><span class="tree-item-title">Welcome! <a data-tooltip-position="top" aria-label="https://cs50.harvard.edu/x/2023/notes/3/#welcome" rel="noopener nofollow" class="external-link" href="https://cs50.harvard.edu/x/2023/notes/3/#welcome" target="_blank">#</a></span></div></a><div class="tree-item-children nav-folder-children"></div></div><div class="tree-item" data-depth="2"><a class="tree-link" href="gab\estudos-trabalhos\programação\programming-studies\courses\cs50x\week3\readme.html#Algorithms"><div class="tree-item-contents heading-link" heading-name="Algorithms"><span class="tree-item-title">Algorithms</span></div></a><div class="tree-item-children nav-folder-children"></div></div><div class="tree-item" data-depth="2"><a class="tree-link" href="gab\estudos-trabalhos\programação\programming-studies\courses\cs50x\week3\readme.html#Running_Time"><div class="tree-item-contents heading-link" heading-name="Running Time"><span class="tree-item-title">Running Time</span></div></a><div class="tree-item-children nav-folder-children"></div></div><div class="tree-item" data-depth="2"><a class="tree-link" href="gab\estudos-trabalhos\programação\programming-studies\courses\cs50x\week3\readme.html#Linear_and_Binary_Search"><div class="tree-item-contents heading-link" heading-name="Linear and Binary Search"><span class="tree-item-title">Linear and Binary Search</span></div></a><div class="tree-item-children nav-folder-children"></div></div><div class="tree-item" data-depth="2"><a class="tree-link" href="gab\estudos-trabalhos\programação\programming-studies\courses\cs50x\week3\readme.html#Data_Structures"><div class="tree-item-contents heading-link" heading-name="Data Structures"><span class="tree-item-title">Data Structures</span></div></a><div class="tree-item-children nav-folder-children"></div></div><div class="tree-item mod-collapsible" data-depth="2"><a class="tree-link" href="gab\estudos-trabalhos\programação\programming-studies\courses\cs50x\week3\readme.html#Sorting"><div class="tree-item-contents heading-link" heading-name="Sorting"><div class="collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle"><path d="M3 8L12 17L21 8"></path></svg></div><span class="tree-item-title">Sorting</span></div></a><div class="tree-item-children nav-folder-children"><div class="tree-item" data-depth="3"><a class="tree-link" href="gab\estudos-trabalhos\programação\programming-studies\courses\cs50x\week3\readme.html#[Selection/Insertion_Sort](../../Other/algo_insertion_sort.md)"><div class="tree-item-contents heading-link" heading-name="[Selection/Insertion Sort](../../Other/algo_insertion_sort.md)"><span class="tree-item-title"><a class="internal-link" data-href="../../Other/algo_insertion_sort.md" href="../../Other/algo_insertion_sort.md" target="_blank" rel="noopener nofollow">Selection/Insertion Sort</a></span></div></a><div class="tree-item-children nav-folder-children"></div></div><div class="tree-item" data-depth="3"><a class="tree-link" href="gab\estudos-trabalhos\programação\programming-studies\courses\cs50x\week3\readme.html#[Bubble_sort](../../Other/algo_bubble_sort.md)"><div class="tree-item-contents heading-link" heading-name="[Bubble sort](../../Other/algo_bubble_sort.md)"><span class="tree-item-title"><a class="internal-link" data-href="../../Other/algo_bubble_sort.md" href="../../Other/algo_bubble_sort.md" target="_blank" rel="noopener nofollow">Bubble sort</a></span></div></a><div class="tree-item-children nav-folder-children"></div></div></div></div><div class="tree-item" data-depth="2"><a class="tree-link" href="gab\estudos-trabalhos\programação\programming-studies\courses\cs50x\week3\readme.html#Recursion"><div class="tree-item-contents heading-link" heading-name="Recursion"><span class="tree-item-title">Recursion</span></div></a><div class="tree-item-children nav-folder-children"></div></div><div class="tree-item" data-depth="2"><a class="tree-link" href="gab\estudos-trabalhos\programação\programming-studies\courses\cs50x\week3\readme.html#[Merge_Sort](../../Other/algo_merge_sort.md)"><div class="tree-item-contents heading-link" heading-name="[Merge Sort](../../Other/algo_merge_sort.md)"><span class="tree-item-title"><a class="internal-link" data-href="../../Other/algo_merge_sort.md" href="../../Other/algo_merge_sort.md" target="_blank" rel="noopener nofollow">Merge Sort</a></span></div></a><div class="tree-item-children nav-folder-children"></div></div><div class="tree-item" data-depth="2"><a class="tree-link" href="gab\estudos-trabalhos\programação\programming-studies\courses\cs50x\week3\readme.html#Summing_Up"><div class="tree-item-contents heading-link" heading-name="Summing Up"><span class="tree-item-title">Summing Up</span></div></a><div class="tree-item-children nav-folder-children"></div></div></div></div><div class="tree-item" data-depth="1"><a class="tree-link" href="gab\estudos-trabalhos\programação\programming-studies\courses\cs50x\week3\readme.html#Section"><div class="tree-item-contents heading-link" heading-name="Section"><span class="tree-item-title">Section</span></div></a><div class="tree-item-children nav-folder-children"></div></div><div class="tree-item" data-depth="1"><a class="tree-link" href="gab\estudos-trabalhos\programação\programming-studies\courses\cs50x\week3\readme.html#Shorts"><div class="tree-item-contents heading-link" heading-name="Shorts"><span class="tree-item-title">Shorts</span></div></a><div class="tree-item-children nav-folder-children"><div class="tree-item" data-depth="2"><a class="tree-link" href="gab\estudos-trabalhos\programação\programming-studies\courses\cs50x\week3\readme.html#Linear_Search"><div class="tree-item-contents heading-link" heading-name="Linear Search"><span class="tree-item-title">Linear Search</span></div></a><div class="tree-item-children nav-folder-children"></div></div><div class="tree-item" data-depth="2"><a class="tree-link" href="gab\estudos-trabalhos\programação\programming-studies\courses\cs50x\week3\readme.html#Binary_Search"><div class="tree-item-contents heading-link" heading-name="Binary Search"><span class="tree-item-title">Binary Search</span></div></a><div class="tree-item-children nav-folder-children"></div></div><div class="tree-item" data-depth="2"><a class="tree-link" href="gab\estudos-trabalhos\programação\programming-studies\courses\cs50x\week3\readme.html#Bubble_Sort"><div class="tree-item-contents heading-link" heading-name="Bubble Sort"><span class="tree-item-title">Bubble Sort</span></div></a><div class="tree-item-children nav-folder-children"></div></div><div class="tree-item" data-depth="2"><a class="tree-link" href="gab\estudos-trabalhos\programação\programming-studies\courses\cs50x\week3\readme.html#Selection_Sort"><div class="tree-item-contents heading-link" heading-name="Selection Sort"><span class="tree-item-title">Selection Sort</span></div></a><div class="tree-item-children nav-folder-children"></div></div><div class="tree-item" data-depth="2"><a class="tree-link" href="gab\estudos-trabalhos\programação\programming-studies\courses\cs50x\week3\readme.html#Recursion"><div class="tree-item-contents heading-link" heading-name="Recursion"><span class="tree-item-title">Recursion</span></div></a><div class="tree-item-children nav-folder-children"></div></div><div class="tree-item" data-depth="2"><a class="tree-link" href="gab\estudos-trabalhos\programação\programming-studies\courses\cs50x\week3\readme.html#Merge_Sort"><div class="tree-item-contents heading-link" heading-name="Merge Sort"><span class="tree-item-title">Merge Sort</span></div></a><div class="tree-item-children nav-folder-children"></div></div></div></div><div class="tree-item" data-depth="1"><a class="tree-link" href="gab\estudos-trabalhos\programação\programming-studies\courses\cs50x\week3\readme.html#Exercises"><div class="tree-item-contents heading-link" heading-name="Exercises"><span class="tree-item-title">Exercises</span></div></a><div class="tree-item-children nav-folder-children"><div class="tree-item" data-depth="2"><a class="tree-link" href="gab\estudos-trabalhos\programação\programming-studies\courses\cs50x\week3\readme.html#Practice_Problems_3_[#](https://cs50.harvard.edu/x/2023/problems/3/#week-3-practice-problems)"><div class="tree-item-contents heading-link" heading-name="Practice Problems 3 [#](https://cs50.harvard.edu/x/2023/problems/3/#week-3-practice-problems)"><span class="tree-item-title">Practice Problems 3 <a data-tooltip-position="top" aria-label="https://cs50.harvard.edu/x/2023/problems/3/#week-3-practice-problems" rel="noopener nofollow" class="external-link" href="https://cs50.harvard.edu/x/2023/problems/3/#week-3-practice-problems" target="_blank">#</a></span></div></a><div class="tree-item-children nav-folder-children"></div></div><div class="tree-item" data-depth="2"><a class="tree-link" href="gab\estudos-trabalhos\programação\programming-studies\courses\cs50x\week3\readme.html#[Lab_3:_Sort](./lab3.md)"><div class="tree-item-contents heading-link" heading-name="[Lab 3: Sort](./lab3.md)"><span class="tree-item-title"><a class="internal-link" data-href="./lab3.md" href="./lab3.md" target="_blank" rel="noopener nofollow">Lab 3: Sort</a></span></div></a><div class="tree-item-children nav-folder-children"></div></div><div class="tree-item" data-depth="2"><a class="tree-link" href="gab\estudos-trabalhos\programação\programming-studies\courses\cs50x\week3\readme.html#Problem_Set_3"><div class="tree-item-contents heading-link" heading-name="Problem Set 3"><span class="tree-item-title">Problem Set 3</span></div></a><div class="tree-item-children nav-folder-children"></div></div><div class="tree-item" data-depth="2"><a class="tree-link" href="gab\estudos-trabalhos\programação\programming-studies\courses\cs50x\week3\readme.html#What_to_Do"><div class="tree-item-contents heading-link" heading-name="What to Do"><span class="tree-item-title">What to Do</span></div></a><div class="tree-item-children nav-folder-children"></div></div><div class="tree-item" data-depth="2"><a class="tree-link" href="gab\estudos-trabalhos\programação\programming-studies\courses\cs50x\week3\readme.html#Advice"><div class="tree-item-contents heading-link" heading-name="Advice"><span class="tree-item-title">Advice</span></div></a><div class="tree-item-children nav-folder-children"></div></div></div></div></div></div></div><script defer="">let rs = document.querySelector(".sidebar-right"); rs.classList.add("is-collapsed"); if (window.innerWidth > 768) rs.classList.remove("is-collapsed"); rs.style.setProperty("--sidebar-width", localStorage.getItem("sidebar-right-width"));</script></div></div></body></html>

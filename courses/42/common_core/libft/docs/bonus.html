@@ -1,0 +1,640 @@
+<!DOCTYPE html> <html><head>
+		<title>Libft - Bonus</title>
+		<base href="..\..\..\..\..\..\..\..\../">
+		<meta id="root-path" root-path="..\..\..\..\..\..\..\..\../">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes, minimum-scale=1.0, maximum-scale=5.0">
+		<meta charset="UTF-8">
+		<meta name="description" content="DRIVE - Libft - Bonus">
+		<meta property="og:title" content="Libft - Bonus">
+		<meta property="og:description" content="DRIVE - Libft - Bonus">
+		<meta property="og:type" content="website">
+		<meta property="og:url" content="courses/42/common_core/libft/docs/bonus.html">
+		<meta property="og:image" content="undefined">
+		<meta property="og:site_name" content="DRIVE">
+		<meta name="author" content="Gabryel Nóbrega"><link rel="alternate" type="application/rss+xml" title="RSS Feed" href="lib/rss.xml"><script async="" id="webpage-script" src="lib/scripts/webpage.js" onload="this.onload=null;this.setAttribute(&quot;loaded&quot;, &quot;true&quot;)"></script><script type="module" async="" id="graph-view-script" src="lib/scripts/graph-view.js"></script><script async="" id="graph-wasm-script" src="lib/scripts/graph-wasm.js" onload="this.onload=null;this.setAttribute(&quot;loaded&quot;, &quot;true&quot;)"></script><script async="" id="graph-render-worker-script" src="lib/scripts/graph-render-worker.js" onload="this.onload=null;this.setAttribute(&quot;loaded&quot;, &quot;true&quot;)"></script><script async="" id="tinycolor-script" src="lib/scripts/tinycolor.js" onload="this.onload=null;this.setAttribute(&quot;loaded&quot;, &quot;true&quot;)"></script><script async="" id="pixi-script" src="https://cdnjs.cloudflare.com/ajax/libs/pixi.js/7.4.0/pixi.min.js" onload="this.onload=null;this.setAttribute(&quot;loaded&quot;, &quot;true&quot;)"></script><script async="" id="minisearch-script" src="https://cdn.jsdelivr.net/npm/minisearch@6.3.0/dist/umd/index.min.js" onload="this.onload=null;this.setAttribute(&quot;loaded&quot;, &quot;true&quot;)"></script><link rel="icon" href="lib/media/favicon.png"><script async="" id="graph-data-script" src="lib/scripts/graph-data.js" onload="this.onload=null;this.setAttribute(&quot;loaded&quot;, &quot;true&quot;)"></script><style>body{--line-width:40em;--line-width-adaptive:40em;--file-line-width:40em;--sidebar-width:min(20em, 80vw);--collapse-arrow-size:11px;--tree-horizontal-spacing:0.6em;--tree-vertical-spacing:0.6em;--sidebar-margin:12px}.sidebar{height:100%;min-width:calc(var(--sidebar-width) + var(--divider-width-hover));max-width:calc(var(--sidebar-width) + var(--divider-width-hover));font-size:14px;z-index:10;position:relative;overflow:hidden;transition:min-width ease-in-out,max-width ease-in-out;transition-duration:.2s;contain:size}.sidebar-left{left:0}.sidebar-right{right:0}.sidebar.is-collapsed{min-width:0;max-width:0}body.floating-sidebars .sidebar{position:absolute}.sidebar-content{height:100%;min-width:calc(var(--sidebar-width) - var(--divider-width-hover));top:0;padding:var(--sidebar-margin);padding-top:4em;line-height:var(--line-height-tight);background-color:var(--background-secondary);transition:background-color,border-right,border-left,box-shadow;transition-duration:var(--color-fade-speed);transition-timing-function:ease-in-out;position:absolute;display:flex;flex-direction:column}.sidebar:not(.is-collapsed) .sidebar-content{min-width:calc(max(100%,var(--sidebar-width)) - 3px);max-width:calc(max(100%,var(--sidebar-width)) - 3px)}.sidebar-left .sidebar-content{left:0;border-top-right-radius:var(--radius-l);border-bottom-right-radius:var(--radius-l)}.sidebar-right .sidebar-content{right:0;border-top-left-radius:var(--radius-l);border-bottom-left-radius:var(--radius-l)}.sidebar:has(.sidebar-content:empty):has(.topbar-content:empty){display:none}.sidebar-topbar{height:2em;width:var(--sidebar-width);top:var(--sidebar-margin);padding-inline:var(--sidebar-margin);z-index:1;position:fixed;display:flex;align-items:center;transition:width ease-in-out;transition-duration:inherit}.sidebar.is-collapsed .sidebar-topbar{width:calc(2.3em + var(--sidebar-margin) * 2)}.sidebar .sidebar-topbar.is-collapsed{width:0}.sidebar-left .sidebar-topbar{left:0}.sidebar-right .sidebar-topbar{right:0}.topbar-content{overflow:hidden;overflow:clip;width:100%;height:100%;display:flex;align-items:center;transition:inherit}.sidebar.is-collapsed .topbar-content{width:0;transition:inherit}.clickable-icon.sidebar-collapse-icon{background-color:transparent;color:var(--icon-color-focused);padding:0!important;margin:0!important;height:100%!important;width:2.3em!important;margin-inline:0.14em!important;position:absolute}.sidebar-left .clickable-icon.sidebar-collapse-icon{transform:rotateY(180deg);right:var(--sidebar-margin)}.sidebar-right .clickable-icon.sidebar-collapse-icon{transform:rotateY(180deg);left:var(--sidebar-margin)}.clickable-icon.sidebar-collapse-icon svg.svg-icon{width:100%;height:100%}.sidebar-section-header{margin:0 0 1em 0;text-transform:uppercase;letter-spacing:.06em;font-weight:600}body{transition:background-color var(--color-fade-speed) ease-in-out}.webpage-container{display:flex;flex-direction:row;height:100%;width:100%;align-items:stretch;justify-content:center}.document-container{opacity:1;flex-basis:100%;max-width:100%;width:100%;height:100%;display:flex;flex-direction:column;align-items:center;transition:opacity .2s ease-in-out;contain:inline-size}.hide{opacity:0;transition:opacity .2s ease-in-out}.document-container>.markdown-preview-view{margin:var(--sidebar-margin);margin-bottom:0;width:100%;width:-webkit-fill-available;width:-moz-available;width:fill-available;background-color:var(--background-primary);transition:background-color var(--color-fade-speed) ease-in-out;border-top-right-radius:var(--window-radius,var(--radius-m));border-top-left-radius:var(--window-radius,var(--radius-m));overflow-x:hidden!important;overflow-y:auto!important;display:flex!important;flex-direction:column!important;align-items:center!important;contain:inline-size}.document-container>.markdown-preview-view>.markdown-preview-sizer{padding-bottom:80vh!important;width:100%!important;max-width:var(--line-width)!important;flex-basis:var(--line-width)!important;transition:background-color var(--color-fade-speed) ease-in-out;contain:inline-size}.markdown-rendered img:not([width]),.view-content img:not([width]){max-width:100%;outline:0}.document-container>.view-content.embed{display:flex;padding:1em;height:100%;width:100%;align-items:center;justify-content:center}.document-container>.view-content.embed>*{max-width:100%;max-height:100%;object-fit:contain}:has(> :is(.math,table)){overflow-x:auto!important}.document-container>.view-content{overflow-x:auto;contain:content;padding:0;margin:0;height:100%}.scroll-highlight{position:absolute;width:100%;height:100%;pointer-events:none;z-index:1000;background-color:hsla(var(--color-accent-hsl),.25);opacity:0;padding:1em;inset:50%;translate:-50% -50%;border-radius:var(--radius-s)}</style><script defer="">async function loadIncludes(){if("file:"!=location.protocol){let e=document.querySelectorAll("include");for(let t=0;t<e.length;t++){let o=e[t],l=o.getAttribute("src");try{const e=await fetch(l);if(!e.ok){console.log("Could not include file: "+l),o?.remove();continue}let t=await e.text(),n=document.createRange().createContextualFragment(t),i=Array.from(n.children);for(let e of i)e.classList.add("hide"),e.style.transition="opacity 0.5s ease-in-out",setTimeout((()=>{e.classList.remove("hide")}),10);o.before(n),o.remove(),console.log("Included file: "+l)}catch(e){o?.remove(),console.log("Could not include file: "+l,e);continue}}}else{if(document.querySelectorAll("include").length>0){var e=document.createElement("div");e.id="error",e.textContent="Web server exports must be hosted on an http / web server to be viewed correctly.",e.style.position="fixed",e.style.top="50%",e.style.left="50%",e.style.transform="translate(-50%, -50%)",e.style.fontSize="1.5em",e.style.fontWeight="bold",e.style.textAlign="center",document.body.appendChild(e),document.querySelector(".document-container")?.classList.remove("hide")}}}document.addEventListener("DOMContentLoaded",(()=>{loadIncludes()}));let isFileProtocol="file:"==location.protocol;function waitLoadScripts(e,t){let o=e.map((e=>document.getElementById(e+"-script"))),l=0;!function e(){let n=o[l];l++,n&&"true"!=n.getAttribute("loaded")||l<o.length&&e(),l<o.length?n.addEventListener("load",e):t()}()}</script><link rel="stylesheet" href="lib/styles/obsidian.css"><link rel="stylesheet" href="lib/styles/theme.css"><link rel="preload" href="lib/styles/global-variable-styles.css" as="style" onload="this.onload=null;this.rel='stylesheet'"><noscript><link rel="stylesheet" href="lib/styles/global-variable-styles.css"></noscript><link rel="preload" href="lib/styles/supported-plugins.css" as="style" onload="this.onload=null;this.rel='stylesheet'"><noscript><link rel="stylesheet" href="lib/styles/supported-plugins.css"></noscript><link rel="preload" href="lib/styles/main-styles.css" as="style" onload="this.onload=null;this.rel='stylesheet'"><noscript><link rel="stylesheet" href="lib/styles/main-styles.css"></noscript><link rel="preload" href="lib/styles/snippets.css" as="style" onload="this.onload=null;this.rel='stylesheet'"><noscript><link rel="stylesheet" href="lib/styles/snippets.css"></noscript></head><body class="publish css-settings-manager theme-dark"><script defer="">let theme=localStorage.getItem("theme")||(window.matchMedia("(prefers-color-scheme: dark)").matches?"dark":"light");"dark"==theme?(document.body.classList.add("theme-dark"),document.body.classList.remove("theme-light")):(document.body.classList.add("theme-light"),document.body.classList.remove("theme-dark")),window.innerWidth<480?document.body.classList.add("is-phone"):window.innerWidth<768?document.body.classList.add("is-tablet"):window.innerWidth<1024?document.body.classList.add("is-small-screen"):document.body.classList.add("is-large-screen")</script><div class="webpage-container workspace"><div class="sidebar-left sidebar"><div class="sidebar-handle"></div><div class="sidebar-topbar"><div class="topbar-content"><label class="theme-toggle-container" for="theme_toggle"><input class="theme-toggle-input" type="checkbox" id="theme_toggle"><div class="toggle-background"></div></label></div><div class="clickable-icon sidebar-collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" class="svg-icon"><path d="M21 3H3C1.89543 3 1 3.89543 1 5V19C1 20.1046 1.89543 21 3 21H21C22.1046 21 23 20.1046 23 19V5C23 3.89543 22.1046 3 21 3Z"></path><path d="M10 4V20"></path><path d="M4 7H7"></path><path d="M4 10H7"></path><path d="M4 13H7"></path></svg></div></div><div class="sidebar-content"><div class="search-input-container"><input enterkeyhint="search" type="search" spellcheck="false" placeholder="Search..."><div class="search-input-clear-button" aria-label="Clear search"></div></div><include src="lib/html/file-tree.html"></include></div><script defer="">let ls = document.querySelector(".sidebar-left"); ls.classList.add("is-collapsed"); if (window.innerWidth > 768) ls.classList.remove("is-collapsed"); ls.style.setProperty("--sidebar-width", localStorage.getItem("sidebar-left-width"));</script></div><div class="document-container markdown-reading-view hide"><div class="markdown-preview-view markdown-rendered allow-fold-headings allow-fold-lists is-readable-line-width"><style id="MJX-CHTML-styles">mjx-container[jax=CHTML]{line-height:0}mjx-container [space="1"]{margin-left:.111em}mjx-container [space="2"]{margin-left:.167em}mjx-container [space="3"]{margin-left:.222em}mjx-container [space="4"]{margin-left:.278em}mjx-container [space="5"]{margin-left:.333em}mjx-container [rspace="1"]{margin-right:.111em}mjx-container [rspace="2"]{margin-right:.167em}mjx-container [rspace="3"]{margin-right:.222em}mjx-container [rspace="4"]{margin-right:.278em}mjx-container [rspace="5"]{margin-right:.333em}mjx-container [size="s"]{font-size:70.7%}mjx-container [size=ss]{font-size:50%}mjx-container [size=Tn]{font-size:60%}mjx-container [size=sm]{font-size:85%}mjx-container [size=lg]{font-size:120%}mjx-container [size=Lg]{font-size:144%}mjx-container [size=LG]{font-size:173%}mjx-container [size=hg]{font-size:207%}mjx-container [size=HG]{font-size:249%}mjx-container [width=full]{width:100%}mjx-box{display:inline-block}mjx-block{display:block}mjx-itable{display:inline-table}mjx-row{display:table-row}mjx-row>*{display:table-cell}mjx-mtext{display:inline-block}mjx-mstyle{display:inline-block}mjx-merror{display:inline-block;color:red;background-color:#ff0}mjx-mphantom{visibility:hidden}mjx-assistive-mml{top:0;left:0;clip:rect(1px,1px,1px,1px);user-select:none;position:absolute!important;padding:1px 0 0!important;border:0!important;display:block!important;width:auto!important;overflow:hidden!important}mjx-assistive-mml[display=block]{width:100%!important}mjx-math{display:inline-block;text-align:left;line-height:0;text-indent:0;font-style:normal;font-weight:400;font-size:100%;font-size-adjust:none;letter-spacing:normal;border-collapse:collapse;overflow-wrap:normal;word-spacing:normal;white-space:nowrap;direction:ltr;padding:1px 0}mjx-container[jax=CHTML][display=true]{display:block;text-align:center;margin:1em 0}mjx-container[jax=CHTML][display=true][width=full]{display:flex}mjx-container[jax=CHTML][display=true] mjx-math{padding:0}mjx-container[jax=CHTML][justify=left]{text-align:left}mjx-container[jax=CHTML][justify=right]{text-align:right}mjx-mi{display:inline-block;text-align:left}mjx-c{display:inline-block}mjx-utext{display:inline-block;padding:.75em 0 .2em}mjx-msub{display:inline-block;text-align:left}mjx-mn{display:inline-block;text-align:left}mjx-mo{display:inline-block;text-align:left}mjx-stretchy-h{display:inline-table;width:100%}mjx-stretchy-h>*{display:table-cell;width:0}mjx-stretchy-h>*>mjx-c{display:inline-block;transform:scaleX(1)}mjx-stretchy-h>*>mjx-c::before{display:inline-block;width:initial}mjx-stretchy-h>mjx-ext{overflow:clip visible;width:100%}mjx-stretchy-h>mjx-ext>mjx-c::before{transform:scaleX(500)}mjx-stretchy-h>mjx-ext>mjx-c{width:0}mjx-stretchy-h>mjx-beg>mjx-c{margin-right:-.1em}mjx-stretchy-h>mjx-end>mjx-c{margin-left:-.1em}mjx-stretchy-v{display:inline-block}mjx-stretchy-v>*{display:block}mjx-stretchy-v>mjx-beg{height:0}mjx-stretchy-v>mjx-end>mjx-c{display:block}mjx-stretchy-v>*>mjx-c{transform:scaleY(1);transform-origin:left center;overflow:hidden}mjx-stretchy-v>mjx-ext{display:block;height:100%;box-sizing:border-box;border:0 solid transparent;overflow:visible clip}mjx-stretchy-v>mjx-ext>mjx-c::before{width:initial;box-sizing:border-box}mjx-stretchy-v>mjx-ext>mjx-c{transform:scaleY(500) translateY(.075em);overflow:visible}mjx-mark{display:inline-block;height:0}mjx-c::before{display:block;width:0}.MJX-TEX{font-family:MJXZERO,MJXTEX}.TEX-B{font-family:MJXZERO,MJXTEX-B}.TEX-I{font-family:MJXZERO,MJXTEX-I}.TEX-MI{font-family:MJXZERO,MJXTEX-MI}.TEX-BI{font-family:MJXZERO,MJXTEX-BI}.TEX-S1{font-family:MJXZERO,MJXTEX-S1}.TEX-S2{font-family:MJXZERO,MJXTEX-S2}.TEX-S3{font-family:MJXZERO,MJXTEX-S3}.TEX-S4{font-family:MJXZERO,MJXTEX-S4}.TEX-A{font-family:MJXZERO,MJXTEX-A}.TEX-C{font-family:MJXZERO,MJXTEX-C}.TEX-CB{font-family:MJXZERO,MJXTEX-CB}.TEX-FR{font-family:MJXZERO,MJXTEX-FR}.TEX-FRB{font-family:MJXZERO,MJXTEX-FRB}.TEX-SS{font-family:MJXZERO,MJXTEX-SS}.TEX-SSB{font-family:MJXZERO,MJXTEX-SSB}.TEX-SSI{font-family:MJXZERO,MJXTEX-SSI}.TEX-SC{font-family:MJXZERO,MJXTEX-SC}.TEX-T{font-family:MJXZERO,MJXTEX-T}.TEX-V{font-family:MJXZERO,MJXTEX-V}.TEX-VB{font-family:MJXZERO,MJXTEX-VB}mjx-stretchy-h mjx-c,mjx-stretchy-v mjx-c{font-family:MJXZERO,MJXTEX-S1,MJXTEX-S4,MJXTEX,MJXTEX-A!important}@font-face{font-family:MJXZERO;src:url("lib/fonts/mathjax_zero.woff") format("woff")}@font-face{font-family:MJXTEX;src:url("lib/fonts/mathjax_main-regular.woff") format("woff")}@font-face{font-family:MJXTEX-B;src:url("lib/fonts/mathjax_main-bold.woff") format("woff")}@font-face{font-family:MJXTEX-I;src:url("lib/fonts/mathjax_math-italic.woff") format("woff")}@font-face{font-family:MJXTEX-MI;src:url("lib/fonts/mathjax_main-italic.woff") format("woff")}@font-face{font-family:MJXTEX-BI;src:url("lib/fonts/mathjax_math-bolditalic.woff") format("woff")}@font-face{font-family:MJXTEX-S1;src:url("lib/fonts/mathjax_size1-regular.woff") format("woff")}@font-face{font-family:MJXTEX-S2;src:url("lib/fonts/mathjax_size2-regular.woff") format("woff")}@font-face{font-family:MJXTEX-S3;src:url("lib/fonts/mathjax_size3-regular.woff") format("woff")}@font-face{font-family:MJXTEX-S4;src:url("lib/fonts/mathjax_size4-regular.woff") format("woff")}@font-face{font-family:MJXTEX-A;src:url("lib/fonts/mathjax_ams-regular.woff") format("woff")}@font-face{font-family:MJXTEX-C;src:url("lib/fonts/mathjax_calligraphic-regular.woff") format("woff")}@font-face{font-family:MJXTEX-CB;src:url("lib/fonts/mathjax_calligraphic-bold.woff") format("woff")}@font-face{font-family:MJXTEX-FR;src:url("lib/fonts/mathjax_fraktur-regular.woff") format("woff")}@font-face{font-family:MJXTEX-FRB;src:url("lib/fonts/mathjax_fraktur-bold.woff") format("woff")}@font-face{font-family:MJXTEX-SS;src:url("lib/fonts/mathjax_sansserif-regular.woff") format("woff")}@font-face{font-family:MJXTEX-SSB;src:url("lib/fonts/mathjax_sansserif-bold.woff") format("woff")}@font-face{font-family:MJXTEX-SSI;src:url("lib/fonts/mathjax_sansserif-italic.woff") format("woff")}@font-face{font-family:MJXTEX-SC;src:url("lib/fonts/mathjax_script-regular.woff") format("woff")}@font-face{font-family:MJXTEX-T;src:url("lib/fonts/mathjax_typewriter-regular.woff") format("woff")}@font-face{font-family:MJXTEX-V;src:url("lib/fonts/mathjax_vector-regular.woff") format("woff")}@font-face{font-family:MJXTEX-VB;src:url("lib/fonts/mathjax_vector-bold.woff") format("woff")}mjx-c.mjx-c1D439.TEX-I::before{padding:.68em .749em 0 0;content:"F"}mjx-c.mjx-c1D447.TEX-I::before{padding:.677em .704em 0 0;content:"T"}mjx-c.mjx-c1D43F.TEX-I::before{padding:.683em .681em 0 0;content:"L"}mjx-c.mjx-c1D43C.TEX-I::before{padding:.683em .504em 0 0;content:"I"}mjx-c.mjx-c1D441.TEX-I::before{padding:.683em .888em 0 0;content:"N"}mjx-c.mjx-c1D438.TEX-I::before{padding:.68em .764em 0 0;content:"E"}mjx-c.mjx-c31::before{padding:.666em .5em 0 0;content:"1"}mjx-c.mjx-c2C::before{padding:.121em .278em .194em 0;content:","}</style><pre class="frontmatter language-yaml" tabindex="0" style="display: none;"><code class="language-yaml is-loaded"><span class="token key atrule">title</span><span class="token punctuation">:</span> Libft <span class="token punctuation">-</span> Bonus
+<span class="token key atrule">tags</span><span class="token punctuation">:</span>
+  <span class="token punctuation">-</span> <span class="token string">"42"</span>
+  <span class="token punctuation">-</span> programming
+  <span class="token punctuation">-</span> common_core
+<span class="token key atrule">use</span><span class="token punctuation">:</span> README<span class="token punctuation">,</span> Documentation
+<span class="token key atrule">languages</span><span class="token punctuation">:</span> 
+dependences<span class="token punctuation">:</span></code><button class="copy-code-button"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon lucide-copy"><rect x="8" y="8" width="14" height="14" rx="2" ry="2"></rect><path d="M4 16c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2"></path></svg></button></pre><div class="markdown-preview-sizer markdown-preview-section"><h1 class="page-title heading" id="Libft - Bonus"><p dir="auto">Libft - Bonus</p></h1><div class="el-div"><div data-callout-metadata="" data-callout-fold="" data-callout="info" class="callout"><div class="callout-title" dir="auto"><div class="callout-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon lucide-info"><circle cx="12" cy="12" r="10"></circle><path d="M12 16v-4"></path><path d="M12 8h.01"></path></svg></div><div class="callout-title-inner">Info</div></div><div class="callout-content">
+<p dir="auto"> Copied from <a data-tooltip-position="top" aria-label="https://www.42porto.com/" rel="noopener nofollow" class="external-link" href="https://www.42porto.com/" target="_blank"><code>42Porto</code></a> all rights reserved. Modified according to my understanding and to facilitate learning.<br>
+If you spot something that isn't right, please open an <a data-tooltip-position="top" aria-label="https://github.com/the-8-bits/42-libft/issues/new" rel="noopener nofollow" class="external-link" href="https://github.com/the-8-bits/42-libft/issues/new" target="_blank">Issue</a></p>
+</div></div></div><div class="el-ul"><ul>
+<li data-line="0" dir="auto"><div class="list-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle"><path d="M3 8L12 17L21 8"></path></svg></div><a class="internal-link" data-href="#bonus" href="#bonus" target="_self" rel="noopener nofollow">Bonus</a>
+<ul>
+<li data-line="1" dir="auto"><a class="internal-link" data-href="#t_list" href="#t_list" target="_self" rel="noopener nofollow">t_list</a></li>
+<li data-line="2" dir="auto"><a class="internal-link" data-href="#t_split_next" href="#t_split_next" target="_self" rel="noopener nofollow">t_split_next</a></li>
+<li data-line="3" dir="auto"><a class="internal-link" data-href="#ft_lstnew" href="#ft_lstnew" target="_self" rel="noopener nofollow">ft_lstnew</a></li>
+<li data-line="4" dir="auto"><a class="internal-link" data-href="#ft_lstadd_front" href="#ft_lstadd_front" target="_self" rel="noopener nofollow">ft_lstadd_front</a></li>
+<li data-line="5" dir="auto"><a class="internal-link" data-href="#ft_lstsize" href="#ft_lstsize" target="_self" rel="noopener nofollow">ft_lstsize</a></li>
+<li data-line="6" dir="auto"><a class="internal-link" data-href="#ft_lstlast" href="#ft_lstlast" target="_self" rel="noopener nofollow">ft_lstlast</a></li>
+<li data-line="7" dir="auto"><a class="internal-link" data-href="#ft_lstadd_back" href="#ft_lstadd_back" target="_self" rel="noopener nofollow">ft_lstadd_back</a></li>
+<li data-line="8" dir="auto"><a class="internal-link" data-href="#ft_lstdelone" href="#ft_lstdelone" target="_self" rel="noopener nofollow">ft_lstdelone</a></li>
+<li data-line="9" dir="auto"><a class="internal-link" data-href="#ft_lstclear" href="#ft_lstclear" target="_self" rel="noopener nofollow">ft_lstclear</a></li>
+<li data-line="10" dir="auto"><a class="internal-link" data-href="#ft_lstiter" href="#ft_lstiter" target="_self" rel="noopener nofollow">ft_lstiter</a></li>
+<li data-line="11" dir="auto"><a class="internal-link" data-href="#ft_lstmap" href="#ft_lstmap" target="_self" rel="noopener nofollow">ft_lstmap</a></li>
+</ul>
+</li>
+</ul></div><div class="el-h1 heading-wrapper"><div class="heading-children"><div class="el-h2 heading-wrapper"><h2 data-heading="t_list" dir="auto" class="heading" id="t_list"><div class="heading-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle"><path d="M3 8L12 17L21 8"></path></svg></div>t_list</h2><div class="heading-children"><div class="el-p"><p dir="auto">This <code>t_list</code> structure is often used to create linked lists in C, where each node of the list contains two components:</p></div><div class="el-ol"><ol>
+<li data-line="0" dir="auto">
+<p><code>void *content</code>: This member is a pointer to the actual data or content stored in the node. The use of <code>void *</code> allows this linked list to hold data of different types, as a <code>void *</code> can be type-casted to any data type. The specific type of data stored in this member depends on how the linked list is used.</p>
+</li>
+<li data-line="2" dir="auto">
+<p><code>struct s_list *next</code>: This member is a pointer to the next node in the linked list. It is used to link the nodes together, forming a chain of elements.</p>
+</li>
+</ol></div><div class="el-p"><p dir="auto">Here's a breakdown of the members of the <code>t_list</code> structure:</p></div><div class="el-ul"><ul>
+<li data-line="0" dir="auto">
+<p><code>content</code>: This member stores the actual data or content associated with a particular node. It is often used to store values or data structures of various types, such as integers, strings, custom structures, or pointers to other data.</p>
+</li>
+<li data-line="2" dir="auto">
+<p><code>next</code>: This member is a pointer to the next node in the linked list. It allows you to navigate from one node to the next in the list. When working with linked lists, you can traverse the list by following these <code>next</code> pointers.</p>
+</li>
+</ul></div><div class="el-p"><p dir="auto">Linked lists are commonly used in C for dynamic data storage because they can grow or shrink as needed, unlike arrays with fixed sizes. They are especially useful when you need to insert or delete elements in the middle of the list efficiently.</p></div><div class="el-div"><div data-callout-metadata="" data-callout-fold="" data-callout="info" class="callout"><div class="callout-title" dir="auto"><div class="callout-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon lucide-info"><circle cx="12" cy="12" r="10"></circle><path d="M12 16v-4"></path><path d="M12 8h.01"></path></svg></div><div class="callout-title-inner">Info</div></div><div class="callout-content has-run-code-button">
+<p dir="auto">Here's a simple example of how you might create and use a linked list with this <code>t_list</code> structure: it creates three nodes, assigns integer data to them, links them together, and then traverses and prints the data stored in each node. Finally, it frees the memory allocated for the nodes.</p>
+<pre class="language-c" tabindex="0"><code data-line="3" class="language-c is-loaded"><span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">include</span> <span class="token string">&lt;stdio.h&gt;</span></span>
+<span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">include</span> <span class="token string">&lt;stdlib.h&gt;</span></span>
+
+<span class="token keyword">typedef</span> <span class="token keyword">struct</span> <span class="token class-name">s_list</span>
+<span class="token punctuation">{</span>
+   <span class="token keyword">void</span> <span class="token operator">*</span>content<span class="token punctuation">;</span>
+   <span class="token keyword">struct</span> <span class="token class-name">s_list</span> <span class="token operator">*</span>next<span class="token punctuation">;</span>
+<span class="token punctuation">}</span> t_list<span class="token punctuation">;</span>
+
+<span class="token keyword">int</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token punctuation">{</span>
+   <span class="token comment">// Create nodes for the linked list</span>
+   t_list <span class="token operator">*</span>node1 <span class="token operator">=</span> <span class="token function">malloc</span><span class="token punctuation">(</span><span class="token keyword">sizeof</span><span class="token punctuation">(</span>t_list<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+   t_list <span class="token operator">*</span>node2 <span class="token operator">=</span> <span class="token function">malloc</span><span class="token punctuation">(</span><span class="token keyword">sizeof</span><span class="token punctuation">(</span>t_list<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+   t_list <span class="token operator">*</span>node3 <span class="token operator">=</span> <span class="token function">malloc</span><span class="token punctuation">(</span><span class="token keyword">sizeof</span><span class="token punctuation">(</span>t_list<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+   <span class="token comment">// Assign content to the nodes</span>
+   <span class="token keyword">int</span> data1 <span class="token operator">=</span> <span class="token number">42</span><span class="token punctuation">;</span>
+   <span class="token keyword">int</span> data2 <span class="token operator">=</span> <span class="token number">17</span><span class="token punctuation">;</span>
+   <span class="token keyword">int</span> data3 <span class="token operator">=</span> <span class="token number">99</span><span class="token punctuation">;</span>
+
+   node1<span class="token operator">-&gt;</span>content <span class="token operator">=</span> <span class="token operator">&amp;</span>data1<span class="token punctuation">;</span>
+   node2<span class="token operator">-&gt;</span>content <span class="token operator">=</span> <span class="token operator">&amp;</span>data2<span class="token punctuation">;</span>
+   node3<span class="token operator">-&gt;</span>content <span class="token operator">=</span> <span class="token operator">&amp;</span>data3<span class="token punctuation">;</span>
+
+   <span class="token comment">// Link the nodes together</span>
+   node1<span class="token operator">-&gt;</span>next <span class="token operator">=</span> node2<span class="token punctuation">;</span>
+   node2<span class="token operator">-&gt;</span>next <span class="token operator">=</span> node3<span class="token punctuation">;</span>
+   node3<span class="token operator">-&gt;</span>next <span class="token operator">=</span> <span class="token constant">NULL</span><span class="token punctuation">;</span> <span class="token comment">// The last node has no next node</span>
+
+   <span class="token comment">// Traverse and print the linked list</span>
+   t_list <span class="token operator">*</span>current <span class="token operator">=</span> node1<span class="token punctuation">;</span>
+   <span class="token keyword">while</span> <span class="token punctuation">(</span>current <span class="token operator">!=</span> <span class="token constant">NULL</span><span class="token punctuation">)</span>
+   <span class="token punctuation">{</span>
+       <span class="token keyword">int</span> <span class="token operator">*</span>current_data <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token keyword">int</span> <span class="token operator">*</span><span class="token punctuation">)</span><span class="token punctuation">(</span>current<span class="token operator">-&gt;</span>content<span class="token punctuation">)</span><span class="token punctuation">;</span>
+       <span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"%d\n"</span><span class="token punctuation">,</span> <span class="token operator">*</span>current_data<span class="token punctuation">)</span><span class="token punctuation">;</span>
+       current <span class="token operator">=</span> current<span class="token operator">-&gt;</span>next<span class="token punctuation">;</span>
+   <span class="token punctuation">}</span>
+
+   <span class="token comment">// Free memory for the nodes</span>
+   <span class="token function">free</span><span class="token punctuation">(</span>node1<span class="token punctuation">)</span><span class="token punctuation">;</span>
+   <span class="token function">free</span><span class="token punctuation">(</span>node2<span class="token punctuation">)</span><span class="token punctuation">;</span>
+   <span class="token function">free</span><span class="token punctuation">(</span>node3<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+   <span class="token keyword">return</span> <span class="token number">0</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code><button class="copy-code-button"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon lucide-copy"><rect x="8" y="8" width="14" height="14" rx="2" ry="2"></rect><path d="M4 16c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2"></path></svg></button><button class="run-code-button">Run</button></pre>
+</div></div></div></div></div><div class="el-h2 heading-wrapper"><h2 data-heading="t_split_next" dir="auto" class="heading" id="t_split_next"><div class="heading-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle"><path d="M3 8L12 17L21 8"></path></svg></div>t_split_next</h2><div class="heading-children"><div class="el-p"><p dir="auto">The <code>t_split_next</code> structure you've provided is a data structure used to store information about the start and length of a substring or segment within a larger string. It typically serves as a data structure to represent substrings extracted from a larger string during string processing or parsing operations. Is particularly useful when working with text processing tasks where you need to manipulate and extract substrings from a larger text or data.</p></div><div class="el-p"><p dir="auto">Here's a breakdown of the members of the <code>t_split_next</code> structure:</p></div><div class="el-ul"><ul>
+<li data-line="0" dir="auto">
+<p><code>size_t start</code>: This member represents the starting position or index of the substring within the larger string. It is typically the position where the substring begins in the original string.</p>
+</li>
+<li data-line="2" dir="auto">
+<p><code>size_t length</code>: This member represents the length of the substring. It indicates the number of characters or elements that make up the substring starting from the <code>start</code> position.</p>
+</li>
+</ul></div><div class="el-p"><p dir="auto"><code>size_t</code> is used for both <code>start</code> and <code>length</code> because it is an unsigned integer type that can represent non-negative values, making it suitable for indexing and specifying lengths.</p></div><div class="el-div"><div data-callout-metadata="" data-callout-fold="" data-callout="info" class="callout"><div class="callout-title" dir="auto"><div class="callout-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon lucide-info"><circle cx="12" cy="12" r="10"></circle><path d="M12 16v-4"></path><path d="M12 8h.01"></path></svg></div><div class="callout-title-inner">Info</div></div><div class="callout-content has-run-code-button">
+<p dir="auto">In this example, the <code>t_split_next</code> structure is used to define a substring within the original string "Hello, World!" starting from position 7 (the 'W' character) with a length of 6 characters ("World!"). The program then extracts and prints the substring based on the information stored in the <code>t_split_next</code> structure.</p>
+<pre class="language-c" tabindex="0"><code data-line="3" class="language-c is-loaded"><span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">include</span> <span class="token string">&lt;stdio.h&gt;</span></span>
+<span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">include</span> <span class="token string">&lt;string.h&gt;</span></span>
+
+<span class="token keyword">typedef</span> <span class="token keyword">struct</span> <span class="token class-name">s_split_next</span>
+<span class="token punctuation">{</span>
+   <span class="token class-name">size_t</span> start<span class="token punctuation">;</span>
+   <span class="token class-name">size_t</span> length<span class="token punctuation">;</span>
+<span class="token punctuation">}</span> t_split_next<span class="token punctuation">;</span>
+
+<span class="token keyword">int</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token punctuation">{</span>
+   <span class="token comment">// Example string</span>
+   <span class="token keyword">const</span> <span class="token keyword">char</span> <span class="token operator">*</span>originalString <span class="token operator">=</span> <span class="token string">"Hello, World!"</span><span class="token punctuation">;</span>
+   
+   <span class="token comment">// Define a substring using t_split_next</span>
+   t_split_next substring<span class="token punctuation">;</span>
+   substring<span class="token punctuation">.</span>start <span class="token operator">=</span> <span class="token number">7</span><span class="token punctuation">;</span>    <span class="token comment">// Start position of "World!"</span>
+   substring<span class="token punctuation">.</span>length <span class="token operator">=</span> <span class="token number">6</span><span class="token punctuation">;</span>   <span class="token comment">// Length of "World!"</span>
+
+   <span class="token comment">// Extract and print the substring</span>
+   <span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"Substring: "</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+   <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token class-name">size_t</span> i <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> i <span class="token operator">&lt;</span> substring<span class="token punctuation">.</span>length<span class="token punctuation">;</span> i<span class="token operator">++</span><span class="token punctuation">)</span>
+   <span class="token punctuation">{</span>
+       <span class="token function">putchar</span><span class="token punctuation">(</span>originalString<span class="token punctuation">[</span>substring<span class="token punctuation">.</span>start <span class="token operator">+</span> i<span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+   <span class="token punctuation">}</span>
+   <span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"\n"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+   <span class="token keyword">return</span> <span class="token number">0</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code><button class="copy-code-button"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon lucide-copy"><rect x="8" y="8" width="14" height="14" rx="2" ry="2"></rect><path d="M4 16c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2"></path></svg></button><button class="run-code-button">Run</button></pre>
+</div></div></div></div></div><div class="el-h2 heading-wrapper"><h2 data-heading="[ft_lstnew](../libft/ft_lstnew.c)" dir="auto" class="heading" id="[ft_lstnew](../libft/ft_lstnew.c)"><div class="heading-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle"><path d="M3 8L12 17L21 8"></path></svg></div><a class="internal-link" data-href="../libft/ft_lstnew.c" href="courses/42/common_core/libft/libft/ft_lstnew.c" target="_self" rel="noopener nofollow">ft_lstnew</a></h2><div class="heading-children"><div class="el-p"><p dir="auto">The <code>ft_lstnew</code> function is used to create a new node for a singly-linked list. It allocates memory for the node, assigns the provided content to the node's <code>content</code> field, and initializes the <code>next</code> field to <code>NULL</code>. This function is typically used when you want to add a new element to the beginning of a linked list.</p></div><div class="el-p"><p dir="auto">Here's a breakdown of how the <code>ft_lstnew</code> function works:</p></div><div class="el-ul"><ul>
+<li data-line="0" dir="auto">
+<p><code>void *content</code>: The <code>content</code> argument represents the data or content you want to store in the newly created node. The <code>void *</code> type allows this function to handle content of various data types.</p>
+</li>
+<li data-line="2" dir="auto">
+<p>The function begins by attempting to allocate memory for a new node using <code>malloc</code>. If memory allocation fails, it returns <code>NULL</code> to indicate an error.</p>
+</li>
+<li data-line="4" dir="auto">
+<p>If memory allocation is successful, it initializes a pointer <code>new_node</code> to point to the newly allocated memory.</p>
+</li>
+<li data-line="6" dir="auto">
+<p>It assigns the provided <code>content</code> pointer to the <code>content</code> field of the newly created node. This means that the <code>content</code> field of the new node will point to the same data that the <code>content</code> argument points to.</p>
+</li>
+<li data-line="8" dir="auto">
+<p>It sets the <code>next</code> field of the new node to <code>NULL</code>, indicating that it's the last node in the list (at this point, it's a standalone node).</p>
+</li>
+<li data-line="10" dir="auto">
+<p>Finally, it returns a pointer to the newly created node, which can be used to add this node to a linked list or manipulate it further.</p>
+</li>
+</ul></div></div></div><div class="el-h2 heading-wrapper"><h2 data-heading="[ft_lstadd_front](../libft/ft_lstadd_front.c)" dir="auto" class="heading" id="[ft_lstadd_front](../libft/ft_lstadd_front.c)"><div class="heading-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle"><path d="M3 8L12 17L21 8"></path></svg></div><a class="internal-link" data-href="../libft/ft_lstadd_front.c" href="courses/42/common_core/libft/libft/ft_lstadd_front.c" target="_self" rel="noopener nofollow">ft_lstadd_front</a></h2><div class="heading-children"><div class="el-p"><p dir="auto">The <code>ft_lstadd_front</code> function is used to add a new node to the front (beginning) of a singly-linked list. It takes two arguments:</p></div><div class="el-ol"><ol>
+<li data-line="0" dir="auto">
+<p><code>t_list **alst</code>: A pointer to a pointer to the head of the linked list. The double pointer (<code>**alst</code>) is used to modify the original pointer to the head of the list if necessary.</p>
+</li>
+<li data-line="2" dir="auto">
+<p><code>t_list *new</code>: A pointer to the new node that you want to add to the front of the list.</p>
+</li>
+</ol></div><div class="el-p"><p dir="auto">Here's a breakdown of how the <code>ft_lstadd_front</code> function works:</p></div><div class="el-ul"><ul>
+<li data-line="0" dir="auto">
+<p>It first checks if the <code>alst</code> pointer is not <code>NULL</code>. This check ensures that the function won't attempt to modify a non-existent list (a <code>NULL</code> list).</p>
+</li>
+<li data-line="2" dir="auto">
+<p>Inside the first conditional block (<code>if (alst)</code>), it checks if the double pointer <code>*alst</code> is not <code>NULL</code>. This check verifies whether the list already contains nodes (i.e., the head pointer is not <code>NULL</code>).</p>
+</li>
+<li data-line="4" dir="auto">
+<p>If the list is not empty (i.e., <code>*alst</code> is not <code>NULL</code>), it updates the <code>next</code> pointer of the new node <code>new</code> to point to the current head of the list (<code>*alst</code>). This step ensures that the new node becomes the new head of the list, and it links the rest of the list to the new node.</p>
+</li>
+<li data-line="6" dir="auto">
+<p>Finally, it updates the head pointer <code>*alst</code> to point to the <code>new</code> node, making the <code>new</code> node the new head of the list.</p>
+</li>
+</ul></div></div></div><div class="el-h2 heading-wrapper"><h2 data-heading="[ft_lstsize](../libft/ft_lstsize.c)" dir="auto" class="heading" id="[ft_lstsize](../libft/ft_lstsize.c)"><div class="heading-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle"><path d="M3 8L12 17L21 8"></path></svg></div><a class="internal-link" data-href="../libft/ft_lstsize.c" href="courses/42/common_core/libft/libft/ft_lstsize.c" target="_self" rel="noopener nofollow">ft_lstsize</a></h2><div class="heading-children"><div class="el-p"><p dir="auto">The <code>ft_lstsize</code> function is used to calculate and return the number of nodes (elements) in a singly-linked list. It takes a pointer to the head of the list (<code>t_list *lst</code>) as its argument and returns an integer representing the size of the list.</p></div><div class="el-p"><p dir="auto">Here's a breakdown of how the <code>ft_lstsize</code> function works:</p></div><div class="el-ul"><ul>
+<li data-line="0" dir="auto">
+<p>It initializes a variable <code>count</code> to 0. This variable will be used to keep track of the number of nodes in the list.</p>
+</li>
+<li data-line="2" dir="auto">
+<p>The function enters a <code>while</code> loop that continues as long as the <code>lst</code> pointer is not <code>NULL</code>. This loop is used to traverse the linked list.</p>
+</li>
+<li data-line="4" dir="auto">
+<p>Inside the loop, the function advances the <code>lst</code> pointer to the next node in the list by setting <code>lst</code> to <code>lst-&gt;next</code>. This effectively moves to the next node in the list.</p>
+</li>
+<li data-line="6" dir="auto">
+<p>For each node visited in the loop, the <code>count</code> variable is incremented by 1. This counts the number of nodes visited so far.</p>
+</li>
+<li data-line="8" dir="auto">
+<p>Once the loop has traversed the entire list (i.e., when <code>lst</code> becomes <code>NULL</code>), the function exits the loop.</p>
+</li>
+<li data-line="10" dir="auto">
+<p>Finally, the function returns the value of the <code>count</code> variable, which represents the total number of nodes in the linked list.</p>
+</li>
+</ul></div><div class="el-p"><p dir="auto"><strong>It's important to note that the <code>ft_lstsize</code> function does not modify the linked list in any way; it simply counts the nodes.</strong></p></div><div class="el-div"><div data-callout-metadata="" data-callout-fold="" data-callout="info" class="callout"><div class="callout-title" dir="auto"><div class="callout-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon lucide-info"><circle cx="12" cy="12" r="10"></circle><path d="M12 16v-4"></path><path d="M12 8h.01"></path></svg></div><div class="callout-title-inner">Info</div></div><div class="callout-content has-run-code-button">
+<p dir="auto">Here's an example of how you might use the <code>ft_lstsize</code> function:</p>
+<pre class="language-c" tabindex="0"><code data-line="3" class="language-c is-loaded"><span class="token keyword">int</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token punctuation">{</span>
+   <span class="token comment">// Create a linked list with three nodes</span>
+   t_list <span class="token operator">*</span>head <span class="token operator">=</span> <span class="token constant">NULL</span><span class="token punctuation">;</span>
+
+   <span class="token comment">// Add nodes to the list</span>
+   t_list <span class="token operator">*</span>node1 <span class="token operator">=</span> <span class="token function">malloc</span><span class="token punctuation">(</span><span class="token keyword">sizeof</span><span class="token punctuation">(</span>t_list<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+   t_list <span class="token operator">*</span>node2 <span class="token operator">=</span> <span class="token function">malloc</span><span class="token punctuation">(</span><span class="token keyword">sizeof</span><span class="token punctuation">(</span>t_list<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+   t_list <span class="token operator">*</span>node3 <span class="token operator">=</span> <span class="token function">malloc</span><span class="token punctuation">(</span><span class="token keyword">sizeof</span><span class="token punctuation">(</span>t_list<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+   node1<span class="token operator">-&gt;</span>next <span class="token operator">=</span> node2<span class="token punctuation">;</span>
+   node2<span class="token operator">-&gt;</span>next <span class="token operator">=</span> node3<span class="token punctuation">;</span>
+   node3<span class="token operator">-&gt;</span>next <span class="token operator">=</span> <span class="token constant">NULL</span><span class="token punctuation">;</span>
+
+   <span class="token comment">// Calculate the size of the linked list</span>
+   <span class="token keyword">int</span> size <span class="token operator">=</span> <span class="token function">ft_lstsize</span><span class="token punctuation">(</span>head<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+   <span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"Size of the linked list: %d\n"</span><span class="token punctuation">,</span> size<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+   <span class="token comment">// Free memory allocated for the nodes</span>
+   <span class="token function">free</span><span class="token punctuation">(</span>node1<span class="token punctuation">)</span><span class="token punctuation">;</span>
+   <span class="token function">free</span><span class="token punctuation">(</span>node2<span class="token punctuation">)</span><span class="token punctuation">;</span>
+   <span class="token function">free</span><span class="token punctuation">(</span>node3<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+   <span class="token keyword">return</span> <span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code><button class="copy-code-button"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon lucide-copy"><rect x="8" y="8" width="14" height="14" rx="2" ry="2"></rect><path d="M4 16c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2"></path></svg></button><button class="run-code-button">Run</button></pre>
+</div></div></div></div></div><div class="el-h2 heading-wrapper"><h2 data-heading="[ft_lstlast](../libft/ft_lstlast.c)" dir="auto" class="heading" id="[ft_lstlast](../libft/ft_lstlast.c)"><div class="heading-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle"><path d="M3 8L12 17L21 8"></path></svg></div><a class="internal-link" data-href="../libft/ft_lstlast.c" href="courses/42/common_core/libft/libft/ft_lstlast.c" target="_self" rel="noopener nofollow">ft_lstlast</a></h2><div class="heading-children"><div class="el-p"><p dir="auto">The <code>ft_lstlast</code> function is used to find and return a pointer to the last node in a singly-linked list. It takes a pointer to the head of the list (<code>t_list *lst</code>) as its argument and returns a pointer to the last node in the list. If the list is empty (i.e., <code>lst</code> is <code>NULL</code>), the function returns <code>NULL</code>.</p></div><div class="el-p"><p dir="auto">Here's a breakdown of how the <code>ft_lstlast</code> function works:</p></div><div class="el-ul"><ul>
+<li data-line="0" dir="auto">
+<p>The function enters a <code>while</code> loop that continues as long as the <code>lst</code> pointer is not <code>NULL</code>. This loop is used to traverse the linked list.</p>
+</li>
+<li data-line="2" dir="auto">
+<p>Inside the loop, the function checks whether the <code>lst-&gt;next</code> pointer is <code>NULL</code>. If it is, it means that the current node (<code>lst</code>) is the last node in the list.</p>
+</li>
+<li data-line="4" dir="auto">
+<p>If the current node is indeed the last node, the function immediately returns a pointer to that node, effectively indicating that it is the last node in the list.</p>
+</li>
+<li data-line="6" dir="auto">
+<p>If the current node is not the last node, the function advances the <code>lst</code> pointer to the next node in the list by setting <code>lst</code> to <code>lst-&gt;next</code>. This effectively moves to the next node in the list and continues the loop.</p>
+</li>
+<li data-line="8" dir="auto">
+<p>Once the loop has traversed the entire list (i.e., when <code>lst</code> becomes <code>NULL</code>), the function exits the loop.</p>
+</li>
+<li data-line="10" dir="auto">
+<p>If the loop completes without finding the last node (i.e., when the list is empty), the function returns <code>NULL</code> to indicate that there is no last node.</p>
+</li>
+</ul></div><div class="el-div"><div data-callout-metadata="" data-callout-fold="" data-callout="info" class="callout"><div class="callout-title" dir="auto"><div class="callout-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon lucide-info"><circle cx="12" cy="12" r="10"></circle><path d="M12 16v-4"></path><path d="M12 8h.01"></path></svg></div><div class="callout-title-inner">Info</div></div><div class="callout-content has-run-code-button">
+<p dir="auto">Here's an example of how you might use the <code>ft_lstlast</code> function, it's used to find and print the content of the last node in a linked list with three nodes. If the list is empty, it prints a message indicating that the list is empty.:</p>
+<pre class="language-c" tabindex="0"><code data-line="3" class="language-c is-loaded"><span class="token keyword">int</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token punctuation">{</span>
+   <span class="token comment">// Create a linked list with three nodes</span>
+   t_list <span class="token operator">*</span>head <span class="token operator">=</span> <span class="token constant">NULL</span><span class="token punctuation">;</span>
+
+   <span class="token comment">// Add nodes to the list</span>
+   t_list <span class="token operator">*</span>node1 <span class="token operator">=</span> <span class="token function">malloc</span><span class="token punctuation">(</span><span class="token keyword">sizeof</span><span class="token punctuation">(</span>t_list<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+   t_list <span class="token operator">*</span>node2 <span class="token operator">=</span> <span class="token function">malloc</span><span class="token punctuation">(</span><span class="token keyword">sizeof</span><span class="token punctuation">(</span>t_list<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+   t_list <span class="token operator">*</span>node3 <span class="token operator">=</span> <span class="token function">malloc</span><span class="token punctuation">(</span><span class="token keyword">sizeof</span><span class="token punctuation">(</span>t_list<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+   node1<span class="token operator">-&gt;</span>next <span class="token operator">=</span> node2<span class="token punctuation">;</span>
+   node2<span class="token operator">-&gt;</span>next <span class="token operator">=</span> node3<span class="token punctuation">;</span>
+   node3<span class="token operator">-&gt;</span>next <span class="token operator">=</span> <span class="token constant">NULL</span><span class="token punctuation">;</span>
+
+   <span class="token comment">// Find the last node in the linked list</span>
+   t_list <span class="token operator">*</span>last_node <span class="token operator">=</span> <span class="token function">ft_lstlast</span><span class="token punctuation">(</span>head<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+   <span class="token keyword">if</span> <span class="token punctuation">(</span>last_node<span class="token punctuation">)</span>
+   <span class="token punctuation">{</span>
+       <span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"Content of the last node: %p\n"</span><span class="token punctuation">,</span> last_node<span class="token operator">-&gt;</span>content<span class="token punctuation">)</span><span class="token punctuation">;</span>
+   <span class="token punctuation">}</span>
+   <span class="token keyword">else</span>
+   <span class="token punctuation">{</span>
+       <span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"The list is empty.\n"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+   <span class="token punctuation">}</span>
+
+   <span class="token comment">// Free memory allocated for the nodes</span>
+   <span class="token function">free</span><span class="token punctuation">(</span>node1<span class="token punctuation">)</span><span class="token punctuation">;</span>
+   <span class="token function">free</span><span class="token punctuation">(</span>node2<span class="token punctuation">)</span><span class="token punctuation">;</span>
+   <span class="token function">free</span><span class="token punctuation">(</span>node3<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+   <span class="token keyword">return</span> <span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code><button class="copy-code-button"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon lucide-copy"><rect x="8" y="8" width="14" height="14" rx="2" ry="2"></rect><path d="M4 16c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2"></path></svg></button><button class="run-code-button">Run</button></pre>
+</div></div></div></div></div><div class="el-h2 heading-wrapper"><h2 data-heading="[ft_lstadd_back](../libft/ft_lstadd_back.c)" dir="auto" class="heading" id="[ft_lstadd_back](../libft/ft_lstadd_back.c)"><div class="heading-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle"><path d="M3 8L12 17L21 8"></path></svg></div><a class="internal-link" data-href="../libft/ft_lstadd_back.c" href="courses/42/common_core/libft/libft/ft_lstadd_back.c" target="_self" rel="noopener nofollow">ft_lstadd_back</a></h2><div class="heading-children"><div class="el-p"><p dir="auto">The <code>ft_lstadd_back</code> function is used to add a new node to the end (tail) of a singly-linked list. It takes two arguments:</p></div><div class="el-ol"><ol>
+<li data-line="0" dir="auto">
+<p><code>t_list **alst</code>: A pointer to a pointer to the head of the linked list. The double pointer (<code>**alst</code>) is used to modify the original pointer to the head of the list if necessary.</p>
+</li>
+<li data-line="2" dir="auto">
+<p><code>t_list *new</code>: A pointer to the new node that you want to add to the end of the list.</p>
+</li>
+</ol></div><div class="el-p"><p dir="auto">Here's a breakdown of how the <code>ft_lstadd_back</code> function works:</p></div><div class="el-ul"><ul>
+<li data-line="0" dir="auto">
+<p>It first checks if the <code>alst</code> pointer is not <code>NULL</code>. This check ensures that the function won't attempt to modify a non-existent list (a <code>NULL</code> list).</p>
+</li>
+<li data-line="2" dir="auto">
+<p>Inside the first conditional block (<code>if (alst)</code>), it checks if the double pointer <code>*alst</code> is not <code>NULL</code>. This check verifies whether the list already contains nodes (i.e., the head pointer is not <code>NULL</code>).</p>
+</li>
+<li data-line="4" dir="auto">
+<p>If the list is not empty (i.e., <code>*alst</code> is not <code>NULL</code>), it calls the <code>ft_lstlast</code> function to find the last node in the list and assigns the result to the <code>last</code> pointer. The <code>last</code> pointer now points to the current last node in the list.</p>
+</li>
+<li data-line="6" dir="auto">
+<p>It then updates the <code>next</code> pointer of the current last node (<code>last-&gt;next</code>) to point to the <code>new</code> node. This effectively adds the <code>new</code> node to the end of the list by making it the new last node.</p>
+</li>
+<li data-line="8" dir="auto">
+<p>If the list is empty (i.e., <code>*alst</code> is <code>NULL</code>), it simply assigns the <code>new</code> node to the <code>*alst</code> pointer, making the <code>new</code> node the head of the list.</p>
+</li>
+</ul></div><div class="el-div"><div data-callout-metadata="" data-callout-fold="" data-callout="info" class="callout"><div class="callout-title" dir="auto"><div class="callout-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon lucide-info"><circle cx="12" cy="12" r="10"></circle><path d="M12 16v-4"></path><path d="M12 8h.01"></path></svg></div><div class="callout-title-inner">Info</div></div><div class="callout-content has-run-code-button">
+<p dir="auto">Here's an example of how you might use the <code>ft_lstadd_back</code> function, it's used to add two new nodes to the end of a linked list. The program then prints the contents of the linked list to verify that the new nodes have been added to the end. Finally, it frees the memory allocated for the nodes.:</p>
+<pre class="language-c" tabindex="0"><code data-line="3" class="language-c is-loaded"><span class="token keyword">int</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token punctuation">{</span>
+   <span class="token comment">// Create an empty linked list</span>
+   t_list <span class="token operator">*</span>head <span class="token operator">=</span> <span class="token constant">NULL</span><span class="token punctuation">;</span>
+
+   <span class="token comment">// Add nodes to the list</span>
+   <span class="token keyword">int</span> data1 <span class="token operator">=</span> <span class="token number">42</span><span class="token punctuation">;</span>
+   t_list <span class="token operator">*</span>node1 <span class="token operator">=</span> <span class="token function">malloc</span><span class="token punctuation">(</span><span class="token keyword">sizeof</span><span class="token punctuation">(</span>t_list<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+   node1<span class="token operator">-&gt;</span>content <span class="token operator">=</span> <span class="token operator">&amp;</span>data1<span class="token punctuation">;</span>
+   node1<span class="token operator">-&gt;</span>next <span class="token operator">=</span> <span class="token constant">NULL</span><span class="token punctuation">;</span>
+
+   <span class="token keyword">int</span> data2 <span class="token operator">=</span> <span class="token number">17</span><span class="token punctuation">;</span>
+   t_list <span class="token operator">*</span>node2 <span class="token operator">=</span> <span class="token function">malloc</span><span class="token punctuation">(</span><span class="token keyword">sizeof</span><span class="token punctuation">(</span>t_list<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+   node2<span class="token operator">-&gt;</span>content <span class="token operator">=</span> <span class="token operator">&amp;</span>data2<span class="token punctuation">;</span>
+   node2<span class="token operator">-&gt;</span>next <span class="token operator">=</span> <span class="token constant">NULL</span><span class="token punctuation">;</span>
+
+   <span class="token comment">// Add the nodes to the end of the list</span>
+   <span class="token function">ft_lstadd_back</span><span class="token punctuation">(</span><span class="token operator">&amp;</span>head<span class="token punctuation">,</span> node1<span class="token punctuation">)</span><span class="token punctuation">;</span>
+   <span class="token function">ft_lstadd_back</span><span class="token punctuation">(</span><span class="token operator">&amp;</span>head<span class="token punctuation">,</span> node2<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+   <span class="token comment">// Print the contents of the linked list</span>
+   t_list <span class="token operator">*</span>current <span class="token operator">=</span> head<span class="token punctuation">;</span>
+   <span class="token keyword">while</span> <span class="token punctuation">(</span>current <span class="token operator">!=</span> <span class="token constant">NULL</span><span class="token punctuation">)</span>
+   <span class="token punctuation">{</span>
+       <span class="token keyword">int</span> <span class="token operator">*</span>content_ptr <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token keyword">int</span> <span class="token operator">*</span><span class="token punctuation">)</span><span class="token punctuation">(</span>current<span class="token operator">-&gt;</span>content<span class="token punctuation">)</span><span class="token punctuation">;</span>
+       <span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"%d\n"</span><span class="token punctuation">,</span> <span class="token operator">*</span>content_ptr<span class="token punctuation">)</span><span class="token punctuation">;</span>
+       current <span class="token operator">=</span> current<span class="token operator">-&gt;</span>next<span class="token punctuation">;</span>
+   <span class="token punctuation">}</span>
+
+   <span class="token comment">// Free memory allocated for the nodes</span>
+   <span class="token function">free</span><span class="token punctuation">(</span>node1<span class="token punctuation">)</span><span class="token punctuation">;</span>
+   <span class="token function">free</span><span class="token punctuation">(</span>node2<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+   <span class="token keyword">return</span> <span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code><button class="copy-code-button"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon lucide-copy"><rect x="8" y="8" width="14" height="14" rx="2" ry="2"></rect><path d="M4 16c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2"></path></svg></button><button class="run-code-button">Run</button></pre>
+</div></div></div></div></div><div class="el-h2 heading-wrapper"><h2 data-heading="[ft_lstdelone](../libft/ft_lstdelone.c)" dir="auto" class="heading" id="[ft_lstdelone](../libft/ft_lstdelone.c)"><div class="heading-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle"><path d="M3 8L12 17L21 8"></path></svg></div><a class="internal-link" data-href="../libft/ft_lstdelone.c" href="courses/42/common_core/libft/libft/ft_lstdelone.c" target="_self" rel="noopener nofollow">ft_lstdelone</a></h2><div class="heading-children"><div class="el-p"><p dir="auto">The <code>ft_lstdelone</code> function is used to delete (remove and deallocate memory for) a single node in a singly-linked list. It takes two arguments:</p></div><div class="el-ol"><ol>
+<li data-line="0" dir="auto">
+<p><code>t_list *lst</code>: A pointer to the node that you want to delete.</p>
+</li>
+<li data-line="2" dir="auto">
+<p><code>void (*del)(void*)</code>: A pointer to a function responsible for deallocating the content of the node. The function takes a <code>void*</code> pointer as its argument, which typically points to the content of the node. This function is responsible for freeing any memory associated with the content of the node.</p>
+</li>
+</ol></div><div class="el-p"><p dir="auto">Here's a breakdown of how the <code>ft_lstdelone</code> function works:</p></div><div class="el-ul"><ul>
+<li data-line="0" dir="auto">
+<p>It first checks if the <code>del</code> function pointer is not <code>NULL</code>. This check ensures that the function pointer is valid and not a null pointer.</p>
+</li>
+<li data-line="2" dir="auto">
+<p>Next, it checks if the <code>lst</code> pointer is not <code>NULL</code>. This check ensures that the node to be deleted exists in the list.</p>
+</li>
+<li data-line="4" dir="auto">
+<p>If both conditions are met (i.e., <code>del</code> is valid and <code>lst</code> is not <code>NULL</code>), the function calls the <code>del</code> function, passing the <code>lst-&gt;content</code> pointer as its argument. This allows the <code>del</code> function to deallocate any memory associated with the content of the node.</p>
+</li>
+<li data-line="6" dir="auto">
+<p>After deallocating the content, it frees the memory allocated for the <code>lst</code> node itself using the <code>free</code> function. This effectively removes the node from the linked list.</p>
+</li>
+<li data-line="8" dir="auto">
+<p>If either the <code>del</code> function pointer is <code>NULL</code> or the <code>lst</code> pointer is <code>NULL</code>, the function simply returns without performing any deletion.</p>
+</li>
+</ul></div><div class="el-div"><div data-callout-metadata="" data-callout-fold="" data-callout="info" class="callout"><div class="callout-title" dir="auto"><div class="callout-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon lucide-info"><circle cx="12" cy="12" r="10"></circle><path d="M12 16v-4"></path><path d="M12 8h.01"></path></svg></div><div class="callout-title-inner">Info</div></div><div class="callout-content has-run-code-button">
+<p dir="auto">Here's an example of how you might use the <code>ft_lstdelone</code> function, it's used to delete a node in a linked list. The <code>custom_del</code> function is provided to handle the deallocation of the content of the node, which is an integer in this case. After deletion, the program verifies whether the node has been deleted.:</p>
+<pre class="language-c" tabindex="0"><code data-line="3" class="language-c is-loaded"><span class="token comment">// Definition of the del function here...</span>
+<span class="token keyword">void</span> <span class="token function">custom_del</span><span class="token punctuation">(</span><span class="token keyword">void</span> <span class="token operator">*</span>content<span class="token punctuation">)</span>
+<span class="token punctuation">{</span>
+   <span class="token comment">// Custom deallocation logic for the content</span>
+   <span class="token function">free</span><span class="token punctuation">(</span>content<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">int</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token punctuation">{</span>
+   <span class="token comment">// Create a node with some content</span>
+   <span class="token keyword">int</span> <span class="token operator">*</span>data <span class="token operator">=</span> <span class="token function">malloc</span><span class="token punctuation">(</span><span class="token keyword">sizeof</span><span class="token punctuation">(</span><span class="token keyword">int</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+   <span class="token operator">*</span>data <span class="token operator">=</span> <span class="token number">42</span><span class="token punctuation">;</span>
+
+   t_list <span class="token operator">*</span>node <span class="token operator">=</span> <span class="token function">malloc</span><span class="token punctuation">(</span><span class="token keyword">sizeof</span><span class="token punctuation">(</span>t_list<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+   node<span class="token operator">-&gt;</span>content <span class="token operator">=</span> data<span class="token punctuation">;</span>
+   node<span class="token operator">-&gt;</span>next <span class="token operator">=</span> <span class="token constant">NULL</span><span class="token punctuation">;</span>
+
+   <span class="token comment">// Delete the node using ft_lstdelone</span>
+   <span class="token function">ft_lstdelone</span><span class="token punctuation">(</span>node<span class="token punctuation">,</span> custom_del<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+   <span class="token comment">// Verify that the node has been deleted</span>
+   <span class="token keyword">if</span> <span class="token punctuation">(</span>node<span class="token punctuation">)</span>
+       <span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"Node still exists.\n"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+   <span class="token keyword">else</span>
+       <span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"Node has been deleted.\n"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+   <span class="token keyword">return</span> <span class="token number">0</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code><button class="copy-code-button"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon lucide-copy"><rect x="8" y="8" width="14" height="14" rx="2" ry="2"></rect><path d="M4 16c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2"></path></svg></button><button class="run-code-button">Run</button></pre>
+</div></div></div></div></div><div class="el-h2 heading-wrapper"><h2 data-heading="[ft_lstclear](../libft/ft_lstclear.c)" dir="auto" class="heading" id="[ft_lstclear](../libft/ft_lstclear.c)"><div class="heading-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle"><path d="M3 8L12 17L21 8"></path></svg></div><a class="internal-link" data-href="../libft/ft_lstclear.c" href="courses/42/common_core/libft/libft/ft_lstclear.c" target="_self" rel="noopener nofollow">ft_lstclear</a></h2><div class="heading-children"><div class="el-p"><p dir="auto">The <code>ft_lstclear</code> function is used to clear (delete and deallocate memory for) an entire singly-linked list. It takes two arguments:</p></div><div class="el-ol"><ol>
+<li data-line="0" dir="auto">
+<p><code>t_list **lst</code>: A pointer to a pointer to the head of the linked list. The double pointer <code>**lst</code> is used to modify the original pointer to the head of the list, ensuring that the head pointer is updated correctly after clearing the list.</p>
+</li>
+<li data-line="2" dir="auto">
+<p><code>void (*del)(void*)</code>: A pointer to a function responsible for deallocating the content of each node in the list. The function takes a <code>void*</code> pointer as its argument, which typically points to the content of the node. This function is called for each node in the list to free any memory associated with the content.</p>
+</li>
+</ol></div><div class="el-p"><p dir="auto">Here's a breakdown of how the <code>ft_lstclear</code> function works:</p></div><div class="el-ul"><ul>
+<li data-line="0" dir="auto">
+<p>It first checks if the <code>del</code> function pointer is not <code>NULL</code>, if the <code>lst</code> pointer is not <code>NULL</code>, and if the <code>*lst</code> pointer is not <code>NULL</code>. These checks ensure that the function pointer is valid, that a list exists (i.e., <code>lst</code> is not <code>NULL</code>), and that the list is not empty (i.e., <code>*lst</code> is not <code>NULL</code>).</p>
+</li>
+<li data-line="2" dir="auto">
+<p>Inside the loop, it uses a temporary pointer <code>temp</code> to store a pointer to the next node (<code>(*lst)-&gt;next</code>) before deleting the current node using the <code>ft_lstdelone</code> function. This ensures that the next node is not lost when the current node is deleted.</p>
+</li>
+<li data-line="4" dir="auto">
+<p>After deleting the current node and updating the <code>temp</code> pointer, it sets the <code>*lst</code> pointer to the value of <code>temp</code>. This effectively moves the <code>*lst</code> pointer to the next node in the list, allowing the loop to continue.</p>
+</li>
+<li data-line="6" dir="auto">
+<p>The loop continues until either the <code>lst</code> pointer becomes <code>NULL</code> (indicating that the end of the list has been reached) or the <code>*lst</code> pointer becomes <code>NULL</code> (indicating that the list is empty).</p>
+</li>
+<li data-line="8" dir="auto">
+<p>If any of the initial conditions are not met (i.e., if <code>del</code> is <code>NULL</code>, <code>lst</code> is <code>NULL</code>, or <code>*lst</code> is <code>NULL</code>), the function returns without performing any deletion.</p>
+</li>
+</ul></div><div class="el-div"><div data-callout-metadata="" data-callout-fold="" data-callout="info" class="callout"><div class="callout-title" dir="auto"><div class="callout-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon lucide-info"><circle cx="12" cy="12" r="10"></circle><path d="M12 16v-4"></path><path d="M12 8h.01"></path></svg></div><div class="callout-title-inner">Info</div></div><div class="callout-content has-run-code-button">
+<p dir="auto">Here's an example of how you might use the <code>ft_lstclear</code> function, it's used to clear (delete and deallocate memory for) a linked list with three nodes. The <code>custom_del</code> function is provided to handle the deallocation of the content of each node. After clearing the list, the program verifies whether the list is empty.:</p>
+<pre class="language-c" tabindex="0"><code data-line="3" class="language-c is-loaded"><span class="token keyword">int</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token punctuation">{</span>
+   <span class="token comment">// Create a linked list with three nodes</span>
+   t_list <span class="token operator">*</span>head <span class="token operator">=</span> <span class="token constant">NULL</span><span class="token punctuation">;</span>
+
+   <span class="token comment">// Add nodes to the list</span>
+   <span class="token keyword">int</span> <span class="token operator">*</span>data1 <span class="token operator">=</span> <span class="token function">malloc</span><span class="token punctuation">(</span><span class="token keyword">sizeof</span><span class="token punctuation">(</span><span class="token keyword">int</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+   <span class="token operator">*</span>data1 <span class="token operator">=</span> <span class="token number">42</span><span class="token punctuation">;</span>
+   t_list <span class="token operator">*</span>node1 <span class="token operator">=</span> <span class="token function">malloc</span><span class="token punctuation">(</span><span class="token keyword">sizeof</span><span class="token punctuation">(</span>t_list<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+   node1<span class="token operator">-&gt;</span>content <span class="token operator">=</span> data1<span class="token punctuation">;</span>
+   node1<span class="token operator">-&gt;</span>next <span class="token operator">=</span> <span class="token constant">NULL</span><span class="token punctuation">;</span>
+
+   <span class="token keyword">int</span> <span class="token operator">*</span>data2 <span class="token operator">=</span> <span class="token function">malloc</span><span class="token punctuation">(</span><span class="token keyword">sizeof</span><span class="token punctuation">(</span><span class="token keyword">int</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+   <span class="token operator">*</span>data2 <span class="token operator">=</span> <span class="token number">17</span><span class="token punctuation">;</span>
+   t_list <span class="token operator">*</span>node2 <span class="token operator">=</span> <span class="token function">malloc</span><span class="token punctuation">(</span><span class="token keyword">sizeof</span><span class="token punctuation">(</span>t_list<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+   node2<span class="token operator">-&gt;</span>content <span class="token operator">=</span> data2<span class="token punctuation">;</span>
+   node2<span class="token operator">-&gt;</span>next <span class="token operator">=</span> <span class="token constant">NULL</span><span class="token punctuation">;</span>
+
+   <span class="token keyword">int</span> <span class="token operator">*</span>data3 <span class="token operator">=</span> <span class="token function">malloc</span><span class="token punctuation">(</span><span class="token keyword">sizeof</span><span class="token punctuation">(</span><span class="token keyword">int</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+   <span class="token operator">*</span>data3 <span class="token operator">=</span> <span class="token number">99</span><span class="token punctuation">;</span>
+   t_list <span class="token operator">*</span>node3 <span class="token operator">=</span> <span class="token function">malloc</span><span class="token punctuation">(</span><span class="token keyword">sizeof</span><span class="token punctuation">(</span>t_list<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+   node3<span class="token operator">-&gt;</span>content <span class="token operator">=</span> data3<span class="token punctuation">;</span>
+   node3<span class="token operator">-&gt;</span>next <span class="token operator">=</span> <span class="token constant">NULL</span><span class="token punctuation">;</span>
+
+   <span class="token comment">// Link the nodes together</span>
+   head <span class="token operator">=</span> node1<span class="token punctuation">;</span>
+   node1<span class="token operator">-&gt;</span>next <span class="token operator">=</span> node2<span class="token punctuation">;</span>
+   node2<span class="token operator">-&gt;</span>next <span class="token operator">=</span> node3<span class="token punctuation">;</span>
+
+   <span class="token comment">// Clear the linked list</span>
+   <span class="token function">ft_lstclear</span><span class="token punctuation">(</span><span class="token operator">&amp;</span>head<span class="token punctuation">,</span> custom_del<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+   <span class="token comment">// Verify that the linked list is empty</span>
+   <span class="token keyword">if</span> <span class="token punctuation">(</span>head<span class="token punctuation">)</span>
+       <span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"Linked list is not empty.\n"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+   <span class="token keyword">else</span>
+       <span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"Linked list has been cleared.\n"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+   <span class="token keyword">return</span> <span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code><button class="copy-code-button"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon lucide-copy"><rect x="8" y="8" width="14" height="14" rx="2" ry="2"></rect><path d="M4 16c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2"></path></svg></button><button class="run-code-button">Run</button></pre>
+</div></div></div></div></div><div class="el-h2 heading-wrapper"><h2 data-heading="[ft_lstiter](../libft/ft_lstiter.c)" dir="auto" class="heading" id="[ft_lstiter](../libft/ft_lstiter.c)"><div class="heading-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle"><path d="M3 8L12 17L21 8"></path></svg></div><a class="internal-link" data-href="../libft/ft_lstiter.c" href="courses/42/common_core/libft/libft/ft_lstiter.c" target="_self" rel="noopener nofollow">ft_lstiter</a></h2><div class="heading-children"><div class="el-p"><p dir="auto">The <code>ft_lstiter</code> function is used to apply a given function <code>f</code> to the content of each node in a singly-linked list. It takes two arguments:</p></div><div class="el-ol"><ol>
+<li data-line="0" dir="auto">
+<p><code>t_list *lst</code>: A pointer to the head of the linked list. This pointer is used to traverse the list from the beginning.</p>
+</li>
+<li data-line="2" dir="auto">
+<p><code>void (*f)(void*)</code>: A pointer to a function that will be applied to the content of each node in the list. This function takes a <code>void*</code> pointer as its argument, which typically points to the content of the node. <code>f</code> is applied to each node's content in the order in which they appear in the list.</p>
+</li>
+</ol></div><div class="el-p"><p dir="auto">Here's a breakdown of how the <code>ft_lstiter</code> function works:</p></div><div class="el-ul"><ul>
+<li data-line="0" dir="auto">
+<p>It first checks if the function pointer <code>f</code> is not <code>NULL</code>. This check ensures that the function pointer is valid and not a null pointer.</p>
+</li>
+<li data-line="2" dir="auto">
+<p>It then enters a loop that traverses the linked list from the head (<code>lst</code>) to the end of the list.</p>
+</li>
+<li data-line="4" dir="auto">
+<p>Inside the loop, it calls the function <code>f</code> and passes the <code>lst-&gt;content</code> pointer as its argument. This effectively applies the function <code>f</code> to the content of the current node.</p>
+</li>
+<li data-line="6" dir="auto">
+<p>After applying the function to the current node's content, it moves to the next node in the list by updating the <code>lst</code> pointer to <code>lst-&gt;next</code>. This allows it to process the next node in the list during the next iteration of the loop.</p>
+</li>
+<li data-line="8" dir="auto">
+<p>The loop continues until it reaches the end of the list, at which point the <code>lst</code> pointer becomes <code>NULL</code>, and the loop terminates.</p>
+</li>
+<li data-line="10" dir="auto">
+<p>If the <code>f</code> function pointer is <code>NULL</code>, the function returns without performing any iteration or function application.</p>
+</li>
+</ul></div><div class="el-div"><div data-callout-metadata="" data-callout-fold="" data-callout="info" class="callout"><div class="callout-title" dir="auto"><div class="callout-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon lucide-info"><circle cx="12" cy="12" r="10"></circle><path d="M12 16v-4"></path><path d="M12 8h.01"></path></svg></div><div class="callout-title-inner">Info</div></div><div class="callout-content has-run-code-button">
+<p dir="auto">Here's an example of how you might use the <code>ft_lstiter</code> function, it's used to apply the <code>custom_function</code> to the content of each node in a linked list. The program then prints the values contained in each node's content.:</p>
+<pre class="language-c" tabindex="0"><code data-line="3" class="language-c is-loaded"><span class="token comment">// Definition of custom_function here...</span>
+<span class="token keyword">void</span> <span class="token function">custom_function</span><span class="token punctuation">(</span><span class="token keyword">void</span> <span class="token operator">*</span>content<span class="token punctuation">)</span>
+<span class="token punctuation">{</span>
+   <span class="token keyword">int</span> <span class="token operator">*</span>data <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token keyword">int</span> <span class="token operator">*</span><span class="token punctuation">)</span>content<span class="token punctuation">;</span>
+   <span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"Value: %d\n"</span><span class="token punctuation">,</span> <span class="token operator">*</span>data<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">int</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token punctuation">{</span>
+   <span class="token comment">// Create a linked list with three nodes</span>
+   t_list <span class="token operator">*</span>head <span class="token operator">=</span> <span class="token constant">NULL</span><span class="token punctuation">;</span>
+
+   <span class="token comment">// Add nodes to the list</span>
+   <span class="token keyword">int</span> <span class="token operator">*</span>data1 <span class="token operator">=</span> <span class="token function">malloc</span><span class="token punctuation">(</span><span class="token keyword">sizeof</span><span class="token punctuation">(</span><span class="token keyword">int</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+   <span class="token operator">*</span>data1 <span class="token operator">=</span> <span class="token number">42</span><span class="token punctuation">;</span>
+   t_list <span class="token operator">*</span>node1 <span class="token operator">=</span> <span class="token function">malloc</span><span class="token punctuation">(</span><span class="token keyword">sizeof</span><span class="token punctuation">(</span>t_list<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+   node1<span class="token operator">-&gt;</span>content <span class="token operator">=</span> data1<span class="token punctuation">;</span>
+   node1<span class="token operator">-&gt;</span>next <span class="token operator">=</span> <span class="token constant">NULL</span><span class="token punctuation">;</span>
+
+   <span class="token keyword">int</span> <span class="token operator">*</span>data2 <span class="token operator">=</span> <span class="token function">malloc</span><span class="token punctuation">(</span><span class="token keyword">sizeof</span><span class="token punctuation">(</span><span class="token keyword">int</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+   <span class="token operator">*</span>data2 <span class="token operator">=</span> <span class="token number">17</span><span class="token punctuation">;</span>
+   t_list <span class="token operator">*</span>node2 <span class="token operator">=</span> <span class="token function">malloc</span><span class="token punctuation">(</span><span class="token keyword">sizeof</span><span class="token punctuation">(</span>t_list<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+   node2<span class="token operator">-&gt;</span>content <span class="token operator">=</span> data2<span class="token punctuation">;</span>
+   node2<span class="token operator">-&gt;</span>next <span class="token operator">=</span> <span class="token constant">NULL</span><span class="token punctuation">;</span>
+
+   <span class="token keyword">int</span> <span class="token operator">*</span>data3 <span class="token operator">=</span> <span class="token function">malloc</span><span class="token punctuation">(</span><span class="token keyword">sizeof</span><span class="token punctuation">(</span><span class="token keyword">int</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+   <span class="token operator">*</span>data3 <span class="token operator">=</span> <span class="token number">99</span><span class="token punctuation">;</span>
+   t_list <span class="token operator">*</span>node3 <span class="token operator">=</span> <span class="token function">malloc</span><span class="token punctuation">(</span><span class="token keyword">sizeof</span><span class="token punctuation">(</span>t_list<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+   node3<span class="token operator">-&gt;</span>content <span class="token operator">=</span> data3<span class="token punctuation">;</span>
+   node3<span class="token operator">-&gt;</span>next <span class="token operator">=</span> <span class="token constant">NULL</span><span class="token punctuation">;</span>
+
+   <span class="token comment">// Link the nodes together</span>
+   head <span class="token operator">=</span> node1<span class="token punctuation">;</span>
+   node1<span class="token operator">-&gt;</span>next <span class="token operator">=</span> node2<span class="token punctuation">;</span>
+   node2<span class="token operator">-&gt;</span>next <span class="token operator">=</span> node3<span class="token punctuation">;</span>
+
+   <span class="token comment">// Apply custom_function to the content of each node</span>
+   <span class="token function">ft_lstiter</span><span class="token punctuation">(</span>head<span class="token punctuation">,</span> custom_function<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+   <span class="token comment">// Free memory allocated for the nodes</span>
+   <span class="token function">free</span><span class="token punctuation">(</span>node1<span class="token punctuation">)</span><span class="token punctuation">;</span>
+   <span class="token function">free</span><span class="token punctuation">(</span>node2<span class="token punctuation">)</span><span class="token punctuation">;</span>
+   <span class="token function">free</span><span class="token punctuation">(</span>node3<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+   <span class="token keyword">return</span> <span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code><button class="copy-code-button"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon lucide-copy"><rect x="8" y="8" width="14" height="14" rx="2" ry="2"></rect><path d="M4 16c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2"></path></svg></button><button class="run-code-button">Run</button></pre>
+</div></div></div></div></div><div class="el-h2 heading-wrapper"><h2 data-heading="[ft_lstmap](../libft/ft_lstmap.c)" dir="auto" class="heading" id="[ft_lstmap](../libft/ft_lstmap.c)"><div class="heading-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle"><path d="M3 8L12 17L21 8"></path></svg></div><a class="internal-link" data-href="../libft/ft_lstmap.c" href="courses/42/common_core/libft/libft/ft_lstmap.c" target="_self" rel="noopener nofollow">ft_lstmap</a></h2><div class="heading-children"><div class="el-p"><p dir="auto">The <code>ft_lstmap</code> function is used to create a new linked list by applying a function <code>f</code> to each element of the original linked list <code>lst</code>. It also takes an additional function <code>del</code> to handle the deallocation of any resources if an error occurs during the process. Here's a breakdown of how the <code>ft_lstmap</code> function works:</p></div><div class="el-ul"><ul>
+<li data-line="0" dir="auto">
+<p>It first checks if both the <code>f</code> and <code>del</code> function pointers are not <code>NULL</code>. This check ensures that both the mapping function and the cleanup function are valid and not null pointers.</p>
+</li>
+<li data-line="2" dir="auto">
+<p>It initializes a new linked list <code>new_list</code> and sets it to <code>NULL</code>. This list will store the mapped elements from the original list.</p>
+</li>
+<li data-line="4" dir="auto">
+<p>It enters a loop that traverses the original linked list <code>lst</code> from beginning to end.</p>
+</li>
+<li data-line="6" dir="auto">
+<p>Inside the loop, it applies the function <code>f</code> to the content of the current node using <code>(*f)(lst-&gt;content)</code>. This function returns a new element that will be added to the new linked list.</p>
+</li>
+<li data-line="8" dir="auto">
+<p>It creates a new node <code>new_node</code> using the <code>ft_lstnew</code> function and passes the mapped data as the content of the new node. If the creation of the new node fails (returns <code>NULL</code>), it proceeds to free the newly created list <code>new_list</code> and its data using <code>ft_lstclear</code>, ensuring that no memory leaks occur. Then it returns <code>NULL</code> to indicate the error.</p>
+</li>
+<li data-line="10" dir="auto">
+<p>It adds the newly created <code>new_node</code> to the end of the <code>new_list</code> using <code>ft_lstadd_back</code>.</p>
+</li>
+<li data-line="12" dir="auto">
+<p>It advances the <code>lst</code> pointer to the next node in the original list, continuing the iteration.</p>
+</li>
+<li data-line="14" dir="auto">
+<p>The loop continues until it reaches the end of the original list, at which point the <code>lst</code> pointer becomes <code>NULL</code>, and the loop terminates.</p>
+</li>
+<li data-line="16" dir="auto">
+<p>Finally, it returns the <code>new_list</code>, which contains the mapped elements from the original list.</p>
+</li>
+</ul></div><div class="el-p"><p dir="auto">The purpose of the <code>del</code> function is to handle the deallocation of any resources (e.g., memory) associated with the mapped elements if an error occurs during the process. It ensures that the memory is properly freed to prevent memory leaks.</p></div><div class="el-div"><div data-callout-metadata="" data-callout-fold="" data-callout="info" class="callout"><div class="callout-title" dir="auto"><div class="callout-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon lucide-info"><circle cx="12" cy="12" r="10"></circle><path d="M12 16v-4"></path><path d="M12 8h.01"></path></svg></div><div class="callout-title-inner">Info</div></div><div class="callout-content has-run-code-button">
+<p dir="auto">Here's an example of how you might use the <code>ft_lstmap</code> function, it's used to apply the <code>custom_mapping_function</code> to each element in the original linked list, creating a new linked list with the mapped elements. The <code>custom_del</code> function is used for cleanup. Finally, the program prints the mapped elements and frees the memory allocated for both the original and new linked lists:</p>
+<pre class="language-c" tabindex="0"><code data-line="3" class="language-c is-loaded"><span class="token comment">// Definitions of custom_mapping_function and custom_del functions here...</span>
+
+<span class="token keyword">void</span> <span class="token operator">*</span><span class="token function">custom_mapping_function</span><span class="token punctuation">(</span><span class="token keyword">void</span> <span class="token operator">*</span>content<span class="token punctuation">)</span>
+<span class="token punctuation">{</span>
+   <span class="token keyword">int</span> <span class="token operator">*</span>data <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token keyword">int</span> <span class="token operator">*</span><span class="token punctuation">)</span>content<span class="token punctuation">;</span>
+   <span class="token comment">// Perform some mapping operation here (e.g., doubling the integer value)</span>
+   <span class="token keyword">int</span> <span class="token operator">*</span>mapped_data <span class="token operator">=</span> <span class="token function">malloc</span><span class="token punctuation">(</span><span class="token keyword">sizeof</span><span class="token punctuation">(</span><span class="token keyword">int</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+   <span class="token operator">*</span>mapped_data <span class="token operator">=</span> <span class="token number">2</span> <span class="token operator">*</span> <span class="token punctuation">(</span><span class="token operator">*</span>data<span class="token punctuation">)</span><span class="token punctuation">;</span>
+   <span class="token keyword">return</span> <span class="token punctuation">(</span><span class="token keyword">void</span> <span class="token operator">*</span><span class="token punctuation">)</span>mapped_data<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">void</span> <span class="token function">custom_del</span><span class="token punctuation">(</span><span class="token keyword">void</span> <span class="token operator">*</span>content<span class="token punctuation">)</span>
+<span class="token punctuation">{</span>
+   <span class="token comment">// Custom cleanup logic here (e.g., freeing allocated memory)</span>
+   <span class="token function">free</span><span class="token punctuation">(</span>content<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">int</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token punctuation">{</span>
+   <span class="token comment">// Create a linked list with three nodes</span>
+   t_list <span class="token operator">*</span>head <span class="token operator">=</span> <span class="token constant">NULL</span><span class="token punctuation">;</span>
+
+   <span class="token comment">// Add nodes to the list</span>
+   <span class="token keyword">int</span> <span class="token operator">*</span>data1 <span class="token operator">=</span> <span class="token function">malloc</span><span class="token punctuation">(</span><span class="token keyword">sizeof</span><span class="token punctuation">(</span><span class="token keyword">int</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+   <span class="token operator">*</span>data1 <span class="token operator">=</span> <span class="token number">5</span><span class="token punctuation">;</span>
+   t_list <span class="token operator">*</span>node1 <span class="token operator">=</span> <span class="token function">malloc</span><span class="token punctuation">(</span><span class="token keyword">sizeof</span><span class="token punctuation">(</span>t_list<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+   node1<span class="token operator">-&gt;</span>content <span class="token operator">=</span> data1<span class="token punctuation">;</span>
+   node1<span class="token operator">-&gt;</span>next <span class="token operator">=</span> <span class="token constant">NULL</span><span class="token punctuation">;</span>
+
+   <span class="token keyword">int</span> <span class="token operator">*</span>data2 <span class="token operator">=</span> <span class="token function">malloc</span><span class="token punctuation">(</span><span class="token keyword">sizeof</span><span class="token punctuation">(</span><span class="token keyword">int</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+   <span class="token operator">*</span>data2 <span class="token operator">=</span> <span class="token number">10</span><span class="token punctuation">;</span>
+   t_list <span class="token operator">*</span>node2 <span class="token operator">=</span> <span class="token function">malloc</span><span class="token punctuation">(</span><span class="token keyword">sizeof</span><span class="token punctuation">(</span>t_list<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+   node2<span class="token operator">-&gt;</span>content <span class="token operator">=</span> data2<span class="token punctuation">;</span>
+   node2<span class="token operator">-&gt;</span>next <span class="token operator">=</span> <span class="token constant">NULL</span><span class="token punctuation">;</span>
+
+   <span class="token keyword">int</span> <span class="token operator">*</span>data3 <span class="token operator">=</span> <span class="token function">malloc</span><span class="token punctuation">(</span><span class="token keyword">sizeof</span><span class="token punctuation">(</span><span class="token keyword">int</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+   <span class="token operator">*</span>data3 <span class="token operator">=</span> <span class="token number">15</span><span class="token punctuation">;</span>
+   t_list <span class="token operator">*</span>node3 <span class="token operator">=</span> <span class="token function">malloc</span><span class="token punctuation">(</span><span class="token keyword">sizeof</span><span class="token punctuation">(</span>t_list<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+   node3<span class="token operator">-&gt;</span>content <span class="token operator">=</span> data3<span class="token punctuation">;</span>
+   node3<span class="token operator">-&gt;</span>next <span class="token operator">=</span> <span class="token constant">NULL</span><span class="token punctuation">;</span>
+
+   <span class="token comment">// Link the nodes together</span>
+   head <span class="token operator">=</span> node1<span class="token punctuation">;</span>
+   node1<span class="token operator">-&gt;</span>next <span class="token operator">=</span> node2<span class="token punctuation">;</span>
+   node2<span class="token operator">-&gt;</span>next <span class="token operator">=</span> node3<span class="token punctuation">;</span>
+
+   <span class="token comment">// Map the elements using custom_mapping_function</span>
+   t_list <span class="token operator">*</span>new_list <span class="token operator">=</span> <span class="token function">ft_lstmap</span><span class="token punctuation">(</span>head<span class="token punctuation">,</span> custom_mapping_function<span class="token punctuation">,</span> custom_del<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+   <span class="token comment">// Print the mapped elements</span>
+   t_list <span class="token operator">*</span>current <span class="token operator">=</span> new_list<span class="token punctuation">;</span>
+   <span class="token keyword">while</span> <span class="token punctuation">(</span>current<span class="token punctuation">)</span>
+   <span class="token punctuation">{</span>
+       <span class="token keyword">int</span> <span class="token operator">*</span>mapped_data <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token keyword">int</span> <span class="token operator">*</span><span class="token punctuation">)</span><span class="token punctuation">(</span>current<span class="token operator">-&gt;</span>content<span class="token punctuation">)</span><span class="token punctuation">;</span>
+       <span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"Mapped Value: %d\n"</span><span class="token punctuation">,</span> <span class="token operator">*</span>mapped_data<span class="token punctuation">)</span><span class="token punctuation">;</span>
+       current <span class="token operator">=</span> current<span class="token operator">-&gt;</span>next<span class="token punctuation">;</span>
+   <span class="token punctuation">}</span>
+
+   <span class="token comment">// Free memory allocated for the original list and mapped elements</span>
+   <span class="token function">ft_lstclear</span><span class="token punctuation">(</span><span class="token operator">&amp;</span>head<span class="token punctuation">,</span> custom_del<span class="token punctuation">)</span><span class="token punctuation">;</span>
+   <span class="token function">ft_lstclear</span><span class="token punctuation">(</span><span class="token operator">&amp;</span>new_list<span class="token punctuation">,</span> custom_del<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+   <span class="token keyword">return</span> <span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code><button class="copy-code-button"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon lucide-copy"><rect x="8" y="8" width="14" height="14" rx="2" ry="2"></rect><path d="M4 16c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2"></path></svg></button><button class="run-code-button">Run</button></pre>
+</div></div></div><div class="mod-footer mod-ui"></div></div></div></div></div></div></div></div><div class="sidebar-right sidebar"><div class="sidebar-handle"></div><div class="sidebar-topbar"><div class="topbar-content"></div><div class="clickable-icon sidebar-collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" class="svg-icon"><path d="M21 3H3C1.89543 3 1 3.89543 1 5V19C1 20.1046 1.89543 21 3 21H21C22.1046 21 23 20.1046 23 19V5C23 3.89543 22.1046 3 21 3Z"></path><path d="M10 4V20"></path><path d="M4 7H7"></path><path d="M4 10H7"></path><path d="M4 13H7"></path></svg></div></div><div class="sidebar-content"><div class="graph-view-wrapper"><div class="sidebar-section-header">Interactive Graph</div><div class="graph-view-placeholder">
+		<div class="graph-view-container">
+			<div class="graph-icon graph-expand" role="button" aria-label="Expand" data-tooltip-position="top"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon"><line x1="7" y1="17" x2="17" y2="7"></line><polyline points="7 7 17 7 17 17"></polyline></svg></div>
+			<canvas id="graph-canvas" class="hide" width="512px" height="512px"></canvas>
+		</div>
+		</div></div><div class="tree-container mod-root nav-folder tree-item outline-tree" data-depth="0"><div class="tree-header"><span class="sidebar-section-header">Table Of Contents</span><button class="clickable-icon collapse-tree-button" aria-label="Collapse All"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></svg></button></div><div class="tree-scroll-area tree-item-children nav-folder-children"><div class="tree-item mod-tree-folder nav-folder mod-collapsible is-collapsed" style="display: none;"></div><div class="tree-item" data-depth="1"><a class="tree-link" href="gab\estudos-trabalhos\programação\programming-studies\courses\42\common_core\libft\docs\bonus.html#Libft - Bonus"><div class="tree-item-contents heading-link" heading-name="Libft - Bonus"><span class="tree-item-title">Libft - Bonus</span></div></a><div class="tree-item-children nav-folder-children"><div class="tree-item" data-depth="2"><a class="tree-link" href="gab\estudos-trabalhos\programação\programming-studies\courses\42\common_core\libft\docs\bonus.html#t_list"><div class="tree-item-contents heading-link" heading-name="t_list"><span class="tree-item-title">t_list</span></div></a><div class="tree-item-children nav-folder-children"></div></div><div class="tree-item" data-depth="2"><a class="tree-link" href="gab\estudos-trabalhos\programação\programming-studies\courses\42\common_core\libft\docs\bonus.html#t_split_next"><div class="tree-item-contents heading-link" heading-name="t_split_next"><span class="tree-item-title">t_split_next</span></div></a><div class="tree-item-children nav-folder-children"></div></div><div class="tree-item" data-depth="2"><a class="tree-link" href="gab\estudos-trabalhos\programação\programming-studies\courses\42\common_core\libft\docs\bonus.html#[ft_lstnew](../libft/ft_lstnew.c)"><div class="tree-item-contents heading-link" heading-name="[ft_lstnew](../libft/ft_lstnew.c)"><span class="tree-item-title"><a class="internal-link" data-href="../libft/ft_lstnew.c" href="../libft/ft_lstnew.c" target="_blank" rel="noopener nofollow">ft_lstnew</a></span></div></a><div class="tree-item-children nav-folder-children"></div></div><div class="tree-item" data-depth="2"><a class="tree-link" href="gab\estudos-trabalhos\programação\programming-studies\courses\42\common_core\libft\docs\bonus.html#[ft_lstadd_front](../libft/ft_lstadd_front.c)"><div class="tree-item-contents heading-link" heading-name="[ft_lstadd_front](../libft/ft_lstadd_front.c)"><span class="tree-item-title"><a class="internal-link" data-href="../libft/ft_lstadd_front.c" href="../libft/ft_lstadd_front.c" target="_blank" rel="noopener nofollow">ft_lstadd_front</a></span></div></a><div class="tree-item-children nav-folder-children"></div></div><div class="tree-item" data-depth="2"><a class="tree-link" href="gab\estudos-trabalhos\programação\programming-studies\courses\42\common_core\libft\docs\bonus.html#[ft_lstsize](../libft/ft_lstsize.c)"><div class="tree-item-contents heading-link" heading-name="[ft_lstsize](../libft/ft_lstsize.c)"><span class="tree-item-title"><a class="internal-link" data-href="../libft/ft_lstsize.c" href="../libft/ft_lstsize.c" target="_blank" rel="noopener nofollow">ft_lstsize</a></span></div></a><div class="tree-item-children nav-folder-children"></div></div><div class="tree-item" data-depth="2"><a class="tree-link" href="gab\estudos-trabalhos\programação\programming-studies\courses\42\common_core\libft\docs\bonus.html#[ft_lstlast](../libft/ft_lstlast.c)"><div class="tree-item-contents heading-link" heading-name="[ft_lstlast](../libft/ft_lstlast.c)"><span class="tree-item-title"><a class="internal-link" data-href="../libft/ft_lstlast.c" href="../libft/ft_lstlast.c" target="_blank" rel="noopener nofollow">ft_lstlast</a></span></div></a><div class="tree-item-children nav-folder-children"></div></div><div class="tree-item" data-depth="2"><a class="tree-link" href="gab\estudos-trabalhos\programação\programming-studies\courses\42\common_core\libft\docs\bonus.html#[ft_lstadd_back](../libft/ft_lstadd_back.c)"><div class="tree-item-contents heading-link" heading-name="[ft_lstadd_back](../libft/ft_lstadd_back.c)"><span class="tree-item-title"><a class="internal-link" data-href="../libft/ft_lstadd_back.c" href="../libft/ft_lstadd_back.c" target="_blank" rel="noopener nofollow">ft_lstadd_back</a></span></div></a><div class="tree-item-children nav-folder-children"></div></div><div class="tree-item" data-depth="2"><a class="tree-link" href="gab\estudos-trabalhos\programação\programming-studies\courses\42\common_core\libft\docs\bonus.html#[ft_lstdelone](../libft/ft_lstdelone.c)"><div class="tree-item-contents heading-link" heading-name="[ft_lstdelone](../libft/ft_lstdelone.c)"><span class="tree-item-title"><a class="internal-link" data-href="../libft/ft_lstdelone.c" href="../libft/ft_lstdelone.c" target="_blank" rel="noopener nofollow">ft_lstdelone</a></span></div></a><div class="tree-item-children nav-folder-children"></div></div><div class="tree-item" data-depth="2"><a class="tree-link" href="gab\estudos-trabalhos\programação\programming-studies\courses\42\common_core\libft\docs\bonus.html#[ft_lstclear](../libft/ft_lstclear.c)"><div class="tree-item-contents heading-link" heading-name="[ft_lstclear](../libft/ft_lstclear.c)"><span class="tree-item-title"><a class="internal-link" data-href="../libft/ft_lstclear.c" href="../libft/ft_lstclear.c" target="_blank" rel="noopener nofollow">ft_lstclear</a></span></div></a><div class="tree-item-children nav-folder-children"></div></div><div class="tree-item" data-depth="2"><a class="tree-link" href="gab\estudos-trabalhos\programação\programming-studies\courses\42\common_core\libft\docs\bonus.html#[ft_lstiter](../libft/ft_lstiter.c)"><div class="tree-item-contents heading-link" heading-name="[ft_lstiter](../libft/ft_lstiter.c)"><span class="tree-item-title"><a class="internal-link" data-href="../libft/ft_lstiter.c" href="../libft/ft_lstiter.c" target="_blank" rel="noopener nofollow">ft_lstiter</a></span></div></a><div class="tree-item-children nav-folder-children"></div></div><div class="tree-item" data-depth="2"><a class="tree-link" href="gab\estudos-trabalhos\programação\programming-studies\courses\42\common_core\libft\docs\bonus.html#[ft_lstmap](../libft/ft_lstmap.c)"><div class="tree-item-contents heading-link" heading-name="[ft_lstmap](../libft/ft_lstmap.c)"><span class="tree-item-title"><a class="internal-link" data-href="../libft/ft_lstmap.c" href="../libft/ft_lstmap.c" target="_blank" rel="noopener nofollow">ft_lstmap</a></span></div></a><div class="tree-item-children nav-folder-children"></div></div></div></div></div></div></div><script defer="">let rs = document.querySelector(".sidebar-right"); rs.classList.add("is-collapsed"); if (window.innerWidth > 768) rs.classList.remove("is-collapsed"); rs.style.setProperty("--sidebar-width", localStorage.getItem("sidebar-right-width"));</script></div></div></body></html>

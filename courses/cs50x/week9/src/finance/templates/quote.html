@@ -1,0 +1,38 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Quote
+{% endblock %}
+
+{% block hscript %}
+        <!-- <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+        <script src="../static/main.js"></script> -->
+{% endblock %}
+
+{% block main %}
+        <h1>Stock Price Lookup</h1>
+        <hr>
+        <div class="mb-3">
+            <form id="stockForm" action="/quote" method="post">
+                <div class="mb-3">
+                    <label for="symbol">Stock Ticket:</label>
+                    <input type="text" id="symbol" name="symbol" autocomplete="off" autofocus="" class="form-control mx-auto w-auto" required>            </div>
+                </div>
+                <div class="mb-3">
+                    <label for="timespan">Time Span (days):</label>
+                    <input type="number" id="timespan" name="timespan" min="1" max="365" value="7" class="form-control mx-auto w-auto">
+                </div>
+                <button type="submit" class="btn btn-primary">Lookup</button>
+            </form>
+        </div>
+        {% if stock_info %}
+            <hr>
+            <div class="mb-3">
+                <p>{{ stock_info }}</p>
+            </div>
+            <!-- <div class="mb-3">
+                <canvas id="stockChart" width="400" height="200"></canvas>
+            </div> -->
+        {% endif %}
+
+{% endblock %}

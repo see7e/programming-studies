@@ -1,0 +1,500 @@
+@see7e ➜ /workspaces/get_next_line (42) $ ~/francinette/tester.sh
+╔══════════════════════════════════════════════════════════════════════════════╗
+║                Welcome to Francinette, a 42 tester framework!                ║
+╚═══════════════════════╦══════════════════════════════╦═══════════════════════╝
+                        ║         get_next_line        ║
+                        ╚══════════════════════════════╝
+✔ Preparing framework
+✔ Executing: norminette
+✔ Executing: make fclean all (no bonus)
+ℹ Running tests: gnlTester (https://github.com/Tripouille/gnlTester)
+[Mandatory]
+[BUFFER_SIZE = 1]: 
+Invalid fd: ==7363== Invalid read of size 1
+==7363==    at 0x4083C2: ft_memcpy (get_next_line_utils.c:37)
+==7363==    by 0x4081CB: ft_read (get_next_line.c:29)
+==7363==    by 0x4082A9: get_next_line (get_next_line.c:56)
+==7363==    by 0x402D96: gnl(int, char const*) (gnl.cpp:20)
+==7363==    by 0x404CCD: main (mandatory.cpp:29)
+==7363==  Address 0x0 is not stack'd, malloc'd or (recently) free'd
+==7363== 
+1.SIGSEGV
+files/empty: ==7364== Invalid read of size 1
+==7364==    at 0x4083C2: ft_memcpy (get_next_line_utils.c:37)
+==7364==    by 0x4081CB: ft_read (get_next_line.c:29)
+==7364==    by 0x4082A9: get_next_line (get_next_line.c:56)
+==7364==    by 0x402D96: gnl(int, char const*) (gnl.cpp:20)
+==7364==    by 0x405027: main (mandatory.cpp:35)
+==7364==  Address 0x0 is not stack'd, malloc'd or (recently) free'd
+==7364== 
+1.SIGSEGV
+files/nl: ==7365== Invalid read of size 1
+==7365==    at 0x4083C2: ft_memcpy (get_next_line_utils.c:37)
+==7365==    by 0x4081CB: ft_read (get_next_line.c:29)
+==7365==    by 0x4082A9: get_next_line (get_next_line.c:56)
+==7365==    by 0x402D96: gnl(int, char const*) (gnl.cpp:20)
+==7365==    by 0x40531F: main (mandatory.cpp:40)
+==7365==  Address 0x0 is not stack'd, malloc'd or (recently) free'd
+==7365== 
+1.SIGSEGV
+files/41_no_nl: ==7366== Invalid read of size 1
+==7366==    at 0x4083C2: ft_memcpy (get_next_line_utils.c:37)
+==7366==    by 0x4081CB: ft_read (get_next_line.c:29)
+==7366==    by 0x4082A9: get_next_line (get_next_line.c:56)
+==7366==    by 0x402D96: gnl(int, char const*) (gnl.cpp:20)
+==7366==    by 0x405617: main (mandatory.cpp:45)
+==7366==  Address 0x0 is not stack'd, malloc'd or (recently) free'd
+==7366== 
+1.SIGSEGV
+files/41_with_nl: ==7367== Invalid read of size 1
+==7367==    at 0x4083C2: ft_memcpy (get_next_line_utils.c:37)
+==7367==    by 0x4081CB: ft_read (get_next_line.c:29)
+==7367==    by 0x4082A9: get_next_line (get_next_line.c:56)
+==7367==    by 0x402D96: gnl(int, char const*) (gnl.cpp:20)
+==7367==    by 0x40590F: main (mandatory.cpp:50)
+==7367==  Address 0x0 is not stack'd, malloc'd or (recently) free'd
+==7367== 
+1.SIGSEGV
+files/42_no_nl: ==7368== Invalid read of size 1
+==7368==    at 0x4083C2: ft_memcpy (get_next_line_utils.c:37)
+==7368==    by 0x4081CB: ft_read (get_next_line.c:29)
+==7368==    by 0x4082A9: get_next_line (get_next_line.c:56)
+==7368==    by 0x402D96: gnl(int, char const*) (gnl.cpp:20)
+==7368==    by 0x405C19: main (mandatory.cpp:56)
+==7368==  Address 0x0 is not stack'd, malloc'd or (recently) free'd
+==7368== 
+1.SIGSEGV
+files/42_with_nl: ==7370== Invalid read of size 1
+==7370==    at 0x4083C2: ft_memcpy (get_next_line_utils.c:37)
+==7370==    by 0x4081CB: ft_read (get_next_line.c:29)
+==7370==    by 0x4082A9: get_next_line (get_next_line.c:56)
+==7370==    by 0x402D96: gnl(int, char const*) (gnl.cpp:20)
+==7370==    by 0x405F11: main (mandatory.cpp:61)
+==7370==  Address 0x0 is not stack'd, malloc'd or (recently) free'd
+==7370== 
+1.SIGSEGV
+files/43_no_nl: ==7383== Invalid read of size 1
+==7383==    at 0x4083C2: ft_memcpy (get_next_line_utils.c:37)
+==7383==    by 0x4081CB: ft_read (get_next_line.c:29)
+==7383==    by 0x4082A9: get_next_line (get_next_line.c:56)
+==7383==    by 0x402D96: gnl(int, char const*) (gnl.cpp:20)
+==7383==    by 0x406225: main (mandatory.cpp:72)
+==7383==  Address 0x0 is not stack'd, malloc'd or (recently) free'd
+==7383== 
+1.SIGSEGV
+files/43_with_nl: ==7384== Invalid read of size 1
+==7384==    at 0x4083C2: ft_memcpy (get_next_line_utils.c:37)
+==7384==    by 0x4081CB: ft_read (get_next_line.c:29)
+==7384==    by 0x4082A9: get_next_line (get_next_line.c:56)
+==7384==    by 0x402D96: gnl(int, char const*) (gnl.cpp:20)
+==7384==    by 0x40651D: main (mandatory.cpp:77)
+==7384==  Address 0x0 is not stack'd, malloc'd or (recently) free'd
+==7384== 
+1.SIGSEGV
+files/multiple_nlx5: ==7385== Invalid read of size 1
+==7385==    at 0x4083C2: ft_memcpy (get_next_line_utils.c:37)
+==7385==    by 0x4081CB: ft_read (get_next_line.c:29)
+==7385==    by 0x4082A9: get_next_line (get_next_line.c:56)
+==7385==    by 0x402D96: gnl(int, char const*) (gnl.cpp:20)
+==7385==    by 0x406827: main (mandatory.cpp:83)
+==7385==  Address 0x0 is not stack'd, malloc'd or (recently) free'd
+==7385== 
+1.SIGSEGV
+files/multiple_line_no_nl: ==7386== Invalid read of size 1
+==7386==    at 0x4083C2: ft_memcpy (get_next_line_utils.c:37)
+==7386==    by 0x4081CB: ft_read (get_next_line.c:29)
+==7386==    by 0x4082A9: get_next_line (get_next_line.c:56)
+==7386==    by 0x402D96: gnl(int, char const*) (gnl.cpp:20)
+==7386==    by 0x406B67: main (mandatory.cpp:92)
+==7386==  Address 0x0 is not stack'd, malloc'd or (recently) free'd
+==7386== 
+1.SIGSEGV
+files/multiple_line_with_nl: ==7387== Invalid read of size 1
+==7387==    at 0x4083C2: ft_memcpy (get_next_line_utils.c:37)
+==7387==    by 0x4081CB: ft_read (get_next_line.c:29)
+==7387==    by 0x4082A9: get_next_line (get_next_line.c:56)
+==7387==    by 0x402D96: gnl(int, char const*) (gnl.cpp:20)
+==7387==    by 0x406EA7: main (mandatory.cpp:101)
+==7387==  Address 0x0 is not stack'd, malloc'd or (recently) free'd
+==7387== 
+1.SIGSEGV
+files/alternate_line_nl_no_nl: ==7388== Invalid read of size 1
+==7388==    at 0x4083C2: ft_memcpy (get_next_line_utils.c:37)
+==7388==    by 0x4081CB: ft_read (get_next_line.c:29)
+==7388==    by 0x4082A9: get_next_line (get_next_line.c:56)
+==7388==    by 0x402D96: gnl(int, char const*) (gnl.cpp:20)
+==7388==    by 0x4071E7: main (mandatory.cpp:110)
+==7388==  Address 0x0 is not stack'd, malloc'd or (recently) free'd
+==7388== 
+1.SIGSEGV
+files/alternate_line_nl_with_nl: ==7389== Invalid read of size 1
+==7389==    at 0x4083C2: ft_memcpy (get_next_line_utils.c:37)
+==7389==    by 0x4081CB: ft_read (get_next_line.c:29)
+==7389==    by 0x4082A9: get_next_line (get_next_line.c:56)
+==7389==    by 0x402D96: gnl(int, char const*) (gnl.cpp:20)
+==7389==    by 0x40756F: main (mandatory.cpp:123)
+==7389==  Address 0x0 is not stack'd, malloc'd or (recently) free'd
+==7389== 
+1.SIGSEGV
+files/big_line_no_nl: ==7390== Invalid read of size 1
+==7390==    at 0x4083C2: ft_memcpy (get_next_line_utils.c:37)
+==7390==    by 0x4081CB: ft_read (get_next_line.c:29)
+==7390==    by 0x4082A9: get_next_line (get_next_line.c:56)
+==7390==    by 0x402D96: gnl(int, char const*) (gnl.cpp:20)
+==7390==    by 0x4078F7: main (mandatory.cpp:136)
+==7390==  Address 0x0 is not stack'd, malloc'd or (recently) free'd
+==7390== 
+1.SIGSEGV
+files/big_line_with_nl: ==7391== Invalid read of size 1
+==7391==    at 0x4083C2: ft_memcpy (get_next_line_utils.c:37)
+==7391==    by 0x4081CB: ft_read (get_next_line.c:29)
+==7391==    by 0x4082A9: get_next_line (get_next_line.c:56)
+==7391==    by 0x402D96: gnl(int, char const*) (gnl.cpp:20)
+==7391==    by 0x407BEF: main (mandatory.cpp:140)
+==7391==  Address 0x0 is not stack'd, malloc'd or (recently) free'd
+==7391== 
+1.SIGSEGV
+stdin: ==7392== Invalid read of size 1
+==7392==    at 0x4083C2: ft_memcpy (get_next_line_utils.c:37)
+==7392==    by 0x4081CB: ft_read (get_next_line.c:29)
+==7392==    by 0x4082A9: get_next_line (get_next_line.c:56)
+==7392==    by 0x402D96: gnl(int, char const*) (gnl.cpp:20)
+==7392==    by 0x407EE6: main (mandatory.cpp:145)
+==7392==  Address 0x0 is not stack'd, malloc'd or (recently) free'd
+==7392== 
+1.SIGSEGV
+
+[BUFFER_SIZE = 42]: 
+Invalid fd: ==7420== Invalid read of size 1
+==7420==    at 0x4083FF: ft_memcpy (get_next_line_utils.c:37)
+==7420==    by 0x408208: ft_read (get_next_line.c:29)
+==7420==    by 0x4082E6: get_next_line (get_next_line.c:56)
+==7420==    by 0x402D96: gnl(int, char const*) (gnl.cpp:20)
+==7420==    by 0x404CCD: main (mandatory.cpp:29)
+==7420==  Address 0x0 is not stack'd, malloc'd or (recently) free'd
+==7420== 
+1.SIGSEGV
+files/empty: ==7421== Invalid read of size 1
+==7421==    at 0x4083FF: ft_memcpy (get_next_line_utils.c:37)
+==7421==    by 0x408208: ft_read (get_next_line.c:29)
+==7421==    by 0x4082E6: get_next_line (get_next_line.c:56)
+==7421==    by 0x402D96: gnl(int, char const*) (gnl.cpp:20)
+==7421==    by 0x405027: main (mandatory.cpp:35)
+==7421==  Address 0x0 is not stack'd, malloc'd or (recently) free'd
+==7421== 
+1.SIGSEGV
+files/nl: ==7428== Invalid read of size 1
+==7428==    at 0x4083FF: ft_memcpy (get_next_line_utils.c:37)
+==7428==    by 0x408208: ft_read (get_next_line.c:29)
+==7428==    by 0x4082E6: get_next_line (get_next_line.c:56)
+==7428==    by 0x402D96: gnl(int, char const*) (gnl.cpp:20)
+==7428==    by 0x40531F: main (mandatory.cpp:40)
+==7428==  Address 0x0 is not stack'd, malloc'd or (recently) free'd
+==7428== 
+1.SIGSEGV
+files/41_no_nl: ==7429== Invalid read of size 1
+==7429==    at 0x4083FF: ft_memcpy (get_next_line_utils.c:37)
+==7429==    by 0x408208: ft_read (get_next_line.c:29)
+==7429==    by 0x4082E6: get_next_line (get_next_line.c:56)
+==7429==    by 0x402D96: gnl(int, char const*) (gnl.cpp:20)
+==7429==    by 0x405617: main (mandatory.cpp:45)
+==7429==  Address 0x0 is not stack'd, malloc'd or (recently) free'd
+==7429== 
+1.SIGSEGV
+files/41_with_nl: ==7430== Invalid read of size 1
+==7430==    at 0x4083FF: ft_memcpy (get_next_line_utils.c:37)
+==7430==    by 0x408208: ft_read (get_next_line.c:29)
+==7430==    by 0x4082E6: get_next_line (get_next_line.c:56)
+==7430==    by 0x402D96: gnl(int, char const*) (gnl.cpp:20)
+==7430==    by 0x40590F: main (mandatory.cpp:50)
+==7430==  Address 0x0 is not stack'd, malloc'd or (recently) free'd
+==7430== 
+1.SIGSEGV
+files/42_no_nl: ==7431== Invalid read of size 1
+==7431==    at 0x4083FF: ft_memcpy (get_next_line_utils.c:37)
+==7431==    by 0x408208: ft_read (get_next_line.c:29)
+==7431==    by 0x4082E6: get_next_line (get_next_line.c:56)
+==7431==    by 0x402D96: gnl(int, char const*) (gnl.cpp:20)
+==7431==    by 0x405C19: main (mandatory.cpp:56)
+==7431==  Address 0x0 is not stack'd, malloc'd or (recently) free'd
+==7431== 
+1.SIGSEGV
+files/42_with_nl: ==7432== Invalid read of size 1
+==7432==    at 0x4083FF: ft_memcpy (get_next_line_utils.c:37)
+==7432==    by 0x408208: ft_read (get_next_line.c:29)
+==7432==    by 0x4082E6: get_next_line (get_next_line.c:56)
+==7432==    by 0x402D96: gnl(int, char const*) (gnl.cpp:20)
+==7432==    by 0x405F11: main (mandatory.cpp:61)
+==7432==  Address 0x0 is not stack'd, malloc'd or (recently) free'd
+==7432== 
+1.SIGSEGV
+files/43_no_nl: ==7433== Invalid read of size 1
+==7433==    at 0x4083FF: ft_memcpy (get_next_line_utils.c:37)
+==7433==    by 0x408208: ft_read (get_next_line.c:29)
+==7433==    by 0x4082E6: get_next_line (get_next_line.c:56)
+==7433==    by 0x402D96: gnl(int, char const*) (gnl.cpp:20)
+==7433==    by 0x406262: main (mandatory.cpp:72)
+==7433==  Address 0x0 is not stack'd, malloc'd or (recently) free'd
+==7433== 
+1.SIGSEGV
+files/43_with_nl: ==7434== Invalid read of size 1
+==7434==    at 0x4083FF: ft_memcpy (get_next_line_utils.c:37)
+==7434==    by 0x408208: ft_read (get_next_line.c:29)
+==7434==    by 0x4082E6: get_next_line (get_next_line.c:56)
+==7434==    by 0x402D96: gnl(int, char const*) (gnl.cpp:20)
+==7434==    by 0x40655A: main (mandatory.cpp:77)
+==7434==  Address 0x0 is not stack'd, malloc'd or (recently) free'd
+==7434== 
+1.SIGSEGV
+files/multiple_nlx5: ==7435== Invalid read of size 1
+==7435==    at 0x4083FF: ft_memcpy (get_next_line_utils.c:37)
+==7435==    by 0x408208: ft_read (get_next_line.c:29)
+==7435==    by 0x4082E6: get_next_line (get_next_line.c:56)
+==7435==    by 0x402D96: gnl(int, char const*) (gnl.cpp:20)
+==7435==    by 0x406864: main (mandatory.cpp:83)
+==7435==  Address 0x0 is not stack'd, malloc'd or (recently) free'd
+==7435== 
+1.SIGSEGV
+files/multiple_line_no_nl: ==7436== Invalid read of size 1
+==7436==    at 0x4083FF: ft_memcpy (get_next_line_utils.c:37)
+==7436==    by 0x408208: ft_read (get_next_line.c:29)
+==7436==    by 0x4082E6: get_next_line (get_next_line.c:56)
+==7436==    by 0x402D96: gnl(int, char const*) (gnl.cpp:20)
+==7436==    by 0x406BA4: main (mandatory.cpp:92)
+==7436==  Address 0x0 is not stack'd, malloc'd or (recently) free'd
+==7436== 
+1.SIGSEGV
+files/multiple_line_with_nl: ==7437== Invalid read of size 1
+==7437==    at 0x4083FF: ft_memcpy (get_next_line_utils.c:37)
+==7437==    by 0x408208: ft_read (get_next_line.c:29)
+==7437==    by 0x4082E6: get_next_line (get_next_line.c:56)
+==7437==    by 0x402D96: gnl(int, char const*) (gnl.cpp:20)
+==7437==    by 0x406EE4: main (mandatory.cpp:101)
+==7437==  Address 0x0 is not stack'd, malloc'd or (recently) free'd
+==7437== 
+1.SIGSEGV
+files/alternate_line_nl_no_nl: ==7438== Invalid read of size 1
+==7438==    at 0x4083FF: ft_memcpy (get_next_line_utils.c:37)
+==7438==    by 0x408208: ft_read (get_next_line.c:29)
+==7438==    by 0x4082E6: get_next_line (get_next_line.c:56)
+==7438==    by 0x402D96: gnl(int, char const*) (gnl.cpp:20)
+==7438==    by 0x407224: main (mandatory.cpp:110)
+==7438==  Address 0x0 is not stack'd, malloc'd or (recently) free'd
+==7438== 
+1.SIGSEGV
+files/alternate_line_nl_with_nl: ==7439== Invalid read of size 1
+==7439==    at 0x4083FF: ft_memcpy (get_next_line_utils.c:37)
+==7439==    by 0x408208: ft_read (get_next_line.c:29)
+==7439==    by 0x4082E6: get_next_line (get_next_line.c:56)
+==7439==    by 0x402D96: gnl(int, char const*) (gnl.cpp:20)
+==7439==    by 0x4075AC: main (mandatory.cpp:123)
+==7439==  Address 0x0 is not stack'd, malloc'd or (recently) free'd
+==7439== 
+1.SIGSEGV
+files/big_line_no_nl: ==7440== Invalid read of size 1
+==7440==    at 0x4083FF: ft_memcpy (get_next_line_utils.c:37)
+==7440==    by 0x408208: ft_read (get_next_line.c:29)
+==7440==    by 0x4082E6: get_next_line (get_next_line.c:56)
+==7440==    by 0x402D96: gnl(int, char const*) (gnl.cpp:20)
+==7440==    by 0x407934: main (mandatory.cpp:136)
+==7440==  Address 0x0 is not stack'd, malloc'd or (recently) free'd
+==7440== 
+1.SIGSEGV
+files/big_line_with_nl: ==7441== Invalid read of size 1
+==7441==    at 0x4083FF: ft_memcpy (get_next_line_utils.c:37)
+==7441==    by 0x408208: ft_read (get_next_line.c:29)
+==7441==    by 0x4082E6: get_next_line (get_next_line.c:56)
+==7441==    by 0x402D96: gnl(int, char const*) (gnl.cpp:20)
+==7441==    by 0x407C2C: main (mandatory.cpp:140)
+==7441==  Address 0x0 is not stack'd, malloc'd or (recently) free'd
+==7441== 
+1.SIGSEGV
+stdin: ==7442== Invalid read of size 1
+==7442==    at 0x4083FF: ft_memcpy (get_next_line_utils.c:37)
+==7442==    by 0x408208: ft_read (get_next_line.c:29)
+==7442==    by 0x4082E6: get_next_line (get_next_line.c:56)
+==7442==    by 0x402D96: gnl(int, char const*) (gnl.cpp:20)
+==7442==    by 0x407F23: main (mandatory.cpp:145)
+==7442==  Address 0x0 is not stack'd, malloc'd or (recently) free'd
+==7442== 
+1.SIGSEGV
+
+[BUFFER_SIZE = 10000000]: 
+Invalid fd: ==7507== Invalid read of size 1
+==7507==    at 0x4083C2: ft_memcpy (get_next_line_utils.c:37)
+==7507==    by 0x4081CB: ft_read (get_next_line.c:29)
+==7507==    by 0x4082A9: get_next_line (get_next_line.c:56)
+==7507==    by 0x402D96: gnl(int, char const*) (gnl.cpp:20)
+==7507==    by 0x404CCD: main (mandatory.cpp:29)
+==7507==  Address 0x0 is not stack'd, malloc'd or (recently) free'd
+==7507== 
+1.SIGSEGV
+files/empty: ==7508== Invalid read of size 1
+==7508==    at 0x4083C2: ft_memcpy (get_next_line_utils.c:37)
+==7508==    by 0x4081CB: ft_read (get_next_line.c:29)
+==7508==    by 0x4082A9: get_next_line (get_next_line.c:56)
+==7508==    by 0x402D96: gnl(int, char const*) (gnl.cpp:20)
+==7508==    by 0x405027: main (mandatory.cpp:35)
+==7508==  Address 0x0 is not stack'd, malloc'd or (recently) free'd
+==7508== 
+1.SIGSEGV
+files/nl: ==7509== Invalid read of size 1
+==7509==    at 0x4083C2: ft_memcpy (get_next_line_utils.c:37)
+==7509==    by 0x4081CB: ft_read (get_next_line.c:29)
+==7509==    by 0x4082A9: get_next_line (get_next_line.c:56)
+==7509==    by 0x402D96: gnl(int, char const*) (gnl.cpp:20)
+==7509==    by 0x40531F: main (mandatory.cpp:40)
+==7509==  Address 0x0 is not stack'd, malloc'd or (recently) free'd
+==7509== 
+1.SIGSEGV
+files/41_no_nl: ==7510== Invalid read of size 1
+==7510==    at 0x4083C2: ft_memcpy (get_next_line_utils.c:37)
+==7510==    by 0x4081CB: ft_read (get_next_line.c:29)
+==7510==    by 0x4082A9: get_next_line (get_next_line.c:56)
+==7510==    by 0x402D96: gnl(int, char const*) (gnl.cpp:20)
+==7510==    by 0x405617: main (mandatory.cpp:45)
+==7510==  Address 0x0 is not stack'd, malloc'd or (recently) free'd
+==7510== 
+1.SIGSEGV
+files/41_with_nl: ==7511== Invalid read of size 1
+==7511==    at 0x4083C2: ft_memcpy (get_next_line_utils.c:37)
+==7511==    by 0x4081CB: ft_read (get_next_line.c:29)
+==7511==    by 0x4082A9: get_next_line (get_next_line.c:56)
+==7511==    by 0x402D96: gnl(int, char const*) (gnl.cpp:20)
+==7511==    by 0x40590F: main (mandatory.cpp:50)
+==7511==  Address 0x0 is not stack'd, malloc'd or (recently) free'd
+==7511== 
+1.SIGSEGV
+files/42_no_nl: ==7512== Invalid read of size 1
+==7512==    at 0x4083C2: ft_memcpy (get_next_line_utils.c:37)
+==7512==    by 0x4081CB: ft_read (get_next_line.c:29)
+==7512==    by 0x4082A9: get_next_line (get_next_line.c:56)
+==7512==    by 0x402D96: gnl(int, char const*) (gnl.cpp:20)
+==7512==    by 0x405C19: main (mandatory.cpp:56)
+==7512==  Address 0x0 is not stack'd, malloc'd or (recently) free'd
+==7512== 
+1.SIGSEGV
+files/42_with_nl: ==7513== Invalid read of size 1
+==7513==    at 0x4083C2: ft_memcpy (get_next_line_utils.c:37)
+==7513==    by 0x4081CB: ft_read (get_next_line.c:29)
+==7513==    by 0x4082A9: get_next_line (get_next_line.c:56)
+==7513==    by 0x402D96: gnl(int, char const*) (gnl.cpp:20)
+==7513==    by 0x405F11: main (mandatory.cpp:61)
+==7513==  Address 0x0 is not stack'd, malloc'd or (recently) free'd
+==7513== 
+1.SIGSEGV
+files/43_no_nl: ==7514== Invalid read of size 1
+==7514==    at 0x4083C2: ft_memcpy (get_next_line_utils.c:37)
+==7514==    by 0x4081CB: ft_read (get_next_line.c:29)
+==7514==    by 0x4082A9: get_next_line (get_next_line.c:56)
+==7514==    by 0x402D96: gnl(int, char const*) (gnl.cpp:20)
+==7514==    by 0x406225: main (mandatory.cpp:72)
+==7514==  Address 0x0 is not stack'd, malloc'd or (recently) free'd
+==7514== 
+1.SIGSEGV
+files/43_with_nl: ==7515== Invalid read of size 1
+==7515==    at 0x4083C2: ft_memcpy (get_next_line_utils.c:37)
+==7515==    by 0x4081CB: ft_read (get_next_line.c:29)
+==7515==    by 0x4082A9: get_next_line (get_next_line.c:56)
+==7515==    by 0x402D96: gnl(int, char const*) (gnl.cpp:20)
+==7515==    by 0x40651D: main (mandatory.cpp:77)
+==7515==  Address 0x0 is not stack'd, malloc'd or (recently) free'd
+==7515== 
+1.SIGSEGV
+files/multiple_nlx5: ==7516== Invalid read of size 1
+==7516==    at 0x4083C2: ft_memcpy (get_next_line_utils.c:37)
+==7516==    by 0x4081CB: ft_read (get_next_line.c:29)
+==7516==    by 0x4082A9: get_next_line (get_next_line.c:56)
+==7516==    by 0x402D96: gnl(int, char const*) (gnl.cpp:20)
+==7516==    by 0x406827: main (mandatory.cpp:83)
+==7516==  Address 0x0 is not stack'd, malloc'd or (recently) free'd
+==7516== 
+1.SIGSEGV
+files/multiple_line_no_nl: ==7517== Invalid read of size 1
+==7517==    at 0x4083C2: ft_memcpy (get_next_line_utils.c:37)
+==7517==    by 0x4081CB: ft_read (get_next_line.c:29)
+==7517==    by 0x4082A9: get_next_line (get_next_line.c:56)
+==7517==    by 0x402D96: gnl(int, char const*) (gnl.cpp:20)
+==7517==    by 0x406B67: main (mandatory.cpp:92)
+==7517==  Address 0x0 is not stack'd, malloc'd or (recently) free'd
+==7517== 
+1.SIGSEGV
+files/multiple_line_with_nl: ==7518== Invalid read of size 1
+==7518==    at 0x4083C2: ft_memcpy (get_next_line_utils.c:37)
+==7518==    by 0x4081CB: ft_read (get_next_line.c:29)
+==7518==    by 0x4082A9: get_next_line (get_next_line.c:56)
+==7518==    by 0x402D96: gnl(int, char const*) (gnl.cpp:20)
+==7518==    by 0x406EA7: main (mandatory.cpp:101)
+==7518==  Address 0x0 is not stack'd, malloc'd or (recently) free'd
+==7518== 
+1.SIGSEGV
+files/alternate_line_nl_no_nl: ==7519== Invalid read of size 1
+==7519==    at 0x4083C2: ft_memcpy (get_next_line_utils.c:37)
+==7519==    by 0x4081CB: ft_read (get_next_line.c:29)
+==7519==    by 0x4082A9: get_next_line (get_next_line.c:56)
+==7519==    by 0x402D96: gnl(int, char const*) (gnl.cpp:20)
+==7519==    by 0x4071E7: main (mandatory.cpp:110)
+==7519==  Address 0x0 is not stack'd, malloc'd or (recently) free'd
+==7519== 
+1.SIGSEGV
+files/alternate_line_nl_with_nl: ==7520== Invalid read of size 1
+==7520==    at 0x4083C2: ft_memcpy (get_next_line_utils.c:37)
+==7520==    by 0x4081CB: ft_read (get_next_line.c:29)
+==7520==    by 0x4082A9: get_next_line (get_next_line.c:56)
+==7520==    by 0x402D96: gnl(int, char const*) (gnl.cpp:20)
+==7520==    by 0x40756F: main (mandatory.cpp:123)
+==7520==  Address 0x0 is not stack'd, malloc'd or (recently) free'd
+==7520== 
+1.SIGSEGV
+files/big_line_no_nl: ==7521== Invalid read of size 1
+==7521==    at 0x4083C2: ft_memcpy (get_next_line_utils.c:37)
+==7521==    by 0x4081CB: ft_read (get_next_line.c:29)
+==7521==    by 0x4082A9: get_next_line (get_next_line.c:56)
+==7521==    by 0x402D96: gnl(int, char const*) (gnl.cpp:20)
+==7521==    by 0x4078F7: main (mandatory.cpp:136)
+==7521==  Address 0x0 is not stack'd, malloc'd or (recently) free'd
+==7521== 
+1.SIGSEGV
+files/big_line_with_nl: ==7522== Invalid read of size 1
+==7522==    at 0x4083C2: ft_memcpy (get_next_line_utils.c:37)
+==7522==    by 0x4081CB: ft_read (get_next_line.c:29)
+==7522==    by 0x4082A9: get_next_line (get_next_line.c:56)
+==7522==    by 0x402D96: gnl(int, char const*) (gnl.cpp:20)
+==7522==    by 0x407BEF: main (mandatory.cpp:140)
+==7522==  Address 0x0 is not stack'd, malloc'd or (recently) free'd
+==7522== 
+1.SIGSEGV
+stdin: ==7523== Invalid read of size 1
+==7523==    at 0x4083C2: ft_memcpy (get_next_line_utils.c:37)
+==7523==    by 0x4081CB: ft_read (get_next_line.c:29)
+==7523==    by 0x4082A9: get_next_line (get_next_line.c:56)
+==7523==    by 0x402D96: gnl(int, char const*) (gnl.cpp:20)
+==7523==    by 0x407EE6: main (mandatory.cpp:145)
+==7523==  Address 0x0 is not stack'd, malloc'd or (recently) free'd
+==7523== 
+1.SIGSEGV
+
+
+To see the tests open: /home/codespace/francinette/tests/get_next_line/gnlTester/tests/mandatory.cpp
+
+ℹ Running tests: fsoares (my own tests)
+BUFFER_SIZE: 1
+Invalid fd          : 1.OK 2.KO Segfault
+Segmentation fault (core dumped)
+make: [Makefile:23: mandatory] Error 139 (ignored)
+BUFFER_SIZE: 10
+Invalid fd          : 1.OK 2.KO Segfault
+Segmentation fault (core dumped)
+make: [Makefile:24: mandatory] Error 139 (ignored)
+BUFFER_SIZE: 1000000
+Invalid fd          : 1.OK 2.KO Segfault
+Segmentation fault (core dumped)
+make: [Makefile:25: mandatory] Error 139 (ignored)
+Errors found:
+
+To see the tests open: /home/codespace/francinette/tests/get_next_line/fsoares/tester.c
+
+
+Summary: no bonus
+
+Failed tests: fsoares, gnlTester

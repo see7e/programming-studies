@@ -1,0 +1,844 @@
+05.06.2025 Aula 8 Interpretar Parâmetros de Core Principais funções de rede (NFs) no 4G (MME, HSS, SPGWC, PCRF) e no 5G (NRF, NSSF, AMF, AUSF, UDM, UDR, SMF, PCF)
+
+0:22
+Boa tarde, boa tarde. Agora sim, liguei meu áudio aqui, estão me ouvindo? Ah, beleza, só pra beleza. Vamos lá, tá chovendo aí. Onde vocês moram? Aqui no ABC choveu bastante já, já é, choveu muito ontem à noite, hoje, começou.
+
+0:50
+Até um dia de sol, bonito chegou até a fazer um calorzinho, depois esfriou, choveu, acho que tiramos todas as estações hoje e no Rio o calor característico e agora um pouco mais ameno. Aí é capital, capital isso, Recreio dos Bandeirantes. Ah, no Recreio, boa, muito bonito aí. Gosto do Recreio, gosto de GRU, Mari, Prainha.
+
+1:20
+Sim, sim, gosto do Rio, apesar de todos os as problemas e questões, eu gosto muito, mas eu vou falar que é, deve, deve estar sendo desafiador viver aí por enquanto, né? Nesse momento é o Rio. Não, não é pra amadores, não é não, não, o Brasil não é pra amadores. Eu diria que o Rio é pra profissionais experientes, é mais que isso.
+
+1:48
+Mas São Paulo não é muito diferente não. Eu morei na Vila Mariana quando trabalhava na Alcatel lucid também, sim, espera aí, deixa eu, deixa eu mudar o meu, a minha fonte de áudio que eles estão está pedindo uma coisa aqui, ver se vocês me ouvem, continuou, me ouvindo, sim, professor, Ah, beleza, deixa eu ver se agora, porque eu fui compartilhar agora sim a apresentação e ele deu uma reclamada, deixa eu, admite as pessoas aqui.
+
+2:18
+Isso aí, boa, a gente chegando aí. Eu também queria mandar mensagem aqui, a gente já vai começar, beleza? Mas o tom foi de descontração, né, professor? Todo lugar é complicado, sim, claro. OPA.
+
+2:47
+É eu. Eu falo o seguinte, hoje não é? Você tem que levar vários aspectos em consideração quando você mora numa cidade grande. E não é só a questão de segurança pública, evidentemente, mas da infraestrutura do local, né? É? Vou dar um exemplo, eu moro bem no centro da cidade, aqui em Santo André. Lugar é ótimo em termos de localização que você tem, comércio perto, serviços perto, estação de trem perto.
+
+3:17
+O que é muito bom. Mas, por exemplo, AA rua de casa é e eu moro aqui há pouco tempo, né? Nesse, nesse endereço há pouco tempo, a rua de casa teve problema com alagamento 2 vezes esse ano. E quando eu falo alagamento arrastou o carro, passou na televisão, a rua de casa, então, sabe? Só que, por exemplo, não, não me afetou diretamente essa questão de estacionamento, porque o meu carro fica no lugar mais alto, mas quem é do comércio aqui da região sofre.
+
+3:44
+Tem criminalidade por aqui, puta centro de cidade, todo centro, cidade é, eu falo que é o núcleo dos Noia, né? Todo o centro de cidade que não tem o Noia não é centro, né? Tem isso é. Então você tem que levar em consideração o conjunto das coisas, né? É segurança pública, transporte, facilidade pra você ir e vir, acesso a comércio e serviços, ou se você de repente fala não, eu quero uma coisa mais tranquila.
+
+4:13
+Igual quem mora nos condomínios e tal, aqueles condomínios até de alto padrão, o cara sabe que ele vai precisar de carro pra tudo, se um dia ele ficar sem carro, ele vai ficar desassistido pra algumas coisas, né? Então eu acho que a decisão ela passa por essas questões e aí pouca importa se é São Paulo, Rio, BH, Curitiba, né? Eu acho que tem algumas cidades em que isso é melhor, mas os desafios são parecidos em todas elas. Bom, pessoal, já tem aí 20 pessoas Na Na sala, vamos começar?
+
+4:43
+Primeiramente aí mais uma vez, boa tarde a todos, estamos chegando aí na nossa oitava aula e acho que hoje vocês vão gostar bastante da aula, Hein. Não é porque fui eu que fiz não, mas eu eu se fosse aluna gostaria, tá? A Camila tá passando aqui pra deixar a pesquisa de satisfação, ela também fica, depois eu posto no final novamente, tá, Camila? Só pra deixar o pessoal avisado normalmente, posto a pesquisa no final novamente, mas tem também o QR Code na.
+
+5:11
+Apresentação, a aula de vocês já está lá no nosso drive, então quem quiser baixar pra ir acompanhando também pode. Então vamos lá, vamos começar porque é. A gente viu assuntos que de certa forma tem alguns temas que acabam se repetindo e é normal, é as redes de telecomunicações, elas são elas têm muitos detalhes, elas têm muitos elementos de rede.
+
+5:38
+Com o 5G, muitos elementos de serviços, né? Muitos serviços, muita virtualização. E a gente, desde quase do começo do do nosso módulo, tem falado de é wendow de be, tem falado de user equipament, tem falado de MME hss, tem falado de PGWSGW, tem falado de ausp. A gente vai ver algumas coisas desses caras hoje.
+
+6:07
+Mas a gente vai entender o seguinte, com a evolução é das redes de telecomunicações, das redes privativas também. Isso faz parte do contexto. A gente vai chegando no modelo, que é o que OOO 5G cor tem hoje, que é o modelo orientado a serviços que eu falei na aula anterior, só que nessa transição do 4G para o 5G.
+
+6:37
+É, a gente tem que analisar alguns itens importantes, que são as funções de rede que nesse primeiro slide está sendo representado como NF ou network funtions, tá? Então a gente tem que entender o seguinte, quando, oi, alguém quer falar alguma coisa, acho que só entrou um áudio. Aí, quando a gente tem uma rede de de dados, é uma rede.
+
+7:05
+OPA, acho que alguém tá com um áudio vazando aí com tecnologia de lavadoras ultra, ações ecológicas. Será que eu consigo? Sim, consegui. Então vamos lá. Então, quando você tem uma rede de dados, é normal que você tenha.
+
+7:33
+É alguns serviços a serem considerados, né? Você tem DNS, você tem né, pra resolução de nomes, você tem DHCP, você tem virtualização, você tem, é acesso remoto, você tem entogramento, você tem tudo isso. Então quando eu falo sobre é cibersegurança, eu falo, ó, onde que é? Onde é seu ponto mais falha, né? Onde que é seu é, onde é, onde é que é seu principal ponto de falha?
+
+8:02
+Ah, é na borda, é numa aplicação, é num DNS mal configurado. Então a gente tá falando de funções de rede e serviços de rede e nós vamos falar bastante disso na aula de hoje, tá? Então, embora a gente vá revisitar alguns itens do core, do 4 GE, do 5 GA, gente vai falar de epc, vai falar de sba, que foram itens que a gente viu na aula passada, a gente também vai.
+
+8:29
+É, a gente vai pegar isso, vai esmiuçar um pouco mais e vai ver quais são essas funções de rede. Quando eu tenho uma infraestrutura orientada a interfaces, que é o caso do IPC no 4. GE, quando é uma arquitetura orientada a serviços no SBA do 5G. Cor, então vamos lá, vamos começar a falar sobre isso agora, tá? Então, dado esse contexto inicial e vocês já me conhecem, aí a gente vai falar sobre 8 tópicos aí na aula de hoje, tá?
+
+8:58
+E é exatamente como interpretar esses parâmetros de cor, que são as funções de rede. A gente falou de cor na aula passada. Eu não vou falar muito sobre a estrutura do cor, não. Eu acho que é importante a gente entender o seguinte, quais são as funções de rede, quem rodeia, quem faz NAT, quem te coloca na internet, o que que é um APN, sabe o que que é 11 virtualização, o que que, por que que eu falei API na?
+
+9:27
+Anterior o que? Que são serviços diferenciados, como que eu é requisito recursos, como é que eu, como que eu defino um Slice numa fatia de rede, coisas assim. Tudo isso está dentro desses 8 tópicos. O sétimo tópico é muito legal, que é o comparativo. Tá aqui é uma tabela, uma planilha, uma tabelinha, onde a gente vai ver exatamente o que é de um, de outro e quando você está numa rede.
+
+9:58
+É ou você está em em mobilidade, que você está com o seu celular em 5 GE, de repente você cai para 4G. É, é importante entender como que é essa transição, porque de repente você está numa rede mais orientada a serviço. Você cai numa rede mais orientada a interface, mas não para para você. Mas de repente um serviço de internet lá de sei lá, estou assistindo um streaming.
+
+10:24
+Que tá muito bom, passa a ter lá algum, algumas falhas, alguns picoss, mas eu continuo vendo, né? Então esses elementos são importantes, tá? Então a gente vai falar sobre isso na aula de hoje. Eu já coloquei o material tá lá no nos nossos links, coloquei de 2 formas, eu coloquei esse PPT aqui, né, no formato de PDF, e eu coloquei.
+
+10:50
+OA apostila que eu elaborei, né? Claro, eu sempre uso apoio de AE, faço a revisão pra poder trazer o material bom pra vocês e mas ele tá lá mais completo, então pô, quero pegar um pouco do detalhe que não tá aqui na apresentação, vai tá lá Na Na apostila, tá? Vamos lá, então qual que é o objetivo hoje é entender principalmente as funções de rede, tá? Tem uma coisa que é interessante nas funções de rede.
+
+11:19
+Que são as responsabilidades. Quem é responsável por te colocar na internet, quem é responsável por é te definir se você tá no Slice 12 ou 3 do 5G, então coisas assim, tá? E também ver essa questão evolutiva de gerações. Eu sei que vocês já viram algumas vezes disso, mas eu acho que quando a gente fala de rede, vale a pena é dar um destaque. Então assim, o que a gente viu é na aula anterior, só um minutinho.
+
+12:01
+Perdão gente, eu vim um segundinho fora. Eu fui agraciado com uma coisa maravilhosa da minha esposa que foi café, isso é muito bom e até uma coisinha pra comer, se me perdoem, eu vou comer enquanto eu tô no começo da aula porque eu sou bariátrico bariátrico, eu tenho horário pra tudo, tá? Inclusive pra comer, senão a gente fica literalmente uma lástima.
+
+12:26
+Eu vou pedir licença em alguns momentos pra poder, oi, café é vida, ô, nem fala. Eu falo o seguinte, é OOOO, sujeito desalimentado e sem um café. Não, não, não fica bem não. Vamos lá. Então assim, gente, a gente viu na aula anterior no diagrama de blocos.
+
+12:55
+Os elementos dessa estrutura do 4G, tá? A gente viu quais são? É os elementos ligados ao plano de controle, sinalização e ao plano de dados. É onde você tem os seus serviços lá. Tá, mas eu acho que é interessante a gente ver o seguinte, os componentes principais do core, né? Do do IPC, aqui eles.
+
+13:24
+Tem um elemento importante que é estabelecer serviços IP. Então se eu navego é porque esse cor funciona e me permite que eu navegue. É fazer a gestão do equipamento, né? Do meu terminal. Evidente que isso é necessário. Então quando a gente fala do cor, quem são os caras principais? Então OMME é, é importante, ok, mas o que que ele faz? Ele vai ver no próximo slide.
+
+13:52
+O hss é importante, sim, ele é importante. OPGWEOEOSGW são importantes, sim, mas o que que eles fazem? E o pcrf, então vamos lá em uma linha para cada um, o que que esses caras fazem? Vamos lá, a gente tem novamente. OMME é quem controla a mobilidade de autenticação, então ele é o gestor, então ele que está gerenciando para trás, ok, só que para ele gerenciar.
+
+14:21
+Eu tenho que ter um banco de dados de assinantes, o, por exemplo, o Clodoaldo, ele é usuário da operadora Tim, por exemplo. Então nesse código da operadora Tim, lá Na Na, na, no, na região dele, no na região código de área dele, vai ter um banco de dados e vai falar, olha o Clodoaldo, ele é assinante da Tim, beleza, ele tá conectado na rede. Ah, ele tá conectado na rede.
+
+14:49
+Então, quem vai fazer a gestão dessa autêntica? Essa gestão do do do usuário na rede é o MME, muito bem. Então, em uma linha, ele controla a mobilidade e a autenticação, e o hss é o banco de dados dos assinantes. Inclusive, quando um usuário tá fora da sua região, principalmente fora do código de área, ele tem que ficar. Se re autenticando, ele tem que se autenticar na outra região, então a rede.
+
+15:17
+Ela vai procurar quem é o hss desse cara, quem que é o home locator dele pra falar? Olha, o seu assinante está na minha região, OK? Ele pode estar aqui, ele tá com o pagamento em dia, ele tá com algum serviço cortado pra que eu possa gerenciar. Então Oo hss tem que fornecer essas informações, tá já lá na outra ponta, né? Aquilo que vem do terminal, entra na antena.
+
+15:46
+Cai no enu de e vem pro cor da rede EE. Vai pra outras redes ou vai para internet? É gerenciado pelo SGWE pelo PGW, então veja aqui como SPGW é SGW ou PGWSP é só pra unir os 2, tá? Ele é dividido em plano de controle que é OCEO de usuário que é OU ok muito bem.
+
+16:16
+Então esses caras aqui são os caras que vão colocar a gente em outras redes, na internet, no serviço da operadora e redes externas. Então o que que vai fazer isso? E tem o cara, pois não? Quem que resolve o DNS na rede móvel ali é OM MS que consulta o servidor do DNS, tem um slide lá na frente que fala sobre isso, vamos chegar lá, tá bom, o cara tá ligado, o cara tá ligado, ó, tá aceso, daqui a pouquinho a gente chega lá.
+
+16:48
+Vamos lá, a gente já falou anteriormente e eu vou passar rapidamente aqui que a gente tem interfaces que interligam todos esses componentes. Então cada uma dessas interfaces existe pra quê? Pra trafegar aqueles protocolos que nós vimos nas aulas anteriores.
+
+17:11
+Ngap é f um AP, todos aqueles que a gente viu, tá? Então é importante saber que esses caras fazem essa gestão e permitem essa conectividade muito bem. Então no 4G são esses caras aqui e essa rede, ela é orientada por interfaces.
+
+17:41
+Tá? Interface mais físicas já. Quando você vai para uma rede orientada a serviços, como é o caso do 5G, cor, a coisa muda um pouquinho. A gente tem uma rede que já de partida. Ela abstrai o conceito da rede física e ela permite.
+
+18:10
+Essa é a questão da virtualização dos serviços, das APIs e de um modelo muito parecido com a comunicação web. Então olha a coisa legal. Eu passo a ter menos preocupações com a parte dura a parte hard da minha rede.
+
+18:35
+E eu passo a ter uma flexibilidade de ficar plugando novos serviços. Eu vou fazer um exercício que assim, quando eu montei até eu fiquei feliz de de sabe quando você fala, pô, você é legal pra caramba, porque na aula passada nós falamos de SDN. Eu vou mostrar a criação de uma SDN. Hoje, na segunda parte da aula vamos usar 11 ferramenta chamada Mini net. Eu vou subir o Mini net, eu vou dar um comando, ele vai criar pra gente primeiro e segundo plano.
+
+19:05
+Uma pequena rede com um suíte e 2 hosts com um comando. Eu vou abrir os 3 caras juntos. Se a gente vai testar a conectividade, ou seja, em questão de segundos manualmente, né? Nem automaticamente manualmente vai ser criada na rede. Ou seja, essa arquitetura orientada a serviços vai estar sendo mostrada na prática com o uso de virtualização, que é o nfv, com o uso de contêinerização.
+
+19:36
+Que vai permitir que eu tenha uma comunicação de baixa latência. Mas aí a baixa latência eu vou falar um pouquinho mais quando a gente estiver falando sobre é a orientação AAA serviços de baixíssima latência, né? Para cidades inteligentes, automóveis e tudo mais. Vamos ver que essa rede ela permite e tem esse suporte a serviços diferenciados, ou seja, quando eu falo de IoT.
+
+20:04
+Eu não tenho que me preocupar tanto com largura de banda, porque a IoT ele consome pouca banda. Mas eu tenho que me preocupar com disponibilidade porque o IoT ele pode estar em condições mais severas. O IoT ele pode estar num lugar com baixa cobertura, mas como ele trafeta poucos dados, eu posso eventualmente expandir um serviço de rede pra fazer com que ele se comunique, tá já no caso.
+
+20:34
+Por exemplo, de aplicações é de telemedicina, controle remoto de carros autônomos e tal. Eu tenho que ter uma rede que talvez ela não precise de tanta banda, mas ela precisa de baixíssima latência, que é esse ORLLC, é ultra, é low latency. E depois a gente vai pegar o nome. Eu nunca lembro de cabeça porque é grande, tá?
+
+21:02
+Mas ele é importante. E quando eu falo de largura de banda, por exemplo, se eu tiver uma aplicação de fluxo de imagem ou vídeo em tempo real, plataforma de jogos ou alguma coisa assim boip, aí eu preciso do quê? Aí eu preciso de largura de banda, que é esse MEMBB.
+
+21:32
+E o fatiamento da rede de acordo com a minha necessidade, o networks life merece um capítulo, é uma dedicatória especial que a gente tá falando de redes privativas, só que é rede privativa, é igual cloud, eu tenho cloud privada, eu tenho cloud pública, mas eu tenho cloud híbrida, tá? A rede privativa é a mesma coisa, eu posso ter uma rede totalmente privativa. Quando eu vou lá e coloco um core, é isolado, não.
+
+22:03
+Um código específico para um cliente. Eu posso ter uma rede totalmente pública, que é essa que a gente está usando aqui para fazer essa chamada. Eu posso ter uma rede híbrida em que, de repente eu aloco um Slice, né, uma fatia da rede pública e dentro dela eu virtualizo um core privado. Beleza, resolvi o problema, né? Então, essa arquitetura com esse nível de é.
+
+22:32
+Escalabilidade é o grande diferencial do 5G, imagina o que vai ser o 6G quando a gente for, é é colocado aí pra ser utilizado comercialmente. Aí vamos falar um pouquinho, né? Onde é que eu falei? Aqui de virtualização, redução de latência, serviços diferenciados, networks, Lights, vamos lá, os 2 primeiros itens, virtualização e contêiner. Vamos falar um pouquinho sobre esse slide aqui, tá? Eu gosto bastante dele.
+
+23:03
+Pra quem já usou Cláudio, sei lá, um AWS, um Google pound, alguma coisa assim, sabe que lá no Painel de controle do vamos pegar o caso do do AWS, tá? Eu tenho esses itens que estão aqui no centro com azul mais escuro, que é um layer de virtualização. Então lá, o que que eu tenho? Eu tenho o chamado EC 2.
+
+23:29
+Que é o equivalente ao virtual comput, onde eu crio máquinas virtuais, onde eu crio containers. Aliás, vamos lá, eu vou fazer uma pergunta, vou desafiar a turma. Alguém sabe me dizer qual a diferença entre uma máquina virtual e um container professor? Você quer ir profundo no Canyon ou pode falar o sistema operacional?
+
+23:56
+Pode falar, só pode falar nesse nível de sistema operacional dá pra ir pro fundo também, né? Dá pra brincar bem com isso aí é não, não tem pra você vai ficar bravo com a gente desvirtuou a aula de novo que nem que nem a última vez não, não vai lá em em em 2 minutos fala pra mim, tá, eu vou explicar de forma didática, eu explico pros aluno aqui, vai lá contêiner, imagina que você cria uma máquina virtual magrinha e levinha, ela tem uma cópia de par do sistema operacional que chama Kernel.
+
+24:24
+E você consegue rodar as coisas ali dentro. E se o negócio é complexo, você cria cobernet e aí avança, máquina virtual já é para quem não não usa muito. O terminal é uma que é uma coisa mais de interface, e ela literalmente vai ser um computador dentro do teu computador. E aí você vai estar lá diversos temas operacionais, de acordo com o caso de uso mais ou menos nessa linha tua, ou você tem outro modo, outra visão. Aí eu vou complementar essa resposta, mas a resposta é boa.
+
+24:54
+Vamos lá, o que que eu costumo falar? A máquina virtual, ela consegue, ela consegue abstrair e representar um computador completo. Então, um ponto aí no que você está dizendo é, muita gente vai ficar só na máquina virtual local, joga na cloud também, que dá uma diferença gigante. Se puder pôr na explicação, sim, sim, sim, sim, mas, mas vamos lá, de uma forma geral, eu se eu, quando eu rodo.
+
+25:23
+Uma máquina virtual é, entende se que eu preciso ter o poder computacional de um computador completo, ou seja, eu tenho que ter controle sobre disco, memória, processamento e as aplicações que estão lá dentro. Então a máquina virtual, como se eu te pegasse assim, Ah, eu tenho o meu computador aqui, eu faço um cone dele, então eu tenho 2 computadores agora.
+
+25:48
+Ah, agora eu preciso de 3. Eu crio uma outra máquina virtual que tem todos esses elementos, tá? Então eu tenho sistema operacional completo? Eu tenho. É parâmetros de rede completos, eu tenho. É todo essa questão de de CPU, disco e memória. E isso pode ser replicado, porém, quando você tem a virtualização e não o contêiner.
+
+26:17
+Você acaba tendo o você acaba tendo um custo maior pra poder fazer esse cara rodar, tá? Então o sistema completo. Quando você tem, por exemplo, eu tenho um serviço, vou dar um exemplo. Eu tenho um servidor a parte, tá esse servidor a parte, ele roda uma página web. É simples de notícia. Só que aí o meu negócio expande e ao invés de ter uma página web.
+
+26:46
+Eu preciso ter 500 páginas web, só que cada uma com um gerenciamento próprio. Como, se cada é cada um é um site que vai ter cliente diferente, vai ter uma série de coisas. Nesse caso, eu não preciso que este servidor web seja replicado 500 vezes, eu preciso que esta aplicação seja é.
+
+27:12
+Que ela rode 500 vezes. Então a virtualização é o sistema completo, o contêiner. Eu consigo clonar somente o serviço, e as funções de rede eu compartilho daquela máquina principal, uma parte do é é uma parte do do da memória, uma parte do disco, uma parte do processamento, mas ela tem algumas funçõezinhas do Kernel que vão para cada máquina. Então é como se eu falasse assim, ó.
+
+27:41
+É desse meu computador aqui. Eu quero que somente essa parte que é responsável por fazer a chamada do Teams seja replicada. Mas ao invés de uma sala do Teams, eu quero 500 salas do Teams, mas todas elas de alguma forma enxergam essa minha máquina ao mesmo tempo. Então o container é a replicação container cobernets, né? Que é 11 gerenciador de containers containers.
+
+28:08
+É é a replicação dos serviços e funções de rede. Então quando eu crio um contêiner, eu posso ter elementos do sistema operacional lá, mas em geral a coisa mais importante é o serviço. Então eu tenho um IP próprio, mas que acessa um serviço diferente. Que acessa é é finalidades diferentes. E aí voltando aqui pra pra nossa, é é pro nosso slide.
+
+28:35
+Então essa parte da infraestrutura NFV aqui, que está em azul escuro, equivale aquele Painel do da WS, por exemplo. Então eu vou lá, eu crio uma máquina virtual ou eu crio um container lá, posso criar um container? Mas além disso, eu posso criar uma vpc, que é um virtual private network lá virtualizado, eu posso criar lá um espaço só de armazenamento.
+
+29:04
+Então veja, é, em poucos cliques eu consigo virtualizar essas funções, então isso é muito importante. Então quando eu falo de virtualização, aqui eu tô falando de rede, eu estou falando de serviço e eu tô falando da conteinerização também, tá? Então aqui em cima eu posso ter as funções de rede. Então se aqui embaixo eu tenho, por exemplo, um computador completo, que é uma virtualização.
+
+29:31
+Quando eu estou virtualizando somente funções ou somente serviços, é mais parecido com o contêiner. E aí, o que que eu tenho que ter para que tudo isso funcione? Eu tenho que ter a infraestrutura que está por trás disso. Eu tenho que ter gerenciamento, e aí eu tenho que ter aplicações e serviços importantes que vão realizar operações específicas. Tá então.
+
+29:56
+Isso é legal no 5 GE tudo isso daqui está sendo abstraído em forma de serviço. Eu não estou tendo necessariamente que ir lá montar um outro rack no data center? Não, não. A minha rede permite que eu crie novos serviços a medida que eu for precisando, e desde que eu tenha lá na infraestrutura capacidade computacional para criar novas máquinas virtuais, novos contêineres.
+
+30:22
+Novos storage, novas redes, novos serviços de computação, eu crio, e isso expande a complexidade, no bom sentido, da minha rede. Pode falar, é geralmente nas operações que a gente tem aqui, a gente usa muito o Doctor ou o postman, dependendo de onde for, principalmente porque cada hora é uma máquina rodando em um lugar diferente, um estágio diferente. Dava pau no driver para caramba.
+
+30:50
+Quando a gente lá atrás migrou, acabou isso no teu caso, quando você está falando do rack, as operações, havendo essa necessidade, a gente tem o mesmo benefício que tem no desktop e no MEC, ou não, já que eu não recebo visualizar ela e não vou ter as questões de drives embutidas. Você pode, então você pode ter isso resolvido. Mas sim, vamos lá, quando você vai fazer o marquitetra baseado em serviço, eu vou dar um exemplo aqui da minha empresa.
+
+31:20
+Tá? A gente utiliza então um servidor próprio que nós colocamos um serviço de data center virtual dentro dele, dentro dele, nós criamos 40 máquinas virtuais pra poder rodar o nosso laboratório.
+
+31:42
+Só que 40 máquinas virtuais, elas precisam estar lá, porque hora eu preciso de 5 daquelas, 40 hora eu preciso de 8 hora eu preciso de 4. Tudo bem, só que aí isso tudo eu diria que é mais virtualização. Eu vou chegar no ponto que você perguntou. Só que, por exemplo, se eu precisar treinar 50 pessoas ao mesmo tempo, eu tenho que pegar e dizer assim, ó dessas 40 máquinas, eu preciso dessas 5 aqui.
+
+32:11
+E com essas 5, eu vou criar 50 perfis nesse momento, entre essas questões de drive e outras coisas, tem que testar. É o ambiente, normalmente, o ambiente que permite a virtualização. Ele resolve essa parte, porque no primeiro momento você virtualiza, você consegue colocar drive e colocar tudo lá, resolve o problema.
+
+32:35
+Quando você vai para a segunda etapa, em que você cria os perfis, você meio que está contenerizando todo mundo. Eu não sei se alguém aqui já fez. É uso de virtualizador. E ao invés, quando você precisa clonar uma máquina virtual, você pode clonar ela full ou você pode fazer um clone lincado o full, beleza, você copia a máquina inteira, ela vai inteirinha e aí você não corre tanto risco.
+
+33:01
+Quando você usa O Clone lincado, ele parece um pouco com a questão do contêiner. E O Clone lincado às vezes dá problema de driver, tá? Então o que eu observo é que é quando você tem serviço, quando você tem contêiner, você pode ter algum problema de compatibilidade. Como é que você resolve isso?
+
+33:28
+Na Na, na minha visão, primeiro selecionando a solução que vai permitir a virtualização da tua infraestrutura. E esta solução ela tem que permitir o nativamente a criação também de contêineres. Vou dar um exemplo, tá? A gente utiliza uma plataforma chamada proximox pra virtualizar o data center. É bem legal, tá?
+
+33:54
+No proxbox, você pode criar uma máquina virtual você pode criar um contêiner direto quando você cria um contêiner direto usando uma função chamada lxc container. Cara não dá pau, cara não dá problema, então acho que depende muito das soluções que você escolhe para virtualizar e para contêinerizar, tá? Respondi tua dúvida, o Gabriel ou ficou meio obscuro ainda?
+
+34:20
+Não deu, deu pra ter uma. É que assim a gente também que discutimos sexo dos Anjos na hora que por a mão na massa, depois na aula eu gosto, depois que você fala, eu pego ali e vou fazer os testes, daí eu na prática assim fica mais limpo, mas na minha cabeça é mais ou menos como a gente fosse pegar antigamente já vai subir uma imagem do Ghost, você faz uma imagem com driver e sem driver e nessa operação era o DOC falley lá no DOC falley eu vou fazer ele com o sem driver, vou ajustar a imagem, vou dar uma build mais leve, uma build mais pesada.
+
+34:48
+E faço uma padrão e depois umas hiper personalizadas com os modelos de placa mãe e máquina que tiver, então faz uma padrão e aí os drivers em em pacotes pra subir em segundo momento, depois o controle já está ativo, seria uma das formas de automatizar isso. Deixa eu ver se eu consigo acessar o nosso ambiente aqui, que você vai ver que legalzinho é que o nosso não está sendo, eu vou, deixa eu ver, esse é o do servidor próprio. A gente tem novo aí também, tá, tá?
+
+35:16
+Esse daí é um local de vocês? Ele tá hospedado, tá? Tá, mas é nosso. Esse não tá no Google, né? Está em outro lugar. Então olha só, aqui, do lado esquerdo são os nossos, as nossas virtualizações. Então tudo isso aqui, ó, é virtualização, tudo, tá, mas de vez em quando aparece um cópia aqui.
+
+35:46
+Esse cop é quando eu eu posso cloná lo, né? Então se eu fizer, por exemplo, uma clonagem, ó, eu vou clonar virar um template, eu não vou mexer aqui porque tá rodando essa máquina, inclusive, tá, mas veja só, aqui em cima o que que a gente fez, nós criamos os templates e estão desligados, tá? Estão desligados aqui. Quando eu preciso rodar um laboratório, eu seleciono o que eu quero e eu crio clones dele, tá?
+
+36:15
+Consegui entender, consegui entender, olha que legal, você deixa os templakes hiper personalizado e só sobe ele de acordo com o momento exato. Ó, e olha só que legal, aqui do lado direito, eu posso criar uma VM ou eu posso criar um template? OCT é um template, é um desculpa, é um contêiner. Então eu posso criar um contêiner direto aqui. Ah, por exemplo, eu tenho lá 11 ferramenta de firewall.
+
+36:41
+Pô, eu tenho um pssense, eu posso criar um contêiner dele só com o serviço de de firewall, entendeu? E o serviço de rede, evidentemente. Mas aqui tá exatamente essa questão. Então eu posso criar uma VM, eu posso criar um contêiner direto, desde que o elemento que eu tenha do meu lado permita ser contêinerizado. Tem soluções que não ficam boas como contêiner direto, tá?
+
+37:08
+Ó lá OOO Gabriel já tem ó ele tá no ele tem o proxbox então ele usa lá o test bad 5 ig open run legal, legal, muito bom. Então o legal isso daí pra quando a gente tiver que atualizar o Linux no contêiner tudo a fazer top down só atualizando o template e depois subindo tudo de novo é sempre bom você quando vai atualizar o que que o que que eu recomendo aí faz um clone full do seu template.
+
+37:39
+E valida, validou. Aí você pode aplicar no template, entendeu? Nunca aplica a história, nunca, nunca. Teste é em produção, né? Tira, tira ele do do contexto, valida, homologa, beleza, aí você atualiza o template, EEEE, manda todo mundo rodar, entendeu? Aí roda todo mundo de novo.
+
+38:07
+Ok, obrigado, esclareceu uma boa beleza, vamos lá. Então eu eu sabia que IA demorar mais de virtualização, que eu acho que é a parte mais interessante aqui, porque ela tem a ver muito com aquela questão do SDN que nós vimos a última aula e depois é, ó, tem mais um um comentário interessante aqui, eu gosto dessa turma porque vocês são ligados nessa questão, ó, tem a questão da separação do espaço user nas VMS, pro contêiner também também também. Eu tenho uma dúvida, professor, pode falar, Antônio?
+
+38:37
+É certo dizer que pra VM eu preciso colocar um sistema operacional, um Linux, qualquer coisa da vida, e no e no contêiner o meu sistema operacional é o meu hipervisor. Na verdade, o hipervisor é uma parte da coisa, porque o seu contêiner, ele tá usando o Kernel de algum sistema operacional que tá em algum lugar, entendeu?
+
+39:03
+Se o seu hipervisor for, por exemplo, o proxmox, ele é um Linux, ele vai usar a parte do Kernel daquele Linux, aí sim, mas tem situações em que você igual você viu eu mostrando pra pra vocês. Aí você precisa criar um template que é um sistema operacional, e a partir desse sistema operacional você vai criando os diversos contêineres, entendeu? Então, por exemplo, o que que a gente gosta de fazer é, eu crio 11 imagem básica de um Linux, atualizo ela, sei lá, um Ubuntu 2404.
+
+39:33
+Atualizo ela e esse cara é o meu template. A partir desse template, aí eu crio vários containers, um para ser o Apache, um para ser banco de dados e tal e tal. Mas tá todo mundo usando os recursos daquele template, entendeu? Daquele sistema operacional e não necessariamente do hypervisor direto. Porque se der pau no hypervisor, você morre em todo mundo. Essa que é a questão, tá?
+
+39:57
+E no caso do Windows, ele chama w SL, que, aliás, OW SL, deixa eu ver se o meu está aqui, deixa eu ver, ó, o Shell, deixa eu ver se eu consegui entrar aqui, porque pra mim, pra mim, quando você usava, por exemplo, um open shift da vida, você não não estava rodando por baixo dele. 11 Linux, né? Não tinha essa visão, entendi, ó.
+
+40:23
+OOWSL que o que o Gabriel falou é o Windows subsistem for Linux, então aqui ó, no meu Windows, no Power show você chama esse cara, deixa eu ver se ele tá aqui, ué, espera aí, ó, aqui ele tá, eu vou parar, deixa eu, eu na verdade era para ter aberto, eu já baixei esse cara aqui, você tá baixando um Ubuntu dentro do Linux ele já vai abrir um terminal para você, deixa eu ver se o meu tá.
+
+40:50
+Professor, você tá baixando o normal, ele vai quebrar o teu aí vai cratear a hora que se ele não tiver no 2, mas o update tá lascado aí mas deixa ele é, né? Eu cancelei, mas eu tinha feito a instalação na verdade ele só não tá me dando deixa eu ver se se eu tenho aqui o comando dele. Ah, não tenho. Eu acabei meio é que eu fui fazer um bootcamp do Google na semana passada, deixei todos os meus comandos aí, então deixa pra lá, depois a gente vê isso aí, tá?
+
+41:19
+Então, vamos lá, com a relação à parte de serviços diferenciados, essa arquitetura do 5G cor, né? 5 GC é 5G cor. Ela é interessante porque ela é orientada a esses serviços diferenciados que eu falei, né? Mais orientada a IoT, onde eu preciso ter largura de banda, mas eu preciso ter facilidade de comunicação, disponibilidade, OMBB, que é orientado a largura de banda de fato EORLC.
+
+41:47
+É pra baixíssima latência, então eu tenho, mas sim, com a conectividade, né? Aí o ti eu tenho a capacidade, né? O enhensed, que é a parte de largura de banda, que é o mbb, e eu tenho o low latence, que é a parte de urllc. E aqui, quando você vê os serviços diferenciados, você começa a ver a importância do que do queos.
+
+42:15
+Para aquela definição de serviços, mais o que OS ele é diferente do network slicing, tá? O slicing. A gente vai ver os alguns slides mais para frente em que eu crio de fato, de forma virtualizada, dentro da minha rede core, espaços para finalidades diferentes. É quase um que OS mas ali eu acho que é um pouco mais especializado, então.
+
+42:45
+Se eu tiver necessidade de ter uma rede onde a os serviços de telecomunicações, por exemplo, são mais importantes, então eu vou ter, por exemplo, um mtc Slice. Se eu tiver cidades inteligentes, ORLLC é o Slice correto. Se eu tiver consumo alto de banda indústria EE, outras questões, o mbb.
+
+43:10
+É mais interessante agora, olha só que interessante, aqui, por trás disso tudo, eu tenho uma infraestrutura física que até agora nós não falamos, mas ela existe, ela existe, tá? Agora vamos lá, falei do 4G, cor, falei do 5G, cor, vamos voltar, perdão, voltar no 4 GE. Vamos falar de alguns elementos importantes que ainda não apareceram quando a gente falou do cor.
+
+43:43
+Lá no NNE eu falei que ele é responsável por mobilidade, autenticação e gerenciamento de sessões, ok? Um dos parâmetros que a gente não viu ainda é o Ty Tracking área e identify indica a localização do usuário na rede. O Ty é um negócio muito legal, tá? A gente viu anteriormente um cara chamado pele.
+
+44:09
+Mn, PL, mn é OPLMN. Ele fala assim, olha o Almir é um usuário da operadora a ele tem esse perfil aqui na operadora a ok. Só que existe 11 questão na telefonia que diz o seguinte, AA integração das operadoras de telefonia tem que existir de tal forma.
+
+44:39
+Que qualquer pessoa no mundo tenha condições de fazer uma ligação para qualquer pessoa do mundo, tá? Esse elemento, essa questão vem da época em que a telefonia fixa era dominante, tá? Então eu lembro quando é a telefonia celular começou AAA funcionar na época, principalmente quando foi do 2 g.
+
+45:09
+Chegando no trager que eu eu tive que lidar com uma situação bem interessante. Em 2006, 2007, eu fui sócio de uma pequena operadora de de telefonia IP, tá? E a gente tinha um cliente que ele tinha operação no Brasil.
+
+45:31
+Ele tinha operação na Colômbia e ele tinha uma operação nos Estados Unidos, e ele queria que essa comunicação fosse por VoIP, porque IA dar bastante redução de custo realmente. E aí certa vez ele se deparou com uma situação bem curiosa, chegou uma conta Pra Ele lá, super cara, super cara, tá? E aí a gente foi analisar, ver por que que tinha sido tão cara e tudo mais. E a gente descobriu.
+
+46:00
+Que tinha sido que que algumas ligações tinham sido feitas pra Cuba? Pra Cuba só. Mas tá, qual é o grande problema? O grande problema é que os Estados Unidos em Cuba não se dão exatamente bem. Só que a única forma de você rotear ligações pra Cuba passa pelo backbone de telefonia dos Estados Unidos. Então.
+
+46:29
+Os Estados Unidos, eles faziam 111 questão de tarifação, que era terrível, tá? Contrato de interconexão entre as operadoras? Exatamente. Só que imagina assim, cara, sou eu que controlo o roteamento das ligações prum país que é meu inimigo e aqui não cabe questionar se tá certo, se tá errado, só que é meu inimigo. Então eu vou tornar mais difícil. Eu não quero que que que se faça muita ligação pra algo, né?
+
+46:58
+E aí a gente foi analisar essa, essa conta do cara. Tinham sido feitas umas 6 ligações pra Cuba, só que tinham 2 delas que tinham durado tipo 50 minutos, 1 hora. Aí a gente foi olhar o plano de tarifação, que a gente era uma operadora, mas era como se fosse uma operadora virtual. A gente usava Oo os custos de tarifação das operadoras grandes, né? De que a gente contratava pacote de minutos, né?
+
+47:25
+A gente contratava é pacote de interurbano e outras questões. Mesmo sendo VoIP, você tem que contratar de alguém ou você tem que ter um licenciamento que te permita definir suas tarifas diretamente? Ok, muito bem. Aí eu fui consultar um plano tarifário. Cara, eu tinha uma tabela, eu não tenho mais, mas eu era muito interessante que você olhava o os preços cobrados de minutagem VoIP pra fazer esse transbordo de chamada para as outras operadoras, cara.
+
+47:56
+Em 2007, se não me engano, foi quando aconteceu isso. Oo minuto pros Estados Unidos VoIP custava tipo 2 centavos por minuto de dólar 11 centavo. Uma coisa assim era baratinho. Valia muito a pena ligar pros Estados Unidos e quando você ligava para Cuba, custava 50 USD o minuto, 50 USD o minuto. Hoje não é mais assim, tá?
+
+48:24
+Mas era 50 USD um minuto, então veja, uma ligação de 50 minutos custou 2500 USD, tinha umas 6 ligações e 2 delas tinham aproximadamente 50 minutos. Daí a gente achou, falou, ó, tá aqui o problema. Ah, mas por quê? Porque o plano tarifário é desse jeito. Ah, mas não dá para fazer um trunk direto de VoIP com Cuba. Eu falei, em teoria da.
+
+48:51
+Mas a internet de Cuba também é roteada nos Estados Unidos. Vocês vão ter problema de latência, vocês vão ter problema de largura de banda, não vai ficar bom, precisa fazer ligação pra Cuba? Precisa. Falei, então avalie se não é mais barato vocês utilizarem um telefone via satélite. Era quase o mesmo preço, tá? Vai ser bem honesto, mas era uma situação.
+
+49:17
+E eu estou falando isso porque o tai, voltando agora para cá, ele é o identificador e te localiza na rede e cria um identificador Internacional, que é o Tracking em área global. Aqui é o final TAC, é o tai, ele, ele ele pega o plmn mais o TAC. Então quando você junta esses 2 caras, o tai ele atribui assim, fala assim, olha.
+
+49:44
+Esse daqui é o Almir na telefonia. Em relação ao mundo hoje, nesse momento, isso cria um ambiente favorável a que qualquer pessoa no mundo que tenha um telefone consiga ligar pra mim. Por quê? Porque eu tenho um registro que pode ser, se for, é solicitado desta forma? É.
+
+50:13
+Esse esse valor do tai pode ser compartilhado com as operadoras? Ele, porque assim ele existe lá na minha operadora, ó, esse aqui é o tai do Almir. Mas não quer dizer que isso tem que ser um feito, um podcast para todas as operadoras do mundo, né? Se gerar muito tráfego, IA ser muito difícil controlar. Mas no momento em que eu sou requisitado numa ligação, esse tai aí sim é igual ODNS, ó.
+
+50:37
+Eu crio um caminho e falo, ó, cheguei no Almiro, esse aqui é o thai dele, você realmente pode falar com ele? Proceda com a chamada, tá? Isso é um negócio muito bacana e esse é o elemento que a gente não tinha falado na aula anterior, quando eu falei do imsi, quando eu falei do Gucci, quando eu falei do inei, então não sei 4 a gente tem o time pode falar, pode falar, é ele. É o mesmo rastreador, o mesmo localizador que se usa em uso militar.
+
+51:07
+Ou em uso em desastres naturais, para localizar pessoas, subterrar essas coisas, ou localizar, enfim, para localizar um determinado número dentro de uma zona de uma antena triangulando ou não é, é que a triangulação ela funciona de uma forma diferente. Aí você não precisa de tanta o tá, ele é mais complexo, tá? Quando você tá, por exemplo, numa zona de de guerra, ou você tá num num, é num desastre.
+
+51:35
+Você precisa pegar só a triangulação das antenas local, você vai pegar só a coordenada do cara, ó, ele está mais registrado nessa antena, porque o que que, o que que acontece quando você está numa rede, você está sempre registrado em uma antena e conversando com pelo menos mais 2. Por quê? Porque isso te dá OOA coordenada, completa, que é a atitude, longitude e altitude, tá? Então você não precisa de tanta coisa, você só precisa saber em que antena você estava conectado e quais as outras 2.
+
+52:05
+Que você é tá conversando como o como você tem um outro elemento que que é Oo, meu Deus, o Giroscópio. Dentro do celular, o Giroscópio conversa com o seu GPS, o GPS, ele essa triangulação ela consegue pegar, né? Quando requisitado, ele consegue pegar o.
+
+52:31
+Dado do Giroscópio GPS para dar mais precisão. Por quê? Porque um ponto simples de triangulação de 3 antenas, ele pode te dar uma precisão é ruim de 100 200 m. Mas quando você pega a coordenada completa utilizando Giroscópio e GPS, essa precisão cai para poucos metros, 3 m, 6 m. Aí você vai direto na pessoa, então você não precisa de tanto.
+
+53:01
+Você não precisa ter uma complexidade tão grande como time. Mas alguém colocou a questão do plmn, esse sim, esse sim, esse é um cara importante, tá, ó lá, é isso aí, é isso aí. Então, bom, acho que a resposta está dada, né? Preciso, não preciso nem me alongar mais, vamos lá, vamos em frente, que tem muita coisa para ver ainda. Já são 10 para 6.
+
+53:28
+Esse usuário, eu falei antes, ó que ele ele tem 1111 banco de dados central, que é o hss, tá? O hss, ele vai guardar o que? O perfil desse cara, quais são os planos, quais são as funções de que OS seriam boas Pra Ele em relação aqui eu tô falando 4G, tá, quais são as essa é uma questão importante, chefe, criptográfica é.
+
+53:59
+O modelo de distribuição de chaves, ele, sempre que possível ele deve variar AA chave para uma sessão é de comunicação, igual eu comentei na aula passada que eu mostrei o VoIP lá criptografado e que eu falei cada chamada a gente troca a chave, a chave, aquele par de chaves públicas, né? Que é pública e privada, né? Que uma fica disponível e a outra fica na Posse do do proprietário.
+
+54:27
+Essa normalmente não precisa mudar, mas você tem que tomar. Você tem que controlar a privada, a chave privada, a chave simétrica, que permite que o conteúdo do seu tráfego seja protegido. Essa tem que ser trocada. Então, quem faz esse gerenciamento dessa troca de chaves é o hss, tá? E uma outra coisa importante é que.
+
+54:54
+Quando eu eu tô numa base de dados, falo assim, ó, eu sou assinante tal, é esse HSS, vai falar meu, quem são os APN s, né? Quem que é o access point name? Quem são os operadores que podem me oferecer acesso a uma rede IP? Então normalmente quem é o meu APN é a minha operadora, APN da claro, APN da vivo, APN da Tim, tá?
+
+55:21
+Então, uma coisa importante, quando eu estou é subscrito numa rede, ele vai falar, ó, você pode usar essas apns aqui. Por quê? Porque quando eu estou no numa localização em que eu sou full coberto pela minha operadora, ok, tranquilo. Mas se eu entrar numa região onde eu tenha que usar uma rede compartilhada.
+
+55:46
+Nessa situação eu tenho que usar uma APN autorizada, tá? Pô, eu tô trafegando dados, tô acessando internet, só que eu tô saindo, por exemplo, da rede da vivo indo para uma rede compartilhada com a Tim ou com a claro. Então essa APN tem que estar autorizada para mim, senão eu não consigo continuar. Meu meu, é trafegando nada, né? Ó lá, ó, o Antônio tá até colocando, ó, é isso, mas vamos lá.
+
+56:17
+Continuando aqui a gente tem né? OOOS é OSGWOSPWA gente pode dizer o seguinte, esses caras já são importantes quando eu vou sair da rede de telefonia para ir para uma rede IP, porque eles criam tune e eles fazem o NAT e o roteamento tá OSGW.
+
+56:44
+É o Gate, é o é o Gate de serviços, tá? EOPGW? Ele faz um serviço adicional que é te conectar ao à rede. Então OPGWPD gateway, tá, e isso é importante pra gente, porque é, eu tenho que ter um controle importante de rede.
+
+57:14
+Pra que não esgote as capacidades é que alguém tinha levantado a mão. Depois eu vou passar a palavra, tá? Eu tenho que analisar capacidade de atendimento da rede, eu tenho que analisar forma de conexão, eu tenho que analisar quais serviços estão liberados pra mim e como eu chego até os provedores de serviços nas minhas redes e peso. Então é importante que eu tenha essa questão de Nate e roteamento e de uso.
+
+57:40
+Quando você está dentro de uma rede celular e eu faço até eu peço até para vocês fazer esse teste no computador de vocês. Quem utiliza o OneDrive da Microsoft? Quando você está na sua internet, lá da lá da sua casa, da sua empresa, da sua faculdade, o OneDrive, ele entra normal. Quando você fala assim, pô, perdi a conexão, eu vou rotear. O meu é a internet do meu celular para poder continuar conectado.
+
+58:10
+Quando você faz isso, o Android fala, ó, você está numa rede monitorada. Por que isso? Porque a gente tem muito usuário dentro das redes de telefonia, então, em tese, eu precisaria de muitos endereços ips. Só que a gente está numa restrição danada de endereço IP de ipv 4. Então é normal quando você esteja dentro de uma é rede de telefonia, esteja consumindo.
+
+58:40
+Dados de internet, você esteja atrás de um NAT e lá dentro você tem um IP interno, um IP privado, sei lá, uma rede 10, uma rede 192, alguma coisa assim. Então esses 2 caras, né? OSO sgw e o ipgw são os responsáveis por fazer essa. É criação dos túneis, tá? E além dos parâmetros que a gente viu, né, Na Na aula passada, que é o caso do.
+
+59:10
+Do tad e do Bay, né? Do do EBI que é o bearus, pra que é OS. Ele ainda acrescenta qual é o endereço IP do usuário dentro da minha rede e qual é o APN utilizado, né? Qual é a operadora que que ele tá utilizando naquele momento pra poder sair pra rede de é de serviços ips? Então isso no.
+
+59:33
+4G ainda no 4G tem mais um cara que é importante pela questão de que OS mas também de tarifação diferenciada, que é OPCRF, tá o policy and Charlie rudes, fuching. Ou seja, esse é o cara que ele vai falar assim, ó, o plano contratado desse caboclo aí é tal, nesse plano ele prevê tantos gigas de internet.
+
+1:00:02
+É, ele tem minutagem livre para ligações dentro do Brasil, ele tem mais 200 minutos para ligação Internacional. Ele tem, por exemplo, é WhatsApp liberado e tudo mais. Beleza, então esse é o cara que faz essa questão do iOS por aplicativo ou por serviço, tarifação e tudo mais. Só que tem uma coisa que aqui eu acho que cabe uma questão.
+
+1:00:31
+É filosófica, tá? Que aliás tá em discussão, né? OOOSTF, tá tá analisando se o artigo 19 do Marco civil da internet deve ser considerado inconstitucional ou não. Tá só como curiosidade, eu acho o Marco civil da internet brasileira uma das leis mais bem escritas sobre tecnologia no mundo. Eu não mudaria nada.
+
+1:01:00
+Tá pra mim? Ela é ótima. E ela fala de 2 itens na no Marco civil da internet, que quando eu falo que o pcrf, ele é o cara que vai dizer, olha, eu tenho é WhatsApp liberado, por exemplo, dentro de um plano contratado de 50 GB de dados. E aí lá no Marco civil da internet, ele fala o seguinte.
+
+1:01:29
+É o Brasil, é um país que opta pela neutralidade da rede. Ok, muito bem. E para eu ter a neutralidade da rede? Em tese, as operadoras não podem fazer o chamado serviço de traffic shaping, que é analisar o tráfego. Como é que eles definem?
+
+1:01:53
+E eu tenho WhatsApp liberado dentro de um plano limitado. Se eles não fazem traffic shape, cabe uma boa discussão aqui. Não cabe quando você analisa o Marco civil da internet. EE, olha só que interessante. E eu nem estou falando que que deva ser diferente para o usuário. É bom porque ele fala, pô.
+
+1:02:15
+Eu uso 30 GB de WhatsApp por mês porque eu trafego vídeo, eu trafego arquivo eu uso para o meu negócio. Então se esses 30 GB que eu uso por mês não entrar na contabilidade do meu plano contratado é melhor para mim, só que para a operadora te oferecer isso ela faz trafficheping. Então vocês concordam que entra numa discussão filosófica aqui?
+
+1:02:39
+A operadora pode te oferecer um serviço que pode ser interessante, pode ser fator de decisão para sua compra. Ela ela de certa forma viola 111 elemento que está na lei. Eu acho que no futuro é você quando for usuário de uma rede de telecomunicações.
+
+1:03:06
+É, vai ser 111 Oo serviço de telecomunicações. Ele vai ser tão comoditizado, vai ser uma commodity tão grande, que você vai acabar pagando um valor fixo e usar o quanto você quiser, na minha opinião. Veja quem hoje, quantas ligações por dia ou por semana? Vai quantas vezes você usa o telefone? O celular mesmo, pô, na função telefone.
+
+1:03:31
+Para fazer chamadas de áudio por semana. E quantas vezes você manda um áudio no WhatsApp? Talvez você mande, sei lá, 50 vezes mais áudio no WhatsApp do que você faça ligações telefônicas mesmo. Eu só faço ligação telefônica mesmo quando OOO sinal de internet está ruim e você vê que o áudio do WhatsApp não vai ficar legal ou você faz uma chamada.
+
+1:03:56
+De áudio mesmo no WhatsApp fica picotando, mas fala, pera aí que eu vou te ligar pelo telefone, que normalmente fica melhor, realmente fica melhor, por quê? Porque tem, porque tem esse COS dinâmico aí, tá? Esse COS em relação ao serviço foi o contrato da operadora, e não necessariamente no WhatsApp que eu uso, tá? Então é isso, mudou o perfil, talvez hoje já, talvez já não valha mais a pena falar quando eu contrato 11, plano um pacote.
+
+1:04:24
+De uma operadora de telefonia móvel que eu esteja contratando minutos, professor, tratando de serviço. Pode falar, Gabriel, é isso daí que você está dizendo, você já acertou na música lá fora. Eu acho que aqui ainda não chegou. Geralmente quando eu vou para fora do país, eu pego aquelas operadoras que ela você pode ir de um país para o outro, independente de onde o avião for fazer escala, e lá você paga por dia.
+
+1:04:50
+Então, por exemplo, se você vai pra Europa, você vai pegar a euro link eles. A última vez que eu vi tava tipo 3 GB, você IA pagar 68 BRL convertendo, tá? Esses 3 GB durava 60 dias, e aí tinha uma caixinha que pagava, ele poderia dobrar e durava 120 dias e valia em tantos locais e minutos ilimitados. Então a gente não pagava pela quantidade só de Giga e pela parte que lhe dura a vivo aqui no Brasil. Acho que ela já tem isso com o vivo Waze.
+
+1:05:18
+Você vai lá, abastece o Waze e é o resto da vida do crédito, não tem validade. Você vai lá 50 GB, fica 50 GB até você terminar de usar. Você não precisa abastecer a todo mês, mas eu mas eu entendo que isso vai ser é pra mim, o modelo vai ser um pouquinho diferente, tá? Pra mim vai ser igual o condomínio, tá. Então, por exemplo, o condomínio custa 500 BRL por mês esse ano.
+
+1:05:42
+Cara, você vai pagar um valor fixo pra uma operadora e você vai usar o serviço dela no condomínio. Vamos dizer que o condomínio tenha 10 serviços diferentes. Tem a piscina, academia, sauna, tem a é pista de caminhada e tudo mais. Eu não vou usar os 10 serviços, eu vou usar 2, por exemplo, você vai usar outros 3, outro, vou usar o 8. Mas todo mundo paga o mesmo condomínio, usando ou não.
+
+1:06:09
+Eu acho que a que que o serviço de telecomunicações vai migrar para um modelo muito assim, muito, muito commodity mesmo. Eu, eu preciso dele? É, mas tem gente que vai precisar mais, vai precisar menos, é claro, dentro de certos parâmetros limitados. Eu vou pagar um valor fixo e vou usar, e não importa se eu vou usar a voz, se eu vou usar dados, se eu vou usar streaming, não interessa. Eu estou usando serviços de telecomunicações, não é isso.
+
+1:06:38
+Pode falar, Antônio, desculpa, professor, é é que só voltando nesse Marco civil é, você pode extrapolar ele pro 5G também, né? Pensando no Slice então, se você pode comprar um Slice melhor lá de uma operadora e você ter 11, sei lá, uma vantagem sobre o vizinho do lado ali que tá fora do Slice, ele tá no na vala acumulada, tá na rede normal, né? É, é.
+
+1:07:03
+Mas, mas aí eu ainda acho que no caso do Slice é se você se você conseguir contratar ele de tal forma, que ele seja aquela rede híbrida, né? Totalmente privado ou totalmente tipo híbrida. Eu contratei um Slice, que eu tenho o meu core privado, mas eu contrato um Slice para eu ter baixa latência em porque eu tenho, sei lá, 1000 sensores que estão é fora do meu core privado.
+
+1:07:32
+Tudo bem, eu estou pagando por isso. Então aí eu já acho que não, que não fere tanto que eu quero contratar dessa forma. Eu estou definindo os parâmetros, eu como cliente. A questão que eu falo é, quando a operadora já faz isso e já te oferece de antemão. Na minha, na minha opinião, isso cabe uma discussão em relação ao Marco civil, porque eu não estou escolhendo.
+
+1:07:57
+Eu não estou definindo o que eu quero, eu estou escolhendo de um cardápio pré definido, tá? E esse cardápio pré definido, na minha opinião tem traffic shape e isso cabe uma discussão sobre sobre Marco civil, tá? Vamos lá, e aí tem a tal da transição pro 5G core, então quando eu tô no 4G aqui, eu tô no 4G, transição pro 5G, então eu trago.
+
+1:08:26
+De uma rede de interface para uma rede baseada em serviço. Lá em 4G, os serviços de rede se comunicam via rede via infraestrutura. Aqui eles se comunicam no 5G por API ativista na aula anterior. Uma outra coisa interessante é a questão do sdn desacoplamento de função de rede micro, serviço contêiner nativamente, já aceito cloud.
+
+1:08:52
+E o 4G, por exemplo, não tem suporte networks licen. O 5G tem pra serviços diferenciados, inclusive focado em IoT, focado em baixa latência, focado em uso de banda. E tem a questão de alta disponibilidade e escalabilidade. É igual realmente como se eu tivesse 111 serviço de nuvem completo, em que eu eu eu contrato esta rede.
+
+1:09:19
+EEA operadora só tem que garantir que ela chegue até mim e que ela tem os serviços que eu preciso, que eu contratei de alguma forma, tá? Então isso é importante pra que isso aconteça. A gente tem as funções de rede específicas do 5G, então até aqui deixa eu voltar aqui, um espera aí, até aqui eu tô falando de funções de rede no 4G, aí tem a transição e tem as funções de rede no 5 GA. Primeira delas é esse cara aqui, ó, deixa eu pegar o.
+
+1:09:49
+Contadora laser, o nrf network repository funcion tá aqui, tá tudo que tá pro lado de cima desse pontilhado aqui é consumido via API. Tá então nssf, que é o networks licin o DM. Daqui a pouco a gente vai ver quem é esse cara, o nrf tcf, nef, então esses caras são da camada de serviços.
+
+1:10:19
+O que está pra baixo é infraestrutura, tá que está pro lado esquerdo aqui. Então o nrf, olha que interessante. Alguém me perguntou sobre ODNS, né, ó, quem é ODNS do 5G aqui? Ó, é esse cara aqui. Então ele gerencia, é registro e descoberta de funções, é de rede na rede. Então esse cara, ele tá olhando lateralmente.
+
+1:10:47
+Pra ver quais são os serviços de rede que estão disponíveis. E ele comunica isso como se fosse um DNS para a rede como um todo, para o cor do 5G, tá? Então ele informa pros elementos de gerenciamento OAMF. Só pra só lembrando, é o cara do 5G que é representa a mesma coisa que OMME no 4G.
+
+1:11:14
+Então é ele que vai falar, olha, os serviços que estão disponíveis pra pra vocês, ofertarem pros usuários são esses aqui, tá? Então façam isso. Então, essa é uma função importante. Aí a gente vai falar agora sobre o nssf? Exatamente o cara. Professor, não, sim, sim, sim, isso, obrigado.
+
+1:11:40
+É porque assim, quando eu falei do DNS, eu entendi o nrf aí, tá tudo bem? Ele anuncia ali as os Ipês e as e as APIs das outras funções do cor. Mas quando eu falei, o DNS é o DNS de internet mesmo, entendeu? Porque ele vai ter que consultar ali quem que abre o 888, né, entendeu? Ah, toda operadora você contrata, vamos lá, você contrata link de internet de quem? Da sua operadora?
+
+1:12:10
+Ela já é, ela já tem um DNS próprio, então, mas qual função de rede liga nesse DNS? É eu chutaria ou OOO DNS, desculpa, OPF ou OAMF. Então alguém tem que falar para ele quando ele digita lá, Google para onde que ele vai, né? Então na verdade, quem faz isso é esse cara aqui, ó, é esse cara aqui ó, tá?
+
+1:12:37
+Acho que o ponteiro travou, professor, não estou OPA, não voltou o slide. Esse cara aqui é porque quando você chega em PDN, você está bem na borda, ó, ele fala ó, vai para internet, entendeu? Ah, ele que esse carinha que resolve DNS, que é caminho os dados para internet, então ele é que dele é dele para trás, que ele comunica que ele faz esse papel de DNS. Então acho que agora eu entendi tua pergunta, beleza?
+
+1:13:04
+Ah, então OSMFOSOSGOSG isso OSGW que faz as funções do DNS na rede móvel. Entendi, tá claro, agora ele é o ele é o gay, então ele ele é o cara que vai falar, olha, sai por aqui, ó, eu vou te encaminhar para OPGW, mas é ele que vai te colocar na internet. Mas eu já entendi tua solicitação, estou encaminhando para frente.
+
+1:13:28
+Quem vai mandar, quem vai rotear para lá é o pdn gabriing, tá bom, é isso, tá bom, legal, professor, obrigado, cara, eu pensei, um DNS à parte, ligando no com as funções do, do, do cor, tá bom, tá claro, obrigado isso, então vamos lá, então esse cara aqui seria o DNS dos serviços para comunicar muito bem. Até aqui eu tô falando de todos os serviços de rede e a rede como um todo, mas a gente já viu que a rede tem fatias, certo?
+
+1:13:53
+E quem faz essa função é esse NSSF que tá aqui, ó, ele tá aqui no slide anterior, ele também tá na camada de de APIs e é ele que decide em qual Slice o usuário vai utilizar, tá? Eu posso ter aqui slices puramente de uso geral. Eu vou fatiar para poder aproveitar melhor os meus recursos para não sobrecarregar 1111. Elemento, só eu vou.
+
+1:14:23
+É, é ampliar ele via é virtualização, alguma coisa assim. E aí eu consigo fazer o que eu consigo utilizar melhor, a capacidade de cada Slice. Eu vou dar um exemplo que eu uso da da cibersegurança, tá? É hoje a uma tecnologia que é muito desejável por todas as empresas. É na verdade, o conjunto de tecnologias que é mais desejável para proteção das empresas.
+
+1:14:52
+É representado por uma sopa de letrinhas, né? Cien soar XDREO cien quando você junta tudo isso junto é a empresa Paulo auto criou uma solução integrada disso chamado exyam. Tá, então ela une, é descoberta, né? É é de alerta de segurança.
+
+1:15:20
+Resposta e orquestração automatizada EE recuperação de desastres, tá tudo isso aí. Uma empresa vai lá e contrata essa plataforma do polo alto e é uma bala. Isso tá caro pra caramba. Então vamos dizer que isso vai custar pra empresa, uma empresa de grande porte, 10000000 por ano. Aí ela vai lá e contrata tudo isso. Vamos lá fazer uma baita implantação, beleza, depois de 1 ano.
+
+1:15:47
+Você vai lá e retira Oo relatório da utilização dessa ferramenta maravilhosa e você vê que o seu time utilizou 10% da capacidade só da da plataforma, não usou o total. Qual que é o desafio hoje? É da seleção de tecnologias, é você utilizar ao máximo os recursos daquelas tecnologias. Então eu vou falar assim, tem empresa que não precisa de uma solução com tanta coisa.
+
+1:16:17
+Talvez se ela tiver lá OXDR um c em, mas que ela utilize 90% da capacidade dessas ferramentas, vai dar um resultado melhor, vai sair mais barato pra todo mundo. Aqui o networks lighting também tem um pouco disso. Eu crio slices pra poder maximizar o uso pelos meus clientes, das minhas é dos meus pedaços de rede. Por quê? Porque eu também posso pegar um Slice e colocar ele, sabe? Quando eu eu deixo ele dormindo.
+
+1:16:45
+Porque aí eu economizo recurso de rede. É igual eu ter uma cloud em que eu tenho 6 servidores, mas eu só preciso usar 20 agora, pô, eu vou lá e desligo os outros 80. E aí eu não estou sendo tarifado pelo pelo processamento, eu só estou sendo tarifado pelo storage daquela daquelas máquinas. Então isso reduz custo, isso é importante, fala Antônio Carlos, professor.
+
+1:17:14
+Uma empresa, ela nunca vai olhar para o quanto custa uma solução. Ela sempre olha o quanto eu vou ganhar em cima delas dessa solução. E no fim ela olha, ó, eu vou ganhar tanto. Ah, existe essa, essa, essa, essa. Então eu vou pegar essa daqui que cabe mais no meu bolso e é a mais completa dentro daquilo que eu preciso. Agora, ela não olha diretamente.
+
+1:17:42
+Ah, é uma bala. Eles não quer saber. Uma solução custa 10000000, mas eu vou ganhar 130, então posso pegar essa. E aí quando eles fazem, eles pleiteiam umas 456. Se forem poucas no mercado, por exemplo, tem solução no mercado que só tem 3 a nível mundial, 4 a nível mundial tem 4 empresas grandes que disponibilizam essa solução.
+
+1:18:11
+Vamos ver as 4 e falar, quanto eu vou ganhar com isso? Ah, vou ganhar tanto, Ah, então eu pego, Ah, não vou, eu vou ganhar, mas eu vou gastar, a solução custa 10000000, mas eu só vou ganhar 8, Ah, não me interessa, entendeu não? Mas aí o que eu falo é, é, aconteceu um pouco, é um pouco isso, oi, pode falar, Gabriel, isso é isso é uma empresa, desculpa aí, professor, mas isso é uma empresa com gestão inteligente, né? Uma empresa assim, comum, vamos dizer assim, vai pegar a solução mais barata e.
+
+1:18:40
+Ah, essas não funciona, vamos para a próxima solução mais barata. Ah, isso também não funciona, não vou tentar essa além disso. Além disso, Gabriel, eles é, é, geralmente eles usam Paes you girl, você paga por subscrição, entendeu? Teoricamente, a empresa não paga nada para fazer, é um distanciamento e vai pagando conforme você vai colocando Slice ou pessoas que utilizam aquele Slice e aí você vai pagando para enfim, viu, viu, é o modelo, é o modelo, é o modelo.
+
+1:19:08
+É pautada em opens, né? E não em Capes. O cara viu, Gabriel, essa empresa que faz isso que você falou, essa empresa está fadada ao fracasso? Ela não vai crescer, ela vai diminuir sempre, porque a concorrente dela eu sou do tempo da máquina de escrever. Quando colocar Oo computador do lado da máquina de escrever com o preço de 2000 cruzeiros, que era o preço da máquina de escrever.
+
+1:19:35
+Foi quando o computador não pegava, entendeu? O PC não pegava, existia, bórogas existia, IBM existia, mas custava 12000 cruzeiros. Aí quando os caras falaram, ó, vamos colocar 2000 aqui no Brasil, vamos colocar 2000 cruzeiros. Quanto custa uma máquina elétrica? 11 máquina com aquelas esferas tal não sei o quê.
+
+1:20:01
+Custa 2001 PC 2001 XT 21 XT 086, só era XT. Os cara colocaram o mesmo preço no ano seguinte, bateram o recorde de venda. E tem até um caso interessante dessa história da máquina de escrever. Quem passa na Dutra, ali em Guarulhos, já deve ter visto o shopping Internacional. Lado direito de quem é para São Paulo. O shopping Internacional é a antiga fábrica da olivetti.
+
+1:20:30
+Tá das máquinas de escrever. Quando o computador entrou nesse modelo, aí de vamos entrar, vamos entrar, vamos entrar, a olivetti, ela simplesmente falou assim, meu, você não vai pegar esse negócio de computador, é, é passageiro, o pessoal precisa de máquina, de escrever. Pois é, virou shopping, né? Eles não acreditaram que o computador IA dar certo, como a Kodak, ela quase quebrou porque ela não acreditou que a foto digital.
+
+1:20:55
+É, iria ganhar espaço em relação à foto impressa, né? Essa situação sim, é, é realmente é sair do modelo de capex pro opens, que é igual da nuvem, você paga conforme a necessidade, você vai crescendo e o teu pagamento vai aumentando, sim, vamos lá, continuando aqui, então, então voltando aqui, ó, falei do do.
+
+1:21:23
+Do registro de de serviços na rede, além dos slices. E a gente tem, né? Mais alguns caras aí, ó, OAMFEO alce AOMF é o cara da gestão, certo? Mas olha só, o cara da gestão que é AOMF, ele traz pra gente um outro cara da sopa de letrinhas, OMS sai, OMS sai.
+
+1:21:48
+Ele é. Ele é um cara importante, porque assim é ele que vai definir os slices. Então, se eu falei de Slice aqui, quem que define o que vai ter naquele Slice e é orientado, AOKE tudo mais é esse cara aqui. Então ONS, sai, ele vem e fala assim, ó, eu vou criar aqui 4 slices.
+
+1:22:14
+Olha, um mais focado em banda larga, um focado em serviços críticos, 11 IoT, um pra serviços gerais e assim por diante. Então esse cara aqui é um cara que gerencia a criação EEA, orientação de para Quem É Aquele Slice? Então OAMF, além da questão de gerenciamento do usuário, autenticação e tudo mais.
+
+1:22:42
+Ele também é responsável pelo gerenciamento dos slices. Tá, então esse cara é importante, só que veja, no caso do AMF ele faz tudo isso, mas ele precisa de um apoio do Austin aqui, né? Do authentication server funtion pra fazer a autenticação do usuário, tá, com relação ao DM, tá no próximo slide, tá? Então vou falar dele já na sequência.
+
+1:23:12
+Então é isso aqui, se eu falei de Slice aqui, aqui é quem gerencia os slices. Para que ele serve, que tipo de priorização vou dar para ele, banda é disponibilidade, latência, uso geral, para que que serve tá? E o formato dele. E a gente tem mais 2 caras que trabalham em conjunto também, OUDMEOUDR.
+
+1:23:40
+Ó, vejam que lá no 5G eles também estão na camada de API, na camada de serviços, tá? Então o DM é o cara que centraliza os dados do assinante, então ele é, é, é equivalente. Deixa eu voltar aqui no 4G aqui, ó, ele é o equivalente ao hss, perfil de usuários, chave criptográfica, APN, iOS. Então olha aqui, ó.
+
+1:24:09
+Da criptográfica perfil dados de sessão dados do assinante, então ele é o equivalente ao hss ODM aqui no 5G já ODR é a parte do hss do banco de dados, mas com o diferencial de ser acessado via API, via uma camada de serviços. Tá, além disso, eu tenho mais 2 caras aqui.
+
+1:24:39
+Que eu vou destacar na próxima imagem que são OPCFEOSMF. Então o desenho mantém o mesmo aqui. Só muda os caras que eu estou olhando, tá? Um dos caras tá na Infra, que é OSMF, que é quem gerencia a sessão de dados, tá. Então é ele que fala assim, olha o cara que conectou aqui. E ele.
+
+1:25:06
+Criou uma sessão de dados, ele vai falar beleza, ok, então OSMF, que é da Infra, ele comunica com OPCFE, vai falar, olha, beleza, então o cara vai ter uma sessão de dados, vai ter um apdu para trafegar dados aqui. Então tá, como é que eu faço controle de acesso, como é que eu aplico QoS, como é que eu tarifo esse cara? Então OSMF.
+
+1:25:32
+Ele gerencia APDU falando ó, pode deixar o cara trafegar. EOPCF, vai lá, aplica qualidade de serviço, controle de acesso e tarifação. Ele faz o bealing pra gente, tá? Então a gente tá vendo até aqui as funções de rede. Cada rede tem um elemento ou mais de Infra ou mais de serviço, mas eles fazem funções diferentes.
+
+1:26:00
+E no próximo slide nós vamos fazer esse é comparativo, tá? A gente vai ver que o 5G ele tem mais é funções do que o 4G. Olha só, esse comparativo, eu acho bem legal, tá? Primeiro verifica que o 4G, ele não tem descoberta de serviço, o serviço está posto lá e então ele fala, ó, aqui esse serviço ele não tem uma auto descoberta, ele não é uma rede orientada, a arquitetura de serviços é fixo.
+
+1:26:31
+5G não, ele tem a descoberta de funções de serviço, ONRF faz isso pra mim. Ele olha para o lado e fala, olha, serviços disponíveis são esses e eu posso agregar novos serviços, tá? O 4G não tem fatiamento, não tem Slice, o 5G tem o nssf, tá? A arquitetura do 4G baseada em interface e a do 5G baseada em serviços EAPIS.
+
+1:26:57
+E aqui tem os correspondentes, se no 4G eu autêntico com MMEHSS, no 5G AMF ausf EODM quem que libera as sessões de dados pra mim no 4G, SPGWE no 5G, SMFEOPF quem que aplica a política e faz tarifação pra mim no 4G, PCRFPCF no 5G.
+
+1:27:26
+Quem que controla a base de usuários ou 4G, ou HSSE no 5G? ODREODN, então isso é legal, porque aí eu consigo ver exatamente essa transição, porque vem o seguinte, aqui, nessa transição eu tenho que ter uma inteligência entre as tecnologias e as redes pra que se eu tiver num dado momento, utilizando.
+
+1:27:55
+Uma autenticação em 4G e o forpo 5G. Isso seja feito sem solavancos, né? Tá, deixa eu ver, tem uma, Ah, tá, tem umas questões aqui, empresas sim, é, é, é. Eu. Eu entendo que e os grandões vão vão ser concorrentes das operadoras, né? Quando você fala de uma Petrobras, ela tem expertise técnico, se não tem contrato.
+
+1:28:24
+Ela tem dinheiro suficiente e ela tem capilaridade no Brasil inteiro, por por meio da sua rede de de postos e distribuição, distribuição, AWS, não precisa nem falar, né? Pô, eu vi ontem um vídeo do do ô meu Deus, como é que chama o cara da da WS agora? Me me fugiu. O nome é ele falando ele em 98 e 99. É falando por que que ele criou AWS, né?
+
+1:28:52
+Que ele viu o nicho lá, eu preciso. Eu entendi que a internet vai crescer muito, porque no último ano ela cresceu 2000% e Eu Acredito que isso vai acontecer. E olha que virou, né? E olha que virou, né? Então, mas AWS tem um tem uma questão importante aí é porque ele tem o core. Isso é é fato, né? Só que você precisa pensar na parte da BBU, né? Como é que você vai fazer a parte de RAM, toda a parte de rádio?
+
+1:29:21
+É pra chegar no core, né? É a última milha, né? É o equivalente a última milha, é é é equivalente a última milha na rede fixa, né? Provavelmente ele vai fazer acordo, não tem jeito, é difícil isso, isso ele não vai, você não vai chegar lá, é isso? Desculpa, professor, é isso, é isso que eu IA falar, você não vai chegar lá, vai comprar uma WS, né? Você precisa ter um acordo com alguém.
+
+1:29:47
+Pra te entregar uma BBU, é o rádio, fazer toda a parte de RF, entendeu? É, é isso sim, é. Só que tem uma coisa EE, eu falo isso como eu já fui sócio de operadora, é um negócio muito legal. Se eu for uma operadora de VoIP, por exemplo, e eu tiver uma licença, é de serviços agregados, é um sba, eu.
+
+1:30:12
+Amparado na Anatel, posso chegar lá na vivo, lá na nas operadoras e falar assim, olha, eu vou comprar um pacote de minutos, eu vou comprar um range de números telefônicos para a minha empresa, vou contratar da sua operadora. Como eu sou uma operadora de VoIP, eu não tenho numeração própria, mas eu posso comprar de vocês.
+
+1:30:33
+A Anatel me permite fazer essa compra com 80% de desconto. Então, se a Petrobras virar uma operadora e ela tiver que fazer essa última milha, e se ela tiver que comprar os serviços pra poder estabelecer conectividade do core dela com outro, se ela tiver que consumir os serviços de outra operadora, se for a mesma lógica ou as mesmas licenças. E aí eu não sei. Eu não tenho essa informação pra responder.
+
+1:31:01
+Talvez ela consiga comprar tão barato das operadoras que mesmo se for a vivo ou a tinham a ou a claro entregando na última milha, você compra, você paga a conta pra WS mais barato do que você pagaria pra operadora grande, porque ela comprou com desconto muito grande. Tá, então tem essas questões também. É verdade. É que nem usar o espectro em caráter secundário também, né? E pedir pra usar?
+
+1:31:31
+Se se você tiver essa licença, tá tudo bem, porque assim, quando você é uma operadora fixa, você tem aquela licença STFC, tá? Sistema de telefonia fixa e comutada, então eu sou uma operadora, quando eu tenho STFC, eu tenho que ter rede própria, pelo menos uma parte dela tem que ter própria, então tem que ter cabeamento, tem que tá né, passando no poste e todas essas coisas. Quando eu tenho uma licença é de serviços, né? Um SVA, serviço, valor agregado, que é o caso do VoIP, é no ofício de infraestrutura.
+
+1:32:00
+Eu só preciso fornecer o serviço. Então, como eu não preciso ter infraestrutura, eu tenho que compartilhar isso de alguém. E aí a Anatel fala, olha, se eu for uma operadora SBA, eu posso chegar lá na operadora STFCE, comprar dela com 80% de desconto. Eu não sei como funciona isso no 5G, quando você tem as big techs e tal, eu precisaria ver. Não sei se eu consigo essa informação.
+
+1:32:25
+Mas Eu Acredito que eles consigam comprar tão mais barato que se ele oferecer no mercado, ainda sai mais barato do que você comprar da operadora grande, fala Antônio Carlos, professor. AWS não usa isso, AWS não usa, AU não usa BBU não usa rádio base AAAWS é tudo virtualizado, é 5G, tudo SAS, tudo isso tudo.
+
+1:32:52
+E aí, o que que eles? Tudo é virtualizado, tudo é em contêiner, tudo é em vms. A WS tem um serviço chamado wavelang. EE também tem um outro serviço chamado outrospots, que é quando você coloca um servidor lá dentro.
+
+1:33:09
+Tudo isso é todos os serviços que são feitos por hardware. Na telefonia tradicional, ela é feita na WS por software, cada serviço de hardware é feito no serviço disso. Os caras já se prepararam para fazer uma similaridade total de toda a infraestrutura que existe hoje do 5G numa telefonia tradicional. Eles têm tudo isso. Em software, você só contrata ser.
+
+1:33:39
+E aí você vai lá, tem que ter um cara, um engenheiro, capaz de configurar. Porque o maior problema de tudo isso é que você traz um engenheiro que tá habituado a instalar um 5G tradicional. Vai mexer num 5G que é totalmente virtualizado? É uma outra coisa. É claro que esse cara traz um know how de ter feito já 5G tradicional agora.
+
+1:34:09
+5G virtualizado que AWS oferece, ele é todo v RAM, entendeu? Ele não tem nada, mas e na ponta? Porque assim na ponta você tá com um celular que tá conectado a uma antena, então esta parte de conexão pra chegar numa antena, pra chegar no cara, ele vai ter que ele vai ter que compartilhar essa infraestrutura, porque isso não dá para ser virtualizado ainda. Essa que é a questão, a gente tá falando do rádio e da antena, o é o rádio e a antena ele tem que compartilhar de alguém.
+
+1:34:39
+Ah, mas ele falou BBU. Falou, AU, eu eu estou falando a rádio não faz parte do, é claro que você conjunto do rádio, pô. É claro que você vai precisar de uma antena para receber o sinal. Logo, o 5G é sinalizado por por onda de rádio, né?
+
+1:34:58
+Vai precisar de antena, vai precisar de isso. E não vale a pena para eles investir em colocar uma infraestrutura própria de rádios. Eles vão compartilhar com quem já está aí. Não, eles não tem nada de estrutura própria de rádio. Eles não tem isso. Eles, se eles, se você quiser, você vai comprar de terceiros. Aí o que que acontece?
+
+1:35:19
+Um cara, uma empresa, o professor, que tem a visão estratégica lá que o professor tem, a empresa dele, o professor vai chegar na frente e vai falar, ô, daqui a 3 anos os caras vão começar a usar esse serviço aí da WS. E os e a WS não fornece antena, não fornece estação de rádio. Então nós vamos entrar na frente e vão falar, OPA, quem quiser usar a WS, a gente instala antena e a gente instala estação, entendeu?
+
+1:35:49
+Ah, mas eu acho complicado de ser assim. Se for por uma coisa privada, eu eu concordo. Mas se for por uma coisa mais ampla dela tentar concorrer com as operações, é privada, é privada. Isso só acontece, professor, professor. Isso só acontece pelo seguinte, a empresa pega e fala assim, ó, a empresa pega. A empresa tá gastando 20000000 por mês com telefonia.
+
+1:36:17
+Aí ela faz um levantamento e fala, ó, eu vou gastar só 5000000. Se eu manter a WS, só que eu vou na largada, eu vou gastar 100. A empresa deprecia isso e fala, bom, 100 para 20. Em 1 ano eu pago tudo isso. E aí a cada mês que eu economizo 15000000 eu estou, entendeu, professor? É isso que eu estou falando.
+
+1:36:44
+Ele, ele, ele deu Oo. Antônio Carlos descreveu, uma MVNO não tem antena e não tem não tem antena e não tem cor. Isso, isso eu eu quase montei uma MVNO faz uns 23 anos, foi, aliás, foi antes da pandemia, é como já fui de operador e sou empreendedora, a gente sempre fica coçando, né? E falei, cara, MVNO IA ser legal, mas aí eu fui ver como que estavam as MVNO de quem, de quem já tinha.
+
+1:37:14
+Montado e eu fui analisar alguns cases, analisei o case do Cruzeiro, do time de futebol, é meu. Se o Cruzeiro montou mvno e não conseguiu ter sucesso, cara, e eles têm mídia, eles têm, né? Eles têm, é, é, é visibilidade, fala, Ah, não vou entrar nessa história não, porque eu vou acabar gastando o que eu não tenho. EE, não vai ser bom, mas a ideia da mvno, que é a que é uma operadora móvel virtual, você compra uma licença.
+
+1:37:43
+De operadora móvel virtual. Esta licença é igual eu falei do VoIP, você chega lá na operadora e fala assim, eu vou montar uma MVNO, só que eu vou compartilhar AA Infra da Tim, eu vou usar a rede da Tim, só que eu tenho nome próprio, eu tenho APN próprio, eu tenho código da operadora própria. Isso daí pode utilizar o case do Nubank. Ele é um exemplo recente. Ele também é um MVNO, né?
+
+1:38:11
+Nubank, Porto Seguro, então tem um Monte de então, mas eu falo assim, mas quando eu analisei, eu falei, gente, tem gente grande que tá entrando e tá dando errado, é claro. Por um Nubank. Cara, o Nubank tem 40, se não me engano, 47000000 de clientes. Cara. Se eles conseguirem em algum momento ter 10% dessa base na operadora deles, eles são grandes já como operadora.
+
+1:38:42
+É isso, é, é, é que a força da marca eles tem, eu acho, só que talvez eles não não tenham conseguido comunicar é da de uma forma massiva. Por que que eu falo isso? Por que quando você pega os anunciantes do Brasil, quem mais investe em propaganda no Brasil são as operadoras de telecomunicações, os bancos e os as montadoras de carro, tá?
+
+1:39:10
+É quem mais investe em publicidade no Brasil. Então, se as operadoras de telecomunicações estão nesse grupo, isso significa que eles têm um baita orçamento para serem visualizados. E quando você pega um banco ou uma empresa, um corrida, eles não tem essa mesma. É talvez até tenha capacidade, mas não tem esse esse expertise.
+
+1:39:35
+Pra gastar tanto com divulgação a ponto disso se tornar um negócio core deles, porque eu não vi muita propaganda. Por exemplo, de eu vi a eu já vi propaganda da Porto da do Nubank, eu sei que tem, mas eu nunca vi uma propaganda da do do Nubank falando que é a operadora. São coisas assim, né? Eu acho que que esse é o ponto. Deixa eu andar um pouquinho aqui, gente, só pra pra pra chegar na parte prática que já tá aqui, mas eu quero mostrar na prática, né?
+
+1:40:05
+Não é esse, deixa eu ver onde que tá, espera aí, deixa eu pegar aqui, é, é esse aqui. Então aqui é o seguinte, pessoal, tem uma solução muito legalzinha que permite a simulação de redes SDN, né? De redes definidas por software, chamado Mini net. Aqui eu já tenho um ambiente Mini net.
+
+1:40:35
+Instalado numa máquina ou boom, tá, o que que eu tenho aqui? Essa aplicação, ela permite que eu crie algumas coisas, tá, então vamos lá, o que que eu vou fazer aqui? Eu vou emular uma rede, vou simular uma rede, na verdade, e essa rede ela vai ser criada, vai realmente ser criada. Ele vai criar um suíte virtual, ele vai criar 2 hosts virtuais já conectados ao switch.
+
+1:41:05
+Pra pra fazer isso, deixa eu voltar aqui pra fazer isso, tá no material de vocês? Foi executado esse comando aqui, né, pra criar a topologia em árvore tal, tal tal controle remoto do suíte e tudo mais, tá? E eu tenho 2 elementos aqui, que é o déficit igual a 2. Posso testar conectividade?
+
+1:41:33
+E aí eu vou mostrar a captura do arichart que vocês vão ver que na hora em que eu criar AOSDN, vão ser criadas novas interfaces naquela rede, tá? Vamos lá, olha só, primeira coisa, vamos ver quais são as interfaces que tem aqui. Ó, eu tenho no pback, eu tenho NS 33, que é a minha rede física, eu tenho esse endereço IP aqui muito bem aí.
+
+1:42:04
+Eu vou lá e dou um comando pra subir o mininete é só mn, ele tá instalado já tá, olha que legal gente, ó. Ele criou 2 hosts, ele adicionou um controlador, criou a rede, adicionou um switch, criou os links entre switch EH um entre switch EH 2.
+
+1:42:31
+Configurou os rostos, ou seja, botou IP nesses caras e me deu scli. Ok, antes de mostrar a rede criada antes de mostrar a rede criada, eu vou mostrar que ela já está com conectividade. Então eu vou fazer h um dando um pink em H2. Olha só, pingo. Então eu sei que h 2 está com SP 10 002.
+
+1:42:58
+Aí agora eu vou fazer h um pingando h um mesmo, tá? Vamos ver se o IPO mesmo tem que ser outro, ó, 1000 um você aí agora eu vou fazer h 2 pingando h um, ok, tá pingando ok aí agora olha que legal, eu vou pegar h 2 pingando suíte, um S1.
+
+1:43:27
+O suíte, ele é camada 2, ele não é camada 3 de IP. Então quando eu vou pingar alguém de camada 2 e ele me devolve algum elemento relacionado a um IP, ele tem que me devolver o IP de lupyback. Ó ele aqui, ó, 127, 001, tá, então, beleza, pingo, eu tenho conectividade, tá?
+
+1:43:51
+Aí agora, OPA, Ah, não, esse aqui eu não esquece, não vou, não vou dar o clear, tá? Agora olha que coisa legal, eu vou abrir esses 3 caras, ó, agora eu falo que é a parte mais legal, eu vou criar, eu vou trazer eles pro front end com um único comando, pra vocês verem que eles existem virtualmente. Então eu vou usar uma aplicação que é o exterm, que é o exterm aqui.
+
+1:44:19
+E eu vou subir de uma vez, H1H 2 ES um. Olha que legal isso aqui, pessoal vai subir para mim já ó lá, então eu tenho o que aqui, ó? Eu tenho suíte e eu tenho as 2 máquinas aqui, então ó h um aqui, então se eu der aqui um ifconfi, ó, 1000 um.
+
+1:44:48
+H 2 seu derfconfig 1000 2 que é diferente, e se eu der aqui um ifconfig, ele é camada 2, aí ele cria para mim, ele tá ó, ele pegou. Como? Ele é um Suite, ele tá se conectando na minha máquina física e ele teve que criar interfaces virtuais para poder.
+
+1:45:17
+Conversar S1 ETH um, S2 ETH 2. Tá, agora olha que coisa interessante. Quando eu tinha dado o primeiro comando IPA lá eu tinha falado que só tinha 2 interfaces, tinha loop back e NS 33. Agora aqui, deixa eu só trazer os caras para frente de novo. Eu vou abrir aqui o Ari Shark, então eu vou dar aqui o comando do Ari Shark.
+
+1:45:51
+E o comercial, só Pra Ele liberar o terminal pra mim, ele vai abrir aqui pra mim, tá, tá aí, tá abrindo, olha lá, além do loop back do MS 33, olha lá, ele achou esses 2 caras aqui, que são os links entre o Suite.
+
+1:46:18
+E as máquinas? Aí eu vou pegar uma interface qualquer, vou pegar aqui o S1, eth, um, tá? Vou abrir a comunicação entre eles, ok? Muito bem. Aí agora eu tô aqui no H1, dá um primeiro aqui e eu vou dar um Ping no H2, então vou dar um Ping, 10, 002. Olha lá, gente.
+
+1:46:45
+Isso daqui não existe como máquina é serviço, isso não existe como máquina. Vou parar ele aqui, mas ele deu esse Monte de Ping a lá, eu tenho o request e o Reply, ó, o Ping completo aqui, ó request Reply, mesma coisa aqui, deixa, eu vou parar aqui e vou começar de novo o mesmo, tá?
+
+1:47:15
+Aí agora eu vou lá no H2 e vou dar um Ping no H1, Ping 1000 um ó, lá mesmo, esse cara sendo o receptor do h um, ele tem, ele recebeu o request primeiro. Ele faz algumas chamadas de arte perguntando quem é o fulano de tal, né? Então veja, tá funcionando aqui, tá? Agora olha que interessante.
+
+1:47:43
+Se eu tentar dar um Ping no S1, vamos ver se ele vai funcionar. Eu vou parar aqui, vou começar de novo Pra Ele pegar 20, eu tô no H1, o S1, qual que é OIP dele? Ele tá tentando pegar OIP da minha, ele tá comunicando com a minha máquina, mas eu não sei se ele criou algum tipo de roteamento pra esses caras saírem. Eu vou descobrir agora, tá? Não testei isso aqui, então você deu um Ping.
+
+1:48:11
+19216 8.1 ponto 23 será que ele pega, ó, não pegou, a rede está fora de alcance, então eu não tenho esse roteamento. Por quê? Porque ele é um suíte, eu tenho que ter um roteador por trás dele, tá? Será que se eu der um Ping no loop back, será que vai? Eu acho que não vai funcionar, tá? Vamos ver.
+
+1:48:36
+Ó, até pegou, mas ó, olha que interessante, ele tem o loop back próprio e ele não aparece aqui porque ele não gerou tráfego. Então ele não tá chegando no S1, ele tá parando nele mesmo, tá vendo? Eu vou parar aqui, vou parar esse cara aqui e aí, sem problemas, e aí eu vou pegar o outro aqui, deixa eu ver se o outro pega alguma coisa, pegar o S2 aqui.
+
+1:49:05
+Aí deixa eu ver se esse cara aqui dando Ping, será que ele consegue pingar os caras 1000 um ó lá, ele não consegue. Por que que ele não consegue? Porque o switch é um cara de camada 2, ele não tem o IP na mesma rede, na rede 10, ele é só um link, tá? Isso é interessante, beleza. Então eu mostrei a criação dessa rede de serviço.
+
+1:49:34
+Já tem outra coisa aqui, é legal, tá? Deixa eu dar um late sítio aqui, sai, tá, sair, ó, ok, vou dar ok, beleza, sem problema, deixa ele quietinho aí, esse cara aqui eu deixa eu dar um mn menos c para dar um clear só para limpar ele, vou limpar ele aqui. Ah, limpou toda essa parte que a gente fez aí, tá aí.
+
+1:50:03
+Eu voltei, eu saí do Mini net, só que dentro dessa pasta exemplos aqui tem um cara que é muito interessante que é esse. Cadê, cadê? Mini edit, ponto pai, esse cara aqui, ele emula pra gente uma interface gráfica pra poder fazer a criação da rede. Então se eu der aqui um pai tom, acho que é o pai tom 2 que funciona nele. Ponto barra. Mini edit, ponto pai.
+
+1:50:34
+Deixa eu ver se ele vai rodar aí, olha que bonitinho esse cara, gente, esse cara, ele vai permitir que eu coloque por olha, deixa eu abrir aqui, já tem até arquivo pronto aqui eu posso criar uma redinha. Ela tem host, ela tem suíte e ela tem um controlador da rede. É quase como se fosse um roteador, tá nesse cara.
+
+1:51:03
+Eu coloquei ele como controlador remoto, o IP dele, ó, esse é o IP que ele transmite pro suíte que a gente viu lá anteriormente, tá ok? O switch, ó, eu até posso colocar umas coisas, é, ó, ele até pode se tornar 11 suíte, mais do tipo camada 3 ou alguma coisa assim, tá?
+
+1:51:29
+Deixa eu ver, eu posso dar um enable no netflow aqui, eu posso por um. Aliás, deixa eu fazer isso diferente, eu vou colocar isso aqui, a rede está aqui, eu vou dar um start Sério, isso só pra poder rodar e aqui nos hosts é onde eu tenho os Ipês. Está vendo, ó, 1000 um que a gente viu?
+
+1:51:59
+1000 2 que a gente viu aí deixa eu ver se eu consigo deixa eu dar um pra você que aparece esse cara aqui é deixa eu ver se eu consigo rodar um cara aqui CD minimette essa, deixa eu ver se tá aqui ele tá tem outro minimette.
+
+1:52:33
+Ah, não é isso?
+
+1:52:56
+Não é CD, tá? CD Fox tá aqui. Deixa eu ver nano Fox, ver se esse cara aqui acho que é não, não vai ser não. Eu acho que eu tirei o arquivo. Tinha um arquivo que permitia que eu fizesse tipo um The Bug.
+
+1:53:23
+Automático, mas eu acho que eu apaguei depois. Eu posto ele para vocês, não é não, é? Esse cara aqui é um outro cara. Deixa eu ver se eu recupero o comando aqui, deixa eu dar um visto a ele aqui, OPA, aqui vou te dar um esse, deixa eu ver.
+
+1:53:57
+Quero me dê comando pra caramba, mas não era isso te dar um risco de aqui? Deixa eu ver se tem aqui.
+
+1:54:25
+Deixa eu ver se como como aluno, ok, não, eu acho que eu que eu matei Oo mundo. É uma pena que IA dar para fazer tipo um debu vizinho. Ele matou aqui.
+
+1:54:55
+Deixa eu ver se vai dar pra Ah, ó, quando eu criei, quando eu coloquei esses ips, ó, quando eu mexi aqui na redinha, toda vez que eu vale, dei, ó, vejo que ele entrou com essas informações aqui, tá? Deixa eu dar um run pra ver se ele vai executar alguma coisa, ó, tô rodando essa rede, né? Deixa eu ver se ele se ele vai me gerar alguma coisa.
+
+1:55:26
+E aí, fechou? Que pena. Eu preciso dar uma melhorada nessa rede aqui. Deixa eu dar o ranking de novo. Deixa eu ver se agora ele executa.
+
+1:55:47
+Né? Ele está dando uns erros, ele não está conseguindo executar os links. Tudo bem, não conseguiu deixar pra lá esse top aqui, mas veja, em linhas gerais, o que que é importante aqui é vocês verem a simplicidade que você tem de criar uma rede funcional, né? Então eu dei aqui segundo mn, criei a rede, literalmente criei a rede.
+
+1:56:18
+Ah, ele tá, é. Tinha uma feita antes. Ele tá matando o primeiro, vou executar de novo. Então, ó, tô criando a rede, criei a rede e aí eu dou um exterm só para ele abrir o terminal e eu coloco quem eu quero no mesmo instante.
+
+1:56:44
+Isso é OSDN, tá, pessoal, porque ele me dá nível de gerenciamento. OSDN tem que ter gerenciamento, é ele tem essa camada de virtualização, meio do serviço, meio, meio virtualização, meio contêiner, né? Porque esse cara aqui tá ele é bem simples, tá? Então ele tá mais pra um contêiner do que por do que por um sistema operacional completo, embora ele tenha essa essa função de host é é de sistema operacional.
+
+1:57:14
+E na hora que eu eu uso, na hora que eu não preciso mais, eu paro, acabou. Simples, eu posso fechar um, eu posso é deixar um só aberto EE assim por diante, tá? E posso capturar os pacotes e fazer as análises com o aricharque sempre for necessário, tá, e ele enxergou aqui, qual a interface que tá aberta? Tá então.
+
+1:57:42
+A gente tá chegando Na Na parte final da da nossa aula, as atividades estão todas escritas aqui e eu também deixei coisas a mais, tá pra como criar uma rede LTE com pect 3 aqui tá o passo a passo mesmo, Hein? Ó, exatamente, ó, o que que é a topologia, o passo a passo, quais os comandos, onde que eu coloco, IP onde, o que que, o que que vai ser cada um deles, como é que eu crio hot estática? E a gente terminou.
+
+1:58:11
+Né? Na verdade eu vim pra essa prática porque seria legal de mostrar pra vocês, porque ela é mais ligada com o que a gente viu hoje pra poder terminar o conteúdo de hoje. Tava previsto. Então foi o que a gente viu hoje, as arquiteturas, as funções de rede, tanto no 4G quanto no 5G, né? Os serviços lá de virtualização, contabilização e dos serviços diferenciados, vimos a parte networks, lighting, vimos a parte de.
+
+1:58:40
+De é definição dos serviços. Fizemos o comparativo e terminamos com uma atividade prática de é construção de uma sdn utilizando o mininete. Gente, instalação do mininete é poucos comandos, tá? Por eu lembro, trouxe a instalação aqui porque ela é tão simples que vocês conseguem fazer só colocar a pergunta pro ChatGPT ou pro YouTube? Instalação do mininete no Ubuntu, ele vai dar os comandos que você vai fazer.
+
+1:59:09
+Tá tranquilo e conseguimos terminar dentro do horário previsto. Vai dar 7 horas ainda, mas eu vou abrir para quem quiser tirar dúvidas, tá, pessoal? Não esqueçam de fazer aí a avaliação da aula. Deixa eu pegar o que a Camila colocou lá no começo e é o link, tá? Vou postar aqui no final de novo.
+
+1:59:36
+Quem puder fazer a avaliação, isso me ajuda, tá? Aliás, eu queria também até agradecer, aí eu fiquei, tive um rápido feedback do dos coordenadores do curso que vocês é, falaram bem de mim lá na reunião, isso é importante também. É sempre importante ter feedback, bom e saber que a gente tá num caminho bacana, tá? Então, se alguém quiser fazer algum comentário, fique à vontade, temos aí mais uns 5 minutinhos para depois terminar, tá?
+
+2:00:06
+E só falando que vem pela frente só pra pra vocês terem uma ideia, né? Deixa eu só, deixa eu só abrir aqui o computador ficou pesadão agora por causa da virtualização. Ah, deixa eu ver, quero esse cara aqui, se não me engano, a próxima aula ela é uma continuação dessas. Os temas são bem parecidos. Já vou te dar a palavra, Antônio Carlos.
+
+2:00:33
+A aula 9 ela é bem parecida, mas eu quero pegar esse contexto do do sdn e tornar ela um pouco mais prática. Talvez na próxima aula a gente vai fazer uma aula bem bom na massa. Eu vou ver se eu consigo. É fazer com que a gente execute juntos para não ficar só eu mostrando para que vocês possam colocar em prática, tá? Pode falar, Antônio Antônio Carlos.
+
+2:00:59
+Professor tava conversando com outro professor há uns tempos atrás, há uns tempos, há uns mês e meio, 2 meses, é? Ele tava falando pra mim que o serviço que tá em alta agora é instalar 5G em é em fazenda? Sim.
+
+2:01:16
+Você já viu isso? Os caras instalam uma rede privativa 5G fazendo o cara vai lá, o cara tem muito uma Montanha de dinheiro, esses cara tem muito dinheiro, né? E eles vão lá e falam, ó, eu quero uma rede pra mim, pra meus funcionários aqui, pro meu, pro meu uso, pro meu dia a dia e linka ela como operadora é o que precisar, pular pra operadora pula e o resto tudo é feito com eles.
+
+2:01:41
+E ele paga ele. Ele falou, pô, o cara tem mais de 5000 funcionários Pra Ele, ele tá lucrando, ele faz sim, sim. Tem uma pergunta aqui, voz sobre NR, então eu tô, eu tô estudando isso, viu? Francis, eu gostaria de trazer esse tema antes de acabar o nosso módulo, tá? Então deixa eu eu dar mais uma pesquisada, porque a gente ainda tá naquela parte do volte, né? Ou volte.
+
+2:02:11
+Então deixa, deixa eu andar um pouco mais, porque eu sei que já tem implementação sendo testada até aqui na minha cidade. AA operação da Tim ficava baseada aqui em Santo André. Agora eles eles ainda tem alguma coisa aqui, mas ficava tudo aqui praticamente. E eu vou ver se eu converso com alguém que que era da liderança para poder ele me ajudar a responder essa pergunta aí sobre Oo vonr aí, né? Sim, sim, sim.
+
+2:02:41
+Mas eu acho que a gente tem alguns temas legais aí, então eu quero ver se a próxima aula a gente faz alguma coisa um pouco mais prática nesse contexto pra pra poder colocar vocês. É mais na no protagonismo dessa aula também, né? É algo próximo, sim. A questão é.
+
+2:03:04
+O que tem hoje funciona. EE talvez o investimento no volte ainda esteja se pagando por isso, que talvez Oo vonr ainda não tenha entrado forte, né? Eu, Ah e Ah, eu IA comentar uma coisa antes da gente terminar. É falando sobre a questão da da do 5G em fazenda. Olha só que coisa, o final de 2023 eu fui para um evento de server segurança.
+
+2:03:29
+Lá no interior da Bahia, numa cidade chamada Luís Eduardo Magalhães, cidade rica, pão caramba, bicho, rica pra caramba. Pra vocês terem uma ideia, na Bahia inteira só tem 2 cidades que tem concessionária de Land Rover, tá? Só tem Salvador e Luís Eduardo Magalhães. Só que Luís Eduardo Magalhães fica a 1000 km, quase 1000 km de Salvador, fica perto do Tocantins. Já tá bem lá do Oeste, né? Você vai olhando o mapa bem lá no Oeste.
+
+2:03:56
+Só que ela é a cidade mais importante do agro da Bahia e a segunda mais importante do agro do Brasil. Tá lá. Essa história de 5G em fazenda é importante porque eles têm um negócio muito importante lá com drone. Luís Eduardo Magalhães é a segunda cidade que do agro, né? Do Brasil. É a segunda cidade que mais compra drone, que mais compra aqueles. Sabe aqueles tratores?
+
+2:04:23
+Gigantescos de colheitadeira que trabalha 24 horas por dia, que é sem sem Oo motorista, lá, sem o condutor que eles fazem tudo por satélite, tudo mais. Essa cidade é a segunda que mais conta AA primeira é Mimoso ou é como é que chama? É é no Mato Grosso? É não é Água Boa, Água Boa também é rica pra caramba, sorriso é sorriso.
+
+2:04:54
+Eu acho que é aqui hoje é sorriso, Luiz Eduardo Magalhães, Mimoso, é Água Boa, as 4 principais cidades do agro no Brasil. Por que que eu conheço isso? Porque eu fiz faculdade de engenharia e tinha faculdade de agronomia no mesmo lugar. Então eu conheço muito agrônomo, né? E eles estão tudo nessas cidades aí. Luiz Eduardo Magalhães, sorriso e eu falo que que eles são agrônomos que moram em sorriso e dão sorriso para o salário deles, tá? Estão muito bem. Aliás, tá?
+
+2:05:22
+Tem drone de tudo lá, drone de pulverização lá. Eles tem um drone que tem capacidade de como é que chama, de visão computacional, que é tão aprimorado que, pela cor da folha das culturas, eles conseguem definir se de repente tem alguma Praga que tá começando AA lidar com o drone. O negócio é muito louco, é muito louco. Então assim, gente.
+
+2:05:50
+E assim, vamos lá. Quantas vezes na sua vida você ouviu falar de Luís Eduardo Magalhães como uma cidade rica? E a cidade é uma beleza maravilhosa e você pra caramba. A única coisa achei muito longe e muito quente, mas se você falar assim, pô, é, é pra uma pessoa urbana, São Paulo daria pra morar numa cidade dessa? Eu falo, daria.
+
+2:06:09
+Porque ela tem bons empregos, ela tem oportunidades, não só no agro, mas em tecnologia, porque o agro de lá é extremamente tecnológico. Então, como profissional de tecnologia, é um lugar que existe lá as suas oportunidades. Só que eu acho que eu IA morrer de calor lá se eu ficasse um mês naquele lugar. Eu acho que eu cozinhava, eu fui para lá em foi agosto, setembro, mas eu eu acho que eu peguei quase 40°. O lugar é muito quente, muito quente.
+
+2:06:38
+Mas acho que é isso, né, gente? Acho que conseguimos fechar bem aí o conteúdo e podemos encerrar a nossa aula de hoje, pessoal. Então, na semana que vem, na terça-feira, vou tentar trazer uma aula focada também em sdn e simulação. De repente eu pego esse exercício do packet trazer que eu deixei. Mimoso é a Ah, é verdade. Mimoso é o nome anterior da cidade, era isso mesmo.
+
+2:07:06
+É, ela se tornou Luiz Eduardo Magalhães em 2003, porque o filho do ACM, né, do Antônio Carlos Magalhães tinha morrido e ele rebatizou a cidade e abriu, né? Essa questão amanhã não tá na minha agenda. A aula, Hein, pessoal? Deixa eu ver aqui, te confirmo já não, amanhã, dia 6, não tem aula marcada pra mim, tá? Pra vocês tem.
+
+2:07:37
+Na semana que vem a gente tem, mas amanhã não, seguindo a agenda, tá? Estou me preparando para semana que vem. Acredito que para vocês também não tenha. Vamos deixar a forma que tá, até porque eu me preparei para 2 aulas só essa semana. Amanhã eu tenho até uma reunião da empresa que avançaria nesse horário.
+
+2:08:01
+Justamente porque eu vou olhar isso aí, beleza, professor, na terça seria sua última aula, é isso, dia 9, desculpa a aula 9, não, não, a gente tem aula 9, a gente tem na terça, na quinta e na sexta, na semana que vem e aí acaba. Ah, então o calendário está diferente. Não, pra mim, tá aqui, ó, eu tenho aula de redes privativas terça.
+
+2:08:30
+Quinta e sexta e no meu calendário ainda falta, é falta essas 3 mesmo ixi, então eu estou com calendário antigo aqui, porque dia 29 de maio seria sua última aula com essas. Ah, não, mas eu tive que que mudar também. Teve até uma questão minha que eu tive que remarcar umas aulas, questões pessoais, tá? E aí eles acabaram estendendo, na verdade, e acabaram estendendo o conteúdo que eu daria. Eu peguei um pouquinho mais de conteúdo que talvez fosse ser oferecido.
+
+2:09:00
+Conhecido para um outro professor e eles acabaram falando para eu continuar. E eu falei, tudo bem, vamos continuar, tudo bem, não, aquela coisa, tá, tá sendo legal, tá dando certo, vamos tocar em frente. Depois entra num conteúdo que já não é tanto a minha praia, tá? É, mas vocês vão ver a parte de virtualização e tudo mais.
+
+2:09:20
+Mas não vai ser comigo. Aí eu volto pro outro curso Na Na sequência, que é o de sistemas embarcados, que é um outro curso que eu tô dando aula. Mas aí é uma outra pegada. Aí já é mais engenharia mesmo, EEEE, menos dados. E mais é é é essa parte de de de fazer com que os dispositivos embarcados possam ter serviços. É isso, outra pegada legal que eu que eu que eu trabalho com o pessoal aí, tá bom?
+
+2:09:49
+Bom, até dia 17 tá marcado pra você, pra mim dia 17 não tem não, dia 17, aliás, eu não, dia 17 eu tenho aula de outro curso, mas eu vejo aqui, eu, eu, eu, eu vejo aqui com o com o coordenador, pra mim tá até dia 13, então semana que vem teremos 3 encontros aí, tá bom, pessoal, tá bom que é isso, beleza? Então gente, bom, fim de semana pra vocês desde já, né? Já que não teremos sextou com o professor Almiro amanhã e a gente vai se falando.
+
+2:10:20
+Tá legal? Boa noite. Boa noite a todos aí. Boa noite a todos, boa noite.

@@ -1,0 +1,781 @@
+27.05.2025 Aula 6 Procedimentos de rede Attach do UE, Estabelecimento de PDU Session, autenticação, mobilidade (handover)
+
+0:15
+Boa tarde a todos, boa tarde, pessoal. Estão me ouvindo? É de mestre, tudo bom por aí? Tudo certo hoje, mais em cima da hora eu tô hoje eu tô numa Batalha aqui com meu ambiente de laboratório desde da hora do almoço ele deu um crash aqui, tô tentando recuperá lo até pra gente ver se se consegue executar uma prática aí hoje, mas ele deu um bug assim, sabe aquela coisa assim que.
+
+0:43
+É todo, é todo profissional de ti. De vez em quando tem um pesadelo. Pois é, hoje foi meio-dia, rapaz, acho que isso foi Praga da minha esposa, porque sábado e domingo eu passei instalando uma meninete. Ah, deixa eu, deixa eu mostrar negócio pra vocês. Até acho até interessante porque.
+
+1:02
+É, pode falar, pode falar. Ainda bem que eu tenho estabilidade, já que ela não pode me mandar embora. 30 anos de casamento é 30 anos de casamento, OPA, pera aí que eu tô mandando coisa errada aqui. Deixa eu ver se eu admitir, todo mundo deixa eu compartilhar aqui certinho, né? Esse aqui dá uma olhada na quantidade de máquinas virtuais que eu tenho aqui do lado esquerdo. E isso tudo tava dando crash hoje.
+
+1:31
+Rapaz do céu, pois é, chegou 1 hora que eu falei, meu, eu vou acabar perdendo tudo, então é muito trabalho. Eu falei, eu não vou perder não. Aí eu tive que é fazer os procedimentos aqui de de trobochote, de recuperação de algumas máquinas, de reposicionamento de tive que remampear quase todos os diretórios, não sendo indiscreto que máquina é a sua. O que que você tem de de máquina? É porque.
+
+1:54
+Eu tenho um nessa máquina, então nessa máquina é, mas não roda tudo junto, né? Mas eu tenho 11 processador e 7 com 32 GB de memória RAM. Eu tenho é 512 SSD no principal, mais um Tera de SSD no secundário. É uma boa máquina? É uma boa máquina.
+
+2:21
+Mas aqui no meio ambiente eu tenho mais um Monte de outras coisas. Eu tenho essa máquina principal do meu lado esquerdo, eu tenho mais 2 notebooks que funcionam como lab também, que eu vou pegando e eu vou, eu vou fazendo o meu cluster, entendeu? Tá certo, sim. Ah, eu tenho aqui, eu devo ter uns 45 computadores aqui, de vez em quando eu vou ligando no outro, aí eu faço uma configuração em cluster, monto 11 proximox ou alguma coisa e vou rodando, entendeu?
+
+2:47
+Mas esse aqui, esse aqui é Power, esse aqui é legal, rapaz, é pesado mesmo, mas é uma maquimona também, né? É uma boa marca. Essa daqui é da empresa, a minha, a minha pessoa é até parecida. É. Só que ao invés de ter 32 GB, eu tenho 16 GB. Eu vou ver se eu consigo ampliar agora.
+
+3:05
+Mas uma coisa que eu fiz que foi boa foi ter trocado OOSSD do disco principal que ele era 128 GB. Ele já tava muito, muito, muito restrito pra pra sistema operacional, pra rodar as coisas. Aí ficava muito pesado ficar rodando de um drive no outro e falando, não, eu vou, vou concentrar tudo numa coisa só, tá barato comprar isso hoje. E a gente aumentou memória e aumentou o os discos, né?
+
+3:35
+Então foi foi 11 boa aquisição que a gente fez aí, né? Acho que eu vou entrar nessa também, vou botar mais um SSD que eu estou com 220 aqui, mas eu estou vendo que tem um professor aqui da fiap que entope programa na gente. Eu eu faço isso mesmo e é aquela história, né? Onde houver fé que eu leve a dúvida, ou seja, vamos, vamos fazer esse negócio, é é acontecer mesmo, deixa eu só mudar aqui, Oo.
+
+4:03
+A apresentação deixa eu ver, eu vou ter que alter Ah, pera aí que eu vou ter que fazer uma coisa aqui só me deixa eu admitir mais gente aqui e eu vou ter que pegar apresentação e mudar Oo que aconteceu aqui, OPA, tudo bem, aí aqui voltou, Ah, tá é pode ter sido comigo, deixa eu ver só se se tá no lugar certo aqui agora, agora sim é que eu tive que alterar o monitor que que tá a apresentação.
+
+4:34
+Agora vocês estão vendo aí a apresentação do PowerPoint, beleza, beleza, mestre, tá, é, o Denis está com algum problema para entrar, de repente ele vai ter que reiniciar o modem dele. Ele já tentou entrar em umas 2 vezes e não conseguiu. Se alguém tiver o contato dele, por favor, avisa para ele tentar sair e entrar novamente, tá, é o Denis, é Portugal, tá? Então vamos lá, pessoal, vamos lá, estamos.
+
+5:02
+Chegando numa fase importante aí do curso e eu vou falar já a aula técnica pra caramba tá mais ainda do que do que as outras pra algum alguns contextos. Hoje nós vamos falar de rede 5, GE só, 5G EE assim, coisas extremamente internas de procedimentos, alguma coisa aí de sinalização. E hoje eu vou falar sobre o protocolo que que eu acho que é o preferido desta faculdade.
+
+5:32
+Que ele é quase ele quase se chama fiap, ele chama f um AP, vou falar um pouco dele, tá? Nós vamos falar de mensagens de request response pra gente poder entender como que que é alguns, como é que algumas sessões são estabelecidas, né? Então é importante que a gente é entenda esse processo, porque deixa eu ver se eles conseguem entrar agora, vamos ver.
+
+6:02
+É o Dênis. Ele está com algum problema na rede do lado dele, não sei se ele está com conexão do celular, alguma coisa assim, mas ele vai ter que tentar novamente. Bom, mas vamos lá. Então a gente vai falar assim, essencialmente de redes 5G, vocês já me conhecem? Vamos lá, aliás, interessante. 111 discussão.
+
+6:28
+É falando um pouquinho das coisas que eu faço, né? Eu sou especialista em criptografia, né? E eu desenvolvi aquela solução de eu eu desenvolver uma solução de telefonia criptografada, né? A gente tá discutindo agora a implementação de dessa solução pra fazer alguns testes em principalmente em órgão de governo, em outras questões, e a gente tem assim, o back end funciona muito bem, era perfeitinho front end. Quer aplicativo?
+
+6:57
+É um desafio pra mim. Aí eu falei, pô, vou desenvolver pront e eu vou fazer só isso da minha vida e mais nada, porque vai me ocupar todo tempo do mundo. Aí eu falei assim, como é que eu desenvolvo vocês é pra parte de telefonia se chamar softfone, né? Então como é que eu desenvolvo um softfone que tenha suporte e criptografia do jeito que a gente faz muito fator de autenticação que ele selecione corretamente a rede tudo. Pô, como que eu vou fazer isso? Dá bastante trabalho, né?
+
+7:27
+É, alguém perguntou sobre as linguagens. Então a gente usa CC mais, mais, utiliza Python. A gente utiliza bastante coisa em Shell diretamente em Shell, principalmente a parte que é puramente de criptografia. Eu gosto muito de fazer em Shell, porque qual que é o segredo, na verdade?
+
+7:51
+Qual que é aí? O que diferencia esse processo criptográfico é a forma Como Ele É estabelecido, né? O processo, porque a criptografia, ela tende a explodir, o tamanho do do pacote, está tudo muito grande. Aí você tem lentidão, você tem delay, você tem um Monte de coisas que atrapalham, tá? Aí eu pensei, pô, dá para gente fazer uma criptografia como se fosse uma cebola com várias camadas.
+
+8:21
+Então a gente desenvolveu um método que pega uma mensagem e criptografa 3 vezes, mas não exatamente uma cebola, com toda a informação que isso também explodiria OOO pacote. Então o que a gente faz? Criptografa o conteúdo e aí pega essa chave que é gerada no primeiro processo. E aí a gente vai criptografando a chave em múltiplas etapas.
+
+8:46
+E coloca tudo isso atrás de um firewall que tem um pouco de inteligência artificial e tal pra poder gerar AA gerar os controles de segurança automaticamente, porque ficar criando regra de firewall é com o projeto rodando, é o inferno. Então a gente desenvolveu, esse é essa questão. E aí eu falei, pô, como é que eu vou desenvolver isso? Aí eu falei, eu quer saber, eu vou usar todas essas IA s aí e vou começar a desenvolver o projeto.
+
+9:13
+Cara desenvolveu um projeto legal, o cara que olhou, que é quem vai fazer, ele olhou e falou, meu, você adiantou 80% do trabalho. Então veja como se você fizer as perguntas corretas, tá? É, você consegue adiantar muita coisa agora? Tem que sempre validar, porque às vezes você tem uma resposta da ya para programação e tudo mais. E aí o diretório diferente, a versão do pacote é diferente.
+
+9:40
+Mas eu olhei e falei, pô, faz bastante sentido isso que foi desenvolvido. Então aquilo que eu achei que fosse demorar uns 3 meses, eu desenvolvi em 3 horas assim OOA base. Aí agora eu entrego para um cara de fronteng resolver, mas é muito legal. O que dá para fazer. Não sei se vocês já testaram uma IA chamado cloud ponto e a Cláudio igual Cláudio, só que com e no final cloud ponto e a é muito legal, sabe? IA é muito legal.
+
+10:09
+Então fica a dica aí pra vocês testarem, então eu vou até colocar aqui, ó, quem quiser testar ela. Claude, ponto, obrigado. Eu até vejo, eu, eu tô querendo assinar uma, eu uso as versões gratuitas, mas eu quero assinar uma. Eu acho que eu vou assinar essa porque achei ela muito, muito boa, muito legal e sempre que eu tiver assim alguma informação do tipo passarei pra você, tá? Alguém mandou a mensagem deixa eu ver o Cláudio?
+
+10:39
+Cara, você tem, você procura direto no site, é muito legal. Eu não sei se está no GitHub, não pesquisei, alguém me falou dela e porque resolveu um problema nosso, do nosso ambiente de laboratório, falei, Ah, vou usar aí eu achei bem legal, mas eu acho que tem sim, deve ter GitHub dela, se eu não me engano, o Cláudio ponta IA é da WS, tá, se eu não me engano. Vamos lá, gente.
+
+11:01
+Conteúdo de hoje a gente vai falar de coisas bem específicas, né? Bem, lembra que a gente falou dos do protocolo NGAP na aula anterior? OPA, a Camila tá passando aqui para deixar o link de avaliação, então, por favor, vocês preencham aí, depois, no final, a avaliação desse conteúdo e vamos lá. Então, veja, na aula anterior eu falei um pouco sobre ANGAP, só que dentro dele, sabe quando você vai lá no.
+
+11:27
+Eu falo que você vai no cantinho, no escurinho, lá No No fundinho da sala você encontra Oo. Eu diria que é o que é mais importante, que é a expressão profunda. Quando eu uso ONGAP para estabelecer uma conexão, eu tenho 2 mensagens muito importantes, que é ONG setup request e o response.
+
+11:47
+Então nós vamos ver como que o protocolo ngap estabelece uma conexão. Uma parte do cor lá da rede é do 5G. Na verdade, entre o cor EEEA borda, né? Entre OOOA herb ONG, setup, EONG, responsa, se estabelecem. Essa é essa parte da conexão.
+
+12:08
+Entrando um pouco mais, aí entra esse protocolo que eu falo do protocolo da fiap, né? OF um AP aqui o aplication protocol, e nós vamos ver a troca das mensagens f um e principalmente, novamente lá dentro, no fundinho do escurinho, lá no cantinho do protocolo, as mensagens de setup request, response para estabelecimento da sessão mais internamente, tá?
+
+12:33
+Aí a gente vem voltando pra borda. Eu falei do RRC, já é a umas 2 aulas pra trás, que é o Rage resort control, mas a gente vai entender como que essas mensagens afetam esse canal de controle dos do dos recursos de rádio, pra que a gente possa ver. Finalmente. Já me perguntaram aqui mais de uma vez, Ah, meu código de tiran. Eu tenho pouca coisa, deixa eu.
+
+13:00
+Dá uma atualizada, depois eu passo meu GitHub, eu não sou tão programador assim, embora eu faça as coisas, é eu falo que eu sou mais das antigas, né? Eu gosto muito de manter isso em em repositório da empresa e coisas assim, mas deixa eu eu subir alguma coisa pro GitHub, eu atualizo pra vocês, tá? Beleza. Então ó, me perguntaram sobre o procedimento de registro, a taxa e o registration, então vamos entender como que a gente estabelece uma sessão de dados lá dentro do 5G.
+
+13:30
+Uma vez que destabelece a sessão, a gente tem essa sessão ptu, ou seja, eu posso trocar dados e aí a gente vai falar sobre segurança. Autenticação baseado em 5G AK, que é o authentication, o que management e o autorization tá trabalhar com esse cara e lá depois, no final da aula, a gente vai voltar a falar um pouquinho sobre randolver, que a gente vai entender o seguinte, como é que a gente faz o randolver?
+
+14:00
+Entre 2 antenas que estão em cima do do do mesmo ponto de controle, entre 2 ou mais antenas que estão entre pontos de controle, entre ANFS diferentes e também, como que é o randolver quando você tem tecnologias diferentes, por exemplo, entre 4 GE 5G, tá?
+
+14:24
+É agora, pessoal, a gente tem um outro canal é que foi criado lá No No Teams pra baixar os recursos, então eu vou colocar esse ambiente aqui pra vocês, deixa eu achar ele aqui. Equipes, olha só, foi criado lá no Teams pra gente, pra evitar aqueles problemas que estavam acontecendo. É lá no Discord, foi criado esse ambiente aqui, né? Que é o time.
+
+14:54
+Vocês já estão aqui? Eu já vi que vocês estão aqui. E aí lá eu criei, dentro da parte de material de aula, o mod(2). Lá dentro eu coloquei todas as aulas até agora e mais algumas apostilas, que é o detalhamento das aulas. Então da aula de hoje é uma apostila grande. Ela tem, acho que com quase 70 páginas. Então lá tem procedimento de instalação do, do, do, das ferramentas e tal.
+
+15:22
+E tem OPPT da aula de hoje que é essa que eu tô seguindo aqui. Então se vocês fizerem depois, dêem uma olhada lá tem, eu vou deixar, deixa eu pegar o link aqui. Deixa eu pegar o link aqui? Não, não é esse só um segundo, deixa eu pegar ele aqui do lado.
+
+15:50
+Pra colocar pra vocês, porque oi, gente, alguém mandou alguma coisa e deixa eu copiar o nosso. É agora canal de esse cara aqui. Espera aí que eu vou olhar lá se vocês não estão, se alguém não está, porque eu tinha olhado e eu tinha encontrado vocês lá, deixa eu ver aqui, vamos lá.
+
+16:22
+Vocês estão aqui sobre geral, deixa, deixa eu ver onde que é. Eu também tive um pouco de dificuldade no início pra achar aqui, deixa eu ver aqui se vocês estão aqui, tá, tá tarde, está dores, deixa eu ver quem tá aqui, deixa carregar. Ainda preciso atualizar aqui minhas informações, tá, pessoal?
+
+16:49
+Deixa ele ver, deixa eu ver só onde que a gente está aqui, ó, gerenciar a equipe. Vamos lá, menos. Então vocês estão aqui, então veja se por acaso alguém de vocês não está, então está aqui, ó, Francisco, é Guilherme, Everton, Gabriel aqui, dona Paula, Aurélio, Bruno, André tour.
+
+17:17
+Gabriel Francis, Antônio Carlos cintélio, Gabriel Souza, Clodoaldo, Gabriel Rodrigues, Felipe, Gabriel Francisco José, Geraldo Ramon, Gabriel Henrique, Gilberto Fernandes, Daniel Quintão, Diego de Andrade, Eriberto de Souto. Espera aí que eu acho que tem mais gente aqui. Eriberto de Souto, Yuri Santana, Gabriel Barbosa, Carlos Alberto de Almeida, Carlos André, Felipe de Rezende, Elisângela.
+
+17:47
+Leonardo, Leonardo, Augusto, Dênis, Eduardo, Fabrício, Antônio. Haddad. Vamos ver se tem melhor alguém aqui. Haddad, temos gente aqui. Ícaro de Oliveira, Ashley, antonildo e César. Alguém não está nessa lista pessoal? Professor, eu não tô.
+
+18:16
+Não, professor, então tem que entrar em contato com o pessoal lá do do, da administração. É do curso, eu não sei. Acho que quem tá, quem mandou mensagem aqui foi a Camila. Deixa eu ver se eu consigo avisar para ela. Professor, eu tô, mas eu não consigo acessar.
+
+18:46
+É, então pode ser problema da camada 8, né, professor? Só confirmando isso que você mandou aqui no chat, o mod(2) é é um link ou é uma imagem aí mesmo porque veio uma imagem, ele vem, ele vem com uma imagem, Ah, eu, eu já coloco espera aí só um minutinho, a parte de de.
+
+19:12
+De nomes eu vou verificar, mas eu vou colocar o link aqui, deixa eu ver, não vai sim, eu quero, eu quero, eu quero até aro inicial, deixa eu achar aqui, deixa eu puxar aqui pro lado, só pra pra gente poder seguir, senão a gente fica muito tempo aqui. Eu quero fazer mais coisas, deixa eu ver se tá aqui, gente, só um minuto.
+
+19:47
+Vou pegar aqui. Cadê o link? Ué, é só um minuto, não tá copiando. Ah, não copiar link. Agora sim, agora eu posto aqui gente, o link.
+
+20:11
+Tá aqui, beleza? Bom, eu vou ver essa questão dos nomes, vou avisar se a gente não não encontrar hoje, de qualquer forma, eu tô postando pra vocês lá, depois eu posto no mesmo canal que tinha antes também, tá, mas vamos lá, gente, vamos começar que a gente já tem aí 20 minutos de aula pra gente poder cumprir com a nossa agenda também, né? Então vamos lá, gente.
+
+20:39
+Então a gente está aqui para falar um pouco mais aprofundado sobre alguns protocolos de sinalização e a sua forma de ser utilizado dentro das redes. 5 GA gente já falou que lá na rede 5 GA gente tem 2 planos de trabalho. Plano de controle chamado de CPEO plano do usuário, tá? Então veja quando a gente pega e analisa os planos aqui.
+
+21:06
+Aqui em cima, A gente tem o plano de controle aqui em cima, dentro do core, e o plano de usuário aqui embaixo. Lembrando que o plano de controle tem muito a ver com a sinalização mesmo, que é isso que a gente tem visto aqui, tá? Então tudo, aquela parte de autenticação, registro, mobilidade e sessões é gerenciado nele. E o plano do usuário é onde a gente efetivamente faz alguma coisa. A gente fala, a gente executa alguma atividade específica, ó, tá dando um erro aqui?
+
+21:36
+Tá, entendi. Bom, eu tenho que ver o que tá acontecendo com esse acesso aí, tá? Agora olha que interessante, a partir da antena aqui da bepaze Station, é da herb, até o core, a gente tem uma rede privada segura. Então é disso que nós estamos falando aqui nesse curso, tá? E aí?
+
+22:00
+Pra a gente poder atender ao que existe entre o base Station e o core, a gente tem evidentemente os protocolos e as partes que que compõem essa rede. A gente vai voltar um pouquinho falando rapidamente sobre o ngap, o engap, mas principalmente pra entender como que ele estabelece é a conexão, tá? Então a gente já viu que esse cara.
+
+22:29
+Ele opera entre a é na interface n 2 entre a antena EOAMF. Então nesse desenho aqui entre a antena e o core tem um cara chamado AMF, que é quem faz a gestão dos usuários que estão conectados na rede. Então existe uma interface chamada n 2, que é onde roda esse protocolo, ok? Lembrando ele faz o procedimento de registro.
+
+22:57
+Ele libera o contexto, ou seja, o que o cara vai utilizar e gerencia o randover. E aí dentro desse cara aqui do NGAP existe existem 2 mensagens que são trocadas lá dentro entre a parte do do do né, do do da antena EOANF, que é o request e o response.
+
+23:23
+Então, veja só, no primeiro momento a gente tem uma mensagem chamada ngctup request, quem que é esse cara? Ó, eu tô aqui na antena, no nó e eu estabeleço, né? O requisito, uma conexão para OANF aí veja OANF com informações, por exemplo, sobre OPLMN suportado que que é isso?
+
+23:49
+Ó public Land mobile network, identidade única de uma rede móvel operada por uma operadora de telecomunicações. Sabe quando a gente está configurando o celular, de repente você coloca um segundo chip e aí você vai configurar aquela aquele é dentro lá do do do Android ou do ou do iOS que você seleciona as redes somente 5G ou qual operadora você consegue enxergar as operadoras? É esse cara aqui.
+
+24:18
+É o plmn. Então pra cada operadora existe uma identidade única, tá? Então quando você solicita essa conexão, ele verifica, tá, mas eu tô falando com qual rede, tá? Eu tô falando é com qual operadora? Aí OAMF vai chegar lá e falar, olha, eu sou da operadora vivo, da operadora claro ou da operadora Tim ou da operadora x, ok?
+
+24:45
+Além disso, ele também faz essa questão do rastreamento de áreas capacidades, porque a gente tem dentro da rede de telecomunicações uma série de partes delas que são compartilhadas. Logo nessa parte de das áreas de rastreamento, muitas vezes você vai encontrar infraestruturas que falam.
+
+25:10
+PLMN diferentes, então você tem que saber qual é aquele que te cabe, porque você é cliente da operadora a ou da operadora b, então essa mensagem é importante, tá? Então isso aqui nada mais é do que um hent Shake, tá? É um aperto de mão bidirecional, mas é um hent Shake simples. Lembrando, quando eu faço uma conexão TCP, eu tenho trio e hent Shake eu tenho sim.
+
+25:40
+Aí, né, do, do, da minha, da minha máquina para o servidor web, por exemplo, mando uma mensagem sim de sincronização, ele me devolve um sim AC eu devolvo um Acre, ok, se eu tiver, por exemplo, com o servidor DHCP para pegar configuração de rede, aí eu tenho o for e rede cheio. Aí eu tenho lá ODHCP, Discover, OODHCP offer, eu tenho OODHCPO request EODHCP acnology.
+
+26:10
+Então são 4 etapas para eu estabelecer esse aperto de mão aqui, são só 2 sim, exatamente aqui que você estabelece isso. Inclusive, Carlos, eu vou mostrar 11 ambiente para vocês, que é o open 5 GS aonde você pode escolher entrar OPCDCPDPCE outros caras, tá? Eu vou mostrar. Eu só não vou conseguir rodar porque hoje eu tive problema com o meu ambiente. Eu até consegui instalar de novo, mas não consegui.
+
+26:37
+Fazer ele rodar do jeito que eu queria. Mas aí vocês vão fazer, porque vocês vão ter apostila à disposição de vocês, sim. Aí veja aqui eu estou falando de um processo bem simples, 2 etapas. Só que entre eles tem um Monte de mensagens. É um Monte de mensagens, tá? Então quando a gente fala sobre essa sinalização do ng.
+
+27:03
+AP utilizando NG é request setup response, a gente tá falando que só no request, olha só ele, ele tem todos esses Campos aqui. Quem que é o node? RD quem que é o node name? Sabe quem que é o pajing? Qual que é a informação de retenção da minha, da, do meu usuário, se eu tiver aí o ti, ele me mandou pajing, isso só no request.
+
+27:31
+E aí na resposta, né? Response? Aí ele vem, por exemplo, com o nome do AMF, ó, para evitar que eu conflite com outro operador, ele me manda o nome do AMF, tá? Ele me manda o nome do nó, o estendido também. Ele verifica, por exemplo, se eu tenho aí OOO NBA iuti, caso esteja trafegando numa rede com o iuti também. E aí tem a transmissão, ó PLMN, ó.
+
+27:59
+Operadora tal ok, qual que é Oo ID dessa operadora é tal beleza, então me devolve que faz sentido Pra Mim Não É outra, eu estou em roaming utilizando a Infra de outra operadora, então altere esse esse campo pra mim, porque aí tudo muda né? Tudo muda eu vou ter de repente é biletagem diferente, tempo de utilização diferente e tudo mais. Mas quando a gente fala.
+
+28:27
+Dessa sinalização, por exemplo, no whatshark da vida, olha que interessante, o ng setup e o é request response tá lá no início, até pus ele um pouco maior aqui tá agora olha o time no mesmo 1000º de segundo a gente tem ng setup request response, aí começa a requisição de request.
+
+28:54
+Eu tenho AO estabelecimento de dar um link no transporte, nas de uplink, no transporte nas aí o aliás, o uplink, ele já ocorre um pouquinho depois. Então esse processo aqui com várias etapas, é exatamente o registro utilizando o ngctup request e o response. Ele começa com essas 2 mensagens até o momento em que eu estabeleço Oo contexto.
+
+29:24
+E aí eu consigo é dizer que eu estou registrado nesta parte da rede utilizando o protocolo ngap, ok, deixa eu ver aqui tá aí AA. Camila acabou respondendo aqui tá? Ei, tá no drive da turma.
+
+29:48
+Turma um Ah, deixa eu pegar essa turma um aqui, deixa eu ver se eu também tenho acesso ao mesmo ambiente que se eu tiver, pra mim é bom também ter acesso às aulas, deixa eu ver, Ah, tá legal, tá aqui já, ótimo. Eu vou até deixar aqui porque depois eu quero também dar uma olhada, se tanto que eu quero dar, eu também quero rever as aulas pra ver se eu falei alguma bobagem, né? De repente depois aparece alguém aí que me processa, falou, você falou besteira, professor, então eu tenho que rever também.
+
+30:17
+Então vamos lá, continuando aqui, pessoal, agora que a gente falou é do protocolo de forma geral, vamos entender como é que é a análise. Quando eu capturo, por exemplo, um sample desse, é desses pacotes pra analisar, por exemplo, com um arichart ou com algum outro cara assim, olha que legal isso aqui, tá?
+
+30:40
+Eu não vou conseguir mostrar esse cara, porque eu não tenho é esse esse sample aqui comigo. Mas eu trouxe um exemplo aqui bem interessante, tá? Então é um exemplo de captura de ngctap request com o Ari Shark, tá? Então lá no começo eu tenho o cabeçalho do meu pacote. Como é que eu identifico que esse cara é do ngctap request? Aqui ele vai apresentar o protocolo SCTP.
+
+31:08
+Tá aqui, ó. Ele tá dentro do IP. Ele ele é da pilha do protocolo IPV 4, então ele inicia como SCTP, que é o protocolo de controle. E aí eu sigo aí. Olha ele aqui, ó, SCTP stream control, transmission protocol aí.
+
+31:30
+Pra eu entender que esse cara tá no request, tem 2 Campos que eu tenho que analisar, isso é padrão. Isso daí eu tenho aqui da documentação, tá pessoal? Se você falar por que que o data é zero? Porque a documentação tá desse jeito. Eu não entrei tão a fundo pra poder trazer essa informação, mas o chank ter é é type aqui né? Pra ir Pra Ele me dizer que eu tenho aqui um segmento completo e tudo mais que eu tenho um payload definido.
+
+31:57
+E eu tenho essa informação de deita zero e eu tenho essa flag zero x 03, ok, então essa informação que me fala que eu tenho o ng setup recoes, ok, e aí no momento em que esse pacote SCTP acontece, eu tenho por fim.
+
+32:21
+O ngap sendo executado aqui, então nesse momento é que é estabelecida APDU, então a partir daqui eu consigo trocar dados, tá? Olha aqui ó, a ng, você está pro request? Então olha que interessante, eu começo, OPA, deixa eu voltar aqui, eu começo com uma captura, eu analiso lá 111.
+
+32:47
+Um pedacinho dele. Eu analiso que lá no IPV 4 aparece OSCTP indicado, aí eu vejo o próprio SCTP, ele me manda a informação de data zero da fleg zero x 03 e aí ele apresenta o estabelecimento da pdu quando ele apresenta AUN gap. E aí ó, ele associou ao node aqui embaixo, ó, associou ao node AA.
+
+33:16
+A sessão está estabelecida, posso trocar dados? Alguém vai falar alguma coisa, perguntar alguma coisa, posso seguir? Então assim, vamos lá. Então, nesse contexto, vamos só voltar aqui para pegar o ambiente entre a minha antena EOAMF, esse é o processo para estabelecer uma conexão, beleza? Então estabelecer a conexão nessa parte do core entre a antena.
+
+33:44
+EOANF, agora eu vou mais para dentro do core, ó o protocolo preferido da fiap, aí ó protocolo f um application protocol, tá? Ele é usado numa interface chamada de f um que ela fica onde, né? Fica entre é, veja, eu tenho aqui a antena, a antena ela conversa com um cara aqui que é o discipute Unity, tá aqui no meu front, how parece que tá escrito errado aqui.
+
+34:14
+Aí pra dentro eu tenho 2 caras aí, tá? Eu tenho uma unidade central do control plain e do user play, tá ok? Nesse contexto aqui eu tenho uma interface chamada f um.
+
+34:33
+E aí olha a sequência como se fosse OOO, eu fosse analisar lá Oo modelo 11, só que aqui ó, eu tenho o layer físico, tem o data link, tem OOO, layer IP, aí eu tenho o layer de controle e aí eu tenho o layer do f um AP, que é pra fazer essa comunicação aqui. Então a gente pode até fazer uma similaridade. Parece modelo 11, outra CPIP.
+
+35:00
+De certa forma, ele parece até de baixo para cima. Até o terceiro layer é bem parecido até o quarto layer, porque se aqui é controle, lá na no TCPIP ele é transporte, então ele é bem parecido. É bom fazer essas correlações, mas vamos entender como esse cara funciona, aquele espera. Acho que tem alguém com um áudio aberto aí que está vazando um pouquinho. Vamos lá, vamos seguir, vamos lá.
+
+35:29
+Dentro do f um AP, vamos entrar, vamos aprofundava, vamos lá pro detalhamento. Eu tenho que analisar as mensagens de f um request setup é setup, request e response. Então veja, nesse ambiente entre DUECU, por favor, não considere um palavrão entre esses 2 caras. Eu tenho.
+
+35:59
+O request, ou seja, a comunicação, ele vai entre OODU, que é o distribuinted e o central Unity, e aula um, não sei. Aula um que você está falando é o que? A gravação lá ela é do dia 13, mas é de espera aí. Espera aí. Ah, gente, eu acho que as aulas que estão lá.
+
+36:27
+Não são as aulas ainda da das minhas, as minhas começaram dia 13 de maio. Eu acho que elas ainda não estão lá, é eu preciso olhar 13 de maio, deixa eu ver, aí depois eu tenho que olhar qual que é, a quais são as minhas aulas. Aí eu, eu, eu, eu vou olhar e vou ajustar, porque se a minha começou no dia 13, tem tem 3 aulas lá que são mais recentes, eu vou ver se alguma delas é a minha.
+
+36:56
+Tá, beleza, então vamos lá, pessoal. Então assim, comunicação estabelecida entre distribuir trid unit central unic central unit f um setup unecast eu estou requisitando essa comunicação, esta conexão aí o seu responde, ok, ele responde, passa um tempo, ele veja o central envia uma requisição de contexto.
+
+37:26
+E aí o distribuiu te responde, então vamos entender, ó, eu estou com a antena aqui, eu tenho um celular aqui fora, tá? Então, por exemplo, tenho 11 rádio aqui, tá? Então aqui é o meu rádio, ele está conectado nessa antena aqui, tá? Então vamos imaginar o seguinte, quando eu estou aqui, eu estou utilizando o voz, eu estou utilizando, é.
+
+37:56
+Eu estou utilizando voz, eu estou utilizando o vídeo, estou utilizando o texto, então eu tenho um contexto, tá? Esse contexto aqui, ó, quando eu vou mudar daqui pra cá, por exemplo, eu tenho que mandar essa informação, olha, o meu contexto é tal, então ele, esse cara que requisita, qual que é o contexto dele? Eles fala, o contexto é tal.
+
+38:21
+E aí ele estabelece uma conexão mais pra dentro, então eu tô entrando mais no meu core, então veja, esse é diagrama, ele dá uma ideia de como esse processo é interessante. Então eu requisito do é pra dentro da rede, um setup request Oo centro, né? Mais da rede me responde, depois o centro da rede fala ó, qual que é o contexto do cara?
+
+38:48
+Aí quem está mais próximo da antena fala, ó, contexto é esse. E aí eu estabeleço uma comunicação entre esses 2 caras, mais pro centro, mais pro core da minha rede. Então vamos entender um pouquinho, né? Mais detalhadamente o que que isso significa. Então veja essa interface a filme, ela tem que ser operacional, então ela inicia a troca de mensagens ou tráfico de dados do usuário. Então a gente tem que.
+
+39:11
+Estabelecer aquelas mensagens que eu mandei, que eu avisei antes. Então, o procedimento de configuração começa com o deu enviando solicitação de configuração, recebe uma resposta, ok, nesse momento ele redefine o contexto. Por quê? Porque ele solicita o contexto para dentro, tá. Então isso é legal porque nessa redefinição de contexto.
+
+39:33
+Eu eu estou avisando pra rede toda, olha esse fulano aqui, ele está utilizando tais recursos, ele está em mobilidade. Se ele for mudar de uma antena pra outra, eu preciso também que o contexto siga essas, é esses parâmetros. E aí nesse contexto aí aqui ficou um pouco pequeno, mas a gente tem os Campos principais que são é importantes aí quando esse essa configuração é feita, então é o ID.
+
+40:02
+Do DU para OCU. Aí eu tenho toda a parte de lista de células que estão disponíveis sendo é apresentado e aí eu também tenho que ter a lista de suporte de operadoras apresentado nesse contexto. E aqui embaixo eu tenho as interfaces, né? Os procedimentos de gerenciamento da interface, o contexto de gerenciamento de Neo, o procedimento de gerenciamento do contexto.
+
+40:30
+Do dispositivo final, né? Do user é equipament e também as mensagens de rrc e de warning. Ou seja, esse cara é importante porque ele consegue olhar lá pra borda e é o rádio e ir lá pra dentro quando você consegue, por exemplo, conversar com a parte interna da rede. Muito bem. Agora olha que interessante aqui, da mesma forma que a gente tinha lá o ng request setup, request response.
+
+41:00
+Num pacote, né? Numa análise de um pacote de um p cap lá No No no arishark, os 2 é os as 2 primeiras mensagens são setup, requestro, response é que é a mesma coisa. Mas olha só que interessante, aqui é um processo de sinalização para registro do é do dispositivo, né? Do do dispositivo móvel na rede, só que para dentro do core.
+
+41:29
+Então ele manda um setup request, ele recebe 11 setup response, tá ok? Então olha só, e se a gente pegar aqui, ó, aqui, ele vai do central Unity, olha, desculpa, deixa eu voltar, deixa eu desfazer, deixa eu desfazer, desfazer.
+
+41:55
+Ó, ele vai do DU para OCU no primeiro cara, depois ele vai do ** para ODU no segundo, depois do DU para OCU, ele vem e ele começa a fazer o update da configuração. E aí vem aquelas mensagens que a gente andou vendo nas aulas anteriores. Ele estabelece ORRC, né? Que são os recursos de rádio. Aí a gente viu lá naquela análise que a gente fez no ominete.
+
+42:22
+AO estabelecimento de down, link e uplink, tá, eu tenho toda a parte de contexto aqui, inclusive com a reconfiguração, ó, tudo aqui, aí eu tenho o request do rrc, no momento em que ele termina, que tá setup completo, OPA. Ele vem aqui e estabelece uma sessão de segurança.
+
+42:51
+Pois eu vou apagar isso que tá meio bagunçado, tá? Até o momento daqui, você vê que a parte de segurança, ela é extensa. Ele define o security mode, ele define a informação de de de downlink, ele define o contexto completo e, por fim, ele estabelece o modelo completo de segurança. Então olha quanta coisa importante acontece nesse processo, tá? Então é isso então?
+
+43:21
+Muito bem, estas informações todas são só pra registro de um usuário dentro da rede, na parte que diz respeito ao que vai entre ODUEOCU dentro da rede, aqui ó, entre DUECU. Então pra dentro eu tenho todo este procedimento muito bem. Deixa eu dar um s aqui, beleza?
+
+43:50
+Beleza, então estou indo mais pra dentro. Agora a gente vai pro outro lado. A gente falou do rrc anteriormente, tá? Nós vimos que ele é 11 recurso de controle do rádio, o rádio é o dispositivo móvel, tá? Então veja, controle de recursos de rádio responsável pela configuração de alto nível e aspectos relacionados a política do plano de controle da run.
+
+44:17
+Ou seja, tudo aquilo que vai requisitar recursos pro cara utilizar tudo aquilo que diz respeito ao plano de controle, o rrc. Quem cuida então eu tô aqui, ó, ligado ao plano de controle. Veja que ele tá diretamente ligado ao rrc, né? Ao plano de controle, tá. Então ele é um cara que vai controlar quem? A camada de rádio. E olha que legal, ele gerencia a conexão authentication.
+
+44:47
+Ele gerencia a segurança, que é o autorization e o que management, quando for necessário, e o randolver, mobilidade do e então tudo isso ao mesmo tempo. Para fazer isso OORRC, ele faz uma série. Ele, na verdade, ele tem uma série de mensagens, né? Aqui tem um desenho.
+
+45:14
+Pouco mais complexo, mas as mensagens vejam, o rrc setup request também existe. Aí ao invés de ter só um response, ele tem o setup, o setup complit e o reconfiguration. Então olha só, quando Oo quando o celular ele é ligado, por exemplo, quando ele chega perto de uma antena pela primeira vez, ele faz o rrc setup request, ou seja.
+
+45:45
+Pedido inicial para iniciar uma conexão, ok, aí internamente a antena ela devolve ORRC setup, ok, é como se fosse um handshake, então ó, vai do deixa eu pegar aqui o a caneta, esse cara aqui, então vamos pegar o aparelho.
+
+46:14
+E a antena? Então, o primeiro item, ele vai do celular para a antena, aí ORRC setup, ele vai da antena para o celular, ok, aí esse cara fala, ó, beleza.
+
+46:38
+Se me mandou a configuração é o suficiente pra mim, então eu posso confirmar. Então, terceiro item do celular pra antena, tá, e aí, estabeleceu aqui, tá, e aí, se eu tiver já algum, se eu tiver vindo de uma outra antena, esse quarto item, ele é pra um lado e pro outro, que é a reconfiguração de parâmetros durante AA conexão.
+
+47:06
+Se eu tiver conectando pela primeira vez, é só a configuração de parâmetros. Se eu tiver saindo de uma antena e indo pra outra, é a reconfiguração de parâmetros que ocorre aonde? Quando eu tenho randover, né? Então tudo isso aqui que eu falei é o que tá de certa forma implícito nesta imagem.
+
+47:28
+É uma imagem bastante complexa, né? Porque é, eu tenho a conexão do Rec. É a parte que está mais próxima do da antena, a parte que está mais próxima do core, a parte aqui, ó, que fala entre 4 GE 5G e quando eu estabeleço, né? Conexões e desconexões é o que está aqui em baixo.
+
+47:58
+Tá que eu posso também ter esse processo de de conexão, reconexão, né? Que é o Idol, que é o desconecte. Então, aquilo que a gente viu anteriormente, muito bem dito isso e visto isso, a gente finalmente consegue entender o seguinte, beleza, tudo isso que foi feito pelo RRC, pelo f um AP, pelo ngap.
+
+48:26
+É para estabelecimento de conexão ao core da rede legal. Uma vez que eu estou dentro do core da rede e eu estou conectado, eu posso iniciar uma sessão de troca de dados, tá? Então veja primeiro o que que é 5G SA 5G standalone, né? Que é analisando ele como 111 bloco só tá. Então é, eu tenho um processo.
+
+48:56
+De registro e a liberação pra troca de dados. Bastante complexo aqui, tá? Então vamos lá, vamos começar aqui na antena, tá? Eu tenho uma solicitação de informação pra o aparelho, ou seja, isso aqui é um dá um link, tá vindo da antena pro aparelho, dá um link, aí a antena fala, beleza.
+
+49:24
+Eu quero estabelecer uma sessão e trocar dados, então ele vai mandar de volta, isso é um uplink, tá? Aí a gente acabou, pode? Deixa eu ver a pergunta aqui, Antônio, tem bastante coisa aqui. Nos processos de reconfiguração eles trazem, já é de um, de um contexto, na verdade é de uma antena pra outra, né? De um, de um.
+
+49:58
+É de um GNB para outro, porque se você tiver que reconfigurar tudo, imagina como quanto tráfego você não vai gerar com a quantidade de usuários, a depender de qual é a sua antena, então bastante coisa é importada, por isso que esses protocolos são importantes, porque você consegue transferir contexto. Quer ver uma coisa? Deixa eu ver se está aqui, ó, aqui no meio, tá? Vamos, vamos pegar essa parte aqui, até pode ser interessante para é responder você.
+
+50:28
+Deixa eu pegar aqui, ó, ó, veja que ele tá requisitando. Ah não, aqui é o contexto inicial, deixa eu ver aqui o contexto, não, aqui não, não, não tem, aqui não tem AAAA transferência de contexto, mas a gente viu anteriormente que se existe. Lembra que eu falei do protocolo x 2, do protocolo XMOX2 pro 4G, EOXN pro 5G?
+
+50:58
+Quando você migra de uma antena para outra, são esses protocolos que transferem o contexto de uma antena para outra, para que não tenha que ser reconfigurado todo o tempo. Todas as vezes deu para entender, Antônio, respondi tua pergunta, Carlos, você quer é abrir Oo áudio para explicar um pouco melhor. Não entendi muito a sua. Como funcionaria em.
+
+51:30
+Em um só 3 GA, deixa eu responder, deixa eu responder na próxima aula é muito específico. Tudo bem a mudança de tecnologia. Você tem um atendimento 3G numa localidade e vai entrar um RTE, por exemplo. Se você aproveita a base de dados para para migrar, é só isso que eu queria saber. Então é do 3G para o 4G, você tem uma mudança importante de de infraestrutura, né?
+
+52:01
+Você tem, é, vamos lá, eu vou, eu vou dar uma de dados, entendeu, mestre? Desculpe interromper só uma de dados, então. Mas vou dar um exemplo que talvez responda a sua pergunta, quando você tem, por exemplo, uma rede ipv 41, rede ipv 6, o ipv 4, ele não, ele não é 100% compatível com o ipv 6, o ipv c 5, o ipv 4. Mas quando você precisa fazer do ipv 4, ipv 6?
+
+52:27
+Você cria um, é uma espécie de um NAT, é um túnel pra poder fazer essa. Essa interpretação da base de dados do 3G pro 4G é algo muito parecido pra base de dados, porque o 3G, ele não é totalmente compatível com o 4G, mas o 4G é totalmente compatível com o 3G. Então essa base de dados, ela tem que ser é, é, ela tem que ser tratada. E as mudanças?
+
+52:53
+Tem que ser é gerenciadas do 3G para o 4G, do 4G para o 3G, ele já consegue mandar isso resolvido. Respondi tua pergunta, Carlos, quiser abrir o áudio, tá fechado Pra Ele, deixa eu preparar para a próxima e aí a gente tira essa dúvida, você é complexo aqui, tá? Mas vamos lá, vamos lá, então, veja.
+
+53:19
+Voltando aqui nesse procedimento de de Ah, tá, não, isso aqui é meu, isso aqui é complexo pra caramba, nós estamos falando de um negócio aqui, é baita complexo, gente, então ó, vamos lá, deixa eu pegar aqui Oo apontador Alice, então veja novamente, ó, tô começa fundar o link da antena pro aparelho, o aparelho responde, e eu tô estabelecendo o quê eu quero, eu, eu tenho que estabelecer uma sessão pra troca de informações, eu tenho que estabelecer uma sessão de IPDUE, é isso, é exatamente isso que tá aqui.
+
+53:49
+Então veja, dá um link da antena pro aparelho up. Link do aparelho pra antena. Aí eu tenho que estabelecer o quê, ó? Lembrando do rrc configuração pra aspectos pro plano de controle Pra Ele poder é estabelecer o controle da camada de rádio. Então aqui ó, olha o rrc setup, aqui ó, olha OOO handshake.
+
+54:18
+Setup request setup RRC setup complit são aquelas 3 etapas que eu mostrei anteriormente. Se precisar fazer o reconfiguration, ele faz, vamos ver se ele pediu aqui um reconfiguration, ó, não pediu, deixa eu ver aqui, ó, pediu aqui embaixo, pediu aqui embaixo, mas aí eu já estou dentro, eu passei por todo core.
+
+54:47
+Eu fui lá para dentro da AMF só depois que ele fez o pedido de reconfiguração, tá? Então primeiro ele selecionou uma portadora de sinalização que é OSRB, depois ele estabelece a reconfiguração. Então tudo isso, por que que isso é importante? Porque nesse processo de estabelecimento da apdu eu tenho que lidar com um negócio chamado QoS, que é a qualidade de serviço. Então agora aparece que é só nessa parte que é importante, gente.
+
+55:18
+QoS funciona da seguinte forma, sabe quando você está numa avenida grande, tem uma faixa exclusiva para ônibus? Então faixa exclusiva para ônibus é o QoS. Então, das 6 da manhã até às 8 da noite, aquela faixa, em geral ela é exclusiva para ônibus. Então, se chegar um ônibus, é como se eu pegasse lá e falasse assim, olha, eu quero que o serviço de voz ele tenha um. Ele tem um pedaço do meu canal reservado para isso.
+
+55:46
+E toda vez que entrar voz, dados, vídeo, EEEE, qualquer tipo de pacote, voz terá prioridade, tá? Então esse processo, além de estabelecer a sessão, o contexto, o registro, quando ele abre APDU, ele fala pra mim, olha, eu ainda coloquei parâmetros de iOS pra estabelecer priorização do atendimento de serviços.
+
+56:14
+E isso tudo é o resumo do que está aqui em azul. Então a sincronização entre down link e uplink. Estabelecimento, né? Solicitação de de conexão, solicitação de registro, transferência de identidade. Quando eu tiver entre Mantena e outra, aí eu tenho a criação das portadoras e por fim, eu tenho o estabelecimento da sessão pdeu, que é onde ele está aqui no final último, cara aqui.
+
+56:43
+É a hora que ele tá pronto pra trocar dados, com priorização, com iOS, tudo certinho, tá? Nesse meio tempo ele tem uma troca, ele tem um fluxo EE, esse fluxo, ele tem uma sequência e ele tem alguns componentes envolvidos, tá, então veja o que que eu tenho no 5G, ó lá, mais da borda até a parte de dentro. Eu tenho a setup rrc, eu tenho o any gap.
+
+57:12
+Estabelecendo entre a antena EOANF, aí eu tenho OOO mais pro core, o registration é request do nas aí eu tenho a autenticação, eu tenho a definição do modo de segurança e eu tenho lá do cor a aceitação do registro aí tá tudo pronto pra trocar esses dados. Quem que tá envolvido nesse processo? O.
+
+57:37
+Dispositivo móvel, a antena e pelo menos OANF, que é quem faz a gestão dessa conexão desse usuário. Tá, então isso tudo pra estabelecer uma PDU, vamos entender um pouquinho, é da definição de como que é esse registro estabelecimento da PDU de uma forma escrita, ó, está aqui, ó.
+
+58:02
+Pdeu é o processo que estabelece uma conexão lógica pro tráfico de dados, ou seja, quando ele libera internet, mensageria, voz e outras coisas. Tá então tudo aquilo que a gente colocou naquele desenho tá de certa forma descrito aqui. Então o terminal envia a solicitação de registro completo, estabelecimento da PDU lá pra MF, que é quem tá do lado do core.
+
+58:25
+Estabelecimento é semelhante a uma mensagem de conectividade, a um a um handshake. No caso do LTE, esse cara chama pdn, tá OANF, que é o cara do core. Ele vai enviar essa mensagem de definição de recursos pra antena e aí ele vai alistar. Lembra que eu falei sobre o network slicing?
+
+58:53
+Que ele consegue pegar OOOA rede 5G, definindo em fatias, onde cada fatia pode ser otimizada para uma determinada aplicação. Por exemplo, cidades inteligentes, controle de veículos autônomos, drones, aplicações industriais e a parte de telefonia. Especificamente aqui, se eu isolar só a parte de telefonia com dados, evidentemente eu tenho como se fosse um slicing. Eu tenho uma lista de sessões que têm que ser estabelecidas.
+
+59:23
+De acordo com os fluxos de QoS e esses atributos pra cada fluxo. Então aqui é um negócio bem bacana. Na próxima slide vai ter 11 isso numa imagem pra gente poder entender o seguinte, pô, estabelecer a tdeu, o que que tem lá dentro? Pô, lá dentro tem um Monte de fluxos QoS, tá? Então veja, imagina.
+
+59:48
+E eu tenho 2 fluxos aqui e 3 serviços, tá? Por exemplo, voz, vídeo e texto. Vamos dizer que voice está aqui no iOS, no fluxo, um de iOS. Então dentro do iOS, tudo que for voz vai ter prioridade superior ao que está para baixo. Então eu tenho depois um outro fluxo.
+
+1:00:13
+Vamos dizer que no outro fluxo, lá na definição da pdo, eu defino aqui vídeo e texto, por exemplo, tem uma prioridade menor. Então veja, eu crio 2 tuneeizinhos lá dentro do fluxo de iOS e estabeleço isso. Vamos lá. O iOS pode ser comparado ao tonelamento de uma VPN? Mais ou menos. Quando você coloca uma VPN, você não consegue é separar os fluxos que correm dentro dela.
+
+1:00:45
+Dá o exemplo do open VPN, estabelece o open VPN client to server, né? Então você tem do seu computador pro servidor da empresa, por exemplo, pro firewall da empresa. Tudo que você trafegar dentro dessa VPN vai ter a mesma prioridade. O que OS ele é um Labo que você coloca lá no cabeçário do pacote dizendo o seguinte, olha.
+
+1:01:08
+Quando chegar nos elementos que tem que analisar esse cabeçalho, ele tem que olhar assim, esse aqui é um cabeçalho prioritário. Então, se chegar a 10 pacotes juntos, esse é o que vai primeiro. Esse é o que vai primeiro. Então imagina que você recebe um fluxo de 1000 pacotes entre voz, dados e vídeo. Desses 1000 pacotes, eu tenho 100 pacotes de voz.
+
+1:01:32
+O vamos vamos colocar um elemento simples de entender, o roteador. Ele vai olhar pro label desses pacotes de voz e falar, cara, vocês têm um label de iOS mais prioritário do que o restante, então vocês passam na frente. É como se fosse sabe quando você vai na balada e tem OOOO cara que fica na portaria falando quem entra e quem não entra? É quase isso, tá? O Antônio colocou, é uma imagem aqui, professor. Ah, tá, pode falar?
+
+1:02:03
+Oi. Então nessa imagem mesmo aqui, ele ele disse que tem 11 network port na interface n 6 que vai para uma internet. Nessa DN aí é se eu tenho aqui, por exemplo, 2 q eu nessa mesma imagem, né? Que eu tenho 2 QS flow aqui, isso OPA, pode falar.
+
+1:02:30
+Ele tinha dado uma cortada. Tá me ouvindo? Legal, professor? Sim, agora sim, pode continuar isso isso. Então aqui ele só tem uma interface n 6 que vai pra internet, só que nessa interface n 6 na saída do PF você tem uma DNN né, que faz o encaminhamento dos dados. Vamos nessa mesma foto como você tem aqui o que OS flow 1 e 2, vamos supor que um seja dados e o outro voz.
+
+1:02:58
+Dados vai pra internet legal pós vai pro servidor INS lá que faz a ligação só que ADNN é a mesma, como que ele faz essa distinção ali nessa saída na interface CN 6 professor é por vlan, como é que ele, como é que ele sabe que ele vai encaminhar OQF flow pra um lado, EOQF flow 2 pro outro lado ele vai olhar no label do pacote tá vendo aqui embaixo o diffserve? Esse diffserve é o que a gente chama de diferente eteed service, né o.
+
+1:03:28
+É o que OS ele consegue ser otimizado, é de acordo com a informação que você coloca lá. Então, nessa interface m 6, ele vai olhar lá e vai, ele vai ver qual é o de que serve do pacote de voz, qual é o de que serve dos pacotes de dados. E aí ele já sabe, é, é.
+
+1:03:53
+Por padrão, pra quem ele tem que dar prioridade ou não, isso é automático, isso já é, é da natureza, é dessa marcação do iOS antes e da observação do DIF serve aqui embaixo, na interface, entendeu? Dá pra entender, esse esse DIF serve, então ele vai taguear o dado exato, incrementar alguma coisa no cabeçalho dele, é isso.
+
+1:04:19
+Exato, ele vai, porque existem vários deep service. Então vou dar um exemplo OOO deep serv prioritário de voz, ele chama AF 41, tá então todo pacote que tiver a marcação AF 41, ele vai embora, entendeu? O pacote de é vídeo, ele é o CS 3, tá, que é o control service 3, que ele é superior ao control service um.
+
+1:04:48
+Então você tem AF 41 voice CS 3, você tem normalmente vídeo e CS um que é o menos prioritário, é dados. Estou dando um exemplo porque eu uso isso na configuração de void quando eu faço os meus é servidores, entendeu? Eu uso muito o QoS pra poder é fazer meus projetos muito, muito. Mas deu pra entender, você tá geia e esse e essa tag, só que é interessante. 11 observação, quando você tá geia.
+
+1:05:17
+O pacote vai embora, ele sai da sua rede, os elementos de rede no caminho, eles tem que ter suporte a iOS, porque se eles não tiverem, se eles não tiverem o primeiro elemento de rede, por exemplo, o roteador que não tiver suporte a iOS, ele pega o pacote e ele marca todo mundo come CS um e acabou o iOS, entendeu? Isso é isso. É um negócio importante, tá?
+
+1:05:44
+Esse negócio importante de ser comentado, quando você fala de que OSA rede toda tem que ter suporte a que OS se uma parte não tiver, de certa forma estraga. O trabalho é de quem tá é fazendo, fazendo essa é essa preocupação, né? Mas vamos lá, vamos lá, vamos seguir. Deu para entender então, a questão aqui do que OS priorização, aquilo que é que você define como prioritário vai primeiro.
+
+1:06:14
+Você tem segunda prioridade, terceira prioridade. Você pode ter vários tipos de queos. Quando você não marca nada no pacote, ele coloca lá no GIF serv um elemento chamado best efert, que é o be best efert. O nome é até curioso porque best efert é o melhor esforço, não é o pior esforço, é o pacote que não tem prioridade sobre ninguém. Tá então AF 41, CS 3, CS um.
+
+1:06:39
+E besterforts são os 4 tags mais utilizados quando você tem priorização de serviços entre voz, vídeo e dados em redes de comunicação, seja de VoIP, seja de telefonia móvel e tudo aquilo que hoje trafega também fibra. Tá tudo usa esses caras aí, tá? Quem faz essa marcação é OSMS, né, professor? Oo não. Então depende, é, pode falar, pode falar.
+
+1:07:09
+Então, a marcação do que OS é feita pelo SMS, né ou não? Sim, sim, sim, sim, aqui na rede móvel, sim, quando você tem uma rede VoIP, a marcação do que OS você pode definir se ela vai ser feita no próprio terminal ou se ela vai ser feita no primeiro Salto da rede, tá? Quando é VoIP, você consegue, você consegue até fazer com que o próprio, o próprio terminal é já mande, aí você tem que definir isso na aplicação, evidentemente.
+
+1:07:39
+A aplicação que roda no terminal o seu softfone, por exemplo, ele já pode marcar queos ou o primeiro, o primeiro nó da rede do seu servidor, seu PABXP alguém vai marcar para você, entendeu? É isso? Então vamos lá. E essa marcação, desculpa atrapalhar a aula. OPA, vai lá, vai de que OS eu consigo ver na troca de mensagem ali do RRC ou só dentro do core mesmo.
+
+1:08:06
+Você consegue ver, mas aí eu eu teria que eu eu acho que eu consigo trazer, senão pra próxima aula pra outra, eu vou tentar trazer um sample que tenha todas essas informações pra gente analisar no air Shark, tá legal, porque aí a gente consegue ver no detalhe que eu só falando aqui fica muito abstrato, é, portanto, a gente vê lá acontecendo. Aliás, daqui a pouco a gente vai mexer um pouquinho com eu vou.
+
+1:08:35
+Tentar colocar o ambiente pra funcionar um pouquinho, que seja EE fazer uma análise aqui, né? Vamos lá, então por que OF olhando essa foto? É porque olhando essa foto aqui no nessa interface Oo parece que sim, né? Parece que ele já vem já No No dispositivo, né? A marcação do IOF sim, mas aí é é eu falo o seguinte.
+
+1:09:00
+Aí eu preciso confirmar se essa marcação já não é uma indicação, que quando vem da da antena pro dispositivo pra que ele já saia com o pacote marcado, que é importante, ele já saia com o pacote marcado. No caso de VoIP, quando eu eu trabalho com isso, eu já procuro fazer com que o pacote saia marcado ou no máximo ele saia do meu PAB XP. Você que coloca OPAB XP do lado de dentro pra poder pegar os pacotes e fazer esse trabalho antes de chegar na operadora, por exemplo.
+
+1:09:27
+Que aí ele já chega marcado, o operador faz o trabalho para mim mais facilmente, tá, vamos lá, olha só isso aqui, para que OS isso aqui para estabelecimento da sessão PDU, quando a gente analisa, né, o procedimento depois que você pesou a taxa registration, então aqui eu tô falando só de que OS aqui eu tô falando do estabelecimento da sessão PDU, igual a gente, viu.
+
+1:09:56
+Aqui atrás para o atache, a gente vai ver aqui para a sessão pdu. Então todo o processo tá aqui, ó, registrei, tá? Então eu vou aqui solicito uma sessão pdu para OAMFOAMF. Por seu lado, ele vai solicitar a criação do contexto para OSMFOSMF, ele vai pedir uma subscrição.
+
+1:10:24
+Aqui dentro pro PCF, pro DN aí, beleza, eu tenho essa resposta do SMF para OAMF falando, beleza, criei o contexto até a resposta. Aí eu tenho. A segunda etapa, parte de autenticação e autorização, ou seja, autêntico o cara na rede e autoriza os serviços que ele tem contratado. Então eu tenho essa seleção. Vamos pegar a parte mais importante aqui, ó.
+
+1:10:55
+Quando eu tenho essa é autenticação sendo solicitada. Deixa eu ver aonde que ela vai ser dada aqui, deixa eu ver, ó, tá aqui, ó AO requestro response da autenticação, a comunicação da mensagem de transferência aqui ó o session request tá voltando pra antena, tá chegando.
+
+1:11:19
+Ó o bidirecional aqui entre OOO terminal e a antena. E aqui eu tenho a resposta. Nesse momento, eu eu faço uma seguinte, ó, e aí, cor, vou ter a sessão ou não? Aí o cor começa a se movimentar, ele troca uma série de mensagens, olha onde AO registro ocorre aqui, aqui o registro ocorre.
+
+1:11:49
+Tá, quando o registro ocorre, aí eu tenho um down link lá do PF chegando até o usuário, aí depois, pois não, OPA, ok. Então é nesse momento que ocorre o registro, então vamos dizer que a partir daqui ele me manda informações que a sessão pdeu, tá ok? Inclusive se for um dispositivo ipv 6.
+
+1:12:17
+Ele ele recebe a configuração nesse passo aqui. Então aí eu estabeleço a sessão PDU. De uma forma resumida, o usuário manda o pedido ao AMFOAMF, encaminha pro SMFOSMF, analoca os recursos e responde, fala, beleza, pode trafegar dados? Ok. Então o estabelecimento da PDU é feito desta forma.
+
+1:12:47
+Tá muito bem até aqui. Eu estabeleci a sessão da PDU, eu posso trafegar dados, mas como é que fica a segurança? Tá, como é que fica a segurança? Isso tem a ver com o processo de autenticação, tá? Então o que que é o aca, né? Authentication, que management e autorization, tá, então olha só que interessante.
+
+1:13:17
+Quando você fala de criptografiaenesse.eu, eu me sinto muito confortável para falar, porque uma coisa que eu mexo bastante. Você tem 2 tipos de algoritmos que são mais utilizados, os algoritmos simétricos e os assimétricos, tudo aquilo que vai trafegar os dados do usuário voz, vídeo, texto é importante que seja criptografado com um algoritmo simétrico. Por quê?
+
+1:13:45
+Porque a carga de trabalho da criptografia no algoritmo simétrico é infinitamente menor do que um algoritmo assimétrico. Tá? Então como é que funciona aqui? Imagina que eu vou fazer uma chamada de voz, tá? A minha voz vai ser criptografada por um algoritmo simétrico.
+
+1:14:08
+Vamos dizer que esse algoritmo simétrico ele seja, é validado por uma chave chamada Almir. Então eu pego o conteúdo criptográfico, por exemplo, com AES com alguma coisa assim, tá com AP, seja lá o que for. Aí esse algoritmo vai ter uma chave. Vamos dizer que a chave se chame Almir, então o conteúdo está criptografado e tem essa chave.
+
+1:14:36
+Aí eu vou pegar essa chave chamada Almir e eu vou aplicar um algoritmo assimétrico pra proteger essa chave, que no caso vai ser, por exemplo, TRS. Vou dar um exemplo disso Na Na nossa vida, tá? Imagina que eu trabalho numa empresa e eu tenho que guardar documentos muito importantes? É numa, sei lá, num pequeno cofre.
+
+1:15:04
+Que tem nessa empresa. Aí eu vou lá, guardo os meus documentos nesse pequeno cofre e pego e fecho com a chave. Aí eu pego esta chave, vou lá no Banco do Brasil ou no sei lá no Itaú e eu contrato o cofre de Itaú para guardar esta chave. Vocês concordam que em condições normais?
+
+1:15:27
+Todo OOO conteúdo agora está protegido pelo cofre do Itaú, porque eu tenho que ir no cofre do Itaú pegar a chave para pegar essa chave e abrir o cofre menor. Então isso aumenta bastante a segurança. E esse gerenciamento de chaves é Oo segredo para que você tenha uma criptografia com alto poder de aplicação de segurança. Então veja no nosso caso. Agora, trazendo para o nosso caso então.
+
+1:15:56
+Eu tenho 5G AQAK, então eu tenho algoritmo simétrico entre o usuário e o hss, ou o Office, se for 5G. Aí eu tenho a parte de dados que só vai circular se eu tiver a autenticação. E como é que é esse gerenciamento de chaves? Tá, no primeiro momento eu estabeleço uma autenticação.
+
+1:16:24
+Com o algoritmo simétrico, pega essa chave e aplica um EAP nela e pego esse resultado e aplico um TLS nela. Então veja, eu faço Três Passos ou 3 métodos de autenticação para fazer a segurança.
+
+1:16:43
+Do meu ambiente 5G. Então veja o que a gente tá vendo aqui. É chamado de segurança de alto padrão, porque eu tenho algoritmo simétrico e tenho um assimétrico que é OTLS pra proteção da chave que foi gerada antes. Ó, então veja aqui, Na Na etapa do meio eu tenho o quê? Um gerenciamento da chave. Esse gerenciamento da chave vai pegar essa chave gerada na primeira etapa e vai falar olha.
+
+1:17:10
+Protege essa chave com OTLS, porque aí quando você usa OTLS, você está usando o processo de criptografia assimétrica. O que que isso significa? Que a chave que criptografa é diferente da que de criptografa. Então se eu conhecer a chave que criptografou, eu não consigo obter a chave original. Preciso saber qual é o par de chaves, e é esse o segredo do TLS para ele ser tão eficiente.
+
+1:17:39
+Pessoal, tem um áudio que tá vazando aí bastante até então, veja só, vamos entender esse processo de uma forma um pouco mais simples, tá, como é que é lá dentro da rede, tá? Pessoal, tem um áudio que tá vazando, só não sei de quem, que é que tem alguns áudios também, Ah, tá, OPA, só fecha pra mim, por favor, então veja ó, qual que é o processo OAMF envia o authentication request lá pro.
+
+1:18:09
+Terminal o terminal responde, beleza, aí o alce fale da resposta e dá ok, aí eu tenho o quê? Chave simétrica, gerenciamento de chaves, tudo bem, depois OEAP já tá com a chave, né? Gerenciada, ele vai aplicar a criptografia forte com OEAPTLS. Ok, então vamos entender como que isso acontece com uma imagem.
+
+1:18:38
+Porque isso é dividido em 2 fases, início da autenticação 5G, que é o que tá aqui pra cima. Então olha só, eu mando uma mensagem nas de de request de registro pro ANFOANF, manda pro aust esse cara, o alce muda, manda pro core, então tô requisitando. Então nesse processo eu estou iniciando o processo da autenticação.
+
+1:19:07
+Depois eu tenho essa resposta vindo para cá, então eu tô vindo, tô trazendo autenticação aí, beleza? Quando chega aqui, ele fala, beleza, ok, então posso me autenticar. O cara fala, posta, autenticar esse cara. Aí o Watson fala, pode, pode me autenticar esse cara e esse processo todo. Ele é permeado por criptografia, é simétrica aqui na primeira etapa.
+
+1:19:36
+E criptografia assimétrica do cor para OANF, então eu tenho um criptografia de conteúdo nessa primeira etapa e proteção da chave na segunda etapa, e aí eu garanto um bom, muito bom nível de segurança pra esse ambiente, ok?
+
+1:20:03
+A gente pode. Depois é falar um pouquinho mais sobre criptografia, dar alguns exemplos reais. De repente, a gente cria uma chave, faz a aplicação dela para vocês entenderem, tá, mas aí eu tenho que trazer para uma outra aula. Esse é um negócio que eu gosto bastante de fazer, beleza falado da autenticação, então, falando dos protocolos, estabelecimento de de conexão entre o terminal e a antena, a antena EOAMFOMFEO core.
+
+1:20:32
+Então a gente viu isso com rrc aqui na segunda, na primeira etapa, ngap na segunda etapa, f uma p na terceira etapa, e aí nós começamos a falar da do estabelecimento da sessão pdu, falamos do atach, falamos da segurança e falta só a gente ver aqui os elementos do randolver de mobilidade e as suas diferenças, tá?
+
+1:21:01
+Então vamos lá, deixa eu só tomar uma água aqui, o professor, essa essa criptografia, a akea, ela é é da é do mesmo sistema do subsuse ou ou é coisa diferente? Não, não. Oo aka é o nome do processo, é authentication, que management é autorization, não é o algoritmo, tá?
+
+1:21:31
+Deu pra entender? Deu pra entender. Na verdade, o algoritmo que nós estamos usando é o quê? A gente está usando uma chave simétrica, provavelmente o AES. Nós estamos usando OEAP pra gerenciamento, depois OEAPTLS pra criptografia assimétrica. Então de certa forma, nós estamos usando AES, estamos é utilizando um HMI pra poder fazer a gestão das chaves.
+
+1:21:56
+E estamos usando um TLS pra proteção das chaves, certo? Que são algoritmos de criptografia comuns, usado em rede, usado em telefonia, usado em dados, tá, é isso, vamos lá, isso daqui é algo bastante comum pra gente no dia a dia como usuários de telefonia, certo? Eu sou um terminal, por exemplo, terminal 5G.
+
+1:22:25
+Eu estou conectado a uma célula, essa célula ela pode ter uma ou mais antenas que são controladas, né? Pelo meu core eu tenho meu plano de controle, meu plano de usuário pra definir sinalização e troca de dados utilizando as diversas interfaces. A gente viu que tem OF um AP, aqui a gente tem.
+
+1:22:52
+X 2 entre as antenas de XNA, gente tem o ngap entre as antenas e o gerenciador ANF, mas tem um ponto importante que é o randolver, o randolver. Ele pode acontecer né? Que é a transferência de uma antena para outra. Ele pode acontecer é de 3 formas distintas o intra NGNBGNB.
+
+1:23:20
+Dentro da mesma unidade, então, entre as antenas da mesma célula, se eu trocar de uma antena para outra da mesma célula, é o que eu chamo de intragên b então imagina que eu tenho mais uma antena? Deixa eu pegar aqui. OA espera aí, vamos dizer que eu tenho mais uma antena aqui. E essa antena ela faz parte desta célula aqui célula um, tá? Então se eu for migrar para ela.
+
+1:23:52
+Eu tô fazendo um intra gnb, ok, se eu já tiver migrando desta célula pra esta célula aqui, ou seja, eu tô saindo da primeira célula e entrando na segunda célula, aí eu já tenho Inter gnb, ou seja, aqui eu já tenho no primeiro caso. Olha que interessante, é legal de falar no primeiro caso.
+
+1:24:20
+Toda a negociação dessa troca é feita diretamente no AMF. Não precisa entrar por cor da rede, tá? Não preciso. Quando eu saio de uma célula para outra, aí entram 2 coisas, eu tenho as AA notificação de randover aqui, e aqui eu tenho OXN.
+
+1:24:48
+E eu tenho a notificação dessa informação aqui dentro do core. Por quê? Porque em um determinado momento eu tô sob a gestão desse cara aqui de cima e no outro eu tô sob a gestão desse cara aqui de baixo. Então esse randolver, ele envolve o protocolo XN pra fazer Oo randolver propriamente dito, mas eu tenho AAA informação do core.
+
+1:25:17
+Pra que eu passe da gestão do GNB, um aqui pro GNB 2 aqui embaixo. Então eu tenho essa entre GNBS diferentes. Agora vamos dizer que aqui desse lado eu tenha uma rede 4G, tá? Então aqui eu vou ter uma rede 4G.
+
+1:25:46
+E ela vai ter. Ela representa essa parte aqui, tá? A rede 4G de alguma forma está ligada comigo aqui. E aí eu tenho a antena 4 GE, aí esse cara vem e liga aqui para o 4G. Esse é o chamado randover interret, que é entre tecnologias, ok?
+
+1:26:13
+Que é radio, se eu não me engano, é radio Axis transfer. Alguma coisa assim, posso estar enganado, mas isso que é radio Axis transfer, tá? E quando a gente faz essa, essa, essa troca, tá? Se eu tiver dentro da rede 5G, eu uso as mensagens de any gap request e quando eu mudo, né? De e.
+
+1:26:43
+De antena, principalmente quando eu mudo de gnb. Aí a gente tem o rrc reconfiguration, lembrando que ele consegue é ele consegue trazer informações, mesmo que seja um reconfiguration. Ele não precisa reconfigurar tudo, tá? Tem alguma questão aqui? Partido link do.
+
+1:27:11
+Ah, tá do grupo, tá um outro link que eu vou depois compartilhar aqui é o da pesquisa de satisfação. Eu vou só colocar ele de novo, que quem chegou depois que a Camila colocou não pega. Deixa eu ver aqui novas mensagens e aqui é o de pesquisa de satisfação. Coloquei aqui novamente, tá? Clodoaldo, pode falar, tá baixo. Clodoaldo, fala um pouquinho mais perto do microfone, por favor, ó, agora sim, agora sim.
+
+1:27:41
+Ó quando tá na mesma célula espera aqui, espera aí, deixa só fui eu hoje, tá completado aqui que deu, não, não fui eu, fui eu, fui eu, fui eu deixa eu, eu voltar aqui, deixa eu só pegar não, não fui eu, fui eu, fui eu, coisa minha aqui, aqui, deixa eu só voltar já caiu umas 15 vezes ó quando tá dentro da mesma célula eu não tenho então entre as antenas, o protocolo XN é só quando eu tenho o.
+
+1:28:10
+Inter GNB não, você tem o você depende, se for 4G você tem OX 2 EOXN, você sempre tem, tá? Você sempre tem. Se você não tiver, você não faz o randover. Mas você concorda que a gestão de tudo para aqui no AMF, aqui no começo eu não preciso ir pro core, então eu, eu, eu, eu tenho um custo menor pro core da rede, mas o XNEOX2 acontece, tá? Sempre tem, tá?
+
+1:28:39
+É isso? Respondi. Valeu, beleza. Então vamos lá, pessoal, pra gente poder mostrar um pouquinho de informação. Então, nessa questão então tem a diferença entre antenas da mesma célula randover intra randover entre células diferentes, mas dentro da mesma rede Inter GNBE quando eu tenho tecnologias diferentes, internet, ok, muito bem dito isso.
+
+1:29:08
+A gente vai visualizar um pouquinho de prática. Deixa eu pegar esse cara aqui, deixa eu ver se não tá pesado demais aqui, ver se vai dar pra rodar aqui. Deixa, ó, pessoal, olha que legalzinho esse cara aqui, ó. É uma aplicação chamada open 5 GS. Deu trabalho aqui pra instalar esse cara, tá?
+
+1:29:38
+Mas você pode, eu vou mostrar aqui em linha de comando, tá esse cara funcionando aqui? Deixa eu ver aqui no final, opera ainda tá esse aqui ainda tá pensando, mas esse cara aqui, ó, eu tenho o open 5G. SE esse cara aqui chamado we run simulation, tá? Então eu tô simulando.
+
+1:30:02
+O usuário, eu estou simulando a antena e eu estou simulando a rede 5G. Tá aí lá na apostila que eu passei para vocês tem PDF. No caso de vocês, tem uma atividade legal aqui, ó, análise game gap com o arichark, blá, blá, blá, blá. Aí você vai ter a instalação.
+
+1:30:25
+Do arance tem a instalação do 5, do do, do simulator, GS lá, né? Do 5 GS, tá todo mundo lá, mas aí deixa eu ver qual que é o cara aqui, atividades práticas, deixa eu pegar aqui, o cara aqui me interessa, deixa eu ver qual que é aqui, deixa eu ver esse cara, esse cara aqui é o outro, quero pegar o outro, esse cara aqui.
+
+1:30:52
+Então eu criei esse cara aqui que é o wearland sim aqui, e aí aí eu vou executar comandos nele e vou rodar o areshark durante essa execução, tá? Então olha que legal isso aqui, o areshark tá aqui, deixa eu começar a capturar pacotes aqui, vou continuar, beleza? Aí eu venho aqui e eu colo esses comandos, tá, ó.
+
+1:31:22
+Observa que tem vai ter bastante coisa aqui, a gente tá com o Teams aqui, o Teams vai atrapalhar pra caramba. Mas ó, ele estabeleceu uma comunicação SCTP, tá dando um errinho no rgctup, não tem problema, tá? Deixa eu dar um control c aqui, ó, ele tá testando o processo de registro, ó lá OPLMN tentando encontrar a operadora, tá vendo, ó, tentando encontrar operadora, tá?
+
+1:31:52
+Então ele não vai encontrar operador, evidentemente, porque não tem aqui. Eu vou parar esse cara aqui, OK? Vou parar esse cara aqui. Então, bem, aí vou lá nos protocolos, deixa eu ver colo colo, deixa eu ver, é onde que ele tá. Olha aqui, gente, o processo de procura da antena tá aqui, ó OXID, aqui ó, EOI 3 e aqui.
+
+1:32:20
+1905 é exatamente o momento em que ele tenta encontrar a antena. Isso aqui é muito legal, claro, eu não tenho a antena aqui, eu não tenho todos os recursos, é muita coisa instalada junta. Eu ainda estou tentando instalar todo o ambiente, mas é essa apostila que eu passei pra vocês. Tem um bom passo a passo, tá? O Carlos fez uma pergunta aí, se tivéssemos o smart cells e no cenário onde acontecem em eventos.
+
+1:32:49
+O processo é parecido, Carlos. Onde que você vai ter que conectar ele a rede? O processo é parecido, ele vai ser intra gnb com OOA célula a qual ele foi ligado. Ele vai ser Inter gnb com as células lateralmente, né, as as adjacentes. E ele vai ser o internet quando ele for conversar com outras tecnologias. Só se você estiver colocando uma smart cels 5G.
+
+1:33:17
+Se ele for pro 4G, ele vai ter que fazer aquele processo. Não, não muda tanto quando você pensa em em em essa mobilidade de de smalls céus aí, né? Mas é isso. Então olha só, aqui a gente tem. Então, como eu não tinha antena, ele não conseguiu pegar todos os elementos, mas ele tem os Campos. Aqui a gente consegue analisar alguns elementos interessantes, né?
+
+1:33:46
+Beleza, então aqui é bem legal, porque nesse momento, veja que uma antena sempre faz Broadcast. Então, nesses 3 pacotes aqui, o simulador tentou simular uma antena e jogar o sinal para todo mundo. Aí eu tenho, né, esse padrão 1905 de 30, que é a parte de controle legal, o nome completo, né? O controle.
+
+1:34:09
+Dele, então esse cara aqui, ó, ele tá fazendo o quê? A auto tentando fazer, a autoconfiguração do ponto de acesso. Deixa eu trazer ele mais, deixa eu abrir mais aqui, ó. Ele tá tentando fazer autoconfiguração do ponto de acesso e descobrir a topologia da minha rede. Esse aqui é muito legal, muito legal. Deixa eu só acertar aqui o timer.
+
+1:34:37
+Ah, tá. Deixa eu colocar aqui uma coisa melhor assim. É muito grande. Deixa eu melhorar isso aqui só pra.
+
+1:35:05
+Ficar um pouco menor, né? Só pra gente poder entender quando que o pacote aconteceu, que hora que foi e tudo mais. Tá? Então veja, a gente tá vendo que OA antena tentou, né? Oo sistema tentou conectar um elemento e tudo mais. E olha que interessante isso aqui, quando eu instalei Oo open 5G, SEOE run, sim, ele cria pra mim uma rede interna, então ele cria internamente alguns endereços ips. Tá vendo aqui, ó?
+
+1:35:36
+Esse cara criou esse esse endereço IP para mim, 1045 era como se fosse um cliente da rede, então você tem um Ping nele. 10 4501, olha lá, ele pinga o cara, então é como se ele enxergasse um terminalzinho aqui. Esse simulador é muito legal, é muito legal. Deixa eu ver uma coisa, se eu der o Ping no local, rosto, 127, 001.
+
+1:36:05
+Ele vai pingar evidentemente. Deixa eu ver se ele está criando outros caras internamente, ó, o 2 também está disponível, vamos ver se o 3 está disponível, o 3 está disponível, então ele cria toda uma rede de loop back para eu fazer os testes. Isso é bem legal, tá? Então, quando você instala o open 5G, SOE run.
+
+1:36:30
+E outros caras aqui você começa a ter realmente uma simulação de uma redinha 5G. Claro, tem um Monte de elementos que a gente tem que analisar, tá? E pra que a gente possa ter o nosso ambiente mais funcional. Deixa eu só ver aqui que eu acho que alguém tentou me chamar aqui. Deixa eu ver se é daqui mesmo ou se eu posso passar pra lá, ok?
+
+1:37:02
+AO Antônio fez a estrutura física. Então, Antônio, pra essa fazer essa transmissão de via Broadcast é, eu entendo que é mais importante você entender qual que é AAA estrutura lógica, né? Que são os protocolos que a gente que a gente acabou vendo hoje.
+
+1:37:22
+E quando você fala, é informação para sincronismo e acesso inicial do celular à rede. Quem vai fazer isso é a herbe mesmo, né? É a estação rádio base e no máximo, OAMF como elementos físicos. É a estação, né? O base Station EOAMF. Mas o mais importante para o estabelecimento disso é a parte lógica, sinalização, protocolo e outras questões, tá?
+
+1:37:51
+Eu tinha pego aqui. Deixa eu ver se se está aqui. Alguns tempos do arichark eu andei baixando pra gente poder analisar, ver se eu tenho algum legal aqui. Deixa eu pegar o arichark do meu computador mesmo, ó. Lembra dos protocolos que a gente andou vendo lá atrás, pessoal PFCP.
+
+1:38:20
+Ó, ó, 5G, ó o HTTP2 aqui, ó. Então quando a gente analisa a questão dos protocolos, ó, esse cara tava tentando fazer o que é um stream aqui, fazer uma subscrição. E aí depois eu posso passar pra vocês, inclusive esses esses é pacotinhos aqui, tá? Ele mandou um post.
+
+1:38:48
+Estabelecer um HTP, ó. Lembra que eu falei na aula anterior que quando a gente utiliza OHTP 2, ele estabelece aplicação com Jason. É aqui que ele sinaliza, tá, beleza, aí na sequência, aí já é um cara do Jason mesmo, né? Ó, com a parte dos dados aqui, ó, então aqui a gente já pode falar que tá dentro da apdo.
+
+1:39:17
+Da mesma forma, a gente tem mensagens, estabelecimento de sessão com o ngap, ó, OPDU sendo estabelecido aqui ó, vamos ver se ele pegou aqui. Ele foi rejeitado, então aqui não gerou PDU, tá? Então, mas olha que interessante.
+
+1:39:48
+Numa rede, ó, ó, a mensagem nasa aqui vou tentar pegar ela, ó o data chank que eu mostrei anteriormente, ó exatamente aquilo que eu mostrei, o taipe data zero e o chank flag zero x 03 aqui, ó, ele até tá me falando que eu posso ter um delay possível aqui, tá?
+
+1:40:17
+Aí ele fala que o paillod é o angep, ok, é aqui. Ele foi recusado, deixa eu ver, já foi ignorado, pediu para ignorar, deixa eu ver se ele tem informação. O Messenger, deixa eu ver, foi rejeitado de chover. Deixa eu ver se em algum momento ele foi estabelecido.
+
+1:40:49
+Não, ele tá no request mesmo, tô aqui, não tem estabelecimento, tá? Carlos, eu não tenho um caso pra pra passar, mas se alguém tiver e quiser me passar, eu eu trato pra pra poder explicar pra aula de falha de randolver, né? Eu já já presenciei isso na questão de randolver, mas aí eu era mais um espectador do que o cara que tava agindo que na verdade eu vi falha.
+
+1:41:19
+Entre setores da mesma antena e vi fale entre randolver. Isso foi uma afirmação ou uma pergunta? O Carlos do dispositivo móvel por uma pergunta, afirmação tá falando de qual informação, especificamente? Dados?
+
+1:41:51
+Quiser abrir o áudio, você pode falar aí, isso é muito parecido. Isso que você tá falando é muito parecido com Oo processo de tratativa que você tem no VoIP. No VoIP você tem 2 protocolos principais, que é o CIP e você tem o RTP protocolo CIP é que a gente registra na rede.
+
+1:42:26
+Então você registra, você consegue fazer a ligação, o outro lado consegue receber a ligação. Só que na hora que atende o CIP sai de cena e fica só ORTP pra troca de dados, né? E o CIP chama session iniciation protocol.
+
+1:42:46
+E quando que ele encerra? Quando você desliga ali, quando você encerra a chamada que termina o RPP, ele já mata o sic também, né? O sic não precisa voltar. Para encerrar, eu acho que é muito parecido com isso, muito parecido com isso. Você não precisa estar registrado na rede, mas você precisou se registrar para poder começar o processo de chamada e estabelecer apdu no caso, né, para poder trocar dados.
+
+1:43:10
+Tá então aqui eu tenho um exemplo, né, de 5G com HTP 2, one, gap, EOPFPFCP, eu tenho também aqui, ó, é que aqui é pra rede, né, pro WPA. Então a gente tem aqui um processo de de de autenticação de um access point. Então você tinha, por exemplo, ó, um Cisco e um Sony, você tem o processo de requestra, você tá com gerenciamento de rede sem fio.
+
+1:43:41
+Olha que legal, ele tem aqui a parte do tag, do SSRD, tá faltando inclusive não tem, tá? A parte de download internet working, é, deixa eu ver o que que ele fala no Cisco aqui, aqui eu já tenho, ó, esse cara aqui é o access point, é o Cisco, o Sony pode ser, por exemplo, como aparelho, então ó.
+
+1:44:09
+Existe esse SSRG aqui, o iqueri e queriri aqui 5G, 5 GB Hertz. Provavelmente as bandas ele suporta, né? De megabits, né? De 6 até 54 megabits as capacidades. Então esse aqui é pra rede sem fio. Deixa eu pegar outro elemento, eu peguei esse cara pro 5G lá, pro 4G.
+
+1:44:39
+Eu tenho aqui a partir de ó, alguém falou sobre é falha de DSL, né? De de de banda larga sobre LTE. Vamos ver onde a gente encontra essa falha, deixa eu ver. DNS greenbond, ó, é um equipamento da hower, ó aqui o atributo DNS feio. Ele falhou aqui, então a gente consegue entender que, por exemplo, essa conexão.
+
+1:45:08
+De banda larga dentro de uma rede 4 EG falhou, então veja que eu tenho várias vários protocolos aqui. GREIPV 6 internet 2 mas em geral o que me importa é a indicação da falha. Então veja, tudo isso pode ser analisado. Então é Rede 3G, rede 4 GA, análise de falhas está aqui, tá? Análise de falhas está aqui.
+
+1:45:38
+Eu tenho mais coisa lá, tá? Vamos ver aqui. Notificação ELTE eu não analisei, não analisei todos os pacotes. Deixa eu ver qual foi AA notificação que ele deu aqui. Ele gerou um túnel LTE.
+
+1:46:07
+É, não tem nada, só estabeleceu o prefixo ipv 6 aqui ele está é notificando que ele está atribuindo um valor ipv 6 a um dispositivo de rede. Então quando ele atribui é legal, porque ele é, é. É uma forma de você ver como que o ipv 6 é atribuído numa rede LTE. Interessante isso que mais eu tenho aqui de field. Deixa eu ver que filtro que eu tenho.
+
+1:46:34
+Notificação acho que é a mesma coisa, é o mesmo pacote, basicamente, a única coisa é que ele deu aqui, um Comite no pacote. Ó, olha que interessante, ó, esse aqui é um pacote de VoIP RTPESIP que eu falei, o Stone server que está dentro do VoIP, né? O telefone center, olha que interessante, aqui ó os serviços que ele está utilizando.
+
+1:47:02
+Também está utilizando o serviço de TV mídia. Então nesse caso aqui ele está fazendo um filtro comitado. É um serviço de VoIP e suporta provavelmente vídeo e outros tipos de mídia. E a gente tem para as tecnologias mais antigas.
+
+1:47:26
+Outras informações, tá, esse 3G PPMC, ele tem até pro 5G, né? Então tem coisas aqui que é até do 5G, como por exemplo, protocolo hannap, que é mais, é mais novo, é CTPE, tudo mais. Então aqui a gente tem bastante informação. Hã? Intertal, ó, aqui eu tenho o pelod 52 B.
+
+1:47:52
+Protocolo SS 7 então aqui ó, é a parte que envolve o 3G, porque OSS 7 é um protocolo do 3 GE redes mais antigas. Então eu consigo ver essa comunicação. Vou ver se tem mais alguma coisa importante aqui. SCTPO data chank. Olha Como Ele É diferente do caso do 5G.
+
+1:48:21
+O data chank aqui? Ah, não, não, não. Aqui é a mesma coisa. Ele só tem o cabeçalho, um pouco diferente do anterior, mas ele tem o type zero, a mesma flag, mesma sequência, não. O restante é Aparecido. A única coisa que está de mais notável notório aqui é a questão do SE 7. Alguém tinha me perguntado sobre OAPCEODPC ou ele aparecendo aqui.
+
+1:48:52
+Isso a gente pode simular lá dentro daquele simulador do open 5 GS. Pode também, tá? A gente pode também. Só que aqui ele está em cima do SS 7 por uma rede mais antiga e por último, pra gente poder finalizar alguma coisa lá do gsm, lá do doeg, vamos ver o que a gente tem aqui.
+
+1:49:18
+Tem o bss, que é o base Station. AP, então olha só essa informação que viria é lá da antena virar aqui transfer modificador, deixa eu ver aqui, ó, leoser e user, ó a parte, esse cara aqui, ó. O birer é capability, é a parte da portadora.
+
+1:49:46
+Então aqui ele está indicando que tem uma aportadora, ele está solicitando o namber user user, deixa eu ver aqui e a sinalização aqui no final, sinalização GSM. Veja que OOO. Esse padrão de sinalização de ESM é bem mais simples do que os outros, né? Tem.
+
+1:50:12
+Roteamento praticamente é. É desde a sua, desde o seu início. Deixa eu ver uma coisa aqui, deixa eu ver se me me apresentar mais alguma coisa importante de roteamento. Pacote lá de Botsuana. Horas de Botsuana deve ser o nome da operadora. Não tem nada mais.
+
+1:50:42
+Importante, relevante aqui, não só dizendo que é uma sinalização que utiliza, aí é informações da antena e do usuário no final, não é isso? Deixa eu voltar aqui então, diante disso.
+
+1:51:11
+A gente tá chegando no final da nossa aula. Veja, eu fiz muita análise de WeChat aqui hoje, mas de de elementos que eu já tinha baixado, eu vou colocar lá na área. É do aluno todos esses arquivinhos para vocês poderem analisar. Você pode voltar a falar deles depois, mas nós vimos como que essas mensagens internas de request response, principalmente, são importantes para estabelecer conexão e poder é criar o registro.
+
+1:51:40
+Estabelecimento apdu, a troca de dados e os procedimentos de segurança e mobilidade. Basicamente, esses foram os elementos principais da aula de hoje, a aula de hoje. Eu acho que ela seria mais interessante se eu tivesse com meu laboratório mais inteiro, mas como eu tive esse problema, eu vou tentar resolver ele pra nossa próxima aula, né? Eu vou seguir. É recuperando ele aqui então.
+
+1:52:07
+É, a gente tá chegando no final da aula, vou abrir aí o espaço para as perguntas. Se alguém quiser comentar, a gente tem alguns minutos ainda. Alguém quer falar alguma coisa? Ficou muita informação, ficou algum ponto confuso? Procurei ser bem detalhado em cada um dos processos de sinalização pra entender aquilo que tá entre terminal e antena, entre antena EAMF, entre AMFEEO core da rede.
+
+1:52:35
+Porque isso é importante pro estabelecimento ser sempre depois pra troca de informações no plano do usuário. Tá, tenho uma pergunta, professor, pode falar, Antônio, quando você geralmente no 5 GO pessoal ainda não está usando voz sobre new radio, né? Então você faz um fallback pro 4G ali pra usar VoIP ou até mesmo pro 3G.
+
+1:53:03
+Quando eu faço esse fallback, eu abro mais uma sessão pdu professor, ou ele só abre mais uma instância dentro da minha sessão é, a gente viu lá, ele pode, na verdade a gente viu num dos slides que ele abre várias, deixa eu até voltar, ele abre várias sessões pdu ao longo do tempo. Quer ver é que é que eu tinha entendido que ele abria uma sessão pdu e colocava.
+
+1:53:27
+Isso, mas deixa eu pegar, deixa eu pegar exatamente o slide. E aí a gente vê isso aqui, espera aí, deixa eu ver quem que é, espera, espera, espera, espera que aí eu já te respondo com certeza que no começo, vamos lá, deixa eu achar aqui. Confirmação.
+
+1:53:58
+Ó uma lista de sessões de ipdu que precisam ser estabelecidas, entendeu? É isso que eu queria pegar. É mesmo em mesmo em tecnologias distintas, né? Aqui tá mais específico para o 5G, né? Essa informação tá para o 5G, tá.
+
+1:54:21
+Mas isso que você falou é importante porque realmente hoje, quando você fala é em tecnologias móveis mais modernas, você de fato acaba falando voipe, né? Tem muito discípio ali. EEO new Rage é uma coisa que a gente precisa precisa virar realidade no Brasil logo. E eu sei que que já é utilizado em alguns, em alguns testes, em alguns lugares ou até mesmo na prática em alguns lugares.
+
+1:54:50
+Mas não como o modelo padrão. Mas o que está é é informando é que são são uma lista de sessões que tem que ser estabelecida. Pra quê? Dentro dessa lista você ainda tem os fluxos de QoS, então aqui é aqui parece uma perdeu só, né? É uma perdeu só com vários QoS.
+
+1:55:12
+Deixa eu dar mais uma confirmada nessa informação só pra pra não não falar alguma coisa que de repente tem um erro de conceito e eu te devolvo na nossa próxima aula, tá, tá bom, professor? E eu falei VoIP? Eu eu falei errado, eu é queria falar é volt né o voz sobre LTRT mas mas dentro você tem CIP também, você tem RTP também do 4G, você tem o volt, mas.
+
+1:55:37
+Isso é, eu quis falar do volt, eu desculpa, professor, eu quis falar do volt porque assim, Ah, eu tenho dados sobre 5G, só que a minha voz seja simples ou qualquer outra coisa, ele vim pro 4G. Aí eu falei, pô, mas será que ele abre 2 sessões PDUS ou ele abre mais dentro desse mesmo PDUE, ele abre mais um que OS flow que aponta pro 4G, entendeu? Não ficou com essa dúvida, é porque porque não não teria uma justificativa de abrir um que OS flow para o 4 GE.
+
+1:56:07
+Mas mais me me me me é, me parece correto, mas eu preciso confirmar para não falar bobagem que ele abre um apdeu diferente nesse caso, tá, mas deixa eu confirmar para não não trazer um erro de conceito, tá? Obrigado, professor pessoal, por favor faça um feedback, ou por aqui, ou pelo link que eu passei para vocês é no chat, deixa eu só ver o que que a gente vai.
+
+1:56:35
+Visualizar. Depois, na sequência, a a gente vai falar na nossa próxima aula sobre alguns elementos da arquitetura do core pra rede 4 e 5G, tá? Então a gente vai entrar bem no centro da da nossa rede pra poder ter é alguns elementos importantes, né? A gente vai ver algumas funções de rede.
+
+1:57:02
+A gente vai falar de alguns caras que estão inclusive aqui dentro do nosso laboratório, quer ver? Eu vou pegar aqui o Ah, deixa eu ver se está aqui, deixa eu procurar, Ah, deixa eu ir lá para cima. Não, ele está não, não está aqui. Eu estou pensando numa coisa, ele está dentro do laboratório, que são os elementos importantes. A gente vai conseguir.
+
+1:57:30
+É simular alguns caras importantes aqui dentro do nosso, do nosso ambiente. A gente vai conseguir? É simular dentro dele. Aqui nele, o MME, o hss, a gente vai conseguir simular o pcrf.
+
+1:57:53
+Eu espero conseguir também é simulado, core, UDMEODR. Aí eu preciso ver se vai dar tempo de fazer pra próxima aula. Se não, a gente faz na semana que vem uma coisa importante sobre a próxima aula. Se vocês olharem no calendário, ela não tá na quinta, ela tá na sexta. Porque eu acho que eu comentei com vocês na semana anterior, na quinta-feira eu vou estar pela minha empresa lá no Google campus pra poder apresentar um projeto que a gente tá fazendo.
+
+1:58:22
+E como a lá acaba só 6 e meia, não vai dar tempo de é entrar pra aula. Então eu pedi pra transferir essa aula da quinta para sexta, então agora falaremos na sexta-feira, tá? E é isso que nós temos por hoje, pessoal. Mais alguma dúvida? Posso parar o compartilhamento aqui? Espero que 6.
+
+1:58:46
+Cheguem firmes e Fortes aí, porque eu quero preparar esse ambiente de simulação pra pra sexta-feira. A gente fazer umas atividades interessantes e eu vou ver se eu consigo criar um vídeo, porque dá trabalho em instalar esses caras com procedimento de instalação, passo a passo tem na apostila, mas às vezes eu tive que recorrer AAA algumas correções porque.
+
+1:59:07
+Não encontrou um pacote, aquilo que Era Para Ser automático, eu tive que instalar na mão, então deu. Deu um pouco de trabalho para poder fazer esse ambiente funcionar, mas é isso, pessoal, finalizando por aqui, espero que vocês tenham é compreendido o máximo possível. A gente se vê na sexta-feira, beleza, isso aí, boa noite pra todos aí, boa noite a todos, boa noite a todo mundo aí.
+
+1:59:38
+Obrigado a pessoa excelente.

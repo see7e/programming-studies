@@ -1,0 +1,294 @@
+Redes Privativas | Turma 1 
+terça, 29/04/2025
+
+0:00 - Loreno E agora? Estamos vendo a tela, mas sem estar no modo de apresentação. É isso, gente. Acho que vou ter que apelar para qualquer outro lugar. Ainda não? Agora foi. Beleza. O que é engraçado é que tem que entrar pela tela cheia. Não dá para entrar por alguma janela, pela janela específica. Estranho. Bom, coisas do Microsoft Teams. Do Windows, que eu uso pessoalmente. Bom, podemos começar, né? Então, pessoal, só para recordar, nós já passamos por uma aula sobre arquitetura do sistema 5G, passamos por uma aula de conceituação de VLAN e de VPN e de outros recursos, passamos por uma aula de de onde a gente começou a brincar um pouco com a parte de aplicação da VLAN e agora nós vamos falar um pouquinho de configuração de VLANs. Aqui o sistema 5G em princípio, pelo título, o sistema 5G fica um pouco excluído, porém eu tentei colocar uma as figurinhas e dá uma abordagem que eu acho que é necessária para aparecer a questão dos privativos a celulares. Senão se vai se reduzir a uma configuração de VLAN, que é muito parecido com a configuração de VLANs em LAN. Só isso. Então acho que com a abordagem que a gente deu aqui, nós tentar misturar um pouquinho com redes privativas, celulares, e aí vai dar uma visão mais integrada, eu acho. Ok? O que vem a seguir? Depois desse assunto aqui, a gente vai falar de... A gente vai fazer uma nova integração com as redes celulares. A gente vai falar características, requisitos de VLAN em redes celulares. Seria a aula 7. E as outras duas aulas são dedicadas à questão do plano de frequências e como é que é feito esse processo de reserva de frequências. Ok? Bom, então a primeira coisa, embora o assunto seja configuração e design de velãs, eu acho que antes de você fazer a configuração, você tem que fazer o planejamento e o desenho, que seria o design mesmo, o projeto da velã. Então, na verdade, uma outra abordagem seria dizer design e configuração de velãs. Ficaria um pouquinho melhor, mas eu acho que o design aqui eles estão usando um sentido mais é restrito. Então eu vou falar um pouquinho dessa fase de planejamento, que eu acho uma fase, na verdade, a fase mais importante, tá? Você tem que começar com o objetivo na mente, senão você não chega em lugar nenhum. Então depois a gente vai tratar da configuração e vai ter, a gente vai falar de recomendações gerais, problema da capacidade, configuração dos a questão da velocidade de gerenciamento, a segurança e a questão também de monitoração e manutenção. Porque não basta você configurar, você tem que tentar, tem que monitorar para ver se ela está trabalhando conforme você estava pensando e você tem também que fazer acertos. Sempre acontece isso. Ok? Bom, Vamos ver o que a gente pode falar sobre o planejamento de desenho de violão. Então a primeira coisa é assim, na minha opinião, isso aqui é mais minha opinião, você não encontra isso na literatura, tá? Ao contrário da outra parte lá. É a fase mais importante. Ela exige atitude, humildade de aprendiz, e na hora de julgar, bom senso de juiz. Porque, assim, Sempre vai ter alguém que vai puxar para um lado, o outro vai puxar para o outro, e você como projetista, como desenhista da rede, você tem que saber qual é o termo correto nessa contradição, nessa confusão. Então você tem que ter muito equilíbrio e muita tranquilidade com esse tipo de coisa. Então, O que a gente sempre encomenda é iniciar com o mapeamento das necessidades da rede. É o que o pessoal chama de levantamento de requisitos, tanto dos objetivos do projeto quanto da planta existente. Porque, assim, normalmente já vai ter uma planta, já vai ter prédio, já vai ter uma lama instalada ou não, entendeu? Então tem que entender bem o que está instalado e o que você quer instalar. Isso é bem... Pra isso você tem que conversar com os... Chamei aqui de stakeholders, né? São as partes interessadas. A empresa que vai fazer a rede privativa, ela vai te dizer quais são as partes interessadas. Então, geralmente é alguém técnico, responsável pela empresa, alguém de ITI, alguém de telecomunicações. Esses vão ser as pessoas interessadas. E você vai ter que ouvir, definir corretos. Conversar com eles, qual é o propósito de cada velã. E que dispositivos, quantos dispositivos pertencem a cada uma delas. Claro que eles podem não ter de cabeça essas coisas, mas assim, tem que ter uma aproximação, tem que ter uma... A gente tem que conversar... De repente ele vai falar, não, eu quero instalar 10 mil IOTs. Tá bom, e vai ser aonde isso? Ah, vai ser em cinco metros quadrados de grama. Não. Não vai funcionar. Certo? Tem que ter uma noção boa da localização, da parte legada em si, da rede existente. Ou das instalações existentes. Então, entre essas perguntas estão, quais setores ou departamentos vão precisar de separação? Tipo RH, TI, financeiro, produção, sei lá. E que dispositivos demandam um nível maior de isolamento? Como automação, fabril, servidores ou equipamentos críticos. Ele pode ter robôs, pode ter máquinas que são controladas à distância. Então tudo isso vai requerer um funcionamento mais crítico. Então, você tem que saber que parte desse parque de equipamentos que vai estar realizando essa tarefa. Quantos são, né? E a outra coisa é aquela coisa que a gente já está com ela mais decorada, né? Que é verificar a separação de tráfico de voz, dados, vídeo e OT. Identificação de relâmpagos que são dedicados a alguma coisa, e a premissão de peso para cada uma também. Então a gente vai avaliar. Nós estamos, por enquanto, só na parte geral. E, finalmente, você tem que contrapor esses objetivos, esses desejos da empresa. Principalmente, outro fator que a gente vai ver depois é o fator futuro. Não é só o que tem agora. É o que tem agora, o que você vai instalar Daqui a seis meses, o que você vai instalar? Daqui a um ano, daqui a dois anos, digamos, para ter esse planejamento aí. Outro aspecto é a questão da identificação e mapeamento da rede legada. Então, que parte da rede legada, se é que existe uma rede legada, atende os requisitos que estão acima, os desejos que estão acima. Com o depósito desses dois grupos de informação, você tem condições de fazer a solução final do projeto. Quais são as perguntas-chave que vocês têm que fazer, se forem responsáveis por esse desenho? Porque não adianta querer fazer o desenho, não adianta querer fazer a transmissão, a configuração, se não tiver o desenho na mão. É importantíssimo ter uma prancheta, ter um desenho. Existem ferramentas, eu até pensei que poderia ser o objetivo do curso aqui. Quer dizer, poderia ser um doFranciscoetivos. Tipo o Cisco Packet Tracer. Já ouviram falar? Alô?
+
+10:44 - Ícaro De Oliveira Castro Costa Professor, já ouvi, professor. O senhor tem curso relacionado a isso, a desenho, algo do tipo?
+
+10:52 - Loreno Se eu tenho, eu já tenho curso relacionado a isso.
+
+10:57 - Ícaro De Oliveira Castro Costa Depois eu vou procurar o senhor no Weekend, tá bom? Tá bom?
+
+11:03 - Loreno Eu tenho algum material que eu posso te passar. Mas é bem simples. VoFranciscom que baixar o Cisco. Eu vou dar uma visão geral pra você. Você pode entrar no equipamento e dar comandos, configuração, atribuir IP, comando de, por exemplo, fazer o ping nos outros equipFranciscoos. Não é só a Cisco, a Huawei também um pack tracer também bem interessante. Segundo meus colegas, eu não cheguei a trabalhar num da Huawei, mas segundo meus colegas é mais inFranciscosante que o da Cisco. Mas vale a pena vocês darem uma forçada nisso. E aí eu achei que poderia ter seu caso da gente fazer aqui Franciscosenho usando o Cisco Pack Tracer, mas eu percebi que vão ser poucas aulas. Realmente não daria tempo. Então eu optei, pelo que sugeri o programa também, por uma abordagem mais, como é que eu vou dizer, menos prática, mais teórica, infelizmente, mas ao mesmo tempo mais assertiva. Então a gente vai colocar as coisas aqui, vocês acompanhem e tudo, procurem acompanhar e entender bem. Interrompo se tiver dúvida, tá? E se for o caso, eu depois vou falar com a FIAP, ver se existe algum curso disso, talvez introduzir ou mudar esse curso antes de dar o curso de rede privativa. Mas depois eu converso com eles isso. Então assim, a primeira coisa são perguntas com relação à quantidade quantidade de equipamentos que você vai colocar na rede e a topologia, onde é que eles estão. Eles estão em um prédio de cinco andares? Eles estão espalhados em uma residência com térreo? Ou eles estão em várias residências? Então isso aí é chave, você tem que ter em mente essa topologia para tentar começar desenhar a rede. A outra coisa é se eles têm uma alternativa tecnológica preconcebida, tipo, não, a gente quer ir para 5G, não, a gente quer ir para 4G, não, a gente pode ser Wi-Fi, entendeu? Então tem que ver se existe essa alternativa e talvez discutir com eles as vantagens e desvantagens. Aí é só apresentar esse material que a gente tem trabalhado em cima. Outra questão é se eles têm limitação de custos. Uma rede 4G, 5G não custa menos que 500 mil euros, por exemplo. 100 mil euros, pronto. E aí, com base nisso, eles têm que ver o que eles querem fazer realmente. E é muito importante também essa questão dos planos futuros, como é que eles pretendem crescer essa planta. E como é que está a capacidade de aporte deles, financeira, para realizar esse crescimento. E a outra pergunta-chave é com relação às capacidades. Quantos, assim, tipicamente, quantos routers deve ter, quantos switches. Pode ser que o cara te dê a resposta mais cômoda que é. Não, é você que dimensiona isso. Então, você vai ter que dimensionar isso. Aí é só conhecer a especificação dos equipamentos e tentar enquadrar. Se você já tem preferência por algum fonte-senor, já ir entrando em contato com o sinalizador, tentando obter esses dados. E, finalmente, a última coisa é a questão da segurança. Então, que tipo de segurança que eles querem? Como é que eles vão ter, por exemplo, base de dados externas à rede ou está tudo integrado? Por exemplo, eles querem usar uma computação em Edge, Edge Compute. Ter soluções, tipo essas soluções de nuvem, por exemplo. Ou não, né? Aqui eu comentei que todos esses itens aqui, porque você não sabe se, em princípio, você não sabe se a pessoa que está te contactando, se ele tem vínculos com... Por exemplo, às vezes a questão de custo vai ser bancado por um fornecedor. Então ele tem um vínculo com o fornecedor já, de cara. Então não adianta chorar, não adianta fazer nada, tem que levar em consideração esse vínculo. É um requisito para você fazer o seu desenho. Aqui eu tentei uma figurinha que eu chamei de Matriz de Utilidade, que é a coisa que você deve ter em mente quando você vai tentar colocar no papel esse tipo de rede. Então, o que basicamente se compõe? Vai ter equipamentos de rede, aqui eu botei um router, um switch e uma base station aqui. Terminais de vários tipos, então aqui existem outros tipos de terminais. Inclusive os routers, se eles estiverem sendo usados, ou switches, se eles estiverem sendo usados para agregar um grupo de usuários, eles podem ser equipamentos terminais também. E todos os equipamentos que a gente tem em mente, quando vai ligar, quando tem que ser coberto, se for o caso do 4G, 5G, que tem que ser coberto. Então, qualquer equipamento que esteja dentro do prédio, do ambiente, de alguma forma tem que ser coberto. E essa foi a orientação também do detalhe. E o outro tipo de equipamento são os servidores e as bases de dados. Os servidores, porque eles podem demandar um acesso frequente. Eles têm que ter um tratamento num data center, certo? Eles têm que estar residindo numa espécie de data center. Não é pegar um servidor e botar em cima da mesa. É diferente. E também pode ser que a empresa tenha dispositivos de automação. Então, sei lá, que nem o caso as esteiras volantes, um robozinho para levar, com uma ferramenta que faz alguma coisa. Aqui eu enquadrei, digamos, em verticais, ok? Essas três categorias de equipamento. Então até aqui não tem nada de abordagem, é só vertical mesmo. Agora vem aqui as velas possíveis. Pode ser que você prefira uma velã de voz, uma de vídeo, uma de dados, uma pra IOT, a velã de gerência, com certeza. Então, você pode vir a ter vários tipos de velã. Agora, a questão dos tipos de velã que você vai criar vai depender muito do que o cliente te falar em termos de requisição, de solicitação da empresa. Fim, o business, o que o business exige? Então, o que eu exige? Uma velã de finanças? Uma coisa dedicada para finanças? Um setor dedicado para vendas? Um setor dedicado para operações? Ou a produção está junto? Tudo isso, então, vai estar englobado aí na mesma categoria. Então, essa figurinha Talvez não, mas o que eu quis dizer é que as pessoas que vão falar, elas têm que dar essas horizontais para você, essas linhas. Elas têm que dizer o que elas querem. Claro que você pode provocar, né? Tipo, olha, é interessante para você ter um setor de vendas separado? É interessante para você ter um setor de finanças separado? E o cara vai conversando. Os responsáveis vão conversando com você e vão orientando. Os responsáveis estariam fora dessa figurinha, que estariam interagindo e ditando essas figurinhas. Agora... Professor...
+
+20:24 - Antonio Carlos Ferreira de Almeida Uma coisa, qual é a que você consegue enxergar que seria obrigatoriamente fora desse contexto? Por exemplo, a IoT, ou produção, ou... Ou a rede que transporta sinais para máquinas, ela não faz sentido ficar dentro de uma rede que transporta sinais de computação organizacional, tipo NH, finanças e tal?
+
+20:56 - Loreno Sim, essa categoria aqui do robôzinho, tem que ser uma categoria à parte, com certeza. A gente já viu que é altamente recomendável ter uma avalanche para dispositivos IoT, devido ao acesso IoT à internet, essas coisas assim. Vocês lembram, né? Que daí é um acesso mais lento, mais diferente, né? Vocês estão lembrados da figurinha lá?
+
+21:28 - Ícaro De Oliveira Castro Costa Uma pergunta com base na pergunta do colega. Sobre IoT, existe uma recomendação de utilizar ou não o 4G ou 5G para a questão de eficiência da IoT?
+
+21:48 - Loreno Então, sabe o que eu esqueci? Então, deixa eu comentar com você. Do meu ponto de vista, o 5G está mais preparado para IoT, mas a experiência operacional do 4G é grande. Já começou com o 4G. Eu diria assim para você, se você gosta de trabalhar com o que já tem experiência, com o mais antigo, procure escolher o 4G. Mas se você gosta de trabalhar com novidade, com aquilo que tem mais perspectiva de crescer e de evoluir futuramente, vai para o 5G. Não sei se eu respondi a outra pergunta.
+
+22:44 - Ícaro De Oliveira Castro Costa Sim, é porque também eu dei uma olhada em termos de custos, curso, né? Pós-graduação mesmo, não encontrei nenhuma de rede privativa, né? Referente a 5G. Posso estar enganado, mas eu não encontrei, assim, cursos, vamos supor, eu quero fazer um curso complementar de rede privativa, eu não encontrei no mercado.
+
+23:08 - Loreno Ah, não tem mesmo. Não tem mesmo, é difícil. Porque essa iniciativa da FIAP aí tá sendo inédita. Oi? Tá me ouvindo? Oi? Tá me ouvindo? Oi? Melhorou agora? Agora melhorou.
+
+23:28 - Clodoaldo Callogero Ó, professor, é o seguinte, a gente tá, o senhor tá focando em dispositivos industriais, eu não sei se é exatamente industriais. No caso telemedicina, a rede 5G já teria um suporte, eu imagino que sim, mas factível para, por exemplo, telecirurgias, tipo desse suporte, como é que seria essa rede? Seria uma rede separada? Porque não tem jeito, né?
+
+24:07 - Loreno Não sei se eu entendi a sua pergunta, mas eu vou tentar Vou comentar algumas coisas que a gente já viu, tá? Não sei se vocês viram que tem várias verticais. Lembram das figurinhas que a gente viu a parte de usinas, a parte de portos? A rede 5G existe para todas essas verticais.
+
+24:36 - Clodoaldo Callogero Tá, mas para telemedicina, para suporte e telecirurgias, por exemplo.
+
+24:41 - Loreno Saúde. Não, então, não sei te dar o detalhe, tá? Mas saúde é uma vertical que está em uso. Agora, não sei te dizer, por exemplo, que tipo assim, olha, a telecirurgia está bombando na China, não tem essa notícia, tá? A notícia que eu tenho, até eu comentei na última vez aí, que eu achei essa aplicação meio fraca de telemedicina aqui no Brasil, tá?
+
+25:09 - Clodoaldo Callogero Sim.
+
+25:10 - Loreno Os bons médicos aqui, a automação vai vir a partir do hospital. Os médicos bons estão acostumados a trabalhar com papel. Eles não olham muito. Acho que é questão de confiança.
+
+25:27 - Clodoaldo Callogero A automação deve vir do hospital.
+
+25:30 - Loreno Os hospitais que vão sentir necessidade e vão começar a implantar. Já tem algumas. Iniciativas. Mas essa da telecirurgia eu acho que é uma das mais importantes, porque assim, você evita que o médico não vai ter translado, ele pode estar em outra cidade, entendeu? Ele não vai economizar tempo pra caramba se ele ficar só assistindo o que alguém tá fazendo. E normalmente 99% das cirurgias são feitas por residentes, E tem um médico que é o cara que só entra se o paciente se der problema, entendeu?
+
+26:15 - Clodoaldo Callogero Nesse caso, o especialista teria que agir, teria que ser habilitado a fazer. Isso.
+
+26:22 - Loreno Não, os residentes estariam mais acostumados e aí a gente contactaria com um especialista que teria uma visão bem clara do campo cirúrgico, cirúrgico, tem que ter uma cena bem clara do campo cirúrgico, e aí, com base na dívida, ele fazia o... O perigo dela tá comprometido, não mexe não, entendeu? Coisas desse tipo. Ok, obrigado. Bom, agora eu vou fazer um experimento com vocês. Eu bolei uma rede, mais ou menos, claro que eu bolei Na verdade eu bolei uma rede com esses dispositivos que estão colocados aqui, sem explicar muito o que é, mas seria uma automação industrial, claro, né? E na verdade eu cometi alguns erros. E aí eu vou pedir para vocês alguns minutos para vocês criticarem para mim. Aqui, ó. Eu vou explicar a rede primeiro, né? Aqui está o core, esquerda, aqui está a rádio base, aqui tem um router que vai permitir todas as Ethernets, esses azuis são Ethernets e elas estão ligadas por Wi-Fi. Poderiam estar ligadas por Wi-Fi, estão ligadas por 4G ou 5G, assim como os smartphone, etc. E bem assim também os equipamentos de automação. E as redes de computadores do pessoal, ou seja, pessoal administrativo, financeiro e vendas, também estão ligadas por Wi-Fi e com internet. E aí, devido ao fato de ter vários servidores, eu aqui Não sei se vocês conhecem o Visio, que é um aplicativo do Microsoft. Eu peguei alguns servidores diferentes aqui. Nem corresponde muito exatamente ao objetivo, mas tentei mapear eles de acordo com essas finalidades. Financeiro, vendas e operação em IoT. Aí eu queria ouvir de vocês, se vocês têm alguma crítica aí.
+
+28:59 - Antonildo Lima Da Silva Eu acho que é a forma que está subdividida aí, né, professor? As vilãs, você classificou na vertical? Ou você tem um atendimento da internet na horizontal e classificado na vertical? Quer dizer, um segmento desse internet está atendendo a três setores diferentes. Eu acho que se você rotacionasse as velãs para cada segmento desse, sem uma velã, a gente estaria garantindo a velã para cada um desses segmentos. Sim, mas eu estou entendendo que...
+
+29:32 - Loreno Você está falando em termos do suíte aqui, porque todas elas vêm para essa parte do suíte, não é? Você estaria colocando nesse suíte três tipos de velãs diferentes.
+
+29:42 - Antonildo Lima Da Silva Um suíte para cada velã, a saída de cada suíte para cada velã.
+
+29:46 - Loreno Mas também não é nada contra. Você colocar o mesmo switch e colocar várias VLANs. Pode ser uma solução mais clean, essa que você sugeriu.
+
+30:03 - Palestrante Não Identificado Concordo.
+
+30:03 - Antonio Carlos Ferreira de Almeida Professor, estrutural não tem, mas estratégico eu acho que tem.
+
+30:11 - Loreno Pode falar.
+
+30:12 - Antonio Carlos Ferreira de Almeida O estrutural, como o colega falou, o senhor falou, não tem. O senhor falou, tudo bem, pode se disponibilizar sim. Estruturalmente pode se disponibilizar sim, mas estrategicamente aqui eu estou colocando uma Avelã de IoT junto com Avelã de negócios, junto com Avelã financeira, porque a princípio o switch está distribuindo para todas elas, não está todas elas na mesma switch.
+
+30:40 - Loreno A gente vai tratar com Avelã separadas. Ele vai preservar essa identificação.
+
+30:47 - Antonio Carlos Ferreira de Almeida Não, que ele preserve, tudo bem, mas isso não vai mexer com a velocidade dos pacotes?
+
+30:57 - Loreno Eu acho que isso é um fator que tem que analisar. A questão da QoS...
+
+31:06 - Ícaro De Oliveira Castro Costa Porque, por exemplo, o IoT usa protocolos diferentes, né?
+
+31:11 - Loreno Sim.
+
+31:12 - Ícaro De Oliveira Castro Costa está fluindo para todos os protocolos que são diferentes, para uma mesma fonte.
+
+31:22 - Loreno O que eu pensei é que o IoT estaria nesse quadrante aqui, coberto por esses dois Wi-Fi. Esse Wi-Fi está recobrindo servidores, enquanto eu estaria cobrindo o IoT e outros. Então seria um Dory, dois aqui. Agora, uma coisa que você tem razão é, o tráfego do IoT não tem nada a ver com o tráfego de vendas nem de finanças. Vai misturar no mesmo switch aqui, tráfego que tem requisitos de banda Isso não é bom, não. Com certeza. Questão de segurança, né, professor?
+
+32:13 - Antonildo Lima Da Silva Eu estou entendendo ali que o sinal sai da torre só para o segundo e o terceiro switch, é isso? Ele não estaria passando para o primeiro nem para o quarto?
+
+32:27 - Loreno Ele seria distribuído só para o segundo e terceiro, sim.
+
+32:32 - Antonildo Lima Da Silva Então, o primeiro e quarto ele não estaria distribuindo... O meu Wi-Fi não estaria sendo atendido.
+
+32:40 - Loreno Eles vão ao router, eles são rede privativa, são rede privativa wireline, não são wireless. Mas eles vão ao router e pelo router eles têm integração. Também não é uma coisa tão, isso também é uma coisa que digamos, tem que se questionar, né? Porque você vai ter, na verdade, duas cabeças aqui, uma cabeça que está focada no wireless e a cabeça que vai estar focada na internet aqui. Então, o ideal seria dar a solução só wireless para todos os dispositivos. Esse eu acho que é uma Os outros problemas são que a gente não tem uma velã para voz. Então, se tiver que falar, ela vai disputar espaço, prioridade, com a velã de Aiochi, por exemplo. Isso vai ser uma coisa negativa, concorda? Porque a voz tem requisitos mais restringentes. Ela tem que ter, no máximo, um retardo de 20 milissegundos. Ela tem muito pacote, né?
+
+34:08 - Ícaro De Oliveira Castro Costa Isso.
+
+34:09 - Loreno Codificação de voz e tudo. Ela tem um requisito bem... Tem que ser real-time. Ela nem usa... Ela também usa o TCP, ela usa o UDP e o RTSP, protocolos que ela usa.
+
+34:25 - Ícaro De Oliveira Castro Costa E o UDP também, em termos de segurança, é menos seguro que os outros protocolos.
+
+34:32 - Loreno Isso, é menos seguro que o TCP. E o outro detalhe é que, assim, mas isso já é o default do que é a voz sobre IP, né? A voz sobre IP eles usam para codificar, para colocar os pacotes de voz e para entregar o mais rápido possível para outra porta. Entendeu? Agora, aqueles quatro problemas que a gente está falando aqui, cinco, quatro. Voz, vídeo, dados, IoT e gerência. O IoT ainda tem uma velã dedicada, mas voz, Vídeo e dados, não. Então a gente está pecando aí justamente no requisito de construir as violãs de forma a otimizar o tráfico. Então foi mais ou menos o que vocês falaram também.
+
+35:33 - Palestrante Não Identificado Ok?
+
+35:34 - Loreno É mais ou menos isso?
+
+35:37 - Loreno Aí depois, se quiserem pensar mais depois e tudo, a gente conversa mais. Mas por hora eu só queria mostrar isso daí. Essa partição aqui está muito voltada para... Está muito departamentalizada e não está buscando o atendimento aos requisitos de cada violão. Seria voz, vídeo... Eu acho que essa seria... Tem que ter mais velãs. Se quiser fazer, não tem problema, mas tem que incluir mais para atender essas aplicações específicas. O ayoti, inclusive, tinha que estar em uma velã separada, não é recomendado misturar com a de operação. Agora, lamento dizer para vocês mas agora é só texto. Vem figurinhas. Mas vamos devagar, sempre que a gente chegar lá. Tudo bem? Então, primeiro ponto. Que recomendações gerais que a gente teria para a configuração de velas? Aquela que a gente acabou de concluir aqui. A configuração deve utilizar o tráfego para diferentes classes. Voz, vídeo, dados, criando velozes separadas para cada tipo de tráfego, garantindo isolamento e priorização, isolando o tráfego de cada classe e melhorando o desempenho e a segurança, especialmente em cenários com dispositivos IoT. Isso aí, todo mundo fala isso, tá em todo o GB. Então, essa é a É uma das determinações que o pessoal tem seguido. A questão da... É muito importante você identificar os tipos de tráfego e identificar as necessidades deles. Por exemplo, a voz sobre IP, o vídeo, em termos de latência, barulho de banda, segurança, são os principais parâmetros. Existe uma recomendação, acho que é a Q41. Essa recomendação dá os parâmetros direitinho, mas não é só ela. Se você procurar na internet, você encontra parte desses parâmetros. Mas é o caso de, digamos, se você está pegando um Greenfield, um lugar que você nunca teve antes e você tem dúvida, é importante você tentar fazer esse mapeamento e não colocar, por exemplo, um TCP junto com o sistema de voz, que vai dar problema. Inclusive, pessoal, só para vocês, na célula não é recomendado, então, saindo do ambiente de uma rede privativa para uma rede pública de celular. Não é recomendado você misturar o tráfego de voz e o tráfego de TCP. É bom que a pessoa que for fazer o projeto da rede tente, nas células, fazer uma espécie de uma equiparação. E aí o projeto, o design, é criar velãs distintos para cada classe, lembrando em consideração as características específicas de cada prato. Depois de você criar, vocês estão lembrados que no formato do quadro, aquele 1Q, 802 1Q, Naquele formato de quadro, ele tem... No quadro você consegue separar, consegue ver, criar as prioridades. Está lembrado disso? Então você tem que atribuir as prioridades na hora de criar as redes, você tem que atribuir de forma coerente para refletir.
+
+40:11 - Carlos Batista Naquela topologia que o senhor nos apresentou, ali não foi contemplada nenhum tipo de redundância, né? Então, foi contemplada... Que foi, né? Redundância de quê? Você está falando da vilã?
+
+40:28 - Loreno A vilã, ela está, no caso, no horário que o senhor está falando, ela está no horário que o senhor está falando.
+
+40:40 - Carlos Batista Se esse equipamento cai na parte superior esquerda, logo ao lado da antena, todas as vilãs cairiam. Acho que a crítica, como você perguntou, é o erro maior que vejo. Eu tentei desenhar de forma a evitar isso.
+
+41:16 - Palestrante Não Identificado Por quê?
+
+41:18 - Loreno Porque você vai ter, como o colega notou, o Switch 1 e o Switch 4 vão no ralto, desse equipamento aqui. Então, se você arrancar esse equipamento, eles vão continuar existindo. Entendeu?
+
+41:44 - Carlos Batista Se o equipamento 1 cai, as vilãs vão continuar?
+
+41:49 - Loreno Aí, a rede vai continuar existindo através dos routers.
+
+41:54 - Carlos Batista Eu não estou conseguindo enxergar essa ligação física aí, porque ela não está apresentada.
+
+42:03 - Loreno Não. Pera aí um pouquinho, não sei se eu estou me fazendo entender. Você vai perder a rede, não tenha dúvida disso. Vou supor que isso aqui, vou fazer mais claro.
+
+42:31 - Loreno Não querendo atrapalhar a aula aí, tá, professor?
+
+42:34 - Loreno Não, acho que a sua pergunta é boa. Se não fosse boa, eu não ia tentar. Não ia tentar tirar mais consequências nela. Ela é boa. Então vamos supor que caia. Vou botar aqui de novo no modo apresentação. Voltou ao modo... Pessoal?
+
+42:58 - Palestrante Não Identificado Estão ouvindo, professor.
+
+43:00 - Antonio Carlos Ferreira de Almeida Estão ouvindo, professor.
+
+43:02 - Loreno Estão ouvindo e estão vendo.
+
+43:05 - Loreno Sim, estão ouvindo e vendo. Então, se cair esse link aqui, acabou a rede privativa 5G ou 4G. Mas você pode ter uma configuração que você planejou no router, onde você quer manter servidores e os computadores que estão nos switches 1 e 4. Entendeu? Porque eles estão chegando bonitinho aqui, eles estão inteiros e estão chegando bonitinho no router. Então não tem por que essa rede não existir. Entendeu? Isso seria uma configuração, você tem que programar essa configuração, obviamente. Caso de falha do 5G, você entra... Configuração corporativa. Entendeu?
+
+43:54 - Carlos Batista Entendi, mas o equipamento que eu me refiro é esse na horizontal à esquerda das vilãs. Se esse equipamento cai, as vilãs consequentemente cairiam.
+
+44:11 - Palestrante Não Identificado Os altos.
+
+44:12 - Palestrante Não Identificado Isso.
+
+44:13 - Clodoaldo Callogero Talvez seja o switch, professor. Isso, isso.
+
+44:18 - Loreno Se cada switch cair, você vai perder todo mundo que está aí. Isso é fato. Mas o switch é um equipamento relativamente confiável e está em um ambiente caseiro. Por exemplo, se você tiver um outro switch do lado ou se você tiver capacidade nesse aqui, se ele falhar, Você pode trocar online, que não é problema. Mas concordo com você. O que eu tentei fazer...
+
+44:57 - Carlos Batista Quando se fala em vilã, o ponto é só quando se fala em vilã, você quer a confiabilidade, aí por isso que esse ponto de atenção somente. Isso.
+
+45:11 - Loreno Para trazer aí uma reflexão somente.
+
+45:13 - Loreno Repara que você pode. Não sei se você percebeu que cada switch aqui está sendo atendido por uma internet e por uma rádio base aqui. Claro que se cair aqui, você perdeu a rádio base, mas se cair só o switch, o tráfego do servidor pode vir para esse switch e subir. Mas aí é falha dupla. Se falhar, quer dizer, na alternativa que você falhou tanto aqui quanto falhou aqui, é falha dupla.
+
+45:54 - Carlos Batista Aí já é bem mais provável. Segundo, o sumante tem os axis-pontes aí na segunda linha horizontal. Seria isso? Seria a representação de axis-pontes. Isso, exatamente.
+
+46:10 - Loreno Então esses access points estariam pegando os servidores e também ajudando, compartilhando aqui os equipamentos que estão embaixo.
+
+46:20 - Carlos Batista Nesse caso teria que ter uma linha interligando o switch, o 2 com o 1 no caso, que não está representado aí.
+
+46:33 - Loreno Corrige se eu estiver errado. Não. Repare o seguinte, são dois casos diferentes. Se você, na presença de falha com o 5G, caiu o switch, você está perdido mesmo, não tem jeito. Agora, se não falhar o 5G, podemos até voltar. Vamos supor que a falha agora... Só pra vocês... Acho que ele já veio aqui, ó. Ops! Vou pegar ele aqui, querido. Deleta. Oi?
+
+47:28 - Clodoaldo Callogero Só deletar.
+
+47:31 - Loreno Eu não quero deletar, eu quero levar ele para cá, que é o caso que você estava analisando, certo? Certo. Se acontecer isso, você não perde nada, porque você tem esse outro aqui, que é o irmãozinho dele, que está pegando via Wi-Fi, ou via 5G.
+
+47:59 - Palestrante Não Identificado Entendi, entendi.
+
+48:00 - Loreno Mas assim, se falhar ele e falhar o switch, aí é só, aí é falha dupla.
+
+48:10 - Ícaro De Oliveira Castro Costa Professor, no caso de uma rede 5G, por exemplo, a gente falando de dispositivos móveis com aquele nova tecnologia S5, né, é dispensável utilizar esse tipo de topologia?
+
+48:27 - Loreno Eu falo no 5G e com chip interno, digamos assim. Sim, os dispositivos teriam chip interno 5G, para poder serem captados pelos access point, tudo aqui, isso é um ponto importante, Todos os dispositivos têm que ter um SIM card. A gente vai ver isso mais pra frente. Porque senão ele não vai ser delimitado pelo 4G ou pelo 5G. Inclusive os computadores e os servidores. A menos que você queira fazer tipo, não, os servidores eu vou deixá-los só na internet. Também pode. Que é o que a gente conversou agora há pouco.
+
+49:24 - ANTONIO ADADE DE CASTRO BATISTA Mas aí, professor, nesse contexto, eu não tinha entendido dessa forma, tá? Mas nesse contexto, então, é interessante dizer também que precisa colocar uma DNN para cada segmento dessa, né? Para espelhar a avelã, ou seja, se você tem uma avelã para IoT, específica para IoT também, certo?
+
+49:48 - Loreno O que que você entende por DNA?
+
+49:52 - ANTONIO ADADE DE CASTRO BATISTA Desculpe.
+
+49:53 - Loreno É a APN do SIM card. Ah. Só que por 5G. Sim. Sim, é fato. Você tem que ter isso adaptado, tá? A gente vai ver isso.
+
+50:08 - Palestrante Não Identificado Eu tô com um fone lá do IoT, só para um ponto além também.
+
+50:16 - Loreno Podia também usar um serviço de broker, tipo um MQTT, para fazer comunicação entre os elementos do IoT. Você poderia fazer via IoT também. Mais recomendações gerais. Uma recomendação interessante, pessoal, é atribuir separados para as violãs separadas. Inclusive, endereço de subrede, por exemplo. Você não pode ter violão de voz e dados, voz e IoT, por exemplo, na mesma subrede. Não só não pode ter o mesmo IP, quanto também não pode ter a mesma subrede. Vocês estão lembrados o que é subrede, né? É um pedaço do campo do campo IP. Eu coloquei lá no final, se vocês quiserem dar uma olhadinha só para vocês lembrarem. Estão lembrados do que é subrede? Sim, professor. No final vai aparecer, por exemplo, o que é a subrede, endereço 2, por exemplo. E é muito importante planejar a organização definindo que dispositivos vão estar em cada vilã. Utilizar segmentação de tipos diferentes, utilizar roteadores ou switches para permitir comunicação entre as vilãs. Aqui, Vamos falar assim, a rigor, as velãs não devem ter comunicação. Uma velã de voz não vai falar com uma velã de IoT. Salvo exceções aí. Mas, por exemplo, você pode ter trechos separados da velã de voz, em segmentos separados, e pode ter com necessidade de ter roteamento. Ou seja, não ter... Vou dar um exemplo para vocês. Imagina que você tenha, que nem o caso da história da aplicação de 5G no Hospital das Clínicas. A ideia deles era ter uma parte do sistema no Banco Itaú, lá no data center do Banco Itaú, e a outra parte e a outra parte no Hospital das Clínicas. Mas como que você conecta essas duas coisas? São dois seguintes, é a mesma velã. Você vai ter que, de alguma forma, o pacote, o roteador, por exemplo, vai receber o pacote de dados. Tipo, saiu a imagem da tomografia, deixa eu mandar lá para o data center. Então tem que ter esse encaminhamento aí.
+
+53:26 - Antonio Carlos Ferreira de Almeida Professor, uma coisa boa era também ter uma conexão com a nuvem, uma espécie de Direct Connect para comunicação segura também.
+
+53:40 - Loreno Sim, a maioria das aplicações está usando nuvem também. Você põe a nuvem da Google, a nuvem do Amazon e outras. A nuvem da Microsoft. São essas as recomendações gerais. Depois que você seguiu toda a estrutura dessas recomendações gerais, você precisa aproveitar o uso das portas. É justo aquele ponto que vocês levantaram. Tipo, não vai dar conflito de tráfego nos suítes, nos diversos segmentos aí, mesmo no shelter, que estão transportando as velãs. Então, você consegue acomodar? Vai ter portas suficientes nos suítes para acomodar tanto as velãs quanto as conexões de tronco? Essa é a pergunta. E a outra questão, que também é um segundo momento, é você verificar as tabelas MAC. De repente você vai ter tanto endereço MAC que vai ser inviável colocar isso no mesmo switch. Então você tem que tentar dividir essa questão. De frente suíço. E é importante, quando você fizer esse dimensionamento, basear no que é aquilo que você vai perguntar para o gerente de contas lá ou para alguém aqui, mas a sua expectativa é que esse areotipo vai gerar quanto de tráfego? Ah, vai gerar cinco quilobits. Tá bom, puxa. Cinco quilobits por hora. Tá bom, então anota isso. Estima isso. Faz a conta. Se for 100 mil dispositivos, vai pesar. Agora nós vamos ver um pouquinho dos passos para criar uma velã. O primeiro passo é a configuração do switch. Alguém perguntou na última vez se bastava ligar para ter Você tem que criar em software, você tem que dizer para o dispositivo quem é quem, qual é a velã, que lã que pertence a uma velã, porque você vai ter vários conectores de lã. Então você vai ter que dizer quais deles são para lã, quais deles são para trunk, e você vai ter que dar números para essas velãs aí, também numeração. E identificar as velãs também. Outra questão é a atribuição das portas. Você vai ter que aderir portas físicas aos suítes, às leilões correspondentes, de acordo com a classificação de tráfego. Não sei se vocês têm... Cada porta de uma LAN, você tem o suíte lá, cada porta, cada entradinha LAN, ela pode ser definida como um ponto de acesso ou como uma porta de trunk. Vocês estão lembrados do trunk, né? Quando você usa o protocolo 802.11n.q, você tem condições de passar várias VLANs no mesmo troco, no mesmo link. Então você tem que definir. Quando você pega um switch e diz que vai usar para VLAN que nem a gente fez no exercício, não sei se vocês estão lembrados. Com seis portas ou coisa parecida, a gente usou duas para um avelã e duas para outra. E deixou vago dois. Para quê? Para usar como treco. Entendeu? É justamente essa quesFranciscoí. Então você tem que seguir esses passFranciscossa atribuição. É uma pena, viu, Franciscoal, que a gente não tem esse Cisco Pack Tracer, que tem até o site da da Cisco que ensina direitinho, usando o Cisco Packet Tracer, a fazer a criação da VLAN, a atribuição de portas, todos esses aspectos. Então seria ótimo seguir pFrancisco, seria bem prático. Mas vamos ficar só com essa teoria e se tiver uma outra oportunidade a gente tenta usar o Cisco Packet Tracer. Você tem que gerenciar, você tem que monitorar aquele campo. Como naquele protocolo 1Q você tem campos de classe de serviço? Por exemplo, a classe de serviço 5 é para voz. A classe de serviço 4 é para videoconferência. Não sei se vocês estão lembrados. Então, você tem que levar isso em consideração. Se você definir uma VLAN que é para voz, na hora que você for definir, ele vai perguntar qual é a classe de serviço. Você responde 5, porque é para voz. 4, se for para videoconferência. E você vai atribuir também e os endereços IP. Depois que você configurar os switches e o router, você vai precisar configurar os dispositivos também. Porque o telefone IP, as câmeras de vídeo, as câmeras IP que tiver, eventualmente você vai ter que configurar isso. Isso aí não é trabalho para uma pessoa só, se for uma rede grande. Se Franciscoma rede caseira, nem tanto. Então você tem que configurar também os dispositivos terminais. E cada um... Nesse Cisco Packet Tracer, você não vai ter exemplos desse tipo aí, a não ser computador, telefone, mas, por exemplo, a IoT, você não tem. Outro ponto também é o seguinte, é um cuidado super especial, essa velã de gerenciamento. Você tem que ter uma velã de gerenciamento em cada suíte. EFrancisco essa velã vai ser usada para gerenciar, para monitorar dispositivos de rede, Uma série de coisas, tá? Em geral, a Cisco, por exemplo, recomenda você não mexer na velã, que automaticamente ela vai ser atribuída para essa finalidade. Mas os outros equipamentos, nada obriga você a reservar a velã. Mas parece ser uma política, uma boa prática, você reservar a velã. Para essa formalidade de gerenciamento. Mas você pode ter outras. E o que vai pegar é que você vai ter que ter uma interface nela, vai ter que configurar uma interface nela, tipo web, por exemplo, ou tipo SSH. Não sei se vocês conhecem esse SSH. Ou tipo SNMP, que é um protocolo existente também. Esse SSH aí é uma novidade. Que gera muito maior segurança, é criptografável. A gente vai conversar um pouquinho sobre isso depois. O ponto importante é o seguinte, o switch para fim de gerenciamento deve ter um IP configurado na VLAN. Os usuários em outras VLANs podem estabelecer sessões de acesso remoto ao switch. Se forem roteadas Por que isso? Para você ter um nível a mais de controle. Você não permitir que um usuário de voz, por exemplo, entre na velã de gerenciamento e modifique tudo o que tem nela. Então existe um nível de segurança que você cria se você rotear todos os acessos remotos através da velã de gerenciamento. Geralmente o que eles fazem é configurar o switch para aceitar sessões de SSH criptografadas. É uma interface que estabelece conexões de remota seguras e que permite acessar através de CLI, de Service de Linha de Comando, qualquer dispositivo. Seja suíte, seja bridge, qualquer dispositivo. E elas funcionam como uma espécie de telnet, criptografada. No tempo da telnet não havia criptografia. Podia haver, mas não estava tão difundida. Então ela permite você dar comandos através que são comandos de configuração, de ativação, etc. Tipo CLI, linha de comando. Os exemplos de uso do CSH são acesso remoto aos servidores, transferência segura de arquivos, gerenciamento dos servidores, Todas essas coisas aí. Ok? Bom, vamos falar um pouquinho também sobre segurança agora. Então assim, é recomendável o uso de firewall. Toda vez que você... Firewall, né? E listas de controle de acesso. Para restringir o acesso entre as VLANs. Então cada VLAN vai ter lá, olha, eu permito acesso desse, desse, entendeu? Relacionando direitinho quais são as velas que são permitidas o acesso. Ou através de firewall mesmo, implementando firewall. É muito importante você configurar as portas dos suítes para permitir apenas o tráfego da vela correspondente. Se você conectou uma rede LAN com uma VLAN específica, é interessante que a porta do switch não fique divergindo entre, por exemplo, a VLAN atribuída por porta e a VLAN atribuída por tag. Então é o caso que ele comentou aqui, a VLAN usar o mesmo número. Se você tiver essa disposição pela voz, vídeo 64, dados 128, aí eu tiro os 56, todos os dispositivos de voz sFranciscoconfigurados com a vela 32. Os dispositivos de vídeo, a vela 64. E assim vai. Entendido isso daí? Um outro ponto que a Cisco, por exemplo, não proíbe, mas todo mundo acha recomendado você evitar esse método de VLAN que é o VLAN associado à porta. Então, é VLAN porque entrou na porta aqui. Entendeu? Essa é a vela 1, a vela 2 entrou na porta 15. Ele fala para evitar isso aí. E pode ter problemas, se ela não for configurada corretamente, ela pode contornar a segurança de rede. Então, cada porta tem que ter uma vela dedicada para evitar solução viola nativa seja usada em alguma porta. É importante também, ou seja, exaurir as portas. Em algum momento também ele vai falar que você não deve deixar portas desativadas, portas sem nenhuma viola ou sem nenhuma indicação. Por quê? Porque, de repente, os pacotes podem ser encaminhados para essa... Ou se tiver uma viola nativa, ela pode encaminhar os pacotes dela para esses bicos sem saída. Então eles recomendam você implementar avelãs para isolar o tráfego e desativar as portas não utilizadas. Recomenda você criar uma avelã sem saída para as portas não utilizadas. Também é uma solução. Então você vai pegar várias portas e vai dizer, isso aqui é uma avelã, só que ela não tem saída.
+
+1:07:49 - Antonio Carlos Ferreira de Almeida É a mesma coisa que não ter avelã.
+
+1:07:54 - Antonio Carlos Ferreira de Almeida Professor, uma boa prática é configurar a entrada apenas por 443 também?
+
+1:08:00 - Loreno O que você quer dizer com 443?
+
+1:08:03 - Palestrante Não Identificado HTTPS.
+
+1:08:04 - Loreno Ah, HTTPS. Olha, eu não vi essa recomendação em lugar nenhum, tá? Mas eu tentaria, como você tem essa questão dos firewalls e tudo, de repente se encaixa nisso daí, tá? Entendeu o que eu quis dizer? Entendi.
+
+1:08:26 - Antonio Carlos Ferreira de Almeida É porque na AWS é a orientação de boas práticas fazer isso.
+
+1:08:32 - Loreno É, é uma boa prática, sim. Você sempre optar pela segurança. Agora eu vou falar um pouquinho sobre o roteamento e fivelança, que é um ponto que a gente falou lá que deveria ser proibido. Então é isso que ele está comentando aqui. Ele normalmente não é recomendado, mas pode ser uma necessidade da empresa. Por exemplo, Aquela rede inicial que eu desenhei lá, provavelmente ela vai ter VLANs da rede física, que talvez seja interessante você mapear para a rede wireless. Então pode ser necessário. Se necessário, tem que restringir o tráfego usando listas de controle de acesso. Para sempre que você precisar. Você pode utilizar um switch de camada 3 ou um roteador para rotear esse tráfego com as devidas firewalls e listas de controle de acesso. E essas listas de controle de acesso filtram os pacotes. Então elas identificam o pacote, qual é a VLAN que elas pretendem, qual é a origem delas e restringe o acesso. É como ter, não sei se vocês lembram, tinha os números proibidos antigamente. Então, se a passadora recebesse chamadas daqueles números, não devia dar continuidade à chamada.
+
+1:10:22 - Palestrante Não Identificado Como se fosse uma portaria, né, professor?
+
+1:10:27 - Loreno Como se fosse uma portaria. Tipo assim, quem é você? Mostra a identidade. Ah, você é o fulaninho? Você não entra. Entendeu? É nesse esquema aí. Utilizar outra recomendação. Se quiser fazer o roteamento, utilizar um roteador. Um switch de camada 3. Não tentar fazer isso na camada 2, vai dar confusão. A questão da subrede ser única. Cada VLAN que você vai criar vai ter uma identificação de subrede separada. Portanto o número IP também vai ser separado, mas você pode ter um avelã com vários números ocupando vários números IP dentro de uma determinada subrede. Então é importante que a nível da subrede mesmo você já consiga identificar se pertence à mesma avelã ou não. É aquela história. Finalmente a questão da configuração. Não sei se a gente vai conseguir falar muito aqui, mas vamos tentar ver o que a gente pode falar. Depois que você fez a configuração, agora você tem que monitorar o desempenho. Então, se tiver um correcionamento em algum link, você tem que detetar e dizer Eu vou ter que arranjar. Essa velã aqui tá muito pesada pra ficar aqui. Nesse suíte, vou colocá-la em outro. Coisa desse tipo. Ou vou comprar um suíte novo pra colocar ela. Geralmente a solução é por aí, né? Ok? Então a dinâmica da coisa é você fazer ajustes sempre que é necessário. E finalmente documentar. A parte que talvez seja a mais importante, principalmente para o seu patrão, é documentar a configuração. Coerência, incluindo os ID das revãs, as portas, as subredes. Isso vai facilitar para caramba a manutenção e a operação. Querem fazer algum comentário aqui? Pessoal, é isso. Aqui depois, nas transparências adicionais, eu só estou dando uma tinta sobre o endereço IP. Vocês querem que passe isso com vocês agora ou vocês olham depois com calma?
+
+1:13:28 - Palestrante Não Identificado Pode ser, professor.
+
+1:13:30 - Clodoaldo Callogero Seria bom. Seria bom sim, professor.
+
+1:13:34 - Loreno É, daquela linha que eu tinha comentado antes, de a gente sempre recordar um pouquinho. Então, a questão é a seguinte, qualquer host, qualquer computador, qualquer roteador ou switch, ele tem o seu endereço IP. Ele tem basicamente duas partes, o número da rede e o número O número do rostro é o número da máquina em si. E os endereços IP no IPv4. Eles têm comprimento de 32 bits. Então, cada octeta pode ser escrito como um número decimal, de 0 a 255. Primeiro octeta é um número de 0 a 255, segundo também, Por que 0x255? Porque são 8 bits, e 2 na oitava é 256. Como conta o 0, são 0x255. Então, se vocês forem seguir aqui, vamos ver o mais fácil, o 3. 3 é 2 na 0, mais 2 na primeira. 2 na 0 é 1, mais 2 na primeira é 2, dá 3. Aqui o 7. 2 na 0, mais 2 na primeira, mais 2 no quadrado. Aqui gerou 160. Então seria 1 vezes 10 na sexta, 1 vezes 10 na sexta, 2 na sexta, mais 0, mais 1 vezes 10 na oitava. 2 na oitava, desculpe. Ok? Ok.
+
+1:15:30 - Palestrante Não Identificado O dois na oitava, né?
+
+1:15:32 - Loreno Sessenta e quatro.
+
+1:15:33 - Clodoaldo Callogero É na sétima, professor, porque começa em zero.
+
+1:15:37 - Loreno Não, dois na quinta, trinta e dois.
+
+1:15:40 - Loreno Dois na sexta, sessenta e quatro. Dois na sétima, cento e vinte e oito. Cento e vinte e oito. Dois na oitava, duzentos e quarenta e seis. Aqui é dois na sétima, na verdade. Então essa é a questão. Então o número IP é chamado dessa forma aqui, 192, assim, informalmente. Não tão informalmente, na hora de planchar, de configurar, de fazer tudo. Bom, e aí os tipos de endereços que tem, as classes de endereços. Então aqui temos quatro objetos, e aí assim, a primeira classe A, classe que bota força no host. Você tem poucas redes, você tem 255 redes, menos 255, 255 menos 2, né? Você tem 254, 253 redes, mais a quantidade de hosts bem maior aqui. Na classe B, você já tem dois octetos de praticamente dois, porque na verdade o primeiro e o segundo bit do primeiro octeto não. Então você pode ter muito mais redes. E na classe C você tem três octetos de rede e um octeto de host. Então você tem muito mais redes do que os endereços, então, respectivamente eles vão de 100, do host, até 127, 155, 155, 155. É só fazer essa continha que vocês vão enxergar essa conclusão. E as classes do tipo D e E estão reservadas para Broadcast. E a E aqui é completamente reservada, ainda vão usar. Provavelmente não vão usar, o IPv6 vai tomar conta. O conceito de subrede permite a rede se dividir em várias partes. Então ele é aplicável para pedaços da rede. Ele permite a rede se dividir em vários segmentos. Ele não aparece para os routers, ele só aparece para dentro da rede, a subrede. Vamos ver aqui como seria. Por exemplo, subrede classe B. Independentemente do host, a subrede seria um pedaço da classe B. O pedaço do host seria usado como subrede. A vantagem da subrede é que ela facilita o endereçamento. E direto na subrede e depois no IP. A subrede não é visível internacionalmente, nacionalmente, então você não precisa cadastrar o endereço IP no NIC. E a subrede não se preocupa com hosts, apenas com quais são os seus roteadores. E ela diminui muito o tamanho das tabelas. De roteamento. Essa que é a vantagem. Ok? Mais ou menos isso.
+
+1:19:22 - Clodoaldo Callogero Professor, o que seria o NIC?
+
+1:19:25 - Loreno É o Network... Como é que chama? Network International Accounting, né? É o cara que é responsável pela... Agora a sigla eu esqueci, mas é fácil, é só procurar aí.
+
+1:19:43 - Clodoaldo Callogero Não, não, tudo bem.
+
+1:19:47 - Loreno É só então arregistrar. Não, é um organismo. É assim como se fosse manatel. É como se fosse manatel.
+
+1:20:06 - Clodoaldo Callogero Não precisa, não, professor. Só vocês podem ver depois.
+
+1:20:14 - Loreno Bom, pessoal, era isso que eu tinha para falar. Não sei se vocês querem voltar em algum ponto. Perfeito, professor. Podemos desfazer para a parte da Então é mais ou menos isso aí, pessoal. A próxima vez a gente vai trabalhar mais com a questão da VLAN privativa celular. As velas em redes privativas celulares.
+
+1:20:59 - Clodoaldo Callogero Professor, nessa aula aqui eu já percebi que eu tenho algumas dúvidas, mas que eu imagino que o pessoal já esteja mais envolvido nisso. Por exemplo, o que é um switch que trabalha na classe 3? Como é que eu posso tirar essas dúvidas? Parece que não tem mentor o facilitador na FIAP. O senhor conhece um jeito, o CPQD? Porque eu estou me ficando preocupado.
+
+1:21:32 - Loreno Eu me proponho a colocar algum material para você, mas a gente conversou na última vez o que era um switch de camada 3, porque quando eu mostrei o Modelo 11, eu mostrei lá a figurinha do switch, tá? Isso.
+
+1:21:51 - Clodoaldo Callogero Foi só um exemplo, é que eu vi muitas dúvidas minhas que eu acho que são básicas, o pessoal não deve ter essa dúvida. Então eu não queria incomodar.
+
+1:22:04 - Loreno Por exemplo, nesse caso em particular de um switch de camada 3. No ponto de vista externo, você olha o switch e não sabe se ele é camada 2 ou camada 3. O router você sabe, mas o switch de camada 3, no princípio não. Mas o problema é que ele vai permitir essa comunicação. É aqui que eu via. Estão lembrados disso aqui? Vou compartilhar também. Acho que foi na aula 3. Aula 3, se não me engano, né? É. Aula 3.
+
+1:23:15 - Clodoaldo Callogero Aula 4.
+
+1:23:16 - Loreno Aula 3 é de arquitetura. Vocês estão vendo aí? Isso aqui é um padrão da internet, né? As aplicações do computador não estão rodando E aí, essa camada de inter-redes aqui vai permitir ela comutar IP. A internet não permite isso. O pacote IP é colocado como usuário, como aplicação dentro do pacote internet, entendeu? Não sei se vocês estão lembrados dessa figurinha.
+
+1:23:57 - Clodoaldo Callogero Sim. Na verdade, eu tenho um pouco de dificuldade de visualizar a utilização prática disso. Por exemplo, ele consegue rotear. Um switch da camada 3 consegue rotear as coisas. Ele consegue definir para que lugar ele vai. Ele consegue rotear quando tem redes separadas.
+
+1:24:21 - Loreno Suponha que a internet é uma rede única. Quando houver internet, todo mundo está ligado nela. Entendeu? Então, só a necessidade de camada 2 para trocar a informação. Mas quando você tem que ir de uma internet para uma internet para falar com outra, você precisa de um fleet de camada 3.
+
+1:24:49 - Clodoaldo Callogero Ah, entendi. É mais visão prática mesmo disso. No CPQD, talvez isso, numa visita, fique mais claro em algum lugar. É tudo prático, que eu acho que está me faltando mesmo. Obrigado.
+
+1:25:04 - Loreno Deixa eu até dar os detalhes para você. Tipo assim, está acontecendo um protocolo como esse aqui, tá? Aí a camada de rede recebeu um pacote aqui que vai transportar. Aí ela olha o destino e fala, olha, eu tenho que transportar para o fulaninho. Só que eu não tenho meio físico. O meu meio físico com o ciclaninho, não com o fulaninho. Então eu vou ter que pedir para o ciclaninho passar essa informação para o outro. Ele não tem meio físico que ligue ele, ele tem que saber a aplicação, o sistema de origem, ele sabe com quem ele tem meios. Aí se ele não tiver meios... A gente fez um exemplo disso, não sei se vocês estão lembrados, quando eu fui falar do VRF, a gente comentou que os pacotes chegavam, e aí uma rota possível era através do próximo normal, o pacote normal. Você está lembrado disso?
+
+1:26:11 - Ícaro De Oliveira Castro Costa Sim. Professor, visivelmente a gente consegue ver isso geralmente quando tem um protocolo SMTP. Quando a gente verifica que não foi entregue ao destinatário, quando a gente vai fazer uma análise de pacotes ou de entrega, né?
+
+1:26:31 - Loreno Na verdade, eu acho que isso aí é uma noção que se você tiver um nó de origem, falando com o nó de destino, vamos ver se eu acho uma figurinha aqui, E aí você não tem conexão direta entre eles. A solução é você rotear através do outro. Vamos ver se eu pego um exemplo aqui. Aqui é um exemplo típico. O sistema A não tem conexão direta com o sistema D. Ele tem com uma rede de comunicações, que vai ter nós aqui. Que foi o caso da internet, né? Voltando agora ao exemplo da internet. Esse exemplo aqui, tá vendo? Os hostes que ficavam em Stanford, Santa Bárbara, Los Angeles e Utah, eles não tinham ligação direta entre si. Como é que eles fizeram? Botaram um nó em MP, uma rede MP, aí todo mundo se liga nessa rede MP, que é o nó intermediário. Esse cara é o computador de Camada 3.
+
+1:27:58 - Palestrante Não Identificado Entendeu?
+
+1:27:59 - Loreno Se fosse internet, imagina que tivesse uma internet U. A travada aqui para a gente, agora sim. Não, eu não estou avançando, eu fiquei na mesma. Mas suponha que, por exemplo, tivesse uma... Vou fazer um desenho aqui de qualquer...
+
+1:28:26 - Loreno Isso, uma coisa como isso aqui.
+
+1:28:30 - Loreno Suponha que tivesse um negócio assim, uma internet, entre eles. Vou representar aqui. Todo mundo ligado nessa internet. Não precisaria ter essa rede IP. Todo mundo estaria ligado aí. Todo mundo estaria ligado e não precisaria ter essa rede IP. Deixa eu botar ela... Deixa eu apagar aqui também. Pra vocês verem. Eu vou manter os ZBP só pra vocês verem. Tipo aqui, tá vendo? Você pegaria diversas universidades e conectaria pra uma mesma internet. Aí não existe switch de camada 3.
+
+1:29:23 - Palestrante Não Identificado Ah, entendi.
+
+1:29:24 - Palestrante Não Identificado Entendeu?
+
+1:29:25 - Loreno Todo mundo tá ligado. Tem uma fiação única que vai pra todos aqui.
+
+1:29:32 - Palestrante Não Identificado Entendi.
+
+1:29:33 - Clodoaldo Callogero Entendi. Muito obrigado, professor. Agora entendi.
+
+1:29:36 - Loreno Imagina. Quando eu fechar isso aqui, eu não vou salvar. Não salvar. Então é essa que é a filosofia aí. Então o roteador é esse mesmo papel. Ele que tem capacidade de entender o endereço que vem de cima e verificar que o destino não está diretamente acessível. Está acessível através de um outro roteador. Entendeu? Mais alguma dúvida aí, pessoal? Tranquilo, professor. Tá. Então vamos parando por aqui hoje e bom filiado para vocês. Semana que vem a gente volta com a questão das redes privativas celulares e as VLANs. E também com a questão da... O pessoal está pedindo aqui para responder. Vamos esquecer de mencionar a questão da pesquisa de satisfação. Tá bom? Tá bom, professor.
+
+1:30:45 - Palestrante Não Identificado Obrigadão.
+
+1:30:45 - Loreno Bom feriado. Ok, obrigado.
+
+1:30:48 - Clodoaldo Callogero Boa noite e bom feriado, pessoal.
+
+1:30:51 - Loreno Bom feriado. Bom feriado, pessoal.
+
+1:30:54 - Palestrante Não Identificado Abraço.
+
+1:30:54 - Antonildo Lima Da Silva Falou, pessoal.
+
+1:30:55 - Loreno Falou, Thiago.
+
+1:30:56 - Carlos Batista Bom feriado.
+
+1:30:57 - Loreno Boa noite a todos. Eu vou colocar essa apresentação no Coisa. No último feriado.
+
+1:31:04 - Palestrante Não Identificado Tá bom? Perfeito, professor.
+
+1:31:06 - Palestrante Não Identificado Obrigado.
+
+1:31:06 - Loreno Obrigado a você.
+
+1:31:08 - Palestrante Não Identificado Legal. Obrigadão. Legendas pela comunidade Amara.org

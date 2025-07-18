@@ -1,0 +1,52 @@
+{% load static %}
+{% load crispy_forms_tags %}
+{% load widget_tweaks %}
+
+{% with WIDGET_ERROR_CLASS='is-invalid' %}
+    <form hx-post="{{ request.path }}" hx-headers='{"X-CSRFToken":"{{ csrf_token }}"}' class="modal-content">
+
+        <div class="modal-header">
+            {% if form.instance.pk %}
+                <h5 class="modal-title">Order #{{ form.instance.pk }}</h5>
+            {% else %}
+                <h5 class="modal-title">New Order</h5>
+            {% endif %}
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+            {% crispy form %}
+        </div>
+        <div class="modal-footer" style="display:none"></div> <!-- Already generated in the form -->
+    </form>
+{% endwith %}
+
+<script type="text/javascript" src="{% static 'warehouse/js/modal_dialog.js' %}"></script>
+<script>
+    function initializeSelect2() {
+        $("#id_products").select2({
+            placeholder: "Select the Products",
+            allowClear: true,
+            dropdownParent: $('#modal'),
+            dropdownCssClass: 'select2-dropdown--modal',
+            containerCssClass: 'select2-container--modal'
+        });
+    }
+
+    // Initialize Select2 when the page loads
+    initializeSelect2();
+
+    // Update Select2 when the modal is shown
+    $('#modal').on('shown.bs.modal', function () {
+        // Destroy Select2 before reinitializing it
+        $("#id_products").select2('destroy');
+        // Reinitialize Select2 inside the modal
+        initializeSelect2();
+    });
+</script>
+{% comment %} <script> // Initialize the Google Places Autocomplete
+    var input = document.getElementById('{{ widget.attrs.id }}');
+    var options = {
+        types: ['address']
+    };
+    var autocomplete = new google.maps.places.Autocomplete(input, options);
+</script> {% endcomment %}

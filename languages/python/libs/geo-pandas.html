@@ -1,0 +1,797 @@
+<!DOCTYPE html> <html><head>
+		<title>Pandas e GeoPandas</title>
+		<base href="..\..\..\..\..\..\../">
+		<meta id="root-path" root-path="..\..\..\..\..\..\../">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes, minimum-scale=1.0, maximum-scale=5.0">
+		<meta charset="UTF-8">
+		<meta name="description" content="DRIVE - Pandas e GeoPandas">
+		<meta property="og:title" content="Pandas e GeoPandas">
+		<meta property="og:description" content="DRIVE - Pandas e GeoPandas">
+		<meta property="og:type" content="website">
+		<meta property="og:url" content="languages/python/libs/geo-pandas.html">
+		<meta property="og:image" content="https://pandas.pydata.org/docs/_images/01_table_dataframe.svg">
+		<meta property="og:site_name" content="DRIVE">
+		<meta name="author" content="Gabryel Nóbrega"><link rel="alternate" type="application/rss+xml" title="RSS Feed" href="lib/rss.xml"><script async="" id="webpage-script" src="lib/scripts/webpage.js" onload="this.onload=null;this.setAttribute(&quot;loaded&quot;, &quot;true&quot;)"></script><script type="module" async="" id="graph-view-script" src="lib/scripts/graph-view.js"></script><script async="" id="graph-wasm-script" src="lib/scripts/graph-wasm.js" onload="this.onload=null;this.setAttribute(&quot;loaded&quot;, &quot;true&quot;)"></script><script async="" id="graph-render-worker-script" src="lib/scripts/graph-render-worker.js" onload="this.onload=null;this.setAttribute(&quot;loaded&quot;, &quot;true&quot;)"></script><script async="" id="tinycolor-script" src="lib/scripts/tinycolor.js" onload="this.onload=null;this.setAttribute(&quot;loaded&quot;, &quot;true&quot;)"></script><script async="" id="pixi-script" src="https://cdnjs.cloudflare.com/ajax/libs/pixi.js/7.4.0/pixi.min.js" onload="this.onload=null;this.setAttribute(&quot;loaded&quot;, &quot;true&quot;)"></script><script async="" id="minisearch-script" src="https://cdn.jsdelivr.net/npm/minisearch@6.3.0/dist/umd/index.min.js" onload="this.onload=null;this.setAttribute(&quot;loaded&quot;, &quot;true&quot;)"></script><link rel="icon" href="lib/media/favicon.png"><script async="" id="graph-data-script" src="lib/scripts/graph-data.js" onload="this.onload=null;this.setAttribute(&quot;loaded&quot;, &quot;true&quot;)"></script><style>body{--line-width:40em;--line-width-adaptive:40em;--file-line-width:40em;--sidebar-width:min(20em, 80vw);--collapse-arrow-size:11px;--tree-horizontal-spacing:0.6em;--tree-vertical-spacing:0.6em;--sidebar-margin:12px}.sidebar{height:100%;min-width:calc(var(--sidebar-width) + var(--divider-width-hover));max-width:calc(var(--sidebar-width) + var(--divider-width-hover));font-size:14px;z-index:10;position:relative;overflow:hidden;transition:min-width ease-in-out,max-width ease-in-out;transition-duration:.2s;contain:size}.sidebar-left{left:0}.sidebar-right{right:0}.sidebar.is-collapsed{min-width:0;max-width:0}body.floating-sidebars .sidebar{position:absolute}.sidebar-content{height:100%;min-width:calc(var(--sidebar-width) - var(--divider-width-hover));top:0;padding:var(--sidebar-margin);padding-top:4em;line-height:var(--line-height-tight);background-color:var(--background-secondary);transition:background-color,border-right,border-left,box-shadow;transition-duration:var(--color-fade-speed);transition-timing-function:ease-in-out;position:absolute;display:flex;flex-direction:column}.sidebar:not(.is-collapsed) .sidebar-content{min-width:calc(max(100%,var(--sidebar-width)) - 3px);max-width:calc(max(100%,var(--sidebar-width)) - 3px)}.sidebar-left .sidebar-content{left:0;border-top-right-radius:var(--radius-l);border-bottom-right-radius:var(--radius-l)}.sidebar-right .sidebar-content{right:0;border-top-left-radius:var(--radius-l);border-bottom-left-radius:var(--radius-l)}.sidebar:has(.sidebar-content:empty):has(.topbar-content:empty){display:none}.sidebar-topbar{height:2em;width:var(--sidebar-width);top:var(--sidebar-margin);padding-inline:var(--sidebar-margin);z-index:1;position:fixed;display:flex;align-items:center;transition:width ease-in-out;transition-duration:inherit}.sidebar.is-collapsed .sidebar-topbar{width:calc(2.3em + var(--sidebar-margin) * 2)}.sidebar .sidebar-topbar.is-collapsed{width:0}.sidebar-left .sidebar-topbar{left:0}.sidebar-right .sidebar-topbar{right:0}.topbar-content{overflow:hidden;overflow:clip;width:100%;height:100%;display:flex;align-items:center;transition:inherit}.sidebar.is-collapsed .topbar-content{width:0;transition:inherit}.clickable-icon.sidebar-collapse-icon{background-color:transparent;color:var(--icon-color-focused);padding:0!important;margin:0!important;height:100%!important;width:2.3em!important;margin-inline:0.14em!important;position:absolute}.sidebar-left .clickable-icon.sidebar-collapse-icon{transform:rotateY(180deg);right:var(--sidebar-margin)}.sidebar-right .clickable-icon.sidebar-collapse-icon{transform:rotateY(180deg);left:var(--sidebar-margin)}.clickable-icon.sidebar-collapse-icon svg.svg-icon{width:100%;height:100%}.sidebar-section-header{margin:0 0 1em 0;text-transform:uppercase;letter-spacing:.06em;font-weight:600}body{transition:background-color var(--color-fade-speed) ease-in-out}.webpage-container{display:flex;flex-direction:row;height:100%;width:100%;align-items:stretch;justify-content:center}.document-container{opacity:1;flex-basis:100%;max-width:100%;width:100%;height:100%;display:flex;flex-direction:column;align-items:center;transition:opacity .2s ease-in-out;contain:inline-size}.hide{opacity:0;transition:opacity .2s ease-in-out}.document-container>.markdown-preview-view{margin:var(--sidebar-margin);margin-bottom:0;width:100%;width:-webkit-fill-available;width:-moz-available;width:fill-available;background-color:var(--background-primary);transition:background-color var(--color-fade-speed) ease-in-out;border-top-right-radius:var(--window-radius,var(--radius-m));border-top-left-radius:var(--window-radius,var(--radius-m));overflow-x:hidden!important;overflow-y:auto!important;display:flex!important;flex-direction:column!important;align-items:center!important;contain:inline-size}.document-container>.markdown-preview-view>.markdown-preview-sizer{padding-bottom:80vh!important;width:100%!important;max-width:var(--line-width)!important;flex-basis:var(--line-width)!important;transition:background-color var(--color-fade-speed) ease-in-out;contain:inline-size}.markdown-rendered img:not([width]),.view-content img:not([width]){max-width:100%;outline:0}.document-container>.view-content.embed{display:flex;padding:1em;height:100%;width:100%;align-items:center;justify-content:center}.document-container>.view-content.embed>*{max-width:100%;max-height:100%;object-fit:contain}:has(> :is(.math,table)){overflow-x:auto!important}.document-container>.view-content{overflow-x:auto;contain:content;padding:0;margin:0;height:100%}.scroll-highlight{position:absolute;width:100%;height:100%;pointer-events:none;z-index:1000;background-color:hsla(var(--color-accent-hsl),.25);opacity:0;padding:1em;inset:50%;translate:-50% -50%;border-radius:var(--radius-s)}</style><script defer="">async function loadIncludes(){if("file:"!=location.protocol){let e=document.querySelectorAll("include");for(let t=0;t<e.length;t++){let o=e[t],l=o.getAttribute("src");try{const e=await fetch(l);if(!e.ok){console.log("Could not include file: "+l),o?.remove();continue}let t=await e.text(),n=document.createRange().createContextualFragment(t),i=Array.from(n.children);for(let e of i)e.classList.add("hide"),e.style.transition="opacity 0.5s ease-in-out",setTimeout((()=>{e.classList.remove("hide")}),10);o.before(n),o.remove(),console.log("Included file: "+l)}catch(e){o?.remove(),console.log("Could not include file: "+l,e);continue}}}else{if(document.querySelectorAll("include").length>0){var e=document.createElement("div");e.id="error",e.textContent="Web server exports must be hosted on an http / web server to be viewed correctly.",e.style.position="fixed",e.style.top="50%",e.style.left="50%",e.style.transform="translate(-50%, -50%)",e.style.fontSize="1.5em",e.style.fontWeight="bold",e.style.textAlign="center",document.body.appendChild(e),document.querySelector(".document-container")?.classList.remove("hide")}}}document.addEventListener("DOMContentLoaded",(()=>{loadIncludes()}));let isFileProtocol="file:"==location.protocol;function waitLoadScripts(e,t){let o=e.map((e=>document.getElementById(e+"-script"))),l=0;!function e(){let n=o[l];l++,n&&"true"!=n.getAttribute("loaded")||l<o.length&&e(),l<o.length?n.addEventListener("load",e):t()}()}</script><link rel="stylesheet" href="lib/styles/obsidian.css"><link rel="stylesheet" href="lib/styles/theme.css"><link rel="preload" href="lib/styles/global-variable-styles.css" as="style" onload="this.onload=null;this.rel='stylesheet'"><noscript><link rel="stylesheet" href="lib/styles/global-variable-styles.css"></noscript><link rel="preload" href="lib/styles/supported-plugins.css" as="style" onload="this.onload=null;this.rel='stylesheet'"><noscript><link rel="stylesheet" href="lib/styles/supported-plugins.css"></noscript><link rel="preload" href="lib/styles/main-styles.css" as="style" onload="this.onload=null;this.rel='stylesheet'"><noscript><link rel="stylesheet" href="lib/styles/main-styles.css"></noscript><link rel="preload" href="lib/styles/snippets.css" as="style" onload="this.onload=null;this.rel='stylesheet'"><noscript><link rel="stylesheet" href="lib/styles/snippets.css"></noscript></head><body class="publish css-settings-manager theme-dark"><script defer="">let theme=localStorage.getItem("theme")||(window.matchMedia("(prefers-color-scheme: dark)").matches?"dark":"light");"dark"==theme?(document.body.classList.add("theme-dark"),document.body.classList.remove("theme-light")):(document.body.classList.add("theme-light"),document.body.classList.remove("theme-dark")),window.innerWidth<480?document.body.classList.add("is-phone"):window.innerWidth<768?document.body.classList.add("is-tablet"):window.innerWidth<1024?document.body.classList.add("is-small-screen"):document.body.classList.add("is-large-screen")</script><div class="webpage-container workspace"><div class="sidebar-left sidebar"><div class="sidebar-handle"></div><div class="sidebar-topbar"><div class="topbar-content"><label class="theme-toggle-container" for="theme_toggle"><input class="theme-toggle-input" type="checkbox" id="theme_toggle"><div class="toggle-background"></div></label></div><div class="clickable-icon sidebar-collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" class="svg-icon"><path d="M21 3H3C1.89543 3 1 3.89543 1 5V19C1 20.1046 1.89543 21 3 21H21C22.1046 21 23 20.1046 23 19V5C23 3.89543 22.1046 3 21 3Z"></path><path d="M10 4V20"></path><path d="M4 7H7"></path><path d="M4 10H7"></path><path d="M4 13H7"></path></svg></div></div><div class="sidebar-content"><div class="search-input-container"><input enterkeyhint="search" type="search" spellcheck="false" placeholder="Search..."><div class="search-input-clear-button" aria-label="Clear search"></div></div><include src="lib/html/file-tree.html"></include></div><script defer="">let ls = document.querySelector(".sidebar-left"); ls.classList.add("is-collapsed"); if (window.innerWidth > 768) ls.classList.remove("is-collapsed"); ls.style.setProperty("--sidebar-width", localStorage.getItem("sidebar-left-width"));</script></div><div class="document-container markdown-reading-view hide"><div class="markdown-preview-view markdown-rendered allow-fold-headings allow-fold-lists is-readable-line-width"><style id="MJX-CHTML-styles">mjx-c.mjx-c210E.TEX-I::before{padding:.694em .576em .011em 0;content:"h"}mjx-c.mjx-c1D458.TEX-I::before{padding:.694em .521em .011em 0;content:"k"}mjx-c.mjx-c2032::before{padding:.56em .275em 0 0;content:"′"}mjx-c.mjx-c1D45A.TEX-I::before{padding:.442em .878em .011em 0;content:"m"}mjx-c.mjx-c1D451.TEX-I::before{padding:.694em .52em .01em 0;content:"d"}mjx-c.mjx-c1D450.TEX-I::before{padding:.442em .433em .011em 0;content:"c"}mjx-c.mjx-c1D436.TEX-I::before{padding:.705em .76em .022em 0;content:"C"}mjx-c.mjx-c1D443.TEX-I::before{padding:.683em .751em 0 0;content:"P"}mjx-c.mjx-c1D448.TEX-I::before{padding:.683em .767em .022em 0;content:"U"}mjx-c.mjx-c1D44E.TEX-I::before{padding:.441em .529em .01em 0;content:"a"}mjx-c.mjx-c1D45D.TEX-I::before{padding:.442em .503em .194em 0;content:"p"}mjx-c.mjx-c1D44B.TEX-I::before{padding:.683em .852em 0 0;content:"X"}mjx-c.mjx-c1D466.TEX-I::before{padding:.442em .49em .205em 0;content:"y"}mjx-c.mjx-c25::before{padding:.75em .833em .056em 0;content:"%"}mjx-c.mjx-cD7::before{padding:.491em .778em 0 0;content:"×"}mjx-c.mjx-c35::before{padding:.666em .5em .022em 0;content:"5"}mjx-c.mjx-c1D435.TEX-I::before{padding:.683em .759em 0 0;content:"B"}mjx-c.mjx-c38::before{padding:.666em .5em .022em 0;content:"8"}mjx-c.mjx-cF7::before{padding:.537em .778em .036em 0;content:"÷"}mjx-c.mjx-c3D::before{padding:.583em .778em .082em 0;content:"="}mjx-c.mjx-c2217::before{padding:.465em .5em 0 0;content:"∗"}mjx-c.mjx-c34::before{padding:.677em .5em 0 0;content:"4"}mjx-c.mjx-c1D44F.TEX-I::before{padding:.694em .429em .011em 0;content:"b"}mjx-c.mjx-c1D456.TEX-I::before{padding:.661em .345em .011em 0;content:"i"}mjx-c.mjx-c1D461.TEX-I::before{padding:.626em .361em .011em 0;content:"t"}mjx-c.mjx-c1D452.TEX-I::before{padding:.442em .466em .011em 0;content:"e"}mjx-c.mjx-c1D460.TEX-I::before{padding:.442em .469em .01em 0;content:"s"}mjx-c.mjx-c1D465.TEX-I::before{padding:.442em .572em .011em 0;content:"x"}mjx-c.mjx-c36::before{padding:.666em .5em .022em 0;content:"6"}mjx-c.mjx-c37::before{padding:.676em .5em .022em 0;content:"7"}mjx-msup{display:inline-block;text-align:left}mjx-texatom{display:inline-block;text-align:left}mjx-c.mjx-c1D442.TEX-I::before{padding:.704em .763em .022em 0;content:"O"}mjx-c.mjx-c28::before{padding:.75em .389em .25em 0;content:"("}mjx-c.mjx-c1D45B.TEX-I::before{padding:.442em .6em .011em 0;content:"n"}mjx-c.mjx-c32::before{padding:.666em .5em 0 0;content:"2"}mjx-c.mjx-c29::before{padding:.75em .389em .25em 0;content:")"}mjx-c.mjx-c1D459.TEX-I::before{padding:.694em .298em .011em 0;content:"l"}mjx-c.mjx-c1D45C.TEX-I::before{padding:.441em .485em .011em 0;content:"o"}mjx-c.mjx-c1D454.TEX-I::before{padding:.442em .477em .205em 0;content:"g"}mjx-c.mjx-c2061::before{padding:0;content:""}mjx-c.mjx-c1D6FA.TEX-I::before{padding:.704em .786em 0 0;content:"Ω"}mjx-c.mjx-c1D6E9.TEX-I::before{padding:.704em .763em .022em 0;content:"Θ"}mjx-c.mjx-c2B::before{padding:.583em .778em .082em 0;content:"+"}mjx-c.mjx-c33::before{padding:.665em .5em .022em 0;content:"3"}mjx-c.mjx-c2E::before{padding:.12em .278em 0 0;content:"."}mjx-c.mjx-c2F::before{padding:.75em .5em .25em 0;content:"/"}mjx-c.mjx-c30::before{padding:.666em .5em .022em 0;content:"0"}mjx-c.mjx-c39::before{padding:.666em .5em .022em 0;content:"9"}mjx-c.mjx-c2212::before{padding:.583em .778em .082em 0;content:"−"}mjx-container[jax=CHTML]{line-height:0}mjx-container [space="1"]{margin-left:.111em}mjx-container [space="2"]{margin-left:.167em}mjx-container [space="3"]{margin-left:.222em}mjx-container [space="4"]{margin-left:.278em}mjx-container [space="5"]{margin-left:.333em}mjx-container [rspace="1"]{margin-right:.111em}mjx-container [rspace="2"]{margin-right:.167em}mjx-container [rspace="3"]{margin-right:.222em}mjx-container [rspace="4"]{margin-right:.278em}mjx-container [rspace="5"]{margin-right:.333em}mjx-container [size="s"]{font-size:70.7%}mjx-container [size=ss]{font-size:50%}mjx-container [size=Tn]{font-size:60%}mjx-container [size=sm]{font-size:85%}mjx-container [size=lg]{font-size:120%}mjx-container [size=Lg]{font-size:144%}mjx-container [size=LG]{font-size:173%}mjx-container [size=hg]{font-size:207%}mjx-container [size=HG]{font-size:249%}mjx-container [width=full]{width:100%}mjx-box{display:inline-block}mjx-block{display:block}mjx-itable{display:inline-table}mjx-row{display:table-row}mjx-row>*{display:table-cell}mjx-mtext{display:inline-block}mjx-mstyle{display:inline-block}mjx-merror{display:inline-block;color:red;background-color:#ff0}mjx-mphantom{visibility:hidden}mjx-assistive-mml{top:0;left:0;clip:rect(1px,1px,1px,1px);user-select:none;position:absolute!important;padding:1px 0 0!important;border:0!important;display:block!important;width:auto!important;overflow:hidden!important}mjx-assistive-mml[display=block]{width:100%!important}mjx-math{display:inline-block;text-align:left;line-height:0;text-indent:0;font-style:normal;font-weight:400;font-size:100%;font-size-adjust:none;letter-spacing:normal;border-collapse:collapse;overflow-wrap:normal;word-spacing:normal;white-space:nowrap;direction:ltr;padding:1px 0}mjx-container[jax=CHTML][display=true]{display:block;text-align:center;margin:1em 0}mjx-container[jax=CHTML][display=true][width=full]{display:flex}mjx-container[jax=CHTML][display=true] mjx-math{padding:0}mjx-container[jax=CHTML][justify=left]{text-align:left}mjx-container[jax=CHTML][justify=right]{text-align:right}mjx-mi{display:inline-block;text-align:left}mjx-c{display:inline-block}mjx-utext{display:inline-block;padding:.75em 0 .2em}mjx-msub{display:inline-block;text-align:left}mjx-mn{display:inline-block;text-align:left}mjx-mo{display:inline-block;text-align:left}mjx-stretchy-h{display:inline-table;width:100%}mjx-stretchy-h>*{display:table-cell;width:0}mjx-stretchy-h>*>mjx-c{display:inline-block;transform:scaleX(1)}mjx-stretchy-h>*>mjx-c::before{display:inline-block;width:initial}mjx-stretchy-h>mjx-ext{overflow:clip visible;width:100%}mjx-stretchy-h>mjx-ext>mjx-c::before{transform:scaleX(500)}mjx-stretchy-h>mjx-ext>mjx-c{width:0}mjx-stretchy-h>mjx-beg>mjx-c{margin-right:-.1em}mjx-stretchy-h>mjx-end>mjx-c{margin-left:-.1em}mjx-stretchy-v{display:inline-block}mjx-stretchy-v>*{display:block}mjx-stretchy-v>mjx-beg{height:0}mjx-stretchy-v>mjx-end>mjx-c{display:block}mjx-stretchy-v>*>mjx-c{transform:scaleY(1);transform-origin:left center;overflow:hidden}mjx-stretchy-v>mjx-ext{display:block;height:100%;box-sizing:border-box;border:0 solid transparent;overflow:visible clip}mjx-stretchy-v>mjx-ext>mjx-c::before{width:initial;box-sizing:border-box}mjx-stretchy-v>mjx-ext>mjx-c{transform:scaleY(500) translateY(.075em);overflow:visible}mjx-mark{display:inline-block;height:0}mjx-c::before{display:block;width:0}.MJX-TEX{font-family:MJXZERO,MJXTEX}.TEX-B{font-family:MJXZERO,MJXTEX-B}.TEX-I{font-family:MJXZERO,MJXTEX-I}.TEX-MI{font-family:MJXZERO,MJXTEX-MI}.TEX-BI{font-family:MJXZERO,MJXTEX-BI}.TEX-S1{font-family:MJXZERO,MJXTEX-S1}.TEX-S2{font-family:MJXZERO,MJXTEX-S2}.TEX-S3{font-family:MJXZERO,MJXTEX-S3}.TEX-S4{font-family:MJXZERO,MJXTEX-S4}.TEX-A{font-family:MJXZERO,MJXTEX-A}.TEX-C{font-family:MJXZERO,MJXTEX-C}.TEX-CB{font-family:MJXZERO,MJXTEX-CB}.TEX-FR{font-family:MJXZERO,MJXTEX-FR}.TEX-FRB{font-family:MJXZERO,MJXTEX-FRB}.TEX-SS{font-family:MJXZERO,MJXTEX-SS}.TEX-SSB{font-family:MJXZERO,MJXTEX-SSB}.TEX-SSI{font-family:MJXZERO,MJXTEX-SSI}.TEX-SC{font-family:MJXZERO,MJXTEX-SC}.TEX-T{font-family:MJXZERO,MJXTEX-T}.TEX-V{font-family:MJXZERO,MJXTEX-V}.TEX-VB{font-family:MJXZERO,MJXTEX-VB}mjx-stretchy-h mjx-c,mjx-stretchy-v mjx-c{font-family:MJXZERO,MJXTEX-S1,MJXTEX-S4,MJXTEX,MJXTEX-A!important}@font-face{font-family:MJXZERO;src:url("lib/fonts/mathjax_zero.woff") format("woff")}@font-face{font-family:MJXTEX;src:url("lib/fonts/mathjax_main-regular.woff") format("woff")}@font-face{font-family:MJXTEX-B;src:url("lib/fonts/mathjax_main-bold.woff") format("woff")}@font-face{font-family:MJXTEX-I;src:url("lib/fonts/mathjax_math-italic.woff") format("woff")}@font-face{font-family:MJXTEX-MI;src:url("lib/fonts/mathjax_main-italic.woff") format("woff")}@font-face{font-family:MJXTEX-BI;src:url("lib/fonts/mathjax_math-bolditalic.woff") format("woff")}@font-face{font-family:MJXTEX-S1;src:url("lib/fonts/mathjax_size1-regular.woff") format("woff")}@font-face{font-family:MJXTEX-S2;src:url("lib/fonts/mathjax_size2-regular.woff") format("woff")}@font-face{font-family:MJXTEX-S3;src:url("lib/fonts/mathjax_size3-regular.woff") format("woff")}@font-face{font-family:MJXTEX-S4;src:url("lib/fonts/mathjax_size4-regular.woff") format("woff")}@font-face{font-family:MJXTEX-A;src:url("lib/fonts/mathjax_ams-regular.woff") format("woff")}@font-face{font-family:MJXTEX-C;src:url("lib/fonts/mathjax_calligraphic-regular.woff") format("woff")}@font-face{font-family:MJXTEX-CB;src:url("lib/fonts/mathjax_calligraphic-bold.woff") format("woff")}@font-face{font-family:MJXTEX-FR;src:url("lib/fonts/mathjax_fraktur-regular.woff") format("woff")}@font-face{font-family:MJXTEX-FRB;src:url("lib/fonts/mathjax_fraktur-bold.woff") format("woff")}@font-face{font-family:MJXTEX-SS;src:url("lib/fonts/mathjax_sansserif-regular.woff") format("woff")}@font-face{font-family:MJXTEX-SSB;src:url("lib/fonts/mathjax_sansserif-bold.woff") format("woff")}@font-face{font-family:MJXTEX-SSI;src:url("lib/fonts/mathjax_sansserif-italic.woff") format("woff")}@font-face{font-family:MJXTEX-SC;src:url("lib/fonts/mathjax_script-regular.woff") format("woff")}@font-face{font-family:MJXTEX-T;src:url("lib/fonts/mathjax_typewriter-regular.woff") format("woff")}@font-face{font-family:MJXTEX-V;src:url("lib/fonts/mathjax_vector-regular.woff") format("woff")}@font-face{font-family:MJXTEX-VB;src:url("lib/fonts/mathjax_vector-bold.woff") format("woff")}mjx-c.mjx-c1D439.TEX-I::before{padding:.68em .749em 0 0;content:"F"}mjx-c.mjx-c1D447.TEX-I::before{padding:.677em .704em 0 0;content:"T"}mjx-c.mjx-c1D43F.TEX-I::before{padding:.683em .681em 0 0;content:"L"}mjx-c.mjx-c1D43C.TEX-I::before{padding:.683em .504em 0 0;content:"I"}mjx-c.mjx-c1D441.TEX-I::before{padding:.683em .888em 0 0;content:"N"}mjx-c.mjx-c1D438.TEX-I::before{padding:.68em .764em 0 0;content:"E"}mjx-c.mjx-c31::before{padding:.666em .5em 0 0;content:"1"}mjx-c.mjx-c2C::before{padding:.121em .278em .194em 0;content:","}</style><pre class="frontmatter language-yaml" tabindex="0" style="display: none;"><code class="language-yaml is-loaded"><span class="token key atrule">title</span><span class="token punctuation">:</span> Pandas e GeoPandas
+<span class="token key atrule">tags</span><span class="token punctuation">:</span> studies<span class="token punctuation">,</span> programming
+<span class="token key atrule">use</span><span class="token punctuation">:</span> Documentation
+<span class="token key atrule">languages</span><span class="token punctuation">:</span> Python
+<span class="token key atrule">dependences</span><span class="token punctuation">:</span> Python<span class="token punctuation">,</span> pandas</code><button class="copy-code-button"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon lucide-copy"><rect x="8" y="8" width="14" height="14" rx="2" ry="2"></rect><path d="M4 16c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2"></path></svg></button></pre><div class="markdown-preview-sizer markdown-preview-section"><h1 class="page-title heading" id="Pandas e GeoPandas"><p dir="auto">Pandas e GeoPandas</p></h1><div class="el-blockquote"><blockquote dir="auto">
+<p><a class="internal-link" data-href="../README.md" href="languages/python/readme.html" target="_self" rel="noopener nofollow">Python Roadmap</a></p>
+</blockquote></div><div class="el-details"><details> <summary>Table of Contents 🔖</summary></details></div><div class="el-ul"><ul>
+<li data-line="0" dir="auto"><div class="list-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle"><path d="M3 8L12 17L21 8"></path></svg></div><a class="internal-link" data-href="#introduction" href="#introduction" target="_self" rel="noopener nofollow">Introduction</a>
+<ul>
+<li data-line="1" dir="auto"><div class="list-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle"><path d="M3 8L12 17L21 8"></path></svg></div><a class="internal-link" data-href="#geting-started" href="#geting-started" target="_self" rel="noopener nofollow">Geting Started</a>
+<ul>
+<li data-line="2" dir="auto"><a class="internal-link" data-href="#installation-of-pandas" href="#installation-of-pandas" target="_self" rel="noopener nofollow">Installation of Pandas</a></li>
+<li data-line="3" dir="auto"><a class="internal-link" data-href="#import-pandas" href="#import-pandas" target="_self" rel="noopener nofollow">Import Pandas</a></li>
+</ul>
+</li>
+<li data-line="4" dir="auto"><div class="list-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle"><path d="M3 8L12 17L21 8"></path></svg></div><a class="internal-link" data-href="#series" href="#series" target="_self" rel="noopener nofollow">Series</a>
+<ul>
+<li data-line="5" dir="auto"><a class="internal-link" data-href="#labels" href="#labels" target="_self" rel="noopener nofollow">Labels</a></li>
+<li data-line="6" dir="auto"><a class="internal-link" data-href="#keyvalue-objects-as-series" href="#keyvalue-objects-as-series" target="_self" rel="noopener nofollow">Key/Value Objects as Series</a></li>
+</ul>
+</li>
+<li data-line="7" dir="auto"><div class="list-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle"><path d="M3 8L12 17L21 8"></path></svg></div><a class="internal-link" data-href="#dataframes" href="#dataframes" target="_self" rel="noopener nofollow">DataFrames</a>
+<ul>
+<li data-line="8" dir="auto"><a class="internal-link" data-href="#indexing-and-selecting-data" href="#indexing-and-selecting-data" target="_self" rel="noopener nofollow">Indexing and selecting data</a></li>
+</ul>
+</li>
+<li data-line="9" dir="auto"><div class="list-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle"><path d="M3 8L12 17L21 8"></path></svg></div><a class="internal-link" data-href="#analyse-data" href="#analyse-data" target="_self" rel="noopener nofollow">Analyse Data</a>
+<ul>
+<li data-line="10" dir="auto"><a class="internal-link" data-href="#read-csv" href="#read-csv" target="_self" rel="noopener nofollow">Read <code>.csv</code></a></li>
+<li data-line="11" dir="auto"><div class="list-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle"><path d="M3 8L12 17L21 8"></path></svg></div><a class="internal-link" data-href="#read-json" href="#read-json" target="_self" rel="noopener nofollow">Read <code>JSON</code></a>
+<ul>
+<li data-line="12" dir="auto"><a class="internal-link" data-href="#dictionary-as-json" href="#dictionary-as-json" target="_self" rel="noopener nofollow">Dictionary as JSON</a></li>
+</ul>
+</li>
+<li data-line="13" dir="auto"><a class="internal-link" data-href="#viewing-the-data" href="#viewing-the-data" target="_self" rel="noopener nofollow">Viewing the Data</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li data-line="14" dir="auto"><div class="list-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle"><path d="M3 8L12 17L21 8"></path></svg></div><a class="internal-link" data-href="#cleaning-data" href="#cleaning-data" target="_self" rel="noopener nofollow">Cleaning Data</a>
+<ul>
+<li data-line="15" dir="auto"><div class="list-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle"><path d="M3 8L12 17L21 8"></path></svg></div><a class="internal-link" data-href="#clean-empty-cells" href="#clean-empty-cells" target="_self" rel="noopener nofollow">Clean Empty Cells</a>
+<ul>
+<li data-line="16" dir="auto"><a class="internal-link" data-href="#replacing-empty-values" href="#replacing-empty-values" target="_self" rel="noopener nofollow">Replacing Empty Values</a></li>
+<li data-line="17" dir="auto"><a class="internal-link" data-href="#remove-wrong-data" href="#remove-wrong-data" target="_self" rel="noopener nofollow">Remove Wrong Data</a></li>
+</ul>
+</li>
+<li data-line="18" dir="auto"><a class="internal-link" data-href="#remove-duplicates" href="#remove-duplicates" target="_self" rel="noopener nofollow">Remove Duplicates</a></li>
+</ul>
+</li>
+<li data-line="19" dir="auto"><div class="list-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle"><path d="M3 8L12 17L21 8"></path></svg></div><a class="internal-link" data-href="#advanced" href="#advanced" target="_self" rel="noopener nofollow">Advanced</a>
+<ul>
+<li data-line="20" dir="auto"><div class="list-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle"><path d="M3 8L12 17L21 8"></path></svg></div><a class="internal-link" data-href="#correlations" href="#correlations" target="_self" rel="noopener nofollow">Correlations</a>
+<ul>
+<li data-line="21" dir="auto"><a class="internal-link" data-href="#finding-relationships" href="#finding-relationships" target="_self" rel="noopener nofollow">Finding Relationships</a></li>
+<li data-line="22" dir="auto"><a class="internal-link" data-href="#perfect-correlation" href="#perfect-correlation" target="_self" rel="noopener nofollow">Perfect Correlation:</a></li>
+<li data-line="23" dir="auto"><a class="internal-link" data-href="#good-correlation" href="#good-correlation" target="_self" rel="noopener nofollow">Good Correlation:</a></li>
+<li data-line="24" dir="auto"><a class="internal-link" data-href="#bad-correlation" href="#bad-correlation" target="_self" rel="noopener nofollow">Bad Correlation:</a></li>
+</ul>
+</li>
+<li data-line="25" dir="auto"><div class="list-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle"><path d="M3 8L12 17L21 8"></path></svg></div><a class="internal-link" data-href="#plotting" href="#plotting" target="_self" rel="noopener nofollow">Plotting</a>
+<ul>
+<li data-line="26" dir="auto"><a class="internal-link" data-href="#scatter-plot" href="#scatter-plot" target="_self" rel="noopener nofollow">Scatter Plot</a></li>
+<li data-line="27" dir="auto"><a class="internal-link" data-href="#histogram" href="#histogram" target="_self" rel="noopener nofollow">Histogram</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li data-line="28" dir="auto"><a class="internal-link" data-href="#references" href="#references" target="_self" rel="noopener nofollow">References</a></li>
+</ul></div><div></div><div class="el-hr"><hr></div><div class="el-h1 heading-wrapper"><h1 data-heading="Introduction" dir="auto" class="heading" id="Introduction">Introduction</h1><div class="heading-children"><div class="el-ul"><ul>
+<li data-line="0" dir="auto">
+<p><strong>What is</strong><br>
+Pandas is a Python library used for working with data sets. It has functions for analyzing, cleaning, exploring, and manipulating data. The name "Pandas" has a reference to both "Panel Data", and "Python Data Analysis" and was created by Wes McKinney in 2008.</p>
+</li>
+<li data-line="3" dir="auto">
+<p><strong>Why use</strong><br>
+Pandas allows us to analyze big data and make conclusions based on statistical theories. Pandas can clean messy data sets, and make them readable and relevant. Relevant data is very important in data science.</p>
+</li>
+<li data-line="6" dir="auto"><div class="list-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle"><path d="M3 8L12 17L21 8"></path></svg></div>
+<p><strong>What Can Pandas Do?</strong><br>
+Pandas gives you answers about the data. Like:</p>
+<ul>
+<li data-line="8" dir="auto">Is there a correlation between two or more columns?</li>
+<li data-line="9" dir="auto">What is average value?</li>
+<li data-line="10" dir="auto">Max value?</li>
+<li data-line="11" dir="auto">Min value?</li>
+</ul>
+</li>
+<li data-line="13" dir="auto">
+<p><a data-tooltip-position="top" aria-label="https://github.com/pandas-dev/pandas" rel="noopener nofollow" class="external-link" href="https://github.com/pandas-dev/pandas" target="_blank">Codebase</a></p>
+</li>
+<li data-line="15" dir="auto"><div class="list-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle"><path d="M3 8L12 17L21 8"></path></svg></div>
+<p><strong>When to use?</strong></p>
+<blockquote dir="auto">
+<p><a data-tooltip-position="top" aria-label="https://stackoverflow.com/questions/45285743/when-to-use-pandas-series-numpy-ndarrays-or-simply-python-dictionaries" rel="noopener nofollow" class="external-link" href="https://stackoverflow.com/questions/45285743/when-to-use-pandas-series-numpy-ndarrays-or-simply-python-dictionaries" target="_blank">Xukrao</a><br>
+<strong>Use the simplest data structure that still satisfies your needs</strong>.<br>
+First consider <a class="internal-link" data-href="ds_hash_table.md" href="docs/ds_hash_table.html" target="_self" rel="noopener nofollow">Dictionaries</a> / <a class="internal-link" data-href="ds_array.md" href="docs/ds_array.html" target="_self" rel="noopener nofollow">Lists</a>. If these allow you to do all data operations that you need, then all is fine. If not, start considering numpy arrays. Some typical reasons for moving to numpy arrays are:</p>
+<ul>
+<li data-line="19" dir="auto">Your data is 2-dimensional (or higher). Although nested dictionaries/lists can be used to represent multi-dimensional data, in most situations numpy arrays will be more efficient.</li>
+<li data-line="20" dir="auto">You have to perform a bunch of numerical calculations. As already pointed out by&nbsp;<em>zhqiat</em>, numpy will give a significant speed-up in this case. Furthermore numpy arrays come bundled with a large amount of&nbsp;<a data-tooltip-position="top" aria-label="https://docs.scipy.org/doc/numpy/reference/routines.math.html" rel="noopener nofollow" class="external-link" href="https://docs.scipy.org/doc/numpy/reference/routines.math.html" target="_blank">mathematical functions</a>.<br>
+Then there are also some typical reasons for going beyond numpy arrays and to the more-complex but also more-powerful pandas series/dataframes:</li>
+<li data-line="22" dir="auto">You have to merge multiple data sets with each other, or do reshaping/reordering of your data.&nbsp;<a data-tooltip-position="top" aria-label="https://github.com/pandas-dev/pandas/blob/master/doc/cheatsheet/Pandas_Cheat_Sheet.pdf" rel="noopener nofollow" class="external-link" href="https://github.com/pandas-dev/pandas/blob/master/doc/cheatsheet/Pandas_Cheat_Sheet.pdf" target="_blank">This diagram</a>&nbsp;gives a nice overview of all the 'data wrangling' operations that pandas allows you to do.</li>
+<li data-line="23" dir="auto">You have to import data from or export data to a specific file format like Excel, HDF5 or SQL. Pandas comes with convenient&nbsp;<a data-tooltip-position="top" aria-label="https://pandas.pydata.org/pandas-docs/stable/io.html" rel="noopener nofollow" class="external-link" href="https://pandas.pydata.org/pandas-docs/stable/io.html" target="_blank">import/export functions</a>&nbsp;for this.</li>
+</ul>
+</blockquote>
+</li>
+</ul></div><div class="el-h2 heading-wrapper"><h2 data-heading="Geting Started" dir="auto" class="heading" id="Geting_Started"><div class="heading-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle"><path d="M3 8L12 17L21 8"></path></svg></div>Geting Started</h2><div class="heading-children"><div class="el-h3 heading-wrapper"><h3 data-heading="Installation of Pandas" dir="auto" class="heading" id="Installation_of_Pandas"><div class="heading-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle"><path d="M3 8L12 17L21 8"></path></svg></div>Installation of Pandas</h3><div class="heading-children"><div class="el-p"><p dir="auto">If you have <a data-tooltip-position="top" aria-label="https://www.w3schools.com/python/default.asp" rel="noopener nofollow" class="external-link" href="https://www.w3schools.com/python/default.asp" target="_blank">Python</a> and <a data-tooltip-position="top" aria-label="https://www.w3schools.com/python/python_pip.asp" rel="noopener nofollow" class="external-link" href="https://www.w3schools.com/python/python_pip.asp" target="_blank">PIP</a> already installed on a system, then installation of Pandas is very easy.<br>
+Install it using this command:</p></div><div class="el-pre has-run-code-button"><pre class="language-bash" tabindex="0"><code data-line="0" class="language-bash is-loaded">pip <span class="token function">install</span> pandas
+</code><button class="copy-code-button"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon lucide-copy"><rect x="8" y="8" width="14" height="14" rx="2" ry="2"></rect><path d="M4 16c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2"></path></svg></button><button class="run-code-button">Run</button></pre></div><div class="el-p"><p dir="auto">If this command fails, then use a python distribution that already has Pandas installed like, Anaconda, Spyder etc.</p></div></div></div><div class="el-h3 heading-wrapper"><h3 data-heading="Import Pandas" dir="auto" class="heading" id="Import_Pandas"><div class="heading-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle"><path d="M3 8L12 17L21 8"></path></svg></div>Import Pandas</h3><div class="heading-children"><div class="el-p"><p dir="auto">Once Pandas is installed, import it in your applications by adding the <code>import</code> keyword:</p></div><div class="el-pre has-run-code-button"><pre class="language-python" tabindex="0"><code data-line="0" class="language-python is-loaded"><span class="token keyword">import</span> pandas
+</code><button class="copy-code-button"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon lucide-copy"><rect x="8" y="8" width="14" height="14" rx="2" ry="2"></rect><path d="M4 16c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2"></path></svg></button><button class="run-code-button">Run</button></pre></div><div class="el-p"><p dir="auto">As any Library, the import name can be modified using <code>as</code>, usually imported under the&nbsp;<code>pd</code>&nbsp;alias.<br>
+Now that Pandas is imported and ready to use. See example:</p></div><div class="el-pre has-run-code-button"><pre class="language-python" tabindex="0"><code data-line="0" class="language-python is-loaded"><span class="token keyword">import</span> pandas <span class="token keyword">as</span> pd  
+  
+mydataset <span class="token operator">=</span> <span class="token punctuation">{</span>  
+  <span class="token string">'cars'</span><span class="token punctuation">:</span> <span class="token punctuation">[</span><span class="token string">"BMW"</span><span class="token punctuation">,</span> <span class="token string">"Volvo"</span><span class="token punctuation">,</span> <span class="token string">"Ford"</span><span class="token punctuation">]</span><span class="token punctuation">,</span>  
+  <span class="token string">'passings'</span><span class="token punctuation">:</span> <span class="token punctuation">[</span><span class="token number">3</span><span class="token punctuation">,</span> <span class="token number">7</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">]</span>  
+<span class="token punctuation">}</span>
+myvar <span class="token operator">=</span> pd<span class="token punctuation">.</span>DataFrame<span class="token punctuation">(</span>mydataset<span class="token punctuation">)</span>
+<span class="token comment"># Print</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>myvar<span class="token punctuation">)</span>
+</code><button class="copy-code-button"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon lucide-copy"><rect x="8" y="8" width="14" height="14" rx="2" ry="2"></rect><path d="M4 16c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2"></path></svg></button><button class="run-code-button">Run</button></pre></div></div></div></div></div><div class="el-h2 heading-wrapper"><h2 data-heading="Series" dir="auto" class="heading" id="Series"><div class="heading-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle"><path d="M3 8L12 17L21 8"></path></svg></div>Series</h2><div class="heading-children"><div class="el-p"><p dir="auto">A Pandas Series is like a column in a table. It is a one-dimensional array holding data of any type.<br>
+Works like a filter wich will list all the given indexes and values linked to them.</p></div><div class="el-blockquote"><blockquote dir="auto">
+<p>i.e. Create a simple Pandas Series from a list:</p>
+</blockquote></div><div class="el-pre has-run-code-button"><pre class="language-python" tabindex="0"><code data-line="0" class="language-python is-loaded"><span class="token keyword">import</span> pandas <span class="token keyword">as</span> pd  
+
+a <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">7</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">]</span>  
+myvar <span class="token operator">=</span> pd<span class="token punctuation">.</span>Series<span class="token punctuation">(</span>a<span class="token punctuation">)</span>  
+<span class="token comment"># Print</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>myvar<span class="token punctuation">)</span>
+</code><button class="copy-code-button"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon lucide-copy"><rect x="8" y="8" width="14" height="14" rx="2" ry="2"></rect><path d="M4 16c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2"></path></svg></button><button class="run-code-button">Run</button></pre></div><div class="el-h3 heading-wrapper"><h3 data-heading="Labels" dir="auto" class="heading" id="Labels"><div class="heading-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle"><path d="M3 8L12 17L21 8"></path></svg></div>Labels</h3><div class="heading-children"><div class="el-p"><p dir="auto">If nothing else is specified, the values are labeled with their index number. First value has index 0, second value has index 1 etc. This label can be used to access a specified value.</p></div><div class="el-blockquote"><blockquote dir="auto">
+<p>i.e. Return the first value of the Series:</p>
+</blockquote></div><div class="el-pre has-run-code-button"><pre class="language-python" tabindex="0"><code data-line="0" class="language-python is-loaded"><span class="token keyword">print</span><span class="token punctuation">(</span>myvar<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
+</code><button class="copy-code-button"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon lucide-copy"><rect x="8" y="8" width="14" height="14" rx="2" ry="2"></rect><path d="M4 16c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2"></path></svg></button><button class="run-code-button">Run</button></pre></div><div class="el-p"><p dir="auto">With the&nbsp;<code>index</code>&nbsp;argument, you can name your own labels. And when you have created labels, you can access an item by referring to the label.</p></div><div class="el-pre has-run-code-button"><pre class="language-python" tabindex="0"><code data-line="0" class="language-python is-loaded"><span class="token keyword">import</span> pandas <span class="token keyword">as</span> pd  
+  
+a <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">7</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">]</span>
+myvar <span class="token operator">=</span> pd<span class="token punctuation">.</span>Series<span class="token punctuation">(</span>a<span class="token punctuation">,</span> index <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token string">"x"</span><span class="token punctuation">,</span><span class="token string">"y"</span><span class="token punctuation">,</span><span class="token string">"z"</span><span class="token punctuation">]</span><span class="token punctuation">)</span>  
+<span class="token comment"># Print</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>myvar<span class="token punctuation">)</span> <span class="token comment"># full series</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>myvar<span class="token punctuation">[</span><span class="token string">"y"</span><span class="token punctuation">]</span><span class="token punctuation">)</span> <span class="token comment"># series item</span>
+</code><button class="copy-code-button"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon lucide-copy"><rect x="8" y="8" width="14" height="14" rx="2" ry="2"></rect><path d="M4 16c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2"></path></svg></button><button class="run-code-button">Run</button></pre></div></div></div><div class="el-h3 heading-wrapper"><h3 data-heading="Key/Value Objects as Series" dir="auto" class="heading" id="Key/Value_Objects_as_Series"><div class="heading-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle"><path d="M3 8L12 17L21 8"></path></svg></div>Key/Value Objects as Series</h3><div class="heading-children"><div class="el-p"><p dir="auto">You can also use a key/value object, like a dictionary, when creating a Series.</p></div><div class="el-pre has-run-code-button"><pre class="language-python" tabindex="0"><code data-line="0" class="language-python is-loaded"><span class="token keyword">import</span> pandas <span class="token keyword">as</span> pd  
+  
+calories <span class="token operator">=</span> <span class="token punctuation">{</span><span class="token string">"day1"</span><span class="token punctuation">:</span> <span class="token number">420</span><span class="token punctuation">,</span> <span class="token string">"day2"</span><span class="token punctuation">:</span> <span class="token number">380</span><span class="token punctuation">,</span> <span class="token string">"day3"</span><span class="token punctuation">:</span> <span class="token number">390</span><span class="token punctuation">}</span>  
+myvar <span class="token operator">=</span> pd<span class="token punctuation">.</span>Series<span class="token punctuation">(</span>calories<span class="token punctuation">)</span>  
+<span class="token comment"># Print</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>myvar<span class="token punctuation">)</span>
+</code><button class="copy-code-button"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon lucide-copy"><rect x="8" y="8" width="14" height="14" rx="2" ry="2"></rect><path d="M4 16c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2"></path></svg></button><button class="run-code-button">Run</button></pre></div></div></div></div></div><div class="el-h2 heading-wrapper"><h2 data-heading="DataFrames" dir="auto" class="heading" id="DataFrames"><div class="heading-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle"><path d="M3 8L12 17L21 8"></path></svg></div>DataFrames</h2><div class="heading-children"><div class="el-p"><p dir="auto">A Pandas DataFrame is a 2 dimensional data structure, like a 2 dimensional array, or a table with rows and columns.</p></div><div class="el-img"><img style="background-color: white; width: 400px; max-width: 100%;" alt="Df Structure" src="https://pandas.pydata.org/docs/_images/01_table_dataframe.svg" referrerpolicy="no-referrer"></div><div class="el-pre has-run-code-button"><pre class="language-python" tabindex="0"><code data-line="0" class="language-python is-loaded"><span class="token keyword">import</span> pandas <span class="token keyword">as</span> pd  
+  
+data <span class="token operator">=</span> <span class="token punctuation">{</span>  
+  <span class="token string">"calories"</span><span class="token punctuation">:</span> <span class="token punctuation">[</span><span class="token number">420</span><span class="token punctuation">,</span> <span class="token number">380</span><span class="token punctuation">,</span> <span class="token number">390</span><span class="token punctuation">]</span><span class="token punctuation">,</span>  
+  <span class="token string">"duration"</span><span class="token punctuation">:</span> <span class="token punctuation">[</span><span class="token number">50</span><span class="token punctuation">,</span> <span class="token number">40</span><span class="token punctuation">,</span> <span class="token number">45</span><span class="token punctuation">]</span>  
+<span class="token punctuation">}</span>  
+<span class="token comment">#load data into a DataFrame object:  </span>
+df <span class="token operator">=</span> pd<span class="token punctuation">.</span>DataFrame<span class="token punctuation">(</span>data<span class="token punctuation">)</span> 
+<span class="token keyword">print</span><span class="token punctuation">(</span>df<span class="token punctuation">)</span>
+
+<span class="token comment"># Or define the columns before receiving the data</span>
+col <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token string">'day'</span><span class="token punctuation">,</span> <span class="token string">'excercise'</span><span class="token punctuation">,</span> <span class="token string">'calories'</span><span class="token punctuation">,</span> <span class="token string">'duration'</span><span class="token punctuation">]</span>
+df_workout <span class="token operator">=</span> pd<span class="token punctuation">.</span>DataFrame<span class="token punctuation">(</span>columns<span class="token operator">=</span>col<span class="token punctuation">)</span>
+df_workout <span class="token operator">=</span> pd<span class="token punctuation">.</span>DataFrame<span class="token punctuation">(</span>data<span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>df_workout<span class="token punctuation">)</span>
+</code><button class="copy-code-button"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon lucide-copy"><rect x="8" y="8" width="14" height="14" rx="2" ry="2"></rect><path d="M4 16c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2"></path></svg></button><button class="run-code-button">Run</button></pre></div><div class="el-p"><p dir="auto">There´s another way to add data in the DF, is using loops and <a data-tooltip-position="top" aria-label="https://pandas.pydata.org/pandas-docs/version/1.3/reference/api/pandas.DataFrame.append.html" rel="noopener nofollow" class="external-link" href="https://pandas.pydata.org/pandas-docs/version/1.3/reference/api/pandas.DataFrame.append.html" target="_blank"><code>.append(_other_,&nbsp;_ignore_index=False_,&nbsp;_verify_integrity=False_,&nbsp;_sort=False_)</code></a> method:</p></div><div class="el-p"><p dir="auto">Parameters</p></div><div class="el-ul"><ul>
+<li data-line="0" dir="auto">
+<p><strong>other</strong> (<em>DataFrame or Series/dict-like object, or list of these</em>), the data to append.</p>
+</li>
+<li data-line="2" dir="auto">
+<p><strong>ignore_index</strong> (<em>bool, default False</em>), if True, the resulting axis will be labeled 0, 1, …, <code>n-1</code>.</p>
+</li>
+<li data-line="4" dir="auto">
+<p><strong>verify_integrity</strong> (<em>bool, default False</em>), if True, raise ValueError on creating index with duplicates.</p>
+</li>
+<li data-line="6" dir="auto">
+<p><strong>sort</strong> (<em>bool, default False</em>), sort columns if the columns of self and other are not aligned.</p>
+</li>
+</ul></div><div class="el-pre has-run-code-button"><pre class="language-python" tabindex="0"><code data-line="0" class="language-python is-loaded">new_row <span class="token operator">=</span> <span class="token punctuation">{</span><span class="token string">'day'</span><span class="token punctuation">:</span> <span class="token number">1</span><span class="token punctuation">,</span> <span class="token string">'excercise'</span><span class="token punctuation">:</span> <span class="token string">"burple"</span><span class="token punctuation">,</span> <span class="token string">'calories'</span><span class="token punctuation">:</span> <span class="token number">1500</span><span class="token punctuation">,</span> <span class="token string">'duration'</span><span class="token punctuation">:</span> <span class="token number">5</span><span class="token punctuation">,</span><span class="token punctuation">}</span>
+
+df_workout <span class="token operator">=</span> df_workout<span class="token punctuation">.</span>append<span class="token punctuation">(</span>new_row<span class="token punctuation">,</span> ignore_index<span class="token operator">=</span><span class="token boolean">True</span><span class="token punctuation">)</span>
+</code><button class="copy-code-button"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon lucide-copy"><rect x="8" y="8" width="14" height="14" rx="2" ry="2"></rect><path d="M4 16c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2"></path></svg></button><button class="run-code-button">Run</button></pre></div><div class="el-p"><p dir="auto">Please note that <strong>the <code>return</code> is a new DataFrame</strong>, so if you want to add to an existing one, you have to reassign.</p></div><div class="el-blockquote"><blockquote dir="auto">
+<p>From <a data-tooltip-position="top" aria-label="https://pandas.pydata.org/docs/whatsnew/v2.0.0.html#removal-of-prior-version-deprecations-changes" rel="noopener nofollow" class="external-link" href="https://pandas.pydata.org/docs/whatsnew/v2.0.0.html#removal-of-prior-version-deprecations-changes" target="_blank">version 2.0.0 changes</a> the <code>.append()</code> method was removed.<br>
+<em>Removed deprecated&nbsp;<code>Series.append()</code>,&nbsp;<code>DataFrame.append()</code>, use&nbsp;<code>concat()</code>&nbsp;instead (<a data-tooltip-position="top" aria-label="https://github.com/pandas-dev/pandas/issues/35407" rel="noopener nofollow" class="external-link" href="https://github.com/pandas-dev/pandas/issues/35407" target="_blank">GH35407</a>)</em></p>
+</blockquote></div><div class="el-p"><p dir="auto">The <a data-tooltip-position="top" aria-label="https://pandas.pydata.org/docs/reference/api/pandas.concat.html#pandas.concat" rel="noopener nofollow" class="external-link" href="https://pandas.pydata.org/docs/reference/api/pandas.concat.html#pandas.concat" target="_blank"><code>.concat(_objs_,&nbsp;_*_,&nbsp;_axis=0_,&nbsp;_join='outer'_,&nbsp;_ignore_index=False_,&nbsp;_keys=None_,&nbsp;_levels=None_,&nbsp;_names=None_,&nbsp;_verify_integrity=False_,&nbsp;_sort=False_,&nbsp;_copy=None_)</code></a> with the following parameters:</p></div><div class="el-ul"><ul>
+<li data-line="0" dir="auto">
+<p><strong>objs</strong>: <em>a sequence or mapping of Series or DataFrame objects</em>, If a mapping is passed, the sorted keys will be used as the&nbsp;keys&nbsp;argument, unless it is passed, in which case the values will be selected (see below). Any None objects will be dropped silently unless they are all None in which case a ValueError will be raised.</p>
+</li>
+<li data-line="2" dir="auto">
+<p><strong>axis</strong>: <em>{0/’index’, 1/’columns’}, <strong>default</strong> 0</em>, the axis to concatenate along.</p>
+</li>
+<li data-line="4" dir="auto">
+<p><strong>join</strong>: <em>{‘inner’, ‘outer’}, <strong>default</strong> ‘outer’</em>, how to handle indexes on other axis (or axes).</p>
+</li>
+<li data-line="6" dir="auto">
+<p><strong>ignore_index</strong>: <em>bool, <strong>default</strong> False</em>, if True, do not use the index values along the concatenation axis. The resulting axis will be labelled 0, …, n - 1.</p>
+</li>
+<li data-line="8" dir="auto">
+<p><strong>keys</strong>: <em>sequence, <strong>default</strong> None</em>, if multiple levels passed, should contain tuples. Construct hierarchical index using the passed keys as the outermost level.</p>
+</li>
+<li data-line="10" dir="auto">
+<p><strong>levels</strong>: <em>list of sequences, <strong>default</strong> None</em>, specific levels (unique values) to use for constructing a MultiIndex. Otherwise they will be inferred from the keys.</p>
+</li>
+<li data-line="12" dir="auto">
+<p><strong>names</strong>: <em>list, <strong>default</strong> None</em>, names for the levels in the resulting hierarchical index.</p>
+</li>
+<li data-line="14" dir="auto">
+<p><strong>verify_integrity</strong>: <em>bool, <strong>default</strong> False</em>, check whether the new concatenated axis contains duplicates. This can be very expensive relative to the actual data concatenation. </p>
+</li>
+<li data-line="16" dir="auto">
+<p><strong>sort</strong>: <em>bool, <strong>default</strong> False</em>, sort non-concatenation axis if it is not already aligned.</p>
+</li>
+<li data-line="18" dir="auto">
+<p><strong>copy</strong>: <em>bool, <strong>default</strong> True</em>, if False, do not copy data unnecessarily.</p>
+</li>
+</ul></div><div class="el-p"><p dir="auto">And returns a object witch is a <code>Series</code> or a <code>DataFrame</code>.<br>
+An usage code example:</p></div><div class="el-pre has-run-code-button"><pre class="language-python" tabindex="0"><code data-line="0" class="language-python is-loaded">df <span class="token operator">=</span> pd<span class="token punctuation">.</span>concat<span class="token punctuation">(</span><span class="token punctuation">[</span>df<span class="token punctuation">,</span> pd<span class="token punctuation">.</span>DataFrame<span class="token punctuation">(</span><span class="token punctuation">[</span>new_row<span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">]</span><span class="token punctuation">,</span> ignore_index<span class="token operator">=</span><span class="token boolean">True</span><span class="token punctuation">)</span>
+</code><button class="copy-code-button"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon lucide-copy"><rect x="8" y="8" width="14" height="14" rx="2" ry="2"></rect><path d="M4 16c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2"></path></svg></button><button class="run-code-button">Run</button></pre></div><div class="el-h3 heading-wrapper"><h3 data-heading="Indexing and selecting data" dir="auto" class="heading" id="Indexing_and_selecting_data"><div class="heading-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle"><path d="M3 8L12 17L21 8"></path></svg></div>Indexing and selecting data</h3><div class="heading-children"><div class="el-p"><p dir="auto">The axis labelling information in pandas objects serves many purposes:</p></div><div class="el-ul"><ul>
+<li data-line="0" dir="auto">Identifies data (i.e. provides&nbsp;<em>metadata</em>) using known indicators, important for analysis, visualization, and interactive console display.</li>
+<li data-line="1" dir="auto">Enables automatic and explicit data alignment.</li>
+<li data-line="2" dir="auto">Allows intuitive getting and setting of subsets of the data set.</li>
+</ul></div><div class="el-p"><p dir="auto">Object selection has had a number of user-requested additions in order to support more explicit location based indexing. pandas now supports three types of multi-axis indexing.</p></div><div class="el-ul"><ul>
+<li data-line="0" dir="auto">
+<p><code>.loc</code> is primarily label based, but may also be used with a boolean array. <code>.loc</code> will raise <code>KeyError</code> when the items are not found. Allowed inputs are:</p>
+</li>
+<li data-line="1" dir="auto"><div class="list-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle"><path d="M3 8L12 17L21 8"></path></svg></div>
+<p>A <strong>single label</strong></p>
+<ul>
+<li data-line="2" dir="auto">e.g. <code>5</code> or <code>'a'</code> (Note that <code>5</code> is interpreted as a <em>label</em> of the index. This use is <strong>not</strong> an integer position along the index.).</li>
+</ul>
+</li>
+<li data-line="3" dir="auto"><div class="list-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle"><path d="M3 8L12 17L21 8"></path></svg></div>
+<p>A <strong>list or array of labels</strong></p>
+<ul>
+<li data-line="4" dir="auto"><code>['a', 'b', 'c']</code>.</li>
+</ul>
+</li>
+<li data-line="5" dir="auto"><div class="list-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle"><path d="M3 8L12 17L21 8"></path></svg></div>
+<p>A <strong>slice object with labels</strong> </p>
+<ul>
+<li data-line="6" dir="auto"><code>'a':'f'</code> (Note that contrary to usual Python slices, <strong>both</strong> the start and the stop are included, when present in the index! See <a data-tooltip-position="top" aria-label="https://pandas.pydata.org/docs/user_guide/indexing.html#indexing#indexing-slicing-with-labels" rel="noopener nofollow" class="external-link" href="https://pandas.pydata.org/docs/user_guide/indexing.html#indexing#indexing-slicing-with-labels" target="_blank">Slicing with labels</a> and <a data-tooltip-position="top" aria-label="https://pandas.pydata.org/docs/user_guide/indexing.html#indexingadvanced.html#advanced-endpoints-are-inclusive" rel="noopener nofollow" class="external-link" href="https://pandas.pydata.org/docs/user_guide/indexing.html#indexingadvanced.html#advanced-endpoints-are-inclusive" target="_blank">Endpoints are inclusive</a>)</li>
+</ul>
+</li>
+<li data-line="7" dir="auto"><div class="list-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle"><path d="M3 8L12 17L21 8"></path></svg></div>
+<p>A boolean arrays </p>
+<ul>
+<li data-line="8" dir="auto">(any <code>NA</code> values will be treated as <code>False</code>).</li>
+</ul>
+</li>
+<li data-line="9" dir="auto">
+<p>A <strong><code>callable</code> function with one argument</strong> (the calling Series or DataFrame) and that returns valid output for indexing (one of the above)</p>
+<blockquote dir="auto">
+<p>See more at <a data-tooltip-position="top" aria-label="https://pandas.pydata.org/docs/user_guide/indexing.html#indexing#indexing-label" rel="noopener nofollow" class="external-link" href="https://pandas.pydata.org/docs/user_guide/indexing.html#indexing#indexing-label" target="_blank">Selection by Label</a>.</p>
+</blockquote>
+</li>
+<li data-line="12" dir="auto">
+<p><code>.iloc</code> is primarily integer position based (from <code>0</code> to <code>length-1</code> of the axis), but may also be used with a boolean array. <code>.iloc</code> will raise <code>IndexError</code> if a requested indexer is out-of-bounds, except <em>slice</em> indexers which allow out-of-bounds indexing. (this conforms with Python/NumPy <em>slice</em> semantics). Allowed inputs are:</p>
+</li>
+<li data-line="13" dir="auto"><div class="list-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle"><path d="M3 8L12 17L21 8"></path></svg></div>
+<p>An <strong>integer</strong></p>
+<ul>
+<li data-line="14" dir="auto">e.g. <code>5</code>.</li>
+</ul>
+</li>
+<li data-line="15" dir="auto"><div class="list-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle"><path d="M3 8L12 17L21 8"></path></svg></div>
+<p>A <strong>list or array of integers</strong></p>
+<ul>
+<li data-line="16" dir="auto"><code>[4, 3, 0]</code>.</li>
+</ul>
+</li>
+<li data-line="17" dir="auto"><div class="list-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle"><path d="M3 8L12 17L21 8"></path></svg></div>
+<p>A <strong>slice object with ints</strong> </p>
+<ul>
+<li data-line="18" dir="auto"><code>1:7</code>.</li>
+</ul>
+</li>
+<li data-line="19" dir="auto">
+<p>A <strong>boolean array</strong> (any <code>NA</code> values will be treated as <code>False</code>).</p>
+</li>
+<li data-line="20" dir="auto">
+<p>A <strong><code>callable</code> function with one argument</strong> (the calling Series or DataFrame) and that returns valid output for indexing (one of the above).</p>
+<blockquote dir="auto">
+<p>See more at <a data-tooltip-position="top" aria-label="https://pandas.pydata.org/docs/user_guide/indexing.html#indexing#indexing-integer" rel="noopener nofollow" class="external-link" href="https://pandas.pydata.org/docs/user_guide/indexing.html#indexing#indexing-integer" target="_blank">Selection by Position</a>, <a data-tooltip-position="top" aria-label="https://pandas.pydata.org/docs/user_guide/indexing.html#indexingadvanced.html#advanced" rel="noopener nofollow" class="external-link" href="https://pandas.pydata.org/docs/user_guide/indexing.html#indexingadvanced.html#advanced" target="_blank">Advanced Indexing</a> and <a data-tooltip-position="top" aria-label="https://pandas.pydata.org/docs/user_guide/indexing.html#indexingadvanced.html#advanced-advanced-hierarchical" rel="noopener nofollow" class="external-link" href="https://pandas.pydata.org/docs/user_guide/indexing.html#indexingadvanced.html#advanced-advanced-hierarchical" target="_blank">Advanced Hierarchical</a>.</p>
+</blockquote>
+</li>
+<li data-line="23" dir="auto">
+<p><code>.loc</code>, <code>.iloc</code>, and also <code>[]</code> indexing can accept a <code>callable</code> as indexer. </p>
+<blockquote dir="auto">
+<p>See more at <a data-tooltip-position="top" aria-label="https://pandas.pydata.org/docs/user_guide/indexing.html#indexing#indexing-callable" rel="noopener nofollow" class="external-link" href="https://pandas.pydata.org/docs/user_guide/indexing.html#indexing#indexing-callable" target="_blank">Selection By Callable</a>.</p>
+</blockquote>
+</li>
+</ul></div></div></div></div></div><div class="el-h2 heading-wrapper"><h2 data-heading="Analyse Data" dir="auto" class="heading" id="Analyse_Data"><div class="heading-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle"><path d="M3 8L12 17L21 8"></path></svg></div>Analyse Data</h2><div class="heading-children"><div class="el-h3 heading-wrapper"><h3 data-heading="Read `.csv`" dir="auto" class="heading" id="Read_`.csv`"><div class="heading-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle"><path d="M3 8L12 17L21 8"></path></svg></div>Read <code>.csv</code></h3><div class="heading-children"><div class="el-p"><p dir="auto">CSV files can be read by Pandas and converted to a DataFrame.</p></div><div class="el-blockquote"><blockquote dir="auto">
+<p>If you have a large DataFrame with many rows, Pandas will only return the first 5 rows, and the last 5 rows. Use&nbsp;<code>to_string()</code>&nbsp;to print the entire DataFrame.</p>
+</blockquote></div><div class="el-pre has-run-code-button"><pre class="language-python" tabindex="0"><code data-line="0" class="language-python is-loaded"><span class="token keyword">import</span> pandas <span class="token keyword">as</span> pd
+<span class="token comment"># Read file</span>
+df <span class="token operator">=</span> pd<span class="token punctuation">.</span>read_csv<span class="token punctuation">(</span><span class="token string">'data.csv'</span><span class="token punctuation">)</span>
+<span class="token comment"># Print</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>df<span class="token punctuation">.</span>to_string<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+</code><button class="copy-code-button"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon lucide-copy"><rect x="8" y="8" width="14" height="14" rx="2" ry="2"></rect><path d="M4 16c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2"></path></svg></button><button class="run-code-button">Run</button></pre></div></div></div><div class="el-h3 heading-wrapper"><h3 data-heading="Read `JSON`" dir="auto" class="heading" id="Read_`JSON`"><div class="heading-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle"><path d="M3 8L12 17L21 8"></path></svg></div>Read <code>JSON</code></h3><div class="heading-children"><div class="el-p"><p dir="auto">Big data sets are often stored, or extracted as JSON.</p></div><div class="el-p"><p dir="auto">JSON is plain text, but has the format of an object, and is well known in the world of programming, including Pandas.</p></div><div class="el-pre has-run-code-button"><pre class="language-python" tabindex="0"><code data-line="0" class="language-python is-loaded"><span class="token keyword">import</span> pandas <span class="token keyword">as</span> pd  
+<span class="token comment"># Read file</span>
+df <span class="token operator">=</span> pd<span class="token punctuation">.</span>read_json<span class="token punctuation">(</span><span class="token string">'data.json'</span><span class="token punctuation">)</span>  
+<span class="token comment"># Print</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>df<span class="token punctuation">.</span>to_string<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+</code><button class="copy-code-button"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon lucide-copy"><rect x="8" y="8" width="14" height="14" rx="2" ry="2"></rect><path d="M4 16c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2"></path></svg></button><button class="run-code-button">Run</button></pre></div><div class="el-h4 heading-wrapper"><h4 data-heading="Dictionary as JSON" dir="auto" class="heading" id="Dictionary_as_JSON"><div class="heading-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle"><path d="M3 8L12 17L21 8"></path></svg></div>Dictionary as JSON</h4><div class="heading-children"><div class="el-blockquote"><blockquote dir="auto">
+<p><strong>JSON = Python Dictionary</strong><br>
+JSON objects have the same format as Python dictionaries.</p>
+</blockquote></div><div class="el-p"><p dir="auto">If your JSON code is not in a file, but in a Python Dictionary, you can load it into a DataFrame directly:</p></div><div class="el-pre has-run-code-button"><pre class="language-python" tabindex="0"><code data-line="0" class="language-python is-loaded"><span class="token keyword">import</span> pandas <span class="token keyword">as</span> pd  
+  
+data <span class="token operator">=</span> <span class="token punctuation">{</span>  
+  <span class="token string">"Duration"</span><span class="token punctuation">:</span><span class="token punctuation">{</span>  
+    <span class="token string">"0"</span><span class="token punctuation">:</span><span class="token number">60</span><span class="token punctuation">,</span>  
+    <span class="token string">"1"</span><span class="token punctuation">:</span><span class="token number">60</span><span class="token punctuation">,</span>  
+    <span class="token string">"2"</span><span class="token punctuation">:</span><span class="token number">60</span><span class="token punctuation">,</span>  
+    <span class="token string">"3"</span><span class="token punctuation">:</span><span class="token number">45</span><span class="token punctuation">,</span>  
+    <span class="token string">"4"</span><span class="token punctuation">:</span><span class="token number">45</span><span class="token punctuation">,</span>  
+    <span class="token string">"5"</span><span class="token punctuation">:</span><span class="token number">60</span>  
+  <span class="token punctuation">}</span><span class="token punctuation">,</span>  
+  <span class="token string">"Pulse"</span><span class="token punctuation">:</span><span class="token punctuation">{</span>  
+    <span class="token string">"0"</span><span class="token punctuation">:</span><span class="token number">110</span><span class="token punctuation">,</span>  
+    <span class="token string">"1"</span><span class="token punctuation">:</span><span class="token number">117</span><span class="token punctuation">,</span>  
+    <span class="token string">"2"</span><span class="token punctuation">:</span><span class="token number">103</span><span class="token punctuation">,</span>  
+    <span class="token string">"3"</span><span class="token punctuation">:</span><span class="token number">109</span><span class="token punctuation">,</span>  
+    <span class="token string">"4"</span><span class="token punctuation">:</span><span class="token number">117</span><span class="token punctuation">,</span>  
+    <span class="token string">"5"</span><span class="token punctuation">:</span><span class="token number">102</span>  
+  <span class="token punctuation">}</span><span class="token punctuation">,</span>  
+  <span class="token string">"Maxpulse"</span><span class="token punctuation">:</span><span class="token punctuation">{</span>  
+    <span class="token string">"0"</span><span class="token punctuation">:</span><span class="token number">130</span><span class="token punctuation">,</span>  
+    <span class="token string">"1"</span><span class="token punctuation">:</span><span class="token number">145</span><span class="token punctuation">,</span>  
+    <span class="token string">"2"</span><span class="token punctuation">:</span><span class="token number">135</span><span class="token punctuation">,</span>  
+    <span class="token string">"3"</span><span class="token punctuation">:</span><span class="token number">175</span><span class="token punctuation">,</span>  
+    <span class="token string">"4"</span><span class="token punctuation">:</span><span class="token number">148</span><span class="token punctuation">,</span>  
+    <span class="token string">"5"</span><span class="token punctuation">:</span><span class="token number">127</span>  
+  <span class="token punctuation">}</span><span class="token punctuation">,</span>  
+  <span class="token string">"Calories"</span><span class="token punctuation">:</span><span class="token punctuation">{</span>  
+    <span class="token string">"0"</span><span class="token punctuation">:</span><span class="token number">409</span><span class="token punctuation">,</span>  
+    <span class="token string">"1"</span><span class="token punctuation">:</span><span class="token number">479</span><span class="token punctuation">,</span>  
+    <span class="token string">"2"</span><span class="token punctuation">:</span><span class="token number">340</span><span class="token punctuation">,</span>  
+    <span class="token string">"3"</span><span class="token punctuation">:</span><span class="token number">282</span><span class="token punctuation">,</span>  
+    <span class="token string">"4"</span><span class="token punctuation">:</span><span class="token number">406</span><span class="token punctuation">,</span>  
+    <span class="token string">"5"</span><span class="token punctuation">:</span><span class="token number">300</span>  
+  <span class="token punctuation">}</span>  
+<span class="token punctuation">}</span>  
+<span class="token comment"># Read</span>
+df <span class="token operator">=</span> pd<span class="token punctuation">.</span>DataFrame<span class="token punctuation">(</span>data<span class="token punctuation">)</span>  
+<span class="token comment"># Print</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>df<span class="token punctuation">)</span>
+</code><button class="copy-code-button"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon lucide-copy"><rect x="8" y="8" width="14" height="14" rx="2" ry="2"></rect><path d="M4 16c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2"></path></svg></button><button class="run-code-button">Run</button></pre></div></div></div></div></div><div class="el-h3 heading-wrapper"><h3 data-heading="Viewing the Data" dir="auto" class="heading" id="Viewing_the_Data"><div class="heading-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle"><path d="M3 8L12 17L21 8"></path></svg></div>Viewing the Data</h3><div class="heading-children"><div class="el-p"><p dir="auto">One of the most used method for getting a quick overview of the DataFrame, is the <code>head()</code> method.</p></div><div class="el-p"><p dir="auto">The <code>head(n)</code> method returns the headers and a specified number (<code>n</code>) of rows, starting from the top.</p></div><div class="el-blockquote"><blockquote dir="auto">
+<p>If the number of rows is not specified, the&nbsp;<code>head()</code>&nbsp;method will return the top 5 rows.</p>
+</blockquote></div><div class="el-pre has-run-code-button"><pre class="language-python" tabindex="0"><code data-line="0" class="language-python is-loaded"><span class="token keyword">import</span> pandas <span class="token keyword">as</span> pd  
+<span class="token comment"># Read file</span>
+df <span class="token operator">=</span> pd<span class="token punctuation">.</span>read_csv<span class="token punctuation">(</span><span class="token string">'data.csv'</span><span class="token punctuation">)</span>  
+<span class="token comment"># Print</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>df<span class="token punctuation">.</span>head<span class="token punctuation">(</span><span class="token number">10</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+</code><button class="copy-code-button"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon lucide-copy"><rect x="8" y="8" width="14" height="14" rx="2" ry="2"></rect><path d="M4 16c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2"></path></svg></button><button class="run-code-button">Run</button></pre></div><div class="el-p"><p dir="auto">Same as head, there is also a&nbsp;<code>tail()</code>&nbsp;method for viewing the&nbsp;<em>last</em>&nbsp;rows of the DataFrame.<br>
+The&nbsp;<code>tail()</code>&nbsp;method returns the headers and a specified number of rows, starting from the bottom.</p></div><div class="el-p"><p dir="auto">The DataFrames object has a method called&nbsp;<code>info()</code>, that gives you more information about the data set.</p></div><div class="el-ul"><ul>
+<li data-line="0" dir="auto">RangeIndex - number of rows</li>
+<li data-line="1" dir="auto">Data columns - number of columns</li>
+<li data-line="2" dir="auto">columns names, non-null elements and types</li>
+<li data-line="3" dir="auto">dtypes</li>
+<li data-line="4" dir="auto">memory usage</li>
+</ul></div><div class="el-pre has-run-code-button"><pre class="language-python" tabindex="0"><code data-line="0" class="language-python is-loaded"><span class="token keyword">print</span><span class="token punctuation">(</span>df<span class="token punctuation">.</span>info<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+
+<span class="token comment"># &lt;class 'pandas.core.frame.DataFrame'&gt;</span>
+<span class="token comment"># RangeIndex: 169 entries, 0 to 168</span>
+<span class="token comment"># Data columns (total 4 columns):</span>
+<span class="token comment">#  #   Column    Non-Null Count  Dtype  </span>
+<span class="token comment"># ---  ------    --------------  -----  </span>
+<span class="token comment">#  0   Duration  169 non-null    int64  </span>
+<span class="token comment">#  1   Pulse     169 non-null    int64  </span>
+<span class="token comment">#  2   Maxpulse  169 non-null    int64  </span>
+<span class="token comment">#  3   Calories  164 non-null    float64</span>
+<span class="token comment"># dtypes: float64(1), int64(3)</span>
+<span class="token comment"># memory usage: 5.4 KB</span>
+<span class="token comment"># None</span>
+</code><button class="copy-code-button"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon lucide-copy"><rect x="8" y="8" width="14" height="14" rx="2" ry="2"></rect><path d="M4 16c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2"></path></svg></button><button class="run-code-button">Run</button></pre></div></div></div></div></div></div></div><div class="el-h1 heading-wrapper"><h1 data-heading="Cleaning Data" dir="auto" class="heading" id="Cleaning_Data">Cleaning Data</h1><div class="heading-children"><div class="el-p"><p dir="auto">Data cleaning means fixing bad data in your data set.</p></div><div class="el-p"><p dir="auto">Bad data could be:</p></div><div class="el-ul"><ul>
+<li data-line="0" dir="auto">Empty cells</li>
+<li data-line="1" dir="auto">Data in wrong format</li>
+<li data-line="2" dir="auto">Wrong data</li>
+<li data-line="3" dir="auto">Duplicates </li>
+</ul></div><div class="el-details"><details> <summary>E.g. Dataset info</summary></details></div><div>  </div><div>  <table class="tg">
+    <thead>
+      <tr>
+        <th class="tg-0pky"></th>
+        <th class="tg-0pky">Duration</th>
+        <th class="tg-0pky">Date</th>
+        <th class="tg-0pky">Pulse</th>
+        <th class="tg-0pky">Maxpulse</th>
+        <th class="tg-0pky">Calories</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td class="tg-0pky">0</td>
+        <td class="tg-0pky">60</td>
+        <td class="tg-0pky">'2020/12/01'</td>
+        <td class="tg-0pky">110</td>
+        <td class="tg-0pky">130</td>
+        <td class="tg-0pky">409.1</td>
+      </tr>
+      <tr>
+        <td class="tg-0pky">1</td>
+        <td class="tg-0pky">60</td>
+        <td class="tg-0pky">'2020/12/02'</td>
+        <td class="tg-0pky">117</td>
+        <td class="tg-0pky">145</td>
+        <td class="tg-0pky">479.0</td>
+      </tr>
+      <tr>
+        <td class="tg-0pky">2</td>
+        <td class="tg-0pky">60</td>
+        <td class="tg-0pky">'2020/12/03'</td>
+        <td class="tg-0pky">103</td>
+        <td class="tg-0pky">135</td>
+        <td class="tg-0pky">340.0</td>
+      </tr>
+      <tr>
+        <td class="tg-0pky">3</td>
+        <td class="tg-0pky">45</td>
+        <td class="tg-0pky">'2020/12/04'</td>
+        <td class="tg-0pky">109</td>
+        <td class="tg-0pky">175</td>
+        <td class="tg-0pky">282.4</td>
+      </tr>
+      <tr>
+        <td class="tg-0pky">4</td>
+        <td class="tg-0pky">45</td>
+        <td class="tg-0pky">'2020/12/05'</td>
+        <td class="tg-0pky">117</td>
+        <td class="tg-0pky">148</td>
+        <td class="tg-0pky">406.0</td>
+      </tr>
+      <tr>
+        <td class="tg-0pky">5</td>
+        <td class="tg-0pky">60</td>
+        <td class="tg-0pky">'2020/12/06'</td>
+        <td class="tg-0pky">102</td>
+        <td class="tg-0pky">127</td>
+        <td class="tg-0pky">300.0</td>
+      </tr>
+      <tr>
+        <td class="tg-0pky">6</td>
+        <td class="tg-0pky">60</td>
+        <td class="tg-0pky">'2020/12/07'</td>
+        <td class="tg-0pky">110</td>
+        <td class="tg-0pky">136</td>
+        <td class="tg-0pky">374.0</td>
+      </tr>
+      <tr>
+        <td class="tg-0pky">7</td>
+        <td class="tg-0pky">450</td>
+        <td class="tg-0pky">'2020/12/08'</td>
+        <td class="tg-0pky">104</td>
+        <td class="tg-0pky">134</td>
+        <td class="tg-0pky">253.3</td>
+      </tr>
+      <tr>
+        <td class="tg-0pky">8</td>
+        <td class="tg-0pky">30</td>
+        <td class="tg-0pky">'2020/12/09'</td>
+        <td class="tg-0pky">109</td>
+        <td class="tg-0pky">133</td>
+        <td class="tg-0pky">195.1</td>
+      </tr>
+      <tr>
+        <td class="tg-0pky">9</td>
+        <td class="tg-0pky">60</td>
+        <td class="tg-0pky">'2020/12/10'</td>
+        <td class="tg-0pky">98</td>
+        <td class="tg-0pky">124</td>
+        <td class="tg-0pky">269.0</td>
+      </tr>
+      <tr>
+        <td class="tg-0pky">10</td>
+        <td class="tg-0pky">60</td>
+        <td class="tg-0pky">'2020/12/11'</td>
+        <td class="tg-0pky">103</td>
+        <td class="tg-0pky">147</td>
+        <td class="tg-0pky">329.3</td>
+      </tr>
+      <tr>
+        <td class="tg-0pky">11</td>
+        <td class="tg-0pky">60</td>
+        <td class="tg-0pky">'2020/12/12'</td>
+        <td class="tg-0pky">100</td>
+        <td class="tg-0pky">120</td>
+        <td class="tg-0pky">250.7</td>
+      </tr>
+      <tr>
+        <td class="tg-0pky">12</td>
+        <td class="tg-0pky">60</td>
+        <td class="tg-0pky">'2020/12/12'</td>
+        <td class="tg-0pky">100</td>
+        <td class="tg-0pky">120</td>
+        <td class="tg-0pky">250.7</td>
+      </tr>
+      <tr>
+        <td class="tg-0pky">13</td>
+        <td class="tg-0pky">60</td>
+        <td class="tg-0pky">'2020/12/13'</td>
+        <td class="tg-0pky">106</td>
+        <td class="tg-0pky">128</td>
+        <td class="tg-0pky">345.3</td>
+      </tr>
+      <tr>
+        <td class="tg-0pky">14</td>
+        <td class="tg-0pky">60</td>
+        <td class="tg-0pky">'2020/12/14'</td>
+        <td class="tg-0pky">104</td>
+        <td class="tg-0pky">132</td>
+        <td class="tg-0pky">379.3</td>
+      </tr>
+      <tr>
+        <td class="tg-0pky">15</td>
+        <td class="tg-0pky">60</td>
+        <td class="tg-0pky">'2020/12/15'</td>
+        <td class="tg-0pky">98</td>
+        <td class="tg-0pky">123</td>
+        <td class="tg-0pky">275.0</td>
+      </tr>
+      <tr>
+        <td class="tg-0pky">16</td>
+        <td class="tg-0pky">60</td>
+        <td class="tg-0pky">'2020/12/16'</td>
+        <td class="tg-0pky">98</td>
+        <td class="tg-0pky">120</td>
+        <td class="tg-0pky">215.2</td>
+      </tr>
+      <tr>
+        <td class="tg-0pky">17</td>
+        <td class="tg-0pky">60</td>
+        <td class="tg-0pky">'2020/12/17'</td>
+        <td class="tg-0pky">100</td>
+        <td class="tg-0pky">120</td>
+        <td class="tg-0pky">300.0</td>
+      </tr>
+      <tr>
+        <td class="tg-0pky">18</td>
+        <td class="tg-0pky">45</td>
+        <td class="tg-0pky">'2020/12/18'</td>
+        <td class="tg-0pky">90</td>
+        <td class="tg-0pky">112</td>
+        <td class="tg-0pky">NaN</td>
+      </tr>
+      <tr>
+        <td class="tg-0pky">19</td>
+        <td class="tg-0pky">60</td>
+        <td class="tg-0pky">'2020/12/19'</td>
+        <td class="tg-0pky">103</td>
+        <td class="tg-0pky">123</td>
+        <td class="tg-0pky">323.0</td>
+      </tr>
+      <tr>
+        <td class="tg-0pky">20</td>
+        <td class="tg-0pky">45</td>
+        <td class="tg-0pky">'2020/12/20'</td>
+        <td class="tg-0pky">97</td>
+        <td class="tg-0pky">125</td>
+        <td class="tg-0pky">243.0</td>
+      </tr>
+      <tr>
+        <td class="tg-0pky">21</td>
+        <td class="tg-0pky">60</td>
+        <td class="tg-0pky">'2020/12/21'</td>
+        <td class="tg-0pky">108</td>
+        <td class="tg-0pky">131</td>
+        <td class="tg-0pky">364.2</td>
+      </tr>
+      <tr>
+        <td class="tg-0pky">22</td>
+        <td class="tg-0pky">45</td>
+        <td class="tg-0pky">NaN</td>
+        <td class="tg-0pky">100</td>
+        <td class="tg-0pky">119</td>
+        <td class="tg-0pky">282.0</td>
+      </tr>
+      <tr>
+        <td class="tg-0pky">23</td>
+        <td class="tg-0pky">60</td>
+        <td class="tg-0pky">'2020/12/23'</td>
+        <td class="tg-0pky">130</td>
+        <td class="tg-0pky">101</td>
+        <td class="tg-0pky">300.0</td>
+      </tr>
+      <tr>
+        <td class="tg-0pky">24</td>
+        <td class="tg-0pky">45</td>
+        <td class="tg-0pky">'2020/12/24'</td>
+        <td class="tg-0pky">105</td>
+        <td class="tg-0pky">132</td>
+        <td class="tg-0pky">246.0</td>
+      </tr>
+      <tr>
+        <td class="tg-0pky">25</td>
+        <td class="tg-0pky">60</td>
+        <td class="tg-0pky">'2020/12/25'</td>
+        <td class="tg-0pky">102</td>
+        <td class="tg-0pky">126</td>
+        <td class="tg-0pky">334.5</td>
+      </tr>
+      <tr>
+        <td class="tg-0pky">26</td>
+        <td class="tg-0pky">60</td>
+        <td class="tg-0pky">20201226</td>
+        <td class="tg-0pky">100</td>
+        <td class="tg-0pky">120</td>
+        <td class="tg-0pky">250.0</td>
+      </tr>
+      <tr>
+        <td class="tg-0pky">27</td>
+        <td class="tg-0pky">60</td>
+        <td class="tg-0pky">'2020/12/27'</td>
+        <td class="tg-0pky">92</td>
+        <td class="tg-0pky">118</td>
+        <td class="tg-0pky">241.0</td>
+      </tr>
+      <tr>
+        <td class="tg-0pky">28</td>
+        <td class="tg-0pky">60</td>
+        <td class="tg-0pky">'2020/12/28'</td>
+        <td class="tg-0pky">103</td>
+        <td class="tg-0pky">132</td>
+        <td class="tg-0pky">NaN</td>
+      </tr>
+      <tr>
+        <td class="tg-0pky">29</td>
+        <td class="tg-0pky">60</td>
+        <td class="tg-0pky">'2020/12/29'</td>
+        <td class="tg-0pky">100</td>
+        <td class="tg-0pky">132</td>
+        <td class="tg-0pky">280.0</td>
+      </tr>
+      <tr>
+        <td class="tg-0pky">30</td>
+        <td class="tg-0pky">60</td>
+        <td class="tg-0pky">'2020/12/30'</td>
+        <td class="tg-0pky">102</td>
+        <td class="tg-0pky">129</td>
+        <td class="tg-0pky">380.3</td>
+      </tr>
+      <tr>
+        <td class="tg-0lax">31</td>
+        <td class="tg-0lax">60</td>
+        <td class="tg-0lax">'2020/12/31'</td>
+        <td class="tg-0lax">92</td>
+        <td class="tg-0lax">115</td>
+        <td class="tg-0lax">243.0</td>
+      </tr>
+    </tbody>
+  </table>
+</div><div class="el-blockquote"><blockquote dir="auto">
+<p>The data set contains </p>
+<ul>
+<li data-line="1" dir="auto">some empty cells ("Date" in row 22, and "Calories" in row 18 and 28).</li>
+<li data-line="2" dir="auto">wrong format ("Date" in row 26).</li>
+<li data-line="3" dir="auto">wrong data ("Duration" in row 7).</li>
+<li data-line="4" dir="auto">duplicates (row 11 and 12).</li>
+</ul>
+</blockquote></div><div class="el-h2 heading-wrapper"><h2 data-heading="Clean Empty Cells" dir="auto" class="heading" id="Clean_Empty_Cells"><div class="heading-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle"><path d="M3 8L12 17L21 8"></path></svg></div>Clean Empty Cells</h2><div class="heading-children"><div class="el-p"><p dir="auto">Empty cells can potentially give you a wrong result when you analyze data. <strong>By default, the&nbsp;<code>dropna()</code>&nbsp;method returns a&nbsp;<em>new</em>&nbsp;DataFrame, and will not change the original.</strong></p></div><div class="el-blockquote"><blockquote dir="auto">
+<p>If you want to change the original DataFrame, use the&nbsp;<code>inplace = True</code>&nbsp;argument.</p>
+</blockquote></div><div class="el-pre has-run-code-button"><pre class="language-python" tabindex="0"><code data-line="0" class="language-python is-loaded"><span class="token keyword">import</span> pandas <span class="token keyword">as</span> pd  
+
+df <span class="token operator">=</span> pd<span class="token punctuation">.</span>read_csv<span class="token punctuation">(</span><span class="token string">'data.csv'</span><span class="token punctuation">)</span>  
+<span class="token comment"># New DF</span>
+new_df <span class="token operator">=</span> df<span class="token punctuation">.</span>dropna<span class="token punctuation">(</span><span class="token punctuation">)</span>  
+<span class="token keyword">print</span><span class="token punctuation">(</span>new_df<span class="token punctuation">.</span>to_string<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+<span class="token comment"># Update old DF</span>
+df<span class="token punctuation">.</span>dropna<span class="token punctuation">(</span>inplace <span class="token operator">=</span> <span class="token boolean">True</span><span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>df<span class="token punctuation">.</span>to_string<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+</code><button class="copy-code-button"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon lucide-copy"><rect x="8" y="8" width="14" height="14" rx="2" ry="2"></rect><path d="M4 16c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2"></path></svg></button><button class="run-code-button">Run</button></pre></div><div class="el-h3 heading-wrapper"><h3 data-heading="Replacing Empty Values" dir="auto" class="heading" id="Replacing_Empty_Values"><div class="heading-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle"><path d="M3 8L12 17L21 8"></path></svg></div>Replacing Empty Values</h3><div class="heading-children"><div class="el-p"><p dir="auto">Another way of dealing with empty cells is to insert a&nbsp;<em>new</em>&nbsp;value instead. This way you do not have to delete entire rows just because of some empty cells. The&nbsp;<code>fillna()</code>&nbsp;method allows us to replace <strong>all</strong> the empty cells with a value:</p></div><div class="el-pre has-run-code-button"><pre class="language-python" tabindex="0"><code data-line="0" class="language-python is-loaded"><span class="token keyword">import</span> pandas <span class="token keyword">as</span> pd  
+
+df <span class="token operator">=</span> pd<span class="token punctuation">.</span>read_csv<span class="token punctuation">(</span><span class="token string">'data.csv'</span><span class="token punctuation">)</span>
+df<span class="token punctuation">.</span>fillna<span class="token punctuation">(</span><span class="token number">130</span><span class="token punctuation">,</span> inplace <span class="token operator">=</span> <span class="token boolean">True</span><span class="token punctuation">)</span>
+</code><button class="copy-code-button"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon lucide-copy"><rect x="8" y="8" width="14" height="14" rx="2" ry="2"></rect><path d="M4 16c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2"></path></svg></button><button class="run-code-button">Run</button></pre></div><div class="el-p"><p dir="auto">As the replacement could be a number, there´s a possibility to use the&nbsp;<code>mean()</code>&nbsp;<code>median()</code>&nbsp;and&nbsp;<code>mode()</code>&nbsp;methods to calculate the respective values.</p></div><div class="el-ul"><ul>
+<li data-line="0" dir="auto"><strong>Mean</strong>&nbsp;= the average value (the sum of all values divided by number of values).</li>
+<li data-line="1" dir="auto"><strong>Median</strong>&nbsp;= the value in the middle, after you have sorted all values ascending.</li>
+<li data-line="2" dir="auto"><strong>Mode</strong>&nbsp;= the value that appears most frequently.</li>
+</ul></div><div class="el-p"><p dir="auto">Or replace <strong>only</strong> in a defined column, ypu'll need to specify the&nbsp;<em>column name</em>&nbsp;for the DataFrame:</p></div><div class="el-pre has-run-code-button"><pre class="language-python" tabindex="0"><code data-line="0" class="language-python is-loaded"><span class="token keyword">import</span> pandas <span class="token keyword">as</span> pd 
+
+df <span class="token operator">=</span> pd<span class="token punctuation">.</span>read_csv<span class="token punctuation">(</span><span class="token string">'data.csv'</span><span class="token punctuation">)</span>
+df<span class="token punctuation">[</span><span class="token string">"Calories"</span><span class="token punctuation">]</span><span class="token punctuation">.</span>fillna<span class="token punctuation">(</span><span class="token number">130</span><span class="token punctuation">,</span> inplace <span class="token operator">=</span> <span class="token boolean">True</span><span class="token punctuation">)</span>
+</code><button class="copy-code-button"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon lucide-copy"><rect x="8" y="8" width="14" height="14" rx="2" ry="2"></rect><path d="M4 16c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2"></path></svg></button><button class="run-code-button">Run</button></pre></div><div class="el-p"><p dir="auto">Other way is to set the format of the columns to the same, e.g. in the row <code>22</code> in the given data, the date info isn't matching with the others, so we can use the <a data-tooltip-position="top" aria-label="https://pandas.pydata.org/docs/reference/api/pandas.to_datetime.html" rel="noopener nofollow" class="external-link" href="https://pandas.pydata.org/docs/reference/api/pandas.to_datetime.html" target="_blank"><code>to_datetime(_arg_,&nbsp;_errors='raise'_,&nbsp;_dayfirst=False_,&nbsp;_yearfirst=False_,&nbsp;_utc=False_,&nbsp;_format=None_,&nbsp;_exact=_NoDefault.no_default_,&nbsp;_unit=None_,&nbsp;_infer_datetime_format=_NoDefault.no_default_,&nbsp;_origin='unix'_,&nbsp;_cache=True_)</code></a> (<em>condensed info, for more see the full doc.</em>) method, as below:</p></div><div class="el-pre has-run-code-button"><pre class="language-python" tabindex="0"><code data-line="0" class="language-python is-loaded"><span class="token keyword">import</span> pandas <span class="token keyword">as</span> pd  
+
+df <span class="token operator">=</span> pd<span class="token punctuation">.</span>read_csv<span class="token punctuation">(</span><span class="token string">'data.csv'</span><span class="token punctuation">)</span>  
+df<span class="token punctuation">[</span><span class="token string">'Date'</span><span class="token punctuation">]</span> <span class="token operator">=</span> pd<span class="token punctuation">.</span>to_datetime<span class="token punctuation">(</span>df<span class="token punctuation">[</span><span class="token string">'Date'</span><span class="token punctuation">]</span><span class="token punctuation">)</span>  
+<span class="token comment">#print</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>df<span class="token punctuation">.</span>to_string<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+</code><button class="copy-code-button"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon lucide-copy"><rect x="8" y="8" width="14" height="14" rx="2" ry="2"></rect><path d="M4 16c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2"></path></svg></button><button class="run-code-button">Run</button></pre></div><div class="el-blockquote"><blockquote dir="auto">
+<p>The result is <code>26        60  '2020/12/26'    100       120     250.0</code></p>
+</blockquote></div><div class="el-p"><p dir="auto"><strong>Parameters</strong></p></div><div class="el-ul"><ul>
+<li data-line="0" dir="auto"><strong>arg</strong> (<em><code>int</code>, <code>float</code>, <code>str</code>, <code>datetime</code>, <code>list</code>, <code>tuple</code>, <code>1-d array</code>, <code>Series</code>, <code>DataFrame</code>/<code>dict-like</code></em>)</li>
+<li data-line="1" dir="auto"><strong>errors</strong> (<em>{‘ignore’, ‘raise’, ‘coerce’}, <strong>default</strong> ‘raise’</em>)</li>
+<li data-line="2" dir="auto"><strong>dayfirst</strong> (<em><code>bool</code>, <strong>default</strong> False</em>)</li>
+<li data-line="3" dir="auto"><strong>yearfirst</strong> (<em><code>bool</code>, <strong>default</strong> False</em>)</li>
+<li data-line="4" dir="auto"><strong>utc</strong> (<em><code>bool</code>, <strong>default</strong> False</em>)</li>
+<li data-line="5" dir="auto"><strong>format</strong> (<em><code>str</code>, <strong>default</strong> None</em>)</li>
+<li data-line="6" dir="auto"><strong>exact</strong> (<em><code>bool</code>, <strong>default</strong> True</em>)</li>
+<li data-line="7" dir="auto"><strong>unit</strong> (<em><code>str</code>, <strong>default</strong> ‘ns’</em>)</li>
+<li data-line="8" dir="auto"><strong>infer_datetime_format</strong> (<em><code>bool</code>, <strong>default</strong> False</em>)</li>
+</ul></div><div class="el-p"><p dir="auto"><strong>Returns</strong></p></div><div class="el-ul"><ul>
+<li data-line="0" dir="auto"><div class="list-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle"><path d="M3 8L12 17L21 8"></path></svg></div>datetime, If parsing succeeded. Return type depends on input :
+<ul>
+<li data-line="1" dir="auto">scalar:&nbsp;<a data-tooltip-position="top" aria-label="https://pandas.pydata.org/docs/reference/api/pandas.Timestamp.html#pandas.Timestamp" rel="noopener nofollow" class="external-link" title="pandas.Timestamp" href="https://pandas.pydata.org/docs/reference/api/pandas.Timestamp.html#pandas.Timestamp" target="_blank"><code>Timestamp</code></a></li>
+<li data-line="2" dir="auto">array-like:&nbsp;<a data-tooltip-position="top" aria-label="https://pandas.pydata.org/docs/reference/api/pandas.DatetimeIndex.html#pandas.DatetimeIndex" rel="noopener nofollow" class="external-link" title="pandas.DatetimeIndex" href="https://pandas.pydata.org/docs/reference/api/pandas.DatetimeIndex.html#pandas.DatetimeIndex" target="_blank"><code>DatetimeIndex</code></a></li>
+<li data-line="3" dir="auto">Series:&nbsp;<a data-tooltip-position="top" aria-label="https://pandas.pydata.org/docs/reference/api/pandas.Series.html#pandas.Series" rel="noopener nofollow" class="external-link" title="pandas.Series" href="https://pandas.pydata.org/docs/reference/api/pandas.Series.html#pandas.Series" target="_blank"><code>Series</code></a>&nbsp;of&nbsp;<code>datetime64</code>&nbsp;dtype</li>
+<li data-line="4" dir="auto">DataFrame:&nbsp;<a data-tooltip-position="top" aria-label="https://pandas.pydata.org/docs/reference/api/pandas.Series.html#pandas.Series" rel="noopener nofollow" class="external-link" title="pandas.Series" href="https://pandas.pydata.org/docs/reference/api/pandas.Series.html#pandas.Series" target="_blank"><code>Series</code></a>&nbsp;of&nbsp;<code>datetime64</code>&nbsp;dtype</li>
+</ul>
+</li>
+</ul></div><div class="el-p"><p dir="auto"><strong>Raises</strong></p></div><div class="el-ul"><ul>
+<li data-line="0" dir="auto"><strong>ParserError</strong>, When parsing a date from string fails.</li>
+<li data-line="1" dir="auto"><strong>ValueError</strong>, When another datetime conversion error happens. For example when one of ‘year’, ‘month’, day’ columns is missing in a&nbsp;<a data-tooltip-position="top" aria-label="https://pandas.pydata.org/docs/reference/api/pandas.DataFrame.html#pandas.DataFrame" rel="noopener nofollow" class="external-link" title="pandas.DataFrame" href="https://pandas.pydata.org/docs/reference/api/pandas.DataFrame.html#pandas.DataFrame" target="_blank"><code>DataFrame</code></a>, or when a Timezone-aware&nbsp;<a data-tooltip-position="top" aria-label="https://docs.python.org/3/library/datetime.html#datetime.datetime" rel="noopener nofollow" class="external-link" title="(in Python v3.11)" href="https://docs.python.org/3/library/datetime.html#datetime.datetime" target="_blank"><code>datetime.datetime</code></a>&nbsp;is found in an array-like of mixed time offsets, and&nbsp;<code>utc=False</code>.</li>
+</ul></div></div></div><div class="el-h3 heading-wrapper"><h3 data-heading="Remove Wrong Data" dir="auto" class="heading" id="Remove_Wrong_Data"><div class="heading-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle"><path d="M3 8L12 17L21 8"></path></svg></div>Remove Wrong Data</h3><div class="heading-children"><div class="el-p"><p dir="auto">In the example the line wasn't in the right format, but in the line <code>22</code> the value stored in Date was Nota a Number (<code>NaN</code>) before and now is Not a Time (<code>NaT</code>) and can be handled as a NULL value, and we can remove the row by using the&nbsp;<a data-tooltip-position="top" aria-label="https://pandas.pydata.org/docs/reference/api/pandas.DataFrame.dropna.html" rel="noopener nofollow" class="external-link" href="https://pandas.pydata.org/docs/reference/api/pandas.DataFrame.dropna.html" target="_blank"><code>dropna(_*_,&nbsp;_axis=0_,&nbsp;_how=_NoDefault.no_default_,&nbsp;_thresh=_NoDefault.no_default_,&nbsp;_subset=None_,&nbsp;_inplace=False_,&nbsp;_ignore_index=False_)</code></a>&nbsp;method (<em>condensed info, for more see the full doc.</em>) .</p></div><div class="el-pre has-run-code-button"><pre class="language-python" tabindex="0"><code data-line="0" class="language-python is-loaded">df<span class="token punctuation">.</span>dropna<span class="token punctuation">(</span>subset<span class="token operator">=</span><span class="token punctuation">[</span><span class="token string">'Date'</span><span class="token punctuation">]</span><span class="token punctuation">,</span> inplace <span class="token operator">=</span> <span class="token boolean">True</span><span class="token punctuation">)</span>
+</code><button class="copy-code-button"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon lucide-copy"><rect x="8" y="8" width="14" height="14" rx="2" ry="2"></rect><path d="M4 16c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2"></path></svg></button><button class="run-code-button">Run</button></pre></div><div class="el-p"><p dir="auto"><strong>Parameters</strong></p></div><div class="el-ul"><ul>
+<li data-line="0" dir="auto"><strong>axis</strong> ({<code>0</code> or <code>index</code>, <code>1</code> or <code>columns</code>}, <strong>default</strong> 0), Determine if rows or columns which contain missing values are removed.</li>
+<li data-line="1" dir="auto"><strong>how</strong> ({<code>any</code>, <code>all</code>}, <strong>default</strong> <code>any</code>), Determine if row or column is removed from DataFrame, when we have at least one <code>NA</code> or all.</li>
+<li data-line="2" dir="auto"><strong>thresh</strong> (<code>int</code>, <strong>optional</strong>), Require that many non-NA values. Cannot be combined with how.</li>
+<li data-line="3" dir="auto"><strong>subset</strong> (column label or sequence of labels, <strong>optional</strong>), Labels along other axis to consider, e.g. if you are dropping rows these would be a list of columns to include.</li>
+<li data-line="4" dir="auto"><strong>inplace</strong> (<code>bool</code>, <strong>default</strong> False), Whether to modify the DataFrame rather than creating a new one.</li>
+<li data-line="5" dir="auto"><strong>ignore_index</strong> (<code>bool</code>, <strong>default</strong>&nbsp;<code>False</code>), If&nbsp;<code>True</code>, the resulting axis will be labeled 0, 1, …, n - 1.</li>
+</ul></div><div class="el-p"><p dir="auto"><strong>Returns</strong></p></div><div class="el-ul"><ul>
+<li data-line="0" dir="auto">DataFrame or None</li>
+<li data-line="1" dir="auto">DataFrame with <code>NA</code> entries dropped from it or None if&nbsp;<code>inplace=True</code>.</li>
+</ul></div></div></div></div></div><div class="el-h2 heading-wrapper"><h2 data-heading="Remove Duplicates" dir="auto" class="heading" id="Remove_Duplicates"><div class="heading-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle"><path d="M3 8L12 17L21 8"></path></svg></div>Remove Duplicates</h2><div class="heading-children"><div class="el-p"><p dir="auto">By taking a look at our test data set, we can assume that row 11 and 12 are duplicates.<br>
+To discover duplicates, we can use the&nbsp;<a data-tooltip-position="top" aria-label="https://pandas.pydata.org/docs/reference/api/pandas.DataFrame.duplicated.html" rel="noopener nofollow" class="external-link" href="https://pandas.pydata.org/docs/reference/api/pandas.DataFrame.duplicated.html" target="_blank"><code>duplicated(_subset=None_,&nbsp;_keep='first'_)</code></a>&nbsp;method. </p></div><div class="el-pre has-run-code-button"><pre class="language-python" tabindex="0"><code data-line="0" class="language-python is-loaded"><span class="token keyword">print</span><span class="token punctuation">(</span>df<span class="token punctuation">.</span>duplicated<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+</code><button class="copy-code-button"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon lucide-copy"><rect x="8" y="8" width="14" height="14" rx="2" ry="2"></rect><path d="M4 16c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2"></path></svg></button><button class="run-code-button">Run</button></pre></div><div class="el-p"><p dir="auto"><strong>Parameters</strong></p></div><div class="el-ul"><ul>
+<li data-line="0" dir="auto"><strong>subset</strong>: <em>column label or sequence of labels, optional</em>, only consider certain columns for identifying duplicates, by default use all of the columns.</li>
+<li data-line="1" dir="auto"><strong>keep</strong>: <em>{‘first’, ‘last’, False}, <strong>default</strong> ‘first’</em>, determines which duplicates (if any) to mark.</li>
+</ul></div><div class="el-p"><p dir="auto">The&nbsp;<code>duplicated()</code>&nbsp;method returns a Boolean Series: <code>True</code>&nbsp;for every row that is a duplicate, otherwise&nbsp;<code>False</code>.</p></div><div class="el-p"><p dir="auto"><strong>To remove duplicates</strong>, use the&nbsp;<a data-tooltip-position="top" aria-label="https://pandas.pydata.org/docs/reference/api/pandas.DataFrame.drop_duplicates.html" rel="noopener nofollow" class="external-link" href="https://pandas.pydata.org/docs/reference/api/pandas.DataFrame.drop_duplicates.html" target="_blank"><code>drop_duplicates(_subset=None_,&nbsp;_*_,&nbsp;_keep='first'_,&nbsp;_inplace=False_,&nbsp;_ignore_index=False_)</code></a>&nbsp;method. </p></div><div class="el-pre has-run-code-button"><pre class="language-python" tabindex="0"><code data-line="0" class="language-python is-loaded">df<span class="token punctuation">.</span>drop_duplicates<span class="token punctuation">(</span>inplace <span class="token operator">=</span> <span class="token boolean">True</span><span class="token punctuation">)</span>
+</code><button class="copy-code-button"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon lucide-copy"><rect x="8" y="8" width="14" height="14" rx="2" ry="2"></rect><path d="M4 16c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2"></path></svg></button><button class="run-code-button">Run</button></pre></div><div class="el-p"><p dir="auto"><strong>Parameters</strong></p></div><div class="el-ul"><ul>
+<li data-line="0" dir="auto"><strong>subset</strong>: *column label or sequence of labels, <strong>optional*</strong>, only consider certain columns for identifying duplicates, by default use all of the columns.</li>
+<li data-line="1" dir="auto"><strong>keep</strong>: <em>{‘first’, ‘last’,&nbsp;<code>False</code>}, <strong>default</strong> ‘first’</em>, determines which duplicates (if any) to keep.</li>
+<li data-line="2" dir="auto"><strong>inplace</strong>: <em><code>bool</code>, <strong>default</strong>&nbsp;<code>False</code></em>, whether to modify the DataFrame rather than creating a new one.</li>
+<li data-line="3" dir="auto"><strong>ignore_index</strong>: <em><code>bool</code>, <strong>default</strong>&nbsp;<code>False</code></em>, if&nbsp;<code>True</code>, the resulting axis will be labeled 0, 1, …, n - 1.</li>
+</ul></div><div class="el-p"><p dir="auto">The method returns a DataFrame with duplicates removed or None if&nbsp;<code>inplace=True</code>.</p></div></div></div></div></div><div class="el-h1 heading-wrapper"><h1 data-heading="Advanced" dir="auto" class="heading" id="Advanced">Advanced</h1><div class="heading-children"><div class="el-h2 heading-wrapper"><h2 data-heading="Correlations" dir="auto" class="heading" id="Correlations"><div class="heading-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle"><path d="M3 8L12 17L21 8"></path></svg></div>Correlations</h2><div class="heading-children"><div class="el-blockquote"><blockquote dir="auto">
+<p>The examples (from W3schools) uses a CSV file called: '<a data-tooltip-position="top" aria-label="https://www.w3schools.com/python/pandas/data.csv.txt" rel="noopener nofollow" class="external-link" href="https://www.w3schools.com/python/pandas/data.csv.txt" target="_blank">data.csv</a>'.</p>
+</blockquote></div><div class="el-h3 heading-wrapper"><h3 data-heading="Finding Relationships" dir="auto" class="heading" id="Finding_Relationships"><div class="heading-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle"><path d="M3 8L12 17L21 8"></path></svg></div>Finding Relationships</h3><div class="heading-children"><div class="el-p"><p dir="auto">A great aspect of the Pandas module is the&nbsp;<code>corr()</code>&nbsp;method.<br>
+The&nbsp;<a data-tooltip-position="top" aria-label="https://pandas.pydata.org/docs/reference/api/pandas.DataFrame.corr.html" rel="noopener nofollow" class="external-link" href="https://pandas.pydata.org/docs/reference/api/pandas.DataFrame.corr.html" target="_blank"><code>corr(_method='pearson'_,&nbsp;_min_periods=1_,&nbsp;_numeric_only=False_)</code></a>&nbsp;method calculates the relationship between each column in your data set and <strong>returns a Correlation matrix.</strong></p></div><div class="el-p"><p dir="auto"><strong>Parameters</strong></p></div><div class="el-ul"><ul>
+<li data-line="0" dir="auto"><strong>method</strong>: <em>{‘pearson’, ‘kendall’, ‘spearman’} or callable</em></li>
+<li data-line="1" dir="auto"><strong>min_periods</strong>: *<code>int</code>, <strong>optional*</strong>, minimum number of observations required per pair of columns to have a valid result. Currently only available for Pearson and Spearman correlation.</li>
+<li data-line="2" dir="auto"><strong>numeric_only</strong>: <em><code>bool</code>, <strong>default</strong> False</em>, include only&nbsp;float,&nbsp;int&nbsp;or&nbsp;boolean&nbsp;data.</li>
+</ul></div><div class="el-pre has-run-code-button"><pre class="language-python" tabindex="0"><code data-line="0" class="language-python is-loaded">df<span class="token punctuation">.</span>corr<span class="token punctuation">(</span><span class="token punctuation">)</span>
+
+ <span class="token comment">#           Duration     Pulse  Maxpulse  Calories</span>
+ <span class="token comment"># Duration  1.000000 -0.155408  0.009403  0.922721</span>
+ <span class="token comment"># Pulse    -0.155408  1.000000  0.786535  0.025120</span>
+ <span class="token comment"># Maxpulse  0.009403  0.786535  1.000000  0.203814</span>
+ <span class="token comment"># Calories  0.922721  0.025120  0.203814  1.000000</span>
+</code><button class="copy-code-button"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon lucide-copy"><rect x="8" y="8" width="14" height="14" rx="2" ry="2"></rect><path d="M4 16c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2"></path></svg></button><button class="run-code-button">Run</button></pre></div><div class="el-blockquote"><blockquote dir="auto">
+<p><em>The&nbsp;<code>corr()</code>&nbsp;method ignores "not numeric" columns.</em></p>
+</blockquote></div><div class="el-p"><p dir="auto">The result  is a table with numbers (<strong>from -1 to 1</strong>) that represents how well the relationship is between two columns. </p></div><div class="el-ul"><ul>
+<li data-line="0" dir="auto"><code>1</code> means that there is a 1 to 1 relationship (a perfect correlation), and for this data set, each time a value went up in the first column, the other one went up as well.</li>
+<li data-line="1" dir="auto"><code>0.9</code> is also a good relationship, and if you increase one value, the other will probably increase as well. </li>
+<li data-line="2" dir="auto"><code>-0.9</code> would be just as good relationship as 0.9, but if you increase one value, the other will probably go down. </li>
+<li data-line="3" dir="auto"><code>0.2</code> means NOT a good relationship, meaning that if one value goes up does not mean that the other will.</li>
+</ul></div><div class="el-blockquote"><blockquote dir="auto">
+<p><strong>What is a good correlation?</strong>&nbsp;It depends on the use, but I think it is safe to say you have to have at least&nbsp;<code>0.6</code>&nbsp;(or&nbsp;<code>-0.6</code>) to call it a good correlation.</p>
+</blockquote></div></div></div><div class="el-h3 heading-wrapper"><h3 data-heading="Perfect Correlation:" dir="auto" class="heading" id="Perfect_Correlation:"><div class="heading-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle"><path d="M3 8L12 17L21 8"></path></svg></div>Perfect Correlation:</h3><div class="heading-children"><div class="el-p"><p dir="auto">We can see that "Duration" and "Duration" got the number&nbsp;<code>1.000000</code>, which makes sense, each column always has a perfect relationship with itself.</p></div></div></div><div class="el-h3 heading-wrapper"><h3 data-heading="Good Correlation:" dir="auto" class="heading" id="Good_Correlation:"><div class="heading-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle"><path d="M3 8L12 17L21 8"></path></svg></div>Good Correlation:</h3><div class="heading-children"><div class="el-p"><p dir="auto">"Duration" and "Calories" got a&nbsp;<code>0.922721</code>&nbsp;correlation, which is a very good correlation, and we can predict that the longer you work out, the more calories you burn, and the other way around: if you burned a lot of calories, you probably had a long work out.</p></div></div></div><div class="el-h3 heading-wrapper"><h3 data-heading="Bad Correlation:" dir="auto" class="heading" id="Bad_Correlation:"><div class="heading-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle"><path d="M3 8L12 17L21 8"></path></svg></div>Bad Correlation:</h3><div class="heading-children"><div class="el-p"><p dir="auto">"Duration" and "Maxpulse" got a&nbsp;<code>0.009403</code>&nbsp;correlation, which is a very bad correlation, meaning that we can not predict the max pulse by just looking at the duration of the work out, and vice versa.</p></div></div></div></div></div><div class="el-h2 heading-wrapper"><h2 data-heading="Plotting" dir="auto" class="heading" id="Plotting"><div class="heading-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle"><path d="M3 8L12 17L21 8"></path></svg></div>Plotting</h2><div class="heading-children"><div class="el-blockquote"><blockquote dir="auto">
+<p>The examples uses a CSV file called: '<a data-tooltip-position="top" aria-label="https://www.w3schools.com/python/pandas/data.csv.txt" rel="noopener nofollow" class="external-link" href="https://www.w3schools.com/python/pandas/data.csv.txt" target="_blank">data.csv</a>'.</p>
+</blockquote></div><div class="el-p"><p dir="auto"><img alt="plot" src="https://www.w3schools.com/python/pandas/img_pandas_plot.png" referrerpolicy="no-referrer" style="width: 500px; max-width: 100%;"></p></div><div class="el-p"><p dir="auto">Pandas uses the&nbsp;<a data-tooltip-position="top" aria-label="" rel="noopener nofollow" class="external-link" href="" target="_blank"><code>plot(_*args_,&nbsp;_**kwargs_)</code></a>&nbsp;method to create diagrams. We can use <strong>Pyplot</strong>, a submodule of the <strong>Matplotlib</strong> library to visualize the diagram on the screen.</p></div><div class="el-blockquote"><blockquote dir="auto">
+<p>Read more about in&nbsp;<a data-tooltip-position="top" aria-label="https://www.w3schools.com/python/matplotlib_intro.asp" rel="noopener nofollow" class="external-link" href="https://www.w3schools.com/python/matplotlib_intro.asp" target="_blank">Matplotlib Tutorial</a>.</p>
+</blockquote></div><div class="el-p"><p dir="auto"><strong>Parameters</strong></p></div><div class="el-ul"><ul>
+<li data-line="0" dir="auto"><strong>data</strong>: <code>Series</code> or <code>DataFrame</code>, the object for which the method is called.</li>
+<li data-line="1" dir="auto">there's a lot of parameters...</li>
+</ul></div><div class="el-pre has-run-code-button"><pre class="language-python" tabindex="0"><code data-line="0" class="language-python is-loaded"><span class="token keyword">import</span> pandas <span class="token keyword">as</span> pd  
+<span class="token keyword">import</span> matplotlib<span class="token punctuation">.</span>pyplot <span class="token keyword">as</span> plt  
+  
+df <span class="token operator">=</span> pd<span class="token punctuation">.</span>read_csv<span class="token punctuation">(</span><span class="token string">'data.csv'</span><span class="token punctuation">)</span>
+df<span class="token punctuation">.</span>plot<span class="token punctuation">(</span><span class="token punctuation">)</span>  
+plt<span class="token punctuation">.</span>show<span class="token punctuation">(</span><span class="token punctuation">)</span>
+</code><button class="copy-code-button"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon lucide-copy"><rect x="8" y="8" width="14" height="14" rx="2" ry="2"></rect><path d="M4 16c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2"></path></svg></button><button class="run-code-button">Run</button></pre></div><div class="el-h3 heading-wrapper"><h3 data-heading="Scatter Plot" dir="auto" class="heading" id="Scatter_Plot"><div class="heading-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle"><path d="M3 8L12 17L21 8"></path></svg></div>Scatter Plot</h3><div class="heading-children"><div class="el-p"><p dir="auto">Specify that you want a scatter plot with the <code>kind</code> argument:</p></div><div class="el-p"><p dir="auto"><code>kind = 'scatter'</code></p></div><div class="el-p"><p dir="auto">A scatter plot needs an x- and a y-axis.</p></div><div class="el-p"><p dir="auto">In the example below we will use "Duration" for the x-axis and "Calories" for the y-axis.</p></div><div class="el-p"><p dir="auto">Include the x and y arguments like this:</p></div><div class="el-p"><p dir="auto"><code>x = 'Duration', y = 'Calories'</code></p></div><div class="el-pre has-run-code-button"><pre class="language-python" tabindex="0"><code data-line="0" class="language-python is-loaded"><span class="token keyword">import</span> pandas <span class="token keyword">as</span> pd  
+<span class="token keyword">import</span> matplotlib<span class="token punctuation">.</span>pyplot <span class="token keyword">as</span> plt  
+  
+df <span class="token operator">=</span> pd<span class="token punctuation">.</span>read\_csv<span class="token punctuation">(</span><span class="token string">'data.csv'</span><span class="token punctuation">)</span>  
+  
+df<span class="token punctuation">.</span>plot<span class="token punctuation">(</span>kind <span class="token operator">=</span> <span class="token string">'scatter'</span><span class="token punctuation">,</span> x <span class="token operator">=</span> <span class="token string">'Duration'</span><span class="token punctuation">,</span> y <span class="token operator">=</span> <span class="token string">'Calories'</span><span class="token punctuation">)</span>  
+  
+plt<span class="token punctuation">.</span>show<span class="token punctuation">(</span><span class="token punctuation">)</span>
+</code><button class="copy-code-button"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon lucide-copy"><rect x="8" y="8" width="14" height="14" rx="2" ry="2"></rect><path d="M4 16c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2"></path></svg></button><button class="run-code-button">Run</button></pre></div><div class="el-p"><p dir="auto"><img alt="scatter" src="https://www.w3schools.com/python/pandas/img_pandas_plot_scatter.png" referrerpolicy="no-referrer" style="width: 500px; max-width: 100%;"></p></div><div class="el-blockquote"><blockquote dir="auto">
+<p><strong>Remember:</strong>&nbsp;In the previous example, we learned that the correlation between "Duration" and "Calories" was&nbsp;<code>0.922721</code>, and we concluded with the fact that higher duration means more calories burned.</p>
+</blockquote></div></div></div><div class="el-h3 heading-wrapper"><h3 data-heading="Histogram" dir="auto" class="heading" id="Histogram"><div class="heading-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle"><path d="M3 8L12 17L21 8"></path></svg></div>Histogram</h3><div class="heading-children"><div class="el-p"><p dir="auto">Use the&nbsp;<code>kind</code>&nbsp;argument to specify that you want a histogram:</p></div><div class="el-p"><p dir="auto"><code>kind = 'hist'</code></p></div><div class="el-p"><p dir="auto">A histogram needs only one column.</p></div><div class="el-p"><p dir="auto">A histogram shows us the frequency of each interval, e.g. how many workouts lasted between 50 and 60 minutes?</p></div><div class="el-p"><p dir="auto">In the example below we will use the "Duration" column to create the histogram:</p></div><div class="el-pre has-run-code-button"><pre class="language-python" tabindex="0"><code data-line="0" class="language-python is-loaded">df<span class="token punctuation">[</span><span class="token string">"Duration"</span><span class="token punctuation">]</span><span class="token punctuation">.</span>plot<span class="token punctuation">(</span>kind <span class="token operator">=</span> <span class="token string">'hist'</span><span class="token punctuation">)</span>
+</code><button class="copy-code-button"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon lucide-copy"><rect x="8" y="8" width="14" height="14" rx="2" ry="2"></rect><path d="M4 16c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2"></path></svg></button><button class="run-code-button">Run</button></pre></div><div class="el-p"><p dir="auto"><img alt="histogram" src="https://www.w3schools.com/python/pandas/img_pandas_plot_hist.png" referrerpolicy="no-referrer" style="width: 500px; max-width: 100%;"></p></div><div class="el-blockquote"><blockquote dir="auto">
+<p><strong>Note:</strong>&nbsp;The histogram tells us that there were over 100 workouts that lasted between 50 and 60 minutes.</p>
+</blockquote></div><div class="el-hr"><hr></div></div></div></div></div></div></div><div class="el-h1 heading-wrapper"><h1 data-heading="References" dir="auto" class="heading" id="References">References</h1><div class="heading-children"><div class="el-ul"><ul>
+<li data-line="0" dir="auto"><a data-tooltip-position="top" aria-label="https://pandas.pydata.org/" rel="noopener nofollow" class="external-link" href="https://pandas.pydata.org/" target="_blank">pydata</a></li>
+<li data-line="1" dir="auto"><a data-tooltip-position="top" aria-label="https://www.w3schools.com/python/pandas/default.asp" rel="noopener nofollow" class="external-link" href="https://www.w3schools.com/python/pandas/default.asp" target="_blank">w3schools</a></li>
+</ul></div><div class="mod-footer mod-ui"></div></div></div></div></div></div><div class="sidebar-right sidebar"><div class="sidebar-handle"></div><div class="sidebar-topbar"><div class="topbar-content"></div><div class="clickable-icon sidebar-collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" class="svg-icon"><path d="M21 3H3C1.89543 3 1 3.89543 1 5V19C1 20.1046 1.89543 21 3 21H21C22.1046 21 23 20.1046 23 19V5C23 3.89543 22.1046 3 21 3Z"></path><path d="M10 4V20"></path><path d="M4 7H7"></path><path d="M4 10H7"></path><path d="M4 13H7"></path></svg></div></div><div class="sidebar-content"><div class="graph-view-wrapper"><div class="sidebar-section-header">Interactive Graph</div><div class="graph-view-placeholder">
+		<div class="graph-view-container">
+			<div class="graph-icon graph-expand" role="button" aria-label="Expand" data-tooltip-position="top"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon"><line x1="7" y1="17" x2="17" y2="7"></line><polyline points="7 7 17 7 17 17"></polyline></svg></div>
+			<canvas id="graph-canvas" class="hide" width="512px" height="512px"></canvas>
+		</div>
+		</div></div><div class="tree-container mod-root nav-folder tree-item outline-tree" data-depth="0"><div class="tree-header"><span class="sidebar-section-header">Table Of Contents</span><button class="clickable-icon collapse-tree-button" aria-label="Collapse All"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></svg></button></div><div class="tree-scroll-area tree-item-children nav-folder-children"><div class="tree-item mod-tree-folder nav-folder mod-collapsible is-collapsed" style="display: none;"></div><div class="tree-item" data-depth="1"><a class="tree-link" href="gab\estudos-trabalhos\programação\programming-studies\languages\python\libs\geo-pandas.html#Pandas e GeoPandas"><div class="tree-item-contents heading-link" heading-name="Pandas e GeoPandas"><span class="tree-item-title">Pandas e GeoPandas</span></div></a><div class="tree-item-children nav-folder-children"></div></div><div class="tree-item" data-depth="1"><a class="tree-link" href="gab\estudos-trabalhos\programação\programming-studies\languages\python\libs\geo-pandas.html#Introduction"><div class="tree-item-contents heading-link" heading-name="Introduction"><span class="tree-item-title">Introduction</span></div></a><div class="tree-item-children nav-folder-children"><div class="tree-item mod-collapsible" data-depth="2"><a class="tree-link" href="gab\estudos-trabalhos\programação\programming-studies\languages\python\libs\geo-pandas.html#Geting_Started"><div class="tree-item-contents heading-link" heading-name="Geting Started"><div class="collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle"><path d="M3 8L12 17L21 8"></path></svg></div><span class="tree-item-title">Geting Started</span></div></a><div class="tree-item-children nav-folder-children"><div class="tree-item" data-depth="3"><a class="tree-link" href="gab\estudos-trabalhos\programação\programming-studies\languages\python\libs\geo-pandas.html#Installation_of_Pandas"><div class="tree-item-contents heading-link" heading-name="Installation of Pandas"><span class="tree-item-title">Installation of Pandas</span></div></a><div class="tree-item-children nav-folder-children"></div></div><div class="tree-item" data-depth="3"><a class="tree-link" href="gab\estudos-trabalhos\programação\programming-studies\languages\python\libs\geo-pandas.html#Import_Pandas"><div class="tree-item-contents heading-link" heading-name="Import Pandas"><span class="tree-item-title">Import Pandas</span></div></a><div class="tree-item-children nav-folder-children"></div></div></div></div><div class="tree-item mod-collapsible" data-depth="2"><a class="tree-link" href="gab\estudos-trabalhos\programação\programming-studies\languages\python\libs\geo-pandas.html#Series"><div class="tree-item-contents heading-link" heading-name="Series"><div class="collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle"><path d="M3 8L12 17L21 8"></path></svg></div><span class="tree-item-title">Series</span></div></a><div class="tree-item-children nav-folder-children"><div class="tree-item" data-depth="3"><a class="tree-link" href="gab\estudos-trabalhos\programação\programming-studies\languages\python\libs\geo-pandas.html#Labels"><div class="tree-item-contents heading-link" heading-name="Labels"><span class="tree-item-title">Labels</span></div></a><div class="tree-item-children nav-folder-children"></div></div><div class="tree-item" data-depth="3"><a class="tree-link" href="gab\estudos-trabalhos\programação\programming-studies\languages\python\libs\geo-pandas.html#Key/Value_Objects_as_Series"><div class="tree-item-contents heading-link" heading-name="Key/Value Objects as Series"><span class="tree-item-title">Key/Value Objects as Series</span></div></a><div class="tree-item-children nav-folder-children"></div></div></div></div><div class="tree-item mod-collapsible" data-depth="2"><a class="tree-link" href="gab\estudos-trabalhos\programação\programming-studies\languages\python\libs\geo-pandas.html#DataFrames"><div class="tree-item-contents heading-link" heading-name="DataFrames"><div class="collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle"><path d="M3 8L12 17L21 8"></path></svg></div><span class="tree-item-title">DataFrames</span></div></a><div class="tree-item-children nav-folder-children"><div class="tree-item" data-depth="3"><a class="tree-link" href="gab\estudos-trabalhos\programação\programming-studies\languages\python\libs\geo-pandas.html#Indexing_and_selecting_data"><div class="tree-item-contents heading-link" heading-name="Indexing and selecting data"><span class="tree-item-title">Indexing and selecting data</span></div></a><div class="tree-item-children nav-folder-children"></div></div></div></div><div class="tree-item mod-collapsible" data-depth="2"><a class="tree-link" href="gab\estudos-trabalhos\programação\programming-studies\languages\python\libs\geo-pandas.html#Analyse_Data"><div class="tree-item-contents heading-link" heading-name="Analyse Data"><div class="collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle"><path d="M3 8L12 17L21 8"></path></svg></div><span class="tree-item-title">Analyse Data</span></div></a><div class="tree-item-children nav-folder-children"><div class="tree-item" data-depth="3"><a class="tree-link" href="gab\estudos-trabalhos\programação\programming-studies\languages\python\libs\geo-pandas.html#Read_`.csv`"><div class="tree-item-contents heading-link" heading-name="Read `.csv`"><span class="tree-item-title">Read <code>.csv</code></span></div></a><div class="tree-item-children nav-folder-children"></div></div><div class="tree-item mod-collapsible" data-depth="3"><a class="tree-link" href="gab\estudos-trabalhos\programação\programming-studies\languages\python\libs\geo-pandas.html#Read_`JSON`"><div class="tree-item-contents heading-link" heading-name="Read `JSON`"><div class="collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle"><path d="M3 8L12 17L21 8"></path></svg></div><span class="tree-item-title">Read <code>JSON</code></span></div></a><div class="tree-item-children nav-folder-children"><div class="tree-item" data-depth="4"><a class="tree-link" href="gab\estudos-trabalhos\programação\programming-studies\languages\python\libs\geo-pandas.html#Dictionary_as_JSON"><div class="tree-item-contents heading-link" heading-name="Dictionary as JSON"><span class="tree-item-title">Dictionary as JSON</span></div></a><div class="tree-item-children nav-folder-children"></div></div></div></div><div class="tree-item" data-depth="3"><a class="tree-link" href="gab\estudos-trabalhos\programação\programming-studies\languages\python\libs\geo-pandas.html#Viewing_the_Data"><div class="tree-item-contents heading-link" heading-name="Viewing the Data"><span class="tree-item-title">Viewing the Data</span></div></a><div class="tree-item-children nav-folder-children"></div></div></div></div></div></div><div class="tree-item" data-depth="1"><a class="tree-link" href="gab\estudos-trabalhos\programação\programming-studies\languages\python\libs\geo-pandas.html#Cleaning_Data"><div class="tree-item-contents heading-link" heading-name="Cleaning Data"><span class="tree-item-title">Cleaning Data</span></div></a><div class="tree-item-children nav-folder-children"><div class="tree-item mod-collapsible" data-depth="2"><a class="tree-link" href="gab\estudos-trabalhos\programação\programming-studies\languages\python\libs\geo-pandas.html#Clean_Empty_Cells"><div class="tree-item-contents heading-link" heading-name="Clean Empty Cells"><div class="collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle"><path d="M3 8L12 17L21 8"></path></svg></div><span class="tree-item-title">Clean Empty Cells</span></div></a><div class="tree-item-children nav-folder-children"><div class="tree-item" data-depth="3"><a class="tree-link" href="gab\estudos-trabalhos\programação\programming-studies\languages\python\libs\geo-pandas.html#Replacing_Empty_Values"><div class="tree-item-contents heading-link" heading-name="Replacing Empty Values"><span class="tree-item-title">Replacing Empty Values</span></div></a><div class="tree-item-children nav-folder-children"></div></div><div class="tree-item" data-depth="3"><a class="tree-link" href="gab\estudos-trabalhos\programação\programming-studies\languages\python\libs\geo-pandas.html#Remove_Wrong_Data"><div class="tree-item-contents heading-link" heading-name="Remove Wrong Data"><span class="tree-item-title">Remove Wrong Data</span></div></a><div class="tree-item-children nav-folder-children"></div></div></div></div><div class="tree-item" data-depth="2"><a class="tree-link" href="gab\estudos-trabalhos\programação\programming-studies\languages\python\libs\geo-pandas.html#Remove_Duplicates"><div class="tree-item-contents heading-link" heading-name="Remove Duplicates"><span class="tree-item-title">Remove Duplicates</span></div></a><div class="tree-item-children nav-folder-children"></div></div></div></div><div class="tree-item" data-depth="1"><a class="tree-link" href="gab\estudos-trabalhos\programação\programming-studies\languages\python\libs\geo-pandas.html#Advanced"><div class="tree-item-contents heading-link" heading-name="Advanced"><span class="tree-item-title">Advanced</span></div></a><div class="tree-item-children nav-folder-children"><div class="tree-item mod-collapsible" data-depth="2"><a class="tree-link" href="gab\estudos-trabalhos\programação\programming-studies\languages\python\libs\geo-pandas.html#Correlations"><div class="tree-item-contents heading-link" heading-name="Correlations"><div class="collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle"><path d="M3 8L12 17L21 8"></path></svg></div><span class="tree-item-title">Correlations</span></div></a><div class="tree-item-children nav-folder-children"><div class="tree-item" data-depth="3"><a class="tree-link" href="gab\estudos-trabalhos\programação\programming-studies\languages\python\libs\geo-pandas.html#Finding_Relationships"><div class="tree-item-contents heading-link" heading-name="Finding Relationships"><span class="tree-item-title">Finding Relationships</span></div></a><div class="tree-item-children nav-folder-children"></div></div><div class="tree-item" data-depth="3"><a class="tree-link" href="gab\estudos-trabalhos\programação\programming-studies\languages\python\libs\geo-pandas.html#Perfect_Correlation:"><div class="tree-item-contents heading-link" heading-name="Perfect Correlation:"><span class="tree-item-title">Perfect Correlation:</span></div></a><div class="tree-item-children nav-folder-children"></div></div><div class="tree-item" data-depth="3"><a class="tree-link" href="gab\estudos-trabalhos\programação\programming-studies\languages\python\libs\geo-pandas.html#Good_Correlation:"><div class="tree-item-contents heading-link" heading-name="Good Correlation:"><span class="tree-item-title">Good Correlation:</span></div></a><div class="tree-item-children nav-folder-children"></div></div><div class="tree-item" data-depth="3"><a class="tree-link" href="gab\estudos-trabalhos\programação\programming-studies\languages\python\libs\geo-pandas.html#Bad_Correlation:"><div class="tree-item-contents heading-link" heading-name="Bad Correlation:"><span class="tree-item-title">Bad Correlation:</span></div></a><div class="tree-item-children nav-folder-children"></div></div></div></div><div class="tree-item mod-collapsible" data-depth="2"><a class="tree-link" href="gab\estudos-trabalhos\programação\programming-studies\languages\python\libs\geo-pandas.html#Plotting"><div class="tree-item-contents heading-link" heading-name="Plotting"><div class="collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle"><path d="M3 8L12 17L21 8"></path></svg></div><span class="tree-item-title">Plotting</span></div></a><div class="tree-item-children nav-folder-children"><div class="tree-item" data-depth="3"><a class="tree-link" href="gab\estudos-trabalhos\programação\programming-studies\languages\python\libs\geo-pandas.html#Scatter_Plot"><div class="tree-item-contents heading-link" heading-name="Scatter Plot"><span class="tree-item-title">Scatter Plot</span></div></a><div class="tree-item-children nav-folder-children"></div></div><div class="tree-item" data-depth="3"><a class="tree-link" href="gab\estudos-trabalhos\programação\programming-studies\languages\python\libs\geo-pandas.html#Histogram"><div class="tree-item-contents heading-link" heading-name="Histogram"><span class="tree-item-title">Histogram</span></div></a><div class="tree-item-children nav-folder-children"></div></div></div></div></div></div><div class="tree-item" data-depth="1"><a class="tree-link" href="gab\estudos-trabalhos\programação\programming-studies\languages\python\libs\geo-pandas.html#References"><div class="tree-item-contents heading-link" heading-name="References"><span class="tree-item-title">References</span></div></a><div class="tree-item-children nav-folder-children"></div></div></div></div></div><script defer="">let rs = document.querySelector(".sidebar-right"); rs.classList.add("is-collapsed"); if (window.innerWidth > 768) rs.classList.remove("is-collapsed"); rs.style.setProperty("--sidebar-width", localStorage.getItem("sidebar-right-width"));</script></div></div></body></html>

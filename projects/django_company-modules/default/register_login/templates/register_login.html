@@ -1,0 +1,105 @@
+{% extends "base_layout.html" %}
+{% load crispy_forms_tags %}
+
+{% block title %}{% if not register %} Login{% else %}Register{% endif %}{% endblock %}
+
+{% block register_login %}
+
+{% comment %} TODO: move styles to css file {% endcomment %}
+<style>
+    .background-radial-gradient {
+        background-color: hsl(218, 41%, 15%);
+        background-image: radial-gradient(650px circle at 0% 0%,
+            hsl(218, 41%, 35%) 15%,
+            hsl(218, 41%, 30%) 35%,
+            hsl(218, 41%, 20%) 75%,
+            hsl(218, 41%, 19%) 80%,
+            transparent 100%),
+          radial-gradient(1250px circle at 100% 100%,
+            hsl(218, 41%, 45%) 15%,
+            hsl(218, 41%, 30%) 35%,
+            hsl(218, 41%, 20%) 75%,
+            hsl(218, 41%, 19%) 80%,
+            transparent 100%);
+      }
+    
+      #radius-shape-1 {
+        height: 220px;
+        width: 220px;
+        top: -60px;
+        left: -130px;
+        background: radial-gradient(#44006b, #ad1fff);
+        overflow: hidden;
+      }
+    
+      #radius-shape-2 {
+        border-radius: 38% 62% 63% 37% / 70% 33% 67% 30%;
+        bottom: -60px;
+        right: -110px;
+        width: 300px;
+        height: 300px;
+        background: radial-gradient(#44006b, #ad1fff);
+        overflow: hidden;
+      }
+    
+      .bg-glass {
+        background-color: hsla(0, 0%, 100%, 0.9) !important;
+        backdrop-filter: saturate(200%) blur(25px);
+      }
+</style>
+
+{% comment %} TODO: reduce some of the nestings {% endcomment %}
+<div id="layoutAuthentication" class="background-radial-gradient">
+    <div id="layoutAuthentication_content">
+        <main>
+            <div class="container">
+                <div class="row justify-content-center">
+                    <div class="col-lg-5">
+                        <div class="card shadow-lg border-0 rounded-lg mt-5">
+                            <div class="card-header">
+                                <h3 class="text-center font-weight-light my-4">{% if not register %}Login{% else %}Create Account{% endif %}</h3>
+                            </div>
+                            <div class="card-body">
+                                {% if not register %}
+                                <form method="post" action="{% url 'register_login:login' %}">
+                                    {% crispy form %}
+                                </form>
+                                {% else %}
+                                <form method="post" action="{% url 'register_login:register' %}">
+                                    {% crispy form %}
+                                </form>
+                                {% endif %}
+                            </div>
+                            <div class="card-footer text-center py-3">
+                                <div class="small">
+                                {% if not register %}
+                                    <a href="{% url "register_login:register" %}">Need an account? Sign up!</a>
+                                {% else %}
+                                    <a href="{% url "register_login:login" %}">Have an account? Go to login</a>
+                                {% endif %}
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+    <div id="layoutAuthentication_footer">
+        <footer class="py-4 bg-light mt-auto">
+            <div class="container-fluid px-4">
+                <div class="d-flex align-items-center justify-content-between small">
+                    <div class="text-muted">Copyright &copy; Your Website 2024</div>
+                    <div>
+                        <a href="#">Privacy Policy</a>
+                        &middot;
+                        <a href="#">Terms &amp; Conditions</a>
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </div>
+</div>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
+{% comment %} <script src="js/scripts.js"></script> {% endcomment %}
+{% endblock %}

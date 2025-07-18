@@ -1,0 +1,482 @@
+Redes Privativas | Turma 1 
+sexta, 16/05/2025
+
+0:01 - Conference Room (Fiap Convidado 112) - Speaker 1 
+o ambiente aqui, então eu tô resolvendo, eu tô achando que eu tô com problema com o meu modem de internet mesmo, então eu tive várias pequenas paradas e hoje eu já dei aula, dei uma palestra para a Confederação Nacional da Indústria e eu tive que ficar ali no fio do bigode, literalmente, para poder fazer a coisa andar, então eu tive que fazer algumas coisinhas aí em paralelo para poder as coisas fazerem funcionar, só que deu uma parada logo da aula. Então eu tava recuperando o ambiente aqui. Mas vamos lá, gente. Deixou? Compartilhar aqui, mais uma vez aí. Boa tarde para vocês. Prazer estar novamente com vocês aí em aula. E vamos lá, né? Hoje é dia de cestar, né? Cestando com a aula. Sabe aquele cara que fala o sexta-feira meia-dia, então? É sexta-feira, cinco da tarde. Para mais uma atividade. Para tudo, né?
+
+0:59 - Conference Room (Fiap Convidado 112) - Speaker 2 
+Quem fez, fez.
+
+1:00 - Conference Room (Fiap Convidado 112) - Speaker 1 
+Quem não fez, não vai. A gente faz. A gente faz. Aqui não tem dessa, não.
+
+1:07 - Clodoaldo Callogero 
+Não tem hora para terminar.
+
+1:10 - Conference Room (Fiap Convidado 112) - Speaker 1 
+Tem hora para terminar, mas tem hora para começar também, então vamos lá. Pessoal, então é o seguinte. A gente tem, vindo aí nos últimos dias, falando sobre redes, comunicação de dados. A gente falou ontem, de uma forma bastante abrangente, sobre cibersegurança. Só a título de curiosidade, eu dei uma palestra hoje para a Confederação Nacional da Indústria e para o Sistema S, SESI e tudo mais, uma série de lideranças. Basicamente, o conteúdo foi o da aula que vocês tiveram ontem, com alguns ajustes. É claro, isso é uma apresentação que eu tenho aqui na empresa. A diferença é que eu mostrei o laboratório, quando a gente soltou o ataque em tempo real, o pessoal ficou meio assustado lá, quando a gente ia fazendo as coisas, e as pessoas falavam, pô, se acontecesse na minha empresa, o bicho ia pegar. Então, foi uma atividade bem bacana que aconteceu hoje, na semana de Conscientes, Ação e Segurança da Informação, do CNICS, foi muito legal ter participado, de ter fechado a semana, né?
+
+2:16 - Conference Room (Fiap Convidado 112) - Speaker 1 
+Foi a última atividade dessa semana.
+
+2:19 - Conference Room (Fiap Convidado 112) - Speaker 1 
+E hoje, a gente vai entrar um pouquinho no contexto de segurança, mas mais do que falar sobre segurança, a gente vai falar sobre a importância de você separar suas redes em segmentos ou partes menores. Vamos falar sobre controle de acesso, vamos falar um pouco sobre VLAN, vamos falar sobre ACL, vamos falar sobre autenticação, autorização, accounting, que é o triple A Vamos ver um exemplo aí, vamos falar na parte de VLAN, vamos ver como criar VLAN. A gente vai ver de duas formas. Primeiro, eu vou mostrar um conteúdo que a gente tem aqui na empresa, na POS, que é um conteúdo que ensina na prática a construir a VLAN lá no Packet Tracer. Depois, eu vou mostrar uma expansão disso, que é uma expansão da VLAN, mas com a utilização do protocolo spanning tree para garantir alta disponibilidade, redundância. E a terceira parte, já mais lá no final, a gente vai criar as VLANs no Linux. Como é possível criar VLAN no Linux? Deixa eu adicionar o Diego aqui. Então, a sexta-feira é sexta-feira prática. Então, vamos em frente aí. Eu vou começar o Diego de Andrade, eu acho que ele tá com algum problema para acessar. Talvez seja legal, se alguém tiver o contato dele aí, verificar se ele tá com problema de rede, porque eu já pedi para adicionar ele, mas ele ainda não entrou aqui na sala, tá? Aí ó, vamos de novo, vamos ver se agora ele entra. Ele tá no lobby. Vamos admitir de novo. Tá, o Diego, Gabriel. O Diego sempre tá ficando pelo caminho, então se alguém tiver do Diego de Andrade. Fernandes, por favor, peça para ele ver se de repente ele pode reiniciar a conexão dele, alguma coisa assim, tá? Dennis também está chegando aqui. Vamos lá, gente, vamos falar um pouquinho sobre o assunto de hoje, tá? Eu não preciso mais me apresentar, mas está aqui, né? Principalmente o LinkedIn, se alguém quiser pedir conexão, Eu aceito, eu vi que algumas pessoas já pediram. É legal ter bons contatos no LinkedIn. O que a gente vai ver hoje? Novamente, gosto de dividir a aula em duas partes. Primeira parte, vou falar um pouquinho sobre o que é segmentação de rede, os modelos de controle de acesso. Controle de acesso em geral. Aplicações dessa segmentação e controle de acesso em redes privativas. Os exemplos que vão mostrar, por exemplo, a rede 5G lá fora, que é a rede pública, e para dentro, quando eu coloco 5G em uma empresa, por exemplo. Vamos falar um pouquinho sobre as várias tecnologias envolvidas na segmentação e controle de acesso. Vamos falar um pouquinho de Switch L2, ACL, Radius, que é um servidor de autenticação. Vamos falar um pouquinho sobre VLAN, e outras coisas assim. Depois a gente vai falar um pouquinho sobre arquitetura em redes privativas, ou seja, como é que a gente monta esse quebra-cabeça? Os tipos de segmentação que são possíveis lá dentro, os modelos de controle de acesso, as boas práticas, e lá no final, eu nem coloquei aqui, a gente tem algumas atividades práticas para poder ajudar na implementação. Novamente, tem o link dos materiais de apoio. Deixa eu ver se eu consigo pegar esse link. Deixa eu ver se eu pego por aqui. Se eu conseguir pegar por aqui, eu já coloco aqui.
+
+6:14 - Palestrante Não Identificado 
+Professor, aproveitando, enquanto você faz isso, a aula de ontem não ficou, a gente não consegue acessar ela, tá bloqueada ainda.
+
+6:24 - Conference Room (Fiap Convidado 112) - Speaker 1 
+Aí eu vou pedir para, não sei se a Anny tá aqui eu mandei uma mensagem para ela. Tá, eu vou reforçar, eu vou reforçar. É legal que vocês, de repente, peguem aí o final de semana para poder assistir, foi muita informação, né? Ó, tá o conteúdo aí da parte de materiais de apoio, coloquei no chat aqui, tá? Mas vamos lá. Vai aprender hoje, gente. A gente vai ver como que a primativas especificamente, ela ajuda a promover desempenho, permite que eu entre com novas soluções, que eu implemente um maior nível de segurança. Isso é importante. Eu sempre vou puxar a sardinha para segurança. Vou falar um pouquinho sobre quais setores que se beneficiam dessa segmentação de redes primativas, principalmente quando a gente fala de 5G. Como é que a indústria está vendo isso? Aliás, hoje teve uma pergunta muito interessante sobre essa questão da inteligência artificial sendo usada, isso no evento da Confederação Nacional da Indústria, de como a IA está sendo utilizada pelos hackers, pelos atacantes, junto com um potencial acesso à computação quântica para atacar infraestruturas críticas. Água, esgoto, petróleo e gás, energia, aeroportos, aeroportos, oleodutos, ou seja, será que tá rolando? Aí eu dei um exemplo, tá? A gente não tem o ChatGPT para usar como ferramenta de IA? Pois é, o ChatGPT, se você tentar criar lá um malware, um vírus, alguma coisa assim, ele dá uma chiada, dá uma reclamada. Aí o que os hackers fizeram? Eles fizeram um fork, fizeram uma versão uma alternativa chamada o Hacker GPT, ou Pentest GPT. Gente, você cria muita coisa lá muito rápido. Então, o campo do atacante está muito fértil. E quando a gente fala de redes privativas 5G, principalmente, a gente fala na possibilidade de ter a implementação do protocolo IPv6. Ou seja, todo e qualquer dispositivo passa a ter um IP válido. No mundo. Então, o quanto isso expande a superfície de ataque? Mesmo considerando que o IPv6 é mais seguro do que o IPv4, a gente tem que considerar que a gente está acrescentando bilhões de dispositivos na internet pública ao mesmo tempo. Por isso que é importante o conceito de rede privativa, porque eu consigo criar algum nível de isolamento. Eu crio silos. Mesmo que eu esteja conectado à internet pública, eu crio meus silos, mas cada um com um IP válido, ou seja, eu estou dentro da indústria, eu estou numa planta industrial. Se eu sair dela e levar um sensor, um atuador, um dispositivo de IoT lá para o meio do campo, para coletar um dado, ele continua falando com essa rede. Então, veja como a segurança é importante, porque eu preciso isolar esse cara, mesmo sabendo que ele vai se conectar na internet pública. Eu tenho que, de alguma forma, criar níveis de isolamento. Esse é o desafio, tá? Mas vamos lá. A gente vai aprender isso hoje. E também quais as tecnologias que promovem a melhor segmentação das redes, tá? Vamos lá. Então, eu vou falar um pouquinho sobre o que é segmentação de rede, controle de acesso, aplicações e redes privativas, privativas e tecnologias envolvidas, tá? Então vou começar aí com uma introdução, tá? Quando a gente fala de redes privativas, eu posso citar que governo federal, na verdade o governo do Brasil, tanto federal, estadual, municipal, tá com um projeto de criar uma rede privativa de governo. E o que é isso? Os diversos níveis de governo, eles têm cerca de umas 500 mil pessoas que de alguma forma têm algum relacionamento, ou seja, elas precisam se conversar de alguma forma. Então, o governo federal tem lá os ministérios, tem as autarquias, tem as agências e esses caras precisam se falar. Ao mesmo tempo, a Justiça judicial precisa falar com a justiça estadual.
+
+11:12 - Conference Room (Fiap Convidado 112) - Speaker 5 
+Então tem esse relacionamento.
+
+11:14 - Conference Room (Fiap Convidado 112) - Speaker 1 
+O presidente precisa falar com os governadores, os governadores falam com seus secretários e assim por diante. Então existe uma necessidade de proteção dessa informação. Então uma rede privativa governamental cria um item de segurança para que essa conectividade possa ser segura, por exemplo, E eu, especificamente, gostaria muito que a minha solução de comunicação fosse a escolhida para entrar nessa rede privativa. Então, a gente está conversando para poder colocar a solução de comunicação criptografada como item obrigatório dentro dessa rede privativa. Tomara que seja a minha tecnologia, porque ela é nacional, mas pode ser outra. Agora, trazendo para esse slide que está na tela, quando eu falo de setores como indústria 4.0, que o Brasil tem já há um tempo, agronegócio, que o Brasil é líder disparado mundial, saúde que detém dados sensíveis, logística que garante que os produtos e serviços sejam entregues e disponibilizados no lugar correto, educação que lida com informação sensível de jovens e adultos. A gente tem que ter conectividade para cada um alto desempenho. E a gente tem que entender que hoje existe, de certa forma, uma segmentação muito rígida entre a rede pública e a rede privada. Com a tecnologia 5G, e até já com o 4G, a gente consegue dar uma integrada nessas coisas. Então eu consigo fazer com que meio que esses dois desenhos se fundam Daqui a pouco eu vou mostrar um slide com eles fundidos. Aliás, eu peguei esse desenho do Instituto Eldorado, que é de Campinas, para quem está em Campinas, porque o Instituto Eldorado é líder no desenvolvimento 5G no Brasil. Então, veja. Nesse caso, quando eu vou fundir as duas coisas, eu tenho que ter segmentação e controle de acesso como pilares fundamentais para garantir que isso tudo vai funcionar, mas que haja isolamento necessário para eu poder saber o que é privado e o que é público. Vou falar agora de alguns conceitos fundamentais. Primeiro, o que é segmentação de rede? A gente pode dividir a rede de forma lógica, como é o caso das VLANs. De forma física eu posso segmentar, olha, o switch tal é do departamento tal, o switch tal desenvolvimento tal e eles não se encontram e não se misturam. Quando eu faço a divisão da rede eu consigo fazer um negócio interessante que é reduzir o chamado domínio de broadcast. O que que é isso? Imagina que eu tenho esse desenho que tá aqui, tá? E esse desenho é uma rede só, uma rede sem muita separação. Então todas as entre todos os nós da rede. Pode ser que algum nó, por exemplo, desse primeiro switch fique sobrecarregado. E quando eu separo em VLANs, por exemplo, olha que interessante, uma VLAN não precisa estar necessariamente ligada ao mesmo switch aqui. Eu posso ter uma VLAN com máquinas que estão separadas fisicamente pela organização, mas que elas tenham regras que permitam o tráfego entre elas. E aí, quando eu faço isso, eu reduzo o domínio de broadcast. Ou seja, quem é da VLAN 10 só vai falar com a VLAN 10, por exemplo. Quem é da VLAN 20 só vai falar com a VLAN 20. Isso reduz esse domínio de broadcast, isso melhora a performance da rede. E tem uma coisa, facilita o gerenciamento e aumenta a segurança. Porque se eu sei quem são os itens de cada VLAN, e cada VLAN tem um nível de acesso específico qual os ativos de rede, eu consigo estabelecer políticas e controles de segurança mais específicos e customizados. Porque veja, se tudo para mim é crítico, então nada é crítico. Eu tenho que saber o que é mais crítico na minha rede, estabelecer critérios de segurança mais críticos para esses ativos, tá? Outra coisa importante, o controle de acesso, ele, em linhas gerais, é quem define quem pode acessar o quê e de que forma, tá? Então imagina o seguinte, imagina que aqui na VLAN 10 essa máquina de baixo aqui seja um servidor cujo o conteúdo só possa ser acessado por quem tá na VLAN 10. Então quem tá na VLAN 20 pode até ter uma conexão física ao mesmo switch, mas não vai acessar por uma questão lógica, O controle de acesso não vai deixar com que quem é de fora da minha AVLAN acesse. O controle de acesso pode ser baseado em uma série de questões. Ele pode ser baseado em endereço IP, em MAC address, que são os endereços físicos das placas de rede. Em identidade, a gente vai falar um pouquinho sobre o RADIUS. Ou seja, imagina que eu tenho lá um diretório ativo, um ativo direto. Que tem a minha conta de usuário, minhas permissões e as minhas regras de acesso. Então, quando eu logo na rede, ele já me entrega tudo isso. Quais são as minhas pastas compartilhadas, quais são os arquivos aos quais eu tenho acesso, acesso somente a leitura, leitura escrita, alteração e tudo isso. Eu posso ter controle de acesso baseado no tempo, por exemplo. Eu posso da autenticação e acesso a uma rede com o tempo, ou seja, eu posso ter um Active Directory com a minha conta de usuário configurada, onde eu só posso alugar na rede de segunda a sexta-feira, das oito da manhã até as seis da tarde. Isso é um controle de acesso importante. Eu posso ter mecanismos de acesso como as listas de controle de acesso, as ACLs, eu posso ter autenticação em rede sem fio, o 802.1X, eu posso ter mecanismo como firewall permitindo ou impedindo certos acessos. Então, vamos falar um pouquinho sobre os tipos de controle de acesso de uma forma um pouco mais detalhada. Primeiro, vamos falar sobre controle de acesso por ACL. E um exemplo legal aqui. Eu tenho aqui uma rede, um roteador, três switches e seis computadores, na verdade, quatro computadores e dois servidores, onde eu tenho três PLANs. Uma do marketing, ou seja, a rede do marketing, eu tenho a rede da contabilidade e eu tenho a chamada server farm, que é o meu segmento de servidores. Então, olha um exemplo importante de controle de acesso por ACL. Eu posso escrever uma ACL aqui no roteador ou aqui no no switch para bloquear o acesso da rede de marketing ao servidor B. Por exemplo, aqui pode ser que o pessoal de marketing não precise acessar, por exemplo, os documentos da engenharia que estão no servidor B. Ou seja, documentos da contabilidade. De repente, a contabilidade acessa, mas o marketing não. Então, eu posso ter um exemplo como esse. Uma CL que bloqueia o acesso ou libera o acesso para um outro segmento de rede. Então deu para entender aqui o conceito do bloqueio por ACL? Então eu escrevo uma ACL, depois eu vou mostrar o exemplo de que é uma escrita de ACL, a gente vai ver na prática isso. Vai ser uma lista de controle de acesso dizendo, você pode isso, você não pode aquilo. Isso vai direto no switch ou no firewall, ou no roteador firewall. Beleza, esse é um tipo de controle de acesso. Tem um outro que eu gosto que é o controle de acesso por VLAN. Então imagina que eu tenho um ambiente como isso, aí já é um ambiente legal, mas complexo. Eu tenho aqui várias interfaces lá no meu switch, por exemplo, ele tem uma interface de gerenciamento que é VLAN10. O VLAN10 está no gerenciamento, tem alguém que está acessando lá, aqui o verdinho, que acessa ele para fazer o gerenciamento. Eu tenho uma VLAN de VPN, que está aqui, 20. Eu imagino o seguinte. Imagina que esses servidores estão lá na nuvem, então eu preciso de VPN para acessar esses caras. Então eu isolo, crio uma VPN para eles, crio uma VLAN para eles. Olha, eu tenho uma outra VLAN da minha chamada ClearNetLAN. Qual que é a 30 aqui? Vamos ver. Essa é a SID. Ela está aqui. Está aqui na minha rede sem fio. Eu tenho uma rede para convidados, VLAN 40. Está aqui também no sem fio, 20, 30 e 40. Eu tenho câmeras de segurança na VLAN 50, aqui. E olha que interessante o exemplo das câmeras de segurança. Imagina que eu tenho uma fábrica, as câmeras de segurança vão estar espalhadas entre escritório, a parte do portão de entrada, estacionamento, e fisicamente isso está conectado a vários suítes roteadores no caminho, só que logicamente todos eles fazem parte de um mesmo segmento. Eu tenho uma área chamada DMZ, ou zona desmilitarizada. O que é a minha zona desmilitarizada? É a parte que permite que eu tenha, por exemplo, meu servidor web, um site ou uma uma TV, alguma coisa que tenha um controle de segurança até um pouco mais fraco. Eu posso ter aqui, para quem gosta, um Avelã para consoles de games, porque essa Avelã eu vou precisar ter performance. Eu preciso ter largura de banda para rodar jogo aqui. E eu tenho uma Avelã para telefones IPs, por exemplo, para VoIP fones. Por que é importante ter uma Avelã para VoIP? Porque lá eu consigo aplicar os conceitos de QoS, que é o Quality of Service, a telefonia vai ter prioridade sobre outros tipos de serviços. Isso tudo aqui, nesse caso, é configurado aqui no switch. Então, a gente abre o console do switch e vai criando as VLANs. Então, já que eu estou falando disso, vamos ver um exemplo? Deixa eu só compartilhar com áudio de novo, que o próximo slide tem áudio. Eu vou mostrar para vocês um conteúdo que é aqui da empresa, que é uma pequena aula que a gente usa na pós-graduação, que explica como criar conteúdo de acesso por VLAN. Então, está aqui. Eu vou começar, vocês me falem se o áudio aparece. Essa não foi uma aula que eu gravei, foi uma aula que o Gabriel, que é um dos nossos professores, gravou. O cara é sensacional. Então, eu vou startar aqui.
+
+22:42 - Conference Room (Fiap Convidado 112) - Speaker 2 
+Bem-vindos à nossa aula Prática Parta. Nessa aula, podemos explorar a criação de uma rede segmentada com uma zona desmilitarizada, também chamada de DMZ, e um firewall. A segmentação de rede ocorre quando dividimos uma rede maior em subredes menores para melhorar o desempenho e a segurança. Isso ajuda a reduzir os domínios de colisão, onde os dados podem colidir quando enviados ao mesmo tempo, e os domínios de broadcast, onde uma mensagem enviada aplicadas a todos os dispositivos na subrede. Ao segmentar a rede, você limita a propagação do tráfego desnecessário, melhorando a eficiência. Além disso, a segmentação na segurança permite isolar áreas críticas de rede, dificultando a...
+
+23:25 - Conference Room (Fiap Convidado 112) - Speaker 1 
+Opa, pera aí que tem gente chegando, por isso que parou, tá, pessoal? Deixa eu só admitir aqui.
+
+23:32 - Conference Room (Fiap Convidado 112) - Speaker 2 
+...excesso de invasores a outras partes em casos de ataque e facilitando a aplicação de políticas de segurança para cada A DNZ, ou Zona Desmentalizada, é uma subrede física ou lógica que pode adicionar uma camada extra de segurança entre a rede interna e a internet. Nela são colocados os servidores que precisam ser acessados externamente, como servidores web e de e-mail. É importante porque, ao isolar esses servidores da rede interna, reduz o risco de ataques cibernéticos. Se um invasor comprometer o servidor na DNZ, ele ainda e enfrenta barreiras adicionais para acessar a rede interna, protegendo assim dados sensíveis e sistemas críticos. A configuração básica de um firewall envolve definir regras para permitir ou bloquear tráfego de rede baseado em critérios como IP, porta e protocolo. Esse processo é conhecido como filtragem de pacotes. O firewall analisa cada pacote de dados que entra ou sai da rede e decide, com base nas regras configuradas, se ele deve ser ou bloqueado. Por exemplo, você pode configurar o firewall para permitir apenas tráfico HTTP e HTTPS para um servidor web, bloqueando todas as outras conexões. Essa filtragem ajuda a proteger a rede contra acessos não autorizados e ataques cibernéticos, garantindo que apenas o tráfico legítimo passe pelo firewall. Na relativa, hoje nós vamos configurar o firewall, que é Franciscoewall da Cisco, chamado a gente vem aqui em Network Devices, Security e escolhe o 55006. Essa configuração de rede já está configurada para essa aula, mas isso é uma coisa que já vimos nas aulas passadas, então provavelmente vocês já sabem fazer. A gente só tem dois PCs na zona externa switches. Aqui temos a zona interna que ela é segura, a zona externa que ela é insegura e a zona DMZ que é parcialmente segura porque ela permite tráfico externo também. Agora vamos iniciar a configuração do Firewall. Vamos ir em conexões e vamos conectar a zona segura no Firewall na interface 1.1. Beleza. Então vamos entrar em CLI ele vai estar aqui como se escoasse. Vamos primeiro fazer as configurações iniciais dele. Quando a gente entra no modo privilegiado, ele pede um password, que é branco, é só você apertar enter. Agora, quando você entra na configuração do terminal, o que vamos fazer nesse momento? Vamos utilizar o password para não ficar em branco. Então, vamos colocar Password. Vamos colocar, por exemplo, lab4 jogodavelha. Legal. Lab4 jogodavelha. Já colocamos uma senha para quando formos entrar no modo privilegiado novamente.
+
+26:48 - Conference Room (Fiap Convidado 112) - Speaker 1 
+Vamos criar um username usuário.
+
+26:53 - Conference Room (Fiap Convidado 112) - Speaker 2 
+username pode ser lab por exemplo password lab 4 jogo da velha beleza agora vamos setar vamos configurar a horário desse cisco então vamos lá clock set agora som 19 e 26. Quando a gente clica, ele fala como tem que estar. Horas, minutos, segundos e current time. Então, são 19 e 27. Zero, zero. Hoje é 12 de junho de 2024. Vamos colocar o ip de 9.2.168.100.1 ele está na rede 100 o address 1 ainda não foi utilizado a máscara de rede 255.255.255.0 e o que vamos fazer é nomear essa interface Agora, o Security Level da Sales Insight são, por default, 100. 1Franciscos níveis de segurança do CFranciscoASA, desses firewalls da Cisco, são valores numéricos atribuídos para indicar o nível de confiança em cada interface. Esses valores variam de 0 a 100, sendo 0 o nível mais baixo, que é o menos confiável, e 100 o nível mais alto, por isso que é interno ao nível 100. Então, a interna recebe um nível de segurança 100, a externa, outside, recebe um nível de segurança 0, e a MZ, geralmente, um valor intermediário, em torno de 50. Agora a gente ataca um security level 100, mas vamos colocar novamente, security level 100, e vamos dar um Vamos ativar a rede. Ela já aparece aqui que está ativa.
+
+29:42 - Palestrante Não Identificado 
+Muito bem.
+
+29:43 - Conference Room (Fiap Convidado 112) - Speaker 2 
+Vamos fazer a mesma coisa para a interface externa, em segura. Vamos usar o exit interface giga 1 barra 2. Vamos conectar a interface a 1 barra 2. Então vamos colocar o IP, nesse caso estamos na rede 20.20.20.0 vai ser 20.20.20.1.255.255.255.0 o nome dessa rede de Security Level, que é 0. Mas vamos colocar novamente Security Level 0. E ela já está ativa também. Agora vamos configurar a DMZ. Vamos conectar. Da 1.3.
+
+30:57 - Palestrante Não Identificado 
+Muito bem.
+
+30:59 - Conference Room (Fiap Convidado 112) - Speaker 2 
+Agora vamos no root, no firewall, vamos sair dessa interface e entrar na interface giga 1 barra 3.
+
+31:13 - Palestrante Não Identificado 
+Muito bem.
+
+31:14 - Conference Room (Fiap Convidado 112) - Speaker 2 
+Vamos colocar um IP. Nesse caso a rede é barra 28, então tem temos IP address 10.10.10.1.255.255.255.240 devido a rede C barra 28. Bem, name if pnz. Ela está configurada como 0 por default, a gente vai configurar ela para 50. Então, security level 50. No shutdown e ela já está ativa configuramos já todas as interfaces agora precisamos salvar essas configurações dentro do firewall vamos sair duas vezes e pra salvar a gente escreve write memory e pronto, já salvou as configurações que acabamos de fazer conseguimos verificar, a gente escreve show start, ele vai mostrar todas as configurações que fizemos. Então, password está enabled, encriptado, temos a interface 1.1, que é essa primeira, inside security level 100, 1.9.2, 1.6.8.100, barra 1. A 1.2, que é a outside, a externa, segura 20.20.20.1 e a DNZ que é 1.3, Security Level 50 e o IP 10.10.10.1 com a máscara de barra 28. Assim concluímos a nossa quarta aula prática. Neste exercício, configuramos uma rede segmentada com uma DNZ e um farol, aprendemos sobre a importância da DMZ em adicionar uma camada extra de segurança, a segmentação de rede e seus benefícios para o desempenho e a proteção, e a configuração básica de um farol para filtragem de pacotes. Esses conceitos são fundamentais para a criação de redes seguras e eficientes. Continue praticando e explorando esses elementos para fortalecer suas habilidades em redes de segurança.
+
+33:44 - Conference Room (Fiap Convidado 112) - Speaker 1 
+Vou parar aqui, gente. Então, viram que dá um segmentação. Pode falar, Clodoaldo.
+
+33:50 - Palestrante Não Identificado 
+Professor, será que você podia subir o vídeo separado no OneDrive? Porque como ficou pequeno aqui e agora você deu o curso do Tracer pra gente. Exatamente, por isso que eu trouxe esse conteúdo.
+
+34:02 - Conference Room (Fiap Convidado 112) - Speaker 1 
+É que ele tá grande, eu vou ver se eu consigo reduzir. Esse vídeo tem quase um giga. Eu vejo se eu consigo subir lá e eu aviso pra vocês.
+
+34:14 - Palestrante Não Identificado 
+Legal, aí não se repete isso no software.
+
+34:17 - Conference Room (Fiap Convidado 112) - Speaker 2 
+Não, beleza.
+
+34:18 - Conference Room (Fiap Convidado 112) - Speaker 1 
+E justamente por isso que eu trouxe. Agora vocês estão vendo como tem valor fazer o conteúdo lá do NetAcademy? Esse tipo de rede, você vai ver, acho que no terceiro curso que tem lá, que é a parte de endereçamento e segmentação, é justamente a configuração desses dispositivos que você tem que fazer. Você ia falar alguma coisa, Clodoaldo?
+
+34:41 - Clodoaldo Callogero 
+Não, A cada palavra sua eu venho um tsunami, porque eu passei o dia inteiro fazendo o curso básico, que é duas horas a previsão só.
+
+34:52 - Conference Room (Fiap Convidado 112) - Speaker 1 
+Ah, mas a gente acaba se empolgando fazendo mais coisa. Calma que vai ser mais coisa. O próximo slide é uma outra situação, porque nessa primeira parte, se vocês perceberem, eu me preocupei mais em trazer um conteúdo que fala da segmentação, ou seja, cada parte e o que que eu faço para integrar as partes, mas manter a autonomia e um certo nível de isolamento entre elas. No próximo slide aí eu vou falar sobre VLAN mesmo, tá? Que é esse cara aqui, tá? Então aqui, vejam o seguinte, aí eu já tenho uma rede um pouco mais complexa, tá? Veja que a divisão das VLANs ela tá pelas cores e não pelos switches. Então, ó, o que é verde Então tem um computador em cada segmento físico da rede, o que é azul em outra e o que é aqui, parece azeitona essa cor, tá em outra. Então aqui a gente vai ver o conceito da VLAN e um outro conceito que é o de alta disponibilidade. Olha o núcleo aqui formando esse triângulo, né? Aqui a gente vai falar sobre um protocolo chamado Spanning Tree. O Spanning Tree ele cria alta disponibilidade rotas de reconexão. Então imagina que esse computador aqui, deixa eu pegar o apontador a laser, esse computador aqui ele precisa falar com esse computador aqui. Então o normal, a rota menos custosa é essa aqui. Mas se eu perder essa rota, o Spanning Tree identifica isso e cria esta rota alternativa. E aí eu não perco comunicação. Então, esse conceito do Spanning Tree é super importante também. Então, a gente está falando aqui de VLAN por cores. A gente está falando dos trunks que interligam fisicamente, permitem criar as VLANs e fazê-las funcionarem. E a gente vai ver uma situação interessante que, vejam, tem um hacker aqui em cima. Como que a gente consegue impedir que esse hacker espete um computador na rede da empresa? Imagina que o cara malicioso entrou na empresa, ele sentou lá numa mesa, viu que tem uma porta de rede e tal, ele saca um cabinho e espeta o cabinho lá no computador dele e na porta de rede. Como é que eu evito que esse cara tenha acesso à minha rede? Então vamos ver aqui esse conteúdo, também é um conteúdo que o Gabriel que gravou, então ele que vai descrever aí para vocês o funcionamento.
+
+37:24 - Conference Room (Fiap Convidado 112) - Speaker 2 
+Olá, bem-vindos a mais uma aula prática. Nesse laboratório sobre o SPT, que é o Spanning Tree Protocol, que ele evita o looping entre os switches. Falaremos sobre espelhamento de portas e segurança de portas, tanto as portas utilizadas quanto as portas não utilizadas. Explicando um pouquinho essa topologia que estAniela de vocês, bom, temos três VLANs aAnintão temAniLAN 10, a VLAN 20 e a VLAni Avelan Ani 192.168.10.0.24, que é azul. Avelan 20 é a Avelan 20.0, que é verde. E a Avelan 30 é a Avelan 30.0, que é beige. Considerando as interfaces. Bom, temos duas interfaces gigabits em cada switch. Elas estão ligadas em modo trunk, que é o modo que conecta os switches. E as interfaces ligadas às VLANs, a 0.1 está a VLAN 10, a 0.2 está a VLAN 20 e a 0.3 está a VLAN 30, isso nos três switches, elas estão com configurações iguais. Então, se a gente pega o switch, temos a switch 0.1 com a VLAN 10, 0.2 com a VLAN 20 e a 0.3 com a VLAN 30. As duas gigabits lá embaixo estão up, que elas estão ligadas aos switches. Agora eu irei excluir esse switch e fazer a configuração dele de todos os itens que iremos fazer nesse laboratório. Os outros dois switches estão configurados exatamente da mesma maneira, então é só repetir a configuração desse switch para os outros dois. Vamos aqui, excluímos. Em relação aos outros PCs, eles estão com os itens aqui embaixo, bem simplesinho, só montar o como já fizemos em outros laboratórios anteriores. Bom, vamos colocar um switch, vamos vir aqui em switches 2960, colocar um switch aqui e vamos conectar ele, colocar a conexão aqui de cross-over. Na Gigabit 01 vamos ligar a Gigabit 01 do outro switch e na Gigabit 02 vamos ligar a do outro switch. Muito bem. Vou fazer a ligação entre os PCs. Então, no PC que tem a VLAN 10, vamos ligar no 0 barra 1, na interface 0 barra 1. No PC que tem a VLAN 20, vamos ligar na 0 barra 2. E no PC que tem a VLAN 30, vamos ligar na interface 0 barra 3.
+
+40:13 - Palestrante Não Identificado 
+Muito bem.
+
+40:14 - Conference Room (Fiap Convidado 112) - Speaker 2 
+Já fizemos as conexões das interfaces. Vamos entrar no switch e fazer a configuração das VLANs. Vamos entrar no switch, entrar no modo privilegiado, configuração de terminal. Aqui, vamos configurar as VLANs. Então, VLAN10. Qual o nome dela?
+
+40:32 - Conference Room (Fiap Convidado 112) - Speaker 2 
+Nome VLAN10.
+
+40:33 - Conference Room (Fiap Convidado 112) - Speaker 2 
+E poderia ser qualquer outro nome. Por exemplo, se você tem alguns setores na sua empresa que você gostaria de separar, poderia ser financeiro, TI e comercial, por exemplo. Quando você separa, você tem segmentos de LANs completamente isoladas, que elas não podem se comunicar com uma com a outra, sem precisar de um roteador nesse caso. Ok. Vamos lá. 20. 20. LAN. E nas interfaces gigabit vamos colocar interface range para pegarmos as duas interfaces giga 0 barra 1 até a 2 e vamos colocar que ela estará no modo Chrome.
+
+41:47 - Conference Room (Fiap Convidado 112) - Speaker 1 
+Muito bem.
+
+41:48 - Conference Room (Fiap Convidado 112) - Speaker 2 
+Se viermos aqui no modo privilegiado e escrevermos show VLAN ele vai mostrar as três VLANs que nós criamos. 10, a VLAN 20 e a VLAN 30. Temos que fazer isso para todos os switches. Muito bem, agora vamos entrar em cada interface do switch e falar a qual VLAN elas pertencem. Então vamos entrar na interface 0 barra 1. Vamos falar que podemos acessar o modo dela e ela pertence Avelã 10. Ok. Vamos entrar na interface 0 barra 2, acessar ela, deixar ela ativa para acessarmos. Ela pertence a Avelã 20. E na interface 0 barra 3, colocar que ela é acessível e VLAN 30. Nesse caso, nós atribuímos cada interface à sua própria VLAN. Novamente, se entrarmos aqui no modo privilegiado, escrevemos show running config, veremos que a interface 0 barra 1 está com a VLAN 10, A interface 0-2 está com a VLAN 20 e a interface 0-3 está com a VLAN 30. Agora vamos configurar o SPT, que é o Spanning Tree, para evitar o looping entre os switches. Nós entramos no modo de configuração do terminal e escrevemos Spanning Tree mod rapid. Somente isso. Somente isso ele já vai sair do modo e vai entrar no modo expanding tree rápido. Com isso, ele já vai evitar o looping entre os switches. Então, o que acontece? Agora, todo pacote desses, por exemplo, se eu mandar um pacote daqui pra cá, ele vai vir pra cá, pra cá, por aqui, porque ele está fechando essa porta. Mas vamos supor que essa conexão aqui, por exemplo, ela tem algum problema, ela diminuiu muita velocidade de conexão e ela se perca. Daí vamos deletar, por exemplo, essa conexão. O que vai acontecer? Esse pontinho aqui que está laranja vai ficar verdinho. O Spanning Tree, ele viu que teve um problema naquele lado e fez a conexão entre os switches pelo outro lado, pela outra interface. A partir do momento que a volta a ficar ativa, ele volta com o funcionamento normal dos switches. Então, vamos testar, por exemplo. Para a gente fazer o ping entre os PCs, a gente pode, ao invés de entrar no controle, no command prompt, podemos vir aqui nesse pacotinho, no Simple PDU, clicarmos nele e clicar, por exemplo, no PC10 que E para o PC11, aqui embaixo, está falando que o ping, que é o pacote SMP, se deu com sucesso. Podemos fazer isso, por exemplo, do 20 para o 20, para o 21, do 21 para o 22, todos com sucesso aqui. Do 30 para o 32, todos com sucesso. Pingar uma outra rede, por exemplo, da rede da VLAN 10 para a VLAN 20, não vai funcionar, porque é exatamente isso que as VLANs fazem. Nós não precisamos de um roteador para separar as redes e fazemos isso pelos próprios switches, de camada 2 mesmo. Agora vamos demonstrar, a partir desse sniffer, como podemos capturar todos os pacotes que saem de qualquer uma das interfaces para qualquer outra. Por exemplo, Vamos ligar esse Sniffer, que se encontra aqui em End Devices. Você vai vir aqui no último, é o Sniffer. É só adicionar ele aqui. Vamos colocar uma conexão nele. Eternet 0 na última aqui, na 0 barra 24. Ele vai habilitar a configuração. Beleza, vamos entrar. No switch, conf t, e vamos configurar esse sniffer. Então vamos lá. Eu quero que ele monitore, então vou escrever monitorSession1SourceInterface, por exemplo, as 0 barra 1. Eu quero que ele monitore tudo que sair dessa interface aqui. Esse switch, tudo que sair da interface 0 barra 1 ele vai monitorar. F0 barra 1. Ok. Podemos monitorar as outras interfaces também. Então eu posso colocar 0 barra 2, 0 barra 3. Pronto. Agora ele vai configurar todas as três interfaces que estamos conectadas a esse switch. Esse é o source. Qual que é o destination? Destination é o sniffer. Então monitor session um destination interface f0 barra 24. Somente isso. Já configuramos o sniffer para capturar todos os pacotes que saem dessas três interfaces para qualquer outras interfaces. Então vamos ver como isso funciona. Vamos entrar aqui no sniffer. A gente vem aqui em e, atualmente, ele está capturando todos os pacotes que estão rolando na rede. Certo? Então, CDP ou CDP. Ok. Então, vamos aqui no PC1. Vamos entrar em Desktop. Comando de prompt, vamos dar um ping em outro PC, por exemplo, 192.168.10.11. Ok, ele pingou. Vamos ver se o Sniffer capturou isso daqui. Olha o pacote SMT aqui embaixo, que é o do ping. Então, ele saiu do PC10, ele saiu source PC10 para o PC11, quer dizer, estamos capturando todo o tráfego e não só o ping, todo o tráfego mesmo. Qualquer comando que ele faz, qualquer coisa que ele faz na internet, conseguimos capturar com esse sniffer. Assim, dessa maneira bem simples, conseguimos fazer o monitoramento de todas as portas que estão habilitadas no nosso switch. Agora, iremos fazer a segurança das portas, tanto as portas não utilizadas quanto as portas utilizadas. Nesse switch, nós utilizamos as portas gigabit 0 barra 1, 0 barra 2 e as interfaces 0 barra 1, 0 barra 2, 0 barra 3 e 0 barra 24 que está conectada no Sniffer. Então, vamos configurar a segurança das outras portas. Para isso, vamos aqui no modo de configuração do terminal e vamos criar uma interface, uma VLAN que a gente vai chamar de Black Hole. Então, VLAN 999. Vamos dar um nome para ela.
+
+49:52 - Palestrante Não Identificado 
+Black Hole.
+
+49:53 - Conference Room (Fiap Convidado 112) - Speaker 2 
+Vamos pegar todas as interfaces que não estão usadas. Então, interface range f0-4 até 23, certo? Então, a 4 até 23 elas estão sem utilização. Ok, vamos habilitar o modo para podermos acessar elas. Vamos habilitar a VLAN dela, então a VLAN 999. E vamos desligar ela administrativamente. Escrevemos Shutdown e desligamos todas essas interfaces administrativamente. E a gente vem aqui no modo administrativo e escrevemos no VLAN. Vamos ver aqui na VLAN. 10 está ativa, a 15 está ativa na interface 0.2 e a 30 está ativa na 0.3. E a Black Hole em todas as outras. Do que acontece. Se um hacker tentar, por exemplo, tiver acesso a esse switch e tentar conectar o PC dele a qualquer porta, não vai funcionar. Simplesmente ela estará vermelhinha, que ela estava desligada. Ele não conseguirá conectar a qualquer uma Vamos tentar em outro. Mesma coisa, está desligada administrativamente. Vamos supor que tenha um cabo em algum lugar que ele conseguiu aí plugar no computador dele, a interface não vai funcionar. Agora vamos fazer a segurança das portas que estão ativas. Essas três interfaces aqui que estão ativas. Vou pegar um exemplo só, mas para as outras As outras duas seriam exatamente a mesma coisa. Então, vamos entrar no switch. Vamos entrar no modo de configuração do terminal e vamos pegar, por exemplo, a interface 0.1, que está na VLAN 10. Então, vamos lá. Vamos colocar o modo de acesso, para conseguirmos editá-la. E vamos habilitar o modo de segurança. Então, Port Security. Habilitamos o modo de segurança. Então, quantos... Nessa interface, quantos... Qual é o máximo de dispositivos que podemos conectar nela? Então, Port Security, máximo, eu vou colocar 1, por exemplo. Então, só pode ter 1 PC conectada a essa porta. Agora, vamos colocar que o... Qual vai ser a violação dela? O que vai acontecer? Tipos de evaluação. Aqui só protege, aqui restringe e aqui desliga. Então, aqui protege e não acontece nada, aqui restringe, ela restringe um pouquinho o tráfego e aqui desliga, ela simplesmente desliga a interface. Vamos colocar a shutdown para vermos como isso funciona. E vamos colocar que ele vai pegar o MAC address stick. O que isso quer dizer? Ele vai pegar um MAC address que já está associado automaticamente. É só isso. Então, se a gente vai de novo no modo administrativo e escreve show port-security interface f0-1, conseguimos ver que o port-security está habilitado, funcionando. Qual o modo de violação? É o shutdown, certo? Qual o total de MAC address? 1, e ok. Dessa maneira já está configurado o port-security para essa interface 0-1. Agora vamos testar. Por exemplo, algum hacker tem acesso a esse cabo de rede aqui. Vamos tirar esse cabinho e conectar no hacker. O que vai acontecer? Quando o hacker tentar mandar qualquer pacote da máquina dele, a interface automaticamente, ó, ficou vermelhinha aqui, ela automaticamente Então, mesmo que nós tiremos... Mesmo que ele desplugue o cabo e plugue novamente no PC correto, que tenha a interface correta, ele vai continuar desligado. Para habilitarmos ela novamente, somente entrando no switch, então temos que vir aqui, compte, entrar na interface que foi desligada, F0-1, temos que dar um shutdown, temos que desligar ela administrativamente e ligar novamente no shutdown. Pronto. Agora ela já está ativa novamente. Dessa maneira, nós terminamos essa aula prática, onde verificamos como funcionam as VLANs, como conseguimos configurar o SPT, o Spanning Tree Protocol, e também fizemos a segurança das portas, tanto as que utilizamos quanto as que não utilizamos. Obrigado por assistir e até a próxima aula.
+
+55:01 - Conference Room (Fiap Convidado 112) - Speaker 1 
+E aí, pessoal, tem bastante complexidade aí, mas acho que o importante é entender o conceito da VLAN, ou seja, eu defino quais são os ativos que eu quero que se conversem, independente de onde eles estão localizados fisicamente. Estabeleço regras, vocês viram como as regras são criadas, configurações específicas e uma coisa que é legal, Quando você cria a VLAN, por padrão, uma VLAN não fala com a outra. Ela só vai falar se eu entrar nas configurações e estabelecer o roteamento entre VLANs. Então, veja, mesmo que eu tenha dois computadores ligados fisicamente a duas portas que são do mesmo switch, se eles forem de VLANs diferentes, eles não vão se falar. Isso elimina um monte de problemas que a gente tem aí no quesito segurança. Mas vamos em frente aqui, tá? A gente tem outro tipo...
+
+55:54 - Palestrante Não Identificado 
+pois não.
+
+55:55 - Conference Room (Fiap Convidado 112) - Speaker 4 
+Eu não sei se eu perdi alguma coisa ali no... Tava meio instável pra mim aqui. Mas nesse exemplo ele usou uma velã por porta. Eu consigo ter mais de uma velã na mesma porta?
+
+56:10 - Conference Room (Fiap Convidado 112) - Speaker 1 
+Você consegue... Na verdade você consegue ter mais de uma máquina em cada porta. Vamos dizer o seguinte. Não, você consegue ter. Você consegue associar mais velas. Mas aí você tem que fazer o cascateamento de switches, entendeu? Eu tenho que, na hora de ligar naquela porta, ao invés de eu ligar um computador, ligo outro switch para eu ter outras portas para poder redirecionar o tráfego das diversas velas para o transbordo do outro switch.
+
+56:40 - Palestrante Não Identificado 
+Deu para entender?
+
+56:41 - Conference Room (Fiap Convidado 112) - Speaker 4 
+Não, deu. É porque eu já ouvi falar de um protocolo chamado DOT 1Q.
+
+56:46 - Conference Room (Fiap Convidado 112) - Speaker 1 
+Isso, que ele permite fazer isso, né? Isso. Aí só que você tem que cascatear... Oi, pode falar.
+
+56:53 - Conference Room (Fiap Convidado 112) - Speaker 4 
+Não, é que aí não faz sentido, porque nesse exemplo, se eu uso uma porta para ligar um outro equipamento, eu posso usar o Dot1K no Avelã, né? Isso.
+
+57:04 - Conference Room (Fiap Convidado 112) - Speaker 1 
+Mas aí você tem que fazer o cascateamento para poder ter mais portas disponíveis, para poder ter mais gente conectada em cascata e cada um na sua própria Avelã, Entendeu?
+
+57:15 - Palestrante Não Identificado 
+É isso.
+
+57:16 - Conference Room (Fiap Convidado 112) - Speaker 1 
+É que existe dois conceitos de ligação entre switches. Existe o conceito do switch cascateado e o empilhado. Esse que tá aí é o empilhado, ou seja, eles estabelecem alta disponibilidade, contingência e tudo mais. Quando você cascateia, ou seja, você liga uma porta normal do em outro suíte, ou seja, o tráfego de um suíte é transbordado para várias portas do outro suíte, você perde um pouco de performance, mas você ganha nesse quesito lógico, eu consigo trafegar o conteúdo de mais VLANs, que aí internamente o suíte vai resolver essa questão de quem fala com quem, quem acessa quem, lá no cateamento, ou seja, para quem ficou para baixo. Mas vamos lá, vamos Então eu falei sobre a CL, dei bastante detalhamento para o caso das VLANs, e agora vamos falar do conteúdo de acesso utilizando o Radius, que é um protocolo de autenticação, principalmente para rede sem fio. Então imagina o seguinte, aqui do lado esquerdo eu tenho dispositivos móveis, ou dispositivos que conectam à rede do Wi-Fi. Eu poderia dar para esses caras somente um acesso compartilhado de login e senha. Na verdade, de SSID e senha, ou seja, eu acho a rede, ponho uma senha e eu entro. Mas imagine que eu quero um nível de segurança e controle de acesso maior. Imagine que são pessoas da empresa onde cada uma tem uma conta de usuário própria para conectar o notebook, para conectar o computador, para conectar um tablet ou celular. Nesse caso, eu consigo utilizar um serviço chamado Radius. O Radius é um protocolo que permite trabalhar com autenticação, autorização e accounting. Então, imagine o seguinte, esse servidor Radius está conectado a uHiurirvidor Windows com Active Directory configurado. E aí eu tenho três contas de três pessoas aqui. Por exemplo, eu tenho o Clodoaldo, tenho o Antônio e tenho o Yuri. Cada um deles tem uma conta lá no AD, tem um login e tem uma senha. Aí os caras vêm aqui e eles acham esse roteador sem fio, acham a rede. Então qual que é o processo? Então vamos lá pegar essa numeração. O que é o item 1? No item 1, conexão roteador sem fio que requer o estabelecimento de uma conexão com a rede sem fio, ou seja, eu quero conectar ao roteador sem fio para poder navegar, por então eu venho para cá e eu solicito uma conexão, aí esse roteador sem fio ele vem até o servidor Radius e fala assim ó tem uns caras aí estão querendo conectar, eles estão na sua base de usuários? Aí o item 3 é feito no servidor Radius, verificando credenciais com o servidor Radius, as credenciais podem ser no próprio Radius ele pode consultar o Active Directory, que é o mais indicado, porque aí ele dá um nível de permissionamento, de controle de acesso maior. Então, verifiquei se os caras têm ou não, aí eu devolvo. E o resultado para o roteador sempre, olha, o fulano aqui tem, o outro fulano tem, esse aqui não tem. Então, só quem tem acesso é que aceita a conexão e quem não tem, para conseguir a tentativa de conexão. Isso aqui é muito importante para quando eu tenho redes corporativas grandes, com centenas, milhares de usuários, em que cada um tem lá o seu login, sua senha e tem o seu perfil de acesso. Então essa é uma outra forma de fazer o controle de acesso. Então a gente viu o conceito de ACL, de VLAN e de autenticação utilizando o protocolo RADIUS. Quando a gente usa o celular e conecta na rede 4G, 5G, o nosso processo de autenticação na rede é bem parecido com esse aqui. Só que aí ele consulta o quê? Ele consulta o nosso e-mail, ele consulta o nosso chip e verifica se a gente está associado com aquela operadora. E aí devolve para a gente a conexão. E aí estabelece os parâmetros de roaming, por exemplo. Então é assim que funciona na prática. Agora, vamos falar falar um pouquinho sobre aplicações em redes privativas. Primeiro, por que eu devo segmentar? Então, imagina que aqui eu tenho um prédio de três andares e eu tenho velãs que permeiam os três andares, por exemplo, TI, por exemplo, RH, vendas. Então, esses caras podem estar separados fisicamente no prédio, mas eles estão unidos pela velã, mas eles têm isolamento de setores, ou seja, a fábrica avelã, o escritório e outros, os distantes são outros. Isso minimiza a risco de propagação de ataques. E aí eu tenho aquele exemplo que vocês viram na gravação do Gabriel, onde eu tenho as velãs que separam administrativamente esses usuários aqui. Por que isso é importante? Porque quando eu tenho um ambiente como esse, eu consigo ter aplicações específicas em redes alternativas, como, por exemplo, essa implementação parecida com o que o Gabriel mostrou lá no final, onde eu habilito, sei lá, o port security, em que esse cara conecta na rede, mas ele não será autorizado, porque ele não está previsto, essa porta não pode ser usada por ele. Então, uma implementação segura, correta das vilãs, pode aumentar a segurança e impedir acesso não autorizado. Uma outra interessante, essa que está aqui embaixo. O uso de VLANs e a correta configuração do controle de acesso pode permitir um cenário onde as permissões sejam dadas da melhor forma possível, ou seja, você só acessa aquilo que lhe é permitido. Então imagina o seguinte, eu tenho uma rede corporativa com vários segmentos, várias VLANs, em que quem está lá da internet e acessa, passa pelo meu firewall, só vai acessar por exemplo, o servidor web que está dentro da DMZ, da zona desmilitarizada, ok? Já quem está aqui, por exemplo, os meus servidores de aplicação, eu posso ter um servidor de e-mail aqui, e aqui na DMZ ter só o meu proxy de e-mail, só para fazer o que? Só para fazer o transbordo dessas mensagens para a internet. Então, esse servidor de e-mail acessa a aplicação principal. Eu também posso ter a comunicação entre servidores que estão numa área menos segura, vamos dizer que aqui é o banco de dados das aplicações web e tudo mais, e uma área mais isolada. Então, aqui eu posso ter regras que as VLANs criam para fazer com que somente esse banco de dados consulte esse outro aqui em situações específicas. E olha que legal. Eu posso ter aqui um proxy de internet que faz com que quem está na minha rede local passe por esse cara, verifique as regras e saia para a internet. Então veja, olha as aplicações em redes privativas. Isso tudo pode acontecer com uma comunicação que está aqui para fora. Se for uma fábrica, por exemplo, eu vou acessar a internet utilizando uma conexão Eu vou ter uma antena lá, eu vou ter uma pequena infraestrutura. Então, eu tenho um nível de isolamento importante e um nível de permissão que me permite acessar aquilo que é devido. Tudo isso, pessoal, é mediado por uma série de tecnologias. Então, o que a gente viu aí? Segmentação utilizando VLAN, que é chamada segmentação de camada 2, a camada dos maquiadores das máquinas e que o suíte fornece. Eu tenho as ACLs que fazem o filtro do tráfego. Eu tenho essa comunicação, o .UX, que permite autenticação por porta e habilitação de porta security, que a gente viu na parte anterior. Eu tenho essa autenticação mais centralizada, por exemplo, para dar autorização para alguém usar a minha rede Wi-Fi. Eu posso ter um Packet Sniffer, que também foi mostrado na última parte das VLANs, para fazer análise de pacotes. Estou dando o exemplo do AirShark como analisador. Para eu poder fazer essa autenticação centralizada, eu tenho soluções corporativas ou open source, é o caso do FreeRadius. Eu posso transformar um computador meu num access point via software. Vou colocar na apresentação para vocês como configurar SCAR e eu posso simular as minhas redes antes de colocar em operação. Então veja, eu tenho uma série de tecnologias envolvidas com o processo do entendimento e da construção da minha arquitetura, que é o item que a gente vai ver em seguida. Então a gente termina essa primeira parte aqui e aí eu pergunto para vocês, até agora tranquilo? Posso seguir em frente? Professor, o que seria a proxy?
+
+1:07:09 - Conference Room (Fiap Convidado 112) - Speaker 4 
+Eu já ouvi essa palavra, mas eu não sei o que ela significa.
+
+1:07:17 - Conference Room (Fiap Convidado 112) - Speaker 1 
+A proxy é um elemento intermediário. Deixa eu voltar aqui no desenho, tá? Imagina o seguinte, tá? Eu preciso acessar a internet. Só que imagine que eu tenho mil pessoas acessando a internet aqui, usando a banda da empresa para chegar na internet. Se eu acessar direto, mil pessoas acessando mil sites ao mesmo tempo, eu posso ter um problema muito sério de ocupação da largura de banda da internet. O proxy, ele faz esse controle de acesso, ou seja, cada vez que uma pessoa acessar um site, ele passa pelo proxy, ou seja, o meu gateway para na internet pra se acessar esse proxy aqui. Então eu falo, olha, eu vou acessar wall.com.br, eu aviso pro proxy, o proxy verifica o seguinte, alguém já acessou o wall aqui antes? Se não acessou, ele vai lá na internet, acessa o wall, carrega uma cópia da página aqui e libera pra esse cara. Mas ele mantém esse cara em cache aqui. Então toda vez que alguém acessar a página do wall, ao invés de carregar a página inteira 1.0 ele pega o que tá aqui no proxy, traz aqui para a máquina e ele só atualiza os pacotes aqui da internet, então o tráfego é muito mais reduzido. E uma outra coisa, com o proxy aqui eu consigo criar regras para impedir que, por exemplo, alguém aqui acesse o site do tigrinho ou um site de pornografia. Então o proxy ele te dá essa questão do cache, que é para poder a performance também consegue controlar aquilo que eu posso ou não posso acessar, sem que eu sobrecarregue, por exemplo, as regras de firewall, que o firewall ele tem um custo de processamento muito maior do que o proxy. Deu para entender, Antônio?
+
+1:09:12 - Conference Room (Fiap Convidado 112) - Speaker 4 
+Deu sim, aí me chamou mais uma dúvida, por favor, não quero monopolizar a aula, hein? Aí você falou do cache, então esse proxy eu tenho que instalar ele servidor meio... Não entendi a parte da ligação do Proxys com esse cache. O resto ficou brilhante, eu entendi tudo.
+
+1:09:31 - Conference Room (Fiap Convidado 112) - Speaker 1 
+Imagina que o que... Imagina assim, você acessa... Todo mundo aqui vai acessar o UOL ou a FIAP, fiap.com.br, tá? Se todo mundo acessar ao mesmo tempo e não tiver um Proxys, todo mundo vai ocupar largura de banda. Aí, se tiver um Proxys, você acessou primeiro. Aí, uma a página da FIAP fica armazenada no servidor de proxy. Se eu for acessar a FIAP na sequência, esse proxy devolve pra mim essa cópia em cache, vai lá na FIAP e verifica o seguinte, teve alguma alteração na página? Se teve, só essa alteração que é atualizada no meu browser, entendeu?
+
+1:10:09 - Conference Room (Fiap Convidado 112) - Speaker 4 
+Mas eu tenho que ter um servidor à parte, então, na minha empresa?
+
+1:10:14 - Conference Room (Fiap Convidado 112) - Speaker 1 
+Então, o proxy é um servidor. O proxy é um servidor que tá aqui pra... Ele é um servidor, sim. Você tem aí o WireGuard, você tem o Squid, todos esses caras são versões de proxy que você coloca lá na sua DMZ para poder fazer a saída para a internet, entendeu? É isso aí.
+
+1:10:34 - Conference Room (Fiap Convidado 112) - Speaker 2 
+Legal, professor, agora tá claro.
+
+1:10:35 - Conference Room (Fiap Convidado 112) - Speaker 1 
+Beleza, obrigado. Então, voltando aqui, a gente falou das tecnologias, agora vamos falar um pouquinho da arquitetura. Vamos falar um pouquinho dos tipos de segmentação, modelos e algumas boas Fala, Clodoaldo. A dúvida voltou a ser no Proxy.
+
+1:10:51 - Clodoaldo Callogero 
+Essa função de cache não seria a função do switch nível 3, que tem o nível 3, que ele faz uma tabela com os DNS? A tabela, não, é diferente.
+
+1:11:08 - Conference Room (Fiap Convidado 112) - Speaker 1 
+A tabela de DNS, ela ajuda a ter a navegação mais rápida, ele guarda o histórico de por onde você passou. Por quê? Porque ele resolve o DNS muito mais rápido. Ele já sabe por onde ir, mas ele não guarda uma cópia da página, ele guarda uma cópia da rota, entendeu?
+
+1:11:28 - Palestrante Não Identificado 
+Entendi. Morreu. Beleza, obrigado.
+
+1:11:29 - Conference Room (Fiap Convidado 112) - Speaker 1 
+Vamos lá. Então vamos falar um pouquinho de arquitetura aqui. Então vamos lá. Uma arquitetura típica, aí agora, olha o que eu falei. Lembra que eu falei da rede pública e da rede privada? Olha quando elas se fundem no 5G. Então veja, quando eu falo de uma arquitetura típica, eu tô citando as redes privativas, eu tenho que ver o seguinte, quem compartilha infraestrutura entre a rede pública e a rede privada? Quem tá no meu core, quem são meus roteadores e firewalls que vão fazer com que o tráfego que tá aqui na minha empresa, na minha fábrica, por exemplo, cheguem até a rede pública e, por exemplo, cheguem até os meus diBonatoitivos gaiochi. Imagina que essa fábrica aqui ela tem a ver, por exemplo, com agronegócio. Então eu tenho que coletar informações que estão em 20 mil sensores espalhados pelo agro lá no Mato Grosso, no Tocantins, na Bahia, em Goiás, no interior de São Paulo. Então eu tenho esse roteamento e essa separação entre rede pública e rede privada, para que no caminho os pacotes não se percam, eles cheguem ao local correto. Quem faz isso é exatamente essa arquitetura que tem lá no seu core roteadores e firewalls, na camada de distribuição ele tem switches que fazem o roteamento, que é o L3, e na camada de acesso ele tem switches L2 as antenas, ou seja, lá onde tem as antenas, muitas vezes, nessa estrutura, eu tenho lá um suíte de acesso também. Por quê? Porque tem a comunicação de dados. Quando eu falo disso de uma forma mais clara aqui, eu tenho a minha cloud, a minha infraestrutura em nuvem, eu tenho a minha infraestrutura on-premises integrado e eu tenho o gerenciamento da minha rede de arquitetura 5G conversando com quem? Com as pequenas células. Eu vou ter célula para IoT, para sensores, para monitoramento de vigilância, para multimídia, para redes de empregados que estão, por exemplo, trabalhando remotamente, para visitantes. Isso pode estar dentro da minha empresa, isso pode estar espalhado pelo mundo. Então, qual que é a questão importante aqui? É o controle. Por isso que eu falei de VLAN, por isso que eu falei de de acesso. Os empregados podem ir a qualquer lugar do mundo, os sensores e o IoT podem ir a qualquer lugar do mundo, mas está todo mundo dentro da mesma rede na prática, né? E ainda falando nesse contexto, a gente tem os tipos de segmentação, porque aqui eu tô falando da arquitetura, mas como é que a gente faz essa segmentação entre parte física, A gente tem interfaces separadas. Então, por exemplo, o meu celular, considerando que ele é um dispositivo de IoT, tem uma aplicação rodando nele. O meu celular tem uma interface física separada, conectada a uma rede privativa, diferente da do Geraldo Cruz, por exemplo, que tem lá no tablet dele ou está no computador dele. Então, essa, eu posso ter uma segmentação em que a minha interface tem acesso a um setor da rede e a interface dele a outro. A outra. Então eu consigo fazer isso. Eu tenho a separação lógica que a gente viu por VLAN, por setor, por serviço. Eu posso ter uma separação ainda lógica ou física por IP e subrede, onde eu posso, por exemplo, ter uma grande rede, separar essa rede em subredes menores e cada subrede ser apontada para um departamento. Isso é um pouco diferente de VLAN, por exemplo, onde eu posso ter essa separação. Ela pode distribuir os usuários entre os andares, por exemplo, da empresa. Por IP e subrede, aí eu tenho que confinar as pessoas, por exemplo, no mesmo setor ou no mesmo andar. Então, o primeiro andar é a subrede do comercial, segunda da engenharia e terceira de TI. Então, aqui eu tenho essa segmentação. E eu tenho a segmentação por identidade, que é aquela da rede sem fio, onde eu faço autenticação, ele consulta o meu usuário e devolve a conexão para mim. Então isso tudo são conceitos fundamentais para segmentação. São tipos diferentes que eu tenho. É física, é lógica por VLAN, é lógica por IP subrede, ou ela é por identidade, por permissão, e login e senha de acesso individual. Com isso, a gente volta a entender, vamos voltar a falar um pouquinho dos modelos de controle de acesso e onde eles são implementados. Então, eu posso ter controle de acesso implementado em switch roteador, a gente viu. Eu posso ter o controle de acesso baseado em IP, porta ou protocolo. Eu posso ter o controle de acesso Com a autenticação do usuário. Estou sendo redundante aqui porque isso é importante para caramba. Então, eu tenho que saber o seguinte. Onde eu estou conectado? Como eu estou conectado? A partir de qual dispositivo eu estou conectado para eu saber ao que eu tenho acesso naquele momento. Então, eu consigo chegar nesse nível de granularidade. E para fazer todo esse conteúdo de acesso, nada melhor do que utilizar as boas práticas. E aí, o que a gente pode fazer como exercício cotidiano de quem for trabalhar com redes privativas? Isolar o tráfego crítico, ou seja, sensor industrial só pode ter acesso às informações que eles trocam, ou seja, um dado de acessar um sensor só pode chegar para determinadas aplicações, eu não posso acessar um sensor a partir de um dispositivo que não seja totalmente autorizado a chegar nele. Outra coisa importante, nunca confie somente em login e senha, autentique todo dispositivo, conceito do Zero Trust, arquitetura de Zero Trust. Eu coloquei um dispositivo, eu tenho que autenticar Eu tenho que usar login, senha, alguma característica do dispositivo, um token. Eu tenho que usar um certificado digital, usar métodos de autenticação múltipla, múltiplo fator de autenticação. Eu tenho que monitorar o meu ambiente com ferramentas de monitoramento, de segurança, como, por exemplo, o AirShark, para pacote, CIEM, ferramenta de monitoramento, e eu tenho que ter uma ótima documentação de políticas de acesso, controles de segurança, política de segurança, política de disaster recovery, política de continuidade de negócios digitais, tudo ao mesmo tempo, tá? Então isso tudo é o que eu queria trazer para vocês hoje. Mas vamos lá. Eu vou apresentar algumas atividades práticas aqui. A primeira a gente vai executar, que é criar a VLAN no Linux. Quem já estiver com o Linux vai poder fazer isso. Aí depois eu vou deixar um desafio para vocês. Vocês viram lá como criar a VLAN lá no Packet Tracer. Está aqui. Então o desafio é criar a VLAN que permita somente a VLAN 10, é necessário o servidor web na VLAN 20. Então, eu estou falando, o que você tem que fazer? Cria uma rede, adiciona dois switches, um multeador e nove PCs. Então, uso o exemplo lá, é aquela primeira parte que eu mostrei para vocês. Configure as VLANs, atribua as portas, aí está dando o exemplo de uma, mas vamos fazer para todas. Configure a subinterface, só o .1Q aqui, que foi o Antônio que citou aqui. Atribui IP a eles, aplique a CL e faça funcionar. Isso aqui é um outro exemplo. Um outro exemplo legal é como criar, por exemplo, um access point com o seu computador para autenticar usuários utilizando o Free Radius. Aqui está um exemplo. Como instalar no Linux, como configurar o host APD que transforma o seu computador num access point, como configurar o Free Radius para ele pegar e ter os usuários de teste e como fazer esse cara autenticar na sua rede. Então, é fazer esse cara aqui e testar com a captura de pacotes no AirShark. Por quê? Porque se você usar esses dois filtros no AirShark aqui e capturar os pacotes durante o processo de login, ou seja, durante esse que você acha a rede, põe o usuário e põe a senha, ele vai te devolver essa informação aqui, identificar o código access a set. Isso é muito legal. Mas eu vou voltar um pouco aqui, que é para a gente poder fazer essa atividade de criação de VLANs no Linux. O Linux, se ele tem uma interface de rede, ele pode ter várias. Deixa só eu... Deixa eu ver só uma coisa. Alguém me chamou aqui. Só um minutinho, gente. Ah, não. Tranquilo. O Gabriel perguntou... O protocolo LDAP com AD pode ser utilizado? Sim, o AD já é praticamente o LDAP. Pode? Pode ser utilizado, sim. O caminho contrário, proxy reverso tipo Nginx? Sim, o Nginx, na verdade, ele é um servidor web, mas pode fazer proxy reverso também. E o Felipe perguntou, por que que o Gabriel criou uma VLAN para essas portas sem uso e depois desligou? Não era suficiente só desligar elas? Se você for desligar manualmente, você desliga uma por uma. Com aquela VLAN, você desliga todas ao mesmo tempo e ganha velocidade. Entendeu, Felipe?
+
+1:22:08 - Clodoaldo Callogero 
+É isso. Clodoaldo, pergunte. Eu não sei se eu entendi direito. Eu consigo criar no Linux e me comunicar o Packet Tracer ou não? Ou eu tenho que instalar o Packet Tracer no Linux?
+
+1:22:21 - Conference Room (Fiap Convidado 112) - Speaker 1 
+Tem que instalar o Packet Tracer no Linux ou em outra máquina que chegue na máquina do Linux, tanto faz.
+
+1:22:27 - Clodoaldo Callogero 
+Ah, então tá, então tem que reinstalar, eu instalei no Windows.
+
+1:22:31 - Conference Room (Fiap Convidado 112) - Speaker 1 
+Pode pôr no Linux também, é um comandinho, tá vendo que tem, quer ver, aqui ó, deixa eu pegar aqui, não tem aqui o sudo apt install, você só vai colocar o AirShark no meFranciscot APDU Free Radius, sudo apt install Wireshark.
+
+1:22:48 - Clodoaldo Callogero 
+Com isso eu me comunico com o Packet Tracer?
+
+1:22:52 - Conference Room (Fiap Convidado 112) - Speaker 1 
+Na verdade, o Packet Tracer você consegue fazer a comunicação. Eu vou... No conteúdo dos cursos lá da Cisco tem como fazer isso, tá? Você consegue, você consegue colocar ele para capturar pelo seu Wireshark. Dá sim, dá sim.
+
+1:23:10 - Clodoaldo Callogero 
+Mas acho é isso que você propôs pelo jeito.
+
+1:23:13 - Conference Room (Fiap Convidado 112) - Speaker 1 
+Não, não, não, aqui o que eu tô propondo é transformar o seu o seu Linux num Access Point e capturar o tráfego dele com o Airshark, entendeu? Entendi, desculpe, tá legal, entendi.
+
+1:23:24 - Clodoaldo Callogero 
+É isso, é isso, mas dá pra fazer.
+
+1:23:26 - Conference Room (Fiap Convidado 112) - Speaker 1 
+Então voltando aqui, deixa eu ver se o laboratório... Deixa eu ver se eu acho até que... Ah não, ele tá aqui, deixa eu fechar. Deixa eu logar aqui. Então, esse meu laboratório, ele está na minha máquina local mesmo. A gente tem o FreeRadius aqui. Deixa eu dar um cd. Olha só. Vamos dar uma olhada nas minhas interfaces de redes aqui. Deixa eu só ver se eu estou com o documento de apoio aqui. Eu acho que eu não estou. Se não eu não vou lembrar os comandos de cabeça, é muito comando, tá? Então aqui eu tenho que ver quais são os meus links ou interfaces na EPLinux. Eu tenho esse cara aqui, ENS33, o loopback é interno, não consigo replicar ele, mas esse cara aqui eu consigo replicar, tá? Então, eu posso vir aqui e criar, por exemplo, uma Avelã. Eu vou só alterar os nomes para não ficar muito grande. Vou colar aqui. Então, aqui, eu vou criar a Avelã 10. Então, a minha interface não é essa imp0s3, não. Ela é a ens33. Como é que eu sei isso? Ela está aqui. Aí, eu vou dar um nome. Para essa VLAN. Não vou chamar desse nome não. Vou chamar aqui de VLAN TI. Vou dar esse nome para ela. Deixa eu ver se ele vai aceitar. Aceitou. Eu vou criar mais uma na mesma interface. Só que eu vou chamar ela aqui de VLAN, por exemplo, engenharia. E vai ser a VLAN 20. Deixa eu pôr aqui, engenharia, tenho que tirar esse carinha daqui. Então, criei a VLAN 20. Agora, eu tenho que atribuir IPs a essas VLANs. Deixa eu copiar aqui. Aí eu só tenho que alterar os nomes. Então, eu vou pegar aqui e vou pegar a minha VLAN PI e eu vou atribuir a ela esse espaço de endereçamento aqui, rede 10. Então, estou atribuindo IP para essa VLAN. Vou fazer a mesma coisa, Só que no lugar da rede 10, vou pegar aqui a rede 20 e vai ser para a rede de engenharia. Ok? Então, eu criei a VLAN, atribuí o IP para elas. Agora, eu tenho que ativar esses caras. Então, eu vou ativar A minha velã.
+
+1:26:44 - Palestrante Não Identificado 
+Professor.
+
+1:26:44 - Palestrante Não Identificado 
+Pode falar.
+
+1:26:45 - Conference Room (Fiap Convidado 112) - Speaker 3 
+Antes de você ativar, você pode dar o comando daquele IP link show pra gente ver as interfaces, se elas já foram apresentadas? Deixa eu ativar primeiro.
+
+1:26:57 - Conference Room (Fiap Convidado 112) - Speaker 1 
+É que eu queria ver se elas aparecem como não.
+
+1:27:01 - Conference Room (Fiap Convidado 112) - Speaker 3 
+Porque eu uso o Linux no dia a dia, mas eu nunca criei dessa forma. Aí eu fiquei curioso.
+
+1:27:10 - Conference Room (Fiap Convidado 112) - Speaker 1 
+Olha lá, já apareceu, tá vendo?
+
+1:27:13 - Conference Room (Fiap Convidado 112) - Speaker 3 
+Ah, aí elas aparecem como 8down. E uma coisa que eu me perguntei também é que as duas VLANs que você criou, elas ambas se chamam ENS33? Eu achava que não pudesse ser desse jeito.
+
+1:27:28 - Conference Room (Fiap Convidado 112) - Speaker 1 
+Não, não é que elas se chamam ENS33. Elas usam a ENS33 pra poder criar a VLAN com este nome e com este nome. Entendeu?
+
+1:27:39 - Conference Room (Fiap Convidado 112) - Speaker 3 
+Elas são derivadas, vamos dizer assim.
+
+1:27:42 - Conference Room (Fiap Convidado 112) - Speaker 1 
+São derivadas da NS33, só tem uma interface de verdade.
+
+1:27:47 - Conference Room (Fiap Convidado 112) - Speaker 2 
+Perfeito, entendi.
+
+1:27:48 - Conference Room (Fiap Convidado 112) - Speaker 3 
+Beleza?
+
+1:27:49 - Conference Room (Fiap Convidado 112) - Speaker 1 
+Deixa eu abrir aqui um pouquinho mais para gente poder fazer tudo na mesma tela. Então agora eu vou ativar esses caras aqui. Primeiro vou ativar a VLAN TI. Up, e vou ativar a VLAN em engenharia.
+
+1:28:12 - Conference Room (Fiap Convidado 112) - Speaker 2 
+Opa, VLAN 8. Ok.
+
+1:28:14 - Conference Room (Fiap Convidado 112) - Speaker 1 
+Agora, deixa eu dar o IP link show para ver se ele mostra para a gente. Olha lá, está a Up agora, está vendo? Antes, ele não estava como Up, ele estava como Down, Downmode. Está vendo? Eu ativei esses caras aqui agora. Agora, vamos ver uma coisa importante aqui. Será que eles já estão com IP atribuído? Olha lá. Eu tenho esse meu IP que sai para a internet. Eu tenho esse meu IP na AVLAN 10. Eu tenho esse meu IP na AVLAN 20. E esses IPs todos estão atribuídos à mesma interface Quem tinha me perguntado lá se a mesma interface pode falar com várias VLANs, olha a resposta. Acho que foi o Antônio que perguntou.
+
+1:29:14 - Palestrante Não Identificado 
+Deu pra enxergar agora, Antônio?
+
+1:29:16 - Conference Room (Fiap Convidado 112) - Speaker 1 
+Era aquele caso, né? Pô, que era a mesma interface e tal. Então, esse cara aqui, essa é uma atividade prática que eu acho muito legal. Você praticamente está transformando o seu Linux num switch, né? Então, por exemplo, se eu der um ping aqui no 192.168.10.1, vamos ver, olha lá, ele chega. É a vela 1. Claro, se eu pegar um outro IP que eu não tenho na minha rede, ele não vai chegar. Eu só tenho o 1 aqui. Mas olha que legal, eu consigo pingar endereços de configurados na mesma interface física, só que foram criados de forma lógica, tá? Isso é muito legal, isso é muito legal, tá? Agora, professor, mais uma. Essa interface física, quando você diz, é a porta do switch?
+
+1:30:18 - Clodoaldo Callogero 
+É, no meu caso aqui é a porta do meu computador, do meu Linux.
+
+1:30:25 - Conference Room (Fiap Convidado 112) - Speaker 1 
+Aqui, no meu caso, como da máquina virtual é a interface da máquina virtual, entendeu?
+
+1:30:33 - Clodoaldo Callogero 
+Ah, ok.
+
+1:30:34 - Conference Room (Fiap Convidado 112) - Speaker 1 
+Eu tô transformando o meu sistema operacional praticamente num switch, porque é possível conectar outras máquinas nele agora. Mas eu não tenho uma porta física, né?
+
+1:30:47 - Palestrante Não Identificado 
+É, poderia ter.
+
+1:30:48 - Conference Room (Fiap Convidado 112) - Speaker 1 
+Imagina que é um servidor físico que tem uma placa de rede lá, aquela placa de rede fisicamente, entendeu?
+
+1:30:58 - Conference Room (Fiap Convidado 112) - Speaker 1 
+Ah, entendi.
+
+1:30:59 - Clodoaldo Callogero 
+Legal, puxa que show.
+
+1:31:00 - Conference Room (Fiap Convidado 112) - Speaker 1 
+E aí, imagina o seguinte, eu tenho um switch básico, básico, basiquinho, que não tem recurso de VLAN nem nada. Eu crio as VLANs aqui nesse servidor, eu espeto esse servidor na primeira porta do switch basiquinho e conecto as outras máquinas nas outras portas. Eu consigo fazer com que essas VLANs funcionarem naquelas máquinas, entendeu? Entendi. E aí eu consigo ter o controle, isso é muito legal. Fala, Gabriel.
+
+1:31:30 - Conference Room (Fiap Convidado 112) - Speaker 3 
+Só uma dúvida em relação ao adaptador, que o senhor tinha comentado em relação ao adaptador de internet da máquina. Ele, então, a configuração de adaptador, ele tá usando a NAT, né? Da máquina virtual.
+
+1:31:45 - Conference Room (Fiap Convidado 112) - Speaker 1 
+Desculpa, o seu áudio não tá muito legal, Gabriel. Você um pouquinho mais próximo do microfone ou mais alto um pouquinho?
+
+1:31:55 - Conference Room (Fiap Convidado 112) - Speaker 2 
+Claro, claro.
+
+1:31:56 - Conference Room (Fiap Convidado 112) - Speaker 1 
+Tá um pouco abafado, né? Se você quiser colocar no chat, aí eu respondo por lá.
+
+1:32:04 - Conference Room (Fiap Convidado 112) - Speaker 3 
+O Francis mandou uma pergunta boa.
+
+1:32:08 - Conference Room (Fiap Convidado 112) - Speaker 1 
+É replicada de forma idêntica em ambientes físicos? Na verdade, uma afirmação. É isso mesmo. Na verdade, eu tenho que entender qual é o modo de rede para ele ser replicado. Então, por exemplo, eu vou pegar aqui, vamos na parte de rede aqui. Aqui eu estou no modo bridge. O que é o modo bridge? Eu estou replicando o estado físico da minha conexão de rede na minha VM. Eu estou usando o bridge. Aí, o que acontece? A máquina sai para a internet e a minha máquina host física enxerga ela, só que o resto da minha rede não acessaria ela. Se eu usar host only, somente as VMs se enxergam e não necessariamente elas saem para a internet. E eu posso criar segmentos específicos também, falando, olha, eu quero só que determinadas VMs se enxerguem e as outras não. Para que esteja na mesma rede, com todas as permissões ou configurações possíveis, é o modo Bridge, tá? Eu vou... Deixa eu pegar um negócio, passar para vocês. Deixa eu acessar aqui o... Eu vou pegar aqui o negócio, já volto para vocês. Dá só um segundo, que eu acho que isso vai ser legal para vocês. E justamente falando sobre essa parte de rede, daqui a pouco eu vou te dar a palavra, tá, Bonato?
+
+1:33:52 - Palestrante Não Identificado 
+Só um instantinho.
+
+1:33:54 - Conference Room (Fiap Convidado 112) - Speaker 1 
+Eu acho que isso vai ser legal. Vou pegar aqui as playlists. Deixa eu ver se está com o playlist. Olha só, eu vou passar para vocês uma playlist que eu criei, que é exatamente falando sobre modos de rede em virtualização. Então tem os modos de rede, modo bridge, modo NAT, modo rede NAT, o podcast, modo rede interna e modo host on, que eu gravei num canal nosso do YouTube, aqui da empresa, tá? Então fica disponível para vocês e dá para brincar, tá? Bastante. Aproveitem, porque esse conteúdo é prático, dá para fazer tudo que tá aqui, tudo, tá? Tudo. Então, façam. Então, voltando aqui, Bonato, pode fazer sua pergunta, vou abrir para vocês.
+
+1:35:01 - Conference Room (Fiap Convidado 112) - Speaker 3 
+Professor, a minha dúvida é, você falou que essas interfaces que foram criadas, elas não são físicas, mas a minha dúvida é, por default, uma vilã não se comunica com a outra. Caso eu tenha interesse que elas se comuniquem, eu teria que criar rotas ou outros artifícios para que elas se comuniquem, mas por default, criado uma vilã...
+
+1:35:25 - Conference Room (Fiap Convidado 112) - Speaker 1 
+Foi uma boa pergunta, pergunta que você fez. Neste caso, no sistema operacional, elas se comunicam. Então, na verdade, aqui você tem que criar as restrições. Quando é no switch ou no roteador, elas vêm bloqueando, uma bloqueia a outra. Quando é no sistema operacional, elas acabam se falando, porque como é uma interface só, o roteamento entre as VLANs dessa mesma interface vem ativado por padrão, entendeu? Então, Aqui é o contrário, eu teria que criar restrições, seja no firewall, seja no próprio roteamento entre interfaces. Deu para entender? Bonato? Perfeito. Beleza, estou aqui. Ícaro, você levantou a mão, pode falar. Professor, geralmente o NAT também é usado para traduzir o IPv6 para o IPv4, Então, você pode fazer para traduzir IPv6 para IPv4, mas a principal utilização é para poder traduzir endereços internos para endereços de internet. Porque imagina o seguinte, pensando em IPv4, eu tenho uma limitação de endereços IPv4 válidos no mundo que dá em torno de 4 bilhões, só que eu tenho mais do que milhões de dispositivos digitais. Então, o que eu faço? Eu utilizo o NAT para poder criar redes internas com IPs internos e esse monte de IPs internos, quando sai para a internet, utilizo um único IP. Imagina, eu tenho o IP da minha empresa e eu tenho mil pessoas trabalhando dentro dela. Dentro da minha rede, eu tenho uma rede privada com IP10, IP100, IP192, Só que o meu IP da internet é IP 200 qualquer coisa. Quando essas pessoas acessam a internet, o NAT vai converter todos esses IPs para que, quando eles saírem para a internet, eles respondam naquele IP 200 que é o válido. E aí eu consigo gerenciar mil IPs utilizando um único IP na internet.
+
+1:37:42 - Palestrante Não Identificado 
+É isso.
+
+1:37:43 - Conference Room (Fiap Convidado 112) - Speaker 1 
+A questão do DHCP aqui, o Gabriel, é o seguinte, o DHCP, vamos pensar dentro da minha rede, dentro da minha rede interna, ele é o serviço que permite a configuração automática de rede. Então, o que ele fornece para mim? Ele fornece quatro informações. Ele me dá o endereço IP, máscara de subrede, gateway padrão e DNS, ou até dois DNS. Quando você tem muitas máquinas para configurar essa conectividade, o DHCP resolve. Por quê? Eu coloco o servidor DHCP na rede e ligo todo mundo para pegar IP automaticamente por DHCP. Primeiro, todo mundo pega o IP, evita conflito de IP, oferece conectividade imediatamente e facilita o gerenciamento. Agora, quando eu estou lá na internet, o meu provedor pode ter um DHCP, ou seja, fornecer IPs dinâmicos para os usuários. Por quê? Porque se o meu provedor tiver, por exemplo, mil IPs disponíveis, ele pode ter dois mil clientes. Por quê? Porque os caras não estão conectados o tempo todo. E aí eu vou liberando os IPs conforme os caras vão entrando, até eu chegar e esgotar. Antônio, isso que você colocou é para... As aulas que eu disponibilizei... Como assim? Por favor, me esclarece, pode abrir o áudio aí. Antônio Carlos Ferreira, tá aí? Não sei se ele saiu.
+
+1:39:20 - Palestrante Não Identificado 
+Essas aulas que eu disponibilizei...
+
+1:39:23 - Conference Room (Fiap Convidado 112) - Speaker 1 
+Então, essas aulas que eu coloquei agora, elas ensinam você sobre os modos de operação de rede. O que que é o modo Bridge, o que que é o modo NAT, o que que é o modo Rostioni, o que é o modo rede NAT, o que é o modo customizado. Por que isso é importante? Porque na hora que eu vou montar o meu ambiente de laboratório, por exemplo, eu posso precisar sair para a internet, eu posso precisar isolar máquinas, eu posso precisar isolar parcialmente e cada um desses modos aqui no virtualizador, vou citar aqui, esses modos Bridge, NAT, Hostione, Custom. Então, esses modos vão alterar a forma como uma máquina virtual se comporta em relação a outras máquinas virtuais, em termos de conectividade, ou em relação à minha máquina host, que é a minha máquina física, ou em relação à minha rede local como um todo, ou em relação à internet. A internet. Então, por exemplo, quando eu tô com o modo Bridge, eu acesso todo mundo. Eu acesso máquina virtual, eu acesso o meu computador físico, eu acesso os outros computadores da rede local, eu acesso a internet. Quando eu tô em modo NAT, eu acesso a minha máquina física e eu acesso a internet. Quando eu tô em modo Host Only, eu acesso física e as outras VMs. Talvez eu não acesse a internet. E quando eu tenho modo customizado, depende da regra que eu criar.
+
+1:41:10 - Palestrante Não Identificado 
+Entendeu?
+
+1:41:11 - Conference Room (Fiap Convidado 112) - Speaker 1 
+Tem a ver com com comunicação de rede aqui, tá? Conectividade. Então, assistam. São aulas curtas, é rápido, tá? Acho que vale a pena. Como um assunto bacana, porque ajuda a entender mais o conceito de rede, tá? É Deixa eu ver se faltou algum outro ponto. Ah, e uma outra coisa. Veja só. Como eu tenho um IP que chega na internet, esse cara aqui, se eu acessar, se eu testar um site, ele vai achar o site. Ele está acessando o wall. Então, a criação das VLANs não tirou a minha conectividade. Não tirou a minha conectividade. Então, quando eu faço isso, eu consigo segmentar... Esse cara, ele criou um segmentador de rede. É como se ele fosse um switch. Aí eu consigo, de repente, conectar outros caras nele. Agora, deixa eu mostrar um negócio interessante para vocês aqui. Deixa eu ligar as outras duas máquinas aqui. Que tem a ver um pouco com... Não com segmentação, mas com alta disponibilidade. Eu liguei a celular. Tomara que o meu computador aguente as três aí, porque vai ser legal se as três estiverem aqui.
+
+1:42:37 - Palestrante Não Identificado 
+Esse aqui já está.
+
+1:42:40 - Conference Room (Fiap Convidado 112) - Speaker 1 
+Deixa ele voltar.
+
+1:42:41 - Conference Room (Fiap Convidado 112) - Speaker 5 
+Vou mostrar um negócio bacana para vocês.
+
+1:42:46 - Conference Room (Fiap Convidado 112) - Speaker 1 
+Deixa eu abrir uma guia nova.
+
+1:42:49 - Palestrante Não Identificado 
+Olha só, pessoal.
+
+1:42:52 - Conference Room (Fiap Convidado 112) - Speaker 1 
+Eu vou abrir... Deixa eu duplicar. Deixa eu duplicar de novo. Eu vou abrir três abas aqui. Por quê? Eu tenho três servidores aqui. Na verdade, eu tenho dois servidores de aplicação. Servidor web, tá? AppServer1 e AppServer2. Quer ver quem são eles? Deixa eu voltar aqui. Eu vou acessar esse aqui.
+
+1:43:19 - Conference Room (Fiap Convidado 112) - Speaker 5 
+1,2,0,8,1,28.
+
+1:43:20 - Conference Room (Fiap Convidado 112) - Speaker 1 
+Esse aqui é o servidor de aplicação 1. Aqui eu vou colocar o servidor de aplicação 2. 1,2,0,8,1,29. Servidor de aplicação 2. Servidor 1 amarelinho, servidor 2 azulzinho. Eu criei aqui um ambiente de alta disponibilidade utilizando uma ferramenta chamada Raproxy. O Raproxy está aqui, tá? Está nessa máquina, no 27. O que significa isso? Deixa eu tentar explicar. Deixa eu ver se eu tenho esse conteúdo fácil aqui. Eu passo para você, vai ser uma atividade de hoje. Me dá só um segundo que eu vou pegar esse conteúdo que eu acho que vale a pena.
+
+1:44:39 - Conference Room (Fiap Convidado 112) - Speaker 2 
+Deixa eu ver...
+
+1:44:42 - Palestrante Não Identificado 
+Deixa eu pegar só um slide, especificamente.
+
+1:44:49 - Conference Room (Fiap Convidado 112) - Speaker 1 
+Olha só, pessoal. Esse é o cenário de alta disponibilidade. Então, imagina o seguinte. Eu estou aqui na internet, E aí eu preciso acessar um site, tá? E aí o site que é divulgado para mim, ele tem esse endereço IP aqui, ó. Tem esse endereço IP aqui. E aí eu vou lá e acesso esse cara. Ele vem e bate aqui. Com alta disponibilidade, o que ele faz? Ele consulta ou esse cara ou esse cara e apresenta o conteúdo com esse endereço IP. Então eu protejo esses dois endereços IP, ou seja, Eu protejo os servidores de aplicação. Se alguém for me atacar, vai me atacar aqui. E aqui não tem nada. O que tem é aqui. Agora, voltando lá ao nosso laboratório, esse cara aqui é o gerenciador. Eu tenho, então, servidor 1 e servidor 2. Eu vou acessar o gerenciador, que é o 9.2, o 68.1.27. Ele acessou aqui, certo? Servidor 1. Ah, por exemplo, mais uma pessoa acessou.
+
+1:46:13 - Palestrante Não Identificado 
+Servidor 2.
+
+1:46:14 - Conference Room (Fiap Convidado 112) - Speaker 1 
+No mesmo cara, servidor 2, servidor 1, servidor 2, servidor 1. Ele vira um balanceador de carga e ele vira um cara de alta disponibilidade. Esse negócio legal agora eu vou vir aqui e eu vou eu vou desligar o serviço do Apache no servidor 1 tá eu vou dar aqui ó vou dar um stop no Apache parei aí eu volto lá no ambiente só tá o servidor 1 agora se eu der F5 quer ver ó só o servidor só o azulzinho, ó, só o azulzinho. Caiu um, tá? Caiu um. Aí eu vou lá de novo e eu ligo esse cara de novo. Aí eu volto a ter o balanceamento de carga. Legal esse ambiente, né? Isso aqui é bem bacana. A gente vai publicar aqui no canal da empresa, a gente vai publicar, inclusive, o documento para vocês poderem fazer as configurações na próxima semana, tá? Então, era só isso que eu queria mostrar.
+
+1:47:40 - Conference Room (Fiap Convidado 112) - Speaker 2 
+Alguém mandou uma pergunta aqui.
+
+1:47:42 - Conference Room (Fiap Convidado 112) - Speaker 1 
+Não, não, tem uma configuração, Antônio, mas aí o documento eu vou pedir para vocês depois acessarem pelo YouTube e baixarem de lá, tá? É isso, mas É mais um elemento que traz a questão da segurança. O que eu estou defendendo aqui? O que eu estou protegendo aqui? Estou protegendo a disponibilidade. Sempre tem um servidor disponível, certo? E eu não aponto o meu servidor de cara para a internet. Eu aponto um proxy. Esse cara é um proxy. Está vendo? Esse cara é um proxy. Aí eu bato na cara do proxy, não na cara da aplicação, que é a mais importante. Voltando aqui, estamos chegando no final. Estou deixando alguns exercícios que eu gostaria que vocês tentassem fazer no Packet Tracer. Não dá tempo de fazer agora, mas eu trouxe para vocês. Tem o exercício e tem o desafio. Tem esse desafio de transformar o dispositivo de vocês em um access point? Se der, não deu certo porque estou em uma versão diferente diferente do lindo beleza chat gpt ou outro que eu achei bem legal que esse cara aqui ó claude.ai procura essa inteligência artificial é maravilhosa ela é top tá é em caixa os arquivos próxima mas em quHiuristrutura de arquivos por aí depende do proxy francis é muito específico para cada um mas ele faz a meus arquivos numa área de cache lá. Depois eu trago essas informações para vocês mais detalhadas aqui. Eu quis dar mais um exemplo, tá? Aí, deixa eu só admitir o Yuri aqui, está chegando já no final da aula, né? Aí, então eu deixei esse exemplo desse exercício e aí também como que vocês vão analisar isso no Wireshark. E no nosso conteúdo Hoje, o que a gente aprendeu? Segmentação de redes, vimos os tipos de segmentação, aplicações de segmentação, para que serve. Vimos a arquitetura típica, os modelos de controle de acesso, boas práticas e alguns exercícios que permitiram visualizar na prática como esses caras são interessantes de serem implementados. Estão chegando no final da aula, tá? Então, aí, mais uma vez, eu peço para que vocês avaliem, né, façam avaliação sobre a pesquisa de satisfação desta aula, por favor, não deixem de fazer essa avaliação. Ícaro, pode perguntar.
+
+1:50:27 - Conference Room (Fiap Convidado 112) - Speaker 5 
+Ô professor, é muito boa a sua aula hoje, muito bom. É, ontem eu tinha que sair mais cedo, Eu consegui fazer a minha pergunta no final, sobre o processo de takedown da parte de segurança, que é justamente você retirar sites que estão violando, né?
+
+1:50:52 - Conference Room (Fiap Convidado 112) - Speaker 5 
+Às vezes tá replicando coisas de...
+
+1:50:55 - Conference Room (Fiap Convidado 112) - Speaker 1 
+Peraí, picotou, não consegui entender. Ícaro, seu áudio cortou. Oi, oi, agora sim.
+
+1:51:05 - Conference Room (Fiap Convidado 112) - Speaker 2 
+Repete, por favor. Não tô ouvindo. Tá picotando.
+
+1:51:08 - Conference Room (Fiap Convidado 112) - Speaker 1 
+Faz o seguinte, Ícaro, se não der para você fazer a pergunta, manda ela aqui nesse chat. E aí, se eu puder responder agora, eu já respondo, senão eu trago na próxima aula a sua resposta, pode ser? Eu acho que ficou ruim, ficou picotando o áudio. Eu tive problema minha rede de conexão hoje, até fiquei preocupado se eu ia ter algum problema no começo da aula, até comentei para quem chegou logo no início, eu consegui conectar cinco da tarde em ponto, porque eu estava com um problema de conectividade aqui, né? Mas estamos chegando no final, pessoal, então assim, vou abrir aí para as pessoas que quiserem comentar se esse Viu, Ícaro? Está de volta aí com a gente?
+
+1:52:03 - Conference Room (Fiap Convidado 112) - Speaker 5 
+Estou, sim, professor. Minha bateria está descarregando. Minha pergunta é do Twitter. Que seria você remover sites que estão violando outros sites, estão replicando, por exemplo. Muita gente artificial faz muito isso, né? Cria aplicativos de outros sites difíceis. O aplicativo de outras empresas. Então, o Takedown seria o processo de remover, de cair esses sites, essas aplicações. Esse procedimento é um procedimento difícil de fazer na parte de segurança? É um pouco, porque quando você está lidando com infraestrutura de terceiro, como é que você derruba uma infraestrutura de terceiro?
+
+1:52:47 - Conference Room (Fiap Convidado 112) - Speaker 1 
+O que que normalmente a gente faz nesse caso? Você está vendo que malicioso tá no ar, tá rolando algum problema, você pega o chamado IOC, que é o indicador de comprometimento. O que é o IOC? É o nome de domínio, é o IP do cara e você cria suas listas de IOCs, tá? Ou IOAs, que são os indicadores de ataque mesmo. Mas basicamente, domínio, endereço IP, hash de aplicação maliciosa, você monta esse documento e aí você coloca ele nas suas ferramentas em Firewall, ferramenta de IPS, IDS, CIEM, e principalmente você coloca isso em plataformas de compartilhamento de inteligência de ameaças, como por exemplo o MISP, como por exemplo o DeHive, como outras ferramentas que existem no mercado para fazer o chamado Cyber Threat Intelligence. Você popula lá o seguinte, olha, tem uma lista de IOCs e IOAs aqui, eles trouxeram tal problema, você faz uma entrada nova e publica essa lista e fala, ó, esses IPs estão causando esse problema aqui e isso imediatamente fica disponível para milhares de empresas que acessam essa base de inteligência de ameaças e eles podem configurar, baixar essa lista e imediatamente já ficar protegido contra esse tipo de ataque. Vou dar um exemplo que eu conversei, eu converso bastante com o pessoal da Febraban e a gente teve com eles há pouco tempo para falar sobre capacitação e a minha empresa é parceira da PwC. A PwC é quem gerencia um dos gerentes do MISP da Febraban e o pessoal falou que isso ajuda para caramba, porque hoje com o aumento os bancos digitais, o Brasil tem cerca de 3.000 bancos hoje. Imagina que você pode compartilhar essa inteligência para evitar que essas ameaças ataquem 3.000 bancos utilizando uma única estrutura. Então, respondendo a tua pergunta aí, quero dar um pouco de trabalho, mas existem essas alternativas, entendeu?
+
+1:55:05 - Palestrante Não Identificado 
+Respondi a tua pergunta?
+
+1:55:07 - Conference Room (Fiap Convidado 112) - Speaker 5 
+Muito bom, professor.
+
+1:55:08 - Conference Room (Fiap Convidado 112) - Speaker 5 
+Obrigadão aí.
+
+1:55:09 - Conference Room (Fiap Convidado 112) - Speaker 1 
+É isso. Pessoal, mais alguém quer comentar alguma coisa? Estamos chegando às sete horas, já estamos nos finalmentes da aula. Alguém quer comentar o que achou do conteúdo de hoje? Posso pegar um. Vou pegar um voluntário. Deixa eu ver aqui quem vai ser o meu voluntário hoje. Luciano, tá com a gente aí?
+
+1:55:31 - Palestrante Não Identificado 
+Aqui.
+
+1:55:31 - Palestrante Não Identificado 
+Opa, e aí?
+
+1:55:32 - Conference Room (Fiap Convidado 112) - Speaker 1 
+Como é que foi esse conteúdo para você hoje?
+
+1:55:36 - Palestrante Não Identificado 
+Quer comentar Ah, o conteúdo foi muito bom. Algumas coisinhas do Pact Tracer eu já conhecia. Já dei aula na parte de vilã. Aquela parte de criação de vilãs eu já conhecia um pouco. Mas foi top, foi muito boa. Só senti um pouco de falta de ter um foco mais voltado também essa parte de 5G, sabe?
+
+1:56:08 - Conference Room (Fiap Convidado 112) - Speaker 1 
+É isso, e eu imaginei que você fosse citar isso. Eu tô preparando bem vocês nessa parte de comunicação de dados, porque a gente vai falar um pouquinho na semana que vem sobre RAN e Open RAN. É exatamente a rede de acesso, né? E aí ela é puramente 5G, puramente 5G. Aí eu vou levar esses conceitos para esse ambiente do OpenRAM. Inclusive a gente vai configurar o OMINET, que é o simulador que vai permitir a gente criar lá dentro dele uma simulação com as antenas, com a propagação e tal. Então eu queria deixar bem solidificada essa questão da comunicação de dados, para a gente entender como que isso funciona dentro do 5G. Por isso que eu vim com abordagem de redes no início. Deu para entender por que eu ainda não entrei no 5G? Porque senão eu fico indo de um para o outro, eu acho que eu não consigo aprofundar o tanto que eu quero. Eu gosto de isolar o tema e depois usar esse tema dentro do 5G. Beleza?
+
+1:57:14 - Palestrante Não Identificado 
+Tá, beleza.
+
+1:57:14 - Conference Room (Fiap Convidado 112) - Speaker 1 
+Mas é isso, podem ficar tranquilos que a gente vai abordar isso lá, tá? Aliás, semana que vem é todo em cima de 5G, tá? Tanto na aula de terça quanto na aula de quinta. Mais alguém quer comentar encerrando que já vai dar sete horas da noite.
+
+1:57:33 - Conference Room (Fiap Convidado 112) - Speaker 4 
+Professor, nesse seu curso você vai passar sobre SD-WAN?
+
+1:57:37 - Conference Room (Fiap Convidado 112) - Speaker 1 
+Não tem esse item previsto no meu, deixa eu ver se o SD-WAN está para frente com outro professor, já te respondo agora, aí a gente avança uns dois minutinhos aqui, deixa eu ver se eu tenho.
+
+1:57:52 - Conference Room (Fiap Convidado 112) - Speaker 2 
+Eu acho que não vai ter esse conteúdo não.
+
+1:57:55 - Conference Room (Fiap Convidado 112) - Speaker 1 
+Mas vamos fazer o seguinte, eu tenho, quem não teve acesso ao conteúdo DSD One, bem interessante há um tempo atrás, eu disponibilizo para vocês, tá? Na semana que vem a gente vai falar fluxo de sinalização em redes móveis, aí é o 5G, vamos falar dos protocolos de sinalização, GTP, RRC, NGAP, NAS, análise de mensagens, sinalização, request response, aí é 5G pra caramba, tá? Isso é muito legal, cara.
+
+1:58:28 - Conference Room (Fiap Convidado 112) - Speaker 4 
+Isso é muito bom mesmo. A parte de sinalização. Isso.
+
+1:58:32 - Conference Room (Fiap Convidado 112) - Speaker 1 
+Meu, eu sou da época do SS7 em rede fixa. Eu sou um dinossauro de telecom. Então vamos lá que tá tudo certo.
+
+1:58:42 - Conference Room (Fiap Convidado 112) - Speaker 2 
+Eu também, professor.
+
+1:58:43 - Conference Room (Fiap Convidado 112) - Speaker 1 
+Trabalhou com o SS7 na sua vida, Clodoaldo?
+
+1:58:46 - Clodoaldo Callogero 
+Sim, até o livro branco a gente fazia parte do grupo.
+
+1:58:51 - Conference Room (Fiap Convidado 112) - Speaker 1 
+Eu tenho documento da década de 70, começa a explicar essas coisas até hoje. Então, apesar de eu ser nascido na década de 70, eu gosto de pegar os antigos. Quando eu comecei a trabalhar foi bem na transição das centrais semi-automáticas para as automáticas, então ainda tinha sinalização SS7 assim voando, né? Então isso é importante. Mas isso a gente fala na semana que vem. Pessoal, 7 horas da noite, vamos encerrando bom final de semana para vocês. Agora, de fato, vocês podem ir para o sexto, né? A gente continua na terça-feira e espero que vocês aproveitem bem aí o final de semana de vocês. Forte abraço e a gente se vê na semana que vem. Obrigado, professor. Com Deus, boa final de semana.
+
+1:59:41 - Clodoaldo Callogero 
+Boa noite, pessoal.
+
+1:59:42 - Palestrante Não Identificado 
+Boa noite a todos, velho.
+
+1:59:44 - Whibero 
+Obrigado. Bom final de semana a todos. Obrigado.

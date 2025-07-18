@@ -1,0 +1,2704 @@
+<!DOCTYPE html> <html><head>
+		<title>Algoritmia e Estruturas de Dados</title>
+		<base href="..\..\..\..\..\..\..\..\../">
+		<meta id="root-path" root-path="..\..\..\..\..\..\..\..\../">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes, minimum-scale=1.0, maximum-scale=5.0">
+		<meta charset="UTF-8">
+		<meta name="description" content="DRIVE - Algoritmia e Estruturas de Dados">
+		<meta property="og:title" content="Algoritmia e Estruturas de Dados">
+		<meta property="og:description" content="DRIVE - Algoritmia e Estruturas de Dados">
+		<meta property="og:type" content="website">
+		<meta property="og:url" content="languages/c/isep/md/00/main.html">
+		<meta property="og:image" content="gab\estudos-trabalhos\programação\programming-studies\languages\c\isep\md\00\media\alg-est-image1.png">
+		<meta property="og:site_name" content="DRIVE">
+		<meta name="author" content="Gabryel Nóbrega"><link rel="alternate" type="application/rss+xml" title="RSS Feed" href="lib/rss.xml"><script async="" id="webpage-script" src="lib/scripts/webpage.js" onload="this.onload=null;this.setAttribute(&quot;loaded&quot;, &quot;true&quot;)"></script><script type="module" async="" id="graph-view-script" src="lib/scripts/graph-view.js"></script><script async="" id="graph-wasm-script" src="lib/scripts/graph-wasm.js" onload="this.onload=null;this.setAttribute(&quot;loaded&quot;, &quot;true&quot;)"></script><script async="" id="graph-render-worker-script" src="lib/scripts/graph-render-worker.js" onload="this.onload=null;this.setAttribute(&quot;loaded&quot;, &quot;true&quot;)"></script><script async="" id="tinycolor-script" src="lib/scripts/tinycolor.js" onload="this.onload=null;this.setAttribute(&quot;loaded&quot;, &quot;true&quot;)"></script><script async="" id="pixi-script" src="https://cdnjs.cloudflare.com/ajax/libs/pixi.js/7.4.0/pixi.min.js" onload="this.onload=null;this.setAttribute(&quot;loaded&quot;, &quot;true&quot;)"></script><script async="" id="minisearch-script" src="https://cdn.jsdelivr.net/npm/minisearch@6.3.0/dist/umd/index.min.js" onload="this.onload=null;this.setAttribute(&quot;loaded&quot;, &quot;true&quot;)"></script><link rel="icon" href="lib/media/favicon.png"><script async="" id="graph-data-script" src="lib/scripts/graph-data.js" onload="this.onload=null;this.setAttribute(&quot;loaded&quot;, &quot;true&quot;)"></script><style>body{--line-width:40em;--line-width-adaptive:40em;--file-line-width:40em;--sidebar-width:min(20em, 80vw);--collapse-arrow-size:11px;--tree-horizontal-spacing:0.6em;--tree-vertical-spacing:0.6em;--sidebar-margin:12px}.sidebar{height:100%;min-width:calc(var(--sidebar-width) + var(--divider-width-hover));max-width:calc(var(--sidebar-width) + var(--divider-width-hover));font-size:14px;z-index:10;position:relative;overflow:hidden;transition:min-width ease-in-out,max-width ease-in-out;transition-duration:.2s;contain:size}.sidebar-left{left:0}.sidebar-right{right:0}.sidebar.is-collapsed{min-width:0;max-width:0}body.floating-sidebars .sidebar{position:absolute}.sidebar-content{height:100%;min-width:calc(var(--sidebar-width) - var(--divider-width-hover));top:0;padding:var(--sidebar-margin);padding-top:4em;line-height:var(--line-height-tight);background-color:var(--background-secondary);transition:background-color,border-right,border-left,box-shadow;transition-duration:var(--color-fade-speed);transition-timing-function:ease-in-out;position:absolute;display:flex;flex-direction:column}.sidebar:not(.is-collapsed) .sidebar-content{min-width:calc(max(100%,var(--sidebar-width)) - 3px);max-width:calc(max(100%,var(--sidebar-width)) - 3px)}.sidebar-left .sidebar-content{left:0;border-top-right-radius:var(--radius-l);border-bottom-right-radius:var(--radius-l)}.sidebar-right .sidebar-content{right:0;border-top-left-radius:var(--radius-l);border-bottom-left-radius:var(--radius-l)}.sidebar:has(.sidebar-content:empty):has(.topbar-content:empty){display:none}.sidebar-topbar{height:2em;width:var(--sidebar-width);top:var(--sidebar-margin);padding-inline:var(--sidebar-margin);z-index:1;position:fixed;display:flex;align-items:center;transition:width ease-in-out;transition-duration:inherit}.sidebar.is-collapsed .sidebar-topbar{width:calc(2.3em + var(--sidebar-margin) * 2)}.sidebar .sidebar-topbar.is-collapsed{width:0}.sidebar-left .sidebar-topbar{left:0}.sidebar-right .sidebar-topbar{right:0}.topbar-content{overflow:hidden;overflow:clip;width:100%;height:100%;display:flex;align-items:center;transition:inherit}.sidebar.is-collapsed .topbar-content{width:0;transition:inherit}.clickable-icon.sidebar-collapse-icon{background-color:transparent;color:var(--icon-color-focused);padding:0!important;margin:0!important;height:100%!important;width:2.3em!important;margin-inline:0.14em!important;position:absolute}.sidebar-left .clickable-icon.sidebar-collapse-icon{transform:rotateY(180deg);right:var(--sidebar-margin)}.sidebar-right .clickable-icon.sidebar-collapse-icon{transform:rotateY(180deg);left:var(--sidebar-margin)}.clickable-icon.sidebar-collapse-icon svg.svg-icon{width:100%;height:100%}.sidebar-section-header{margin:0 0 1em 0;text-transform:uppercase;letter-spacing:.06em;font-weight:600}body{transition:background-color var(--color-fade-speed) ease-in-out}.webpage-container{display:flex;flex-direction:row;height:100%;width:100%;align-items:stretch;justify-content:center}.document-container{opacity:1;flex-basis:100%;max-width:100%;width:100%;height:100%;display:flex;flex-direction:column;align-items:center;transition:opacity .2s ease-in-out;contain:inline-size}.hide{opacity:0;transition:opacity .2s ease-in-out}.document-container>.markdown-preview-view{margin:var(--sidebar-margin);margin-bottom:0;width:100%;width:-webkit-fill-available;width:-moz-available;width:fill-available;background-color:var(--background-primary);transition:background-color var(--color-fade-speed) ease-in-out;border-top-right-radius:var(--window-radius,var(--radius-m));border-top-left-radius:var(--window-radius,var(--radius-m));overflow-x:hidden!important;overflow-y:auto!important;display:flex!important;flex-direction:column!important;align-items:center!important;contain:inline-size}.document-container>.markdown-preview-view>.markdown-preview-sizer{padding-bottom:80vh!important;width:100%!important;max-width:var(--line-width)!important;flex-basis:var(--line-width)!important;transition:background-color var(--color-fade-speed) ease-in-out;contain:inline-size}.markdown-rendered img:not([width]),.view-content img:not([width]){max-width:100%;outline:0}.document-container>.view-content.embed{display:flex;padding:1em;height:100%;width:100%;align-items:center;justify-content:center}.document-container>.view-content.embed>*{max-width:100%;max-height:100%;object-fit:contain}:has(> :is(.math,table)){overflow-x:auto!important}.document-container>.view-content{overflow-x:auto;contain:content;padding:0;margin:0;height:100%}.scroll-highlight{position:absolute;width:100%;height:100%;pointer-events:none;z-index:1000;background-color:hsla(var(--color-accent-hsl),.25);opacity:0;padding:1em;inset:50%;translate:-50% -50%;border-radius:var(--radius-s)}</style><script defer="">async function loadIncludes(){if("file:"!=location.protocol){let e=document.querySelectorAll("include");for(let t=0;t<e.length;t++){let o=e[t],l=o.getAttribute("src");try{const e=await fetch(l);if(!e.ok){console.log("Could not include file: "+l),o?.remove();continue}let t=await e.text(),n=document.createRange().createContextualFragment(t),i=Array.from(n.children);for(let e of i)e.classList.add("hide"),e.style.transition="opacity 0.5s ease-in-out",setTimeout((()=>{e.classList.remove("hide")}),10);o.before(n),o.remove(),console.log("Included file: "+l)}catch(e){o?.remove(),console.log("Could not include file: "+l,e);continue}}}else{if(document.querySelectorAll("include").length>0){var e=document.createElement("div");e.id="error",e.textContent="Web server exports must be hosted on an http / web server to be viewed correctly.",e.style.position="fixed",e.style.top="50%",e.style.left="50%",e.style.transform="translate(-50%, -50%)",e.style.fontSize="1.5em",e.style.fontWeight="bold",e.style.textAlign="center",document.body.appendChild(e),document.querySelector(".document-container")?.classList.remove("hide")}}}document.addEventListener("DOMContentLoaded",(()=>{loadIncludes()}));let isFileProtocol="file:"==location.protocol;function waitLoadScripts(e,t){let o=e.map((e=>document.getElementById(e+"-script"))),l=0;!function e(){let n=o[l];l++,n&&"true"!=n.getAttribute("loaded")||l<o.length&&e(),l<o.length?n.addEventListener("load",e):t()}()}</script><link rel="stylesheet" href="lib/styles/obsidian.css"><link rel="stylesheet" href="lib/styles/theme.css"><link rel="preload" href="lib/styles/global-variable-styles.css" as="style" onload="this.onload=null;this.rel='stylesheet'"><noscript><link rel="stylesheet" href="lib/styles/global-variable-styles.css"></noscript><link rel="preload" href="lib/styles/supported-plugins.css" as="style" onload="this.onload=null;this.rel='stylesheet'"><noscript><link rel="stylesheet" href="lib/styles/supported-plugins.css"></noscript><link rel="preload" href="lib/styles/main-styles.css" as="style" onload="this.onload=null;this.rel='stylesheet'"><noscript><link rel="stylesheet" href="lib/styles/main-styles.css"></noscript><link rel="preload" href="lib/styles/snippets.css" as="style" onload="this.onload=null;this.rel='stylesheet'"><noscript><link rel="stylesheet" href="lib/styles/snippets.css"></noscript></head><body class="publish css-settings-manager theme-dark"><script defer="">let theme=localStorage.getItem("theme")||(window.matchMedia("(prefers-color-scheme: dark)").matches?"dark":"light");"dark"==theme?(document.body.classList.add("theme-dark"),document.body.classList.remove("theme-light")):(document.body.classList.add("theme-light"),document.body.classList.remove("theme-dark")),window.innerWidth<480?document.body.classList.add("is-phone"):window.innerWidth<768?document.body.classList.add("is-tablet"):window.innerWidth<1024?document.body.classList.add("is-small-screen"):document.body.classList.add("is-large-screen")</script><div class="webpage-container workspace"><div class="sidebar-left sidebar"><div class="sidebar-handle"></div><div class="sidebar-topbar"><div class="topbar-content"><label class="theme-toggle-container" for="theme_toggle"><input class="theme-toggle-input" type="checkbox" id="theme_toggle"><div class="toggle-background"></div></label></div><div class="clickable-icon sidebar-collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" class="svg-icon"><path d="M21 3H3C1.89543 3 1 3.89543 1 5V19C1 20.1046 1.89543 21 3 21H21C22.1046 21 23 20.1046 23 19V5C23 3.89543 22.1046 3 21 3Z"></path><path d="M10 4V20"></path><path d="M4 7H7"></path><path d="M4 10H7"></path><path d="M4 13H7"></path></svg></div></div><div class="sidebar-content"><div class="search-input-container"><input enterkeyhint="search" type="search" spellcheck="false" placeholder="Search..."><div class="search-input-clear-button" aria-label="Clear search"></div></div><include src="lib/html/file-tree.html"></include></div><script defer="">let ls = document.querySelector(".sidebar-left"); ls.classList.add("is-collapsed"); if (window.innerWidth > 768) ls.classList.remove("is-collapsed"); ls.style.setProperty("--sidebar-width", localStorage.getItem("sidebar-left-width"));</script></div><div class="document-container markdown-reading-view hide"><div class="markdown-preview-view markdown-rendered allow-fold-headings allow-fold-lists is-readable-line-width"><style id="MJX-CHTML-styles">mjx-c.mjx-c210E.TEX-I::before{padding:.694em .576em .011em 0;content:"h"}mjx-c.mjx-c1D458.TEX-I::before{padding:.694em .521em .011em 0;content:"k"}mjx-c.mjx-c2032::before{padding:.56em .275em 0 0;content:"′"}mjx-c.mjx-c1D45A.TEX-I::before{padding:.442em .878em .011em 0;content:"m"}mjx-c.mjx-c1D451.TEX-I::before{padding:.694em .52em .01em 0;content:"d"}mjx-c.mjx-c1D450.TEX-I::before{padding:.442em .433em .011em 0;content:"c"}mjx-c.mjx-c1D436.TEX-I::before{padding:.705em .76em .022em 0;content:"C"}mjx-c.mjx-c1D443.TEX-I::before{padding:.683em .751em 0 0;content:"P"}mjx-c.mjx-c1D448.TEX-I::before{padding:.683em .767em .022em 0;content:"U"}mjx-c.mjx-c1D44E.TEX-I::before{padding:.441em .529em .01em 0;content:"a"}mjx-c.mjx-c1D45D.TEX-I::before{padding:.442em .503em .194em 0;content:"p"}mjx-c.mjx-c1D44B.TEX-I::before{padding:.683em .852em 0 0;content:"X"}mjx-c.mjx-c1D466.TEX-I::before{padding:.442em .49em .205em 0;content:"y"}mjx-c.mjx-c25::before{padding:.75em .833em .056em 0;content:"%"}mjx-c.mjx-cD7::before{padding:.491em .778em 0 0;content:"×"}mjx-c.mjx-c35::before{padding:.666em .5em .022em 0;content:"5"}mjx-c.mjx-c1D435.TEX-I::before{padding:.683em .759em 0 0;content:"B"}mjx-c.mjx-c38::before{padding:.666em .5em .022em 0;content:"8"}mjx-c.mjx-cF7::before{padding:.537em .778em .036em 0;content:"÷"}mjx-c.mjx-c3D::before{padding:.583em .778em .082em 0;content:"="}mjx-c.mjx-c2217::before{padding:.465em .5em 0 0;content:"∗"}mjx-c.mjx-c34::before{padding:.677em .5em 0 0;content:"4"}mjx-c.mjx-c1D44F.TEX-I::before{padding:.694em .429em .011em 0;content:"b"}mjx-c.mjx-c1D456.TEX-I::before{padding:.661em .345em .011em 0;content:"i"}mjx-c.mjx-c1D461.TEX-I::before{padding:.626em .361em .011em 0;content:"t"}mjx-c.mjx-c1D452.TEX-I::before{padding:.442em .466em .011em 0;content:"e"}mjx-c.mjx-c1D460.TEX-I::before{padding:.442em .469em .01em 0;content:"s"}mjx-c.mjx-c1D465.TEX-I::before{padding:.442em .572em .011em 0;content:"x"}mjx-c.mjx-c36::before{padding:.666em .5em .022em 0;content:"6"}mjx-c.mjx-c37::before{padding:.676em .5em .022em 0;content:"7"}mjx-msup{display:inline-block;text-align:left}mjx-texatom{display:inline-block;text-align:left}mjx-c.mjx-c1D442.TEX-I::before{padding:.704em .763em .022em 0;content:"O"}mjx-c.mjx-c28::before{padding:.75em .389em .25em 0;content:"("}mjx-c.mjx-c1D45B.TEX-I::before{padding:.442em .6em .011em 0;content:"n"}mjx-c.mjx-c32::before{padding:.666em .5em 0 0;content:"2"}mjx-c.mjx-c29::before{padding:.75em .389em .25em 0;content:")"}mjx-c.mjx-c1D459.TEX-I::before{padding:.694em .298em .011em 0;content:"l"}mjx-c.mjx-c1D45C.TEX-I::before{padding:.441em .485em .011em 0;content:"o"}mjx-c.mjx-c1D454.TEX-I::before{padding:.442em .477em .205em 0;content:"g"}mjx-c.mjx-c2061::before{padding:0;content:""}mjx-c.mjx-c1D6FA.TEX-I::before{padding:.704em .786em 0 0;content:"Ω"}mjx-c.mjx-c1D6E9.TEX-I::before{padding:.704em .763em .022em 0;content:"Θ"}mjx-c.mjx-c2B::before{padding:.583em .778em .082em 0;content:"+"}mjx-c.mjx-c33::before{padding:.665em .5em .022em 0;content:"3"}mjx-c.mjx-c2E::before{padding:.12em .278em 0 0;content:"."}mjx-c.mjx-c2F::before{padding:.75em .5em .25em 0;content:"/"}mjx-c.mjx-c30::before{padding:.666em .5em .022em 0;content:"0"}mjx-c.mjx-c39::before{padding:.666em .5em .022em 0;content:"9"}mjx-c.mjx-c2212::before{padding:.583em .778em .082em 0;content:"−"}mjx-container[jax=CHTML]{line-height:0}mjx-container [space="1"]{margin-left:.111em}mjx-container [space="2"]{margin-left:.167em}mjx-container [space="3"]{margin-left:.222em}mjx-container [space="4"]{margin-left:.278em}mjx-container [space="5"]{margin-left:.333em}mjx-container [rspace="1"]{margin-right:.111em}mjx-container [rspace="2"]{margin-right:.167em}mjx-container [rspace="3"]{margin-right:.222em}mjx-container [rspace="4"]{margin-right:.278em}mjx-container [rspace="5"]{margin-right:.333em}mjx-container [size="s"]{font-size:70.7%}mjx-container [size=ss]{font-size:50%}mjx-container [size=Tn]{font-size:60%}mjx-container [size=sm]{font-size:85%}mjx-container [size=lg]{font-size:120%}mjx-container [size=Lg]{font-size:144%}mjx-container [size=LG]{font-size:173%}mjx-container [size=hg]{font-size:207%}mjx-container [size=HG]{font-size:249%}mjx-container [width=full]{width:100%}mjx-box{display:inline-block}mjx-block{display:block}mjx-itable{display:inline-table}mjx-row{display:table-row}mjx-row>*{display:table-cell}mjx-mtext{display:inline-block}mjx-mstyle{display:inline-block}mjx-merror{display:inline-block;color:red;background-color:#ff0}mjx-mphantom{visibility:hidden}mjx-assistive-mml{top:0;left:0;clip:rect(1px,1px,1px,1px);user-select:none;position:absolute!important;padding:1px 0 0!important;border:0!important;display:block!important;width:auto!important;overflow:hidden!important}mjx-assistive-mml[display=block]{width:100%!important}mjx-math{display:inline-block;text-align:left;line-height:0;text-indent:0;font-style:normal;font-weight:400;font-size:100%;font-size-adjust:none;letter-spacing:normal;border-collapse:collapse;overflow-wrap:normal;word-spacing:normal;white-space:nowrap;direction:ltr;padding:1px 0}mjx-container[jax=CHTML][display=true]{display:block;text-align:center;margin:1em 0}mjx-container[jax=CHTML][display=true][width=full]{display:flex}mjx-container[jax=CHTML][display=true] mjx-math{padding:0}mjx-container[jax=CHTML][justify=left]{text-align:left}mjx-container[jax=CHTML][justify=right]{text-align:right}mjx-mi{display:inline-block;text-align:left}mjx-c{display:inline-block}mjx-utext{display:inline-block;padding:.75em 0 .2em}mjx-msub{display:inline-block;text-align:left}mjx-mn{display:inline-block;text-align:left}mjx-mo{display:inline-block;text-align:left}mjx-stretchy-h{display:inline-table;width:100%}mjx-stretchy-h>*{display:table-cell;width:0}mjx-stretchy-h>*>mjx-c{display:inline-block;transform:scaleX(1)}mjx-stretchy-h>*>mjx-c::before{display:inline-block;width:initial}mjx-stretchy-h>mjx-ext{overflow:clip visible;width:100%}mjx-stretchy-h>mjx-ext>mjx-c::before{transform:scaleX(500)}mjx-stretchy-h>mjx-ext>mjx-c{width:0}mjx-stretchy-h>mjx-beg>mjx-c{margin-right:-.1em}mjx-stretchy-h>mjx-end>mjx-c{margin-left:-.1em}mjx-stretchy-v{display:inline-block}mjx-stretchy-v>*{display:block}mjx-stretchy-v>mjx-beg{height:0}mjx-stretchy-v>mjx-end>mjx-c{display:block}mjx-stretchy-v>*>mjx-c{transform:scaleY(1);transform-origin:left center;overflow:hidden}mjx-stretchy-v>mjx-ext{display:block;height:100%;box-sizing:border-box;border:0 solid transparent;overflow:visible clip}mjx-stretchy-v>mjx-ext>mjx-c::before{width:initial;box-sizing:border-box}mjx-stretchy-v>mjx-ext>mjx-c{transform:scaleY(500) translateY(.075em);overflow:visible}mjx-mark{display:inline-block;height:0}mjx-c::before{display:block;width:0}.MJX-TEX{font-family:MJXZERO,MJXTEX}.TEX-B{font-family:MJXZERO,MJXTEX-B}.TEX-I{font-family:MJXZERO,MJXTEX-I}.TEX-MI{font-family:MJXZERO,MJXTEX-MI}.TEX-BI{font-family:MJXZERO,MJXTEX-BI}.TEX-S1{font-family:MJXZERO,MJXTEX-S1}.TEX-S2{font-family:MJXZERO,MJXTEX-S2}.TEX-S3{font-family:MJXZERO,MJXTEX-S3}.TEX-S4{font-family:MJXZERO,MJXTEX-S4}.TEX-A{font-family:MJXZERO,MJXTEX-A}.TEX-C{font-family:MJXZERO,MJXTEX-C}.TEX-CB{font-family:MJXZERO,MJXTEX-CB}.TEX-FR{font-family:MJXZERO,MJXTEX-FR}.TEX-FRB{font-family:MJXZERO,MJXTEX-FRB}.TEX-SS{font-family:MJXZERO,MJXTEX-SS}.TEX-SSB{font-family:MJXZERO,MJXTEX-SSB}.TEX-SSI{font-family:MJXZERO,MJXTEX-SSI}.TEX-SC{font-family:MJXZERO,MJXTEX-SC}.TEX-T{font-family:MJXZERO,MJXTEX-T}.TEX-V{font-family:MJXZERO,MJXTEX-V}.TEX-VB{font-family:MJXZERO,MJXTEX-VB}mjx-stretchy-h mjx-c,mjx-stretchy-v mjx-c{font-family:MJXZERO,MJXTEX-S1,MJXTEX-S4,MJXTEX,MJXTEX-A!important}@font-face{font-family:MJXZERO;src:url("lib/fonts/mathjax_zero.woff") format("woff")}@font-face{font-family:MJXTEX;src:url("lib/fonts/mathjax_main-regular.woff") format("woff")}@font-face{font-family:MJXTEX-B;src:url("lib/fonts/mathjax_main-bold.woff") format("woff")}@font-face{font-family:MJXTEX-I;src:url("lib/fonts/mathjax_math-italic.woff") format("woff")}@font-face{font-family:MJXTEX-MI;src:url("lib/fonts/mathjax_main-italic.woff") format("woff")}@font-face{font-family:MJXTEX-BI;src:url("lib/fonts/mathjax_math-bolditalic.woff") format("woff")}@font-face{font-family:MJXTEX-S1;src:url("lib/fonts/mathjax_size1-regular.woff") format("woff")}@font-face{font-family:MJXTEX-S2;src:url("lib/fonts/mathjax_size2-regular.woff") format("woff")}@font-face{font-family:MJXTEX-S3;src:url("lib/fonts/mathjax_size3-regular.woff") format("woff")}@font-face{font-family:MJXTEX-S4;src:url("lib/fonts/mathjax_size4-regular.woff") format("woff")}@font-face{font-family:MJXTEX-A;src:url("lib/fonts/mathjax_ams-regular.woff") format("woff")}@font-face{font-family:MJXTEX-C;src:url("lib/fonts/mathjax_calligraphic-regular.woff") format("woff")}@font-face{font-family:MJXTEX-CB;src:url("lib/fonts/mathjax_calligraphic-bold.woff") format("woff")}@font-face{font-family:MJXTEX-FR;src:url("lib/fonts/mathjax_fraktur-regular.woff") format("woff")}@font-face{font-family:MJXTEX-FRB;src:url("lib/fonts/mathjax_fraktur-bold.woff") format("woff")}@font-face{font-family:MJXTEX-SS;src:url("lib/fonts/mathjax_sansserif-regular.woff") format("woff")}@font-face{font-family:MJXTEX-SSB;src:url("lib/fonts/mathjax_sansserif-bold.woff") format("woff")}@font-face{font-family:MJXTEX-SSI;src:url("lib/fonts/mathjax_sansserif-italic.woff") format("woff")}@font-face{font-family:MJXTEX-SC;src:url("lib/fonts/mathjax_script-regular.woff") format("woff")}@font-face{font-family:MJXTEX-T;src:url("lib/fonts/mathjax_typewriter-regular.woff") format("woff")}@font-face{font-family:MJXTEX-V;src:url("lib/fonts/mathjax_vector-regular.woff") format("woff")}@font-face{font-family:MJXTEX-VB;src:url("lib/fonts/mathjax_vector-bold.woff") format("woff")}mjx-c.mjx-c1D439.TEX-I::before{padding:.68em .749em 0 0;content:"F"}mjx-c.mjx-c1D447.TEX-I::before{padding:.677em .704em 0 0;content:"T"}mjx-c.mjx-c1D43F.TEX-I::before{padding:.683em .681em 0 0;content:"L"}mjx-c.mjx-c1D43C.TEX-I::before{padding:.683em .504em 0 0;content:"I"}mjx-c.mjx-c1D441.TEX-I::before{padding:.683em .888em 0 0;content:"N"}mjx-c.mjx-c1D438.TEX-I::before{padding:.68em .764em 0 0;content:"E"}mjx-c.mjx-c31::before{padding:.666em .5em 0 0;content:"1"}mjx-c.mjx-c2C::before{padding:.121em .278em .194em 0;content:","}</style><pre class="frontmatter language-yaml" tabindex="0" style="display: none;"><code class="language-yaml is-loaded"><span class="token key atrule">title</span><span class="token punctuation">:</span> Algoritmia e Estruturas de Dados
+<span class="token key atrule">tags</span><span class="token punctuation">:</span> studies<span class="token punctuation">,</span> programming
+<span class="token key atrule">use</span><span class="token punctuation">:</span> Documentation
+<span class="token key atrule">languages</span><span class="token punctuation">:</span> C
+<span class="token key atrule">dependences</span><span class="token punctuation">:</span> <span class="token null important">NULL</span></code><button class="copy-code-button"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon lucide-copy"><rect x="8" y="8" width="14" height="14" rx="2" ry="2"></rect><path d="M4 16c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2"></path></svg></button></pre><div class="markdown-preview-sizer markdown-preview-section"><h1 class="page-title heading" id="Algoritmia e Estruturas de Dados"><p dir="auto">Algoritmia e Estruturas de Dados</p></h1><div class="el-h1 heading-wrapper"><div class="heading-children"><div class="el-blockquote"><blockquote dir="auto">
+<p>Jorge Santos</p>
+</blockquote></div><div class="el-blockquote"><blockquote dir="auto">
+<p>Instituto Superior de Engenharia do Porto</p>
+<p>Departamento de Engenharia Informática</p>
+<p>Fevereiro de 2006</p>
+</blockquote></div><div class="el-p"><p dir="auto">  <strong>Aviso de licença de utilização:</strong> Este documento pode ser utilizado livremente para fins não comerciais, é permitido aos seus utilizadores, copiar, distribuir e exibir publicamente os seus conteúdos, desde que sejam ressalvados os direitos de autor do mesmo, nomeadamente, de-verá ser sempre incluída esta página em todas as cópias.</p></div><div class="el-details"><details>
+<summary> INDICE E TABELAS </summary></details></div><div class="el-table" dir="auto" style="overflow-x: auto;"><table>
+<thead>
+<tr>
+<th dir="auto"></th>
+<th dir="auto"></th>
+<th dir="auto"></th>
+<th dir="auto"></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td dir="ltr"><strong>1 Algoritmia e Programação</strong></td>
+<td dir="auto"></td>
+<td dir="auto"></td>
+<td dir="auto"></td>
+</tr>
+<tr>
+<td dir="auto">1.1.</td>
+<td dir="ltr">Conceitos básicos</td>
+<td dir="auto"></td>
+<td dir="auto"></td>
+</tr>
+<tr>
+<td dir="auto"></td>
+<td dir="auto">1.1.1.</td>
+<td dir="ltr">Introdução</td>
+<td dir="auto"></td>
+</tr>
+<tr>
+<td dir="auto"></td>
+<td dir="auto">1.1.2.</td>
+<td dir="ltr">Programação estruturada</td>
+<td dir="auto"></td>
+</tr>
+<tr>
+<td dir="auto"></td>
+<td dir="auto">1.1.3.</td>
+<td dir="ltr">Notação utilizada</td>
+<td dir="auto"></td>
+</tr>
+<tr>
+<td dir="auto"></td>
+<td dir="auto">1.1.4.</td>
+<td dir="ltr">Operadores utilizados nos algoritmos</td>
+<td dir="auto"></td>
+</tr>
+<tr>
+<td dir="auto">1.2.</td>
+<td dir="ltr">Instruções sequenciais</td>
+<td dir="auto"></td>
+<td dir="auto"></td>
+</tr>
+<tr>
+<td dir="auto"></td>
+<td dir="auto">1.2.1.</td>
+<td dir="ltr">Saída de dados</td>
+<td dir="auto"></td>
+</tr>
+<tr>
+<td dir="auto"></td>
+<td dir="auto">1.2.2.</td>
+<td dir="ltr">Entrada de dados</td>
+<td dir="auto"></td>
+</tr>
+<tr>
+<td dir="auto"></td>
+<td dir="auto">1.2.3.</td>
+<td dir="ltr">Atribuição</td>
+<td dir="auto"></td>
+</tr>
+<tr>
+<td dir="auto"></td>
+<td dir="auto">1.2.4.</td>
+<td dir="ltr">Exercícios Resolvidos</td>
+<td dir="auto"></td>
+</tr>
+<tr>
+<td dir="auto"></td>
+<td dir="auto"></td>
+<td dir="ltr">1.2.4.1. Cambiar moedas</td>
+<td dir="auto"></td>
+</tr>
+<tr>
+<td dir="auto"></td>
+<td dir="auto"></td>
+<td dir="auto">1.2.4.2.</td>
+<td dir="ltr">Distância euclidiana entre dois pontos</td>
+</tr>
+<tr>
+<td dir="auto"></td>
+<td dir="auto"></td>
+<td dir="auto">1.2.4.3.</td>
+<td dir="ltr">Determinar perímetro e área de circunferência</td>
+</tr>
+<tr>
+<td dir="auto"></td>
+<td dir="auto">1.2.5.</td>
+<td dir="ltr">Exercícios Propostos</td>
+<td dir="auto"></td>
+</tr>
+<tr>
+<td dir="auto"></td>
+<td dir="auto"></td>
+<td dir="auto">1.2.5.1.</td>
+<td dir="ltr">Calcular índice de massa corpórea (IMC)</td>
+</tr>
+<tr>
+<td dir="auto"></td>
+<td dir="auto"></td>
+<td dir="auto">1.2.5.2.</td>
+<td dir="ltr">Converter horas, minutos e segundos</td>
+</tr>
+<tr>
+<td dir="auto"></td>
+<td dir="auto"></td>
+<td dir="auto">1.2.5.3.</td>
+<td dir="ltr">Teorema de Pitágoras</td>
+</tr>
+<tr>
+<td dir="auto"></td>
+<td dir="auto"></td>
+<td dir="ltr">1.2.5.4. Converter temperaturas</td>
+<td dir="auto"></td>
+</tr>
+<tr>
+<td dir="ltr">1.3 Instruções de Decisão</td>
+<td dir="auto"></td>
+<td dir="auto"></td>
+<td dir="auto"></td>
+</tr>
+<tr>
+<td dir="auto"></td>
+<td dir="auto">1.3.1.</td>
+<td dir="ltr">Decisão binária</td>
+<td dir="auto"></td>
+</tr>
+<tr>
+<td dir="auto"></td>
+<td dir="auto">1.3.2.</td>
+<td dir="ltr">Decisão múltipla</td>
+<td dir="auto"></td>
+</tr>
+<tr>
+<td dir="auto"></td>
+<td dir="auto">1.3.3.</td>
+<td dir="ltr">Exercícios Resolvidos</td>
+<td dir="auto"></td>
+</tr>
+<tr>
+<td dir="auto"></td>
+<td dir="auto"></td>
+<td dir="auto">1.3.3.1.</td>
+<td dir="ltr">Distância euclidiana entre dois pontos</td>
+</tr>
+<tr>
+<td dir="auto"></td>
+<td dir="auto"></td>
+<td dir="auto">1.3.3.2.</td>
+<td dir="ltr">Classificar em função da média</td>
+</tr>
+<tr>
+<td dir="auto"></td>
+<td dir="auto"></td>
+<td dir="auto">1.3.3.3.</td>
+<td dir="ltr">Determinar o máximo de 3 valores</td>
+</tr>
+<tr>
+<td dir="auto"></td>
+<td dir="auto"></td>
+<td dir="auto">1.3.3.4.</td>
+<td dir="ltr">Determinar triângulo válido</td>
+</tr>
+<tr>
+<td dir="auto"></td>
+<td dir="auto">1.3.4.</td>
+<td dir="ltr">Exercícios Propostos</td>
+<td dir="auto"></td>
+</tr>
+<tr>
+<td dir="auto"></td>
+<td dir="auto"></td>
+<td dir="ltr">1.3.4.1. Classificar triângulo</td>
+<td dir="auto"></td>
+</tr>
+<tr>
+<td dir="auto"></td>
+<td dir="auto"></td>
+<td dir="auto">1.3.4.2.</td>
+<td dir="ltr">Divisão</td>
+</tr>
+<tr>
+<td dir="auto"></td>
+<td dir="auto"></td>
+<td dir="auto">1.3.4.3.</td>
+<td dir="ltr">Resolver equação da forma ax2 + bx + c = 0</td>
+</tr>
+<tr>
+<td dir="auto"></td>
+<td dir="auto"></td>
+<td dir="auto">1.3.4.4.</td>
+<td dir="ltr">Converter entre escalas de temperaturas</td>
+</tr>
+<tr>
+<td dir="auto"></td>
+<td dir="auto"></td>
+<td dir="auto">1.3.4.5.</td>
+<td dir="ltr">Calcular índice de massa corpórea (IMC)</td>
+</tr>
+<tr>
+<td dir="auto"></td>
+<td dir="auto"></td>
+<td dir="auto">1.3.4.6.</td>
+<td dir="ltr">Determinar ano bissexto</td>
+</tr>
+<tr>
+<td dir="auto"></td>
+<td dir="auto"></td>
+<td dir="auto">1.3.4.7.</td>
+<td dir="ltr">Parque de estacionamento</td>
+</tr>
+<tr>
+<td dir="ltr">1.4 Instruções de Repetição (Ciclos)</td>
+<td dir="auto"></td>
+<td dir="auto"></td>
+<td dir="auto"></td>
+</tr>
+<tr>
+<td dir="auto"></td>
+<td dir="auto">1.41.</td>
+<td dir="ltr">Ciclo condicional: repetir-até</td>
+<td dir="auto"></td>
+</tr>
+<tr>
+<td dir="auto"></td>
+<td dir="auto">1.4.2.</td>
+<td dir="ltr">Ciclo condicional: enquanto-fazer</td>
+<td dir="auto"></td>
+</tr>
+<tr>
+<td dir="auto"></td>
+<td dir="auto">1.4.3.</td>
+<td dir="ltr">Ciclo determinístico: para-fazer</td>
+<td dir="auto"></td>
+</tr>
+<tr>
+<td dir="auto"></td>
+<td dir="auto">1.4.4.</td>
+<td dir="ltr">Exercícios Resolvidos</td>
+<td dir="auto"></td>
+</tr>
+<tr>
+<td dir="auto"></td>
+<td dir="auto"></td>
+<td dir="auto">1.4.4.1.</td>
+<td dir="ltr">Calcular somatório entre dois limites</td>
+</tr>
+<tr>
+<td dir="auto"></td>
+<td dir="auto"></td>
+<td dir="auto">1.4.4.2.</td>
+<td dir="ltr">Calcular factorial de um número</td>
+</tr>
+<tr>
+<td dir="auto"></td>
+<td dir="auto"></td>
+<td dir="auto">1.4.4.3.</td>
+<td dir="ltr">Determinar se um número é primo</td>
+</tr>
+<tr>
+<td dir="auto"></td>
+<td dir="auto"></td>
+<td dir="auto">1.4.4.4.</td>
+<td dir="ltr">Determinar nome e idade da pessoa mais nova de um</td>
+</tr>
+<tr>
+<td dir="auto"></td>
+<td dir="auto"></td>
+<td dir="auto"></td>
+<td dir="ltr">grupo</td>
+</tr>
+<tr>
+<td dir="auto"></td>
+<td dir="auto"></td>
+<td dir="auto">1.445</td>
+<td dir="ltr">Determinar o aluno melhor classificado e a média das</td>
+</tr>
+<tr>
+<td dir="auto"></td>
+<td dir="auto"></td>
+<td dir="auto"></td>
+<td dir="ltr">notas de uma turma</td>
+</tr>
+<tr>
+<td dir="auto"></td>
+<td dir="auto">1.45</td>
+<td dir="ltr">Exercícios Propostos</td>
+<td dir="auto"></td>
+</tr>
+<tr>
+<td dir="auto"></td>
+<td dir="auto"></td>
+<td dir="auto">1.4.5.1.</td>
+<td dir="ltr">Divisão através de subtracções sucessivas</td>
+</tr>
+<tr>
+<td dir="auto"></td>
+<td dir="auto"></td>
+<td dir="auto">1.4.5.2.</td>
+<td dir="ltr">Determinar o máximo e mínimo de uma série</td>
+</tr>
+<tr>
+<td dir="auto"></td>
+<td dir="auto"></td>
+<td dir="auto">1.4.5.3.</td>
+<td dir="ltr">Determinar quantidade de números primos</td>
+</tr>
+<tr>
+<td dir="auto"></td>
+<td dir="auto"></td>
+<td dir="auto">1.4.5.4.</td>
+<td dir="ltr">Determinar se um número é perfeito</td>
+</tr>
+<tr>
+<td dir="auto"></td>
+<td dir="auto"></td>
+<td dir="auto">1.4.5.5.</td>
+<td dir="ltr">Calcular potência por multiplicações sucessivas</td>
+</tr>
+<tr>
+<td dir="auto"></td>
+<td dir="auto"></td>
+<td dir="auto">1.4.5.6.</td>
+<td dir="ltr">Maior número ímpar de uma sequência de valores</td>
+</tr>
+<tr>
+<td dir="auto"></td>
+<td dir="auto"></td>
+<td dir="auto">1.4.5.7.</td>
+<td dir="ltr">Algarismos de um número</td>
+</tr>
+<tr>
+<td dir="auto"></td>
+<td dir="auto"></td>
+<td dir="auto">1.4.5.8.</td>
+<td dir="ltr">Apresentação gráfica de temperaturas</td>
+</tr>
+<tr>
+<td dir="auto"></td>
+<td dir="auto"></td>
+<td dir="auto">1.4.5.9.</td>
+<td dir="ltr">Soma dos algarismo de um número</td>
+</tr>
+<tr>
+<td dir="auto"></td>
+<td dir="auto"></td>
+<td dir="auto">1.4.5.1.</td>
+<td dir="ltr">Jogo de adivinhar o número</td>
+</tr>
+<tr>
+<td dir="auto"></td>
+<td dir="auto"></td>
+<td dir="auto">1.4.5.1.1.</td>
+<td dir="ltr">Capicua de um número</td>
+</tr>
+<tr>
+<td dir="auto"></td>
+<td dir="auto"></td>
+<td dir="auto">1.4.5.1.2.</td>
+<td dir="ltr">Conversão de base numérica</td>
+</tr>
+<tr>
+<td dir="auto">1.5.</td>
+<td dir="ltr">Traçagens e Teste</td>
+<td dir="auto"></td>
+<td dir="auto"></td>
+</tr>
+<tr>
+<td dir="auto">1.6.</td>
+<td dir="ltr">Programação modular</td>
+<td dir="auto"></td>
+<td dir="auto"></td>
+</tr>
+<tr>
+<td dir="auto"></td>
+<td dir="auto">1.6.1.</td>
+<td dir="ltr">Sub-rotinas, parâmetros e variáveis locais</td>
+<td dir="auto"></td>
+</tr>
+<tr>
+<td dir="auto"></td>
+<td dir="auto"></td>
+<td dir="auto">1.6.1.1.</td>
+<td dir="ltr">Funções</td>
+</tr>
+<tr>
+<td dir="auto"></td>
+<td dir="auto"></td>
+<td dir="auto">1.6.1.2.</td>
+<td dir="ltr">Procedimentos</td>
+</tr>
+<tr>
+<td dir="auto"></td>
+<td dir="auto">1.6.2</td>
+<td dir="ltr">Exercícios resolvidos</td>
+<td dir="auto"></td>
+</tr>
+<tr>
+<td dir="auto"></td>
+<td dir="auto"></td>
+<td dir="auto">1.6.2.1.</td>
+<td dir="ltr">Função que devolve o maior algarismo de um número</td>
+</tr>
+<tr>
+<td dir="auto"></td>
+<td dir="auto"></td>
+<td dir="auto">1.6.2.2.</td>
+<td dir="ltr">Função que indica se um número é perfeito</td>
+</tr>
+<tr>
+<td dir="auto"></td>
+<td dir="auto">1.6.3</td>
+<td dir="ltr">Exercícios propostos</td>
+<td dir="auto"></td>
+</tr>
+<tr>
+<td dir="auto"></td>
+<td dir="auto"></td>
+<td dir="auto">1.631.</td>
+<td dir="ltr">Função média de dois números</td>
+</tr>
+<tr>
+<td dir="auto"></td>
+<td dir="auto"></td>
+<td dir="auto">1.632</td>
+<td dir="ltr">Função lei de Ohm</td>
+</tr>
+<tr>
+<td dir="auto"></td>
+<td dir="auto"></td>
+<td dir="auto">1.633</td>
+<td dir="ltr">Função somatório</td>
+</tr>
+<tr>
+<td dir="auto"></td>
+<td dir="auto"></td>
+<td dir="auto">1.634</td>
+<td dir="ltr">Funções para codificar e descodificar números</td>
+</tr>
+<tr>
+<td dir="auto"></td>
+<td dir="auto"></td>
+<td dir="auto">1.635</td>
+<td dir="ltr">Números primos</td>
+</tr>
+<tr>
+<td dir="auto">1.7.</td>
+<td dir="ltr">Recursividade</td>
+<td dir="auto"></td>
+<td dir="auto"></td>
+</tr>
+<tr>
+<td dir="auto"></td>
+<td dir="auto">1.7.1.</td>
+<td dir="ltr">Exercícios Resolvidos</td>
+<td dir="auto"></td>
+</tr>
+<tr>
+<td dir="auto"></td>
+<td dir="auto">1.7.2.</td>
+<td dir="ltr">Exercícios Propostos</td>
+<td dir="auto"></td>
+</tr>
+<tr>
+<td dir="ltr"><strong>2 Estruturas de dados</strong></td>
+<td dir="auto"></td>
+<td dir="auto"></td>
+<td dir="auto"></td>
+</tr>
+<tr>
+<td dir="ltr">2.1. Vectores</td>
+<td dir="auto"></td>
+<td dir="auto"></td>
+<td dir="auto"></td>
+</tr>
+<tr>
+<td dir="auto"></td>
+<td dir="auto">2.1.1.</td>
+<td dir="ltr">Exercícios resolvidos</td>
+<td dir="auto"></td>
+</tr>
+<tr>
+<td dir="auto"></td>
+<td dir="auto"></td>
+<td dir="auto">2.1.1.1.</td>
+<td dir="ltr">Funções manipulando vectores</td>
+</tr>
+<tr>
+<td dir="auto"></td>
+<td dir="auto">2.1.2.</td>
+<td dir="ltr">Exercícios propostos</td>
+<td dir="auto"></td>
+</tr>
+<tr>
+<td dir="auto"></td>
+<td dir="auto"></td>
+<td dir="auto">2.1.2.1.</td>
+<td dir="ltr">Determinar desvio padrão de uma série</td>
+</tr>
+<tr>
+<td dir="auto"></td>
+<td dir="auto"></td>
+<td dir="ltr">2.1.2.2. Prova de atletismo</td>
+<td dir="auto"></td>
+</tr>
+<tr>
+<td dir="auto"></td>
+<td dir="ltr">2.2. Ordenação e pesquisa de vectores</td>
+<td dir="auto"></td>
+<td dir="auto"></td>
+</tr>
+<tr>
+<td dir="auto"></td>
+<td dir="auto">2.2.1.</td>
+<td dir="ltr">Ordenação por selecção</td>
+<td dir="auto"></td>
+</tr>
+<tr>
+<td dir="auto"></td>
+<td dir="auto">2.2.2.</td>
+<td dir="ltr">Pesquisa Sequencial</td>
+<td dir="auto"></td>
+</tr>
+<tr>
+<td dir="auto"></td>
+<td dir="auto">2.2.3.</td>
+<td dir="ltr">Exercicios resolvidos</td>
+<td dir="auto"></td>
+</tr>
+<tr>
+<td dir="auto"></td>
+<td dir="auto"></td>
+<td dir="ltr">2.2.3.1. Inverter um vector</td>
+<td dir="auto"></td>
+</tr>
+<tr>
+<td dir="auto"></td>
+<td dir="auto">2.2.4.</td>
+<td dir="ltr">Exercícios propostos</td>
+<td dir="auto"></td>
+</tr>
+<tr>
+<td dir="auto"></td>
+<td dir="auto"></td>
+<td dir="ltr">2.2.4.1. Junção ordenada de vectores</td>
+<td dir="auto"></td>
+</tr>
+<tr>
+<td dir="auto"></td>
+<td dir="auto"></td>
+<td dir="auto">2.2.4.2.</td>
+<td dir="ltr">Método de ordenação por troca directa</td>
+</tr>
+<tr>
+<td dir="auto"></td>
+<td dir="auto"></td>
+<td dir="auto">2.2.4.3.</td>
+<td dir="ltr">Filtro gráfico</td>
+</tr>
+</tbody>
+</table></div><div class="el-table" dir="auto" style="overflow-x: auto;"><table>
+<thead>
+<tr>
+<th dir="auto">#</th>
+<th dir="ltr"><strong>Lista de Figuras</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td dir="auto">11</td>
+<td dir="ltr">Estrutura de um computador</td>
+</tr>
+<tr>
+<td dir="auto">12</td>
+<td dir="ltr">Notação dos Fluxogramas</td>
+</tr>
+<tr>
+<td dir="auto">13</td>
+<td dir="ltr">Fluxograma e sintaxe - Instruções sequenciais</td>
+</tr>
+<tr>
+<td dir="auto">14</td>
+<td dir="ltr">Fluxograma e sintaxe - Saída de dados</td>
+</tr>
+<tr>
+<td dir="auto">15</td>
+<td dir="ltr">Fluxograma e sintaxe - Entrada de dados</td>
+</tr>
+<tr>
+<td dir="auto">16</td>
+<td dir="ltr">Fluxograma e sintaxe - Atribuição</td>
+</tr>
+<tr>
+<td dir="auto">17</td>
+<td dir="ltr">Fluxograma e sintaxe - Instrução decisão se-então</td>
+</tr>
+<tr>
+<td dir="auto">18</td>
+<td dir="ltr">Fluxograma e sintaxe - Instrução decisão se-então-senão</td>
+</tr>
+<tr>
+<td dir="auto">19</td>
+<td dir="ltr">Fluxograma e sintaxe - Instrução decisão múltipla seleccione-caso</td>
+</tr>
+<tr>
+<td dir="auto">110</td>
+<td dir="ltr">Fluxograma da determinação do máximo de 3 valores</td>
+</tr>
+<tr>
+<td dir="auto">111</td>
+<td dir="ltr">Fluxograma e sintaxe - Instrução ciclo repetir-até</td>
+</tr>
+<tr>
+<td dir="auto">112</td>
+<td dir="ltr">Fluxograma e sintaxe - Instrução ciclo enquanto-fazer</td>
+</tr>
+<tr>
+<td dir="auto">113</td>
+<td dir="ltr">Fluxograma e sintaxe - Instrução ciclo para-fazer</td>
+</tr>
+<tr>
+<td dir="auto">114</td>
+<td dir="ltr">Divisão inteira através de subtracções sucessivas</td>
+</tr>
+<tr>
+<td dir="auto">115</td>
+<td dir="ltr">Fluxograma e sintaxe - Função</td>
+</tr>
+<tr>
+<td dir="auto">116</td>
+<td dir="ltr">Fluxograma e sintaxe - Procedimento</td>
+</tr>
+<tr>
+<td dir="auto">117</td>
+<td dir="ltr">Ilustração da lei de Ohm</td>
+</tr>
+<tr>
+<td dir="auto">21</td>
+<td dir="ltr">Vector unidimensional: notas</td>
+</tr>
+<tr>
+<td dir="auto">22</td>
+<td dir="ltr">Vector bidimensional (matriz): imagem</td>
+</tr>
+<tr>
+<td dir="auto">23</td>
+<td dir="ltr">Imagem vídeo - original</td>
+</tr>
+<tr>
+<td dir="auto">24</td>
+<td dir="ltr">Imagem vídeo - em tratamento</td>
+</tr>
+</tbody>
+</table></div><div class="el-table" dir="auto" style="overflow-x: auto;"><table>
+<thead>
+<tr>
+<th dir="auto">#</th>
+<th dir="ltr"><strong>Lista de Tabelas</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td dir="auto">11</td>
+<td dir="ltr">Operadores relacionais</td>
+</tr>
+<tr>
+<td dir="auto">12</td>
+<td dir="ltr">Operadores aritméticos</td>
+</tr>
+<tr>
+<td dir="auto">13</td>
+<td dir="ltr">Operadores lógicos</td>
+</tr>
+<tr>
+<td dir="auto">14</td>
+<td dir="ltr">Tabela de verdade - conjunção</td>
+</tr>
+<tr>
+<td dir="auto">15</td>
+<td dir="ltr">Tabela de verdade - disjunção</td>
+</tr>
+<tr>
+<td dir="auto">16</td>
+<td dir="ltr">Tabela de verdade - negação</td>
+</tr>
+<tr>
+<td dir="auto">17</td>
+<td dir="ltr">Índice de massa corpórea</td>
+</tr>
+<tr>
+<td dir="auto">18</td>
+<td dir="ltr">Traçagem do algoritmo 114</td>
+</tr>
+</tbody>
+</table></div><div class="el-table" dir="auto" style="overflow-x: auto;"><table>
+<thead>
+<tr>
+<th dir="auto">#</th>
+<th dir="ltr"><strong>Lista de Algoritmos</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td dir="auto">11</td>
+<td dir="ltr">Cambiar euro para dólar</td>
+</tr>
+<tr>
+<td dir="auto">12</td>
+<td dir="ltr">Calcular distância euclidiana entre pontos</td>
+</tr>
+<tr>
+<td dir="auto">13</td>
+<td dir="ltr">Determinar perímetro e área de circunferência</td>
+</tr>
+<tr>
+<td dir="auto">14</td>
+<td dir="ltr">Máquina de furação - decisão múltipla</td>
+</tr>
+<tr>
+<td dir="auto">15</td>
+<td dir="ltr">Máquina de furação - decisão binária</td>
+</tr>
+<tr>
+<td dir="auto">16</td>
+<td dir="ltr">Calcular distância euclidiana entre pontos</td>
+</tr>
+<tr>
+<td dir="auto">17</td>
+<td dir="ltr">Classificar em função da média</td>
+</tr>
+<tr>
+<td dir="auto">18</td>
+<td dir="ltr">Calcular máximo de 3 números</td>
+</tr>
+<tr>
+<td dir="auto">19</td>
+<td dir="ltr">Calcular máximo de 3 números</td>
+</tr>
+<tr>
+<td dir="auto">110</td>
+<td dir="ltr">Validar triângulo</td>
+</tr>
+<tr>
+<td dir="auto">111</td>
+<td dir="ltr">Calcular somatório entre dois limites</td>
+</tr>
+<tr>
+<td dir="auto">112</td>
+<td dir="ltr">Calcular factorial de um número</td>
+</tr>
+<tr>
+<td dir="auto">113</td>
+<td dir="ltr">Determinar se um número é primo</td>
+</tr>
+<tr>
+<td dir="auto">114</td>
+<td dir="ltr">Determinar se um número é primo</td>
+</tr>
+<tr>
+<td dir="auto">115</td>
+<td dir="ltr">Determinar nome/idade da pessoa mais nova</td>
+</tr>
+<tr>
+<td dir="auto">116</td>
+<td dir="ltr">Determinar o aluno melhor classificado e a média das notas de uma turma</td>
+</tr>
+<tr>
+<td dir="auto">117</td>
+<td dir="ltr">Divisão inteira através de subtracções sucessivas (numerado)</td>
+</tr>
+<tr>
+<td dir="auto">118</td>
+<td dir="ltr">Função maior(n) que devolve o maior algarismo de um número</td>
+</tr>
+<tr>
+<td dir="auto">119</td>
+<td dir="ltr">Função perfeito(N) que indica se um número é perfeito</td>
+</tr>
+<tr>
+<td dir="auto">21</td>
+<td dir="ltr">Manipulação de Vectores (leitura, diferença entre máximo e mínimo e número de pares e ímpares)</td>
+</tr>
+<tr>
+<td dir="auto">22</td>
+<td dir="ltr">Utilizar a pesquisa sequencial)</td>
+</tr>
+</tbody>
+</table></div><div></div><div class="el-br"><br></div><div class="el-p"><p dir="auto"><strong>Resumo</strong></p></div><div class="el-p"><p dir="auto">Estes apontamentos têm como objectivo principal apoiar os leitores que pretendam aprender programação de computadores</p></div><div class="el-p"><p dir="auto">Os conteúdos propostos têm como objectivo fornecer bases sólidas de metodo-logias de programação que auxiliem a compreensão de programas computacionais simples, a sua adaptação e desenvolvimento de novas aplicações, e estimular a capa-cidade dos leitores para: analisar e resolver problemas de programação.</p></div><div class="el-p"><p dir="auto">A estrutura destes apontamentos foi definida de acordo com a abordagem de <em>aprender-por-exemplo</em>, pelo que, os conceitos são apenas introduzidos de acordo com a necessidade de explicar a resolução de um determinado algoritmo.</p></div><div class="el-p"><p dir="auto">Neste manual introduzem-se as bases da algoritmia de acordo com o paradigma da programação estruturada. Em cada secção é apresentada um pequena introdu-ção teórica sobre o tópico em destaque, apresentados problemas e propostas soluções para os mesmos, adicionalmente são propostos exercícios para resolução. Na codifi-cação/apresentação das soluções é geralmente <em>Pseudo-Código</em> e/ou <em>Fluxogramas</em>.</p></div><div class="el-p"><p dir="auto">Este documento compila exercícios de vários anos de ensino de muitos docentes do departamento nos quais me incluo. Ao longo do manual poderão ser encontrados exemplos e exercícios propostos pelos docentes nas disciplinas de <em>Algoritmia e Progra-mação</em>, <em>Linguagens de Programação I</em> do curso de Engenharia Informática do Departa-mento de Engenharia Informática (DEI), bem como de <em>Programação I</em> e <em>Programação II</em> do curso Engenharia Electrotécnica do Departamento de Engenharia Electrotécnica (DEE), ambos do ISEP.</p></div><div class="el-p"><p dir="auto"><strong>Agradecimentos</strong></p></div><div class="el-p"><p dir="auto">  Gostaria de agradecer aos colegas que permitiram a utilização do seu material peda-gógico, em particular, Alberto Sampaio, Ana Almeida Figueiredo, Ana Madureira, Carlos Vaz de Carvalho, Conceição Neves, Isabel Sampaio e José Avelino.<br>
+Estou igualmente grato a todos aqueles que reviram o manual e deram inúmeras sugestões para o seu melhoramento, nomeadamente Berta Baptista, Paulo Ferreira e Nuno Silva.<br>
+Pese embora a inúmeras sugestões/correções propostas pelos referidos colegas, quaisquer erros e gralhas que subsistam no documento são, naturalmente, da minha inteira responsabilidade.<br>
+Porto, Fevereiro de 2006</p></div><div class="el-p"><p dir="auto">  Jorge Santos</p></div><div class="el-p"><p dir="auto"><strong>Capítulo 1</strong></p></div><div class="el-p"><p dir="auto"><strong>Algoritmia e Programação</strong></p></div><div class="el-p"><p dir="auto"><strong>Objectivos</strong></p></div><div class="el-ul"><ul>
+<li data-line="0" dir="auto">
+<p>Familiarizar os alunos com os conceitos e a terminologia associados à Informática</p>
+</li>
+<li data-line="2" dir="auto">
+<p>Programar com clareza usando a metodologia da Programação Estruturada</p>
+</li>
+</ul></div><div class="el-p"><p dir="auto"><strong>1.1</strong> <strong>Conceitos básicos</strong></p></div><div class="el-p"><p dir="auto">Nesta secção são introduzidos os conceitos básicos necessários à disciplina de algoritmia e programação. Em particular, os conceitos de programação estruturada, pro-grama, estrutura de dados e algoritmo.</p></div><div class="el-p"><p dir="auto"><strong>1.1.1</strong> <strong>Introdução</strong></p></div><div class="el-p"><p dir="auto">Informática é a ciência que estuda a informação, em particular, preocupa-se com a estrutura, criação, gestão, armazenamento, pesquisa, disseminação e transferência de informação. Para além disso, a informática estuda a aplicação da informação nas organizações. A palavra informática é resultado da contracção das palavras: <strong>informação automática</strong>.</p></div><div class="el-p"><p dir="auto">A matéria prima da informática é a informação, na sua forma mais simples, dados e a ferramenta básica é o computador.</p></div><div class="el-blockquote"><blockquote dir="auto">
+<p><em>O computador está para a informática assim como o telescópio para astronomia.</em></p>
+</blockquote></div><div class="el-p"><p dir="auto">Um computador é um conjunto de circuitos eléctricos e electrónicos capaz de re-alizar de modo autónomo uma determinada tarefa, por obediência a um programa armazenado internamente. Assim, um computador pode ser visto como um sistema de computação que compreende <em>hardware</em> e <em>software</em> (ver figura 1.1).</p></div><div class="el-ul"><ul>
+<li data-line="0" dir="auto"><strong>Hardware</strong> - esta é a componente material/física do computador, que fornece a capacidade de:</li>
+</ul></div><div class="el-p"><p dir="auto"><span alt="media" src="ALG-EST-image1.png" class="internal-embed media-embed image-embed is-loaded"><img alt="media" src="languages/c/isep/md/00/media/alg-est-image1.png"></span></p></div><div class="el-p"><p dir="auto">Figura 1.1: Estrutura de um computador</p></div><div class="el-ul"><ul>
+<li data-line="0" dir="auto">executar um determinado tipo de instruções a uma determinada<br>
+velocidade;</li>
+<li data-line="2" dir="auto">armazenar um conjunto de bytes;</li>
+<li data-line="3" dir="auto">comunicar com um conjunto de periféricos.</li>
+</ul></div><div class="el-p"><p dir="auto">Estas componentes físicas têm que receber ordens do que fazer e como se articular. Esta é a função do software.</p></div><div class="el-ul"><ul>
+<li data-line="0" dir="auto"><strong>Software</strong> - esta é a componente lógica do computador, que consiste num con-junto de programas que dirigem o funcionamento do computador. </li>
+</ul></div><div class="el-p"><p dir="auto">Para uma melhor sistematização do software e as respectivas funções, este pode ser organizado nas seguintes categorias:</p></div><div class="el-ul"><ul>
+<li data-line="0" dir="auto">
+<p>Software de Sistema Operativo - conjunto de programas que comunica di-rectamente com o hardware e é responsável pela gestão de recursos e peri-féricos. Neste conjunto incluem-se o sistema operativo e os programas de controle do funcionamento do hardware, tais como programas de parame-trização, <em>drivers</em> e afins.</p>
+</li>
+<li data-line="2" dir="auto">
+<p>Ferramentas de desenvolvimento - conjunto de aplicações utilizadas no de-senvolvimento de aplicações. Neste conjunto incluem-se as linguagens de programação (compiladores e interpretadores) e os sistemas de gestão de bases de dados.</p>
+</li>
+<li data-line="4" dir="auto">
+<p>Aplicações - conjunto de aplicações que se destinam à utilização pelo utili-zador final do sistema de computação. Regra geral o nível de abstracção é mais elevado do que nas categorias anteriores. Neste conjunto incluem-se as aplicações por medida, ferramentas de gestão, folhas de cálculo, editores de texto, etc.</p>
+</li>
+</ul></div><div class="el-p"><p dir="auto"><strong>1.1.2</strong> <strong>Programação estruturada</strong></p></div><div class="el-p"><p dir="auto">Numa primeira fase, nas décadas de 50 e 60, o desenvolvimento do hardware era o responsável pela <em>expansão</em> dos computadores. A maioria do investimento era feito a este nível, sendo a programação vista como uma arte.</p></div><div class="el-p"><p dir="auto">Na década de 70, incentivados pela melhoria das características de hardware (mi-niaturização e baixo custo) os informáticos foram confrontados com projectos cada vez mais sofisticados. Constata-se nessa altura a inversão dos custos dispendidos com hardware e software, para além do problema da fiabilidade do software passar a ser uma preocupação.</p></div><div class="el-p"><p dir="auto">Surge então a necessidade de transformar a tarefa de construir software numa actividade com rigor comparável a uma disciplina de engenharia nascendo assim uma nova disciplina – a Engenharia de Software – cujo objectivo é a produção de Software de modo eficiente em custos controlados e segurança.</p></div><div class="el-p"><p dir="auto">A produção de software, como de qualquer outro produto de engenharia passa por diferentes fases como sejam: planeamento, análise, projecto, programação, im-plementação e manutenção. Para cada uma das fases do desenvolvimento do soft-ware foram estudadas métodos e técnicas específicas. A programação estruturada enquadra-se num desses métodos e permite fasear o processo de construção de um programa descrevendo o processo computacional de um modo não ambíguo - <strong>Algoritmo</strong>.</p></div><div class="el-p"><p dir="auto">A programação estruturada define um conjunto de regras para elaboração de pro-gramas. A programação estruturada baseia-se no desenho modular dos programas e no refinamento gradual do topo para a base.</p></div><div class="el-p"><p dir="auto">De acordo com este paradigma um programa pode ser definido pela forma se-guinte:</p></div><div class="el-p"><p dir="auto"><code>Programa = Estrutura de Dados + Algoritmo</code></p></div><div class="el-p"><p dir="auto">Um algoritmo manipula dados que podem ser de diversos tipos, designadamente: números (inteiros ou reais), caracteres, cadeias de caracteres, endereços (apontado-res), lógicos (verdadeiro e falso).</p></div><div class="el-p"><p dir="auto">As estrutura de dados são o modo como os dados estão organizados, acedidos e alterados. De entre as mais relevantes destacam-se: variáveis simples, vectores mono e multi-dimensionais, listas, filas, árvores, grafos e ficheiros.</p></div><div class="el-p"><p dir="auto">Um algoritmo consiste num conjunto finito e bem-definido de instruções que des-crevem os passos lógicos necessários à realização de uma tarefa ou resolução de um</p></div><div class="el-p"><p dir="auto">problema, dado o estado inicial (único), a execução do algoritmo conduz ao estado final (único).</p></div><div class="el-p"><p dir="auto">Considere-se por exemplo a seguinte receita para a confecção de uma omelete de queijo.</p></div><div class="el-pre"><pre><code data-line="0">OMELETE DE QUEIJO FRESCO
+Ingredientes:
+- 170 gr de queijo fresco
+- 6 ovos grandes
+- 30 gr de manteiga ou margarina
+- Sal q.b.
+
+Modo de Preparação:
+Ponha o queijo fresco numa tigela e esmague-o com uma colher de pau, até formar um puré espesso e cremoso. Bata os ovos e misture-os com o queijo, adicionando um pouco de água fria. Tempere a gosto. Derreta um pouco de gordura numa frigideira de base larga e adicione a mistura de ovos e queijo. Cozinhe em lume brando até que a omelete fique pronta mas não demasiado cozida.
+</code><button class="copy-code-button"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon lucide-copy"><rect x="8" y="8" width="14" height="14" rx="2" ry="2"></rect><path d="M4 16c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2"></path></svg></button></pre></div><div class="el-p"><p dir="auto">Estabelecendo um paralelo entre esta receita culinária e um programa, os<br>
+ingredi-entes são as estruturas de dados e o modo de preparação é o<br>
+algoritmo. Naturalmente que uma receita culinária usa a linguagem<br>
+natural e como tal é muito difícil a sua in-terpretação por parte de um<br>
+computador.</p></div><div class="el-p"><p dir="auto">De acordo com o paradigma da programação estruturada qualquer programa<br>
+pode ser descrito utilizando exclusivamente as três estruturas básicas<br>
+de controlo:</p></div><div class="el-ul"><ul>
+<li data-line="0" dir="auto">
+<p><strong>Instruções de Sequência</strong> - as instruções de sequência são instruções atómicas (simples) permitem a leitura/escrita de dados, bem como o cálculo e atribuição de valores;</p>
+</li>
+<li data-line="2" dir="auto">
+<p><strong>Instruções de Decisão</strong> - as instruções de decisão, ou selecção, permitem a selec-ção em alternância de um ou outro conjunto de acções após a avaliação lógica de uma condição;</p>
+</li>
+<li data-line="4" dir="auto">
+<p><strong>Instruções de Repetição</strong> - as instruções de repetição, ou ciclos, permitem a exe-cução, de forma repetitiva, de um conjunto de instruções. Esta execução de-pende do valor lógico de uma condição que é testada em cada iteração para decidir se a execução do ciclo continua ou termina.</p>
+</li>
+</ul></div><div class="el-p"><p dir="auto">Na descrição de algoritmos são utilizados diferentes formalismos<br>
+conforme o ob-jectivo ou audiência. Entre os mais comuns encontram-se o<br>
+pseudo-código e fluxo-gramas.</p></div><div class="el-ul"><ul>
+<li data-line="0" dir="auto">
+<p><strong>Pseudo-código</strong> - consiste na descrição do algoritmo numa linguagem parecida com a linguagem natural (português, inglês ou outra) de forma estruturada. O objectivo deste formalismo é centrar a atenção do programador na lógica ou fluxo do algoritmo, abstraindo-se das questões relacionadas com a sintaxe es-pecífica de uma determinada linguagem de programação;</p>
+</li>
+<li data-line="2" dir="auto">
+<p><strong>Fluxograma</strong> - consiste na descrição de um algoritmo de forma gráfica. Este for-malismo inclui um conjunto de símbolos gráficos que representação os diferen-tes tipos de instruções anteriormente descritas: sequência, decisão e repetição.</p>
+</li>
+</ul></div><div class="el-p"><p dir="auto"><strong>1.1.3</strong> <strong>Notação utilizada</strong></p></div><div class="el-p"><p dir="auto">Na representação de fluxogramas será utilizada a notação apresentada na figura 1.2:</p></div><div class="el-p"><p dir="auto"><span alt="media" src="ALG-EST-image2.png" class="internal-embed media-embed image-embed is-loaded"><img alt="media" src="languages/c/isep/md/00/media/alg-est-image2.png"></span></p></div><div class="el-p"><p dir="auto">Figura 1.2: Notação dos Fluxogramas</p></div><div class="el-p"><p dir="auto">Na escrita dos programas em pseudo-código serão considerados as<br>
+seguintes opções:</p></div><div class="el-ul"><ul>
+<li data-line="0" dir="auto">Os algoritmos são delimitados pelas etiquetas início e fim;</li>
+<li data-line="1" dir="auto">As etiquetas Entrada: e Saída: são utilizadas na explicitação das entradas e saídas de dados, respectivamente, mais relevantes para o funcionamento do algoritmo;</li>
+<li data-line="2" dir="auto">Os comentários são precedidos do caracter ’#’ e são meramente documentais, como tal, não são executados;</li>
+<li data-line="3" dir="auto">As acções são descritas através de verbos no infinitivo;</li>
+<li data-line="4" dir="auto">Foram utilizadas diferentes formatações para os conceitos a seguir  explicitados, com o objectivo de tornar a leitura dos algoritmos mais simples:</li>
+</ul></div><div class="el-blockquote"><blockquote dir="auto">
+<p><strong>–</strong> variável;</p>
+</blockquote></div><div class="el-blockquote"><blockquote dir="auto">
+<p><strong>–</strong> palavra chave;</p>
+<p><strong>–</strong> <em># comentário</em>;</p>
+</blockquote></div><div class="el-p"><p dir="auto"><strong>1.1.4</strong> <strong>Operadores utilizados nos algoritmos</strong></p></div><div class="el-p"><p dir="auto">Na escrita de algoritmos são utilizados os operadores relacionais, lógicos e aritmé-ticos. Na tabela 1.1 são apresentados os operadores relacionais considerados e res-pectiva semântica. Na explicitação dos operadores considerem-se as variáveis a e b apresentado os valores 13 e 5, respectivamente.</p></div><div class="el-p"><p dir="auto">Tabela 1.1: Operadores relacionais</p></div><div class="el-table" style="overflow-x: auto;"><table style="width:100%;">
+  <colgroup>
+    <col style="width: 19%">
+    <col style="width: 37%">
+    <col style="width: 19%">
+    <col style="width: 23%">
+  </colgroup></table></div><div>  
+    
+      <strong>Símbolo</strong>
+      <blockquote dir="auto">
+      <p><strong>Nome</strong></p>
+      </blockquote>
+      <strong>Exemplo</strong>
+      <blockquote dir="auto">
+      <p><strong>Resultado</strong></p>
+      </blockquote>
+    
+  </div><div>  
+    
+      <em>&lt;</em>
+      <blockquote dir="auto">
+      <p>menor que</p>
+      </blockquote>
+      <em>a &lt; b</em>
+      <blockquote dir="auto">
+      <p>falso</p>
+      </blockquote>
+    
+    
+      <em>&gt;</em>
+      <blockquote dir="auto">
+      <p>maior que</p>
+      </blockquote>
+      <em>a &gt; b</em>
+      <blockquote dir="auto">
+      <p>verdadeiro</p>
+      </blockquote>
+    
+    
+      <em>‚</em>
+      <blockquote dir="auto">
+      <p>maior ou igual que</p>
+      </blockquote>
+      <em>a ‚ b</em>
+      <blockquote dir="auto">
+      <p>verdadeiro</p>
+      </blockquote>
+    
+    
+      <em>•</em>
+      <blockquote dir="auto">
+      <p>menor ou igual que</p>
+      </blockquote>
+      <em>a • b</em>
+      <blockquote dir="auto">
+      <p>falso</p>
+      </blockquote>
+    
+    
+      =
+      <blockquote dir="auto">
+      <p>igual a</p>
+      </blockquote>
+      <em>a</em> = <em>b</em>
+      <blockquote dir="auto">
+      <p>falso</p>
+      </blockquote>
+    
+    
+      <em>6</em>=
+      <blockquote dir="auto">
+      <p>diferente de</p>
+      </blockquote>
+      <em>a 6</em>= <em>b</em>
+      <blockquote dir="auto">
+      <p>verdadeiro</p>
+      </blockquote>
+    
+  
+</div><div class="el-p"><p dir="auto">Na tabela 1.2 são apresentados os operadores aritméticos considerados e respec-tiva semântica. Na explicitação dos operadores considerem-se as variáveis a e b apre-sentado os valores 13 e 5, respectivamente.</p></div><div class="el-p"><p dir="auto">Tabela 1.2: Operadores aritméticos</p></div><div class="el-table" style="overflow-x: auto;"><table>
+  <colgroup>
+    <col style="width: 18%">
+    <col style="width: 41%">
+    <col style="width: 18%">
+    <col style="width: 21%">
+  </colgroup></table></div><div>  
+  
+    <strong>Símbolo</strong>
+    <blockquote dir="auto">
+    <p><strong>Nome</strong></p>
+    </blockquote>
+    <strong>Exemplo</strong>
+    <blockquote dir="auto">
+    <p><strong>Resultado</strong></p>
+    </blockquote>
+  
+  
+  
+  
+    
+      +
+      <blockquote dir="auto">
+      <p>soma</p>
+      </blockquote>
+      <em>a</em> + <em>b</em>
+      18
+    
+    
+      -
+      <blockquote dir="auto">
+      <p>subtracção</p>
+      </blockquote>
+      <em>a ¡ b</em>
+      8
+    
+    
+      *
+      <blockquote dir="auto">
+      <p>multiplicação</p>
+      </blockquote>
+      <em>a ⁄ b</em>
+      65
+    
+    
+      /
+      <blockquote dir="auto">
+      <p>divisão</p>
+      </blockquote>
+      <em>a</em>/<em>b</em>
+      2.6
+    
+    
+      div
+      <blockquote dir="auto">
+      <p>divisão inteira</p>
+      </blockquote>
+      <em>a</em> div <em>b</em>
+      2
+    
+    
+      %
+      <blockquote dir="auto">
+      <p>resto da divisão inteira</p>
+      </blockquote>
+      <em>a</em> % <em>b</em>
+      3
+    
+  
+</div><div class="el-p"><p dir="auto">Na tabela 1.3 são apresentados os operadores lógicos considerados, a<br>
+conjunção, disjunção e negação.</p></div><div class="el-p"><p dir="auto">Na avaliação das expressão lógicas é utilizada a lógica Boole de acordo<br>
+com as tabelas de verdade de cada operação, conjunção (tabela 1.4),<br>
+disjunção (1.5) e negação (1.6).</p></div><div class="el-p"><p dir="auto">Tabela 1.3: Operadores lógicos</p></div><div class="el-table" style="overflow-x: auto;"><table>
+  <colgroup>
+    <col style="width: 46%">
+    <col style="width: 53%">
+  </colgroup></table></div><div>  
+    
+    <strong>Símbolo</strong>
+    <blockquote dir="auto">
+    <p><strong>Nome</strong></p>
+    </blockquote>
+    
+  </div><div>  
+    
+      e , <em>^</em>
+      <blockquote dir="auto">
+      <p>conjunção</p>
+      </blockquote>
+    
+    
+      ou , <em>_</em>
+      <blockquote dir="auto">
+      <p>disjunção</p>
+      </blockquote>
+    
+    
+      não, <em>:</em>
+      <blockquote dir="auto">
+      <p>negação</p>
+      </blockquote>
+    
+  
+</div><div class="el-p"><p dir="auto">Tabela 1.4: Tabela de verdade - conjunção</p></div><div class="el-table" dir="ltr" style="overflow-x: auto;"><table>
+<thead>
+<tr>
+<th dir="ltr"><strong>a</strong></th>
+<th dir="ltr"><strong>b</strong></th>
+<th dir="ltr"><strong>a</strong> <em>^</em> <strong>b</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td dir="ltr">falso</td>
+<td dir="ltr">falso</td>
+<td dir="ltr">falso</td>
+</tr>
+<tr>
+<td dir="ltr">falso</td>
+<td dir="ltr">verdadeiro</td>
+<td dir="ltr">falso</td>
+</tr>
+<tr>
+<td dir="ltr">verdadeiro</td>
+<td dir="ltr">falso</td>
+<td dir="ltr">falso</td>
+</tr>
+<tr>
+<td dir="ltr">verdadeiro</td>
+<td dir="ltr">verdadeiro</td>
+<td dir="ltr">verdadeiro</td>
+</tr>
+</tbody>
+</table></div><div class="el-p"><p dir="auto">Tabela 1.5: Tabela de verdade - disjunção</p></div><div class="el-table" dir="ltr" style="overflow-x: auto;"><table>
+<thead>
+<tr>
+<th dir="ltr"><strong>a</strong></th>
+<th dir="ltr"><strong>b</strong></th>
+<th dir="ltr"><strong>a</strong> <em>_</em> <strong>b</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td dir="ltr">falso</td>
+<td dir="ltr">falso</td>
+<td dir="ltr">falso</td>
+</tr>
+<tr>
+<td dir="ltr">falso</td>
+<td dir="ltr">verdadeiro</td>
+<td dir="ltr">verdadeiro</td>
+</tr>
+<tr>
+<td dir="ltr">verdadeiro</td>
+<td dir="ltr">falso</td>
+<td dir="ltr">verdadeiro</td>
+</tr>
+<tr>
+<td dir="ltr">verdadeiro</td>
+<td dir="ltr">verdadeiro</td>
+<td dir="ltr">verdadeiro</td>
+</tr>
+</tbody>
+</table></div><div class="el-p"><p dir="auto">Tabela 1.6: Tabela de verdade - negação</p></div><div class="el-table" dir="ltr" style="overflow-x: auto;"><table>
+<thead>
+<tr>
+<th dir="ltr"><strong>a</strong></th>
+<th dir="ltr">*:<strong>*a</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td dir="ltr">falso</td>
+<td dir="ltr">verdadeiro</td>
+</tr>
+<tr>
+<td dir="ltr">verdadeiro</td>
+<td dir="ltr">falso</td>
+</tr>
+</tbody>
+</table></div><div class="el-p"><p dir="auto"><strong>1.2</strong> <strong>Instruções sequenciais</strong></p></div><div class="el-p"><p dir="auto">As instruções do tipo sequencial são as mais simples de todas apresentando uma uma estrutura atómica. São responsáveis por permitirem fazer a entrada/saída de dados, execução de cálculos e atribuição de valores a variáveis. A noção de ordem/sequência é representada através da seta de fluxo (ver figura 1.3).</p></div><div class="el-p"><p dir="auto"><strong>1.2.1</strong> <strong>Saída de dados</strong></p></div><div class="el-p"><p dir="auto">As instruções de escrita permitem fazer a saída de dados (tipicamente para o écran) sejam estes variáveis e/ou textos e/ou resultado de cálculos. Na figura 1.4 é apresen-tada sintaxe proposta para a escrita de uma ou várias variáveis.</p></div><div class="el-p"><p dir="auto">Conforme os exemplos seguintes:</p></div><div class="el-p"><p dir="auto"><span alt="media" src="ALG-EST-image3.png" class="internal-embed media-embed image-embed is-loaded"><img alt="media" src="languages/c/isep/md/00/media/alg-est-image3.png"></span></p></div><div class="el-p"><p dir="auto">Figura 1.3: Fluxograma e sintaxe - Instruções sequenciais</p></div><div class="el-p"><p dir="auto">![media](./media/ALG-EST-image4.png" style="width:5.04722in;height:1.5375in" /&gt;</p></div><div class="el-p"><p dir="auto">Figura 1.4: Fluxograma e sintaxe - Saída de dados</p></div><div class="el-blockquote"><blockquote dir="auto">
+<p><strong>início</strong></p>
+</blockquote></div><div class="el-ul"><ul>
+<li data-line="0" dir="auto">
+<p><em>Escrever o conteúdo da variável x</em>; escrever x;</p>
+</li>
+<li data-line="2" dir="auto">
+<p><em>Escrever o conteúdo das variáveis nome e idade</em>; escrever nome,</p>
+<blockquote dir="auto">
+<p>idade;</p>
+</blockquote>
+</li>
+<li data-line="5" dir="auto">
+<p><em>Escrever um texto seguido do valor da variável x</em>; escrever "O valor</p>
+<blockquote dir="auto">
+<p>de x é:", x;</p>
+</blockquote>
+</li>
+<li data-line="8" dir="auto">
+<p><em>Escrever o resultado da operação 4*4, 16</em>; escrever 4*4;</p>
+</li>
+<li data-line="10" dir="auto">
+<p><em>Escrever 4*4</em>;</p>
+</li>
+</ul></div><div class="el-blockquote"><blockquote dir="auto">
+<p>escrever "4*4";</p>
+<p><strong>fim</strong></p>
+</blockquote></div><div class="el-p"><p dir="auto"><strong>1.2.2</strong> <strong>Entrada de dados</strong></p></div><div class="el-p"><p dir="auto">As instruções de leitura permitem fazer a entrada de dados, tipicamente a partir de um teclado, colocando-os em variáveis. Na figura 1.5 é apresentada a sintaxe pro-posta para a leitura de uma ou várias variáveis.</p></div><div class="el-p"><p dir="auto">No caso de se pretender ler mais do que uma variável, os nomes das variáveis separam-se por vírgulas. Considerem-se os seguintes exemplos:</p></div><div class="el-p"><p dir="auto">![media](./media/ALG-EST-image5.png" style="width:4.5375in;height:1.4625in" /&gt;</p></div><div class="el-p"><p dir="auto">Figura 1.5: Fluxograma e sintaxe - Entrada de dados</p></div><div class="el-blockquote"><blockquote dir="auto">
+<p><strong>início</strong></p>
+</blockquote></div><div class="el-ul"><ul>
+<li data-line="0" dir="auto"><em>ler a variável x</em>; ler x;</li>
+<li data-line="1" dir="auto"><em>ler as variáveis nome e idade</em>; ler nome,idade;
+<blockquote dir="auto">
+<p><strong>fim</strong></p>
+</blockquote>
+</li>
+</ul></div><div class="el-p"><p dir="auto"><strong>1.2.3</strong> <strong>Atribuição</strong></p></div><div class="el-p"><p dir="auto">A instrução designada por atribuição permite atribuir o valor de uma expressão a uma variável. A variável que aparece no lado esquerdo da instrução vai assim rece-ber o valor da expressão que aparece no lado direito da mesma instrução. Do lado direito da atribuição podemos ter: um número, um texto, o resultado de um cálculo ou o conteúdo de uma outra qualquer variável. Na figura 1.6 é apresentada a sintaxe proposta para a atribuição.</p></div><div class="el-p"><p dir="auto"><span alt="media" src="ALG-EST-image6.png" class="internal-embed media-embed image-embed is-loaded"><img alt="media" src="languages/c/isep/md/00/media/alg-est-image6.png"></span></p></div><div class="el-p"><p dir="auto">Figura 1.6: Fluxograma e sintaxe - Atribuição</p></div><div class="el-p"><p dir="auto">Considerem-se os seguintes exemplos:</p></div><div class="el-blockquote"><blockquote dir="auto">
+<p><strong>início</strong></p>
+</blockquote></div><div class="el-ul"><ul>
+<li data-line="0" dir="auto">
+<p><em>Atribuir o valor 5 à variável x</em>; x <em>ˆ</em> 5;</p>
+</li>
+<li data-line="2" dir="auto">
+<p><em>Atribuir o resultado da operação 5*5-2=23 à variável resultado</em>;</p>
+<blockquote dir="auto">
+<p>resultado <em>ˆ</em> 5*5-2;</p>
+</blockquote>
+</li>
+<li data-line="5" dir="auto">
+<p><em>Atribuir o valor da variável n à variável maximo</em>;</p>
+</li>
+</ul></div><div class="el-blockquote"><blockquote dir="auto">
+<p>maximo <em>ˆ</em> n;</p>
+</blockquote></div><div class="el-ul"><ul>
+<li data-line="0" dir="auto"><em>Atribuir o texto "Olá Mundo"à variável txt</em>; txt <em>ˆ</em> "Olá mundo";</li>
+</ul></div><div class="el-blockquote"><blockquote dir="auto">
+<p><strong>fim</strong></p>
+</blockquote></div><div class="el-p"><p dir="auto">No exemplo seguinte são realizados dois incrementos consecutivos da variável contador. De início é atribuído o valor 1 a contador e posteriormente esta tomará o valor 2 e 3.</p></div><div class="el-blockquote"><blockquote dir="auto">
+<p><strong>início</strong></p>
+</blockquote></div><div class="el-ul"><ul>
+<li data-line="0" dir="auto"><em>Inicialização da variável contador</em>; contador <em>ˆ</em> 1;</li>
+<li data-line="1" dir="auto"><em>Incremento da variável contador</em>; contador <em>ˆ</em> contador+1;</li>
+<li data-line="2" dir="auto"><em>O resultado desta instrução é 2</em>; escrever contador;</li>
+<li data-line="3" dir="auto"><em>Incremento da variável contador</em>; contador <em>ˆ</em> contador+1;</li>
+<li data-line="4" dir="auto"><em>O resultado desta instrução é 3</em>; escrever contador;
+<blockquote dir="auto">
+<p><strong>fim</strong></p>
+</blockquote>
+</li>
+</ul></div><div class="el-p"><p dir="auto">As linguagens de programação mais divulgadas utilizam o símbolo <em>=</em> para re-presentar a atribuição. A razão de ser dessa opção é de ordem prática: resulta da inexistência do símbolo ’<em>ˆ</em>’ nos teclados dos computadores. Note-se que caso fosse utilizado símbolo ’=’ o aspecto da instrução seria: contador=contador+1, o que constitui uma impossibilidade em termos estritamente matemáticos.</p></div><div class="el-p"><p dir="auto">Chama-se a atenção para o facto de as linguagens estudadas normalmente pelos principiantes em informática serem linguagens imperativas. Isto é, o que o progra-mador escreve no programa não são expressões matemáticas mas ordens (daí o <em>impe-rativo</em>) para o computador cumprir. O computador vai ver a atribuição não como uma igualdade matemática (seja ela escrita com ’<em>ˆ</em>’ ou com ’<em>=</em>’), mas como uma ordem para primeiro calcular o valor da expressão à direita e depois guardar esse valor na variável indicada à esquerda.</p></div><div class="el-p"><p dir="auto"><strong>1.2.4</strong> <strong>Exercícios Resolvidos</strong></p></div><div class="el-p"><p dir="auto">Nesta secção são apresentados alguns problemas e respectivas soluções<br>
+com o objec-tivo de ilustrar a utilização de instruções sequenciais.</p></div><div class="el-p"><p dir="auto"><strong>1.2.4.1</strong> <strong>Cambiar moedas</strong></p></div><div class="el-p"><p dir="auto">O algoritmo 1.1 permite cambiar euros em dólares considerando a taxa de<br>
+conversão 1,17.</p></div><div class="el-blockquote"><blockquote dir="auto">
+<p><strong>Entrada</strong>: taxa, valorEuro</p>
+<p><strong>Saída</strong>: valorDolar</p>
+<p><strong>início</strong></p>
+<p>taxa <em>ˆ</em> 1,17;</p>
+<p><em># Ler valor em euros</em>;</p>
+<p>escrever "Introduza valor em euros=";</p>
+<p>ler valorEuro;</p>
+</blockquote></div><div class="el-ul"><ul>
+<li data-line="0" dir="auto">
+<p><em>Calcular valor em dólar</em>; valorDolar <em>ˆ</em> valorEuro*taxa;</p>
+</li>
+<li data-line="2" dir="auto">
+<p><em>Mostrar resultado</em>;</p>
+</li>
+</ul></div><div class="el-blockquote"><blockquote dir="auto">
+<p>escrever "Valor em dolar=", valorDolar;</p>
+<p><strong>fim</strong></p>
+<p><strong>Algoritmo 1.1</strong>: Cambiar euro para dólar</p>
+</blockquote></div><div class="el-p"><p dir="auto"><strong>Sugestão:</strong> Escreva uma variação deste algoritmo que permita câmbios entre quais-quer moedas.</p></div><div class="el-p"><p dir="auto"><strong>1.2.4.2</strong> <strong>Distância euclidiana entre dois pontos</strong></p></div><div class="el-p"><p dir="auto">O algoritmo 1.2 permite realizar o cálculo da distância euclidiana entre dois pontos, sendo que cada ponto é definido pelas coordenadas (x,y). A distância pode ser calcu-lada de acordo com a fórmula 1.2.1.</p></div><div class="el-blockquote"><blockquote dir="auto">
+<p><strong>Algoritmo 1.2</strong>: Calcular distância euclidiana entre pontos</p>
+</blockquote></div><div class="el-p"><p dir="auto"><strong>1.2.4.3</strong> <strong>Determinar perímetro e área de circunferência</strong></p></div><div class="el-p"><p dir="auto">O algoritmo 1.3 permite determinar o perímetro e área de uma circunferência, a partir do valor do raio.</p></div><div class="el-blockquote"><blockquote dir="auto">
+<p><strong>Entrada</strong>: raio</p>
+<p><strong>Saída</strong>: perimetro, area</p>
+<p><strong>início</strong></p>
+<p>pi <em>ˆ</em> 3,1415;</p>
+<p><em># Ler o valor do raio</em>;</p>
+<p>escrever "Introduza valor do raio:";</p>
+<p>ler raio;</p>
+</blockquote></div><div class="el-ul"><ul>
+<li data-line="0" dir="auto">
+<p><em>Calcular perímetro e área</em>; area <em>ˆ</em> pi <em>⁄</em> raio<sup>2</sup>;</p>
+<blockquote dir="auto">
+<p>perimetro <em>ˆ</em> 2 <em>⁄</em> pi <em>⁄</em> raio;</p>
+</blockquote>
+</li>
+<li data-line="3" dir="auto">
+<p><em>Apresentar resultados</em>; escrever "Área=", area; escrever</p>
+<blockquote dir="auto">
+<p>"Perímetro=", perimetro;</p>
+</blockquote>
+</li>
+</ul></div><div class="el-blockquote"><blockquote dir="auto">
+<p><strong>fim</strong></p>
+<p><strong>Algoritmo 1.3</strong>: Determinar perímetro e área de circunferência</p>
+</blockquote></div><div class="el-p"><p dir="auto"><strong>1.2.5</strong> <strong>Exercícios Propostos</strong></p></div><div class="el-p"><p dir="auto">Nesta secção são propostos alguns problemas com vista à aplicação conjugada de instruções sequenciais.</p></div><div class="el-p"><p dir="auto"><strong>1.2.5.1</strong> <strong>Calcular índice de massa corpórea (IMC)</strong></p></div><div class="el-p"><p dir="auto">O índice de massa corpórea (IMC) de um indivíduo é obtido dividindo-se o seu peso (em <em>Kg</em>) por sua altura (em <em>m</em>) ao quadrado. Assim, por exemplo, uma pessoa de 1,67m e pesando 55kg tem IMC igual a 20,14, já que:</p></div><div class="el-p"><p dir="auto"><span alt="media" src="ALG-EST-image7.png" class="internal-embed media-embed image-embed is-loaded"><img alt="media" src="languages/c/isep/md/00/media/alg-est-image7.png"></span></p></div><div class="el-p"><p dir="auto">Escreva um programa que solicite ao utilizador o fornecimento do seu peso em <em>kg</em> e de sua altura em <em>m</em> e a partir deles calcule o índice de massa corpórea do utilizador.</p></div><div class="el-p"><p dir="auto"><strong>1.2.5.2</strong> <strong>Converter horas, minutos e segundos</strong></p></div><div class="el-p"><p dir="auto">Descreva um algoritmo que a partir de um determinado número de segundos cal-cula o número de horas, minutos e segundos correspondentes. Conforme o seguinte exemplo:</p></div><div class="el-p"><p dir="auto">8053<em>s</em> = 2<em>h</em> + 14<em>m</em> + 13<em>s</em></p></div><div class="el-p"><p dir="auto"><strong>1.2.5.3</strong> <strong>Teorema de Pitágoras</strong></p></div><div class="el-p"><p dir="auto">Descreva um algoritmo para determinar a hipotenusa de um triângulo rectângulo, dados os catetos.</p></div><div class="el-p"><p dir="auto"><strong>1.2.5.4</strong> <strong>Converter temperaturas</strong></p></div><div class="el-p"><p dir="auto">Descreva um algoritmo que a partir de uma temperatura expressa em graus Fahre-nheit (tempF), calcule a temperatura expressa em graus Celsius (tempC). A conversão pode ser realizada de acordo com a fórmula 1.2.2.</p></div><div class="el-p"><p dir="auto"><span alt="media" src="ALG-EST-image8.png" class="internal-embed media-embed image-embed is-loaded"><img alt="media" src="languages/c/isep/md/00/media/alg-est-image8.png"></span></p></div><div class="el-p"><p dir="auto"><strong>1.3</strong> <strong>Instruções de Decisão</strong></p></div><div class="el-p"><p dir="auto">As instruções de decisão, ou selecção, permitem a selecção em alternância de um ou outro conjunto de acções após a avaliação lógica de uma condição.</p></div><div class="el-p"><p dir="auto"><strong>1.3.1</strong> <strong>Decisão binária</strong></p></div><div class="el-p"><p dir="auto">A decisão binária permite bifurcar a execução de um algoritmo em dois fluxos dis-tintos, para tal é utilizada instrução se. Esta instrução pode ser utilizada de duas formas: se-então e se-então-senão.</p></div><div class="el-p"><p dir="auto">Na figura 1.7 é apresentada a sintaxe para o primeiro caso. se a condição for verdadeira é executado o bloco-instruções caso contrário nada acontece.</p></div><div class="el-p"><p dir="auto"><span alt="media" src="ALG-EST-image9.png" class="internal-embed media-embed image-embed is-loaded"><img alt="media" src="languages/c/isep/md/00/media/alg-est-image9.png"></span></p></div><div class="el-p"><p dir="auto">Figura 1.7: Fluxograma e sintaxe - Instrução decisão se-então</p></div><div class="el-p"><p dir="auto">Considere-se o seguinte exemplo utilizando a forma se-então, no qual um aluno é aprovado se tem nota maior ou igual a 9,5:</p></div><div class="el-blockquote"><blockquote dir="auto">
+<p><strong>Entrada</strong>: nota</p>
+<p><strong>início</strong></p>
+<p>escrever "Introduza nota:";</p>
+<p>ler nota;</p>
+<p><strong>se</strong> <em>nota ‚ 9,5</em> <strong>então</strong></p>
+<p>escrever "O aluno foi aprovado";</p>
+<p><strong>fim-se</strong></p>
+<p><strong>fim</strong></p>
+</blockquote></div><div class="el-p"><p dir="auto">Note-se que um bloco de instruções é delimitado pelas instruções então e fim-se.</p></div><div class="el-p"><p dir="auto">No segundo caso (ver figura 1.8), em que a instrução tem a estrutura se-então-senão, se a condição for verdadeira é executado o bloco-instruções1 senão é executado o bloco-instruções2.</p></div><div class="el-blockquote"><blockquote dir="auto">
+<p>![media](./media/ALG-EST-image10.png"<br>
+style="width:2.66042in;height:1.92431in" /&gt;</p>
+<p>Figura 1.8: Fluxograma e sintaxe - Instrução decisão se-então-senão</p>
+<p>Considere-se o seguinte exemplo utilizando a forma se-então-senão.</p>
+<p><strong>Entrada</strong>: lado1, lado2</p>
+<p><strong>Saída</strong>: area</p>
+<p><strong>início</strong></p>
+<p><em># Ler as medidas dos lados</em>;</p>
+<p>escrever "Introduza medidas dos lados:";</p>
+<p>ler lado1, lado2;</p>
+<p><em># Calcular área</em>;</p>
+<p>area <em>ˆ</em> lado1*lado2;</p>
+<p><strong>se</strong> <em>lado1 = lado2</em> <strong>então</strong></p>
+<p>escrever "Área do quadrado=", area;</p>
+<p><strong>senão</strong></p>
+<p>escrever "Área do rectângulo=", area;</p>
+<p><strong>fim-se</strong></p>
+<p><strong>fim</strong></p>
+</blockquote></div><div class="el-p"><p dir="auto">Neste exemplo são lidas as medidas dos lados de uma figura rectangular, sendo que no caso particular de os dois lados serem iguais estamos na presença de um quadrado. Em qualquer um dos casos é apresentada a mensagem correspondente.</p></div><div class="el-p"><p dir="auto"><strong>1.3.2</strong> <strong>Decisão múltipla</strong></p></div><div class="el-p"><p dir="auto">A instrução de de decisão múltipla é um caso particular de instruções encadeadas do tipo se-então-senão. Normalmente é utilizada no teste de múltiplos valores de uma variável. A sintaxe proposta para a decisão múltipla encontra-se descrita na figura 1.9.</p></div><div class="el-blockquote"><blockquote dir="auto">
+<p>![media](./media/ALG-EST-image11.png"<br>
+style="width:6.26389in;height:2.4625in" /&gt;</p>
+</blockquote></div><div class="el-blockquote"><blockquote dir="auto">
+<p>Figura 1.9: Fluxograma e sintaxe - Instrução decisão múltipla seleccione-caso</p>
+</blockquote></div><div class="el-p"><p dir="auto">Considere uma máquina que permite apenas três operações, ligar, desligar e furar. O algoritmo 1.4 permite modelar o funcionamento da respectiva máquina. Sendo que aquando da digitação das letras: ’L’, ’D’ e ’F’, são apresentadas, respectivamente, as mensagens: <em>Ligar</em>, <em>Desligar</em> e <em>Furar</em>. No caso da letra digitada ser outra é apresentada uma mensagem de erro.</p></div><div class="el-blockquote"><blockquote dir="auto">
+<p><strong>Entrada</strong>: letra</p>
+<p><strong>início</strong></p>
+<p><em># Ler letra</em>;</p>
+<p>escrever "Introduza letra (L/D/F):";</p>
+<p>ler letra;</p>
+</blockquote></div><div class="el-ul"><ul>
+<li data-line="0" dir="auto"><em>Testar casos e escrever mensagem respectiva</em>; <strong>seleccionar</strong> <em>letra</em></li>
+</ul></div><div class="el-blockquote"><blockquote dir="auto">
+<p><strong>caso</strong> <em>’L’</em> escrever "Ligar"; <strong>caso</strong> <em>’D’</em> escrever "Desligar";<br>
+<strong>caso</strong> <em>’F’</em> escrever "Furar"; <strong>senão</strong></p>
+<p>escrever "Operação inválida";</p>
+<p><strong>fim-seleccionar fim-seleccionar</strong></p>
+<p><strong>fim</strong></p>
+<p><strong>Algoritmo 1.4</strong>: Máquina de furação - decisão múltipla</p>
+</blockquote></div><div class="el-p"><p dir="auto">Note-se que tal como acontece no caso da instrução se-então a componente senão é opcional.</p></div><div class="el-p"><p dir="auto">O algoritmo 1.5 tem um funcionamento idêntico ao 1.4 mas é implementado atra-vés da instrução se-então-senão.</p></div><div class="el-blockquote"><blockquote dir="auto">
+<p><strong>Entrada</strong>: letra</p>
+<p><strong>início</strong></p>
+<p><em># Ler letra</em>;</p>
+<p>escrever "Introduza letra (L/D/F):";</p>
+<p>ler letra;</p>
+<p><em># Testar casos e escrever mensagem respectiva</em>;</p>
+<p><strong>se</strong> <em>letra=’L’</em> <strong>então</strong></p>
+<p>escrever "Ligar";</p>
+<p><strong>senão</strong></p>
+<p><strong>se</strong> <em>letra=’D’</em> <strong>então</strong></p>
+<p>escrever "Desligar";</p>
+<p><strong>senão</strong></p>
+<p><strong>se</strong> <em>letra=’F’</em> <strong>então</strong></p>
+<p>escrever "Furar";</p>
+<p><strong>senão</strong></p>
+<p>escrever "Operação inválida";</p>
+<p><strong>fim-se</strong></p>
+<p><strong>fim-se</strong></p>
+<p><strong>fim-se</strong></p>
+<p><strong>fim</strong></p>
+<p><strong>Algoritmo 1.5</strong>: Máquina de furação - decisão binária</p>
+</blockquote></div><div class="el-p"><p dir="auto"><strong>1.3.3</strong> <strong>Exercícios Resolvidos</strong></p></div><div class="el-p"><p dir="auto">Nesta secção são apresentados alguns problemas e respectivas soluções com o objectivo de ilustrar a utilização de instruções de decisão.</p></div><div class="el-p"><p dir="auto"><strong>1.3.3.1</strong> <strong>Distância euclidiana entre dois pontos</strong></p></div><div class="el-p"><p dir="auto">O algoritmo 1.6 permite realizar o cálculo da distância euclidiana entre dois pontos, sendo que cada ponto é definido pelas coordenadas (x,y). no cálculo da distância pode ser utilizada a fórmula 1.3.1.</p></div><div class="el-blockquote"><blockquote dir="auto">
+<p>![media](./media/ALG-EST-image12.png"<br>
+style="width:5.24514in;height:0.79236in" /&gt;</p>
+<p>Caso os pontos sejam coincidentes mostra mensagem <em>"Pontos</em></p>
+<p><em>Coincidentes"</em>. <strong>Entrada</strong>: x1, y1, x2, y2</p>
+<p><strong>Saída</strong>: distancia</p>
+<p><strong>início</strong></p>
+<p><em># Ler coordenadas do ponto 1</em>;</p>
+<p>escrever "Coordenadas ponto1 (x/y):";</p>
+<p>ler x1, y1;</p>
+<p><em># Ler coordenadas do ponto 2</em>;</p>
+<p>escrever "Coordenadas ponto2 (x/y):";</p>
+<p>ler x2, y2;</p>
+</blockquote></div><div class="el-ul"><ul>
+<li data-line="0" dir="auto"><em>Calcular distância e mostrar resultado</em>; distancia <em>ˆ</em>
+<blockquote dir="auto">
+<p><sup>p</sup>(x2 <em>¡</em> x1)<sup>2</sup> + (y2 <em>¡</em> y1)<sup>2</sup>;<br>
+<strong>se</strong> <em>distancia=0</em> <strong>então</strong></p>
+</blockquote>
+</li>
+</ul></div><div class="el-blockquote"><blockquote dir="auto">
+<p>escrever "Os pontos são coincidentes"; <strong>senão</strong></p>
+<p>escrever "Distância=", distancia;</p>
+<p><strong>fim-se</strong></p>
+<p><strong>fim</strong></p>
+<p><strong>Algoritmo 1.6</strong>: Calcular distância euclidiana entre pontos</p>
+</blockquote></div><div class="el-p"><p dir="auto"><strong>1.3.3.2</strong> <strong>Classificar em função da média</strong></p></div><div class="el-p"><p dir="auto">O algoritmo 1.7 permite ler as notas de um aluno às disciplinas de Matemática, Por-tuguês, Inglês e Geografia e calcular a média. Em função da média mostra uma men-sagem com o conteúdo <em>"Aprovado"</em> ou <em>"Reprovado"</em>. Consideram-se notas positivas as notas iguais ou superiores a 9,5.</p></div><div class="el-blockquote"><blockquote dir="auto">
+<p><strong>Entrada</strong>: mat, por, ing, geo</p>
+<p><strong>início</strong></p>
+<p><em># Ler as notas do aluno</em>;</p>
+<p>escrever "Introduza notas (mat, por, ing, geo):"; ler mat, por, ing,<br>
+geo;</p>
+<p><em># Calcular média</em>;</p>
+<p><sub>media <em>ˆ</em></sub> <u>mat+por+ing+geo</u><sub>;</sub></p>
+<p>4</p>
+<p><strong>se</strong> <em>media ‚ 9,5</em> <strong>então</strong></p>
+<p>escrever "Aprovado";</p>
+<p><strong>senão</strong></p>
+<p>escrever "Reprovado";</p>
+<p><strong>fim-se</strong></p>
+<p><strong>fim</strong></p>
+<p><strong>Algoritmo 1.7</strong>: Classificar em função da média</p>
+</blockquote></div><div class="el-p"><p dir="auto"><strong>1.3.3.3</strong> <strong>Determinar o máximo de 3 valores</strong></p></div><div class="el-p"><p dir="auto">Considere-se o problema de ler três números e calcular o maior deles. O fluxograma 1.10 permite capturar com grande facilidade a noção de fluxo e passos alternativos. Na resolução do problema foi adoptada uma estratégia de isolamento dos vários ca-sos, primeiro é testado o número A, depois o número B e caso nenhum dos dois seja o máximo, por exclusão de partes, se concluí que o número C é o maior de todos.</p></div><div class="el-p"><p dir="auto">Note-se que a utilização de fluxogramas está regra geral limitada à representação de pequenos programas ou processos com elevado grau de abstracção porque caso contrário o fluxograma estender-se-ia por inúmeras páginas tornando a sua interpre-tação muito difícil.</p></div><div class="el-p"><p dir="auto">No algoritmo 1.8 foi codificado em pseudo-código a solução anteriormente deli-neada no fluxograma da figura 1.10.</p></div><div class="el-p"><p dir="auto"><span alt="media" src="ALG-EST-image13.png" class="internal-embed media-embed image-embed is-loaded"><img alt="media" src="languages/c/isep/md/00/media/alg-est-image13.png"></span></p></div><div class="el-p"><p dir="auto">Figura 1.10: Fluxograma da determinação do máximo de 3 valores</p></div><div class="el-blockquote"><blockquote dir="auto">
+<p><strong>Entrada</strong>: A, B, C</p>
+<p><strong>Saída</strong>: maximo</p>
+<p><strong>início</strong></p>
+<p><em># Ler números</em>;</p>
+<p>escrever "Introduza número1, número2 e número3:"; ler A, B, C;</p>
+<p><strong>se</strong> <em>A ‚ B</em> <strong>então</strong></p>
+<p><strong>se</strong> <em>A ‚ C</em> <strong>então</strong></p>
+<p>maximo <em>ˆ</em> A;</p>
+<p><strong>fim-se</strong></p>
+<p><strong>senão</strong></p>
+<p><strong>se</strong> <em>B ‚ C</em> <strong>então</strong></p>
+<p>maximo <em>ˆ</em> B;</p>
+<p><strong>senão</strong></p>
+<p>maximo <em>ˆ</em> C;</p>
+<p><strong>fim-se</strong></p>
+<p><strong>fim-se</strong></p>
+<p>escrever "O número maior é:", maximo;</p>
+<p><strong>fim</strong></p>
+<p><strong>Algoritmo 1.8</strong>: Calcular máximo de 3 números</p>
+</blockquote></div><div class="el-blockquote"><blockquote dir="auto">
+<p>O algoritmo 1.9 apresenta uma solução alternativa para o mesmo<br>
+problema.</p>
+<p><strong>Entrada</strong>: num1, num2, num3</p>
+<p><strong>Saída</strong>: maximo</p>
+<p><strong>início</strong></p>
+<p><em># Ler números</em>;</p>
+<p>escrever "Introduza número1, número2 e número3:"; ler num1, num2,<br>
+num3;</p>
+</blockquote></div><div class="el-ul"><ul>
+<li data-line="0" dir="auto"><em>Até prova em contrário o primeiro dos números é o maior</em>; maximo <em>ˆ</em>
+<blockquote dir="auto">
+<p>num1;</p>
+</blockquote>
+</li>
+</ul></div><div class="el-blockquote"><blockquote dir="auto">
+<p><strong>se</strong> <em>num2 ‚ maximo</em> <strong>então</strong></p>
+<p>maximo <em>ˆ</em> num2;</p>
+<p><strong>fim-se</strong></p>
+<p><strong>se</strong> <em>num3 ‚ maximo</em> <strong>então</strong></p>
+<p>maximo <em>ˆ</em> num3;</p>
+<p><strong>fim-se</strong></p>
+<p>escrever "O número maior é:", maximo;</p>
+<p><strong>fim</strong></p>
+<p><strong>Algoritmo 1.9</strong>: Calcular máximo de 3 números</p>
+</blockquote></div><div class="el-p"><p dir="auto"><strong>Sugestão:</strong> Baseando-se nas soluções propostas escreva um algoritmo que permita a determinação do máximo entre 5 números. Qual é a solução mais elegante?</p></div><div class="el-p"><p dir="auto"><strong>1.3.3.4</strong> <strong>Determinar triângulo válido</strong></p></div><div class="el-p"><p dir="auto">O algoritmo 1.10 permite ler três pontos geométricos e determinar se estes formam um triângulo. Pode ser utilizada a fórmula da distância entre dois pontos para cal-cular as medidas dos lados do triângulo. Note-se que um triângulo só é válido se a medida de cada um dos seus lados é menor que a soma dos lados restantes.</p></div><div class="el-blockquote"><blockquote dir="auto">
+<p><strong>Entrada</strong>: x1, y1, x2, y2, x3, y3</p>
+<p><strong>início</strong></p>
+<p><em># Ler coordenadas do ponto 1</em>;</p>
+<p>escrever "Coordenadas ponto1 (x/y):";</p>
+<p>ler x1, y1;</p>
+<p><em># Ler coordenadas do ponto 2</em>;</p>
+<p>escrever "Coordenadas ponto2 (x/y):";</p>
+<p>ler x2, y2;</p>
+<p><em># Ler coordenadas do ponto 3</em>;</p>
+<p>escrever "Coordenadas ponto3 (x/y):";</p>
+<p>ler x3, y3;</p>
+<p><em># Calcular a medida dos lados</em>;</p>
+<p><sup>p</sup></p>
+<p>a <em>ˆ</em> <sub>p</sub>(x2 <em>¡</em> x1)<sup>2</sup> + (y2 <em>¡</em> y1)<sup>2</sup>;</p>
+<p>b <em>ˆ</em> <sub>p</sub>(x3 <em>¡</em> x2)<sup>2</sup> + (y3 <em>¡</em> y2)<sup>2</sup>;</p>
+<p><em># Validar triângulo de acordo com a fórmula</em>;</p>
+<p><strong>se</strong> <em>(a &lt; b+c) e (b &lt; a+c) e (c &lt; a+b)</em> <strong>então</strong></p>
+<p><em># Triângulo válido</em>;</p>
+<p>escrever "Os três pontos formam um triângulo"; <strong>senão</strong></p>
+</blockquote></div><div class="el-ul"><ul>
+<li data-line="0" dir="auto"><em>Pelo menos 2 pontos são coincidentes ou os 3 são colineares</em>; escrever "Os pontos não formam um triângulo";</li>
+</ul></div><div class="el-blockquote"><blockquote dir="auto">
+<p><strong>fim-se</strong></p>
+<p><strong>fim</strong></p>
+<p><strong>Algoritmo 1.10</strong>: Validar triângulo</p>
+</blockquote></div><div class="el-p"><p dir="auto"><strong>1.3.4</strong> <strong>Exercícios Propostos</strong></p></div><div class="el-p"><p dir="auto">Nesta secção são propostos alguns problemas com vista à aplicação de instruções de decisão.</p></div><div class="el-p"><p dir="auto"><strong>1.3.4.1</strong> <strong>Classificar triângulo</strong></p></div><div class="el-p"><p dir="auto">Classificar um triângulo quanto aos lados, sendo que um triângulo com todos lados iguais é designado <em>Equilátero</em>, com todos os lados diferentes entre si é designado <em>Es-caleno</em> e caso tenha apenas dois lados iguais entre si, designa-se <em>Isósceles</em>.</p></div><div class="el-p"><p dir="auto"><strong>1.3.4.2</strong> <strong>Divisão</strong></p></div><div class="el-p"><p dir="auto">Descreva um algoritmo que dados dois valores, divide o primeiro pelo segundo. Note que não é possível fazer a divisão por zero, neste caso deve ser apresentada a mensa-gem adequada.</p></div><div class="el-p"><p dir="auto"><strong>1.3.4.3</strong> <strong>Resolver equação da forma</strong> <em>ax</em><sup>2</sup> + <em>bx</em> + <em>c</em><br>
+= 0</p></div><div class="el-p"><p dir="auto">Calcular as raízes de uma equação na forma <em>ax</em><sup>2</sup> + <em>bx</em> + <em>c</em><br>
+= 0. Note que os valores a, b e c podem ser zero, podendo dar origem a equações sem solução ou equações de primeiro grau. Considere as fórmulas 1.3.2 e 1.3.3 na resolução do problema.</p></div><div class="el-p"><p dir="auto"><strong>1.3.4.4</strong> <strong>Converter entre escalas de temperaturas</strong></p></div><div class="el-p"><p dir="auto">Escrever um programa que faça conversões entre as três escalas de temperaturas, Kelvin, Celsius e Fahrenheit, com base em três valores de entrada: a temperatura e escala actual e escala pretendida. Conforme o seguinte exemplo:</p></div><div class="el-p"><p dir="auto">As entradas 38, ’C’ e ’K’, significam que o utilizador pretende converter a tem-peratura 38 Celsius para Kelvin. Considere as fórmulas 1.3.4 e 1.3.5 na resolução do programa.</p></div><div class="el-table" dir="auto" style="overflow-x: auto;"><table>
+<thead>
+<tr>
+<th dir="auto"></th>
+<th dir="auto"></th>
+</tr>
+</thead>
+</table></div><div class="el-p"><p dir="auto">tempF	=	(32+9)⁄5 tempC|(1.3.4)<br>
+tempC	=	tempK + 273|(1.3.5)	</p></div><div class="el-p"><p dir="auto"><strong>Sugestão:</strong> Tentar a resolução com as estruturas se-então-senão e alternativamente utilizar a estrutura de múltipla decisão.</p></div><div class="el-p"><p dir="auto"><strong>1.3.4.5</strong> <strong>Calcular índice de massa corpórea (IMC)</strong></p></div><div class="el-p"><p dir="auto">O índice de massa corpórea (IMC) de um indivíduo é obtido dividindo-se o seu peso (em Kg) por sua altura (em m) ao quadrado. Assim, por exemplo, uma pessoa de 1,67 m e pesando 55 Kg tem IMC igual a 20,14, já que:</p></div><div class="el-table" dir="ltr" style="overflow-x: auto;"><table>
+<thead>
+<tr>
+<th dir="ltr">IMC</th>
+<th dir="ltr">Interpretação</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td dir="ltr">Até 18,5 (inclusive)</td>
+<td dir="ltr">Abaixo do peso normal</td>
+</tr>
+<tr>
+<td dir="ltr">De 18,5 a 25 (inclusive)</td>
+<td dir="ltr">Peso normal</td>
+</tr>
+<tr>
+<td dir="ltr">De 25 a 30 (inclusive)</td>
+<td dir="ltr">Acima do peso normal</td>
+</tr>
+<tr>
+<td dir="ltr">Acima de 30</td>
+<td dir="ltr">Obesidade</td>
+</tr>
+</tbody>
+</table></div><div class="el-p"><p dir="auto">Tabela 1.7: Índice de massa corpórea</p></div><div class="el-p"><p dir="auto">Considerando a tabela 1.7, escreva um programa que leia o peso em <em>kg</em> e a altura em <em>m</em> de uma determinada pessoa de forma a calcular o índice de massa corpórea do mesmo e de seguida, estabeleça as comparações necessárias entre o IMC calculado e os valores da tabela 1.7 e escreva uma das frases, conforme for o caso:</p></div><div class="el-ul"><ul>
+<li data-line="0" dir="auto">
+<p><em>Você está abaixo do peso normal.</em></p>
+</li>
+<li data-line="2" dir="auto">
+<p><em>O seu peso está na faixa de normalidade.</em></p>
+</li>
+<li data-line="4" dir="auto">
+<p><em>Você está acima do peso normal.</em></p>
+</li>
+<li data-line="6" dir="auto">
+<p><em>Você precisa de perder algum peso.</em></p>
+</li>
+</ul></div><div class="el-p"><p dir="auto"><strong>1.3.4.6</strong> <strong>Determinar ano bissexto</strong></p></div><div class="el-p"><p dir="auto">Um ano é bissexto se é divisível por 4, excepto se, além de ser divisível por 4, for também divisível por 100. Então ele só é bissexto se também for divisível por 400. Escrever um algoritmo que leia o valor de um ano e escreva se o ano é ou não bissexto.</p></div><div class="el-p"><p dir="auto"><strong>1.3.4.7</strong> <strong>Parque de estacionamento</strong></p></div><div class="el-p"><p dir="auto">Considere um parque de estacionamento que pratica os preços seguintes:</p></div><div class="el-ul"><ul>
+<li data-line="0" dir="auto">1<em><sup>a</sup></em> hora: 2 e,</li>
+<li data-line="1" dir="auto">2<em><sup>a</sup></em> hora: 1,5 e,</li>
+<li data-line="2" dir="auto">a partir da 2<em><sup>a</sup></em> hora: 1 e/hora</li>
+</ul></div><div class="el-p"><p dir="auto">O tempo de permanência no parque é contabilizado em horas e minutos. Por exemplo, se uma viatura permanecer 2 horas e 30 minutos no parque, pagará 2 e (1<em><sup>a</sup></em> hora) + 1,5 e (2<em><sup>a</sup></em> hora) + 0,5 e (30 minutos a 1 e/hora) = 4 e.</p></div><div class="el-p"><p dir="auto">Elabore um algoritmo que, lido o tempo que determinada viatura permaneceu estacionada no parque, diga a quantia que deve ser paga.</p></div><div class="el-p"><p dir="auto"><strong>1.4</strong> <strong>Instruções de Repetição (Ciclos)</strong></p></div><div class="el-p"><p dir="auto">As instruções de repetição, ou ciclos, permitem a execução de forma repetitiva de um conjunto de instruções. Esta execução depende do valor lógico de uma condição que</p></div><div class="el-ul"><ul>
+<li data-line="0" dir="auto">testada em cada iteração para decidir se a execução do ciclo continua ou termina. Note-se que as diferentes instruções de ciclos a seguir apresentadas consistem em variações da mesma estrutura.</li>
+</ul></div><div class="el-p"><p dir="auto"><strong>1.4.1</strong> <strong>Ciclo condicional: repetir-até</strong></p></div><div class="el-p"><p dir="auto">O ciclo repetir-até executa um bloco de instruções até que uma determinada condi-ção lógica seja verdadeira. Este ciclo testa a condição lógica após a primeira iteração, ou seja, o teste é realizado à saída. Este ciclo deve ser utilizado sempre que se desejar que o código seja executado pelo menos uma vez. Na figura 1.11 é apresentada a sintaxe proposta para o ciclo repetir-até.</p></div><div class="el-p"><p dir="auto"><span alt="media" src="ALG-EST-image14.png" class="internal-embed media-embed image-embed is-loaded"><img alt="media" src="languages/c/isep/md/00/media/alg-est-image14.png"></span></p></div><div class="el-p"><p dir="auto">Figura 1.11: Fluxograma e sintaxe - Instrução ciclo repetir-até<br>
+Considere-se o seguinte exemplo em que a utilização da estrutura repetir-até permite garantir que o valor da nota introduzida está situado entre 0 e 20.</p></div><div class="el-blockquote"><blockquote dir="auto">
+<p><strong>Entrada</strong>: nota</p>
+<p><strong>início</strong></p>
+<p><strong>repetir</strong></p>
+<p>escrever "Introduzir nota entre 0-20:";</p>
+<p>ler nota;</p>
+<p><strong>até</strong> <em>nota ‚ 0 e nota • 20</em>;</p>
+<p><strong>fim</strong></p>
+</blockquote></div><div class="el-p"><p dir="auto"><strong>1.4.2</strong> <strong>Ciclo condicional: enquanto-fazer</strong></p></div><div class="el-p"><p dir="auto">O ciclo enquanto executa um bloco de instruções enquanto uma determinada condi-ção lógica for verdadeira. Este ciclo testa a condição lógica à entrada. Na figura 1.12 é apresentada a sintaxe proposta para o ciclo enquanto-fazer.</p></div><div class="el-p"><p dir="auto">Considere-se o seguinte exemplo em que a utilização da estrutura enquanto-fazer permite calcular e escrever a tabuada de um número.</p></div><div class="el-p"><p dir="auto"><span alt="media" src="ALG-EST-image15.png" class="internal-embed media-embed image-embed is-loaded"><img alt="media" src="languages/c/isep/md/00/media/alg-est-image15.png"></span></p></div><div class="el-p"><p dir="auto">Figura 1.12: Fluxograma e sintaxe - Instrução ciclo enquanto-fazer</p></div><div class="el-blockquote"><blockquote dir="auto">
+<p><strong>Entrada</strong>: numero</p>
+<p><strong>início</strong></p>
+</blockquote></div><div class="el-ul"><ul>
+<li data-line="0" dir="auto"><em>Ler o número para o qual será apresentada a tabuada</em> escrever
+<blockquote dir="auto">
+<p>"Introduza número:";</p>
+</blockquote>
+</li>
+</ul></div><div class="el-blockquote"><blockquote dir="auto">
+<p>ler numero; i <em>ˆ</em> 1;</p>
+<p><strong>enquanto</strong> <em>i • 10</em> <strong>fazer</strong> resultado <em>ˆ</em> numero*i;</p>
+<p>escrever numero, "*", i, "=", resultado;</p>
+</blockquote></div><div class="el-ul"><ul>
+<li data-line="0" dir="auto"><em>Incrementar a variável i</em></li>
+</ul></div><div class="el-blockquote"><blockquote dir="auto">
+<p>i <em>ˆ</em> i+1;</p>
+<p><strong>fim-enquanto</strong></p>
+<p><strong>fim</strong></p>
+</blockquote></div><div class="el-p"><p dir="auto"><strong>1.4.3</strong> <strong>Ciclo determinístico: para-fazer</strong></p></div><div class="el-p"><p dir="auto">O ciclo para-fazer executa um bloco de instruções com um número pré-determinado de vezes. Na figura 1.13 é apresentada a sintaxe proposta para o ciclo para-fazer.</p></div><div class="el-ul"><ul>
+<li data-line="0" dir="auto">
+<p>O bloco-início - é um conjunto de instruções que são executadas à <em>priori</em>;</p>
+</li>
+<li data-line="2" dir="auto">
+<p>A condição é uma expressão lógica é testada em cada iteração do ciclo, sendo necessário que o seu valor lógico seja <em>verdade</em> para que o ciclo continue em execução;</p>
+</li>
+<li data-line="4" dir="auto">
+<p>O bloco-iter é composto por um conjunto de instruções que são executadas em cada iteração.</p>
+</li>
+</ul></div><div class="el-p"><p dir="auto"><span alt="media" src="ALG-EST-image16.png" class="internal-embed media-embed image-embed is-loaded"><img alt="media" src="languages/c/isep/md/00/media/alg-est-image16.png"></span></p></div><div class="el-p"><p dir="auto">Figura 1.13: Fluxograma e sintaxe - Instrução ciclo para-fazer</p></div><div class="el-p"><p dir="auto">Considere-se o seguinte exemplo em que a utilização da estrutura para-fazer permite calcular a soma os 100 primeiros números inteiros.</p></div><div class="el-blockquote"><blockquote dir="auto">
+<p><strong>Saída</strong>: soma</p>
+<p><strong>início</strong></p>
+<p>soma <em>ˆ</em> 0;</p>
+<p><strong>para</strong> <em>i ˆ 1; i&lt;100; i ˆ i+1</em> <strong>fazer</strong></p>
+<p>soma <em>ˆ</em> soma + i;</p>
+<p><strong>fim-para</strong></p>
+<p>escrever soma;</p>
+<p><strong>fim</strong></p>
+</blockquote></div><div class="el-p"><p dir="auto">Neste exemplo é introduzido um conceito importante para a programação, o con-ceito de acumulador. A variável soma em cada iteração é adicionada do valor da variável i, permitindo que no final:</p></div><div class="el-p"><p dir="auto">soma = 1 + 2 + 3 + 4 + 5 + <em>¢ ¢ ¢</em> + 100 = 5050</p></div><div class="el-p"><p dir="auto">Por outro lado, a instrução i <em>ˆ</em> i+1 faz com que a variável i tome todos os valores inteiros de 1 a 100.</p></div><div class="el-p"><p dir="auto">Considere-se a resolução do problema de calcular a soma os 100 primeiros núme-ros inteiros utilizando para tal a o ciclo enquanto-fazer.</p></div><div class="el-blockquote"><blockquote dir="auto">
+<p><strong>Saída</strong>: soma</p>
+<p><strong>início</strong></p>
+<p>soma <em>ˆ</em> 0;</p>
+</blockquote></div><div class="el-ul"><ul>
+<li data-line="0" dir="auto"><em>A iniciação da variável de iteração tem de ser realizada antes do início do ciclo</em> i <em>ˆ</em> 1;</li>
+</ul></div><div class="el-p"><p dir="auto"><strong>enquanto</strong> <em>i • 100</em> <strong>fazer</strong></p></div><div class="el-p"><p dir="auto">soma <em>ˆ</em> soma + i;</p></div><div class="el-ul"><ul>
+<li data-line="0" dir="auto"><em>Incremento da variável de iteração</em> i <em>ˆ</em> i+1;</li>
+</ul></div><div class="el-blockquote"><blockquote dir="auto">
+<p><strong>fim-enquanto</strong></p>
+<p>escrever soma;</p>
+<p><strong>fim</strong></p>
+</blockquote></div><div class="el-p"><p dir="auto"><strong>1.4.4</strong> <strong>Exercícios Resolvidos</strong></p></div><div class="el-p"><p dir="auto">Nesta secção são apresentados alguns problemas e respectivas soluções com o ob-jectivo de ilustrar a utilização de instruções cíclicas. Nas soluções são exploradas situações com utilização simples dos ciclos e/ou imbricados.</p></div><div class="el-p"><p dir="auto"><strong>1.4.4.1</strong> <strong>Calcular somatório entre dois limites</strong></p></div><div class="el-p"><p dir="auto">O algoritmo 1.11 permite calcular a somatório dos números existentes num intervalo definido por limites inferior e superior. Note que o utilizador pode introduzir os li-mites na ordem que entender, desta forma os intervalos [5-10] e [10-5] são igualmente válidos.</p></div><div class="el-blockquote"><blockquote dir="auto">
+<p><strong>Entrada</strong>: limite1, limite2</p>
+<p><strong>Saída</strong>: soma</p>
+<p><strong>início</strong></p>
+<p><em># Ler intervalo</em>;</p>
+<p>escrever "Introduza número1:";</p>
+<p>ler limite1;</p>
+<p>escrever "Introduza número2:";</p>
+<p>ler limite2;</p>
+</blockquote></div><div class="el-ul"><ul>
+<li data-line="0" dir="auto"><em>Determinar o limite inferior e superior</em>; <strong>se</strong> <em>limite1&gt;limite2</em>
+<blockquote dir="auto">
+<p><strong>então</strong></p>
+</blockquote>
+</li>
+</ul></div><div class="el-blockquote"><blockquote dir="auto">
+<p>maximo <em>ˆ</em> limite1; minimo <em>ˆ</em> limite2;</p>
+<p><strong>senão</strong></p>
+<p>maximo <em>ˆ</em> limite2; minimo <em>ˆ</em> limite1;</p>
+<p><strong>fim-se</strong></p>
+</blockquote></div><div class="el-ul"><ul>
+<li data-line="0" dir="auto"><em>Calcular soma propriamente dita</em>; soma <em>ˆ</em> 0;</li>
+</ul></div><div class="el-blockquote"><blockquote dir="auto">
+<p><strong>para</strong> <em>i ˆ minimo; i•maximo; i ˆ i+1</em> <strong>fazer</strong></p>
+<p>soma <em>ˆ</em> soma + i;</p>
+<p><strong>fim-para</strong></p>
+</blockquote></div><div class="el-ul"><ul>
+<li data-line="0" dir="auto"><em>Mostrar resultado</em>; escrever soma;</li>
+</ul></div><div class="el-blockquote"><blockquote dir="auto">
+<p><strong>fim</strong></p>
+<p><strong>Algoritmo 1.11</strong>: Calcular somatório entre dois limites</p>
+</blockquote></div><div class="el-p"><p dir="auto"><strong>1.4.4.2</strong> <strong>Calcular factorial de um número</strong></p></div><div class="el-p"><p dir="auto">O algoritmo 1.12 permite calcular o factorial de um número sabendo que:</p></div><div class="el-blockquote"><blockquote dir="auto">
+<p>Exemplo: factorial(5)=5*4*3*2*1=120</p>
+</blockquote></div><div class="el-blockquote"><blockquote dir="auto">
+<p><strong>Entrada</strong>: numero</p>
+<p><strong>Saída</strong>: factorial</p>
+<p><strong>início</strong></p>
+</blockquote></div><div class="el-ul"><ul>
+<li data-line="0" dir="auto"><em>Ler o número para o qual se pretende calcular o factorial</em>; escrever
+<blockquote dir="auto">
+<p>"Introduza número:";</p>
+</blockquote>
+</li>
+</ul></div><div class="el-blockquote"><blockquote dir="auto">
+<p>ler numero;</p>
+</blockquote></div><div class="el-ul"><ul>
+<li data-line="0" dir="auto"><em>Efectuar o cálculo</em>;</li>
+</ul></div><div class="el-blockquote"><blockquote dir="auto">
+<p>factorial <em>ˆ</em> 1;</p>
+<p><strong>para</strong> <em>i ˆ 1; i•numero; i ˆ i+1</em> <strong>fazer</strong></p>
+<p>factorial <em>ˆ</em> factorial * i;</p>
+<p><strong>fim-para</strong></p>
+</blockquote></div><div class="el-ul"><ul>
+<li data-line="0" dir="auto"><em>Apresentar resultado</em>; escrever factorial;</li>
+</ul></div><div class="el-blockquote"><blockquote dir="auto">
+<p><strong>fim</strong></p>
+<p><strong>Algoritmo 1.12</strong>: Calcular factorial de um número</p>
+</blockquote></div><div class="el-p"><p dir="auto"><strong>1.4.4.3</strong> <strong>Determinar se um número é primo</strong></p></div><div class="el-p"><p dir="auto">Um número é primo se for apenas divisível por si próprio e pela unidade, por exem-plo: 11 é número primo (visto que é apenas divisível por 11 e por 1), enquanto que 21 não é primo, pois tem os seguintes divisores: 1,3,7 e 21.</p></div><div class="el-blockquote"><blockquote dir="auto">
+<p><strong>Entrada</strong>: numero</p>
+<p><strong>início</strong></p>
+<p>escrever "Introduza número:";</p>
+<p>ler numero;</p>
+</blockquote></div><div class="el-ul"><ul>
+<li data-line="0" dir="auto"><em>A variável ndiv será utilizada na contagem do número de divisores de um número</em>; ndiv <em>ˆ</em> 0;</li>
+</ul></div><div class="el-blockquote"><blockquote dir="auto">
+<p><strong>para</strong> <em>i ˆ 2; i&lt;numero; i ˆ i+1</em> <strong>fazer</strong></p>
+</blockquote></div><div class="el-ul"><ul>
+<li data-line="0" dir="auto"><em>Determinar se i é divisor do número</em>;</li>
+</ul></div><div class="el-p"><p dir="auto"><strong>se</strong> <em>numero%i=0</em> <strong>então</strong></p></div><div class="el-p"><p dir="auto">ndiv <em>ˆ</em> ndiv+1;</p></div><div class="el-blockquote"><blockquote dir="auto">
+<p><strong>fim-se</strong></p>
+<p><strong>fim-para</strong></p>
+<p><em># Testar se existem divisores diferentes de 1 e do próprio número</em>;</p>
+<p><strong>se</strong> <em>ndiv&gt;0</em> <strong>então</strong></p>
+<p>escrever "O número ", numero, "não é primo"; <strong>senão</strong></p>
+<p>escrever "O número ", numero, "é primo"; <strong>fim-se</strong></p>
+<p><strong>fim</strong></p>
+<p><strong>Algoritmo 1.13</strong>: Determinar se um número é primo</p>
+</blockquote></div><div class="el-p"><p dir="auto">O algoritmo 1.13 permite determinar se um número é primo através da contagem de divisores diferentes da unidade e do próprio número. Esta solução necessita de</p></div><div class="el-p"><p dir="auto">testar todos os números, sendo obviamente pouco eficiente não se recomenda a sua utilização na prática.</p></div><div class="el-p"><p dir="auto">Por sua vez, o algoritmo 1.14 permite determinar se um número é primo de uma forma muito mais eficiente, visto que termina o processo assim que encontra um di-visor diferente da unidade e do próprio número. Por outro lado termina assim que o divisor atinge metade do valor do número, isto porque não é possível encontrar divisores inteiros entre metade do número e o próprio número.</p></div><div class="el-blockquote"><blockquote dir="auto">
+<p><strong>Entrada</strong>: numero</p>
+<p><strong>início</strong></p>
+<p>escrever "Introduza número:";</p>
+<p>ler numero;</p>
+</blockquote></div><div class="el-ul"><ul>
+<li data-line="0" dir="auto"><em>Até prova em contrário um número é primo. Quando é encontrado um divisor deixa de o ser</em>;</li>
+</ul></div><div class="el-blockquote"><blockquote dir="auto">
+<p>primo <em>ˆ</em> verdadeiro; i <em>ˆ</em> 2;</p>
+<p><strong>enquanto</strong> <em>primo=verdadeiro <strong>e</strong> i•numero/2</em> <strong>fazer</strong></p>
+</blockquote></div><div class="el-ul"><ul>
+<li data-line="0" dir="auto"><em>Determinar se i é divisor do número</em>;</li>
+</ul></div><div class="el-p"><p dir="auto"><strong>se</strong> <em>numero%i=0</em> <strong>então</strong></p></div><div class="el-p"><p dir="auto">primo <em>ˆ</em> falso;</p></div><div class="el-blockquote"><blockquote dir="auto">
+<p><strong>fim-se</strong></p>
+<p>i <em>ˆ</em> i+1;</p>
+<p><strong>fim-enquanto</strong></p>
+<p><em># Testar se foi um encontrado algum divisor</em>;</p>
+<p><strong>se</strong> <em>primo=falso</em> <strong>então</strong></p>
+<p>escrever "O número ", numero, "não é primo";</p>
+<p><strong>senão</strong></p>
+<p>escrever "O número ", numero, "é primo";</p>
+<p><strong>fim-se</strong></p>
+<p><strong>fim</strong></p>
+<p><strong>Algoritmo 1.14</strong>: Determinar se um número é primo</p>
+</blockquote></div><div class="el-p"><p dir="auto"><strong>1.4.4.4</strong> <strong>Determinar nome e idade da pessoa mais nova de um grupo</strong></p></div><div class="el-p"><p dir="auto">O algoritmo 1.15 permite ler o nome e a idade de uma série de pessoas. Este programa deve terminar quando for introduzido o nome da pessoa = "STOP". No final deve ser mostrado o nome e idade da pessoa mais nova.</p></div><div class="el-p"><p dir="auto">Neste programa é utilizada uma variável com a função de servir de sentinela, a variável primeiro pode assumir os valores verdadeiro ou falso em função das neces-sidades.</p></div><div class="el-p"><p dir="auto">Uma <strong>sentinela</strong> é regra geral uma variável do tipo booleano (<em>i.e.</em>, pode apresentar os valores verdadeiro ou falso) e é utilizada com o fito de controlar a execução de uma determinada secção do programa, este conceito é muito útil em programação.</p></div><div class="el-blockquote"><blockquote dir="auto">
+<p><strong>Saída</strong>: nomeMin, idadeMin</p>
+<p><strong>início</strong></p>
+</blockquote></div><div class="el-ul"><ul>
+<li data-line="0" dir="auto"><em>Esta sentinela permite controlar o primeiro elemento a ser lido de forma a iniciar a variável idadeMin</em>;</li>
+</ul></div><div class="el-blockquote"><blockquote dir="auto">
+<p>primeiro <em>ˆ</em> verdadeiro; <strong>repetir</strong></p>
+<p>escrever "Introduza nome:"; ler nome;</p>
+<p><strong>se</strong> <em>nome 6</em>= <em>"STOP"</em> <strong>então</strong> escrever "Introduza idade:"; ler<br>
+idade;</p>
+<p><strong>se</strong> <em>primeiro = verdadeiro</em> <strong>então</strong> idadeMin <em>ˆ</em> idade;</p>
+</blockquote></div><div class="el-ul"><ul>
+<li data-line="0" dir="auto">
+<p><em>Após a primeira leitura a sentinela é alterada para falso</em> primeiro <em>ˆ</em> falso; <strong>senão</strong></p>
+</li>
+<li data-line="2" dir="auto">
+<p><em>Se a idade acabada de ler for menor que o mínimo existente então actualiza o mínimo e guarda o nome da pessoa</em>;</p>
+</li>
+</ul></div><div class="el-blockquote"><blockquote dir="auto">
+<p><strong>se</strong> <em>idade &lt; idadeMin</em> <strong>então</strong> idadeMin <em>ˆ</em> idade; nomeMin <em>ˆ</em><br>
+nome;</p>
+<p><strong>fim-se</strong></p>
+<p><strong>fim-se</strong></p>
+<p><strong>fim-se</strong></p>
+<p><strong>até</strong> <em>nome="STOP"</em>;</p>
+<p>escrever "Nome e idade da pessoa mais nova:", nomeMin, idadeMin;</p>
+<p><strong>fim</strong></p>
+<p><strong>Algoritmo 1.15</strong>: Determinar nome/idade da pessoa mais nova</p>
+</blockquote></div><div class="el-p"><p dir="auto"><strong>1.4.4.5</strong> <strong>Determinar o aluno melhor classificado e a média das notas de uma turma</strong></p></div><div class="el-p"><p dir="auto">O algoritmo 1.16 permite ler as notas de português obtidas pelos elementos de uma turma. Este programa termina quando for introduzido o nome do aluno "STOP". No final deve ser mostrado o nome do aluno melhor classificado e a média de notas de turma. Neste programa são utilizados ciclos encadeados.</p></div><div class="el-p"><p dir="auto">Note-se que este algoritmo lê pelo menos um nome, nem que o primeiro nome seja "STOP"graças à utilização do ciclo repetir-até. No caso de o nome introduzo ser válido (<em>i.e.</em>, diferente de "STOP") então são lidas notas do aluno.</p></div><div class="el-blockquote"><blockquote dir="auto">
+<p><strong>Saída</strong>: nomeMax, notaMax, media</p>
+<p><strong>início</strong></p>
+<p>soma <em>ˆ</em> 0;</p>
+<p>nAlunos <em>ˆ</em> 0;</p>
+<p><strong>repetir</strong></p>
+<p>escrever "Introduza nome:";</p>
+<p>ler nome;</p>
+<p><strong>se</strong> <em>nome 6</em>= <em>"STOP"</em> <strong>então</strong></p>
+<p><strong>repetir</strong></p>
+<p>escrever "Introduza nota de português do aluno", nome;</p>
+<p><strong>até</strong> <em>nota‚0 e nota•100</em>;</p>
+<p>soma <em>ˆ</em> soma+nota;</p>
+<p>nAlunos <em>ˆ</em> nAlunos+1;</p>
+<p><strong>se</strong> <em>nota &gt; notaMax</em> <strong>então</strong></p>
+<p>notaMax <em>ˆ</em> nota;</p>
+<p>nomeMax <em>ˆ</em> nome;</p>
+<p><strong>fim-se</strong></p>
+<p><strong>fim-se</strong></p>
+<p><strong>até</strong> <em>nome="STOP"</em>;</p>
+<p><strong>se</strong> <em>nAlunos &gt; 0</em> <strong>então</strong></p>
+<p><em># Calcular média</em>;</p>
+<p>media <em>ˆ</em> soma/nAlunos;</p>
+<p>escrever "Nome do aluno melhor classificado:", nomeMax; escrever<br>
+"Média obtida pela turma:", media;</p>
+<p><strong>senão</strong></p>
+<p><em># Não pode calcular média</em>;</p>
+<p>escrever "Não foram inseridos dados."; <strong>fim-se</strong></p>
+<p><strong>fim</strong></p>
+<p><strong>Algoritmo 1.16</strong>: Determinar o aluno melhor classificado e a média<br>
+das notas de uma turma</p>
+<p><strong>Sugestão:</strong> Resolver o último exercício utilizando ciclos do tipo<br>
+enquanto-fazer.</p>
+</blockquote></div><div class="el-p"><p dir="auto"><strong>1.4.5</strong> <strong>Exercícios Propostos</strong></p></div><div class="el-p"><p dir="auto">Nesta secção são propostos alguns problemas com vista à aplicação dos diferentes tipos de instruções anteriormente introduzidas com particular ênfase na instruções cíclicas.</p></div><div class="el-p"><p dir="auto"><strong>1.4.5.1</strong> <strong>Divisão através de subtracções sucessivas</strong></p></div><div class="el-p"><p dir="auto">O resultado da divisão inteira de um número inteiro por outro número inteiro pode sempre ser obtido utilizando-se apenas o operador de subtracção. Assim, se quiser-mos calcular 7/2, basta subtrair o dividendo (2) ao divisor (7), sucessivamente, até que o resultado seja menor do que o dividendo.</p></div><div class="el-p"><p dir="auto">O número de subtracções realizadas corresponde ao quociente inteiro, conforme o exemplo seguinte:</p></div><div class="el-table" dir="auto" style="overflow-x: auto;"><table>
+<thead>
+<tr>
+<th dir="auto">7 <em>¡</em> 2</th>
+<th dir="auto">= 5</th>
+<th dir="auto"></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td dir="auto">5 <em>¡</em> 2</td>
+<td dir="auto">=</td>
+<td dir="auto">3</td>
+</tr>
+<tr>
+<td dir="auto">3 <em>¡</em> 2</td>
+<td dir="auto">=</td>
+<td dir="auto">1</td>
+</tr>
+</tbody>
+</table></div><div class="el-p"><p dir="auto">Descrever um algoritmo para o cálculo da divisão de um inteiro pelo outro. Note que se o dividendo for zero, esta é uma operação matematicamente indefinida.</p></div><div class="el-p"><p dir="auto"><strong>1.4.5.2</strong> <strong>Determinar o máximo e mínimo de uma série</strong></p></div><div class="el-p"><p dir="auto">Ler 100 valores e determinar os valores máximo e mínimo da série.</p></div><div class="el-p"><p dir="auto"><strong>1.4.5.3</strong> <strong>Determinar quantidade de números primos</strong></p></div><div class="el-p"><p dir="auto">Determinar quantos são os números primos existentes entre os valores 1 e 1000 (ex-cluindo os limites do intervalo).</p></div><div class="el-p"><p dir="auto"><strong>1.4.5.4</strong> <strong>Determinar se um número é perfeito</strong></p></div><div class="el-p"><p dir="auto">Um número n é perfeito se a soma dos divisores inteiros de n (excepto o próprio n)</p></div><div class="el-ul"><ul>
+<li data-line="0" dir="auto">igual ao valor de n. Por exemplo, o número 28 tem os seguintes divisores: 1, 2, 4, 7, 14, cuja soma é exactamente 28. (Os seguintes números são perfeitos: 6, 28, 496, 8128.)</li>
+</ul></div><div class="el-blockquote"><blockquote dir="auto">
+<p>Escreva um algoritmo que verifique se um número é perfeito.</p>
+</blockquote></div><div class="el-p"><p dir="auto"><strong>1.4.5.5</strong> <strong>Calcular potência por multiplicações sucessivas</strong></p></div><div class="el-p"><p dir="auto">Escrever um programa que permita calcular uma potência do tipo base<sup>expoente</sup> atra-vés de multiplicações sucessivas. Por exemplo: 2<sup>4</sup> = 2 <em>⁄</em> 2 <em>⁄</em> 2 <em>⁄</em> 2. Considere as dife-rentes situações relacionadas com os valores da base e/ou expoente iguais a zero.</p></div><div class="el-p"><p dir="auto"><strong>1.4.5.6</strong> <strong>Maior número ímpar de uma sequência de valores</strong></p></div><div class="el-p"><p dir="auto">Descreva um algoritmo que lê uma sequência de números inteiros terminada pelo número zero e calcule o maior ímpar e a sua posição na sequência de valores.</p></div><div class="el-p"><p dir="auto"><strong>1.4.5.7</strong> <strong>Algarismos de um número</strong></p></div><div class="el-p"><p dir="auto">Escreva um programa para extrair os algarismos que compõem um número e os vi-sualize individualmente.</p></div><div class="el-p"><p dir="auto"><strong>1.4.5.8</strong> <strong>Apresentação gráfica de temperaturas</strong></p></div><div class="el-p"><p dir="auto">Escreva um algoritmo que lê a temperatura de N cidades portuguesas e que repre-sente a temperatura de cada uma delas com uma barra de asteriscos (*), em que cada asterisco representa um intervalo de 2<em><sup>–</sup></em>C. De acordo com os exemplos seguintes:</p></div><div class="el-blockquote"><blockquote dir="auto">
+<p>Porto 11 *****</p>
+<p>Lisboa 16 ********</p>
+<p>Faro 20 **********</p>
+<p>Chaves 8 ****</p>
+</blockquote></div><div class="el-p"><p dir="auto"><strong>1.4.5.9</strong> <strong>Soma dos algarismo de um número</strong></p></div><div class="el-p"><p dir="auto">Escreva um programa que calcule a soma dos algarismos que compõem um número. Por exemplo: 7258 = 7+2+5+8 = 22</p></div><div class="el-p"><p dir="auto"><strong>1.4.5.10</strong> <strong>Jogo de adivinhar o número</strong></p></div><div class="el-p"><p dir="auto">Escrever um programa para o o jogo de adivinhar um número. Este jogo consiste no seguinte: o programa sorteia um número e o jogador deve tentar adivinhar o número sorteado. Para isso o programa deve indicar se o palpite do jogador foi maior, menor ou se acertou no número sorteado. Caso o jogador acerte deve visualizado no écran o número de tentativas utilizadas.</p></div><div class="el-p"><p dir="auto"><strong>1.4.5.11</strong> <strong>Capicua de um número</strong></p></div><div class="el-p"><p dir="auto">Escreva um programa que leia um número inteiro positivo e verifique se se trata de uma capicua, isto é, uma sequência de dígitos cuja leitura é a mesma nos dois senti-dos (exemplo:32523). Sugestão: Inverter a ordem dos dígitos e verificar se o número obtido coincide com o original. Por exemplo, 327 invertido é <code>((7*10)+2)*10+3=723</code>.</p></div><div class="el-p"><p dir="auto"><strong>1.4.5.12</strong> <strong>Conversão de base numérica</strong></p></div><div class="el-p"><p dir="auto">Elaborar um programa para converter um número escrito em binário para o corres-pondente na base decimal. A conversão faz-se de acordo com o exemplo seguinte:</p></div><div class="el-pre"><pre><code data-line="0">10110011&lt;sub&gt;(2)&lt;/sub&gt; =
+
+= 1⁄2&lt;sup&gt;7&lt;/sup&gt; + 0⁄2&lt;sup&gt;6&lt;/sup&gt; + 1⁄2&lt;sup&gt;5&lt;/sup&gt; + 1⁄2&lt;sup&gt;4&lt;/sup&gt; + 0⁄2&lt;sup&gt;3&lt;/sup&gt; + 0⁄2&lt;sup&gt;2&lt;/sup&gt; + 1⁄2&lt;sup&gt;1&lt;/sup&gt; + 1⁄2&lt;sup&gt;0&lt;/sup&gt; =
+
+= 128 + 0 + 32 + 0 + 16 + 0 + 0 + 2 + 1 =
+
+= 179&lt;sub&gt;(10)&lt;/sub&gt;
+</code><button class="copy-code-button"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon lucide-copy"><rect x="8" y="8" width="14" height="14" rx="2" ry="2"></rect><path d="M4 16c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2"></path></svg></button></pre></div><div class="el-p"><p dir="auto">Note que os expoentes das potências na fórmula de conversão correspondem, res-pectivamente, à posição ocupada por cada algarismo no número em binário. Sendo que o algarismo mais à direita corresponde à posição zero.</p></div><div class="el-p"><p dir="auto"><strong>1.5</strong> <strong>Traçagens e Teste</strong></p></div><div class="el-p"><p dir="auto">A traçagem consiste em testar um algoritmo para um conjunto de valores de entrada, observando o comportamento interno do algoritmo para esses valores e ao longo dos vários passos que compõem o algoritmo.</p></div><div class="el-p"><p dir="auto">Assim, a primeira fase consiste em numerar/etiquetar os passos do algoritmo. De seguida é necessário construir uma tabela colocando na primeira linha as entidades que queremos estudar ao longo dos passos do algoritmo, a saber, variáveis e condi-ções, pois são as únicas entidades cujo valor pode variar. A última fase consiste em executar o algoritmo passo-a-passo.</p></div><div class="el-p"><p dir="auto">Considere-se o problema de calcular o quociente e resto da divisão inteira. O cálculo destes calores pode ser realizado com sucesso através da aplicação sucessiva de subtracções, de acordo com o exemplificado na figura 1.14.</p></div><div class="el-p"><p dir="auto"><span alt="media" src="ALG-EST-image17.png" class="internal-embed media-embed image-embed is-loaded"><img alt="media" src="languages/c/isep/md/00/media/alg-est-image17.png"></span></p></div><div class="el-p"><p dir="auto">Figura 1.14: Divisão inteira através de subtracções sucessivas</p></div><div class="el-p"><p dir="auto">Note-se que o quociente corresponde ao número de vezes para o qual é possível subtrair o divisor ao dividendo, no exemplo é possível subtrair 4 vezes o número 7 do 33, sendo que 5 será o resto inteiro.</p></div><div class="el-blockquote"><blockquote dir="auto">
+<p><strong>Entrada</strong>: dividendo, divisor</p>
+</blockquote></div><div class="el-pre"><pre><code data-line="0"># Entrada: dividendo, divisor
+
+início
+# Ler dividendo e divisor;
+
+P1	escrever "Introduza o dividendo e divisor";
+
+P2	ler dividendo,divisor;
+
+P3	quociente ˆ 0;
+
+#	Subtrair sucessivamente o divisor ao dividendo;
+
+P4	enquanto dividendo ‚ divisor fazer
+
+P5		dividendo ˆ dividendo - divisor;	
+			
+P6		quociente ˆ quociente+1;	
+	fim-enquanto	
+P7	resto ˆ dividendo;	
+fim
+</code><button class="copy-code-button"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon lucide-copy"><rect x="8" y="8" width="14" height="14" rx="2" ry="2"></rect><path d="M4 16c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2"></path></svg></button></pre></div><div class="el-blockquote"><blockquote dir="auto">
+<p><strong>Algoritmo 1.17</strong>:</p>
+</blockquote></div><div class="el-p"><p dir="auto">Divisão inteira através de subtracções sucessivas (numerado). Na tabela 1.8 são representados os passos nos quais as condições e/ou variáveis</p></div><div class="el-p"><p dir="auto">podem mudar de valor (de <em>P2</em> a <em>P7</em> ) e possível perceber as (quatro) iterações realiza-das dentro do ciclo enquanto-fazer, sendo que em cada iteração do ciclo são execu-tadas os passos: <em>P4</em> , <em>P5</em> e <em>P6</em> .</p></div><div class="el-table" style="overflow-x: auto;"><table>
+  <colgroup>
+  <col style="width: 12%">
+  <col style="width: 17%">
+  <col style="width: 12%">
+  <col style="width: 16%">
+  <col style="width: 9%">
+  <col style="width: 31%">
+  </colgroup></table></div><div>  
+    
+    <strong>Passos</strong>
+    <strong>dividendo</strong>
+    <strong>divisor</strong>
+    <strong>quociente</strong>
+    <strong>resto</strong>
+    <strong>dividendo</strong> <em>‚</em> <strong>divisor</strong>
+    
+  </div><div>  
+    
+      P2
+      33
+      7
+      
+      
+      
+    
+    
+      P3
+      33
+      7
+      0
+      
+      
+    
+    
+      P4
+      33
+      7
+      0
+      
+      verdade
+    
+    
+      P5
+      26
+      7
+      0
+      
+      verdade
+    
+    
+      P6
+      26
+      7
+      1
+      
+      verdade
+    
+    
+      P4
+      26
+      7
+      1
+      
+      verdade
+    
+    
+      P5
+      19
+      7
+      1
+      
+      verdade
+    
+    
+      P6
+      19
+      7
+      2
+      
+      verdade
+    
+    
+      P4
+      19
+      7
+      2
+      
+      verdade
+    
+    
+      P5
+      12
+      7
+      2
+      
+      verdade
+    
+    
+      P6
+      12
+      7
+      3
+      
+      verdade
+    
+    
+      P4
+      12
+      7
+      3
+      
+      verdade
+    
+    
+      P5
+      5
+      7
+      3
+      
+      verdade
+    
+    
+      P6
+      5
+      7
+      4
+      
+      verdade
+    
+    
+      P4
+      5
+      7
+      4
+      
+    falso
+    
+    
+      P7
+      5
+      7
+      4
+      5
+      
+    
+  
+</div><div class="el-p"><p dir="auto">Tabela 1.8: Traçagem do algoritmo 1.14</p></div><div class="el-p"><p dir="auto"><strong>1.6</strong> <strong>Programação modular</strong></p></div><div class="el-p"><p dir="auto">De acordo com o paradigma da programação estruturada, a escrita de algoritmos (e programas) deve ser baseada no desenho modular dos mesmos passando-se depois a um refinamento gradual do topo para a base. A modularidade permite entre outros aspectos:</p></div><div class="el-ul"><ul>
+<li data-line="0" dir="auto">
+<p>Criar diferentes camadas de abstracção do programa codificado e que por sua vez facilitará a resolução de problemas complexos, leitura e manutenção do có-digo mais simples;</p>
+</li>
+<li data-line="2" dir="auto">
+<p>Reduzir os custos ao desenvolvimento de <em>software</em> e correcção de erros;</p>
+</li>
+<li data-line="4" dir="auto">
+<p>Reduzir o número de erros emergentes durante a codificação;</p>
+</li>
+<li data-line="5" dir="auto">
+<p>Re-utilização de código de forma mais simples;</p>
+</li>
+</ul></div><div class="el-p"><p dir="auto">A noção de modularidade é crucial para a programação. A modularidade pode ser conseguida, por exemplo, através do recurso à utilização de sub-rotinas. A utilização de sub-rotinas permite modularizar os programas e encapsular processamento o que resulta em programas mais simples de desenvolver e ler.</p></div><div class="el-p"><p dir="auto">Quanto mais independentes os módulos (sub-rotinas) mais atentamente o progra-mador se pode concentrar sobre cada uma ignorando os restantes. Com a chamada de uma sub-rotina num qualquer ponto de um programa é transferido o controlo para essa sub-rotina. isto é, passam a ser executadas do início ao fim as instruções presentes nessa sub-rotina, retornado-se depois ao programa principal, exactamente à instrução seguinte à da chamada da sub-rotina.</p></div><div class="el-p"><p dir="auto"><strong>1.6.1</strong> <strong>Sub-rotinas, parâmetros e variáveis locais</strong></p></div><div class="el-p"><p dir="auto">Na programação estruturada são normalmente referidos dois tipos de sub-rotinas: as funções e os procedimentos. A diferença entre funções e procedimentos consiste no facto de as primeiras retornarem um valor, e os segundos não.</p></div><div class="el-p"><p dir="auto">No contexto da programação uma função tem um funcionamento similar a fun-ção matemática, isto é, funciona como uma <strong>caixa preta</strong> que recebe valores (designada por parâmetros) e devolve um resultado. Por exemplo a função potencia (ver fór-mula 1.6.1) recebe a base e expoente, e devolve o resultado. Note-se que a lista de parâmetros passados para uma função pode ser vazia.</p></div><div class="el-table" dir="ltr" style="overflow-x: auto;"><table>
+<thead>
+<tr>
+<th dir="ltr">resultado = potencia(base, expoente)</th>
+<th dir="auto">(1.6.1)</th>
+</tr>
+</thead>
+</table></div><div class="el-p"><p dir="auto">As variáveis definidas no âmbito das sub-rotinas são criadas no momento em que se inicia a execução da sub-rotina e destruídas no momento em que a sub-rotina ter-mina a sua execução, isto é, são <strong>variáveis locais</strong> (dentro do contexto da sub-rotina) por oposição às variáveis do programa que se designam por <strong>variáveis globais</strong>.</p></div><div class="el-blockquote"><blockquote dir="auto">
+<p>Este conceito é muito importante e implica que:</p>
+</blockquote></div><div class="el-ul"><ul>
+<li data-line="0" dir="auto">
+<p>a forma correcta de se passar valores para dentro de uma sub-rotina é através dos parâmetros (e não recorrendo a uma variável com o mesmo nome fora e dentro da sub-rotina);</p>
+</li>
+<li data-line="2" dir="auto">
+<p>a forma correcta de se obter valores de uma sub-rotina é recorrer a uma função (e não a um procedimento) que tem a possibilidade de devolver valores.</p>
+</li>
+</ul></div><div class="el-p"><p dir="auto"><strong>1.6.1.1</strong> <strong>Funções</strong></p></div><div class="el-p"><p dir="auto">A sintaxe e o fluxograma propostos para a definição de uma função são apresentados na figura 1.15.</p></div><div class="el-p"><p dir="auto">A função é identificada por um nome (<em>nomeFuncao</em>), sendo a <em>listaParâmetros</em> constituída por zero ou mais variáveis passadas à função. A expressão representa o valor a retornar pela função.</p></div><div class="el-p"><p dir="auto"><span alt="media" src="ALG-EST-image18.png" class="internal-embed media-embed image-embed is-loaded"><img alt="media" src="languages/c/isep/md/00/media/alg-est-image18.png"></span></p></div><div class="el-p"><p dir="auto">Figura 1.15: Fluxograma e sintaxe - Função</p></div><div class="el-p"><p dir="auto">Considere-se no seguinte exemplo a definição e utilização da função potencia<sup>1</sup> na construção de um programa modular.</p></div><div class="el-blockquote"><blockquote dir="auto">
+<p><strong>Função</strong> potencia(base,expoente)</p>
+<p><strong>início</strong></p>
+</blockquote></div><div class="el-ul"><ul>
+<li data-line="0" dir="auto">
+<p><em>A variável resultado é local</em>; resultado <em>ˆ</em> 1;</p>
+</li>
+<li data-line="2" dir="auto">
+<p><em>Calcular a potência através de multiplicações sucessivas</em>; <strong>para</strong></p>
+<blockquote dir="auto">
+<p><em>i ˆ 1; i • expoente; i ˆ i+1</em> <strong>fazer</strong></p>
+</blockquote>
+</li>
+</ul></div><div class="el-blockquote"><blockquote dir="auto">
+<p>resultado <em>ˆ</em> resultado*base;</p>
+<p><strong>fim-para</strong></p>
+</blockquote></div><div class="el-ul"><ul>
+<li data-line="0" dir="auto"><em>O valor calculado é retornado através do nome da função</em>; potencia
+<blockquote dir="auto">
+<p><em>ˆ</em> resultado;</p>
+</blockquote>
+</li>
+</ul></div><div class="el-blockquote"><blockquote dir="auto">
+<p><strong>fim-função</strong></p>
+<p>A potencia é utilizada no programa seguinte:</p>
+<p><strong>início</strong></p>
+</blockquote></div><div class="el-ul"><ul>
+<li data-line="0" dir="auto"><em>Ler base e expoente</em>; escrever "Introduza base="; ler base;</li>
+</ul></div><div class="el-blockquote"><blockquote dir="auto">
+<p>escrever "Introduza expoente="; ler expoente;</p>
+</blockquote></div><div class="el-ul"><ul>
+<li data-line="0" dir="auto"><em>Apresentar resultado</em>;</li>
+</ul></div><div class="el-blockquote"><blockquote dir="auto">
+<p>escrever base," ˆ ",expoente,"=",potencia(base,expoente);</p>
+<p><strong>fim</strong></p>
+</blockquote></div><div class="el-p"><p dir="auto">Executando o programa por exemplo para os valor 3 e 2, seria visualizado num monitor o seguinte texto:</p></div><div class="el-blockquote"><blockquote dir="auto">
+<p>Introduza base=3</p>
+<p>Introduza expoente=2</p>
+<p>3^2=8</p>
+</blockquote></div><div class="el-blockquote"><blockquote dir="auto">
+<p><sup>1</sup>Por uma questão de simplicidade são considerados apenas expoentes inteiros e positivos no cál-culo da potência.</p>
+</blockquote></div><div class="el-p"><p dir="auto"><strong>1.6.1.2</strong> <strong>Procedimentos</strong></p></div><div class="el-p"><p dir="auto">A sintaxe e o fluxograma propostos para a definição de um procedimento são apre-sentados na figura 1.16:</p></div><div class="el-p"><p dir="auto"><span alt="media" src="ALG-EST-image19.png" class="internal-embed media-embed image-embed is-loaded"><img alt="media" src="languages/c/isep/md/00/media/alg-est-image19.png"></span></p></div><div class="el-p"><p dir="auto">Figura 1.16: Fluxograma e sintaxe - Procedimento</p></div><div class="el-p"><p dir="auto">Considere-se no seguinte exemplo a definição e utilização do procedimento prtNumeroInvertido que permite imprimir um número inteiro invertido.</p></div><div class="el-blockquote"><blockquote dir="auto">
+<p><strong>Comentário: Explicar a razão de subtrair algarismo!!</strong></p>
+<p><strong>Procedimento</strong> prtNumeroInvertido(numero)</p>
+<p><strong>início</strong></p>
+<p><strong>enquanto</strong> <em>numero&gt;0</em> <strong>fazer</strong></p>
+</blockquote></div><div class="el-ul"><ul>
+<li data-line="0" dir="auto">
+<p><em>O algarismo mais à direita do número é calculado através</em>;</p>
+</li>
+<li data-line="2" dir="auto">
+<p><em>da divisão inteira do número por 10</em>;</p>
+</li>
+</ul></div><div class="el-blockquote"><blockquote dir="auto">
+<p>algarismo <em>ˆ</em> numero % 10;</p>
+<p>escrever algarismo;</p>
+</blockquote></div><div class="el-ul"><ul>
+<li data-line="0" dir="auto"><em>Truncar o algarismo à direita</em>; numero <em>ˆ</em> (numero-algarismo)/10;</li>
+</ul></div><div class="el-blockquote"><blockquote dir="auto">
+<p><strong>fim-enquanto</strong></p>
+<p><strong>fim-procedimento</strong></p>
+</blockquote></div><div class="el-p"><p dir="auto"><strong>1.6.2</strong> <strong>Exercícios resolvidos</strong></p></div><div class="el-p"><p dir="auto">Nesta secção são apresentados alguns problemas e respectivas soluções com o objec-tivo de ilustrar a utilização de procedimentos e funções na produção de programas modulares.</p></div><div class="el-p"><p dir="auto"><strong>1.6.2.1</strong> <strong>Função que devolve o maior algarismo de um número</strong></p></div><div class="el-p"><p dir="auto">Considere uma função que receba um número inteiro e devolva o maior algarismo contido nesse número.</p></div><div class="el-blockquote"><blockquote dir="auto">
+<p><strong>Função</strong> maior(N)</p>
+<p><strong>início</strong></p>
+</blockquote></div><div class="el-ul"><ul>
+<li data-line="0" dir="auto">
+<p><em>max vai conter o maior algarismo</em>;</p>
+</li>
+<li data-line="2" dir="auto">
+<p><em>alg vai conter os algarismos do número, partindo das</em>;</p>
+</li>
+<li data-line="4" dir="auto">
+<p><em>unidades para as dezenas, centenas, etc</em>;</p>
+</li>
+</ul></div><div class="el-blockquote"><blockquote dir="auto">
+<p>max <em>ˆ</em> N%10;</p>
+<p><strong>enquanto</strong> <em>N6</em>=<em>0</em> <strong>fazer</strong></p>
+<p>alg <em>ˆ</em> N%10;</p>
+</blockquote></div><div class="el-ul"><ul>
+<li data-line="0" dir="auto"><em>ˆ</em> (N - alg)/10; <strong>se</strong> <em>alg&gt;max</em> <strong>então</strong> max <em>ˆ</em> alg;</li>
+</ul></div><div class="el-blockquote"><blockquote dir="auto">
+<p><strong>fim-se</strong></p>
+<p><strong>fim-enquanto</strong></p>
+<p>maior <em>ˆ</em> max;</p>
+<p><strong>fim-função</strong></p>
+<p><strong>Função</strong> maior(<em>n</em>) que devolve o maior algarismo de um número</p>
+</blockquote></div><div class="el-p"><p dir="auto"><strong>1.6.2.2</strong> <strong>Função que indica se um número é perfeito</strong></p></div><div class="el-p"><p dir="auto">Um número n é perfeito se a soma dos divisores inteiros de n (excepto o próprio</p></div><div class="el-ol"><ol start="14">
+<li data-line="0" dir="auto">é igual ao valor de n. Por exemplo, o número 28 tem os seguintes divisores: 1, 2, 4, 7, 14, cuja soma é exactamente 28. (Os seguintes números são perfeitos: 6, 28, 496, 8128.). Consider a função que recebe um número inteiro e devolve os valores booleanos verdadeiro ou falso se o número é ou não perfeito, respectivamente.</li>
+</ol></div><div class="el-blockquote"><blockquote dir="auto">
+<p><strong>Função</strong> perfeito(N)</p>
+<p><strong>início</strong></p>
+<p>soma <em>ˆ</em> 0;</p>
+<p><strong>para</strong> <em>x ˆ 1; x•(N/2); x ˆ x+1</em> <strong>fazer</strong></p>
+<p><strong>se</strong> <em>(N%x)=0</em> <strong>então</strong></p>
+<p>soma <em>ˆ</em> soma+x;</p>
+<p><strong>fim-se</strong></p>
+<p><strong>fim-para</strong></p>
+<p><strong>se</strong> <em>soma=N</em> <strong>então</strong></p>
+<p>perfeito <em>ˆ</em> verdadeiro;</p>
+<p><strong>senão</strong></p>
+<p>perfeito <em>ˆ</em> falso;</p>
+<p><strong>fim-se</strong></p>
+<p><strong>fim-função</strong></p>
+<p><strong>Função</strong> perfeito(<em>N</em>) que indica se um número é perfeito</p>
+</blockquote></div><div class="el-p"><p dir="auto"><strong>1.6.3</strong> <strong>Exercícios propostos</strong></p></div><div class="el-p"><p dir="auto">Nesta secção são propostos alguns problemas relacionados com a utilização de pro-cedimentos e funções na escritas de programas modulares.</p></div><div class="el-p"><p dir="auto"><strong>1.6.3.1</strong> <strong>Função média de dois números</strong></p></div><div class="el-p"><p dir="auto">Escreva uma função que, dados dois números reais, retorna a média deles arredon-dada para um inteiro, e devolve os números por ordem crescente. Faça um programa que permita testar a função anterior.</p></div><div class="el-p"><p dir="auto"><strong>1.6.3.2</strong> <strong>Função lei de Ohm</strong></p></div><div class="el-p"><p dir="auto">A lei de Ohm é uma relação entre a corrente (I), a tensão (V) e a resistência (R), de acordo com o circuito eléctrico representado na<br>
+figura 1.17.</p></div><div class="el-p"><p dir="auto"><span alt="media" src="ALG-EST-image20.png" class="internal-embed media-embed image-embed is-loaded"><img alt="media" src="languages/c/isep/md/00/media/alg-est-image20.png"></span></p></div><div class="el-p"><p dir="auto">Figura 1.17: Ilustração da lei de Ohm</p></div><div class="el-ol"><ol>
+<li data-line="0" dir="auto">
+<p>Escreva uma função que recebe os valores de <em>V</em> e <em>R</em> como parâmetros, e calcule a corrente <em>I</em> .</p>
+</li>
+<li data-line="2" dir="auto">
+<p>Escreva um programa que permita testar a função anterior.</p>
+</li>
+</ol></div><div class="el-p"><p dir="auto"><strong>1.6.3.3</strong> <strong>Função somatório</strong></p></div><div class="el-blockquote"><blockquote dir="auto">
+<p><strong>Sugestão:</strong> crie uma função para determinar cada termo <em>i</em> da série.</p>
+</blockquote></div><div class="el-p"><p dir="auto"><strong>1.6.3.4</strong> <strong>Funções para codificar e descodificar números</strong></p></div><div class="el-p"><p dir="auto">Uma empresa pretende enviar cifrada uma sequência de inteiros decimais de 4 dí-gitos (DigDigDigDig). A cifra consiste em: substituir cada dígito Dig por (Dig+8)%10 (<em>i.e.</em>, adiciona 8 e calcula o resto da divisão do resultado por 10); depois troca o terceiro dígito com o primeiro e troca o quarto dígito com o segundo.</p></div><div class="el-ol"><ol>
+<li data-line="0" dir="auto">
+<p>Escreva uma função que receba um inteiro decimal de 4 dígitos e o devolva cifrado.</p>
+</li>
+<li data-line="2" dir="auto">
+<p>Escreva uma função que receba um inteiro cifrado e o decifre para o valor ori-ginal.</p>
+</li>
+<li data-line="4" dir="auto">
+<p>Escreva uma função que apresente um «menu» com 2 opções, cifrar e decifrar número, peça ao utilizador para escolher uma das opções, e retorne a opção escolhida.</p>
+</li>
+<li data-line="6" dir="auto">
+<p>Faça um programa que permita testar as funções anteriores.</p>
+</li>
+</ol></div><div class="el-p"><p dir="auto"><strong>1.6.3.5</strong> <strong>Números primos</strong></p></div><div class="el-p"><p dir="auto">Escreva um procedimento que imprima os números primos existentes entre dois nú-meros. Na resolução deste problema deve ser utilizada uma função que determina se um número é primo.</p></div><div class="el-p"><p dir="auto"><strong>1.7</strong> <strong>Recursividade</strong></p></div><div class="el-p"><p dir="auto">Recursividade é uma característica comum a todas definições que<br>
+necessitam de re-correr a si próprias para se definirem. A recursividade<br>
+é largamente utilizada na ma-temática e nas ciências de computação. No contexto da computação a recursividade</p></div><div class="el-ul"><ul>
+<li data-line="0" dir="auto">muito utilizada na resolução de uma gama variada de problemas e muito particu-larmente na manipulação de estruturas de dados recursivas (<em>e.g.</em>, e listas, árvores e grafos).</li>
+</ul></div><div class="el-p"><p dir="auto">Considerem-se o exemplo da função factorial definido através da formula 1.7.1. Normalmente uma definição recursiva compreende casos particulares e casos gerais, neste caso, <em>n</em> = 1 é o caso particular e <em>n &gt;</em> 1 o caso geral. Note-se que no caso geral, a definição da função factorial é conseguida através da própria função factorial.</p></div><div class="el-table" style="overflow-x: auto;"><table style="width:100%;">
+  <colgroup>
+  <col style="width: 27%">
+  <col style="width: 10%">
+  <col style="width: 6%">
+  <col style="width: 39%">
+  <col style="width: 16%">
+  <col style="width: 0%">
+  </colgroup></table></div><div>  
+    
+      factorial(<em>n</em>) = <sup>‰</sup>
+      <blockquote dir="auto">
+      <p><em>n</em> = 0</p>
+      </blockquote>
+      <em>!<sup>!</sup></em>
+      <blockquote dir="auto">
+      <p>1</p>
+      </blockquote>
+      (1.7.1)
+      
+    
+    
+      <blockquote dir="auto">
+      <p><em>n &gt;</em> 1</p>
+      </blockquote>
+      <blockquote dir="auto">
+      <p>factorial(<em>n ¡</em> 1) <em>⁄ n</em></p>
+      </blockquote>
+      
+    
+  </div><div>  
+  
+</div><div class="el-p"><p dir="auto">No dia-a-dia também se encontram inúmeras definições recursivas, por exemplo, o caso dos ascendentes familiares.</p></div><div class="el-ul"><ul>
+<li data-line="0" dir="auto"><strong>Caso particular</strong> – os ascendentes de determinada pessoa são os seus pais;</li>
+<li data-line="1" dir="auto"><strong>Caso geral</strong> – os ascendentes de uma pessoa são os ascendentes dos seus ascen-dentes;</li>
+</ul></div><div class="el-p"><p dir="auto"><strong>1.7.1</strong> <strong>Exercícios Resolvidos</strong></p></div><div class="el-p"><p dir="auto">Nesta secção são apresentados alguns problemas e respectivas soluções com o objec-tivo de ilustrar a utilização de algoritmos recursivos.</p></div><div class="el-p"><p dir="auto"><strong>1.7.2</strong> <strong>Exercícios Propostos</strong></p></div><div class="el-p"><p dir="auto">Nesta secção são propostos alguns problemas com vista a ilustrar a utilização de al-goritmos recursivos.</p></div><div class="el-p"><p dir="auto"><strong>Capítulo 2</strong></p></div><div class="el-p"><p dir="auto"><strong>Estruturas de dados</strong></p></div><div class="el-p"><p dir="auto"><strong>2.1</strong> <strong>Vectores</strong></p></div><div class="el-p"><p dir="auto">No contexto da programação de computadores, um vector, é uma das estruturas de dados mais simples. Um vector é conjunto de dados consecutivos, usualmente do mesmo tamanho e tipo. Cada um dos elementos do vector é acedido através do índice (número inteiro) que define a posição na qual o elemento está guardado.</p></div><div class="el-p"><p dir="auto">Considere que se pretende desenvolver um programa que dadas as notas de 4000 alunos, calcule o desvio de cada uma relativamente à média das notas. Para o cálculo dos desvios é necessário o cálculo prévio da média, o que implica manter as notas após o cálculo da média, ou seja, guardar as notas em variáveis. O problema pode ser decomposto em sub-problemas, como se segue:</p></div><div class="el-ul"><ul>
+<li data-line="0" dir="auto">Calcular a média;</li>
+<li data-line="1" dir="auto">Guardar as notas (para cálculos posteriores);</li>
+<li data-line="2" dir="auto">Calcular o desvio de cada nota.</li>
+</ul></div><div class="el-p"><p dir="auto">Uma solução para guardar cada uma das notas (desaconselhável!!), seria definir 4000 variáveis, por exemplo: nota1, nota2, nota3, nota4, nota5, nota6, . . . , nota4000</p></div><div class="el-p"><p dir="auto">Assim, as instruções para a leitura das notas seriam repetir 4000 vezes algo de semelhante a:</p></div><div class="el-blockquote"><blockquote dir="auto">
+<p><strong>início</strong></p>
+<p><strong>enquanto</strong> <em>numero&gt;0</em> <strong>fazer</strong></p>
+<p>escrever "Introduza a média do aluno número 1:"; ler nota1;</p>
+<p>escrever "Introduza a média do aluno número 2:";</p>
+<p>ler nota2;</p>
+<p>. . .</p>
+<p>escrever "Introduza a média do aluno número 4000:"; ler nota4000;</p>
+<p><strong>fim-enquanto</strong></p>
+<p><strong>fim</strong></p>
+<p>o que naturalmente se revela completamente impraticável.</p>
+</blockquote></div><div class="el-p"><p dir="auto">A generalidade das linguagens de programação fornece este tipo de dados, cha-mado vector (ou <em>array</em>) que permite ultrapassar esta limitação. A solução consiste em definir um vector cujo tamanho corresponde ao número de elementos desejados e uma variável inteira para aceder a cada índice do referido vector.</p></div><div class="el-p"><p dir="auto">Deste modo, para a leitura das 4000 notas poder-se-ia utilizar um ciclo, como a seguir se ilustra:</p></div><div class="el-blockquote"><blockquote dir="auto">
+<p><strong>início</strong></p>
+<p><strong>para</strong> <em>num ˆ 1; num&lt;4000; num ˆ num+1</em> <strong>fazer</strong> escrever<br>
+"Introduza a nota do aluno número",num; ler nota(num);</p>
+<p><strong>fim-para</strong></p>
+<p><strong>fim</strong></p>
+</blockquote></div><div class="el-p"><p dir="auto">Um <strong>vector</strong> pode então ser definido como um conjunto de tamanho fixo de ele-mentos do mesmo tipo ocupando posições contíguas.</p></div><div class="el-p"><p dir="auto">Antes de se utilizar um vector é necessário proceder à sua declaração, cuja sintaxe proposta é :</p></div><div class="el-blockquote"><blockquote dir="auto">
+<p>DIM nomeVector (início ATE fim)</p>
+<p>No qual:</p>
+</blockquote></div><div class="el-ul"><ul>
+<li data-line="0" dir="auto"><em>nomeVector</em> - é o nome do vector (escolhido pelo programador);</li>
+<li data-line="1" dir="auto"><em>inicio</em> - é o valor início do índice;</li>
+<li data-line="2" dir="auto">fim – é o valor máximo do índice;</li>
+</ul></div><div class="el-p"><p dir="auto">O número de posições do vector obedece à formula 2.1.1, não sendo obrigatório preencher todas as posições com valores.</p></div><div class="el-table" dir="ltr" style="overflow-x: auto;"><table>
+<thead>
+<tr>
+<th dir="ltr">tamanho = fim <em>¡</em> inicio + 1</th>
+<th dir="auto">(2.1.1)</th>
+</tr>
+</thead>
+</table></div><div class="el-blockquote"><blockquote dir="auto">
+<p>Por exemplo, a instruções seguinte:</p>
+<p>DIM notas(1 até 20)</p>
+</blockquote></div><div class="el-p"><p dir="auto"><em>Capítulo 2. Estruturas de dados</em></p></div><div class="el-p"><p dir="auto">permite definir um vector unidimensional chamado notas com 20 posições nume-radas de 1 a 20. Na figura 2.1 é apresentada uma representação gráfica possível deste vector.</p></div><div class="el-p"><p dir="auto"><span alt="media" src="ALG-EST-image21.png" class="internal-embed media-embed image-embed is-loaded"><img alt="media" src="languages/c/isep/md/00/media/alg-est-image21.png"></span></p></div><div class="el-p"><p dir="auto">Figura 2.1: Vetor unidimensional: notas</p></div><div class="el-blockquote"><blockquote dir="auto">
+<p>A sintaxe utilizada no acesso a cada posição do vector é a seguinte<br>
+forma:</p>
+<p>nome-do-vector[índice]</p>
+<p>Como por exemplo:</p>
+<p><strong>início</strong></p>
+</blockquote></div><div class="el-ul"><ul>
+<li data-line="0" dir="auto">
+<p><em>Declaração do vector</em>; DIM notas(1 até 20);</p>
+</li>
+<li data-line="2" dir="auto">
+<p><em>Atribuir o valor 5 à posição 3 do vector</em>; notas[3] <em>ˆ</em> 5;</p>
+</li>
+<li data-line="4" dir="auto">
+<p><em>Escrever no écran o valor da posição 1 do vector</em> ; escrever</p>
+<blockquote dir="auto">
+<p>notas[1];</p>
+</blockquote>
+</li>
+</ul></div><div class="el-blockquote"><blockquote dir="auto">
+<p><strong>fim</strong></p>
+</blockquote></div><div class="el-p"><p dir="auto">Um vector pode ter as dimensões que se pretenderem<sup>1</sup>, fazendo-se a sua separação por vírgulas.</p></div><div class="el-p"><p dir="auto">Considere-se ainda um outro exemplo, um vector bidimensional que permite re-presentar uma imagem, as duas dimensões da matriz definem o tamanho da imagem (largura e altura) e o valor guardado em cada posição, a cor do pixel.</p></div><div class="el-blockquote"><blockquote dir="auto">
+<p>Na figura 2.2 é apresentada uma representação gráfica possível para esta matriz.</p>
+</blockquote></div><div class="el-table" dir="auto" style="overflow-x: auto;"><table>
+  <colgroup>
+    <col style="width: 15%">
+    <col style="width: 17%">
+    <col style="width: 17%">
+    <col style="width: 15%">
+    <col style="width: 17%">
+    <col style="width: 15%">
+  </colgroup>
+  <thead>
+    <tr class="header">
+    <th dir="auto"></th>
+    <th dir="auto">1</th>
+    <th dir="auto">2</th>
+    <th dir="auto">3 </th>
+    <th dir="auto">... </th>
+    <th dir="auto"><blockquote dir="auto">
+    <p>800</p>
+    </blockquote></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr class="odd">
+      <td dir="auto">1</td>
+      <td dir="auto">4</td>
+      <td dir="auto">56</td>
+      <td dir="auto">11</td>
+      <td dir="auto">...</td>
+      <td dir="auto"><blockquote dir="auto">
+      <p>6</p>
+      </blockquote></td>
+    </tr>
+    <tr class="even">
+      <td dir="auto">2</td>
+      <td dir="auto">12</td>
+      <td dir="auto">8</td>
+      <td dir="auto">1</td>
+      <td dir="auto">...</td>
+      <td dir="auto"><blockquote dir="auto">
+      <p>5</p>
+      </blockquote></td>
+    </tr>
+    <tr class="odd">
+      <td dir="auto">...</td>
+      <td dir="auto">...</td>
+      <td dir="auto">...</td>
+      <td dir="auto">...</td>
+      <td dir="auto">...</td>
+      <td dir="auto"><blockquote dir="auto">
+      <p>...</p>
+      </blockquote></td>
+    </tr>
+    <tr class="even">
+      <td dir="auto">640</td>
+      <td dir="auto">5</td>
+      <td dir="auto">83</td>
+      <td dir="auto">9</td>
+      <td dir="auto">...</td>
+      <td dir="auto"><blockquote dir="auto">
+      <p>4</p>
+      </blockquote></td>
+    </tr>
+  </tbody>
+</table></div><div class="el-p"><p dir="auto">Figura 2.2: Vector bidimensional (matriz): imagem</p></div><div class="el-blockquote"><blockquote dir="auto">
+<p><sup>1</sup>Um vector também é designado matriz quando apresenta mais do que uma dimensão.</p>
+</blockquote></div><div class="el-p"><p dir="auto">No seguinte exemplo é procedesse à declaração e consequente utilização deste vector bidimensional :</p></div><div class="el-blockquote"><blockquote dir="auto">
+<p><strong>início</strong></p>
+<p><em># Declaração da matriz</em>;</p>
+<p>DIM imagem(1 até 800, 1 até 640);</p>
+</blockquote></div><div class="el-ul"><ul>
+<li data-line="0" dir="auto">
+<p><em>Atribuir o valor 5 à posição definida pela coluna 2 e linha 3 da matriz</em>; imagem[2][3] <em>ˆ</em> 5;</p>
+</li>
+<li data-line="2" dir="auto">
+<p><em>Escrever no écran o valor da posição definida pela coluna 1 e linha 4 da matriz</em>; escrever notas[1][4];</p>
+</li>
+</ul></div><div class="el-blockquote"><blockquote dir="auto">
+<p><strong>fim</strong></p>
+</blockquote></div><div class="el-p"><p dir="auto">Para além da utilização descrita nesta secção, os vectores são muito utilizados de forma combinada com outras estruturas de dados (<em>e.g.</em>, registos) por forma a definir estruturas mais complexas como por exemplo: filas, pilhas e árvores.</p></div><div class="el-p"><p dir="auto">Existem alguns aspectos a que é necessário prestar atenção quando se<br>
+manipula vectores em programação, nomeadamente:</p></div><div class="el-ul"><ul>
+<li data-line="0" dir="auto">
+<p>Os vectores têm dimensão fixa. O número de elementos é indicado na declara-ção e não pode ser alterado durante a execução do programa.</p>
+</li>
+<li data-line="2" dir="auto">
+<p>Os vectores não se podem manipular como um todo, mas sim elemento a elemento. Isto significa que não se podem somar dois vectores directamente, mas sim os elementos de cada vector individualizados.</p>
+</li>
+<li data-line="4" dir="auto">
+<p>Muitas linguagens de programação não avisam (isto é não dá erro) se o limite da dimensão de um vector for excedido. Neste caso os resultados da execução do programa podem ser imprevisíveis.</p>
+</li>
+</ul></div><div class="el-p"><p dir="auto"><strong>2.1.1</strong> <strong>Exercícios resolvidos</strong></p></div><div class="el-p"><p dir="auto"><strong>2.1.1.1</strong> <strong>Funções manipulando vectores</strong></p></div><div class="el-p"><p dir="auto">Faça um algoritmo que permita:</p></div><div class="el-ol"><ol>
+<li data-line="0" dir="auto">
+<p>Uma função que faça a leitura de 10 valores (inteiros), guardando-os num vector;</p>
+</li>
+<li data-line="2" dir="auto">
+<p>Uma função que retorne a diferença entre o maior e o menor valor do vector;</p>
+</li>
+<li data-line="4" dir="auto">
+<p>Uma função que devolva o número de valores pares e ímpares do vector;</p>
+</li>
+</ol></div><div class="el-p"><p dir="auto">No procedimento leituraVector apresentada de seguida é realizada a leitura do vector. Note-se que tanto o próprio vector como a respectiva dimensão são passados para o procedimento como argumentos.</p></div><div class="el-blockquote"><blockquote dir="auto">
+<p><strong>Procedimento</strong> leituraVector(vector,dim)</p>
+<p><strong>início</strong></p>
+<p><strong>para</strong> <em>i ˆ 1; i• dim; i ˆ i+1</em> <strong>fazer</strong></p>
+<p>escrever "Introduza o elemento", i;</p>
+<p>ler vector[i];</p>
+<p><strong>fim-para</strong></p>
+<p><strong>fim-procedimento</strong></p>
+</blockquote></div><div class="el-p"><p dir="auto">A função contarPares apresentada de seguida contabiliza a quantidade de nú-meros existentes no vector. A função recebe próprio vector e a respectiva dimensão como parâmetros e retorna a quantidade de pares.</p></div><div class="el-blockquote"><blockquote dir="auto">
+<p><strong>Função</strong> contarPares(vector,dim)</p>
+<p><strong>início</strong></p>
+<p>soma <em>ˆ</em> 0;</p>
+<p><strong>para</strong> <em>i ˆ 1; i• dim; i ˆ i+1</em> <strong>fazer</strong></p>
+<p><strong>se</strong> <em>vector[i] % 2</em> <strong>então</strong></p>
+<p>soma <em>ˆ</em> soma+1;</p>
+<p><strong>fim-se</strong></p>
+<p><strong>fim-para</strong></p>
+</blockquote></div><div class="el-ul"><ul>
+<li data-line="0" dir="auto"><em>Retornar resultado</em>; contarPares <em>ˆ</em> soma;</li>
+</ul></div><div class="el-blockquote"><blockquote dir="auto">
+<p><strong>fim-função</strong></p>
+</blockquote></div><div class="el-p"><p dir="auto">A função maiorDiferenca apresentada de seguida, recebe o próprio vector e a respectiva dimensão como parâmetros e retorna a diferença entre os valores máximo e mínimo existentes no vector.</p></div><div class="el-blockquote"><blockquote dir="auto">
+<p><strong>Função</strong> maiorDiferenca(vector,dim)</p>
+<p><strong>início</strong></p>
+</blockquote></div><div class="el-ul"><ul>
+<li data-line="0" dir="auto"><em>Os valores máximo e mínimo são iniciados com o primeiro elemento do vector</em>; máximo <em>ˆ</em> vector[1];</li>
+</ul></div><div class="el-blockquote"><blockquote dir="auto">
+<p>mínimo <em>ˆ</em> vector[1];</p>
+<p><strong>para</strong> <em>i ˆ 1; i• dim; i ˆ i+1</em> <strong>fazer se</strong> <em>vector[i] &gt; máximo</em><br>
+<strong>então</strong> máximo <em>ˆ</em> vector[i];</p>
+<p><strong>senão</strong></p>
+<p><strong>se</strong> <em>vector[i] &lt; mínimo</em> <strong>então</strong> mínimo <em>ˆ</em> vector[i];</p>
+<p><strong>fim-se</strong></p>
+<p><strong>fim-se fim-para</strong></p>
+</blockquote></div><div class="el-ul"><ul>
+<li data-line="0" dir="auto"><em>Retornar resultado</em>;</li>
+</ul></div><div class="el-blockquote"><blockquote dir="auto">
+<p>maiorDiferenca <em>ˆ</em> máximo-mínimo;</p>
+<p><strong>fim-função</strong></p>
+</blockquote></div><div class="el-p"><p dir="auto">No seguinte extracto (algoritmo 2.1) é definido o vector e evocadas as funções e procedimento anteriormente definidos.</p></div><div class="el-blockquote"><blockquote dir="auto">
+<p><strong>início</strong></p>
+<p>DIM vector (1 até 10);</p>
+<p><em># Evocar o procedimento de leitura do vector</em>;</p>
+<p>lerVector(vector,10); <em># Calcular a diferença entre máximo e mínimo e<br>
+apresentar resultado</em>;</p>
+<p>escrever "Diferença máxima=", maiorDiferenca(vector,10);</p>
+<p><em># Contar os números pares e ímpares</em>;</p>
+<p>nPares <em>ˆ</em> maiorDiferenca(vector,10) escrever "Números pares=",<br>
+nPares; escrever "Números ímpares=", 10-nPares;</p>
+<p><strong>fim</strong></p>
+<p><strong>Algoritmo 2.1</strong>: Manipulação de Vectores (leitura, diferença entre<br>
+máximo e mí-nimo e número de pares e ímpares)</p>
+</blockquote></div><div class="el-p"><p dir="auto"><strong>2.1.2</strong> <strong>Exercícios propostos</strong></p></div><div class="el-p"><p dir="auto"><strong>2.1.2.1</strong> <strong>Determinar desvio padrão de uma série</strong></p></div><div class="el-p"><p dir="auto">Escreva um programa modular que permita determinar o desvio padrão de um sé-rie de números de acordo com a formula 2.1.2. Considere a definição de funções e procedimento para os diversos sub-problemas.</p></div><div class="el-p"><p dir="auto"><strong>2.1.2.2</strong> <strong>Prova de atletismo</strong></p></div><div class="el-p"><p dir="auto">Faça a leitura das pontuações que 5 juízes de uma determinada prova atribuíram a um atleta (valores compreendidos entre 0 e 9 inclusive).<br>
+Determine e apresente com formato adequado, os seguintes valores:</p></div><div class="el-ul"><ul>
+<li data-line="0" dir="auto">
+<p>média obtida pelo atleta;</p>
+</li>
+<li data-line="2" dir="auto">
+<p>a pior e a melhor pontuação;</p>
+</li>
+<li data-line="4" dir="auto">
+<p>a percentagem de pontuações iguais ou superiores a 8 valores;</p>
+</li>
+<li data-line="6" dir="auto">
+<p>supondo que a 1ª nota foi atribuída pelo juiz nº1 e assim</p>
+<blockquote dir="auto">
+<p>sucessivamente deter-mine os números dos juízes que atribuíram a<br>
+melhor nota do atleta.</p>
+</blockquote>
+</li>
+</ul></div><div class="el-p"><p dir="auto"><strong>2.2</strong> <strong>Ordenação e pesquisa de vectores</strong></p></div><div class="el-p"><p dir="auto">A ordenação de vectores e a pesquisa de um dado elemento num vector, são opera-ções muito comuns em programação. Existem inúmeros métodos para ordenar vec-tores e para pesquisar valores em vectores. Serão apresentados nesta secção apenas um exemplo de cada um. Também por uma questão de simplificação serão apenas utilizados vectores de números. No entanto estes métodos poder-se-iam adaptar fa-cilmente a vectores de outro tipo de dados.</p></div><div class="el-p"><p dir="auto"><strong>2.2.1</strong> <strong>Ordenação por selecção</strong></p></div><div class="el-p"><p dir="auto">O algoritmo do método de ordenação por selecção consiste em seleccionar repetida-mente o menor elemento dos que ainda não foram tratados (daí o nome do método). Pretendendo-se uma ordenação por ordem crescente, primeiro selecciona-se o menor elemento do vector e faz-se a sua troca com o elemento na primeira posição do vector, em seguida selecciona-se o segundo menor elemento e faz-se a sua troca com o ele-mento na segunda posição do vector, repetindo-se o processo até que todo o vector fique ordenado.</p></div><div class="el-p"><p dir="auto">De seguida é apresentado o algoritmo que implementa este método onde vector é o vector a ordenar e dim o número de elementos do vector. Este método é bastante eficiente para vectores de pequena e média dimensão.</p></div><div class="el-blockquote"><blockquote dir="auto">
+<p><strong>Procedimento</strong> ordenarVector(vector,dim)</p>
+<p><strong>início</strong></p>
+<p><strong>para</strong> <em>i ˆ 1; i • dim-1; i ˆ i+1</em> <strong>fazer</strong></p>
+<p><strong>para</strong> <em>j ˆ i+1; j• dim; j ˆ j+1</em> <strong>fazer</strong></p>
+<p><strong>se</strong> <em>vector[j] &lt; vector[i]</em> <strong>então</strong></p>
+</blockquote></div><div class="el-ul"><ul>
+<li data-line="0" dir="auto"><em>Fazer a troca dos dois elementos utilizando uma variável auxiliar</em>;
+<blockquote dir="auto">
+<p>temp <em>ˆ</em> vector[j];</p>
+</blockquote>
+</li>
+</ul></div><div class="el-blockquote"><blockquote dir="auto">
+<p>vector[j] <em>ˆ</em> vector[i]; vector[i] <em>ˆ</em> temp;</p>
+<p><strong>fim-se</strong></p>
+<p><strong>fim-para</strong></p>
+<p><strong>fim-para</strong></p>
+<p><strong>fim-procedimento</strong></p>
+</blockquote></div><div class="el-p"><p dir="auto">No procedimento ordenarVector é necessário fazer a troca de valores entre duas variáveis. Este conceito é muito utilizado em programação e como tal merece uma análise atenta.</p></div><div class="el-blockquote"><blockquote dir="auto">
+<p><strong>Comentário: Falta fazer desenhos!!!</strong></p>
+</blockquote></div><div class="el-p"><p dir="auto">Considere-se o problema o problema de trocar os conteúdos de duas garrafas cheias contendo líquidos (<em>e.g.</em>, água e sumo de laranja). Para proceder à trocas dos conteúdos é necessário considerar uma terceira garrafa vazia que servira como auxi-liar do processo, pois não é possível proceder à trocar directa.</p></div><div class="el-p"><p dir="auto">O problema de trocar os conteúdos de duas variáveis é similar e como tal o ex-tracto de código seguinte está errado, pois no final ambas as variáveis A e B conterão o mesmo valor, 5.</p></div><div class="el-blockquote"><blockquote dir="auto">
+<p><strong>início</strong></p>
+<p>A<em>ˆ</em>10;</p>
+<p>B<em>ˆ</em>5;</p>
+</blockquote></div><div class="el-ul"><ul>
+<li data-line="0" dir="auto"><em>Fazer a troca dos conteúdos - ERRADO!!!</em>;</li>
+</ul></div><div class="el-blockquote"><blockquote dir="auto">
+<p>A<em>ˆ</em>B; B<em>ˆ</em>A;</p>
+<p><strong>fim</strong></p>
+</blockquote></div><div class="el-p"><p dir="auto">No extracto seguinte é adoptado o procedimento adequado, conforme descrito anteriormente, a utilização de uma variável auxiliar. No final, as variáveis A e B conterão os valores 5 e 10, respectivamente.</p></div><div class="el-blockquote"><blockquote dir="auto">
+<p><strong>início</strong></p>
+<p>A<em>ˆ</em>10;</p>
+<p>B<em>ˆ</em>5;</p>
+</blockquote></div><div class="el-ul"><ul>
+<li data-line="0" dir="auto"><em>Fazer a troca dos conteúdos - CORRECTO!!!</em>; temp <em>ˆ</em> A;</li>
+</ul></div><div class="el-blockquote"><blockquote dir="auto">
+<p>A<em>ˆ</em>B;</p>
+<p>B <em>ˆ</em> temp;</p>
+<p><strong>fim</strong></p>
+</blockquote></div><div class="el-p"><p dir="auto"><strong>2.2.2</strong> <strong>Pesquisa Sequencial</strong></p></div><div class="el-p"><p dir="auto">A pesquisa sequencial é o método mais simples de implementar na procura de um elemento num vector. Este método consiste em pesquisar sequencial e exaustiva-mente um vector na procura de um dado valor. A pesquisa termina quando for en-contrado o valor a procurar ou quando tenha chegado ao fim do vector. Este método funciona em vectores ordenados e/ou desordenados.</p></div><div class="el-p"><p dir="auto">No exemplo seguinte é considerado um vector notas com 100 elementos em que se pretende procurar um valor usando o método de pesquisa sequencial descrita.</p></div><div class="el-blockquote"><blockquote dir="auto">
+<p><strong>início</strong></p>
+<p>DIM notas (1 até 100);</p>
+<p>escrever "Introduza o valor a pesquisar="; ler valor;</p>
+<p><em># Evocar a função de pesquisa</em>;</p>
+<p>posicao <em>ˆ</em> pequisarValor(notas, 100, valor); <strong>se</strong> <em>posicao= -1</em><br>
+<strong>então</strong></p>
+<p>escrever "O valor desejado não existe no vector";</p>
+<p><strong>fim-se</strong></p>
+<p>escrever "O valor desejado existe na posição=",posicao;</p>
+<p><strong>fim</strong></p>
+<p><strong>Algoritmo 2.2</strong>: Utilizar a pesquisa sequencial)</p>
+<p>A pesquisa propriamente dita é realizada pela seguinte função:</p>
+<p><strong>Função</strong> pequisarValor(vector,dim,valor)</p>
+<p><strong>início</strong></p>
+<p>encontrou <em>ˆ</em> falso;</p>
+<p>i <em>ˆ</em> 0;</p>
+</blockquote></div><div class="el-ul"><ul>
+<li data-line="0" dir="auto"><em>Percorrer o vector até encontrar o elemento ou chegar ao fim do vector</em>; <strong>enquanto</strong> <em>encontrou=falso <strong>e</strong> i•dim</em> <strong>fazer</strong></li>
+</ul></div><div class="el-blockquote"><blockquote dir="auto">
+<p><strong>se</strong> <em>valor = vector[i]</em> <strong>então</strong></p>
+<p>encontrou <em>ˆ</em> verdade;</p>
+<p><strong>senão</strong></p>
+<p>i <em>ˆ</em> i+1;</p>
+<p><strong>fim-se</strong></p>
+<p><strong>fim-enquanto</strong></p>
+<p><strong>se</strong> <em>encontrou = verdade</em> <strong>então</strong></p>
+</blockquote></div><div class="el-ul"><ul>
+<li data-line="0" dir="auto"><em>Caso encontre o valor retorna a posição</em>; pequisarValor <em>ˆ</em> i;</li>
+</ul></div><div class="el-blockquote"><blockquote dir="auto">
+<p><strong>senão</strong></p>
+</blockquote></div><div class="el-ul"><ul>
+<li data-line="0" dir="auto"><em>Caso não encontre o valor retorna -1</em>; pequisarValor <em>ˆ</em> -1;</li>
+</ul></div><div class="el-blockquote"><blockquote dir="auto">
+<p><strong>fim-se</strong></p>
+<p><strong>fim-função</strong></p>
+</blockquote></div><div class="el-p"><p dir="auto"><strong>2.2.3</strong> <strong>Exercicios resolvidos</strong></p></div><div class="el-p"><p dir="auto"><strong>2.2.3.1</strong> <strong>Inverter um vector</strong></p></div><div class="el-p"><p dir="auto">Considere o problema de inverter um vector para o qual é apresentada de seguida uma solução possível. Esta solução troca o primeiro elemento com o último, o se-gundo com o penúltimo, o terceiro com o antepenúltimo e assim sucessivamente até inverter a totalidade do vector. Note-se que o iterador do vector vai variar desde a primeira posição até metade da dimensão.</p></div><div class="el-blockquote"><blockquote dir="auto">
+<p><strong>Procedimento</strong> invertervector(vector,dim)</p>
+<p><strong>início</strong></p>
+<p><strong>para</strong> <em>i ˆ 1; i • dim/2; i ˆ i+1</em> <strong>fazer</strong></p>
+</blockquote></div><div class="el-ul"><ul>
+<li data-line="0" dir="auto"><em>Fazer a troca dos dois elementos</em>; temp <em>ˆ</em> vector[i];</li>
+</ul></div><div class="el-blockquote"><blockquote dir="auto">
+<p>vector[i] <em>ˆ</em> vector[dim-i+1]; vector[dim-i+1] <em>ˆ</em> temp;</p>
+<p><strong>fim-para</strong></p>
+<p><strong>fim-procedimento</strong></p>
+</blockquote></div><div class="el-p"><p dir="auto"><strong>2.2.4</strong> <strong>Exercícios propostos</strong></p></div><div class="el-p"><p dir="auto"><strong>2.2.4.1</strong> <strong>Junção ordenada de vectores</strong></p></div><div class="el-p"><p dir="auto">Suponha que as notas dos alunos de duas turmas são lidas para dois vectores, um para cada turma. Considere que as notas foram inseridas em ambos os vectores or-denadamente, da menor para a maior.</p></div><div class="el-p"><p dir="auto">Escreva um programa que faça a junção ordenada dos dois vectores de notas num terceiro vector.</p></div><div class="el-p"><p dir="auto"><strong>2.2.4.2</strong> <strong>Método de ordenação por troca directa</strong></p></div><div class="el-p"><p dir="auto">Neste método compara-se cada posição do vector com todas as outras sucessiva-mente e troca sempre que encontrar um valor menor numa posição à frente. Escreva um algoritmo que implemente este método.</p></div><div class="el-p"><p dir="auto"><strong>2.2.4.3</strong> <strong>Filtro gráfico</strong></p></div><div class="el-p"><p dir="auto">Uma unidade industrial na área da metalomecânica utiliza sistemas de vídeo para o reconhecimento automático de componentes que passam num tapete rolante. Após a captura de cada imagem, esta tem que ser tratada com filtros de <em>software</em> que permi-tem eliminar erros menores e suavizar a imagem.</p></div><div class="el-p"><p dir="auto">Construa um programa que implementa um filtro que substitui cada <em>pixel</em> pela média dos valores das oito células que o rodeiam.</p></div><div class="el-p"><p dir="auto">Na imagem 2.3 está representada a imagem conforme foi capturada em que cada célula representa o tom de cinzento de um <em>pixel</em>.</p></div><div class="el-blockquote"><blockquote dir="auto">
+<p>Exemplo de cálculo das células:</p>
+<p>célula <em>B</em>2 = <em>A</em>1 + <em>A</em>2 + <em>A</em>3 + <em>B</em>1 + <em>B</em>3 + <em>C</em>1 + <em>C</em>2 + <em>C</em>3 =<br>
+108</p>
+<p>célula <em>C</em>2 = <em>B</em>1 + <em>B</em>2 + <em>B</em>3 + <em>C</em>1 + <em>C</em>3 + <em>D</em>1 + <em>D</em>2 + <em>D</em>3 =<br>
+114</p>
+</blockquote></div><div class="el-p"><p dir="auto">Note-se que as células dos limites da imagem (assinalados a cinzento) não podem ser calculados pois não têm o número suficiente de vizinhos.</p></div><div class="el-table" dir="auto" style="overflow-x: auto;"><table>
+<colgroup>
+<col style="width: 4%">
+<col style="width: 16%">
+<col style="width: 15%">
+<col style="width: 15%">
+<col style="width: 15%">
+<col style="width: 16%">
+<col style="width: 16%">
+<col style="width: 0%">
+</colgroup>
+<thead>
+<tr class="header">
+<th dir="auto"></th>
+<th dir="ltr"><blockquote dir="auto">
+<p><strong>A</strong></p>
+</blockquote></th>
+<th dir="ltr"><blockquote dir="auto">
+<p><strong>B</strong></p>
+</blockquote></th>
+<th dir="ltr"><blockquote dir="auto">
+<p><strong>C</strong></p>
+</blockquote></th>
+<th dir="ltr"><blockquote dir="auto">
+<p><strong>D</strong></p>
+</blockquote></th>
+<th dir="ltr"><blockquote dir="auto">
+<p><strong>E</strong></p>
+</blockquote></th>
+<th dir="ltr"><blockquote dir="auto">
+<p><strong>F</strong></p>
+</blockquote></th>
+<th dir="auto"></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td rowspan="2" dir="auto"><strong>1</strong></td>
+<td dir="auto"></td>
+<td dir="auto"></td>
+<td dir="auto"></td>
+<td dir="auto"></td>
+<td dir="auto"></td>
+<td dir="auto"></td>
+<td dir="auto"></td>
+</tr>
+<tr class="even">
+<td dir="auto">29</td>
+<td dir="auto">28</td>
+<td dir="auto">70</td>
+<td dir="auto">47</td>
+<td dir="auto">65</td>
+<td dir="auto"><blockquote dir="auto">
+<p>...</p>
+</blockquote></td>
+<td dir="auto"></td>
+</tr>
+<tr class="odd">
+<td dir="auto"><strong>2</strong></td>
+<td dir="auto">214</td>
+<td dir="auto">84</td>
+<td dir="auto">18</td>
+<td dir="auto">175</td>
+<td dir="auto">118</td>
+<td dir="auto"><blockquote dir="auto">
+<p>...</p>
+</blockquote></td>
+<td dir="auto"></td>
+</tr>
+<tr class="even">
+<td dir="auto"><strong>3</strong></td>
+<td dir="auto">214</td>
+<td dir="auto">150</td>
+<td dir="auto">141</td>
+<td dir="auto">198</td>
+<td dir="auto">158</td>
+<td dir="auto"><blockquote dir="auto">
+<p>...</p>
+</blockquote></td>
+<td dir="auto"></td>
+</tr>
+<tr class="odd">
+<td dir="auto"><strong>4</strong></td>
+<td dir="auto">129</td>
+<td dir="auto">130</td>
+<td dir="auto">31</td>
+<td dir="auto">51</td>
+<td dir="auto">36</td>
+<td dir="auto"><blockquote dir="auto">
+<p>...</p>
+</blockquote></td>
+<td dir="auto"></td>
+</tr>
+<tr class="even">
+<td dir="auto"><strong>5</strong></td>
+<td dir="auto">...</td>
+<td dir="auto">...</td>
+<td dir="auto">...</td>
+<td dir="auto">...</td>
+<td dir="auto">...</td>
+<td dir="auto"><blockquote dir="auto">
+<p>...</p>
+</blockquote></td>
+<td dir="auto"></td>
+</tr>
+<tr class="odd">
+<td dir="auto"></td>
+<td dir="auto"></td>
+<td dir="auto"></td>
+<td dir="auto"></td>
+<td dir="auto"></td>
+<td dir="auto"></td>
+<td dir="auto"></td>
+<td dir="auto"></td>
+</tr>
+</tbody>
+</table></div><div class="el-p"><p dir="auto">Figura 2.3: Imagem vídeo - original</p></div><div class="el-p"><p dir="auto">Na imagem 2.4 são apresentados os valores da células <strong>B2</strong> e <strong>C2</strong><br>
+após serem calcu-ladas enquanto que as restantes células ainda não foram<br>
+calculadas.</p></div><div class="el-table" dir="auto" style="overflow-x: auto;"><table>
+<colgroup>
+<col style="width: 4%">
+<col style="width: 16%">
+<col style="width: 15%">
+<col style="width: 15%">
+<col style="width: 15%">
+<col style="width: 16%">
+<col style="width: 16%">
+<col style="width: 0%">
+</colgroup>
+<thead>
+<tr class="header">
+<th dir="auto"></th>
+<th dir="ltr"><blockquote dir="auto">
+<p><strong>A</strong></p>
+</blockquote></th>
+<th dir="ltr"><blockquote dir="auto">
+<p><strong>B</strong></p>
+</blockquote></th>
+<th dir="ltr"><blockquote dir="auto">
+<p><strong>C</strong></p>
+</blockquote></th>
+<th dir="ltr"><blockquote dir="auto">
+<p><strong>D</strong></p>
+</blockquote></th>
+<th dir="ltr"><blockquote dir="auto">
+<p><strong>E</strong></p>
+</blockquote></th>
+<th dir="ltr"><blockquote dir="auto">
+<p><strong>F</strong></p>
+</blockquote></th>
+<th dir="auto"></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td rowspan="2" dir="auto"><strong>1</strong></td>
+<td dir="auto"></td>
+<td dir="auto"></td>
+<td dir="auto"></td>
+<td dir="auto"></td>
+<td dir="auto"></td>
+<td dir="auto"></td>
+<td dir="auto"></td>
+</tr>
+<tr class="even">
+<td dir="auto">29</td>
+<td dir="auto">28</td>
+<td dir="auto">70</td>
+<td dir="auto">47</td>
+<td dir="auto">65</td>
+<td dir="auto"><blockquote dir="auto">
+<p>...</p>
+</blockquote></td>
+<td dir="auto"></td>
+</tr>
+<tr class="odd">
+<td dir="auto"><strong>2</strong></td>
+<td dir="auto">214</td>
+<td dir="auto"><strong>108</strong></td>
+<td dir="auto"><strong>114</strong></td>
+<td dir="auto">175</td>
+<td dir="auto">118</td>
+<td dir="auto"><blockquote dir="auto">
+<p>...</p>
+</blockquote></td>
+<td dir="auto"></td>
+</tr>
+<tr class="even">
+<td dir="auto"><strong>3</strong></td>
+<td dir="auto">214</td>
+<td dir="auto">150</td>
+<td dir="auto">141</td>
+<td dir="auto">198</td>
+<td dir="auto">158</td>
+<td dir="auto"><blockquote dir="auto">
+<p>...</p>
+</blockquote></td>
+<td dir="auto"></td>
+</tr>
+<tr class="odd">
+<td dir="auto"><strong>4</strong></td>
+<td dir="auto">129</td>
+<td dir="auto">130</td>
+<td dir="auto">31</td>
+<td dir="auto">51</td>
+<td dir="auto">36</td>
+<td dir="auto"><blockquote dir="auto">
+<p>...</p>
+</blockquote></td>
+<td dir="auto"></td>
+</tr>
+<tr class="even">
+<td dir="auto"><strong>5</strong></td>
+<td dir="auto">...</td>
+<td dir="auto">...</td>
+<td dir="auto">...</td>
+<td dir="auto">...</td>
+<td dir="auto">...</td>
+<td dir="auto"><blockquote dir="auto">
+<p>...</p>
+</blockquote></td>
+<td dir="auto"></td>
+</tr>
+<tr class="odd">
+<td dir="auto"></td>
+<td dir="auto"></td>
+<td dir="auto"></td>
+<td dir="auto"></td>
+<td dir="auto"></td>
+<td dir="auto"></td>
+<td dir="auto"></td>
+<td dir="auto"></td>
+</tr>
+</tbody>
+</table></div><div class="el-p"><p dir="auto">Figura 2.4: Imagem vídeo - em tratamento</p></div><div class="el-p"><p dir="auto"><strong>Bibliografia</strong></p></div><div class="el-blockquote"><blockquote dir="auto">
+<p>[CCT, 2001] CCT. <em>C Programming -Foundation Level, Training Manual &amp;<br>
+Exercises</em>. Chel-tenham Computer Training, Gloucester/UK, 2001.</p>
+<p>[Kernighan e Ritchie, 1988] Brian W. Kernighan e Dennis M. Ritchie.<br>
+<em>The C Program-ming Language, Second Edition</em>. Prentice Hall, Inc.,<br>
+1988.</p>
+<p>[Mosich, 1988] D. Mosich. <em>Advanced Turbo C Programmer’s Guide</em>.<br>
+John Wiley &amp; Sons, 1988.</p>
+<p>[Sampaio e Sampaio, 1998] Isabel Sampaio e Alberto Sampaio.<br>
+<em>Fundamental da Pro-gramação em C</em>. FCA- Editora Informática, 1998.</p>
+</blockquote></div><div class="mod-footer mod-ui"></div></div></div></div></div></div><div class="sidebar-right sidebar"><div class="sidebar-handle"></div><div class="sidebar-topbar"><div class="topbar-content"></div><div class="clickable-icon sidebar-collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" class="svg-icon"><path d="M21 3H3C1.89543 3 1 3.89543 1 5V19C1 20.1046 1.89543 21 3 21H21C22.1046 21 23 20.1046 23 19V5C23 3.89543 22.1046 3 21 3Z"></path><path d="M10 4V20"></path><path d="M4 7H7"></path><path d="M4 10H7"></path><path d="M4 13H7"></path></svg></div></div><div class="sidebar-content"><div class="graph-view-wrapper"><div class="sidebar-section-header">Interactive Graph</div><div class="graph-view-placeholder">
+		<div class="graph-view-container">
+			<div class="graph-icon graph-expand" role="button" aria-label="Expand" data-tooltip-position="top"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon"><line x1="7" y1="17" x2="17" y2="7"></line><polyline points="7 7 17 7 17 17"></polyline></svg></div>
+			<canvas id="graph-canvas" class="hide" width="512px" height="512px"></canvas>
+		</div>
+		</div></div><div class="tree-container mod-root nav-folder tree-item outline-tree" data-depth="0"><div class="tree-header"><span class="sidebar-section-header">Table Of Contents</span><button class="clickable-icon collapse-tree-button" aria-label="Collapse All"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></svg></button></div><div class="tree-scroll-area tree-item-children nav-folder-children"><div class="tree-item mod-tree-folder nav-folder mod-collapsible is-collapsed" style="display: none;"></div><div class="tree-item" data-depth="1"><a class="tree-link" href="gab\estudos-trabalhos\programação\programming-studies\languages\c\isep\md\00\main.html#Algoritmia e Estruturas de Dados"><div class="tree-item-contents heading-link" heading-name="Algoritmia e Estruturas de Dados"><span class="tree-item-title">Algoritmia e Estruturas de Dados</span></div></a><div class="tree-item-children nav-folder-children"></div></div></div></div></div><script defer="">let rs = document.querySelector(".sidebar-right"); rs.classList.add("is-collapsed"); if (window.innerWidth > 768) rs.classList.remove("is-collapsed"); rs.style.setProperty("--sidebar-width", localStorage.getItem("sidebar-right-width"));</script></div></div></body></html>

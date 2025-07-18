@@ -1,0 +1,44 @@
+name: Translate Markdown Files
+
+on:
+  push:
+    paths:
+      - '**/*.md' # Trigger the workflow when Markdown files are pushed or updated
+
+jobs:
+  translate:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Set up Python
+        uses: actions/setup-python@v2
+        with:
+          python-version: 3.x # Use the desired Python version
+
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install openai
+
+      - name: Create translate folder
+        run: mkdir -p translate
+
+      - name: Translate and save files
+        run: |
+          for file in $(find . -name "*.md"); do
+            filename=$(basename -- "$file")
+            target_lang="es" # Replace with your desired target language code
+            translated_filename="translate/${filename%.*}_${target_lang}.md"
+            openai api translate -i "$file" -o "$translated_filename" --target-language "$target_lang"
+          done
+
+      - name: Commit and push translations
+        run: |
+          git config --global user.name "GitHub Actions"
+          git config --global user.email "actions@github.com"
+          git add translate
+          git commit -m "Add translated files"
+          git push

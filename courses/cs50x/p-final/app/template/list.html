@@ -1,0 +1,111 @@
+{% extends "layout.html" %}
+
+{% block title %}
+	Expenses List
+{% endblock %}
+
+{% block main %}
+			<div class="container">
+			 	<div class="row">
+					<div class="col mt-4 mb-5">
+						<h1 class="display-4"> Expenses List</h1>
+					</div>
+				</div>
+
+				<div class="row mb-2">
+					<div class="col-md-2">
+						<select class="form-control" id="year" name="year">
+							<option disabled selected value="">Year</option>
+							<option value="2023">2023</option>
+							<option value="2022">2022</option>
+							<option value="2021">2021</option>
+							<option value="2019">2019</option>
+							<option value="2018">2018</option>
+							<option value="2017">2017</option>
+							<option value="2016">2016</option>
+							<option value="2015">2015</option>
+						</select>
+					</div>
+
+					<div class="col-md-2">
+						<select class="form-control" id="month" name="month">
+							<option disabled selected value="">Month</option>
+							<option value="1">January</option>
+							<option value="2">February</option>
+							<option value="3">March</option>
+							<option value="4">April</option>
+							<option value="5">May</option>
+							<option value="6">June</option>
+							<option value="7">July</option>
+							<option value="8">August</option>
+							<option value="9">September</option>
+							<option value="10">October</option>
+							<option value="11">November</option>
+							<option value="12">December</option>
+						</select>
+					</div>
+					
+					<div class="col-md-2">
+						<input type="number" class="form-control" placeholder="Day" id="day" min="1" max="31" onblur="fieldValidation()" />
+					</div>
+
+					<div class="col-md-6">
+						<select class="form-control" id="type" name="type">
+							<option disabled selected value="">Type</option>
+							
+							{% for type in types[1:] %}
+							<!-- <option value="{{ types.index(type) }}">{{ type }}</option> !-- CREATE TABLES TYPES -->
+							<option value="{{ type }}">{{ type }}</option>
+							{% endfor %}
+						</select>
+					</div>
+				</div>
+
+				<div class="row">
+					<div class="col-md-6">
+						<input type="text" class="form-control" placeholder="Description" id="desc" name="desc" />
+					</div>
+
+					<div class="col-md-4">
+						<input type="number" class="form-control" placeholder="Value" id="exvalue" />
+					</div>
+
+					<div class="col-md-2 d-flex justify-content-end">
+						<button type="button" class="btn btn-light" onclick="clearFields(true)">
+							<i class="fas fa-broom"></i>
+						</button>
+
+						<button type="button" class="btn btn-secondary" onclick="expFilter()">
+							<i class="fas fa-search"></i>
+						</button>
+					</div>
+				</div>
+
+				<div class="row">
+					<div class="col-md-12 mt-md-5 justify-content-center">
+						<table class="table" >
+							<thead>
+							<tr>
+								<th>Date</th>
+								<th>Type</th>
+								<th>Description</th>
+								<th>Value</th>
+								<th></th>
+							</tr>
+							</thead>
+
+							<tbody id="expenseList">
+								{% for e in data %}
+								<tr>
+									<td>{{ e.expense_year }}/{{ e.expense_month }}/{{ e.expense_day }}</td>
+									<td>{{ e.type }}</td>
+									<td>{{ e.desc }}</td>
+									<td>{{ e.value | usd }}</td>
+								</tr>
+								{% endfor %}
+							</tbody>
+						</table>
+					</div>
+				</div>
+			</div>
+{% endblock %}

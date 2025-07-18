@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+
+<html lang="en">
+    <head>
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap" rel="stylesheet">
+        <link href="styles.css" rel="stylesheet">
+        <title>Trivia!</title>
+        <script>
+            // TODO: Add code to check answers to questions
+            // Multiple Choice Question Logic
+            function checkMultipleChoiceAnswer(selectedButton, isCorrect) {
+                let buttons = document.querySelectorAll('.multiple-choice .answer-button');
+                let fb1 = document.getElementById("feedback1");
+
+                buttons.forEach(function(button) {
+                    if (button === selectedButton) {
+                        if (isCorrect) {
+                            button.style.backgroundColor = 'green';
+                            document.querySelector('#feedback1').innerHTML = 'Correct!';
+                            // button.parentElement.nextElementSibling.textContent = '...';
+                        } else {
+                            button.style.backgroundColor = 'red';
+                            document.querySelector('#feedback1').innerHTML = 'Incorrect!';
+                        }
+                    } else {
+                        // Opitional: Disable a second try
+                        button.disabled = false;
+                    }
+                });
+            }
+
+            // Free Response Question Logic
+            function checkFreeResponseAnswer() {
+                let responseInput = document.querySelector('.free-response input');
+                let responseButton = document.querySelector('.free-response button');
+                let responseText = responseInput.value.trim().toLowerCase();
+
+                if (responseText === 'because they stop calling each other') {
+                    responseInput.style.backgroundColor = 'green';
+                    document.querySelector('#feedback2').innerHTML = 'Correct!';
+                } else {
+                    responseInput.style.backgroundColor = 'red';
+                    document.querySelector('#feedback2').innerHTML = 'Incorrect!';
+                }
+
+                // Opitional: Disable a second try
+                //responseInput.disabled = true;
+                //responseButton.disabled = true;
+            }
+
+            document.addEventListener('DOMContentLoaded', function() {
+                const multipleChoiceButtons = document.querySelectorAll('.multiple-choice .answer-button');
+                multipleChoiceButtons.forEach(function(button) {
+                    button.addEventListener('click', function() {
+                        checkMultipleChoiceAnswer(this, button.textContent === 'squirrel');
+                    });
+                });
+
+                const freeResponseButton = document.querySelector('.free-response button');
+                freeResponseButton.addEventListener('click', checkFreeResponseAnswer);
+            });
+        </script>
+    </head>
+    <body>
+        <div class="header">
+            <h1>Trivia!</h1>
+        </div>
+
+        <div class="container">
+            <div class="section multiple-choice">
+                <h2>Part 1: Multiple Choice </h2>
+                <hr>
+                <!-- TODO: Add multiple choice question here -->
+                <h3>Question 1: Which animal is known for "crashing" many pictures since 2009?</h3>
+                <button class="answer-button">elephant</button>
+                <button class="answer-button">bird</button>
+                <button class="answer-button">squirrel</button>
+                <button class="answer-button">cat</button>
+                <p id="feedback1"></p>
+            </div>
+
+            <div class="section free-response">
+                <h2>Part 2: Free Response</h2>
+                <hr>
+                <!-- TODO: Add free response question here -->
+                <h3>Question 2: How functions break up?</h3>
+                <input type="text">
+                <button>Check Response</button>
+                <p id="feedback2"></p>
+            </div>
+        </div>
+    </body>
+</html>

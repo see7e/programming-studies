@@ -1,0 +1,45 @@
+{% extends 'base_layout.html' %}
+
+{% load static %}
+
+{% block title %}Invetory List{% endblock title %}
+
+{% block content %}
+<h1>Inventory</h1>
+
+<hr>
+
+<table id="datatablesSimple">
+    <thead>
+        <tr>
+            <th>Code</th>
+            <th>Name</th>
+            <th>Description</th>
+            <th>Quantity</th>
+            <th>In Hack</th>
+        </tr>
+    </thead>
+    <tbody>
+    {% for item in item_list %}
+        <tr>
+            <td>{{ item.code }}</td>
+            <td>{{ item.name }}</td>
+            <td>{{ item.description }}</td>
+            <td>{{ item.quantity }}</td>
+            <td>{{ item.in_hack }}</td>
+        </tr>
+    {% endfor %}
+    </tbody>
+    <tfoot>
+        <tr>
+            <th>Code</th>
+            <th>Name</th>
+            <th>Description</th>
+            <th>Quantity</th>
+            <th>In Hack</th>
+        </tr>
+    </tfoot>
+</table>
+
+<script src={% static "core/js/data-table.js" %}></script>
+{% endblock %}

@@ -1,0 +1,38 @@
+<thead>
+    <tr>
+        <th>Name</th>
+        <th>Description</th>
+        <th>Type</th>
+        <th>Status</th>
+        <th>Start Date</th>
+        <th>Due date</th>
+        <th>License Plate</th>
+        <th>Destination Code</th>
+    </tr>
+</thead>
+<tbody>
+    {% for order in order_list %}
+        <tr>
+            <td>{{ order.task.name }}</td>
+            <td>{{ order.task.description }}</td>
+            <td>{{ order.task.type }}</td>
+            <td>{{ order.task.status }}</td>
+            <td>{{ order.task.start_date }}</td>
+            <td>{{ order.task.due_date }}</td>
+            <td>{{ order.license_plate }}</td>
+            <td>{{ order.destination_code }}</td>
+        </tr>
+    {% endfor %}
+</tbody>
+<tfoot>
+    <tr>
+        <th>Name</th>
+        <th>Description</th>
+        <th>Type</th>
+        <th>Status</th>
+        <th>Start Date</th>
+        <th>Due date</th>
+        <th>License Plate</th>
+        <th>Destination Code</th>
+    </tr>
+</tfoot>

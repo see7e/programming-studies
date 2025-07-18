@@ -1,0 +1,732 @@
+<!DOCTYPE html> <html><head>
+		<title>Libft - Part 2</title>
+		<base href="..\..\..\..\..\..\..\..\../">
+		<meta id="root-path" root-path="..\..\..\..\..\..\..\..\../">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes, minimum-scale=1.0, maximum-scale=5.0">
+		<meta charset="UTF-8">
+		<meta name="description" content="DRIVE - Libft - Part 2">
+		<meta property="og:title" content="Libft - Part 2">
+		<meta property="og:description" content="DRIVE - Libft - Part 2">
+		<meta property="og:type" content="website">
+		<meta property="og:url" content="courses/42/common_core/libft/docs/part2.html">
+		<meta property="og:image" content="undefined">
+		<meta property="og:site_name" content="DRIVE">
+		<meta name="author" content="Gabryel Nóbrega"><link rel="alternate" type="application/rss+xml" title="RSS Feed" href="lib/rss.xml"><script async="" id="webpage-script" src="lib/scripts/webpage.js" onload="this.onload=null;this.setAttribute(&quot;loaded&quot;, &quot;true&quot;)"></script><script type="module" async="" id="graph-view-script" src="lib/scripts/graph-view.js"></script><script async="" id="graph-wasm-script" src="lib/scripts/graph-wasm.js" onload="this.onload=null;this.setAttribute(&quot;loaded&quot;, &quot;true&quot;)"></script><script async="" id="graph-render-worker-script" src="lib/scripts/graph-render-worker.js" onload="this.onload=null;this.setAttribute(&quot;loaded&quot;, &quot;true&quot;)"></script><script async="" id="tinycolor-script" src="lib/scripts/tinycolor.js" onload="this.onload=null;this.setAttribute(&quot;loaded&quot;, &quot;true&quot;)"></script><script async="" id="pixi-script" src="https://cdnjs.cloudflare.com/ajax/libs/pixi.js/7.4.0/pixi.min.js" onload="this.onload=null;this.setAttribute(&quot;loaded&quot;, &quot;true&quot;)"></script><script async="" id="minisearch-script" src="https://cdn.jsdelivr.net/npm/minisearch@6.3.0/dist/umd/index.min.js" onload="this.onload=null;this.setAttribute(&quot;loaded&quot;, &quot;true&quot;)"></script><link rel="icon" href="lib/media/favicon.png"><script async="" id="graph-data-script" src="lib/scripts/graph-data.js" onload="this.onload=null;this.setAttribute(&quot;loaded&quot;, &quot;true&quot;)"></script><style>body{--line-width:40em;--line-width-adaptive:40em;--file-line-width:40em;--sidebar-width:min(20em, 80vw);--collapse-arrow-size:11px;--tree-horizontal-spacing:0.6em;--tree-vertical-spacing:0.6em;--sidebar-margin:12px}.sidebar{height:100%;min-width:calc(var(--sidebar-width) + var(--divider-width-hover));max-width:calc(var(--sidebar-width) + var(--divider-width-hover));font-size:14px;z-index:10;position:relative;overflow:hidden;transition:min-width ease-in-out,max-width ease-in-out;transition-duration:.2s;contain:size}.sidebar-left{left:0}.sidebar-right{right:0}.sidebar.is-collapsed{min-width:0;max-width:0}body.floating-sidebars .sidebar{position:absolute}.sidebar-content{height:100%;min-width:calc(var(--sidebar-width) - var(--divider-width-hover));top:0;padding:var(--sidebar-margin);padding-top:4em;line-height:var(--line-height-tight);background-color:var(--background-secondary);transition:background-color,border-right,border-left,box-shadow;transition-duration:var(--color-fade-speed);transition-timing-function:ease-in-out;position:absolute;display:flex;flex-direction:column}.sidebar:not(.is-collapsed) .sidebar-content{min-width:calc(max(100%,var(--sidebar-width)) - 3px);max-width:calc(max(100%,var(--sidebar-width)) - 3px)}.sidebar-left .sidebar-content{left:0;border-top-right-radius:var(--radius-l);border-bottom-right-radius:var(--radius-l)}.sidebar-right .sidebar-content{right:0;border-top-left-radius:var(--radius-l);border-bottom-left-radius:var(--radius-l)}.sidebar:has(.sidebar-content:empty):has(.topbar-content:empty){display:none}.sidebar-topbar{height:2em;width:var(--sidebar-width);top:var(--sidebar-margin);padding-inline:var(--sidebar-margin);z-index:1;position:fixed;display:flex;align-items:center;transition:width ease-in-out;transition-duration:inherit}.sidebar.is-collapsed .sidebar-topbar{width:calc(2.3em + var(--sidebar-margin) * 2)}.sidebar .sidebar-topbar.is-collapsed{width:0}.sidebar-left .sidebar-topbar{left:0}.sidebar-right .sidebar-topbar{right:0}.topbar-content{overflow:hidden;overflow:clip;width:100%;height:100%;display:flex;align-items:center;transition:inherit}.sidebar.is-collapsed .topbar-content{width:0;transition:inherit}.clickable-icon.sidebar-collapse-icon{background-color:transparent;color:var(--icon-color-focused);padding:0!important;margin:0!important;height:100%!important;width:2.3em!important;margin-inline:0.14em!important;position:absolute}.sidebar-left .clickable-icon.sidebar-collapse-icon{transform:rotateY(180deg);right:var(--sidebar-margin)}.sidebar-right .clickable-icon.sidebar-collapse-icon{transform:rotateY(180deg);left:var(--sidebar-margin)}.clickable-icon.sidebar-collapse-icon svg.svg-icon{width:100%;height:100%}.sidebar-section-header{margin:0 0 1em 0;text-transform:uppercase;letter-spacing:.06em;font-weight:600}body{transition:background-color var(--color-fade-speed) ease-in-out}.webpage-container{display:flex;flex-direction:row;height:100%;width:100%;align-items:stretch;justify-content:center}.document-container{opacity:1;flex-basis:100%;max-width:100%;width:100%;height:100%;display:flex;flex-direction:column;align-items:center;transition:opacity .2s ease-in-out;contain:inline-size}.hide{opacity:0;transition:opacity .2s ease-in-out}.document-container>.markdown-preview-view{margin:var(--sidebar-margin);margin-bottom:0;width:100%;width:-webkit-fill-available;width:-moz-available;width:fill-available;background-color:var(--background-primary);transition:background-color var(--color-fade-speed) ease-in-out;border-top-right-radius:var(--window-radius,var(--radius-m));border-top-left-radius:var(--window-radius,var(--radius-m));overflow-x:hidden!important;overflow-y:auto!important;display:flex!important;flex-direction:column!important;align-items:center!important;contain:inline-size}.document-container>.markdown-preview-view>.markdown-preview-sizer{padding-bottom:80vh!important;width:100%!important;max-width:var(--line-width)!important;flex-basis:var(--line-width)!important;transition:background-color var(--color-fade-speed) ease-in-out;contain:inline-size}.markdown-rendered img:not([width]),.view-content img:not([width]){max-width:100%;outline:0}.document-container>.view-content.embed{display:flex;padding:1em;height:100%;width:100%;align-items:center;justify-content:center}.document-container>.view-content.embed>*{max-width:100%;max-height:100%;object-fit:contain}:has(> :is(.math,table)){overflow-x:auto!important}.document-container>.view-content{overflow-x:auto;contain:content;padding:0;margin:0;height:100%}.scroll-highlight{position:absolute;width:100%;height:100%;pointer-events:none;z-index:1000;background-color:hsla(var(--color-accent-hsl),.25);opacity:0;padding:1em;inset:50%;translate:-50% -50%;border-radius:var(--radius-s)}</style><script defer="">async function loadIncludes(){if("file:"!=location.protocol){let e=document.querySelectorAll("include");for(let t=0;t<e.length;t++){let o=e[t],l=o.getAttribute("src");try{const e=await fetch(l);if(!e.ok){console.log("Could not include file: "+l),o?.remove();continue}let t=await e.text(),n=document.createRange().createContextualFragment(t),i=Array.from(n.children);for(let e of i)e.classList.add("hide"),e.style.transition="opacity 0.5s ease-in-out",setTimeout((()=>{e.classList.remove("hide")}),10);o.before(n),o.remove(),console.log("Included file: "+l)}catch(e){o?.remove(),console.log("Could not include file: "+l,e);continue}}}else{if(document.querySelectorAll("include").length>0){var e=document.createElement("div");e.id="error",e.textContent="Web server exports must be hosted on an http / web server to be viewed correctly.",e.style.position="fixed",e.style.top="50%",e.style.left="50%",e.style.transform="translate(-50%, -50%)",e.style.fontSize="1.5em",e.style.fontWeight="bold",e.style.textAlign="center",document.body.appendChild(e),document.querySelector(".document-container")?.classList.remove("hide")}}}document.addEventListener("DOMContentLoaded",(()=>{loadIncludes()}));let isFileProtocol="file:"==location.protocol;function waitLoadScripts(e,t){let o=e.map((e=>document.getElementById(e+"-script"))),l=0;!function e(){let n=o[l];l++,n&&"true"!=n.getAttribute("loaded")||l<o.length&&e(),l<o.length?n.addEventListener("load",e):t()}()}</script><link rel="stylesheet" href="lib/styles/obsidian.css"><link rel="stylesheet" href="lib/styles/theme.css"><link rel="preload" href="lib/styles/global-variable-styles.css" as="style" onload="this.onload=null;this.rel='stylesheet'"><noscript><link rel="stylesheet" href="lib/styles/global-variable-styles.css"></noscript><link rel="preload" href="lib/styles/supported-plugins.css" as="style" onload="this.onload=null;this.rel='stylesheet'"><noscript><link rel="stylesheet" href="lib/styles/supported-plugins.css"></noscript><link rel="preload" href="lib/styles/main-styles.css" as="style" onload="this.onload=null;this.rel='stylesheet'"><noscript><link rel="stylesheet" href="lib/styles/main-styles.css"></noscript><link rel="preload" href="lib/styles/snippets.css" as="style" onload="this.onload=null;this.rel='stylesheet'"><noscript><link rel="stylesheet" href="lib/styles/snippets.css"></noscript></head><body class="publish css-settings-manager theme-dark"><script defer="">let theme=localStorage.getItem("theme")||(window.matchMedia("(prefers-color-scheme: dark)").matches?"dark":"light");"dark"==theme?(document.body.classList.add("theme-dark"),document.body.classList.remove("theme-light")):(document.body.classList.add("theme-light"),document.body.classList.remove("theme-dark")),window.innerWidth<480?document.body.classList.add("is-phone"):window.innerWidth<768?document.body.classList.add("is-tablet"):window.innerWidth<1024?document.body.classList.add("is-small-screen"):document.body.classList.add("is-large-screen")</script><div class="webpage-container workspace"><div class="sidebar-left sidebar"><div class="sidebar-handle"></div><div class="sidebar-topbar"><div class="topbar-content"><label class="theme-toggle-container" for="theme_toggle"><input class="theme-toggle-input" type="checkbox" id="theme_toggle"><div class="toggle-background"></div></label></div><div class="clickable-icon sidebar-collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" class="svg-icon"><path d="M21 3H3C1.89543 3 1 3.89543 1 5V19C1 20.1046 1.89543 21 3 21H21C22.1046 21 23 20.1046 23 19V5C23 3.89543 22.1046 3 21 3Z"></path><path d="M10 4V20"></path><path d="M4 7H7"></path><path d="M4 10H7"></path><path d="M4 13H7"></path></svg></div></div><div class="sidebar-content"><div class="search-input-container"><input enterkeyhint="search" type="search" spellcheck="false" placeholder="Search..."><div class="search-input-clear-button" aria-label="Clear search"></div></div><include src="lib/html/file-tree.html"></include></div><script defer="">let ls = document.querySelector(".sidebar-left"); ls.classList.add("is-collapsed"); if (window.innerWidth > 768) ls.classList.remove("is-collapsed"); ls.style.setProperty("--sidebar-width", localStorage.getItem("sidebar-left-width"));</script></div><div class="document-container markdown-reading-view hide"><div class="markdown-preview-view markdown-rendered allow-fold-headings allow-fold-lists is-readable-line-width"><style id="MJX-CHTML-styles">mjx-c.mjx-c30::before { padding: 0.666em 0.5em 0.022em 0px; content: "0"; }
+mjx-c.mjx-c39::before { padding: 0.666em 0.5em 0.022em 0px; content: "9"; }
+mjx-c.mjx-c2212::before { padding: 0.583em 0.778em 0.082em 0px; content: "−"; }
+mjx-container[jax="CHTML"] { line-height: 0; }
+mjx-container [space="1"] { margin-left: 0.111em; }
+mjx-container [space="2"] { margin-left: 0.167em; }
+mjx-container [space="3"] { margin-left: 0.222em; }
+mjx-container [space="4"] { margin-left: 0.278em; }
+mjx-container [space="5"] { margin-left: 0.333em; }
+mjx-container [rspace="1"] { margin-right: 0.111em; }
+mjx-container [rspace="2"] { margin-right: 0.167em; }
+mjx-container [rspace="3"] { margin-right: 0.222em; }
+mjx-container [rspace="4"] { margin-right: 0.278em; }
+mjx-container [rspace="5"] { margin-right: 0.333em; }
+mjx-container [size="s"] { font-size: 70.7%; }
+mjx-container [size="ss"] { font-size: 50%; }
+mjx-container [size="Tn"] { font-size: 60%; }
+mjx-container [size="sm"] { font-size: 85%; }
+mjx-container [size="lg"] { font-size: 120%; }
+mjx-container [size="Lg"] { font-size: 144%; }
+mjx-container [size="LG"] { font-size: 173%; }
+mjx-container [size="hg"] { font-size: 207%; }
+mjx-container [size="HG"] { font-size: 249%; }
+mjx-container [width="full"] { width: 100%; }
+mjx-box { display: inline-block; }
+mjx-block { display: block; }
+mjx-itable { display: inline-table; }
+mjx-row { display: table-row; }
+mjx-row > * { display: table-cell; }
+mjx-mtext { display: inline-block; }
+mjx-mstyle { display: inline-block; }
+mjx-merror { display: inline-block; color: red; background-color: yellow; }
+mjx-mphantom { visibility: hidden; }
+mjx-assistive-mml { top: 0px; left: 0px; clip: rect(1px, 1px, 1px, 1px); user-select: none; position: absolute !important; padding: 1px 0px 0px !important; border: 0px !important; display: block !important; width: auto !important; overflow: hidden !important; }
+mjx-assistive-mml[display="block"] { width: 100% !important; }
+mjx-math { display: inline-block; text-align: left; line-height: 0; text-indent: 0px; font-style: normal; font-weight: normal; font-size: 100%; font-size-adjust: none; letter-spacing: normal; border-collapse: collapse; overflow-wrap: normal; word-spacing: normal; white-space: nowrap; direction: ltr; padding: 1px 0px; }
+mjx-container[jax="CHTML"][display="true"] { display: block; text-align: center; margin: 1em 0px; }
+mjx-container[jax="CHTML"][display="true"][width="full"] { display: flex; }
+mjx-container[jax="CHTML"][display="true"] mjx-math { padding: 0px; }
+mjx-container[jax="CHTML"][justify="left"] { text-align: left; }
+mjx-container[jax="CHTML"][justify="right"] { text-align: right; }
+mjx-mi { display: inline-block; text-align: left; }
+mjx-c { display: inline-block; }
+mjx-utext { display: inline-block; padding: 0.75em 0px 0.2em; }
+mjx-msub { display: inline-block; text-align: left; }
+mjx-mn { display: inline-block; text-align: left; }
+mjx-mo { display: inline-block; text-align: left; }
+mjx-stretchy-h { display: inline-table; width: 100%; }
+mjx-stretchy-h > * { display: table-cell; width: 0px; }
+mjx-stretchy-h > * > mjx-c { display: inline-block; transform: scaleX(1); }
+mjx-stretchy-h > * > mjx-c::before { display: inline-block; width: initial; }
+mjx-stretchy-h > mjx-ext { overflow: clip visible; width: 100%; }
+mjx-stretchy-h > mjx-ext > mjx-c::before { transform: scaleX(500); }
+mjx-stretchy-h > mjx-ext > mjx-c { width: 0px; }
+mjx-stretchy-h > mjx-beg > mjx-c { margin-right: -0.1em; }
+mjx-stretchy-h > mjx-end > mjx-c { margin-left: -0.1em; }
+mjx-stretchy-v { display: inline-block; }
+mjx-stretchy-v > * { display: block; }
+mjx-stretchy-v > mjx-beg { height: 0px; }
+mjx-stretchy-v > mjx-end > mjx-c { display: block; }
+mjx-stretchy-v > * > mjx-c { transform: scaleY(1); transform-origin: left center; overflow: hidden; }
+mjx-stretchy-v > mjx-ext { display: block; height: 100%; box-sizing: border-box; border: 0px solid transparent; overflow: visible clip; }
+mjx-stretchy-v > mjx-ext > mjx-c::before { width: initial; box-sizing: border-box; }
+mjx-stretchy-v > mjx-ext > mjx-c { transform: scaleY(500) translateY(0.075em); overflow: visible; }
+mjx-mark { display: inline-block; height: 0px; }
+mjx-c::before { display: block; width: 0px; }
+.MJX-TEX { font-family: MJXZERO, MJXTEX; }
+.TEX-B { font-family: MJXZERO, MJXTEX-B; }
+.TEX-I { font-family: MJXZERO, MJXTEX-I; }
+.TEX-MI { font-family: MJXZERO, MJXTEX-MI; }
+.TEX-BI { font-family: MJXZERO, MJXTEX-BI; }
+.TEX-S1 { font-family: MJXZERO, MJXTEX-S1; }
+.TEX-S2 { font-family: MJXZERO, MJXTEX-S2; }
+.TEX-S3 { font-family: MJXZERO, MJXTEX-S3; }
+.TEX-S4 { font-family: MJXZERO, MJXTEX-S4; }
+.TEX-A { font-family: MJXZERO, MJXTEX-A; }
+.TEX-C { font-family: MJXZERO, MJXTEX-C; }
+.TEX-CB { font-family: MJXZERO, MJXTEX-CB; }
+.TEX-FR { font-family: MJXZERO, MJXTEX-FR; }
+.TEX-FRB { font-family: MJXZERO, MJXTEX-FRB; }
+.TEX-SS { font-family: MJXZERO, MJXTEX-SS; }
+.TEX-SSB { font-family: MJXZERO, MJXTEX-SSB; }
+.TEX-SSI { font-family: MJXZERO, MJXTEX-SSI; }
+.TEX-SC { font-family: MJXZERO, MJXTEX-SC; }
+.TEX-T { font-family: MJXZERO, MJXTEX-T; }
+.TEX-V { font-family: MJXZERO, MJXTEX-V; }
+.TEX-VB { font-family: MJXZERO, MJXTEX-VB; }
+mjx-stretchy-v mjx-c, mjx-stretchy-h mjx-c { font-family: MJXZERO, MJXTEX-S1, MJXTEX-S4, MJXTEX, MJXTEX-A !important; }
+@font-face { font-family: MJXZERO; src: url("lib/fonts/mathjax_zero.woff") format("woff"); }
+@font-face { font-family: MJXTEX; src: url("lib/fonts/mathjax_main-regular.woff") format("woff"); }
+@font-face { font-family: MJXTEX-B; src: url("lib/fonts/mathjax_main-bold.woff") format("woff"); }
+@font-face { font-family: MJXTEX-I; src: url("lib/fonts/mathjax_math-italic.woff") format("woff"); }
+@font-face { font-family: MJXTEX-MI; src: url("lib/fonts/mathjax_main-italic.woff") format("woff"); }
+@font-face { font-family: MJXTEX-BI; src: url("lib/fonts/mathjax_math-bolditalic.woff") format("woff"); }
+@font-face { font-family: MJXTEX-S1; src: url("lib/fonts/mathjax_size1-regular.woff") format("woff"); }
+@font-face { font-family: MJXTEX-S2; src: url("lib/fonts/mathjax_size2-regular.woff") format("woff"); }
+@font-face { font-family: MJXTEX-S3; src: url("lib/fonts/mathjax_size3-regular.woff") format("woff"); }
+@font-face { font-family: MJXTEX-S4; src: url("lib/fonts/mathjax_size4-regular.woff") format("woff"); }
+@font-face { font-family: MJXTEX-A; src: url("lib/fonts/mathjax_ams-regular.woff") format("woff"); }
+@font-face { font-family: MJXTEX-C; src: url("lib/fonts/mathjax_calligraphic-regular.woff") format("woff"); }
+@font-face { font-family: MJXTEX-CB; src: url("lib/fonts/mathjax_calligraphic-bold.woff") format("woff"); }
+@font-face { font-family: MJXTEX-FR; src: url("lib/fonts/mathjax_fraktur-regular.woff") format("woff"); }
+@font-face { font-family: MJXTEX-FRB; src: url("lib/fonts/mathjax_fraktur-bold.woff") format("woff"); }
+@font-face { font-family: MJXTEX-SS; src: url("lib/fonts/mathjax_sansserif-regular.woff") format("woff"); }
+@font-face { font-family: MJXTEX-SSB; src: url("lib/fonts/mathjax_sansserif-bold.woff") format("woff"); }
+@font-face { font-family: MJXTEX-SSI; src: url("lib/fonts/mathjax_sansserif-italic.woff") format("woff"); }
+@font-face { font-family: MJXTEX-SC; src: url("lib/fonts/mathjax_script-regular.woff") format("woff"); }
+@font-face { font-family: MJXTEX-T; src: url("lib/fonts/mathjax_typewriter-regular.woff") format("woff"); }
+@font-face { font-family: MJXTEX-V; src: url("lib/fonts/mathjax_vector-regular.woff") format("woff"); }
+@font-face { font-family: MJXTEX-VB; src: url("lib/fonts/mathjax_vector-bold.woff") format("woff"); }
+mjx-c.mjx-c1D439.TEX-I::before { padding: 0.68em 0.749em 0px 0px; content: "F"; }
+mjx-c.mjx-c1D447.TEX-I::before { padding: 0.677em 0.704em 0px 0px; content: "T"; }
+mjx-c.mjx-c1D43F.TEX-I::before { padding: 0.683em 0.681em 0px 0px; content: "L"; }
+mjx-c.mjx-c1D43C.TEX-I::before { padding: 0.683em 0.504em 0px 0px; content: "I"; }
+mjx-c.mjx-c1D441.TEX-I::before { padding: 0.683em 0.888em 0px 0px; content: "N"; }
+mjx-c.mjx-c1D438.TEX-I::before { padding: 0.68em 0.764em 0px 0px; content: "E"; }
+mjx-c.mjx-c31::before { padding: 0.666em 0.5em 0px 0px; content: "1"; }
+mjx-c.mjx-c2C::before { padding: 0.121em 0.278em 0.194em 0px; content: ","; }
+</style><pre class="frontmatter language-yaml" tabindex="0" style="display: none;"><code class="language-yaml is-loaded"><span class="token key atrule">title</span><span class="token punctuation">:</span> Libft <span class="token punctuation">-</span> Part 2
+<span class="token key atrule">tags</span><span class="token punctuation">:</span>
+  <span class="token punctuation">-</span> <span class="token string">"42"</span>
+  <span class="token punctuation">-</span> programming
+  <span class="token punctuation">-</span> common_core
+<span class="token key atrule">use</span><span class="token punctuation">:</span> README<span class="token punctuation">,</span> Documentation
+<span class="token key atrule">languages</span><span class="token punctuation">:</span> 
+dependences<span class="token punctuation">:</span></code><button class="copy-code-button"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon lucide-copy"><rect x="8" y="8" width="14" height="14" rx="2" ry="2"></rect><path d="M4 16c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2"></path></svg></button></pre><div class="markdown-preview-sizer markdown-preview-section"><h1 class="page-title heading" id="Libft - Part 2"><p dir="auto">Libft - Part 2</p></h1><div class="el-div"><div data-callout-metadata="" data-callout-fold="" data-callout="info" class="callout"><div class="callout-title" dir="auto"><div class="callout-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon lucide-info"><circle cx="12" cy="12" r="10"></circle><path d="M12 16v-4"></path><path d="M12 8h.01"></path></svg></div><div class="callout-title-inner">Info</div></div><div class="callout-content">
+<p dir="auto"> Copied from <a data-tooltip-position="top" aria-label="https://www.42porto.com/" rel="noopener nofollow" class="external-link" href="https://www.42porto.com/" target="_blank"><code>42Porto</code></a> all rights reserved. Modified according to my understanding and to facilitate learning.<br>
+If you spot something that isn't right, please open an <a data-tooltip-position="top" aria-label="https://github.com/the-8-bits/42-libft/issues/new" rel="noopener nofollow" class="external-link" href="https://github.com/the-8-bits/42-libft/issues/new" target="_blank">Issue</a></p>
+</div></div></div><div class="el-ul"><ul>
+<li data-line="0" dir="auto"><div class="list-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle"><path d="M3 8L12 17L21 8"></path></svg></div><a class="internal-link" data-href="#part-2-to_review" href="#part-2-to_review" target="_self" rel="noopener nofollow">Part 2 </a><a href="?query=tag:to" class="tag" target="_blank" rel="noopener nofollow">#to</a>_review
+<ul>
+<li data-line="1" dir="auto"><a class="internal-link" data-href="#ft_substr" href="#ft_substr" target="_self" rel="noopener nofollow">ft_substr</a></li>
+<li data-line="2" dir="auto"><a class="internal-link" data-href="#ft_strjoin" href="#ft_strjoin" target="_self" rel="noopener nofollow">ft_strjoin</a></li>
+<li data-line="3" dir="auto"><a class="internal-link" data-href="#ft_strtrim" href="#ft_strtrim" target="_self" rel="noopener nofollow">ft_strtrim</a></li>
+<li data-line="4" dir="auto"><a class="internal-link" data-href="#ft_split" href="#ft_split" target="_self" rel="noopener nofollow">ft_split</a></li>
+<li data-line="5" dir="auto"><a class="internal-link" data-href="#ft_itoa" href="#ft_itoa" target="_self" rel="noopener nofollow">ft_itoa</a></li>
+<li data-line="6" dir="auto"><a class="internal-link" data-href="#ft_strmapi" href="#ft_strmapi" target="_self" rel="noopener nofollow">ft_strmapi</a></li>
+<li data-line="7" dir="auto"><a class="internal-link" data-href="#ft_striteri" href="#ft_striteri" target="_self" rel="noopener nofollow">ft_striteri</a></li>
+<li data-line="8" dir="auto"><a class="internal-link" data-href="#ft_putchar_fd" href="#ft_putchar_fd" target="_self" rel="noopener nofollow">ft_putchar_fd</a></li>
+<li data-line="9" dir="auto"><a class="internal-link" data-href="#ft_putstr_fd" href="#ft_putstr_fd" target="_self" rel="noopener nofollow">ft_putstr_fd</a></li>
+<li data-line="10" dir="auto"><a class="internal-link" data-href="#ft_putendl_fd" href="#ft_putendl_fd" target="_self" rel="noopener nofollow">ft_putendl_fd</a></li>
+<li data-line="11" dir="auto"><a class="internal-link" data-href="#ft_putnbr_fd" href="#ft_putnbr_fd" target="_self" rel="noopener nofollow">ft_putnbr_fd</a></li>
+</ul>
+</li>
+</ul></div><div class="el-hr"><hr></div><div class="el-h1 heading-wrapper"><h1 data-heading="Part 2" dir="auto" class="heading" id="Part_2">Part 2</h1><div class="heading-children"><div class="el-h2 heading-wrapper"><h2 data-heading="[ft_substr](../libft/ft_substr.c)" dir="auto" class="heading" id="[ft_substr](../libft/ft_substr.c)"><div class="heading-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle"><path d="M3 8L12 17L21 8"></path></svg></div><a class="internal-link" data-href="../libft/ft_substr.c" href="courses/42/common_core/libft/libft/ft_substr.c" target="_self" rel="noopener nofollow">ft_substr</a></h2><div class="heading-children"><div class="el-p"><p dir="auto">The <code>ft_substr</code> function is designed to extract a substring from a given string <code>s</code> starting from a specified index <code>start</code> and of a specified length <code>len</code>. It allocates memory for the substring and returns a pointer to it.</p></div><div class="el-p"><p dir="auto">Usage Context:</p></div><div class="el-ul"><ul>
+<li data-line="0" dir="auto"><code>ft_substr</code> is typically used when you want to extract a portion of a larger string, such as extracting a substring from a text message or extracting part of a filename.</li>
+</ul></div><div class="el-p"><p dir="auto">Key Points:</p></div><div class="el-ul"><ul>
+<li data-line="0" dir="auto"><code>char const *s</code>: A pointer to the input string from which the substring will be extracted.</li>
+<li data-line="1" dir="auto"><code>unsigned int start</code>: The index from which the substring extraction should begin.</li>
+<li data-line="2" dir="auto"><code>size_t len</code>: The maximum length of the extracted substring.</li>
+</ul></div><div class="el-p"><p dir="auto">How it Works:</p></div><div class="el-ul"><ul>
+<li data-line="0" dir="auto">
+<p>The function first calculates the length of the input string <code>s</code> using the <code>ft_strlen</code> function and stores it in <code>s_len</code>.</p>
+</li>
+<li data-line="2" dir="auto">
+<p>It checks if the <code>start</code> index is greater than or equal to <code>s_len</code>, which would mean that the starting index is beyond the end of the input string. In this case, it returns an empty string (a string containing only a null terminator) to indicate that there's nothing to extract.</p>
+</li>
+<li data-line="4" dir="auto">
+<p>It then adjusts the <code>len</code> value to ensure that it doesn't exceed the number of available characters in the string <code>s</code>. If <code>len</code> is greater than the remaining characters in <code>s</code> starting from the <code>start</code> index, it sets <code>len</code> to the available characters.</p>
+</li>
+<li data-line="6" dir="auto">
+<p>The function allocates memory for the substring plus a null terminator using <code>malloc</code>. It checks if the allocation was successful. If not, it returns <code>NULL</code> to indicate a memory allocation failure.</p>
+</li>
+<li data-line="8" dir="auto">
+<p>It uses <code>memcpy</code> to copy the substring from the input string <code>s</code> starting from the <code>start</code> index and spanning <code>len</code> characters into the newly allocated memory <code>str</code>.</p>
+</li>
+<li data-line="10" dir="auto">
+<p>Finally, it null-terminates the <code>str</code> to ensure it's a valid C string.</p>
+</li>
+<li data-line="12" dir="auto">
+<p>The function returns a pointer to the allocated and null-terminated substring.</p>
+</li>
+</ul></div><div class="el-p"><p dir="auto">In summary, <code>ft_substr</code> is a utility function for extracting substrings from input strings, taking into account the starting index and the desired length. It handles memory allocation and ensures that the extracted substring is null-terminated, making it a valid C string.</p></div></div></div><div class="el-h2 heading-wrapper"><h2 data-heading="[ft_strjoin](../libft/ft_strjoin.c)" dir="auto" class="heading" id="[ft_strjoin](../libft/ft_strjoin.c)"><div class="heading-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle"><path d="M3 8L12 17L21 8"></path></svg></div><a class="internal-link" data-href="../libft/ft_strjoin.c" href="courses/42/common_core/libft/libft/ft_strjoin.c" target="_self" rel="noopener nofollow">ft_strjoin</a></h2><div class="heading-children"><div class="el-blockquote"><blockquote dir="auto">
+<p>Changes: added <code>ft_memset</code> to initialize the memory allocated for the new string, which resulted in undefined behaviours. <code>ft_memset</code> sets the memory to zero before copying the strings.<br>
+<code>ft_memset</code> and <code>ft_bzero</code> are both functions that can be used to set a block of memory to a specific value. However, there is a key difference between the two functions.<br>
+<code>ft_memset</code> sets a block of memory to a specific value, whereas <code>ft_bzero</code> sets a block of memory to zero.<br>
+In the case of <code>ft_strjoin</code>, we need to set the memory to zero before copying the strings to avoid undefined behavior. Therefore, <code>ft_bzero</code> would be a good choice for this specific use case. However, <code>ft_memset</code> is a more general-purpose function that can be used to set a block of memory to any value, not just zero.  </p>
+</blockquote></div><div class="el-p"><p dir="auto">Diferent from the Piscine code where <code>char	*ft_strjoin(int size, char **strs, char *sep)</code> had three args, now it has only two: The <code>ft_strjoin</code> function is designed to concatenate (join) two strings, <code>s1</code> and <code>s2</code>, into a new string and return a pointer to the newly created string. It allocates memory for the result and copies both input strings into it.</p></div><div class="el-p"><p dir="auto">Usage Context:</p></div><div class="el-ul"><ul>
+<li data-line="0" dir="auto"><code>ft_strjoin</code> is typically used when you want to combine (concatenate) two strings into a single string.</li>
+</ul></div><div class="el-p"><p dir="auto">Key Points:</p></div><div class="el-ul"><ul>
+<li data-line="0" dir="auto"><code>const char *s1</code>: A pointer to the first string to be concatenated.</li>
+<li data-line="1" dir="auto"><code>const char *s2</code>: A pointer to the second string to be concatenated.</li>
+</ul></div><div class="el-p"><p dir="auto">How it Works:</p></div><div class="el-ul"><ul>
+<li data-line="0" dir="auto">
+<p>The function begins by calculating the lengths of the input strings <code>s1</code> and <code>s2</code> using <code>ft_strlen</code>. The lengths are stored in <code>len1</code> and <code>len2</code>.</p>
+</li>
+<li data-line="2" dir="auto">
+<p>It then allocates memory for the result string <code>str</code> using <code>malloc</code>. The size of the allocated memory is calculated as <code>len1 + len2 + 1</code>, where <code>1</code> is added for the null terminator. This ensures that the memory can hold both strings and is null-terminated.</p>
+</li>
+<li data-line="4" dir="auto">
+<p>If memory allocation fails (when <code>malloc</code> returns <code>NULL</code>), the function returns <code>NULL</code> to indicate the failure.</p>
+</li>
+<li data-line="6" dir="auto">
+<p>Next, the function uses <code>ft_strcat</code> (a custom concatenation function as described earlier) twice. First, it copies the characters from <code>s1</code> into <code>str</code>, effectively initializing <code>str</code> with the contents of <code>s1</code>. Then, it appends the characters from <code>s2</code> to the end of <code>str</code>, resulting in the concatenation of <code>s1</code> and <code>s2</code>.</p>
+</li>
+<li data-line="8" dir="auto">
+<p>Finally, the function returns a pointer to the newly created concatenated string.</p>
+</li>
+</ul></div><div class="el-p"><p dir="auto">Here the updates made:</p></div><div class="el-ol"><ol>
+<li data-line="0" dir="auto">
+<p>We define our own <code>ft_strcat</code> function to concatenate two strings. It calculates the lengths of <code>dest</code> and <code>src</code> using <code>ft_strlen</code>, then uses <code>memcpy</code> to copy <code>src</code> onto the end of <code>dest</code>, including the null terminator.</p>
+</li>
+<li data-line="2" dir="auto">
+<p>In the <code>ft_strjoin</code> function, we use <code>ft_strcat</code> to copy <code>s1</code> into <code>str</code>, and then we append <code>s2</code> to <code>str</code> using <code>ft_strcat</code> again.</p>
+</li>
+</ol></div></div></div><div class="el-h2 heading-wrapper"><h2 data-heading="[ft_strtrim](../libft/ft_strtrim.c)" dir="auto" class="heading" id="[ft_strtrim](../libft/ft_strtrim.c)"><div class="heading-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle"><path d="M3 8L12 17L21 8"></path></svg></div><a class="internal-link" data-href="../libft/ft_strtrim.c" href="courses/42/common_core/libft/libft/ft_strtrim.c" target="_self" rel="noopener nofollow">ft_strtrim</a></h2><div class="heading-children"><div class="el-p"><p dir="auto">The <code>ft_strtrim</code> function is designed to create a new string by removing specified leading and trailing characters from the input string <code>s1</code>. It takes two arguments: the input string <code>s1</code> and a set of characters <code>set</code> that should be considered for removal. The resulting string is returned, and it is dynamically allocated.</p></div><div class="el-p"><p dir="auto">Usage Context:</p></div><div class="el-ul"><ul>
+<li data-line="0" dir="auto"><code>ft_strtrim</code> is typically used when you want to remove certain characters (specified in the <code>set</code> parameter) from the beginning and end of a string. This can be useful for cleaning up input strings, such as user input or file content.</li>
+</ul></div><div class="el-p"><p dir="auto">Key Points:</p></div><div class="el-ul"><ul>
+<li data-line="0" dir="auto"><code>const char *s1</code>: A pointer to the input string that you want to trim.</li>
+<li data-line="1" dir="auto"><code>const char *set</code>: A pointer to a string containing characters to be considered for removal from <code>s1</code>.</li>
+</ul></div><div class="el-p"><p dir="auto">How it Works:</p></div><div class="el-ul"><ul>
+<li data-line="0" dir="auto" class="has-run-code-button">
+<p>The function first checks if either <code>s1</code> or <code>set</code> is NULL. If either is NULL, it returns <code>NULL</code> to indicate an error condition.</p>
+<pre class="language-c" tabindex="0"><code data-line="2" class="language-c is-loaded"><span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token operator">!</span>s1 <span class="token operator">||</span> <span class="token operator">!</span>set<span class="token punctuation">)</span>
+	<span class="token keyword">return</span> <span class="token punctuation">(</span><span class="token constant">NULL</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// Return NULL if either s1 or set is NULL</span>
+</code><button class="copy-code-button"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon lucide-copy"><rect x="8" y="8" width="14" height="14" rx="2" ry="2"></rect><path d="M4 16c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2"></path></svg></button><button class="run-code-button">Run</button></pre>
+</li>
+<li data-line="7" dir="auto">
+<p>It initializes two variables, <code>start</code> and <code>end</code>, to 0 and the length of <code>s1</code> (obtained using <code>ft_strlen(s1)</code>), respectively. These variables will be used to determine the start and end positions of the trimmed string.</p>
+</li>
+<li data-line="9" dir="auto" class="has-run-code-button"><div class="list-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle"><path d="M3 8L12 17L21 8"></path></svg></div>
+<p>The function then enters two while loops:</p>
+<ul>
+<li data-line="10" dir="auto">The first while loop (starting from the beginning of <code>s1</code>) increments <code>start</code> while the characters in <code>s1</code> match characters in the <code>set</code>. This effectively skips leading characters that should be removed.</li>
+</ul>
+<pre class="language-c" tabindex="0"><code data-line="12" class="language-c is-loaded"><span class="token comment">// Find the start position by skipping characters in set from the beginning of s1</span>
+<span class="token keyword">while</span> <span class="token punctuation">(</span>s1<span class="token punctuation">[</span>start<span class="token punctuation">]</span> <span class="token operator">&amp;&amp;</span> <span class="token function">ft_char_in_set</span><span class="token punctuation">(</span>s1<span class="token punctuation">[</span>start<span class="token punctuation">]</span><span class="token punctuation">,</span> set<span class="token punctuation">)</span><span class="token punctuation">)</span>
+	start<span class="token operator">++</span><span class="token punctuation">;</span>
+</code><button class="copy-code-button"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon lucide-copy"><rect x="8" y="8" width="14" height="14" rx="2" ry="2"></rect><path d="M4 16c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2"></path></svg></button><button class="run-code-button">Run</button></pre>
+<ul>
+<li data-line="18" dir="auto">The second while loop (starting from the end of <code>s1</code>) decrements <code>end</code> while the characters in <code>s1</code> match characters in the <code>set</code>. This skips trailing characters that should be removed.</li>
+</ul>
+<pre class="language-c" tabindex="0"><code data-line="20" class="language-c is-loaded"><span class="token comment">// Find the end position by skipping characters in set from the end of s1</span>
+<span class="token keyword">while</span> <span class="token punctuation">(</span>end <span class="token operator">&gt;</span> start <span class="token operator">&amp;&amp;</span> <span class="token function">ft_char_in_set</span><span class="token punctuation">(</span>s1<span class="token punctuation">[</span>end <span class="token operator">-</span> <span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">,</span> set<span class="token punctuation">)</span><span class="token punctuation">)</span>
+	end<span class="token operator">--</span><span class="token punctuation">;</span>
+</code><button class="copy-code-button"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon lucide-copy"><rect x="8" y="8" width="14" height="14" rx="2" ry="2"></rect><path d="M4 16c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2"></path></svg></button></pre>
+</li>
+<li data-line="26" dir="auto">
+<p>After finding the start and end positions of the trimmed string, the function calculates the length of the trimmed string (<code>trimmed_len</code>) by subtracting <code>start</code> from <code>end</code>.</p>
+</li>
+<li data-line="27" dir="auto"></li>
+<li data-line="28" dir="auto" class="has-run-code-button">
+<p>It then allocates memory for the trimmed string plus a null terminator using <code>malloc</code>. If memory allocation fails, it returns <code>NULL</code>.</p>
+<pre class="language-c" tabindex="0"><code data-line="30" class="language-c is-loaded"><span class="token comment">// Allocate memory for the trimmed string plus a null terminator</span>
+<span class="token keyword">char</span> <span class="token operator">*</span>str <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token keyword">char</span> <span class="token operator">*</span><span class="token punctuation">)</span><span class="token function">malloc</span><span class="token punctuation">(</span>trimmed_len <span class="token operator">+</span> <span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token operator">!</span>str<span class="token punctuation">)</span>
+	<span class="token keyword">return</span> <span class="token punctuation">(</span><span class="token constant">NULL</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// Return NULL if memory allocation fails</span>
+</code><button class="copy-code-button"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon lucide-copy"><rect x="8" y="8" width="14" height="14" rx="2" ry="2"></rect><path d="M4 16c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2"></path></svg></button><button class="run-code-button">Run</button></pre>
+</li>
+<li data-line="38" dir="auto" class="has-run-code-button">
+<p>Using a <code>counter</code> variable, the function copies the trimmed characters from <code>s1</code> to the newly allocated <code>str</code>.</p>
+<pre class="language-c" tabindex="0"><code data-line="40" class="language-c is-loaded"><span class="token comment">// Copy the trimmed characters from s1 to str</span>
+counter <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>
+<span class="token keyword">while</span> <span class="token punctuation">(</span>start <span class="token operator">&lt;</span> end<span class="token punctuation">)</span>
+	str<span class="token punctuation">[</span>counter<span class="token operator">++</span><span class="token punctuation">]</span> <span class="token operator">=</span> s1<span class="token punctuation">[</span>start<span class="token operator">++</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+
+str<span class="token punctuation">[</span>counter<span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token char">'\0'</span><span class="token punctuation">;</span> <span class="token comment">// Null-terminate the trimmed string</span>
+<span class="token keyword">return</span> <span class="token punctuation">(</span>str<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// Return a pointer to the trimmed string</span>
+</code><button class="copy-code-button"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon lucide-copy"><rect x="8" y="8" width="14" height="14" rx="2" ry="2"></rect><path d="M4 16c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2"></path></svg></button><button class="run-code-button">Run</button></pre>
+</li>
+<li data-line="50" dir="auto">
+<p>Finally, it null-terminates the <code>str</code> to ensure it's a valid C string and returns a pointer to the trimmed string.</p>
+</li>
+</ul></div></div></div><div class="el-h2 heading-wrapper"><h2 data-heading="[ft_split](../libft/ft_split.c)" dir="auto" class="heading" id="[ft_split](../libft/ft_split.c)"><div class="heading-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle"><path d="M3 8L12 17L21 8"></path></svg></div><a class="internal-link" data-href="../libft/ft_split.c" href="courses/42/common_core/libft/libft/ft_split.c" target="_self" rel="noopener nofollow">ft_split</a></h2><div class="heading-children"><div class="el-p"><p dir="auto">To achieve <code>ft_split</code> we need to use some helper functions:</p></div><div class="el-p"><p dir="auto">Certainly! Let's break down the functionality of each function within the code:</p></div><div class="el-ol"><ol>
+<li data-line="0" dir="auto" class="has-run-code-button"><div class="list-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle"><path d="M3 8L12 17L21 8"></path></svg></div>
+<p><code>ft_count_words</code> Function:</p>
+<ul>
+<li data-line="1" dir="auto">This function counts the number of words in a given string <code>s</code> where words are separated by a specified character <code>c</code>.</li>
+</ul>
+<pre class="language-c" tabindex="0"><code data-line="3" class="language-c is-loaded"><span class="token keyword">static</span> <span class="token class-name">size_t</span> <span class="token function">ft_count_words</span><span class="token punctuation">(</span><span class="token keyword">const</span> <span class="token keyword">char</span> <span class="token operator">*</span>s<span class="token punctuation">,</span> <span class="token keyword">char</span> c<span class="token punctuation">)</span>
+<span class="token punctuation">{</span>
+    <span class="token class-name">size_t</span>	count<span class="token punctuation">;</span>
+    <span class="token keyword">int</span>		is_inside_word<span class="token punctuation">;</span>
+	
+    count <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>
+    is_inside_word <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>
+    <span class="token keyword">while</span> <span class="token punctuation">(</span><span class="token operator">*</span>s<span class="token punctuation">)</span>
+    <span class="token punctuation">{</span>
+	    <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token operator">*</span>s <span class="token operator">==</span> c<span class="token punctuation">)</span>
+	        is_inside_word <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>
+	    <span class="token keyword">else</span> <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token operator">!</span>is_inside_word<span class="token punctuation">)</span>
+	    <span class="token punctuation">{</span>
+	        is_inside_word <span class="token operator">=</span> <span class="token number">1</span><span class="token punctuation">;</span>
+	        count<span class="token operator">++</span><span class="token punctuation">;</span>
+	    <span class="token punctuation">}</span>
+	    s<span class="token operator">++</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+    <span class="token keyword">return</span> <span class="token punctuation">(</span>count<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code><button class="copy-code-button"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon lucide-copy"><rect x="8" y="8" width="14" height="14" rx="2" ry="2"></rect><path d="M4 16c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2"></path></svg></button><button class="run-code-button">Run</button></pre>
+<ul>
+<li data-line="26" dir="auto">It uses a loop to check whether the character at <code>*s</code> is the delimiter character <code>c</code> or not. Depending on whether it is part of a word or not, it updates the <code>is_inside_word</code> flag and increments the <code>count</code> variable accordingly..</li>
+<li data-line="27" dir="auto">It keeps track of whether it is currently inside a word (meaning it has encountered non-<code>c</code> characters).</li>
+<li data-line="28" dir="auto">Whenever it encounters a non-<code>c</code> character and is not inside a word, it increments the <code>count</code> to indicate the start of a new word.</li>
+<li data-line="29" dir="auto">When it encounters a <code>c</code> character and is inside a word, it sets <code>is_inside_word</code> to <code>0</code> to mark the end of the current word.</li>
+<li data-line="30" dir="auto">The function returns the total count of words found in the string.</li>
+</ul>
+</li>
+<li data-line="32" dir="auto" class="has-run-code-button"><div class="list-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle"><path d="M3 8L12 17L21 8"></path></svg></div>
+<p><code>ft_split</code> Function:</p>
+<ul>
+<li data-line="33" dir="auto">This function splits a given string <code>s</code> into an array of words based on the separator character <code>c</code>.</li>
+</ul>
+<pre class="language-c" tabindex="0"><code data-line="35" class="language-c is-loaded"><span class="token keyword">char</span> <span class="token operator">*</span><span class="token operator">*</span><span class="token function">ft_split</span><span class="token punctuation">(</span><span class="token keyword">char</span> <span class="token keyword">const</span> <span class="token operator">*</span>s<span class="token punctuation">,</span> <span class="token keyword">char</span> c<span class="token punctuation">)</span>
+<span class="token punctuation">{</span>
+	<span class="token keyword">char</span>	<span class="token operator">*</span><span class="token operator">*</span>split<span class="token punctuation">;</span> <span class="token comment">// Array of strings</span>
+    <span class="token class-name">size_t</span>	split_index<span class="token punctuation">;</span> <span class="token comment">// Index of the current string in the array</span>
+	
+    <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token operator">!</span>s<span class="token punctuation">)</span>
+	    <span class="token keyword">return</span> <span class="token punctuation">(</span><span class="token constant">NULL</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    split <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token keyword">char</span> <span class="token operator">*</span><span class="token operator">*</span><span class="token punctuation">)</span><span class="token function">malloc</span><span class="token punctuation">(</span><span class="token keyword">sizeof</span><span class="token punctuation">(</span><span class="token keyword">char</span> <span class="token operator">*</span><span class="token punctuation">)</span> <span class="token operator">*</span> <span class="token punctuation">(</span><span class="token function">h_count_words</span><span class="token punctuation">(</span>s<span class="token punctuation">,</span> c<span class="token punctuation">)</span> <span class="token operator">+</span> <span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token operator">!</span>split<span class="token punctuation">)</span>
+      <span class="token keyword">return</span> <span class="token punctuation">(</span><span class="token constant">NULL</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    split_index <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>
+    <span class="token keyword">while</span> <span class="token punctuation">(</span><span class="token operator">*</span>s<span class="token punctuation">)</span>
+    <span class="token punctuation">{</span>
+      <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token operator">*</span>s <span class="token operator">!=</span> c<span class="token punctuation">)</span>
+        <span class="token function">h_actual_split</span><span class="token punctuation">(</span>s<span class="token punctuation">,</span> c<span class="token punctuation">,</span> split<span class="token punctuation">,</span> split_index<span class="token punctuation">)</span>
+      <span class="token keyword">else</span>
+        s<span class="token operator">++</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+    split<span class="token punctuation">[</span>split_index<span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token constant">NULL</span><span class="token punctuation">;</span>
+    <span class="token keyword">return</span> <span class="token punctuation">(</span>split<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code><button class="copy-code-button"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon lucide-copy"><rect x="8" y="8" width="14" height="14" rx="2" ry="2"></rect><path d="M4 16c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2"></path></svg></button><button class="run-code-button">Run</button></pre>
+<ul>
+<li data-line="59" dir="auto">
+<p>As required by 42 Norm, the variables are declared in the begening of the function.</p>
+</li>
+<li data-line="60" dir="auto">
+<p>Then it checks if the input string <code>s</code> is not NULL; if it is NULL, it returns NULL to indicate an error.</p>
+</li>
+<li data-line="61" dir="auto">
+<p>It calculates the number of words in the string <code>s</code> by calling the <code>h_count_words</code> function.</p>
+</li>
+<li data-line="62" dir="auto">
+<p>It allocates memory for an array of strings <code>split</code> to store the words. The size of the array is <code>num_words</code> + <span class="math math-inline is-loaded"><mjx-container class="MathJax" jax="CHTML"><mjx-math class="MJX-TEX"><mjx-mn class="mjx-n"><mjx-c class="mjx-c31"></mjx-c></mjx-mn></mjx-math></mjx-container></span> to account for the NULL pointer at the end.</p>
+</li>
+<li data-line="63" dir="auto"><div class="list-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle"><path d="M3 8L12 17L21 8"></path></svg></div>
+<p>Then starts a loop that iterates through the characters of the input string <code>s</code> until it reaches the null terminator, which marks the end of the string. Inside the loop:</p>
+<ul>
+<li data-line="64" dir="auto"><code>if (*s != c)</code>: This condition checks if the current character <code>*s</code> is not equal to the delimiter character <code>c</code>. If it's not, it means the current character is part of a word, and the <code>h_actual_split</code> function (not shown in the provided code) is called to split the string at this point and store the substring in the <code>split</code> array at the <code>split_index</code> position.</li>
+<li data-line="65" dir="auto"><code>else</code>: If the current character is the delimiter character <code>c</code>, it is skipped by incrementing the <code>s</code> pointer.</li>
+</ul>
+</li>
+<li data-line="67" dir="auto">
+<p>After the loop completes, <code>split[split_index] = NULL;</code> sets the last element of the <code>split</code> array to <code>NULL</code> to indicate the end of the array of strings.</p>
+</li>
+</ul>
+</li>
+<li data-line="69" dir="auto">
+<p><code>h_actual_split</code> helper function:</p>
+</li>
+</ol></div><div class="el-ul"><ul>
+<li data-line="0" dir="auto">Is responsible for determining the length of the current word, creating a duplicate of that word, and storing it in the <code>split</code> array at the appropriate index. It also updates the <code>s</code> pointer to point to the next portion of the string to be processed. This function plays a crucial role in the overall behavior of the <code>ft_split</code> implementation for splitting a string into substrings based on a delimiter character.</li>
+</ul></div><div class="el-pre has-run-code-button"><pre class="language-c" tabindex="0"><code data-line="0" class="language-c is-loaded"><span class="token keyword">void</span>	<span class="token function">h_actual_split</span><span class="token punctuation">(</span>s<span class="token punctuation">,</span> c<span class="token punctuation">,</span> split<span class="token punctuation">,</span> split_index<span class="token punctuation">)</span>
+<span class="token punctuation">{</span>
+  <span class="token class-name">size_t</span>	word_length<span class="token punctuation">;</span> <span class="token comment">// Length of the current word.</span>
+	
+  word_length <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>
+  <span class="token keyword">while</span> <span class="token punctuation">(</span>s<span class="token punctuation">[</span>word_length<span class="token punctuation">]</span> <span class="token operator">&amp;&amp;</span> s<span class="token punctuation">[</span>word_length<span class="token punctuation">]</span> <span class="token operator">!=</span> c<span class="token punctuation">)</span>
+    word_length<span class="token operator">++</span><span class="token punctuation">;</span>
+  split<span class="token punctuation">[</span>split_index<span class="token operator">++</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token function">ft_strndup</span><span class="token punctuation">(</span>s<span class="token punctuation">,</span> word_length<span class="token punctuation">)</span><span class="token punctuation">;</span>
+  s <span class="token operator">+=</span> word_length<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code><button class="copy-code-button"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon lucide-copy"><rect x="8" y="8" width="14" height="14" rx="2" ry="2"></rect><path d="M4 16c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2"></path></svg></button><button class="run-code-button">Run</button></pre></div></div></div><div class="el-h2 heading-wrapper"><h2 data-heading="[ft_itoa](../libft/ft_itoa.c)" dir="auto" class="heading" id="[ft_itoa](../libft/ft_itoa.c)"><div class="heading-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle"><path d="M3 8L12 17L21 8"></path></svg></div><a class="internal-link" data-href="../libft/ft_itoa.c" href="courses/42/common_core/libft/libft/ft_itoa.c" target="_self" rel="noopener nofollow">ft_itoa</a></h2><div class="heading-children"><div class="el-p"><p dir="auto">The <code>ft_itoa</code> function is designed to convert an integer <code>n</code> into a string representation of that integer. It dynamically allocates memory for the resulting string, handles negative numbers, and reverses the digits to create the correct string representation.</p></div><div class="el-p"><p dir="auto">Here's the function with an explanation of its purpose and usage:</p></div><div class="el-pre has-run-code-button"><pre class="language-c" tabindex="0"><code data-line="0" class="language-c is-loaded"><span class="token keyword">char</span> <span class="token operator">*</span><span class="token function">ft_itoa</span><span class="token punctuation">(</span><span class="token keyword">int</span> n<span class="token punctuation">)</span>
+<span class="token punctuation">{</span>
+    <span class="token keyword">char</span> <span class="token operator">*</span>str<span class="token punctuation">;</span>
+    <span class="token keyword">int</span> is_negative<span class="token punctuation">;</span>
+    <span class="token class-name">size_t</span> length <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>
+
+    is_negative <span class="token operator">=</span> <span class="token punctuation">(</span>n <span class="token operator">&lt;</span> <span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+    <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token operator">!</span><span class="token punctuation">(</span>str <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token keyword">char</span> <span class="token operator">*</span><span class="token punctuation">)</span><span class="token function">malloc</span><span class="token punctuation">(</span><span class="token number">12</span> <span class="token operator">+</span> is_negative<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token comment">// Assuming int has 32 bits, so 12 characters max</span>
+        <span class="token keyword">return</span> <span class="token punctuation">(</span><span class="token constant">NULL</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+    <span class="token keyword">if</span> <span class="token punctuation">(</span>n <span class="token operator">==</span> <span class="token number">0</span><span class="token punctuation">)</span>
+    <span class="token punctuation">{</span>
+        str<span class="token punctuation">[</span>length<span class="token operator">++</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token char">'0'</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+    <span class="token keyword">else</span>
+    <span class="token punctuation">{</span>
+        <span class="token keyword">while</span> <span class="token punctuation">(</span>n <span class="token operator">!=</span> <span class="token number">0</span><span class="token punctuation">)</span>
+        <span class="token punctuation">{</span>
+            str<span class="token punctuation">[</span>length<span class="token operator">++</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token char">'0'</span> <span class="token operator">+</span> <span class="token function">ft_abs</span><span class="token punctuation">(</span>n <span class="token operator">%</span> <span class="token number">10</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+            n <span class="token operator">=</span> n <span class="token operator">/</span> <span class="token number">10</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+
+    <span class="token keyword">if</span> <span class="token punctuation">(</span>is_negative<span class="token punctuation">)</span>
+    <span class="token punctuation">{</span>
+        str<span class="token punctuation">[</span>length<span class="token operator">++</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token char">'-'</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+
+    str<span class="token punctuation">[</span>length<span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token char">'\0'</span><span class="token punctuation">;</span>
+    <span class="token function">ft_strrev</span><span class="token punctuation">(</span>str<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// Reverse the string to get the correct representation</span>
+    <span class="token keyword">return</span> <span class="token punctuation">(</span>str<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code><button class="copy-code-button"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon lucide-copy"><rect x="8" y="8" width="14" height="14" rx="2" ry="2"></rect><path d="M4 16c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2"></path></svg></button><button class="run-code-button">Run</button></pre></div><div class="el-p"><p dir="auto">Usage Context:</p></div><div class="el-ul"><ul>
+<li data-line="0" dir="auto"><code>ft_itoa</code> is typically used when you need to convert an integer into a string, for example, when you want to display the integer as text or store it as part of a string.</li>
+</ul></div><div class="el-p"><p dir="auto">Key Points:</p></div><div class="el-ul"><ul>
+<li data-line="0" dir="auto"><code>int n</code>: The integer to be converted to a string.</li>
+</ul></div><div class="el-p"><p dir="auto">How it Works:</p></div><div class="el-ul"><ul>
+<li data-line="0" dir="auto">
+<p>The function starts by determining if the input integer <code>n</code> is negative and sets the <code>is_negative</code> flag accordingly.</p>
+</li>
+<li data-line="2" dir="auto">
+<p>It allocates memory for the resulting string <code>str</code>. The size of the allocated memory is determined based on the maximum possible length of the string representation of an integer (<code>12</code> characters) plus an extra character for the negative sign (if applicable).</p>
+</li>
+<li data-line="4" dir="auto">
+<p>If <code>n</code> is <code>0</code>, the function adds the character <code>'0'</code> to the string and increments the <code>length</code> counter.</p>
+</li>
+<li data-line="6" dir="auto"><div class="list-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle"><path d="M3 8L12 17L21 8"></path></svg></div>
+<p>If <code>n</code> is not <code>0</code>, the function enters a loop that iteratively extracts the last digit of <code>n</code>, converts it to a character, and adds it to the string. The loop continues until <code>n</code> becomes <code>0</code>. Here in more detail:</p>
+<ul>
+<li data-line="7" dir="auto"><div class="list-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle"><path d="M3 8L12 17L21 8"></path></svg></div>
+<p><code>str[length++] = '0' + ft_abs(n % 10);</code>:</p>
+<ul>
+<li data-line="8" dir="auto"><code>n % 10</code>: This expression calculates the remainder of <code>n</code> when divided by 10. This effectively gives you the last digit of the number <code>n</code>.</li>
+<li data-line="9" dir="auto"><code>ft_abs(...)</code>: This is a function (presumably) that calculates the absolute value of a number. It ensures that the digit is positive, even if <code>n</code> is negative.</li>
+<li data-line="10" dir="auto"><code>'0' + ...</code>: This part converts the digit (which is currently an integer) into its character representation. In C, you can do this by adding the integer value to the character '0'. This works because the ASCII values of digits are sequential, so adding the integer value to '0' gives you the character representation of the digit.</li>
+</ul>
+<p> So, <code>str[length++]</code> assigns the character representation of the last digit to the <code>length</code>-th position in the <code>str</code> array, and then <code>length</code> is incremented to prepare for the next digit.</p>
+</li>
+<li data-line="14" dir="auto">
+<p><code>n = n / 10;</code>: This line effectively removes the last digit from <code>n</code> by integer division by 10. This step is crucial because it processes the digits one by one from right to left. After this line, <code>n</code> will contain the remaining digits, and the loop will continue until <code>n</code> becomes zero.</p>
+</li>
+</ul>
+</li>
+<li data-line="16" dir="auto">
+<p>If <code>n</code> was originally negative, the function adds a <code>'-'</code> character to the string to indicate the negative sign.</p>
+</li>
+<li data-line="18" dir="auto">
+<p>It null-terminates the string by setting <code>str[length]</code> to <code>'\0'</code>.</p>
+</li>
+<li data-line="20" dir="auto">
+<p>Finally, the function calls <code>ft_strrev</code> to reverse the string, ensuring that the string representation of the integer is correctly ordered. For example, <code>123</code> becomes <code>'321'</code>.</p>
+</li>
+<li data-line="22" dir="auto">
+<p>The function returns a pointer to the dynamically allocated string containing the integer's string representation.</p>
+</li>
+</ul></div></div></div><div class="el-h2 heading-wrapper"><h2 data-heading="[ft_strmapi](../libft/ft_strmapi.c)" dir="auto" class="heading" id="[ft_strmapi](../libft/ft_strmapi.c)"><div class="heading-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle"><path d="M3 8L12 17L21 8"></path></svg></div><a class="internal-link" data-href="../libft/ft_strmapi.c" href="courses/42/common_core/libft/libft/ft_strmapi.c" target="_self" rel="noopener nofollow">ft_strmapi</a></h2><div class="heading-children"><div class="el-p"><p dir="auto">The <code>ft_strmapi</code> function is designed to apply a given function <code>f</code> to each character of a string <code>s</code> and create a new string with the modified characters. It allocates memory for the resulting string and returns a pointer to it.</p></div><div class="el-p"><p dir="auto">Usage Context:</p></div><div class="el-ul"><ul>
+<li data-line="0" dir="auto"><code>ft_strmapi</code> is used when you want to apply a custom function to each character of a string to modify or transform the characters individually. It's often used in string manipulation tasks where character-wise processing is required.</li>
+</ul></div><div class="el-p"><p dir="auto">Key Points:</p></div><div class="el-ul"><ul>
+<li data-line="0" dir="auto"><code>char const *s</code>: A pointer to the input string <code>s</code> that you want to process.</li>
+<li data-line="1" dir="auto"><code>char (*f)(unsigned int, char)</code>: A function pointer to a custom function <code>f</code> that takes an unsigned integer index and a character as arguments and returns a character.</li>
+</ul></div><div class="el-p"><p dir="auto">How it Works:</p></div><div class="el-ul"><ul>
+<li data-line="0" dir="auto">
+<p>The function begins by duplicating the input string <code>s</code> using <code>ft_strdup</code>. This ensures that the original string remains unchanged, and the modifications are applied to a new copy of the string <code>str</code>.</p>
+</li>
+<li data-line="2" dir="auto">
+<p>It initializes a variable <code>idx</code> to 0, which will be used as the index to traverse the characters of the string.</p>
+</li>
+<li data-line="4" dir="auto">
+<p>The function enters a loop that iterates through the characters of the string <code>str</code> (the duplicated string).</p>
+</li>
+<li data-line="6" dir="auto" class="has-run-code-button">
+<p>Inside the loop, for each character at index <code>idx</code>, it calls the custom function <code>f</code> with two arguments: <code>idx</code> (the current index) and <code>str[idx]</code> (the current character). The result of the function call replaces the character in the string <code>str</code> at the same index.</p>
+<pre class="language-c" tabindex="0"><code data-line="8" class="language-c is-loaded"><span class="token keyword">while</span> <span class="token punctuation">(</span>str<span class="token punctuation">[</span>idx<span class="token punctuation">]</span><span class="token punctuation">)</span>
+<span class="token punctuation">{</span>
+    str<span class="token punctuation">[</span>idx<span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token operator">*</span>f<span class="token punctuation">)</span><span class="token punctuation">(</span>idx<span class="token punctuation">,</span> str<span class="token punctuation">[</span>idx<span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// Apply the function 'f' to each character</span>
+    idx<span class="token operator">++</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code><button class="copy-code-button"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon lucide-copy"><rect x="8" y="8" width="14" height="14" rx="2" ry="2"></rect><path d="M4 16c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2"></path></svg></button><button class="run-code-button">Run</button></pre>
+</li>
+<li data-line="16" dir="auto">
+<p>The loop continues until the null terminator <code>'\0'</code> is encountered, indicating the end of the string.</p>
+</li>
+<li data-line="18" dir="auto">
+<p>After processing all characters and applying the custom function to each of them, the function returns a pointer to the newly created string <code>str</code>.</p>
+</li>
+</ul></div></div></div><div class="el-h2 heading-wrapper"><h2 data-heading="[ft_striteri](../libft/ft_striteri.c)" dir="auto" class="heading" id="[ft_striteri](../libft/ft_striteri.c)"><div class="heading-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle"><path d="M3 8L12 17L21 8"></path></svg></div><a class="internal-link" data-href="../libft/ft_striteri.c" href="courses/42/common_core/libft/libft/ft_striteri.c" target="_self" rel="noopener nofollow">ft_striteri</a></h2><div class="heading-children"><div class="el-p"><p dir="auto">The <code>ft_striteri</code> function is designed to apply a given function <code>f</code> to each character of a string <code>s</code>, passing both the character and its index to the function. It allows for in-place modification of the characters in the string.</p></div><div class="el-p"><p dir="auto">Here's the function with an explanation of its purpose and usage:</p></div><div class="el-pre has-run-code-button"><pre class="language-c" tabindex="0"><code data-line="0" class="language-c is-loaded"><span class="token keyword">void</span> <span class="token function">ft_striteri</span><span class="token punctuation">(</span><span class="token keyword">char</span> <span class="token operator">*</span>s<span class="token punctuation">,</span> <span class="token keyword">void</span> <span class="token punctuation">(</span><span class="token operator">*</span>f<span class="token punctuation">)</span><span class="token punctuation">(</span><span class="token keyword">unsigned</span> <span class="token keyword">int</span><span class="token punctuation">,</span> <span class="token keyword">char</span> <span class="token operator">*</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+<span class="token punctuation">{</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span>s <span class="token operator">!=</span> <span class="token constant">NULL</span> <span class="token operator">&amp;&amp;</span> f <span class="token operator">!=</span> <span class="token constant">NULL</span><span class="token punctuation">)</span>
+    <span class="token punctuation">{</span>
+        <span class="token keyword">unsigned</span> <span class="token keyword">int</span> index <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>
+
+        <span class="token keyword">while</span> <span class="token punctuation">(</span><span class="token operator">*</span>s<span class="token punctuation">)</span>
+        <span class="token punctuation">{</span>
+            <span class="token punctuation">(</span><span class="token operator">*</span>f<span class="token punctuation">)</span><span class="token punctuation">(</span>index<span class="token punctuation">,</span> s<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// Call the function 'f' with the current index and character</span>
+            s<span class="token operator">++</span><span class="token punctuation">;</span> <span class="token comment">// Move to the next character</span>
+            index<span class="token operator">++</span><span class="token punctuation">;</span> <span class="token comment">// Increment the index</span>
+        <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code><button class="copy-code-button"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon lucide-copy"><rect x="8" y="8" width="14" height="14" rx="2" ry="2"></rect><path d="M4 16c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2"></path></svg></button><button class="run-code-button">Run</button></pre></div><div class="el-p"><p dir="auto">Usage Context:</p></div><div class="el-ul"><ul>
+<li data-line="0" dir="auto"><code>ft_striteri</code> is used when you want to apply a custom function to each character of a string and have access to both the character and its index. This can be useful for in-place modifications of the string.</li>
+</ul></div><div class="el-p"><p dir="auto">Key Points:</p></div><div class="el-ul"><ul>
+<li data-line="0" dir="auto"><code>char *s</code>: A pointer to the input string <code>s</code> that you want to process.</li>
+<li data-line="1" dir="auto"><code>void (*f)(unsigned int, char *)</code>: A function pointer to a custom function <code>f</code> that takes an unsigned integer index and a character pointer as arguments.</li>
+</ul></div><div class="el-p"><p dir="auto">How it Works:</p></div><div class="el-ul"><ul>
+<li data-line="0" dir="auto">
+<p>The function begins by checking if both the input string <code>s</code> and the custom function pointer <code>f</code> are not NULL. If either of them is NULL, the function returns without performing any action.</p>
+</li>
+<li data-line="2" dir="auto">
+<p>It initializes an unsigned integer variable <code>index</code> to 0. This variable will be used to keep track of the index of the current character being processed.</p>
+</li>
+<li data-line="4" dir="auto">
+<p>The function enters a loop that iterates through the characters of the string <code>s</code> using a pointer.</p>
+</li>
+<li data-line="6" dir="auto" class="has-run-code-button">
+<p>Inside the loop, for each character, it calls the custom function <code>f</code> with two arguments: <code>index</code> (the current index) and a pointer to the current character <code>s</code>. This allows the custom function to access and potentially modify the character at the specified index.</p>
+<pre class="language-c" tabindex="0"><code data-line="8" class="language-c is-loaded"><span class="token keyword">while</span> <span class="token punctuation">(</span><span class="token operator">*</span>s<span class="token punctuation">)</span>
+<span class="token punctuation">{</span>
+    <span class="token punctuation">(</span><span class="token operator">*</span>f<span class="token punctuation">)</span><span class="token punctuation">(</span>index<span class="token punctuation">,</span> s<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// Call the function 'f' with the current index and character</span>
+    s<span class="token operator">++</span><span class="token punctuation">;</span> <span class="token comment">// Move to the next character</span>
+    index<span class="token operator">++</span><span class="token punctuation">;</span> <span class="token comment">// Increment the index</span>
+<span class="token punctuation">}</span>
+</code><button class="copy-code-button"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon lucide-copy"><rect x="8" y="8" width="14" height="14" rx="2" ry="2"></rect><path d="M4 16c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2"></path></svg></button><button class="run-code-button">Run</button></pre>
+</li>
+<li data-line="17" dir="auto">
+<p>After calling the custom function, the function increments the character pointer <code>s</code> to move to the next character and increments the <code>index</code> to keep track of the index of the next character.</p>
+</li>
+<li data-line="19" dir="auto">
+<p>The loop continues until it reaches the null terminator <code>'\0'</code>, indicating the end of the string.</p>
+</li>
+<li data-line="21" dir="auto">
+<p>If both the string and the custom function are valid (non-NULL), this function iterates through the entire string, applying the custom function to each character.</p>
+</li>
+</ul></div><div class="el-div"><div data-callout-metadata="" data-callout-fold="" data-callout="info" class="callout"><div class="callout-title" dir="auto"><div class="callout-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon lucide-info"><circle cx="12" cy="12" r="10"></circle><path d="M12 16v-4"></path><path d="M12 8h.01"></path></svg></div><div class="callout-title-inner">Info</div></div><div class="callout-content has-run-code-button">
+<p dir="auto">There's a possibility to divide this function into two, using a helper function called <code>ft_apply_function</code>. We'll discuss the use of function pointers and placeholders.</p>
+<p dir="auto"><strong>1. Function Pointer (<code>void (*f)(unsigned int, char *)</code>):</strong><br>
+In your <code>ft_striteri</code> function, you are given a function pointer <code>f</code> as one of the parameters. This function pointer is expected to point to a function that takes two arguments: an <code>unsigned int</code> and a <code>char *</code>. The <code>unsigned int</code> represents the index of the character in the string, and the <code>char *</code> represents a pointer to the character itself.</p>
+<p dir="auto"><strong>2. Helper Function (<code>ft_apply_function</code>):</strong><br>
+The <code>ft_apply_function</code> is a helper function designed to apply the function pointed to by <code>f</code> to a character in the string. Here's how it works:</p>
+<ul>
+<li data-line="9" dir="auto"><div class="list-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle"><path d="M3 8L12 17L21 8"></path></svg></div>
+<p>It takes three parameters:</p>
+<ul>
+<li data-line="10" dir="auto"><code>index</code>: An <code>unsigned int</code> representing the index of the character in the string.</li>
+<li data-line="11" dir="auto"><code>char_ptr</code>: A <code>char *</code> pointer to the character itself.</li>
+<li data-line="12" dir="auto"><code>f</code>: A function pointer that specifies the function to apply.</li>
+</ul>
+</li>
+<li data-line="14" dir="auto" class="has-run-code-button">
+<p>Inside the <code>ft_apply_function</code>, it checks if <code>char_ptr</code> is not <code>NULL</code> to ensure that it's safe to apply the function.</p>
+<pre class="language-c" tabindex="0"><code data-line="15" class="language-c is-loaded">  <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token operator">!</span>char_ptr<span class="token punctuation">)</span>
+    <span class="token keyword">return</span><span class="token punctuation">;</span>
+</code><button class="copy-code-button"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon lucide-copy"><rect x="8" y="8" width="14" height="14" rx="2" ry="2"></rect><path d="M4 16c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2"></path></svg></button><button class="run-code-button">Run</button></pre>
+</li>
+<li data-line="20" dir="auto" class="has-run-code-button">
+<p>Then, it calls the function pointed to by <code>f</code> with the <code>index</code> and <code>char_ptr</code> as arguments. This is where the actual processing of the character takes place based on the function pointed to by <code>f</code>.</p>
+<pre class="language-c" tabindex="0"><code data-line="21" class="language-c is-loaded">  <span class="token punctuation">(</span><span class="token operator">*</span>f<span class="token punctuation">)</span><span class="token punctuation">(</span>index<span class="token punctuation">,</span> char_ptr<span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code><button class="copy-code-button"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon lucide-copy"><rect x="8" y="8" width="14" height="14" rx="2" ry="2"></rect><path d="M4 16c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2"></path></svg></button><button class="run-code-button">Run</button></pre>
+</li>
+</ul>
+<p dir="auto"><strong>3. Placeholder (<code>(*f)(index, s)</code>):</strong><br>
+In the <code>ft_striteri</code> function, when you call <code>(*f)(index, s)</code>, you're using the function pointer <code>f</code> to call the function that will process the character pointed to by <code>s</code> at the given <code>index</code>. Here's how it works:</p>
+<ul>
+<li data-line="28" dir="auto"><code>index</code> is the index of the character in the string.</li>
+<li data-line="29" dir="auto"><code>s</code> is a pointer to the character at that index.</li>
+</ul>
+<p dir="auto">  When you call <code>(*f)(index, s)</code>, you are essentially invoking the function pointed to by <code>f</code> and passing in the index and a pointer to the character as arguments. This allows you to apply any custom processing or operation to the character at that specific index.</p>
+<p dir="auto"><strong>Why Use <code>ft_apply_function</code> as a Helper:</strong><br>
+The use of <code>ft_apply_function</code> as a helper function abstracts away the details of calling the function pointed to by <code>f</code> and makes the code inside <code>ft_striteri</code> cleaner and more focused. It separates the logic of iterating through the string and applying the function from the actual processing of the character, enhancing code modularity and readability. It also makes the code more maintainable and allows for better code reuse in case similar operations are needed elsewhere in your codebase.</p>
+<pre class="language-c" tabindex="0"><code data-line="36" class="language-c is-loaded"><span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">ft_apply_function</span><span class="token punctuation">(</span><span class="token keyword">unsigned</span> <span class="token keyword">int</span> index<span class="token punctuation">,</span> <span class="token keyword">char</span> <span class="token operator">*</span>char_ptr<span class="token punctuation">,</span> <span class="token keyword">void</span> <span class="token punctuation">(</span><span class="token operator">*</span>f<span class="token punctuation">)</span><span class="token operator">&gt;</span><span class="token punctuation">(</span><span class="token keyword">unsigned</span> <span class="token keyword">int</span><span class="token punctuation">,</span> <span class="token keyword">char</span> <span class="token operator">*</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+<span class="token punctuation">{</span>
+   <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token operator">!</span>char_ptr<span class="token punctuation">)</span>
+       <span class="token keyword">return</span><span class="token punctuation">;</span>
+
+   <span class="token punctuation">(</span><span class="token operator">*</span>f<span class="token punctuation">)</span><span class="token punctuation">(</span>index<span class="token punctuation">,</span> char_ptr<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code><button class="copy-code-button"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon lucide-copy"><rect x="8" y="8" width="14" height="14" rx="2" ry="2"></rect><path d="M4 16c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2"></path></svg></button><button class="run-code-button">Run</button></pre>
+</div></div></div><div class="el-p"><p dir="auto">In my head was a bit of confusion between the two above, so here an explanation:</p></div><div class="el-blockquote"><blockquote dir="auto">
+<p><code>ft_strmapi</code> and <code>ft_striteri</code> are two functions used for manipulating strings. These functions are not part of the C standard library; instead, they are part of a custom library often used in educational or project-based settings, which is the case.</p>
+</blockquote></div><div class="el-p"><p dir="auto">The main difference between <code>ft_strmapi</code> and <code>ft_striteri</code> is that <code>ft_strmapi</code> returns a new dynamically allocated string with the result of applying a user-defined function to each character in the input string while preserving the original string, whereas <code>ft_striteri</code> modifies the characters in the original string in place using a user-defined function. The choice between these functions depends on whether you want to create a new string or modify the original one.</p></div><div class="el-ol"><ol>
+<li data-line="0" dir="auto"><div class="list-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle"><path d="M3 8L12 17L21 8"></path></svg></div>
+<p><code>ft_strmapi</code>:</p>
+<ul>
+<li data-line="2" dir="auto">
+<p>Prototype: <code>char *ft_strmapi(char const *s, char (*f)(unsigned int, char));</code></p>
+</li>
+<li data-line="3" dir="auto">
+<p>Purpose: <code>ft_strmapi</code> stands for "string map with index." It takes a string <code>s</code> and applies a given function <code>f</code> to each character in the string, along with its index position in the string. The function <code>f</code> is provided by the user and must take two arguments: an unsigned integer representing the index and a character from the string. The function <code>f</code> is responsible for modifying or transforming the character as needed.</p>
+</li>
+<li data-line="4" dir="auto">
+<p>Return Value: It returns a new dynamically allocated string that contains the result of applying the function <code>f</code> to each character in the original string <code>s</code>. The original string <code>s</code> is not modified.</p>
+</li>
+<li data-line="5" dir="auto" class="has-run-code-button">
+<p>Example Usage:</p>
+<pre class="language-c" tabindex="0"><code data-line="6" class="language-c is-loaded"><span class="token keyword">char</span> <span class="token operator">*</span>original <span class="token operator">=</span> <span class="token string">"Hello"</span><span class="token punctuation">;</span>
+<span class="token keyword">char</span> <span class="token operator">*</span>result <span class="token operator">=</span> <span class="token function">ft_strmapi</span><span class="token punctuation">(</span>original<span class="token punctuation">,</span> my_function<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token comment">// Assuming my_function appends the index to each character</span>
+<span class="token comment">// result will contain "H0e1l2l3o4"</span>
+</code><button class="copy-code-button"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon lucide-copy"><rect x="8" y="8" width="14" height="14" rx="2" ry="2"></rect><path d="M4 16c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2"></path></svg></button><button class="run-code-button">Run</button></pre>
+</li>
+</ul>
+</li>
+<li data-line="14" dir="auto"><div class="list-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle"><path d="M3 8L12 17L21 8"></path></svg></div>
+<p><code>ft_striteri</code>:</p>
+<ul>
+<li data-line="16" dir="auto">
+<p>Prototype: <code>void ft_striteri(char *s, void (*f)(unsigned int, char *));</code></p>
+</li>
+<li data-line="17" dir="auto">
+<p>Purpose: <code>ft_striteri</code> stands for "string iterator with index." It takes a string <code>s</code> and applies a given function <code>f</code> to each character in the string, along with its index position in the string. The function <code>f</code> is provided by the user and must take two arguments: an unsigned integer representing the index and a pointer to the character from the string. Unlike <code>ft_strmapi</code>, <code>ft_striteri</code> modifies the characters in the original string <code>s</code> in place.</p>
+</li>
+<li data-line="18" dir="auto">
+<p>Return Value: <code>ft_striteri</code> does not return a value; it operates directly on the input string <code>s</code>.</p>
+</li>
+<li data-line="19" dir="auto" class="has-run-code-button">
+<p>Example Usage:</p>
+<pre class="language-c" tabindex="0"><code data-line="20" class="language-c is-loaded"><span class="token keyword">char</span> my_string<span class="token punctuation">[</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token string">"Hello"</span><span class="token punctuation">;</span>
+
+<span class="token keyword">void</span> <span class="token function">my_function</span><span class="token punctuation">(</span><span class="token keyword">unsigned</span> <span class="token keyword">int</span> index<span class="token punctuation">,</span> <span class="token keyword">char</span> <span class="token operator">*</span>c<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token operator">*</span>c <span class="token operator">=</span> <span class="token operator">*</span>c <span class="token operator">+</span> index<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token function">ft_striteri</span><span class="token punctuation">(</span>my_string<span class="token punctuation">,</span> my_function<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token comment">// After the call, my_string will contain "Hfnos"</span>
+</code><button class="copy-code-button"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon lucide-copy"><rect x="8" y="8" width="14" height="14" rx="2" ry="2"></rect><path d="M4 16c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2"></path></svg></button><button class="run-code-button">Run</button></pre>
+</li>
+</ul>
+</li>
+</ol></div></div></div><div class="el-h2 heading-wrapper"><h2 data-heading="[ft_putchar_fd](../libft/ft_putchar_fd.c)" dir="auto" class="heading" id="[ft_putchar_fd](../libft/ft_putchar_fd.c)"><div class="heading-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle"><path d="M3 8L12 17L21 8"></path></svg></div><a class="internal-link" data-href="../libft/ft_putchar_fd.c" href="courses/42/common_core/libft/libft/ft_putchar_fd.c" target="_self" rel="noopener nofollow">ft_putchar_fd</a></h2><div class="heading-children"><div class="el-p"><p dir="auto">A slight variation from ususal <code>ft_putchar</code> from Piscine. The <code>ft_putchar_fd</code> function is a simple utility function used to write a single character <code>c</code> to a specified file descriptor <code>fd</code>. It relies on the <code>write</code> system call or function to perform the actual output operation.</p></div><div class="el-p"><p dir="auto">Usage Context:</p></div><div class="el-ul"><ul>
+<li data-line="0" dir="auto"><code>ft_putchar_fd</code> is commonly used when you need to output a single character to a specific file descriptor, such as standard output (usually represented by <code>fd = 1</code>) or a file descriptor associated with a file or device.</li>
+</ul></div><div class="el-p"><p dir="auto">Key Points:</p></div><div class="el-ul"><ul>
+<li data-line="0" dir="auto"><code>char c</code>: The character to be written to the specified file descriptor.</li>
+<li data-line="1" dir="auto"><code>int fd</code>: The file descriptor to which the character will be written.</li>
+</ul></div><div class="el-p"><p dir="auto">How it Works:</p></div><div class="el-ul"><ul>
+<li data-line="0" dir="auto">
+<p>The function takes two arguments: the character <code>c</code> and the file descriptor <code>fd</code>.</p>
+</li>
+<li data-line="2" dir="auto">
+<p>It uses the <code>write</code> system call (or function) to write the character <code>c</code> to the file descriptor specified by <code>fd</code>.</p>
+</li>
+<li data-line="4" dir="auto"><div class="list-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle"><path d="M3 8L12 17L21 8"></path></svg></div>
+<p>The <code>write</code> function is provided with three arguments:</p>
+<ul>
+<li data-line="5" dir="auto">The file descriptor <code>fd</code> specifying where to write the data.</li>
+<li data-line="6" dir="auto">A pointer to the character <code>c</code> that you want to write.</li>
+<li data-line="7" dir="auto">The number <code>1</code> indicating the number of bytes to write, which corresponds to a single character.</li>
+</ul>
+</li>
+<li data-line="9" dir="auto">
+<p>As a result, the <code>write</code> system call writes the character <code>c</code> to the specified file descriptor, allowing you to output characters to different destinations.</p>
+</li>
+</ul></div></div></div><div class="el-h2 heading-wrapper"><h2 data-heading="[ft_putstr_fd](../libft/ft_putstr_fd.c)" dir="auto" class="heading" id="[ft_putstr_fd](../libft/ft_putstr_fd.c)"><div class="heading-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle"><path d="M3 8L12 17L21 8"></path></svg></div><a class="internal-link" data-href="../libft/ft_putstr_fd.c" href="courses/42/common_core/libft/libft/ft_putstr_fd.c" target="_self" rel="noopener nofollow">ft_putstr_fd</a></h2><div class="heading-children"><div class="el-p"><p dir="auto">The <code>ft_putstr_fd</code> function is used to write a null-terminated string <code>s</code> to a specified file descriptor <code>fd</code>. It relies on the <code>write</code> system call or function to perform the actual output operation.</p></div><div class="el-p"><p dir="auto">Usage Context:</p></div><div class="el-ul"><ul>
+<li data-line="0" dir="auto"><code>ft_putstr_fd</code> is commonly used when you need to output a string to a specific file descriptor, such as standard output (usually represented by <code>fd = 1</code>) or a file descriptor associated with a file or device.</li>
+</ul></div><div class="el-p"><p dir="auto">Key Points:</p></div><div class="el-ul"><ul>
+<li data-line="0" dir="auto"><code>char *s</code>: The null-terminated string to be written to the specified file descriptor.</li>
+<li data-line="1" dir="auto"><code>int fd</code>: The file descriptor to which the string will be written.</li>
+</ul></div><div class="el-p"><p dir="auto">How it Works:</p></div><div class="el-ul"><ul>
+<li data-line="0" dir="auto">
+<p>The function takes two arguments: the string <code>s</code> and the file descriptor <code>fd</code>.</p>
+</li>
+<li data-line="2" dir="auto">
+<p>It begins by checking if the input string <code>s</code> is not NULL. If <code>s</code> is NULL, the function returns without performing any action, ensuring that it doesn't attempt to write a null pointer.</p>
+</li>
+<li data-line="4" dir="auto">
+<p>If <code>s</code> is not NULL, the function proceeds to write the string to the specified file descriptor.</p>
+</li>
+<li data-line="6" dir="auto">
+<p>It uses the <code>write</code> system call (or function) to write the entire string <code>s</code> to the file descriptor <code>fd</code>.</p>
+</li>
+<li data-line="8" dir="auto"><div class="list-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle"><path d="M3 8L12 17L21 8"></path></svg></div>
+<p>The <code>write</code> function is provided with three arguments:</p>
+<ul>
+<li data-line="9" dir="auto">The file descriptor <code>fd</code> specifying where to write the data.</li>
+<li data-line="10" dir="auto">A pointer to the string <code>s</code> that you want to write.</li>
+<li data-line="11" dir="auto">The length of the string, determined by calling <code>ft_strlen(s)</code> to compute the number of bytes to write.</li>
+</ul>
+</li>
+<li data-line="13" dir="auto">
+<p>As a result, the <code>write</code> system call writes the string <code>s</code> to the specified file descriptor, allowing you to output strings to different destinations.</p>
+</li>
+<li data-line="15" dir="auto">
+<p>If <code>s</code> is a valid string, this function writes the entire string to the specified file descriptor.</p>
+</li>
+</ul></div><div class="el-p"><p dir="auto">In summary, <code>ft_putstr_fd</code> i.</p></div></div></div><div class="el-h2 heading-wrapper"><h2 data-heading="[ft_putendl_fd](../libft/ft_putendl_fd.c)" dir="auto" class="heading" id="[ft_putendl_fd](../libft/ft_putendl_fd.c)"><div class="heading-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle"><path d="M3 8L12 17L21 8"></path></svg></div><a class="internal-link" data-href="../libft/ft_putendl_fd.c" href="courses/42/common_core/libft/libft/ft_putendl_fd.c" target="_self" rel="noopener nofollow">ft_putendl_fd</a></h2><div class="heading-children"><div class="el-p"><p dir="auto">The <code>ft_putendl_fd</code> function is a utility function used to write a null-terminated string <code>s</code> followed by a newline character (<code>'\n'</code>) to a specified file descriptor <code>fd</code>. It relies on the <code>write</code> system call or function to perform the actual output operation.</p></div><div class="el-p"><p dir="auto">Usage Context:</p></div><div class="el-ul"><ul>
+<li data-line="0" dir="auto"><code>ft_putendl_fd</code> is commonly used when you need to output a null-terminated string followed by a newline character to a specific file descriptor, such as standard output (usually represented by <code>fd = 1</code>) or a file descriptor associated with a file or device.</li>
+</ul></div><div class="el-p"><p dir="auto">Key Points:</p></div><div class="el-ul"><ul>
+<li data-line="0" dir="auto"><code>const char *s</code>: The null-terminated string to be written to the specified file descriptor.</li>
+<li data-line="1" dir="auto"><code>int fd</code>: The file descriptor to which the string and newline character will be written.</li>
+</ul></div><div class="el-p"><p dir="auto">How it Works:</p></div><div class="el-ul"><ul>
+<li data-line="0" dir="auto">
+<p>The function takes two arguments: the null-terminated string <code>s</code> and the file descriptor <code>fd</code>.</p>
+</li>
+<li data-line="2" dir="auto">
+<p>It first checks if the string <code>s</code> is not NULL. If <code>s</code> is NULL, the function returns without performing any action, which is a safety check to avoid writing to a NULL string.</p>
+</li>
+<li data-line="4" dir="auto">
+<p>The function enters a loop that iterates through the characters of the string <code>s</code>.</p>
+</li>
+<li data-line="6" dir="auto">
+<p>Inside the loop, for each character in <code>s</code>, it uses the <code>write</code> system call (or function) to write that character to the file descriptor specified by <code>fd</code>. It writes one character at a time.</p>
+</li>
+<li data-line="8" dir="auto">
+<p>After writing all characters from the string, the function creates a <code>char</code> variable <code>nl</code> and assigns it the value of the newline character <code>'\n'</code>.</p>
+</li>
+<li data-line="10" dir="auto">
+<p>It then uses the <code>write</code> function again to write the newline character <code>nl</code> to the specified file descriptor, ensuring that the output ends with a newline.</p>
+</li>
+<li data-line="12" dir="auto">
+<p>The newline character is added to produce the effect of a line break, making it convenient for printing messages and ensuring proper formatting when writing text to a file or standard output.</p>
+</li>
+</ul></div></div></div><div class="el-h2 heading-wrapper"><h2 data-heading="[ft_putnbr_fd](../libft/ft_putnbr_fd.c)" dir="auto" class="heading" id="[ft_putnbr_fd](../libft/ft_putnbr_fd.c)"><div class="heading-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle"><path d="M3 8L12 17L21 8"></path></svg></div><a class="internal-link" data-href="../libft/ft_putnbr_fd.c" href="courses/42/common_core/libft/libft/ft_putnbr_fd.c" target="_self" rel="noopener nofollow">ft_putnbr_fd</a></h2><div class="heading-children"><div class="el-p"><p dir="auto">The two functions <code>ft_putnbr</code> from Piscine and <code>ft_putnbr_fd</code> serve a similar purpose: they convert an integer to a string representation and output that string to different destinations. However, they differ in a few key aspects:</p></div><div class="el-ol"><ol>
+<li data-line="0" dir="auto"><div class="list-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle"><path d="M3 8L12 17L21 8"></path></svg></div>
+<p><strong>Output Destination</strong>:</p>
+<ul>
+<li data-line="1" dir="auto"><code>ft_putnbr</code>: This function writes the string representation of the integer to the standard output (typically the console or terminal).</li>
+<li data-line="2" dir="auto"><code>ft_putnbr_fd</code>: This function writes the string representation of the integer to a specified file descriptor <code>fd</code>. It allows you to direct the output to a file or other output stream, not just the standard output.</li>
+</ul>
+</li>
+<li data-line="4" dir="auto"><div class="list-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle"><path d="M3 8L12 17L21 8"></path></svg></div>
+<p><strong>Size Limitation</strong>:</p>
+<ul>
+<li data-line="5" dir="auto"><code>ft_putnbr</code>: This function does not have a fixed buffer size, but it relies on the stack for memory allocation during recursion. This can lead to a stack overflow if the integer is too large.</li>
+<li data-line="6" dir="auto"><code>ft_putnbr_fd</code>: It uses a fixed-size buffer (<code>str[13]</code>) to store the string representation.</li>
+</ul>
+</li>
+</ol></div><div class="mod-footer mod-ui"></div></div></div></div></div></div></div></div><div class="sidebar-right sidebar"><div class="sidebar-handle"></div><div class="sidebar-topbar"><div class="topbar-content"></div><div class="clickable-icon sidebar-collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" class="svg-icon"><path d="M21 3H3C1.89543 3 1 3.89543 1 5V19C1 20.1046 1.89543 21 3 21H21C22.1046 21 23 20.1046 23 19V5C23 3.89543 22.1046 3 21 3Z"></path><path d="M10 4V20"></path><path d="M4 7H7"></path><path d="M4 10H7"></path><path d="M4 13H7"></path></svg></div></div><div class="sidebar-content"><div class="graph-view-wrapper"><div class="sidebar-section-header">Interactive Graph</div><div class="graph-view-placeholder">
+		<div class="graph-view-container">
+			<div class="graph-icon graph-expand" role="button" aria-label="Expand" data-tooltip-position="top"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon"><line x1="7" y1="17" x2="17" y2="7"></line><polyline points="7 7 17 7 17 17"></polyline></svg></div>
+			<canvas id="graph-canvas" class="hide" width="512px" height="512px"></canvas>
+		</div>
+		</div></div><div class="tree-container mod-root nav-folder tree-item outline-tree" data-depth="0"><div class="tree-header"><span class="sidebar-section-header">Table Of Contents</span><button class="clickable-icon collapse-tree-button" aria-label="Collapse All"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></svg></button></div><div class="tree-scroll-area tree-item-children nav-folder-children"><div class="tree-item mod-tree-folder nav-folder mod-collapsible is-collapsed" style="display: none;"></div><div class="tree-item" data-depth="1"><a class="tree-link" href="gab\estudos-trabalhos\programação\programming-studies\courses\42\common_core\libft\docs\part2.html#Libft - Part 2"><div class="tree-item-contents heading-link" heading-name="Libft - Part 2"><span class="tree-item-title">Libft - Part 2</span></div></a><div class="tree-item-children nav-folder-children"></div></div><div class="tree-item" data-depth="1"><a class="tree-link" href="gab\estudos-trabalhos\programação\programming-studies\courses\42\common_core\libft\docs\part2.html#Part_2"><div class="tree-item-contents heading-link" heading-name="Part 2"><span class="tree-item-title">Part 2</span></div></a><div class="tree-item-children nav-folder-children"><div class="tree-item" data-depth="2"><a class="tree-link" href="gab\estudos-trabalhos\programação\programming-studies\courses\42\common_core\libft\docs\part2.html#[ft_substr](../libft/ft_substr.c)"><div class="tree-item-contents heading-link" heading-name="[ft_substr](../libft/ft_substr.c)"><span class="tree-item-title"><a class="internal-link" data-href="../libft/ft_substr.c" href="../libft/ft_substr.c" target="_blank" rel="noopener nofollow">ft_substr</a></span></div></a><div class="tree-item-children nav-folder-children"></div></div><div class="tree-item" data-depth="2"><a class="tree-link" href="gab\estudos-trabalhos\programação\programming-studies\courses\42\common_core\libft\docs\part2.html#[ft_strjoin](../libft/ft_strjoin.c)"><div class="tree-item-contents heading-link" heading-name="[ft_strjoin](../libft/ft_strjoin.c)"><span class="tree-item-title"><a class="internal-link" data-href="../libft/ft_strjoin.c" href="../libft/ft_strjoin.c" target="_blank" rel="noopener nofollow">ft_strjoin</a></span></div></a><div class="tree-item-children nav-folder-children"></div></div><div class="tree-item" data-depth="2"><a class="tree-link" href="gab\estudos-trabalhos\programação\programming-studies\courses\42\common_core\libft\docs\part2.html#[ft_strtrim](../libft/ft_strtrim.c)"><div class="tree-item-contents heading-link" heading-name="[ft_strtrim](../libft/ft_strtrim.c)"><span class="tree-item-title"><a class="internal-link" data-href="../libft/ft_strtrim.c" href="../libft/ft_strtrim.c" target="_blank" rel="noopener nofollow">ft_strtrim</a></span></div></a><div class="tree-item-children nav-folder-children"></div></div><div class="tree-item" data-depth="2"><a class="tree-link" href="gab\estudos-trabalhos\programação\programming-studies\courses\42\common_core\libft\docs\part2.html#[ft_split](../libft/ft_split.c)"><div class="tree-item-contents heading-link" heading-name="[ft_split](../libft/ft_split.c)"><span class="tree-item-title"><a class="internal-link" data-href="../libft/ft_split.c" href="../libft/ft_split.c" target="_blank" rel="noopener nofollow">ft_split</a></span></div></a><div class="tree-item-children nav-folder-children"></div></div><div class="tree-item" data-depth="2"><a class="tree-link" href="gab\estudos-trabalhos\programação\programming-studies\courses\42\common_core\libft\docs\part2.html#[ft_itoa](../libft/ft_itoa.c)"><div class="tree-item-contents heading-link" heading-name="[ft_itoa](../libft/ft_itoa.c)"><span class="tree-item-title"><a class="internal-link" data-href="../libft/ft_itoa.c" href="../libft/ft_itoa.c" target="_blank" rel="noopener nofollow">ft_itoa</a></span></div></a><div class="tree-item-children nav-folder-children"></div></div><div class="tree-item" data-depth="2"><a class="tree-link" href="gab\estudos-trabalhos\programação\programming-studies\courses\42\common_core\libft\docs\part2.html#[ft_strmapi](../libft/ft_strmapi.c)"><div class="tree-item-contents heading-link" heading-name="[ft_strmapi](../libft/ft_strmapi.c)"><span class="tree-item-title"><a class="internal-link" data-href="../libft/ft_strmapi.c" href="../libft/ft_strmapi.c" target="_blank" rel="noopener nofollow">ft_strmapi</a></span></div></a><div class="tree-item-children nav-folder-children"></div></div><div class="tree-item" data-depth="2"><a class="tree-link" href="gab\estudos-trabalhos\programação\programming-studies\courses\42\common_core\libft\docs\part2.html#[ft_striteri](../libft/ft_striteri.c)"><div class="tree-item-contents heading-link" heading-name="[ft_striteri](../libft/ft_striteri.c)"><span class="tree-item-title"><a class="internal-link" data-href="../libft/ft_striteri.c" href="../libft/ft_striteri.c" target="_blank" rel="noopener nofollow">ft_striteri</a></span></div></a><div class="tree-item-children nav-folder-children"></div></div><div class="tree-item" data-depth="2"><a class="tree-link" href="gab\estudos-trabalhos\programação\programming-studies\courses\42\common_core\libft\docs\part2.html#[ft_putchar_fd](../libft/ft_putchar_fd.c)"><div class="tree-item-contents heading-link" heading-name="[ft_putchar_fd](../libft/ft_putchar_fd.c)"><span class="tree-item-title"><a class="internal-link" data-href="../libft/ft_putchar_fd.c" href="../libft/ft_putchar_fd.c" target="_blank" rel="noopener nofollow">ft_putchar_fd</a></span></div></a><div class="tree-item-children nav-folder-children"></div></div><div class="tree-item" data-depth="2"><a class="tree-link" href="gab\estudos-trabalhos\programação\programming-studies\courses\42\common_core\libft\docs\part2.html#[ft_putstr_fd](../libft/ft_putstr_fd.c)"><div class="tree-item-contents heading-link" heading-name="[ft_putstr_fd](../libft/ft_putstr_fd.c)"><span class="tree-item-title"><a class="internal-link" data-href="../libft/ft_putstr_fd.c" href="../libft/ft_putstr_fd.c" target="_blank" rel="noopener nofollow">ft_putstr_fd</a></span></div></a><div class="tree-item-children nav-folder-children"></div></div><div class="tree-item" data-depth="2"><a class="tree-link" href="gab\estudos-trabalhos\programação\programming-studies\courses\42\common_core\libft\docs\part2.html#[ft_putendl_fd](../libft/ft_putendl_fd.c)"><div class="tree-item-contents heading-link" heading-name="[ft_putendl_fd](../libft/ft_putendl_fd.c)"><span class="tree-item-title"><a class="internal-link" data-href="../libft/ft_putendl_fd.c" href="../libft/ft_putendl_fd.c" target="_blank" rel="noopener nofollow">ft_putendl_fd</a></span></div></a><div class="tree-item-children nav-folder-children"></div></div><div class="tree-item" data-depth="2"><a class="tree-link" href="gab\estudos-trabalhos\programação\programming-studies\courses\42\common_core\libft\docs\part2.html#[ft_putnbr_fd](../libft/ft_putnbr_fd.c)"><div class="tree-item-contents heading-link" heading-name="[ft_putnbr_fd](../libft/ft_putnbr_fd.c)"><span class="tree-item-title"><a class="internal-link" data-href="../libft/ft_putnbr_fd.c" href="../libft/ft_putnbr_fd.c" target="_blank" rel="noopener nofollow">ft_putnbr_fd</a></span></div></a><div class="tree-item-children nav-folder-children"></div></div></div></div></div></div></div><script defer="">let rs = document.querySelector(".sidebar-right"); rs.classList.add("is-collapsed"); if (window.innerWidth > 768) rs.classList.remove("is-collapsed"); rs.style.setProperty("--sidebar-width", localStorage.getItem("sidebar-right-width"));</script></div></div></body></html>

@@ -1,0 +1,1090 @@
+<!DOCTYPE html> <html><head>
+		<title>CS50 - Week 5</title>
+		<base href="..\..\..\..\..\..\../">
+		<meta id="root-path" root-path="..\..\..\..\..\..\../">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes, minimum-scale=1.0, maximum-scale=5.0">
+		<meta charset="UTF-8">
+		<meta name="description" content="DRIVE - CS50 - Week 5">
+		<meta property="og:title" content="CS50 - Week 5">
+		<meta property="og:description" content="DRIVE - CS50 - Week 5">
+		<meta property="og:type" content="website">
+		<meta property="og:url" content="courses/cs50x/week5/readme.html">
+		<meta property="og:image" content="https://cs50.harvard.edu/x/2023/notes/5//cs50Week5Slide019.png">
+		<meta property="og:site_name" content="DRIVE">
+		<meta name="author" content="Gabryel Nóbrega"><link rel="alternate" type="application/rss+xml" title="RSS Feed" href="lib/rss.xml"><script async="" id="webpage-script" src="lib/scripts/webpage.js" onload="this.onload=null;this.setAttribute(&quot;loaded&quot;, &quot;true&quot;)"></script><script type="module" async="" id="graph-view-script" src="lib/scripts/graph-view.js"></script><script async="" id="graph-wasm-script" src="lib/scripts/graph-wasm.js" onload="this.onload=null;this.setAttribute(&quot;loaded&quot;, &quot;true&quot;)"></script><script async="" id="graph-render-worker-script" src="lib/scripts/graph-render-worker.js" onload="this.onload=null;this.setAttribute(&quot;loaded&quot;, &quot;true&quot;)"></script><script async="" id="tinycolor-script" src="lib/scripts/tinycolor.js" onload="this.onload=null;this.setAttribute(&quot;loaded&quot;, &quot;true&quot;)"></script><script async="" id="pixi-script" src="https://cdnjs.cloudflare.com/ajax/libs/pixi.js/7.4.0/pixi.min.js" onload="this.onload=null;this.setAttribute(&quot;loaded&quot;, &quot;true&quot;)"></script><script async="" id="minisearch-script" src="https://cdn.jsdelivr.net/npm/minisearch@6.3.0/dist/umd/index.min.js" onload="this.onload=null;this.setAttribute(&quot;loaded&quot;, &quot;true&quot;)"></script><link rel="icon" href="lib/media/favicon.png"><script async="" id="graph-data-script" src="lib/scripts/graph-data.js" onload="this.onload=null;this.setAttribute(&quot;loaded&quot;, &quot;true&quot;)"></script><style>body{--line-width:40em;--line-width-adaptive:40em;--file-line-width:40em;--sidebar-width:min(20em, 80vw);--collapse-arrow-size:11px;--tree-horizontal-spacing:0.6em;--tree-vertical-spacing:0.6em;--sidebar-margin:12px}.sidebar{height:100%;min-width:calc(var(--sidebar-width) + var(--divider-width-hover));max-width:calc(var(--sidebar-width) + var(--divider-width-hover));font-size:14px;z-index:10;position:relative;overflow:hidden;transition:min-width ease-in-out,max-width ease-in-out;transition-duration:.2s;contain:size}.sidebar-left{left:0}.sidebar-right{right:0}.sidebar.is-collapsed{min-width:0;max-width:0}body.floating-sidebars .sidebar{position:absolute}.sidebar-content{height:100%;min-width:calc(var(--sidebar-width) - var(--divider-width-hover));top:0;padding:var(--sidebar-margin);padding-top:4em;line-height:var(--line-height-tight);background-color:var(--background-secondary);transition:background-color,border-right,border-left,box-shadow;transition-duration:var(--color-fade-speed);transition-timing-function:ease-in-out;position:absolute;display:flex;flex-direction:column}.sidebar:not(.is-collapsed) .sidebar-content{min-width:calc(max(100%,var(--sidebar-width)) - 3px);max-width:calc(max(100%,var(--sidebar-width)) - 3px)}.sidebar-left .sidebar-content{left:0;border-top-right-radius:var(--radius-l);border-bottom-right-radius:var(--radius-l)}.sidebar-right .sidebar-content{right:0;border-top-left-radius:var(--radius-l);border-bottom-left-radius:var(--radius-l)}.sidebar:has(.sidebar-content:empty):has(.topbar-content:empty){display:none}.sidebar-topbar{height:2em;width:var(--sidebar-width);top:var(--sidebar-margin);padding-inline:var(--sidebar-margin);z-index:1;position:fixed;display:flex;align-items:center;transition:width ease-in-out;transition-duration:inherit}.sidebar.is-collapsed .sidebar-topbar{width:calc(2.3em + var(--sidebar-margin) * 2)}.sidebar .sidebar-topbar.is-collapsed{width:0}.sidebar-left .sidebar-topbar{left:0}.sidebar-right .sidebar-topbar{right:0}.topbar-content{overflow:hidden;overflow:clip;width:100%;height:100%;display:flex;align-items:center;transition:inherit}.sidebar.is-collapsed .topbar-content{width:0;transition:inherit}.clickable-icon.sidebar-collapse-icon{background-color:transparent;color:var(--icon-color-focused);padding:0!important;margin:0!important;height:100%!important;width:2.3em!important;margin-inline:0.14em!important;position:absolute}.sidebar-left .clickable-icon.sidebar-collapse-icon{transform:rotateY(180deg);right:var(--sidebar-margin)}.sidebar-right .clickable-icon.sidebar-collapse-icon{transform:rotateY(180deg);left:var(--sidebar-margin)}.clickable-icon.sidebar-collapse-icon svg.svg-icon{width:100%;height:100%}.sidebar-section-header{margin:0 0 1em 0;text-transform:uppercase;letter-spacing:.06em;font-weight:600}body{transition:background-color var(--color-fade-speed) ease-in-out}.webpage-container{display:flex;flex-direction:row;height:100%;width:100%;align-items:stretch;justify-content:center}.document-container{opacity:1;flex-basis:100%;max-width:100%;width:100%;height:100%;display:flex;flex-direction:column;align-items:center;transition:opacity .2s ease-in-out;contain:inline-size}.hide{opacity:0;transition:opacity .2s ease-in-out}.document-container>.markdown-preview-view{margin:var(--sidebar-margin);margin-bottom:0;width:100%;width:-webkit-fill-available;width:-moz-available;width:fill-available;background-color:var(--background-primary);transition:background-color var(--color-fade-speed) ease-in-out;border-top-right-radius:var(--window-radius,var(--radius-m));border-top-left-radius:var(--window-radius,var(--radius-m));overflow-x:hidden!important;overflow-y:auto!important;display:flex!important;flex-direction:column!important;align-items:center!important;contain:inline-size}.document-container>.markdown-preview-view>.markdown-preview-sizer{padding-bottom:80vh!important;width:100%!important;max-width:var(--line-width)!important;flex-basis:var(--line-width)!important;transition:background-color var(--color-fade-speed) ease-in-out;contain:inline-size}.markdown-rendered img:not([width]),.view-content img:not([width]){max-width:100%;outline:0}.document-container>.view-content.embed{display:flex;padding:1em;height:100%;width:100%;align-items:center;justify-content:center}.document-container>.view-content.embed>*{max-width:100%;max-height:100%;object-fit:contain}:has(> :is(.math,table)){overflow-x:auto!important}.document-container>.view-content{overflow-x:auto;contain:content;padding:0;margin:0;height:100%}.scroll-highlight{position:absolute;width:100%;height:100%;pointer-events:none;z-index:1000;background-color:hsla(var(--color-accent-hsl),.25);opacity:0;padding:1em;inset:50%;translate:-50% -50%;border-radius:var(--radius-s)}</style><script defer="">async function loadIncludes(){if("file:"!=location.protocol){let e=document.querySelectorAll("include");for(let t=0;t<e.length;t++){let o=e[t],l=o.getAttribute("src");try{const e=await fetch(l);if(!e.ok){console.log("Could not include file: "+l),o?.remove();continue}let t=await e.text(),n=document.createRange().createContextualFragment(t),i=Array.from(n.children);for(let e of i)e.classList.add("hide"),e.style.transition="opacity 0.5s ease-in-out",setTimeout((()=>{e.classList.remove("hide")}),10);o.before(n),o.remove(),console.log("Included file: "+l)}catch(e){o?.remove(),console.log("Could not include file: "+l,e);continue}}}else{if(document.querySelectorAll("include").length>0){var e=document.createElement("div");e.id="error",e.textContent="Web server exports must be hosted on an http / web server to be viewed correctly.",e.style.position="fixed",e.style.top="50%",e.style.left="50%",e.style.transform="translate(-50%, -50%)",e.style.fontSize="1.5em",e.style.fontWeight="bold",e.style.textAlign="center",document.body.appendChild(e),document.querySelector(".document-container")?.classList.remove("hide")}}}document.addEventListener("DOMContentLoaded",(()=>{loadIncludes()}));let isFileProtocol="file:"==location.protocol;function waitLoadScripts(e,t){let o=e.map((e=>document.getElementById(e+"-script"))),l=0;!function e(){let n=o[l];l++,n&&"true"!=n.getAttribute("loaded")||l<o.length&&e(),l<o.length?n.addEventListener("load",e):t()}()}</script><link rel="stylesheet" href="lib/styles/obsidian.css"><link rel="stylesheet" href="lib/styles/theme.css"><link rel="preload" href="lib/styles/global-variable-styles.css" as="style" onload="this.onload=null;this.rel='stylesheet'"><noscript><link rel="stylesheet" href="lib/styles/global-variable-styles.css"></noscript><link rel="preload" href="lib/styles/supported-plugins.css" as="style" onload="this.onload=null;this.rel='stylesheet'"><noscript><link rel="stylesheet" href="lib/styles/supported-plugins.css"></noscript><link rel="preload" href="lib/styles/main-styles.css" as="style" onload="this.onload=null;this.rel='stylesheet'"><noscript><link rel="stylesheet" href="lib/styles/main-styles.css"></noscript><link rel="preload" href="lib/styles/snippets.css" as="style" onload="this.onload=null;this.rel='stylesheet'"><noscript><link rel="stylesheet" href="lib/styles/snippets.css"></noscript></head><body class="publish css-settings-manager theme-dark"><script defer="">let theme=localStorage.getItem("theme")||(window.matchMedia("(prefers-color-scheme: dark)").matches?"dark":"light");"dark"==theme?(document.body.classList.add("theme-dark"),document.body.classList.remove("theme-light")):(document.body.classList.add("theme-light"),document.body.classList.remove("theme-dark")),window.innerWidth<480?document.body.classList.add("is-phone"):window.innerWidth<768?document.body.classList.add("is-tablet"):window.innerWidth<1024?document.body.classList.add("is-small-screen"):document.body.classList.add("is-large-screen")</script><div class="webpage-container workspace"><div class="sidebar-left sidebar"><div class="sidebar-handle"></div><div class="sidebar-topbar"><div class="topbar-content"><label class="theme-toggle-container" for="theme_toggle"><input class="theme-toggle-input" type="checkbox" id="theme_toggle"><div class="toggle-background"></div></label></div><div class="clickable-icon sidebar-collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" class="svg-icon"><path d="M21 3H3C1.89543 3 1 3.89543 1 5V19C1 20.1046 1.89543 21 3 21H21C22.1046 21 23 20.1046 23 19V5C23 3.89543 22.1046 3 21 3Z"></path><path d="M10 4V20"></path><path d="M4 7H7"></path><path d="M4 10H7"></path><path d="M4 13H7"></path></svg></div></div><div class="sidebar-content"><div class="search-input-container"><input enterkeyhint="search" type="search" spellcheck="false" placeholder="Search..."><div class="search-input-clear-button" aria-label="Clear search"></div></div><include src="lib/html/file-tree.html"></include></div><script defer="">let ls = document.querySelector(".sidebar-left"); ls.classList.add("is-collapsed"); if (window.innerWidth > 768) ls.classList.remove("is-collapsed"); ls.style.setProperty("--sidebar-width", localStorage.getItem("sidebar-left-width"));</script></div><div class="document-container markdown-reading-view hide"><div class="markdown-preview-view markdown-rendered allow-fold-headings allow-fold-lists is-readable-line-width"><style id="MJX-CHTML-styles">mjx-c.mjx-cD7::before { padding: 0.491em 0.778em 0px 0px; content: "×"; }
+mjx-c.mjx-c35::before { padding: 0.666em 0.5em 0.022em 0px; content: "5"; }
+mjx-c.mjx-c1D435.TEX-I::before { padding: 0.683em 0.759em 0px 0px; content: "B"; }
+mjx-c.mjx-c38::before { padding: 0.666em 0.5em 0.022em 0px; content: "8"; }
+mjx-c.mjx-cF7::before { padding: 0.537em 0.778em 0.036em 0px; content: "÷"; }
+mjx-c.mjx-c3D::before { padding: 0.583em 0.778em 0.082em 0px; content: "="; }
+mjx-c.mjx-c2217::before { padding: 0.465em 0.5em 0px 0px; content: "∗"; }
+mjx-c.mjx-c34::before { padding: 0.677em 0.5em 0px 0px; content: "4"; }
+mjx-c.mjx-c1D44F.TEX-I::before { padding: 0.694em 0.429em 0.011em 0px; content: "b"; }
+mjx-c.mjx-c1D456.TEX-I::before { padding: 0.661em 0.345em 0.011em 0px; content: "i"; }
+mjx-c.mjx-c1D461.TEX-I::before { padding: 0.626em 0.361em 0.011em 0px; content: "t"; }
+mjx-c.mjx-c1D452.TEX-I::before { padding: 0.442em 0.466em 0.011em 0px; content: "e"; }
+mjx-c.mjx-c1D460.TEX-I::before { padding: 0.442em 0.469em 0.01em 0px; content: "s"; }
+mjx-c.mjx-c1D465.TEX-I::before { padding: 0.442em 0.572em 0.011em 0px; content: "x"; }
+mjx-c.mjx-c36::before { padding: 0.666em 0.5em 0.022em 0px; content: "6"; }
+mjx-c.mjx-c37::before { padding: 0.676em 0.5em 0.022em 0px; content: "7"; }
+mjx-msup { display: inline-block; text-align: left; }
+mjx-texatom { display: inline-block; text-align: left; }
+mjx-c.mjx-c1D442.TEX-I::before { padding: 0.704em 0.763em 0.022em 0px; content: "O"; }
+mjx-c.mjx-c28::before { padding: 0.75em 0.389em 0.25em 0px; content: "("; }
+mjx-c.mjx-c1D45B.TEX-I::before { padding: 0.442em 0.6em 0.011em 0px; content: "n"; }
+mjx-c.mjx-c32::before { padding: 0.666em 0.5em 0px 0px; content: "2"; }
+mjx-c.mjx-c29::before { padding: 0.75em 0.389em 0.25em 0px; content: ")"; }
+mjx-c.mjx-c1D459.TEX-I::before { padding: 0.694em 0.298em 0.011em 0px; content: "l"; }
+mjx-c.mjx-c1D45C.TEX-I::before { padding: 0.441em 0.485em 0.011em 0px; content: "o"; }
+mjx-c.mjx-c1D454.TEX-I::before { padding: 0.442em 0.477em 0.205em 0px; content: "g"; }
+mjx-c.mjx-c2061::before { padding: 0px; content: ""; }
+mjx-c.mjx-c1D6FA.TEX-I::before { padding: 0.704em 0.786em 0px 0px; content: "Ω"; }
+mjx-c.mjx-c1D6E9.TEX-I::before { padding: 0.704em 0.763em 0.022em 0px; content: "Θ"; }
+mjx-c.mjx-c2B::before { padding: 0.583em 0.778em 0.082em 0px; content: "+"; }
+mjx-c.mjx-c33::before { padding: 0.665em 0.5em 0.022em 0px; content: "3"; }
+mjx-c.mjx-c2E::before { padding: 0.12em 0.278em 0px 0px; content: "."; }
+mjx-c.mjx-c2F::before { padding: 0.75em 0.5em 0.25em 0px; content: "/"; }
+mjx-c.mjx-c30::before { padding: 0.666em 0.5em 0.022em 0px; content: "0"; }
+mjx-c.mjx-c39::before { padding: 0.666em 0.5em 0.022em 0px; content: "9"; }
+mjx-c.mjx-c2212::before { padding: 0.583em 0.778em 0.082em 0px; content: "−"; }
+mjx-container[jax="CHTML"] { line-height: 0; }
+mjx-container [space="1"] { margin-left: 0.111em; }
+mjx-container [space="2"] { margin-left: 0.167em; }
+mjx-container [space="3"] { margin-left: 0.222em; }
+mjx-container [space="4"] { margin-left: 0.278em; }
+mjx-container [space="5"] { margin-left: 0.333em; }
+mjx-container [rspace="1"] { margin-right: 0.111em; }
+mjx-container [rspace="2"] { margin-right: 0.167em; }
+mjx-container [rspace="3"] { margin-right: 0.222em; }
+mjx-container [rspace="4"] { margin-right: 0.278em; }
+mjx-container [rspace="5"] { margin-right: 0.333em; }
+mjx-container [size="s"] { font-size: 70.7%; }
+mjx-container [size="ss"] { font-size: 50%; }
+mjx-container [size="Tn"] { font-size: 60%; }
+mjx-container [size="sm"] { font-size: 85%; }
+mjx-container [size="lg"] { font-size: 120%; }
+mjx-container [size="Lg"] { font-size: 144%; }
+mjx-container [size="LG"] { font-size: 173%; }
+mjx-container [size="hg"] { font-size: 207%; }
+mjx-container [size="HG"] { font-size: 249%; }
+mjx-container [width="full"] { width: 100%; }
+mjx-box { display: inline-block; }
+mjx-block { display: block; }
+mjx-itable { display: inline-table; }
+mjx-row { display: table-row; }
+mjx-row > * { display: table-cell; }
+mjx-mtext { display: inline-block; }
+mjx-mstyle { display: inline-block; }
+mjx-merror { display: inline-block; color: red; background-color: yellow; }
+mjx-mphantom { visibility: hidden; }
+mjx-assistive-mml { top: 0px; left: 0px; clip: rect(1px, 1px, 1px, 1px); user-select: none; position: absolute !important; padding: 1px 0px 0px !important; border: 0px !important; display: block !important; width: auto !important; overflow: hidden !important; }
+mjx-assistive-mml[display="block"] { width: 100% !important; }
+mjx-math { display: inline-block; text-align: left; line-height: 0; text-indent: 0px; font-style: normal; font-weight: normal; font-size: 100%; font-size-adjust: none; letter-spacing: normal; border-collapse: collapse; overflow-wrap: normal; word-spacing: normal; white-space: nowrap; direction: ltr; padding: 1px 0px; }
+mjx-container[jax="CHTML"][display="true"] { display: block; text-align: center; margin: 1em 0px; }
+mjx-container[jax="CHTML"][display="true"][width="full"] { display: flex; }
+mjx-container[jax="CHTML"][display="true"] mjx-math { padding: 0px; }
+mjx-container[jax="CHTML"][justify="left"] { text-align: left; }
+mjx-container[jax="CHTML"][justify="right"] { text-align: right; }
+mjx-mi { display: inline-block; text-align: left; }
+mjx-c { display: inline-block; }
+mjx-utext { display: inline-block; padding: 0.75em 0px 0.2em; }
+mjx-msub { display: inline-block; text-align: left; }
+mjx-mn { display: inline-block; text-align: left; }
+mjx-mo { display: inline-block; text-align: left; }
+mjx-stretchy-h { display: inline-table; width: 100%; }
+mjx-stretchy-h > * { display: table-cell; width: 0px; }
+mjx-stretchy-h > * > mjx-c { display: inline-block; transform: scaleX(1); }
+mjx-stretchy-h > * > mjx-c::before { display: inline-block; width: initial; }
+mjx-stretchy-h > mjx-ext { overflow: clip visible; width: 100%; }
+mjx-stretchy-h > mjx-ext > mjx-c::before { transform: scaleX(500); }
+mjx-stretchy-h > mjx-ext > mjx-c { width: 0px; }
+mjx-stretchy-h > mjx-beg > mjx-c { margin-right: -0.1em; }
+mjx-stretchy-h > mjx-end > mjx-c { margin-left: -0.1em; }
+mjx-stretchy-v { display: inline-block; }
+mjx-stretchy-v > * { display: block; }
+mjx-stretchy-v > mjx-beg { height: 0px; }
+mjx-stretchy-v > mjx-end > mjx-c { display: block; }
+mjx-stretchy-v > * > mjx-c { transform: scaleY(1); transform-origin: left center; overflow: hidden; }
+mjx-stretchy-v > mjx-ext { display: block; height: 100%; box-sizing: border-box; border: 0px solid transparent; overflow: visible clip; }
+mjx-stretchy-v > mjx-ext > mjx-c::before { width: initial; box-sizing: border-box; }
+mjx-stretchy-v > mjx-ext > mjx-c { transform: scaleY(500) translateY(0.075em); overflow: visible; }
+mjx-mark { display: inline-block; height: 0px; }
+mjx-c::before { display: block; width: 0px; }
+.MJX-TEX { font-family: MJXZERO, MJXTEX; }
+.TEX-B { font-family: MJXZERO, MJXTEX-B; }
+.TEX-I { font-family: MJXZERO, MJXTEX-I; }
+.TEX-MI { font-family: MJXZERO, MJXTEX-MI; }
+.TEX-BI { font-family: MJXZERO, MJXTEX-BI; }
+.TEX-S1 { font-family: MJXZERO, MJXTEX-S1; }
+.TEX-S2 { font-family: MJXZERO, MJXTEX-S2; }
+.TEX-S3 { font-family: MJXZERO, MJXTEX-S3; }
+.TEX-S4 { font-family: MJXZERO, MJXTEX-S4; }
+.TEX-A { font-family: MJXZERO, MJXTEX-A; }
+.TEX-C { font-family: MJXZERO, MJXTEX-C; }
+.TEX-CB { font-family: MJXZERO, MJXTEX-CB; }
+.TEX-FR { font-family: MJXZERO, MJXTEX-FR; }
+.TEX-FRB { font-family: MJXZERO, MJXTEX-FRB; }
+.TEX-SS { font-family: MJXZERO, MJXTEX-SS; }
+.TEX-SSB { font-family: MJXZERO, MJXTEX-SSB; }
+.TEX-SSI { font-family: MJXZERO, MJXTEX-SSI; }
+.TEX-SC { font-family: MJXZERO, MJXTEX-SC; }
+.TEX-T { font-family: MJXZERO, MJXTEX-T; }
+.TEX-V { font-family: MJXZERO, MJXTEX-V; }
+.TEX-VB { font-family: MJXZERO, MJXTEX-VB; }
+mjx-stretchy-v mjx-c, mjx-stretchy-h mjx-c { font-family: MJXZERO, MJXTEX-S1, MJXTEX-S4, MJXTEX, MJXTEX-A !important; }
+@font-face { font-family: MJXZERO; src: url("lib/fonts/mathjax_zero.woff") format("woff"); }
+@font-face { font-family: MJXTEX; src: url("lib/fonts/mathjax_main-regular.woff") format("woff"); }
+@font-face { font-family: MJXTEX-B; src: url("lib/fonts/mathjax_main-bold.woff") format("woff"); }
+@font-face { font-family: MJXTEX-I; src: url("lib/fonts/mathjax_math-italic.woff") format("woff"); }
+@font-face { font-family: MJXTEX-MI; src: url("lib/fonts/mathjax_main-italic.woff") format("woff"); }
+@font-face { font-family: MJXTEX-BI; src: url("lib/fonts/mathjax_math-bolditalic.woff") format("woff"); }
+@font-face { font-family: MJXTEX-S1; src: url("lib/fonts/mathjax_size1-regular.woff") format("woff"); }
+@font-face { font-family: MJXTEX-S2; src: url("lib/fonts/mathjax_size2-regular.woff") format("woff"); }
+@font-face { font-family: MJXTEX-S3; src: url("lib/fonts/mathjax_size3-regular.woff") format("woff"); }
+@font-face { font-family: MJXTEX-S4; src: url("lib/fonts/mathjax_size4-regular.woff") format("woff"); }
+@font-face { font-family: MJXTEX-A; src: url("lib/fonts/mathjax_ams-regular.woff") format("woff"); }
+@font-face { font-family: MJXTEX-C; src: url("lib/fonts/mathjax_calligraphic-regular.woff") format("woff"); }
+@font-face { font-family: MJXTEX-CB; src: url("lib/fonts/mathjax_calligraphic-bold.woff") format("woff"); }
+@font-face { font-family: MJXTEX-FR; src: url("lib/fonts/mathjax_fraktur-regular.woff") format("woff"); }
+@font-face { font-family: MJXTEX-FRB; src: url("lib/fonts/mathjax_fraktur-bold.woff") format("woff"); }
+@font-face { font-family: MJXTEX-SS; src: url("lib/fonts/mathjax_sansserif-regular.woff") format("woff"); }
+@font-face { font-family: MJXTEX-SSB; src: url("lib/fonts/mathjax_sansserif-bold.woff") format("woff"); }
+@font-face { font-family: MJXTEX-SSI; src: url("lib/fonts/mathjax_sansserif-italic.woff") format("woff"); }
+@font-face { font-family: MJXTEX-SC; src: url("lib/fonts/mathjax_script-regular.woff") format("woff"); }
+@font-face { font-family: MJXTEX-T; src: url("lib/fonts/mathjax_typewriter-regular.woff") format("woff"); }
+@font-face { font-family: MJXTEX-V; src: url("lib/fonts/mathjax_vector-regular.woff") format("woff"); }
+@font-face { font-family: MJXTEX-VB; src: url("lib/fonts/mathjax_vector-bold.woff") format("woff"); }
+mjx-c.mjx-c1D439.TEX-I::before { padding: 0.68em 0.749em 0px 0px; content: "F"; }
+mjx-c.mjx-c1D447.TEX-I::before { padding: 0.677em 0.704em 0px 0px; content: "T"; }
+mjx-c.mjx-c1D43F.TEX-I::before { padding: 0.683em 0.681em 0px 0px; content: "L"; }
+mjx-c.mjx-c1D43C.TEX-I::before { padding: 0.683em 0.504em 0px 0px; content: "I"; }
+mjx-c.mjx-c1D441.TEX-I::before { padding: 0.683em 0.888em 0px 0px; content: "N"; }
+mjx-c.mjx-c1D438.TEX-I::before { padding: 0.68em 0.764em 0px 0px; content: "E"; }
+mjx-c.mjx-c31::before { padding: 0.666em 0.5em 0px 0px; content: "1"; }
+mjx-c.mjx-c2C::before { padding: 0.121em 0.278em 0.194em 0px; content: ","; }
+</style><pre class="frontmatter language-yaml" tabindex="0" style="display: none;"><code class="language-yaml is-loaded"><span class="token key atrule">title</span><span class="token punctuation">:</span> CS50 <span class="token punctuation">-</span> Week 5
+<span class="token key atrule">tags</span><span class="token punctuation">:</span> programming<span class="token punctuation">,</span> cs50
+<span class="token key atrule">use</span><span class="token punctuation">:</span> Documentation
+<span class="token key atrule">languages</span><span class="token punctuation">:</span> C
+<span class="token key atrule">dependences</span><span class="token punctuation">:</span> CS50</code><button class="copy-code-button"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon lucide-copy"><rect x="8" y="8" width="14" height="14" rx="2" ry="2"></rect><path d="M4 16c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2"></path></svg></button></pre><div class="markdown-preview-sizer markdown-preview-section"><h1 class="page-title heading" id="CS50 - Week 5"><p dir="auto">CS50 - Week 5</p></h1><div class="el-blockquote"><blockquote dir="auto">
+<p>This material is distribured by <code>Harvard ©&nbsp;2023&nbsp;edX LLC</code>. It was copied during the execution of the Course, and have been modified due to my undersantding and integrated to the previous Data Structure of <code>Programing Studies</code>.</p>
+</blockquote></div><div class="el-details"><details> <summary>Table of Contents</summary></details></div><div class="el-ul"><ul>
+<li data-line="0" dir="auto"><div class="list-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle"><path d="M3 8L12 17L21 8"></path></svg></div><a class="internal-link" data-href="#lecture-5" href="#lecture-5" target="_self" rel="noopener nofollow">Lecture 5</a>
+<ul>
+<li data-line="1" dir="auto"><a class="internal-link" data-href="#welcome-" href="#welcome-" target="_self" rel="noopener nofollow">Welcome! #</a></li>
+<li data-line="2" dir="auto"><a class="internal-link" data-href="#data-structures" href="#data-structures" target="_self" rel="noopener nofollow">Data Structures</a></li>
+<li data-line="3" dir="auto"><a class="internal-link" data-href="#stacks-and-queues" href="#stacks-and-queues" target="_self" rel="noopener nofollow">Stacks and Queues</a></li>
+<li data-line="4" dir="auto"><a class="internal-link" data-href="#resizing-arrays" href="#resizing-arrays" target="_self" rel="noopener nofollow">Resizing Arrays</a></li>
+<li data-line="5" dir="auto"><div class="list-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle"><path d="M3 8L12 17L21 8"></path></svg></div><a class="internal-link" data-href="#linked-lists" href="#linked-lists" target="_self" rel="noopener nofollow">Linked Lists</a>
+<ul>
+<li data-line="6" dir="auto"><a class="internal-link" data-href="#operation" href="#operation" target="_self" rel="noopener nofollow">Operation</a></li>
+<li data-line="7" dir="auto"><a class="internal-link" data-href="#difference-between-dot-and-arrow--operator" href="#difference-between-dot-and-arrow--operator" target="_self" rel="noopener nofollow">Difference between Dot(<code>.</code>) and Arrow(<code>-&gt;</code>) operator&nbsp;</a></li>
+<li data-line="8" dir="auto"><a class="internal-link" data-href="#struct-definition" href="#struct-definition" target="_self" rel="noopener nofollow">Struct Definition</a></li>
+<li data-line="9" dir="auto"><a class="internal-link" data-href="#main-function" href="#main-function" target="_self" rel="noopener nofollow">Main Function</a></li>
+<li data-line="10" dir="auto"><a class="internal-link" data-href="#adding-numbers-to-the-linked-list" href="#adding-numbers-to-the-linked-list" target="_self" rel="noopener nofollow">Adding Numbers to the Linked List</a></li>
+<li data-line="11" dir="auto"><a class="internal-link" data-href="#traversing-the-linked-list" href="#traversing-the-linked-list" target="_self" rel="noopener nofollow">Traversing the Linked List</a></li>
+<li data-line="12" dir="auto"><a class="internal-link" data-href="#freeing-memory" href="#freeing-memory" target="_self" rel="noopener nofollow">Freeing Memory</a></li>
+</ul>
+</li>
+<li data-line="13" dir="auto"><div class="list-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle"><path d="M3 8L12 17L21 8"></path></svg></div><a class="internal-link" data-href="#trees" href="#trees" target="_self" rel="noopener nofollow">Trees</a>
+<ul>
+<li data-line="14" dir="auto"><a class="internal-link" data-href="#data-structure-definition" href="#data-structure-definition" target="_self" rel="noopener nofollow">Data Structure Definition</a></li>
+<li data-line="15" dir="auto"><a class="internal-link" data-href="#function-declarations" href="#function-declarations" target="_self" rel="noopener nofollow">Function Declarations</a></li>
+<li data-line="16" dir="auto"><a class="internal-link" data-href="#main-function-1" href="#main-function-1" target="_self" rel="noopener nofollow">Main Function</a></li>
+<li data-line="17" dir="auto"><a class="internal-link" data-href="#tree-traversal-functions" href="#tree-traversal-functions" target="_self" rel="noopener nofollow">Tree Traversal Functions</a></li>
+</ul>
+</li>
+<li data-line="18" dir="auto"><a class="internal-link" data-href="#dictionaries" href="#dictionaries" target="_self" rel="noopener nofollow">Dictionaries</a></li>
+<li data-line="19" dir="auto"><a class="internal-link" data-href="#hashing-and-hash-tables" href="#hashing-and-hash-tables" target="_self" rel="noopener nofollow">Hashing and Hash Tables</a></li>
+<li data-line="20" dir="auto"><a class="internal-link" data-href="#trie" href="#trie" target="_self" rel="noopener nofollow">Trie</a></li>
+<li data-line="21" dir="auto"><a class="internal-link" data-href="#summing-up" href="#summing-up" target="_self" rel="noopener nofollow">Summing Up</a></li>
+</ul>
+</li>
+<li data-line="22" dir="auto"><a class="internal-link" data-href="#section" href="#section" target="_self" rel="noopener nofollow">Section</a></li>
+<li data-line="23" dir="auto"><div class="list-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle"><path d="M3 8L12 17L21 8"></path></svg></div><a class="internal-link" data-href="#shorts" href="#shorts" target="_self" rel="noopener nofollow">Shorts</a>
+<ul>
+<li data-line="24" dir="auto"><a class="internal-link" data-href="#data-structures-1" href="#data-structures-1" target="_self" rel="noopener nofollow">Data Structures</a></li>
+<li data-line="25" dir="auto"><a class="internal-link" data-href="#structs" href="#structs" target="_self" rel="noopener nofollow">Structs</a></li>
+<li data-line="26" dir="auto"><a class="internal-link" data-href="#singly-linked-lists" href="#singly-linked-lists" target="_self" rel="noopener nofollow">Singly-Linked Lists</a></li>
+<li data-line="27" dir="auto"><a class="internal-link" data-href="#doubly-linked-lists" href="#doubly-linked-lists" target="_self" rel="noopener nofollow">Doubly-Linked Lists</a></li>
+<li data-line="28" dir="auto"><a class="internal-link" data-href="#hash-tables" href="#hash-tables" target="_self" rel="noopener nofollow">Hash Tables</a></li>
+<li data-line="29" dir="auto"><a class="internal-link" data-href="#tries" href="#tries" target="_self" rel="noopener nofollow">Tries</a></li>
+<li data-line="30" dir="auto"><a class="internal-link" data-href="#queues" href="#queues" target="_self" rel="noopener nofollow">Queues</a></li>
+<li data-line="31" dir="auto"><a class="internal-link" data-href="#stacks" href="#stacks" target="_self" rel="noopener nofollow">Stacks</a></li>
+</ul>
+</li>
+<li data-line="32" dir="auto"><div class="list-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle"><path d="M3 8L12 17L21 8"></path></svg></div><a class="internal-link" data-href="#exercises" href="#exercises" target="_self" rel="noopener nofollow">Exercises</a>
+<ul>
+<li data-line="33" dir="auto"><a class="internal-link" data-href="#practice-problems-" href="#practice-problems-" target="_self" rel="noopener nofollow">Practice Problems #</a></li>
+<li data-line="34" dir="auto"><a class="internal-link" data-href="#lab-5-inheritance" href="#lab-5-inheritance" target="_self" rel="noopener nofollow">Lab 5: Inheritance</a></li>
+<li data-line="35" dir="auto"><a class="internal-link" data-href="#problem-set-5" href="#problem-set-5" target="_self" rel="noopener nofollow">Problem Set 5</a></li>
+<li data-line="36" dir="auto"><a class="internal-link" data-href="#what-to-do" href="#what-to-do" target="_self" rel="noopener nofollow">What to Do</a></li>
+<li data-line="37" dir="auto"><a class="internal-link" data-href="#advice" href="#advice" target="_self" rel="noopener nofollow">Advice</a></li>
+</ul>
+</li>
+</ul></div><div></div><div class="el-h1 heading-wrapper"><h1 data-heading="Lecture 5" dir="auto" class="heading" id="Lecture_5">Lecture 5</h1><div class="heading-children"><div class="el-details"><details>
+<summary>Keywords, lookup in <a href="./src/transcripts/lecture5.md" target="_blank" rel="noopener nofollow">transcript</a></summary></details></div><div class="el-ul"><ul>
+<li data-line="0" dir="auto">abstract data types</li>
+<li data-line="1" dir="auto">enqueue, dequeue</li>
+<li data-line="2" dir="auto">stack</li>
+<li data-line="3" dir="auto"><code>realloc()</code></li>
+<li data-line="4" dir="auto">struct operator (<code>-&gt;</code>)</li>
+<li data-line="5" dir="auto">linked list</li>
+<li data-line="6" dir="auto">node</li>
+<li data-line="7" dir="auto">self referential</li>
+<li data-line="8" dir="auto">traversing, search</li>
+<li data-line="9" dir="auto">branches</li>
+<li data-line="10" dir="auto">trees</li>
+<li data-line="11" dir="auto">root</li>
+<li data-line="12" dir="auto">balance</li>
+<li data-line="13" dir="auto">hashing, domain</li>
+<li data-line="14" dir="auto">collisions, linear probing, clustering</li>
+<li data-line="15" dir="auto">memory, amount of space</li>
+</ul></div><div></div><div class="el-h2 heading-wrapper"><h2 data-heading="Welcome! [#](https://cs50.harvard.edu/x/2023/notes/5//#welcome)" dir="auto" class="heading" id="Welcome!_[#](https://cs50.harvard.edu/x/2023/notes/5//#welcome)"><div class="heading-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle"><path d="M3 8L12 17L21 8"></path></svg></div>Welcome! <a data-tooltip-position="top" aria-label="https://cs50.harvard.edu/x/2023/notes/5//#welcome" rel="noopener nofollow" class="external-link" href="https://cs50.harvard.edu/x/2023/notes/5//#welcome" target="_blank">#</a></h2><div class="heading-children"><div class="el-ul"><ul>
+<li data-line="0" dir="auto">All the prior weeks have presented you with the fundamental building blocks of programming.</li>
+<li data-line="1" dir="auto">All you have learned in C will enable you to implement these building blocks in higher-level programming languages such as Python.</li>
+<li data-line="2" dir="auto">Today, we are going to talk about organizing data in memory.</li>
+</ul></div></div></div><div class="el-h2 heading-wrapper"><h2 data-heading="Data Structures" dir="auto" class="heading" id="Data_Structures"><div class="heading-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle"><path d="M3 8L12 17L21 8"></path></svg></div>Data Structures</h2><div class="heading-children"><div class="el-p"><p dir="auto"><em>Data structures</em> essentially are forms of organization in memory and there are many ways to organize data in memory.</p></div><div class="el-p"><p dir="auto"><em>Abstract data structures</em> are those that we can conceptually imagine. When learning about computer science, it’s often useful to begin with these conceptual data structures. Learning these will make it easier later to understand how to implement more concrete data structures.</p></div></div></div><div class="el-h2 heading-wrapper"><h2 data-heading="Stacks and Queues" dir="auto" class="heading" id="Stacks_and_Queues"><div class="heading-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle"><path d="M3 8L12 17L21 8"></path></svg></div>Stacks and Queues</h2><div class="heading-children"><div class="el-p"><p dir="auto"><a class="internal-link" data-href="ds_queue.md" href="docs/ds_queue.html" target="_self" rel="noopener nofollow"><em>Queues</em></a> are one form of abstract data structure. They have specific properties. Namely, they are FIFO or “first in first out.”</p></div><div class="el-blockquote"><blockquote dir="auto">
+<p>E.g. you can imagine yourself in a line for a ride at an amusement park. The first person in the line gets to go on the ride first. The last person gets to go on the ride last.</p>
+</blockquote></div><div class="el-p"><p dir="auto">Queues have specific actions associated with them. For example, </p></div><div class="el-ul"><ul>
+<li data-line="0" dir="auto">an item can be <em>enqueued</em>; that is, the item can join the line or queue. </li>
+<li data-line="1" dir="auto">an item can be <em>dequeued</em> or leave the queue once it reaches the front of the line.</li>
+</ul></div><div class="el-p"><p dir="auto">Queues contrast is a <em>Stack</em>. Fundamentally, the properties of a stack are different than a queue. Specifically, it is <em>LIFO</em> or “last in first out.”</p></div><div class="el-blockquote"><blockquote dir="auto">
+<p>E.g. like stacking trays in a cafeteria, a tray that is placed in a stack last is the first that may be picked up.</p>
+</blockquote></div><div class="el-p"><p dir="auto">Stacks have specific actions associated with them. For example, <em>push</em> places something on top of a stack. <em>Pop</em> is removing something from the top of the stack.</p></div><div class="el-ul"><ul>
+<li data-line="0" dir="auto" class="has-run-code-button">
+<p>In code, you might imagine a stack as follows:</p>
+<pre class="language-c" tabindex="0"><code data-line="2" class="language-c is-loaded"><span class="token keyword">const</span> <span class="token keyword">int</span> CAPACITY <span class="token operator">=</span> <span class="token number">50</span><span class="token punctuation">;</span>
+
+<span class="token keyword">typedef</span> <span class="token keyword">struct</span>
+<span class="token punctuation">{</span>
+    person people<span class="token punctuation">[</span>CAPACITY<span class="token punctuation">]</span><span class="token punctuation">;</span>
+    <span class="token keyword">int</span> size<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+stack<span class="token punctuation">;</span>
+</code><button class="copy-code-button"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon lucide-copy"><rect x="8" y="8" width="14" height="14" rx="2" ry="2"></rect><path d="M4 16c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2"></path></svg></button><button class="run-code-button">Run</button></pre>
+<p>Notice that an array called people is of type <code>person</code>. The <code>CAPACITY</code> is how high the stack could be. The integer <code>size</code> is how full the stack actually is, regardless of how much it <em>could</em> hold.</p>
+</li>
+</ul></div><div class="el-p"><p dir="auto">The above code has a limitation that resides in the static size of the <code>CAPACITY</code>, it can be modified to a dynamic memory allocation using <code>malloc()</code> or even <code>realloc()</code>. This will be demonstrated below.</p></div></div></div><div class="el-h2 heading-wrapper"><h2 data-heading="Resizing Arrays" dir="auto" class="heading" id="Resizing_Arrays"><div class="heading-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle"><path d="M3 8L12 17L21 8"></path></svg></div>Resizing Arrays</h2><div class="heading-children"><div class="el-ul"><ul>
+<li data-line="0" dir="auto">
+<p>Rewinding to Week 2, we introduced you to your first data structure.</p>
+</li>
+<li data-line="1" dir="auto">
+<p>An array is a block of contiguous memory.</p>
+</li>
+<li data-line="2" dir="auto">
+<p>You might imagine an array as follows:</p>
+<p><img title="array" alt="three boxes with 1 2 3" src="https://cs50.harvard.edu/x/2023/notes/5//cs50Week5Slide019.png" referrerpolicy="no-referrer"></p>
+</li>
+<li data-line="6" dir="auto">
+<p>In memory, there are other values being stored by other programs, functions, and variables. Many of these may be unused garbage values that were utilized at one point but are available now for use.</p>
+<p><img title="array inside memory" alt="three boxes with 1 2 3 among lots of other memory elements" src="https://cs50.harvard.edu/x/2023/notes/5//cs50Week5Slide022.png" referrerpolicy="no-referrer"></p>
+</li>
+<li data-line="10" dir="auto">
+<p>Imagine you wanted to store a fourth value <code>4</code> in our array? What would be needed is to allocate a new area of memory and move the old array to a new one.<br>
+<img title="two arrays with garbage values" alt="Three boxes with 1 2 3 above four boxes with 1 2 and two garbage values" src="https://cs50.harvard.edu/x/2023/notes/5//cs50Week5Slide025.png" referrerpolicy="no-referrer"></p>
+</li>
+<li data-line="13" dir="auto">
+<p>Old garbage values would be overwritten with our new data.<br>
+<img title="two arrays with garbage value" alt="Three boxes with 1 2 3 above four boxes with 1 2 3 and a garbage value" src="https://cs50.harvard.edu/x/2023/notes/5//cs50Week5Slide026.png" referrerpolicy="no-referrer"></p>
+</li>
+<li data-line="15" dir="auto">
+<p>One of the drawbacks of this approach is that it’s bad design: Every time we add a number, we have to copy the array item by item.</p>
+</li>
+<li data-line="16" dir="auto">
+<p>Wouldn’t it be nice if we were able to put the <code>4</code> somewhere else in memory? By definition, this would no longer be an array because <code>4</code> would no longer be in contiguous memory.</p>
+</li>
+<li data-line="17" dir="auto" class="has-run-code-button">
+<p>In your terminal, type <code>code list.c</code> and write code as follows:</p>
+<pre class="language-c" tabindex="0"><code data-line="19" class="language-c is-loaded"><span class="token comment">// Implements a list of numbers with an array of fixed size</span>
+
+<span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">include</span> <span class="token string">&lt;stdio.h&gt;</span></span>
+
+<span class="token keyword">int</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token keyword">void</span><span class="token punctuation">)</span>
+<span class="token punctuation">{</span>
+    <span class="token comment">// List of size 3</span>
+    <span class="token keyword">int</span> list<span class="token punctuation">[</span><span class="token number">3</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+
+    <span class="token comment">// Initialize list with numbers</span>
+    list<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token number">1</span><span class="token punctuation">;</span>
+    list<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token number">2</span><span class="token punctuation">;</span>
+    list<span class="token punctuation">[</span><span class="token number">2</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token number">3</span><span class="token punctuation">;</span>
+
+    <span class="token comment">// Print list</span>
+    <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">int</span> i <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> i <span class="token operator">&lt;</span> <span class="token number">3</span><span class="token punctuation">;</span> i<span class="token operator">++</span><span class="token punctuation">)</span>
+    <span class="token punctuation">{</span>
+        <span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"%i\n"</span><span class="token punctuation">,</span> list<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code><button class="copy-code-button"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon lucide-copy"><rect x="8" y="8" width="14" height="14" rx="2" ry="2"></rect><path d="M4 16c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2"></path></svg></button><button class="run-code-button">Run</button></pre>
+<p>Notice that the above is very much like what we learned earlier in this course. We have memory being preallocated for three items.</p>
+</li>
+<li data-line="44" dir="auto" class="has-run-code-button">
+<p>Building upon our knowledge obtained more recently, we can leverage our understanding of pointers to create a better design in this code. Modify your code as follows:</p>
+<pre class="language-c" tabindex="0"><code data-line="46" class="language-c is-loaded"><span class="token comment">// Implements a list of numbers with an array of dynamic size</span>
+
+<span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">include</span> <span class="token string">&lt;stdio.h&gt;</span></span>
+<span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">include</span> <span class="token string">&lt;stdlib.h&gt;</span></span>
+
+<span class="token keyword">int</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token keyword">void</span><span class="token punctuation">)</span>
+<span class="token punctuation">{</span>
+    <span class="token comment">// List of size 3</span>
+    <span class="token keyword">int</span> <span class="token operator">*</span>list <span class="token operator">=</span> <span class="token function">malloc</span><span class="token punctuation">(</span><span class="token number">3</span> <span class="token operator">*</span> <span class="token keyword">sizeof</span><span class="token punctuation">(</span><span class="token keyword">int</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span>list <span class="token operator">==</span> <span class="token constant">NULL</span><span class="token punctuation">)</span>
+    <span class="token punctuation">{</span>
+        <span class="token keyword">return</span> <span class="token number">1</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+    
+    <span class="token comment">// Initialize list of size 3 with numbers</span>
+    list<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token number">1</span><span class="token punctuation">;</span>
+    list<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token number">2</span><span class="token punctuation">;</span>
+    list<span class="token punctuation">[</span><span class="token number">2</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token number">3</span><span class="token punctuation">;</span>
+    
+    <span class="token comment">// List of size 4</span>
+    <span class="token keyword">int</span> <span class="token operator">*</span>tmp <span class="token operator">=</span> <span class="token function">malloc</span><span class="token punctuation">(</span><span class="token number">4</span> <span class="token operator">*</span> <span class="token keyword">sizeof</span><span class="token punctuation">(</span><span class="token keyword">int</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span>tmp <span class="token operator">==</span> <span class="token constant">NULL</span><span class="token punctuation">)</span>
+    <span class="token punctuation">{</span>
+        <span class="token function">free</span><span class="token punctuation">(</span>list<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token keyword">return</span> <span class="token number">1</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+    
+    <span class="token comment">// Copy list of size 3 into list of size 4</span>
+    <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">int</span> i <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> i <span class="token operator">&lt;</span> <span class="token number">3</span><span class="token punctuation">;</span> i<span class="token operator">++</span><span class="token punctuation">)</span>
+    <span class="token punctuation">{</span>
+        tmp<span class="token punctuation">[</span>i<span class="token punctuation">]</span> <span class="token operator">=</span> list<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+    
+    <span class="token comment">// Add number to list of size 4</span>
+    tmp<span class="token punctuation">[</span><span class="token number">3</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token number">4</span><span class="token punctuation">;</span>
+    
+    <span class="token comment">// Free list of size 3</span>
+    <span class="token function">free</span><span class="token punctuation">(</span>list<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    
+    <span class="token comment">// Remember list of size 4</span>
+    list <span class="token operator">=</span> tmp<span class="token punctuation">;</span>
+    
+    <span class="token comment">// Print list</span>
+    <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">int</span> i <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> i <span class="token operator">&lt;</span> <span class="token number">4</span><span class="token punctuation">;</span> i<span class="token operator">++</span><span class="token punctuation">)</span>
+    <span class="token punctuation">{</span>
+        <span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"%i\n"</span><span class="token punctuation">,</span> list<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+    
+    <span class="token comment">// Free list</span>
+    <span class="token function">free</span><span class="token punctuation">(</span>list<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">return</span> <span class="token number">0</span><span class="token punctuation">;</span>
+</code><button class="copy-code-button"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon lucide-copy"><rect x="8" y="8" width="14" height="14" rx="2" ry="2"></rect><path d="M4 16c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2"></path></svg></button><button class="run-code-button">Run</button></pre>
+<p>Notice that a list of size three integers is created. Then, three memory addresses can be assigned the values <code>1</code>, <code>2</code>, and <code>3</code>. Then, a list of size four is created. Next, the list is copied from the first to the second. The value for the <code>4</code> is added to the <code>tmp</code> list. Since the block of memory that <code>list</code> points to is no longer used, it is freed using the command <code>free(list)</code>. Finally, the compiler is told to point <code>list</code> pointer now to the block of memory that <code>tmp</code> points to. The contents of <code>list</code> are printed and then freed.</p>
+</li>
+<li data-line="102" dir="auto">
+<p>It’s useful to think about <code>list</code> and <code>tmp</code> as both signs that point at a chunk of memory. As in the example above, <code>list</code> at one point <em>pointed</em> to an array of size 3. By the end, <code>list</code> was told to point to a chunk of memory of size 4. Technically, by the end of the above code, <code>tmp</code> and <code>list</code> both pointed to the same block of memory.</p>
+</li>
+<li data-line="103" dir="auto" class="has-run-code-button">
+<p>C comes with a very useful function called <code>realloc</code> that will reallocate the memory for you. <code>realloc</code> takes two arguments. First, it asks you to specify the array you are attempting to copy. Second, it asks you to specify the size to which you would like the final array to be. Modify your code as follows:</p>
+<pre class="language-c" tabindex="0"><code data-line="105" class="language-c is-loaded"><span class="token comment">// Implements a list of numbers with an array of dynamic size using realloc</span>
+
+<span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">include</span> <span class="token string">&lt;stdio.h&gt;</span></span>
+<span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">include</span> <span class="token string">&lt;stdlib.h&gt;</span></span>
+
+<span class="token keyword">int</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token keyword">void</span><span class="token punctuation">)</span>
+<span class="token punctuation">{</span>
+    <span class="token comment">// List of size 3</span>
+    <span class="token keyword">int</span> <span class="token operator">*</span>list <span class="token operator">=</span> <span class="token function">malloc</span><span class="token punctuation">(</span><span class="token number">3</span> <span class="token operator">*</span> <span class="token keyword">sizeof</span><span class="token punctuation">(</span><span class="token keyword">int</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span>list <span class="token operator">==</span> <span class="token constant">NULL</span><span class="token punctuation">)</span>
+    <span class="token punctuation">{</span>
+        <span class="token keyword">return</span> <span class="token number">1</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+    
+    <span class="token comment">// Initialize list of size 3 with numbers</span>
+    list<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token number">1</span><span class="token punctuation">;</span>
+    list<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token number">2</span><span class="token punctuation">;</span>
+    list<span class="token punctuation">[</span><span class="token number">2</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token number">3</span><span class="token punctuation">;</span>
+    
+    <span class="token comment">// Resize list to be of size 4</span>
+    <span class="token keyword">int</span> <span class="token operator">*</span>tmp <span class="token operator">=</span> <span class="token function">realloc</span><span class="token punctuation">(</span>list<span class="token punctuation">,</span> <span class="token number">4</span> <span class="token operator">*</span> <span class="token keyword">sizeof</span><span class="token punctuation">(</span><span class="token keyword">int</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span>tmp <span class="token operator">==</span> <span class="token constant">NULL</span><span class="token punctuation">)</span>
+    <span class="token punctuation">{</span>
+        <span class="token function">free</span><span class="token punctuation">(</span>list<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token keyword">return</span> <span class="token number">1</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+    list <span class="token operator">=</span> tmp<span class="token punctuation">;</span>
+    
+    <span class="token comment">// Add number to list</span>
+    list<span class="token punctuation">[</span><span class="token number">3</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token number">4</span><span class="token punctuation">;</span>
+    
+    <span class="token comment">// Print list</span>
+    <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">int</span> i <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> i <span class="token operator">&lt;</span> <span class="token number">4</span><span class="token punctuation">;</span> i<span class="token operator">++</span><span class="token punctuation">)</span>
+    <span class="token punctuation">{</span>
+        <span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"%i\n"</span><span class="token punctuation">,</span> list<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+    
+    <span class="token comment">// Free list</span>
+    <span class="token function">free</span><span class="token punctuation">(</span>list<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">return</span> <span class="token number">0</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code><button class="copy-code-button"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon lucide-copy"><rect x="8" y="8" width="14" height="14" rx="2" ry="2"></rect><path d="M4 16c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2"></path></svg></button><button class="run-code-button">Run</button></pre>
+<p>Notice that <code>int *tmp = realloc(list, 4 * sizeof(int))</code> creates a list of size four integers. Then, it copies the values of <code>list</code> to this new array. Finally, a pointer called <code>tmp</code> points to the location of memory of this new array. The copying is handled by <code>realloc</code>. Once that copy is made, the memory at the location of <code>list</code> is freed. Then, the pointer called <code>list</code> is pointed at the location of <code>tmp</code>, where the new array is located.</p>
+</li>
+<li data-line="151" dir="auto">
+<p>You can imagine how using <code>realloc()</code> for a queue or stack could be useful. As the amount of data grows, <code>realloc</code> could be used to grow or shrink the stack or queue. The process time will grow as the amount of data increases.</p>
+</li>
+</ul></div></div></div><div class="el-h2 heading-wrapper"><h2 data-heading="[Linked Lists](ds_linked_list.md)" dir="auto" class="heading" id="[Linked_Lists](ds_linked_list.md)"><div class="heading-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle"><path d="M3 8L12 17L21 8"></path></svg></div><a class="internal-link" data-href="ds_linked_list.md" href="docs/ds_linked_list.html" target="_self" rel="noopener nofollow">Linked Lists</a></h2><div class="heading-children"><div class="el-blockquote"><blockquote dir="auto">
+<p>In recent weeks, you have learned about three useful primitives. A <code>struct</code> is a data type that you can define yourself. A <code>.</code> in <em>dot notation</em> allows you to access variables inside that structure. The <code>*</code> operator is used to declare a pointer or dereference a variable.</p>
+</blockquote></div><div class="el-p"><p dir="auto">Today, you are introduced to the Arrow (<code>-&gt;</code>) operator. It goes to an address and looks inside of a structure, i.e. allows to access elements in <a data-tooltip-position="top" aria-label="https://www.geeksforgeeks.org/structures-in-cpp/" rel="noopener nofollow" class="external-link" href="https://www.geeksforgeeks.org/structures-in-cpp/" target="_blank">Structures</a> and <a data-tooltip-position="top" aria-label="https://www.geeksforgeeks.org/union-c/" rel="noopener nofollow" class="external-link" href="https://www.geeksforgeeks.org/union-c/" target="_blank">Unions</a>. It is used with a <a data-tooltip-position="top" aria-label="https://www.geeksforgeeks.org/self-referential-structures/" rel="noopener nofollow" class="external-link" href="https://www.geeksforgeeks.org/self-referential-structures/" target="_blank">pointer variable pointing to a structure or union</a>. The arrow operator is formed by using a minus sign, followed by the greater than symbol as shown below.&nbsp;<br>
+<strong>Syntax:</strong>&nbsp;&nbsp;</p></div><div class="el-pre has-run-code-button"><pre class="language-c" tabindex="0"><code data-line="0" class="language-c is-loaded">pointer_name <span class="token operator">-&gt;</span> variable_name
+</code><button class="copy-code-button"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon lucide-copy"><rect x="8" y="8" width="14" height="14" rx="2" ry="2"></rect><path d="M4 16c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2"></path></svg></button><button class="run-code-button">Run</button></pre></div><div class="el-h3 heading-wrapper"><h3 data-heading="Operation" dir="auto" class="heading" id="Operation"><div class="heading-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle"><path d="M3 8L12 17L21 8"></path></svg></div>Operation</h3><div class="heading-children"><div class="el-p"><p dir="auto">The <code>-&gt;</code>  gives the value held by <code>variable_name</code> to structure or union variable <code>pointer_name</code>.</p></div></div></div><div class="el-h3 heading-wrapper"><h3 data-heading="Difference between Dot(`.`) and Arrow(`->`) operator" dir="auto" class="heading" id="Difference_between_Dot(`.`)_and_Arrow(`->`)_operator"><div class="heading-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle"><path d="M3 8L12 17L21 8"></path></svg></div>Difference between Dot(<code>.</code>) and Arrow(<code>-&gt;</code>) operator&nbsp;</h3><div class="heading-children"><div class="el-ul"><ul>
+<li data-line="0" dir="auto">The Dot(<code>.</code>) operator is used to normally access members of a structure or union.</li>
+<li data-line="1" dir="auto">The Arrow(<code>-&gt;</code>) operator exists to access the members of the structure or the unions using pointers.</li>
+</ul></div><div class="el-p"><p dir="auto">A <em>Linked list</em> is one of the most powerful data structures within C. A linked list allows you to include values that are located at varying areas of memory. Further, they allow you to dynamically grow and shrink the list as you desire.</p></div><div class="el-p"><p dir="auto">You might imagine three values stored at three different areas of memory as follows:</p></div><div class="el-p"><p dir="auto"><img title="three values in memory" alt="Three boxes with 1 2 3 in separate areas of memory" src="https://cs50.harvard.edu/x/2023/notes/5//cs50Week5Slide036.png" referrerpolicy="no-referrer"></p></div><div class="el-ul"><ul>
+<li data-line="0" dir="auto">
+<p>How could one stitch together these values in a list?</p>
+</li>
+<li data-line="1" dir="auto">
+<p>We could imagine this data pictured above as follows:<br>
+<img title="three values in memory" alt="Three boxes with 1 2 3 in separate areas of memory with smaller boxes attached" src="https://cs50.harvard.edu/x/2023/notes/5//cs50Week5Slide037.png" referrerpolicy="no-referrer"></p>
+</li>
+<li data-line="4" dir="auto">
+<p>We could utilize more memory to keep track of where the next item is.</p>
+<p><img title="three values in memory" alt="Three boxes with 1 2 3 in separate areas of memory with smaller boxes attached where memory addresses are in those attached boxes" src="https://cs50.harvard.edu/x/2023/notes/5//cs50Week5Slide041.png" referrerpolicy="no-referrer"></p>
+<p>Notice that NULL is utilized to indicate that nothing else is <em>next</em> in the list.</p>
+</li>
+<li data-line="9" dir="auto">
+<p>By convention, we would keep one more element in memory, a pointer, that keeps track of the first item in the list.c<br>
+<img title="three values in memory with pointer" alt="Three boxes with 1 2 3 in separate areas of memory with smaller boxes attached where memory addresses are in those attached boxes now with a final box with the memory address of the first box" src="https://cs50.harvard.edu/x/2023/notes/5//cs50Week5Slide042.png" referrerpolicy="no-referrer"></p>
+</li>
+<li data-line="12" dir="auto">
+<p>Abstracting away the memory addresses, the list would appear as follows:<br>
+<img title="three values in memory with pointer" alt="Three boxes with in separate areas of memory with smaller boxes with a final box where the one box points to another and another until the end of the boxes" src="https://cs50.harvard.edu/x/2023/notes/5//cs50Week5Slide043.png" referrerpolicy="no-referrer"></p>
+</li>
+</ul></div><div class="el-p"><p dir="auto">The elements (boxes) are called <em>nodes</em>. A <em>node</em> contains both an <em>item</em> and a pointer called <em>next</em>. In code, you can imagine a node as follows:</p></div><div class="el-pre has-run-code-button"><pre class="language-c" tabindex="0"><code data-line="0" class="language-c is-loaded"><span class="token keyword">typedef</span> <span class="token keyword">struct</span> <span class="token class-name">node</span>
+<span class="token punctuation">{</span>
+    <span class="token keyword">int</span> number<span class="token punctuation">;</span>
+    <span class="token keyword">struct</span> <span class="token class-name">node</span> <span class="token operator">*</span>next<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+node<span class="token punctuation">;</span>
+</code><button class="copy-code-button"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon lucide-copy"><rect x="8" y="8" width="14" height="14" rx="2" ry="2"></rect><path d="M4 16c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2"></path></svg></button><button class="run-code-button">Run</button></pre></div><div class="el-blockquote"><blockquote dir="auto">
+<p>Notice that the item contained within this node is an integer called <code>number</code>. Second, a pointer to a node called <code>next</code> is included, which will point to another node somewhere in memory.</p>
+</blockquote></div><div class="el-p"><p dir="auto"><strong>Linked lists are not stored in a contiguous block of memory.</strong> They can grow as large as you wish, provided that enough system resources exist. </p></div><div class="el-p"><p dir="auto">The downside, however, is that <strong>more memory is required to keep track of the list instead of an array</strong>. This is because for each element, you must store not just the value of the element, but also a pointer to the next node. Further, linked lists <strong>cannot be indexed</strong> into like is possible in an array because we need to pass through the first <code>n−1</code> elements to find the location of the <code>nth</code> element.</p></div><div class="el-p"><p dir="auto">Because of this, the list pictured above must be linearly searched. Binary search, therefore, is not possible in a list constructed as above.</p></div><div class="el-ul"><ul>
+<li data-line="0" dir="auto">
+<p>Conceptually, we can imagine the process of creating a linked list. First, <code>node *list</code> is declared, but it is of a garbage value.<br>
+<img title="linked list" alt="One garbage value" src="https://cs50.harvard.edu/x/2023/notes/5//cs50Week5Slide055.png" referrerpolicy="no-referrer"></p>
+</li>
+<li data-line="2" dir="auto">
+<p>Next, a node called <code>n</code> is allocated in memory.<br>
+<img title="linked list" alt="One garbage value called n with another pointer called list" src="https://cs50.harvard.edu/x/2023/notes/5//cs50Week5Slide059.png" referrerpolicy="no-referrer"></p>
+</li>
+<li data-line="4" dir="auto">
+<p>Next, the <code>number</code> of node is assigned the value <code>1</code>.<br>
+<img title="linked list" alt="n pointing to a node with 1 as the number and garbage value as the next" src="https://cs50.harvard.edu/x/2023/notes/5//cs50Week5Slide064.png" referrerpolicy="no-referrer"></p>
+</li>
+<li data-line="6" dir="auto">
+<p>Next, the node’s <code>next</code> field is assigned <code>NULL</code>.<br>
+<img title="linked list" alt="n pointing to a node with 1 as the number and null as the value of next" src="https://cs50.harvard.edu/x/2023/notes/5//cs50Week5Slide066.png" referrerpolicy="no-referrer"></p>
+</li>
+<li data-line="8" dir="auto">
+<p>Next, <code>list</code> is pointed at the memory location to where <code>n</code> points. <code>n</code> and <code>list</code> now point to the same place.<br>
+<img title="linked list" alt="n and list both pointing to a node with 1 as the number and null as the value of next" src="https://cs50.harvard.edu/x/2023/notes/5//cs50Week5Slide068.png" referrerpolicy="no-referrer"></p>
+</li>
+<li data-line="11" dir="auto">
+<p>A new node is then created. Both the <code>number</code> and <code>next</code> field are both filled with garbage values.<br>
+<img title="linked list" alt="list pointing to a node with 1 as the number and null as the value of next and n pointing to a new node with garbage values" src="https://cs50.harvard.edu/x/2023/notes/5//cs50Week5Slide073.png" referrerpolicy="no-referrer"></p>
+</li>
+<li data-line="13" dir="auto">
+<p>The <code>number</code> value of <code>n</code>’s node (the new node) is updated to <code>2</code>.</p>
+<p><img title="linked list" alt="list pointing to a node with 1 as the number and null as the value of next and n pointing to a new node with 2 as the number and garbage as the next" src="https://cs50.harvard.edu/x/2023/notes/5//cs50Week5Slide075.png" referrerpolicy="no-referrer"></p>
+</li>
+<li data-line="17" dir="auto">
+<p>Also, the <code>next</code> field is updated as well.<br>
+<img title="linked list" alt="list pointing to a node with 1 as the number and null as the value of next and n pointing to a new node with 2 as the number and null as the next" src="https://cs50.harvard.edu/x/2023/notes/5//cs50Week5Slide077.png" referrerpolicy="no-referrer"></p>
+</li>
+<li data-line="19" dir="auto">
+<p>Most important, we do not want to lose our connection to any of these nodes lest they be lost forever. Accordingly, <code>n</code>’s <code>next</code> field is pointed to the same memory location as <code>list</code>.</p>
+<p><img title="linked list" alt="list pointing to a node with 1 as the number and null as the value of next and n pointing to a new node with 2 as the number and null as the next" src="https://cs50.harvard.edu/x/2023/notes/5//cs50Week5Slide084.png" referrerpolicy="no-referrer"></p>
+</li>
+<li data-line="23" dir="auto">
+<p>Finally, <code>list</code> is updated to point at <code>n</code>. We now have a linked list of two items.<br>
+<img title="linked list" alt="list pointing to a node with 1 as the number and next pointing to a node with an n pointing the same place the node with one points to a node with 2 as the number and null as the next" src="https://cs50.harvard.edu/x/2023/notes/5//cs50Week5Slide086.png" referrerpolicy="no-referrer"></p>
+</li>
+</ul></div><div class="el-p"><p dir="auto">To implement this in code, modify your code as follows:</p></div><div class="el-pre has-run-code-button"><pre class="language-c" tabindex="0"><code data-line="0" class="language-c is-loaded"><span class="token comment">// Prepends numbers to a linked list, using while loop to print</span>
+
+<span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">include</span> <span class="token string">&lt;cs50.h&gt;</span></span>
+<span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">include</span> <span class="token string">&lt;stdio.h&gt;</span></span>
+<span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">include</span> <span class="token string">&lt;stdlib.h&gt;</span></span>
+
+<span class="token keyword">typedef</span> <span class="token keyword">struct</span> <span class="token class-name">node</span>
+<span class="token punctuation">{</span>
+	<span class="token keyword">int</span> number<span class="token punctuation">;</span>
+	<span class="token keyword">struct</span> <span class="token class-name">node</span><span class="token operator">*</span> next<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+node<span class="token punctuation">;</span>
+
+<span class="token keyword">int</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token keyword">int</span> argc<span class="token punctuation">,</span> <span class="token keyword">char</span> <span class="token operator">*</span>argv<span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
+<span class="token punctuation">{</span>
+	<span class="token comment">// Memory for numbers</span>
+	node <span class="token operator">*</span>list <span class="token operator">=</span> <span class="token constant">NULL</span><span class="token punctuation">;</span>
+	
+	<span class="token comment">// For each command-line argument</span>
+	<span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">int</span> i <span class="token operator">=</span> <span class="token number">1</span><span class="token punctuation">;</span> i <span class="token operator">&lt;</span> argc<span class="token punctuation">;</span> i<span class="token operator">++</span><span class="token punctuation">)</span>
+	<span class="token punctuation">{</span>
+		<span class="token comment">// Convert argument to int</span>
+		<span class="token keyword">int</span> number <span class="token operator">=</span> <span class="token function">atoi</span><span class="token punctuation">(</span>argv<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+		
+		<span class="token comment">// Allocate node for number</span>
+		node <span class="token operator">*</span>n <span class="token operator">=</span> <span class="token function">malloc</span><span class="token punctuation">(</span><span class="token keyword">sizeof</span><span class="token punctuation">(</span>node<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+		<span class="token keyword">if</span> <span class="token punctuation">(</span>n <span class="token operator">==</span> <span class="token constant">NULL</span><span class="token punctuation">)</span>
+		<span class="token punctuation">{</span>
+			<span class="token keyword">return</span> <span class="token number">1</span><span class="token punctuation">;</span>
+		<span class="token punctuation">}</span>
+		n<span class="token operator">-&gt;</span>number <span class="token operator">=</span> number<span class="token punctuation">;</span>
+		n<span class="token operator">-&gt;</span>next <span class="token operator">=</span> <span class="token constant">NULL</span><span class="token punctuation">;</span>
+		
+		<span class="token comment">// Prepend node to list</span>
+		n<span class="token operator">-&gt;</span>next <span class="token operator">=</span> list<span class="token punctuation">;</span>
+		list <span class="token operator">=</span> n<span class="token punctuation">;</span>
+	<span class="token punctuation">}</span>
+	
+	<span class="token comment">// Print numbers</span>
+	node <span class="token operator">*</span>ptr <span class="token operator">=</span> list<span class="token punctuation">;</span>
+	<span class="token keyword">while</span> <span class="token punctuation">(</span>ptr <span class="token operator">!=</span> <span class="token constant">NULL</span><span class="token punctuation">)</span>
+	<span class="token punctuation">{</span>
+		<span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"%i\n"</span><span class="token punctuation">,</span> ptr<span class="token operator">-&gt;</span>number<span class="token punctuation">)</span><span class="token punctuation">;</span>
+		ptr <span class="token operator">=</span> ptr<span class="token operator">-&gt;</span>next<span class="token punctuation">;</span>
+	<span class="token punctuation">}</span>
+	
+	<span class="token comment">// Free memory</span>
+	ptr <span class="token operator">=</span> list<span class="token punctuation">;</span>
+	<span class="token keyword">while</span> <span class="token punctuation">(</span>ptr <span class="token operator">!=</span> <span class="token constant">NULL</span><span class="token punctuation">)</span>
+	<span class="token punctuation">{</span>
+		node <span class="token operator">*</span>next <span class="token operator">=</span> ptr<span class="token operator">-&gt;</span>next<span class="token punctuation">;</span>
+		<span class="token function">free</span><span class="token punctuation">(</span>ptr<span class="token punctuation">)</span><span class="token punctuation">;</span>
+		ptr <span class="token operator">=</span> next<span class="token punctuation">;</span>
+	<span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code><button class="copy-code-button"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon lucide-copy"><rect x="8" y="8" width="14" height="14" rx="2" ry="2"></rect><path d="M4 16c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2"></path></svg></button><button class="run-code-button">Run</button></pre></div></div></div><div class="el-h3 heading-wrapper"><h3 data-heading="Struct Definition" dir="auto" class="heading" id="Struct_Definition"><div class="heading-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle"><path d="M3 8L12 17L21 8"></path></svg></div>Struct Definition</h3><div class="heading-children"><div class="el-pre has-run-code-button"><pre class="language-c" tabindex="0"><code data-line="0" class="language-c is-loaded"><span class="token keyword">typedef</span> <span class="token keyword">struct</span> <span class="token class-name">node</span>
+<span class="token punctuation">{</span>
+    <span class="token keyword">int</span> number<span class="token punctuation">;</span>
+    <span class="token keyword">struct</span> <span class="token class-name">node</span><span class="token operator">*</span> next<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+node<span class="token punctuation">;</span>
+</code><button class="copy-code-button"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon lucide-copy"><rect x="8" y="8" width="14" height="14" rx="2" ry="2"></rect><path d="M4 16c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2"></path></svg></button><button class="run-code-button">Run</button></pre></div><div class="el-p"><p dir="auto">The <code>node</code> is defined as a <code>struct</code>, which represents a single node in the linked list. Each node contains an <code>int</code> variable called <code>number</code> to store the value and a pointer <code>next</code> that points to the next node in the list.</p></div><div class="el-p"><p dir="auto"><strong>Is important to know that as the struct refers to itself, a temporary name must be given in order to the next (struct) pointer utilize the same attributes.</strong> So it could be written in this way, and it still works. </p></div><div class="el-pre has-run-code-button"><pre class="language-c" tabindex="0"><code data-line="0" class="language-c is-loaded"><span class="token keyword">typedef</span> <span class="token keyword">struct</span> <span class="token class-name">temp</span>
+<span class="token punctuation">{</span>
+	<span class="token keyword">int</span> number<span class="token punctuation">;</span>
+	<span class="token keyword">struct</span> <span class="token class-name">temp</span><span class="token operator">*</span> next
+<span class="token punctuation">}</span>
+node<span class="token punctuation">;</span>
+</code><button class="copy-code-button"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon lucide-copy"><rect x="8" y="8" width="14" height="14" rx="2" ry="2"></rect><path d="M4 16c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2"></path></svg></button><button class="run-code-button">Run</button></pre></div></div></div><div class="el-h3 heading-wrapper"><h3 data-heading="Main Function" dir="auto" class="heading" id="Main_Function"><div class="heading-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle"><path d="M3 8L12 17L21 8"></path></svg></div>Main Function</h3><div class="heading-children"><div class="el-pre has-run-code-button"><pre class="language-c" tabindex="0"><code data-line="0" class="language-c is-loaded"><span class="token keyword">int</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token keyword">int</span> argc<span class="token punctuation">,</span> <span class="token keyword">char</span> <span class="token operator">*</span>argv<span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
+<span class="token punctuation">{</span>
+    node <span class="token operator">*</span>list <span class="token operator">=</span> <span class="token constant">NULL</span><span class="token punctuation">;</span>
+</code><button class="copy-code-button"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon lucide-copy"><rect x="8" y="8" width="14" height="14" rx="2" ry="2"></rect><path d="M4 16c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2"></path></svg></button><button class="run-code-button">Run</button></pre></div><div class="el-p"><p dir="auto">The <code>main</code> function is the entry point of the program. It declares a pointer <code>list</code> of type <code>node</code> and initializes it to <code>NULL</code>. This pointer will serve as the head of the linked list. There's a possibility of the Head to have a value different than <code>NULL</code>, depends on the need for the solution.</p></div></div></div><div class="el-h3 heading-wrapper"><h3 data-heading="Adding Numbers to the Linked List" dir="auto" class="heading" id="Adding_Numbers_to_the_Linked_List"><div class="heading-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle"><path d="M3 8L12 17L21 8"></path></svg></div>Adding Numbers to the Linked List</h3><div class="heading-children"><div class="el-pre has-run-code-button"><pre class="language-c" tabindex="0"><code data-line="0" class="language-c is-loaded"><span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">int</span> i <span class="token operator">=</span> <span class="token number">1</span><span class="token punctuation">;</span> i <span class="token operator">&lt;</span> argc<span class="token punctuation">;</span> i<span class="token operator">++</span><span class="token punctuation">)</span>
+<span class="token punctuation">{</span>
+    <span class="token keyword">int</span> number <span class="token operator">=</span> <span class="token function">atoi</span><span class="token punctuation">(</span>argv<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+	
+    node <span class="token operator">*</span>n <span class="token operator">=</span> <span class="token function">malloc</span><span class="token punctuation">(</span><span class="token keyword">sizeof</span><span class="token punctuation">(</span>node<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span>n <span class="token operator">==</span> <span class="token constant">NULL</span><span class="token punctuation">)</span>
+    <span class="token punctuation">{</span>
+        <span class="token keyword">return</span> <span class="token number">1</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+    n<span class="token operator">-&gt;</span>number <span class="token operator">=</span> number<span class="token punctuation">;</span>
+    n<span class="token operator">-&gt;</span>next <span class="token operator">=</span> <span class="token constant">NULL</span><span class="token punctuation">;</span>
+	
+    n<span class="token operator">-&gt;</span>next <span class="token operator">=</span> list<span class="token punctuation">;</span>
+    list <span class="token operator">=</span> n<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code><button class="copy-code-button"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon lucide-copy"><rect x="8" y="8" width="14" height="14" rx="2" ry="2"></rect><path d="M4 16c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2"></path></svg></button><button class="run-code-button">Run</button></pre></div><div class="el-p"><p dir="auto">This <code>for</code> loop starts from <code>i = 1</code> because <code>argv[0]</code> is the name of the program itself, and the command-line arguments start from index 1. For each argument, it performs the following steps:</p></div><div class="el-ol"><ol>
+<li data-line="0" dir="auto">It converts the <code>i</code>th command-line argument (<code>argv[i]</code>) to an integer using the <code>atoi</code> function and stores it in the <code>number</code> variable, because numbers received as arguments are but <code>char</code>'s</li>
+<li data-line="1" dir="auto">It allocates memory for a new node using <code>malloc(sizeof(node))</code>. If the allocation fails (i.e., <code>malloc</code> returns <code>NULL</code>), the program returns <code>1</code> to indicate an error</li>
+<li data-line="2" dir="auto">It sets the <code>number</code> value of the new node to the converted value and sets the <code>next</code> pointer to <code>NULL</code></li>
+<li data-line="3" dir="auto">It updates the <code>next</code> pointer of the new node to point to the current head of the linked list (<code>list</code>) and updates <code>list</code> to point to the new node. This way, the new node becomes the new head of the list, and the existing list is linked after it</li>
+</ol></div></div></div><div class="el-h3 heading-wrapper"><h3 data-heading="Traversing the Linked List" dir="auto" class="heading" id="Traversing_the_Linked_List"><div class="heading-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle"><path d="M3 8L12 17L21 8"></path></svg></div>Traversing the Linked List</h3><div class="heading-children"><div class="el-pre has-run-code-button"><pre class="language-c" tabindex="0"><code data-line="0" class="language-c is-loaded">node <span class="token operator">*</span>ptr <span class="token operator">=</span> list<span class="token punctuation">;</span>
+<span class="token keyword">while</span> <span class="token punctuation">(</span>ptr <span class="token operator">!=</span> <span class="token constant">NULL</span><span class="token punctuation">)</span>
+<span class="token punctuation">{</span>
+    <span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"%i\n"</span><span class="token punctuation">,</span> ptr <span class="token operator">-&gt;</span> number<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    ptr <span class="token operator">=</span> ptr <span class="token operator">-&gt;</span> next<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code><button class="copy-code-button"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon lucide-copy"><rect x="8" y="8" width="14" height="14" rx="2" ry="2"></rect><path d="M4 16c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2"></path></svg></button><button class="run-code-button">Run</button></pre></div><div class="el-p"><p dir="auto">This code initializes a pointer <code>ptr</code> to the head of the linked list (<code>list</code>). It then enters a <code>while</code> loop that iterates as long as <code>ptr</code> is not <code>NULL</code>. Inside the loop, it prints the <code>number</code> value of the current node and updates <code>ptr</code> to point to the next node in the list. This way, <em>it traverses the entire linked list and prints all the numbers</em>.</p></div><div class="el-p"><p dir="auto">An alternative way to build the traversing loop is:</p></div><div class="el-pre has-run-code-button"><pre class="language-c" tabindex="0"><code data-line="0" class="language-c is-loaded"><span class="token keyword">for</span> <span class="token punctuation">(</span>node <span class="token operator">=</span> <span class="token operator">*</span>ptr <span class="token operator">=</span> list<span class="token punctuation">;</span> ptr <span class="token operator">!=</span> <span class="token constant">NULL</span><span class="token punctuation">;</span> ptr <span class="token operator">-&gt;</span> next<span class="token punctuation">)</span>
+<span class="token punctuation">{</span><span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">}</span>
+</code><button class="copy-code-button"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon lucide-copy"><rect x="8" y="8" width="14" height="14" rx="2" ry="2"></rect><path d="M4 16c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2"></path></svg></button><button class="run-code-button">Run</button></pre></div></div></div><div class="el-h3 heading-wrapper"><h3 data-heading="Freeing Memory" dir="auto" class="heading" id="Freeing_Memory"><div class="heading-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle"><path d="M3 8L12 17L21 8"></path></svg></div>Freeing Memory</h3><div class="heading-children"><div class="el-pre has-run-code-button"><pre class="language-c" tabindex="0"><code data-line="0" class="language-c is-loaded">ptr <span class="token operator">=</span> list<span class="token punctuation">;</span>
+<span class="token keyword">while</span> <span class="token punctuation">(</span>ptr <span class="token operator">!=</span> <span class="token constant">NULL</span><span class="token punctuation">)</span>
+<span class="token punctuation">{</span>
+    node <span class="token operator">*</span>next <span class="token operator">=</span> ptr<span class="token operator">-&gt;</span>next<span class="token punctuation">;</span>
+    <span class="token function">free</span><span class="token punctuation">(</span>ptr<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    ptr <span class="token operator">=</span> next<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code><button class="copy-code-button"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon lucide-copy"><rect x="8" y="8" width="14" height="14" rx="2" ry="2"></rect><path d="M4 16c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2"></path></svg></button><button class="run-code-button">Run</button></pre></div><div class="el-p"><p dir="auto">This snippet initializes the <code>ptr</code> pointer to the head of the linked list (<code>list</code>). It then enters a <code>while</code> loop that iterates as long as <code>ptr</code> is not <code>NULL</code>. Inside the loop, it performs the following steps:</p></div><div class="el-ol"><ol>
+<li data-line="0" dir="auto">It stores the <code>next</code> pointer of the current node in a temporary variable called <code>next</code></li>
+<li data-line="1" dir="auto">It frees the memory allocated for the current node using the <code>free</code> function</li>
+<li data-line="2" dir="auto">It updates <code>ptr</code> to point to the next node (<code>next</code>), thereby moving to the next node in the list</li>
+</ol></div><div class="el-p"><p dir="auto">This process continues until all nodes in the list have been freed, ensuring that the allocated memory is properly released.</p></div><div class="el-p"><p dir="auto">But <strong>if there's some problem allocating the memory</strong> for the next node and the code <code>returns 1</code>, then all the previously nodes will leak out of the program, in this case <strong>a <a data-tooltip-position="top" aria-label="" rel="noopener nofollow" class="external-link" href="" target="_blank">Garbage Collector</a> will be needed</strong>.</p></div><div class="el-p"><p dir="auto">Considering the amount of time required to search this list, it is in the order of <span class="math math-inline is-loaded"><mjx-container class="MathJax" jax="CHTML"><mjx-math class="MJX-TEX"><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D442 TEX-I"></mjx-c></mjx-mi><mjx-mo class="mjx-n"><mjx-c class="mjx-c28"></mjx-c></mjx-mo><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D45B TEX-I"></mjx-c></mjx-mi><mjx-mo class="mjx-n"><mjx-c class="mjx-c29"></mjx-c></mjx-mo></mjx-math></mjx-container></span>, as in the worst case the entire list must always be searched to find an item. The time complexity for adding a new element to the list will depend on where that element is added. This is illustrated in the examples below.</p></div><div class="el-p"><p dir="auto">Notice how numbers are placed at the start of the list. This insertion will run in the order of <span class="math math-inline is-loaded"><mjx-container class="MathJax" jax="CHTML"><mjx-math class="MJX-TEX"><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D442 TEX-I"></mjx-c></mjx-mi><mjx-mo class="mjx-n"><mjx-c class="mjx-c28"></mjx-c></mjx-mo><mjx-mn class="mjx-n"><mjx-c class="mjx-c31"></mjx-c></mjx-mn><mjx-mo class="mjx-n"><mjx-c class="mjx-c29"></mjx-c></mjx-mo></mjx-math></mjx-container></span>, as the number of steps it takes to do this does not depend on the size of the list.</p></div><div class="el-ul"><ul>
+<li data-line="0" dir="auto" class="has-run-code-button">
+<p>Further, you could place numbers at the end of the list as illustrated in this code:</p>
+<pre class="language-c" tabindex="0"><code data-line="2" class="language-c is-loaded"><span class="token comment">// Implements a list of numbers using a linked list</span>
+
+<span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">include</span> <span class="token string">&lt;cs50.h&gt;</span></span>
+<span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">include</span> <span class="token string">&lt;stdio.h&gt;</span></span>
+<span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">include</span> <span class="token string">&lt;stdlib.h&gt;</span></span>
+
+<span class="token keyword">typedef</span> <span class="token keyword">struct</span> <span class="token class-name">node</span>
+<span class="token punctuation">{</span>
+    <span class="token keyword">int</span> number<span class="token punctuation">;</span>
+    <span class="token keyword">struct</span> <span class="token class-name">node</span> <span class="token operator">*</span>next<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+node<span class="token punctuation">;</span>
+
+<span class="token keyword">int</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token keyword">int</span> argc<span class="token punctuation">,</span> <span class="token keyword">char</span> <span class="token operator">*</span>argv<span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
+<span class="token punctuation">{</span>
+    <span class="token comment">// Memory for numbers</span>
+    node <span class="token operator">*</span>list <span class="token operator">=</span> <span class="token constant">NULL</span><span class="token punctuation">;</span>
+    
+    <span class="token comment">// For each command-line argument</span>
+    <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">int</span> i <span class="token operator">=</span> <span class="token number">1</span><span class="token punctuation">;</span> i <span class="token operator">&lt;</span> argc<span class="token punctuation">;</span> i<span class="token operator">++</span><span class="token punctuation">)</span>
+    <span class="token punctuation">{</span>
+        <span class="token comment">// Convert argument to int</span>
+        <span class="token keyword">int</span> number <span class="token operator">=</span> <span class="token function">atoi</span><span class="token punctuation">(</span>argv<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        
+        <span class="token comment">// Allocate node for number</span>
+        node <span class="token operator">*</span>n <span class="token operator">=</span> <span class="token function">malloc</span><span class="token punctuation">(</span><span class="token keyword">sizeof</span><span class="token punctuation">(</span>node<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token keyword">if</span> <span class="token punctuation">(</span>n <span class="token operator">==</span> <span class="token constant">NULL</span><span class="token punctuation">)</span>
+        <span class="token punctuation">{</span>
+            <span class="token keyword">return</span> <span class="token number">1</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+        n<span class="token operator">-&gt;</span>number <span class="token operator">=</span> number<span class="token punctuation">;</span>
+        n<span class="token operator">-&gt;</span>next <span class="token operator">=</span> <span class="token constant">NULL</span><span class="token punctuation">;</span>
+        
+        <span class="token comment">// If list is empty</span>
+        <span class="token keyword">if</span> <span class="token punctuation">(</span>list <span class="token operator">==</span> <span class="token constant">NULL</span><span class="token punctuation">)</span>
+        <span class="token punctuation">{</span>
+            <span class="token comment">// This node is the whole list</span>
+            list <span class="token operator">=</span> n<span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+        
+        <span class="token comment">// If list has numbers already</span>
+        <span class="token keyword">else</span>
+        <span class="token punctuation">{</span>
+            <span class="token comment">// Iterate over nodes in list</span>
+            <span class="token keyword">for</span> <span class="token punctuation">(</span>node <span class="token operator">*</span>ptr <span class="token operator">=</span> list<span class="token punctuation">;</span> ptr <span class="token operator">!=</span> <span class="token constant">NULL</span><span class="token punctuation">;</span> ptr <span class="token operator">=</span> ptr<span class="token operator">-&gt;</span>next<span class="token punctuation">)</span>
+            <span class="token punctuation">{</span>
+                <span class="token comment">// If at end of list</span>
+                <span class="token keyword">if</span> <span class="token punctuation">(</span>ptr<span class="token operator">-&gt;</span>next <span class="token operator">==</span> <span class="token constant">NULL</span><span class="token punctuation">)</span>
+                <span class="token punctuation">{</span>
+                    <span class="token comment">// Append node</span>
+                    ptr<span class="token operator">-&gt;</span>next <span class="token operator">=</span> n<span class="token punctuation">;</span>
+                    <span class="token keyword">break</span><span class="token punctuation">;</span>
+                <span class="token punctuation">}</span>
+            <span class="token punctuation">}</span>
+        <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+    
+    <span class="token comment">// Print numbers</span>
+    <span class="token keyword">for</span> <span class="token punctuation">(</span>node <span class="token operator">*</span>ptr <span class="token operator">=</span> list<span class="token punctuation">;</span> ptr <span class="token operator">!=</span> <span class="token constant">NULL</span><span class="token punctuation">;</span> ptr <span class="token operator">=</span> ptr<span class="token operator">-&gt;</span>next<span class="token punctuation">)</span>
+    <span class="token punctuation">{</span>
+        <span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"%i\n"</span><span class="token punctuation">,</span> ptr<span class="token operator">-&gt;</span>number<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+    
+    <span class="token comment">// Free memory</span>
+    node <span class="token operator">*</span>ptr <span class="token operator">=</span> list<span class="token punctuation">;</span>
+    <span class="token keyword">while</span> <span class="token punctuation">(</span>ptr <span class="token operator">!=</span> <span class="token constant">NULL</span><span class="token punctuation">)</span>
+    <span class="token punctuation">{</span>
+        node <span class="token operator">*</span>next <span class="token operator">=</span> ptr<span class="token operator">-&gt;</span>next<span class="token punctuation">;</span>
+        <span class="token function">free</span><span class="token punctuation">(</span>ptr<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        ptr <span class="token operator">=</span> next<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code><button class="copy-code-button"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon lucide-copy"><rect x="8" y="8" width="14" height="14" rx="2" ry="2"></rect><path d="M4 16c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2"></path></svg></button><button class="run-code-button">Run</button></pre>
+<p>Notice how this code <em>walks down</em> this list to find the end. When appending an element, (adding to the end of the list) our code will run in O(n), as we have to go through our entire list before we can add the final element.</p>
+</li>
+<li data-line="79" dir="auto" class="has-run-code-button">
+<p>Further, you could sort your list as items are added:</p>
+<pre class="language-c" tabindex="0"><code data-line="81" class="language-c is-loaded"><span class="token comment">// Implements a sorted list of numbers using a linked list</span>
+
+<span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">include</span> <span class="token string">&lt;cs50.h&gt;</span></span>
+<span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">include</span> <span class="token string">&lt;stdio.h&gt;</span></span>
+<span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">include</span> <span class="token string">&lt;stdlib.h&gt;</span></span>
+
+<span class="token keyword">typedef</span> <span class="token keyword">struct</span> <span class="token class-name">node</span>
+<span class="token punctuation">{</span>
+    <span class="token keyword">int</span> number<span class="token punctuation">;</span>
+    <span class="token keyword">struct</span> <span class="token class-name">node</span> <span class="token operator">*</span>next<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+node<span class="token punctuation">;</span>
+
+<span class="token keyword">int</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token keyword">int</span> argc<span class="token punctuation">,</span> <span class="token keyword">char</span> <span class="token operator">*</span>argv<span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
+<span class="token punctuation">{</span>
+    <span class="token comment">// Memory for numbers</span>
+    node <span class="token operator">*</span>list <span class="token operator">=</span> <span class="token constant">NULL</span><span class="token punctuation">;</span>
+    
+    <span class="token comment">// For each command-line argument</span>
+    <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">int</span> i <span class="token operator">=</span> <span class="token number">1</span><span class="token punctuation">;</span> i <span class="token operator">&lt;</span> argc<span class="token punctuation">;</span> i<span class="token operator">++</span><span class="token punctuation">)</span>
+    <span class="token punctuation">{</span>
+        <span class="token comment">// Convert argument to int</span>
+        <span class="token keyword">int</span> number <span class="token operator">=</span> <span class="token function">atoi</span><span class="token punctuation">(</span>argv<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        
+        <span class="token comment">// Allocate node for number</span>
+        node <span class="token operator">*</span>n <span class="token operator">=</span> <span class="token function">malloc</span><span class="token punctuation">(</span><span class="token keyword">sizeof</span><span class="token punctuation">(</span>node<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token keyword">if</span> <span class="token punctuation">(</span>n <span class="token operator">==</span> <span class="token constant">NULL</span><span class="token punctuation">)</span>
+        <span class="token punctuation">{</span>
+            <span class="token keyword">return</span> <span class="token number">1</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+        n<span class="token operator">-&gt;</span>number <span class="token operator">=</span> number<span class="token punctuation">;</span>
+        n<span class="token operator">-&gt;</span>next <span class="token operator">=</span> <span class="token constant">NULL</span><span class="token punctuation">;</span>
+        
+        <span class="token comment">// If list is empty</span>
+        <span class="token keyword">if</span> <span class="token punctuation">(</span>list <span class="token operator">==</span> <span class="token constant">NULL</span><span class="token punctuation">)</span>
+        <span class="token punctuation">{</span>
+            list <span class="token operator">=</span> n<span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+        
+        <span class="token comment">// If number belongs at beginning of list</span>
+        <span class="token keyword">else</span> <span class="token keyword">if</span> <span class="token punctuation">(</span>n<span class="token operator">-&gt;</span>number <span class="token operator">&lt;</span> list<span class="token operator">-&gt;</span>number<span class="token punctuation">)</span>
+        <span class="token punctuation">{</span>
+            n<span class="token operator">-&gt;</span>next <span class="token operator">=</span> list<span class="token punctuation">;</span>
+            list <span class="token operator">=</span> n<span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+        
+        <span class="token comment">// If number belongs later in list</span>
+        <span class="token keyword">else</span>
+        <span class="token punctuation">{</span>
+            <span class="token comment">// Iterate over nodes in list</span>
+            <span class="token keyword">for</span> <span class="token punctuation">(</span>node <span class="token operator">*</span>ptr <span class="token operator">=</span> list<span class="token punctuation">;</span> ptr <span class="token operator">!=</span> <span class="token constant">NULL</span><span class="token punctuation">;</span> ptr <span class="token operator">=</span> ptr<span class="token operator">-&gt;</span>next<span class="token punctuation">)</span>
+            <span class="token punctuation">{</span>
+                <span class="token comment">// If at end of list</span>
+                <span class="token keyword">if</span> <span class="token punctuation">(</span>ptr<span class="token operator">-&gt;</span>next <span class="token operator">==</span> <span class="token constant">NULL</span><span class="token punctuation">)</span>
+                <span class="token punctuation">{</span>
+                    <span class="token comment">// Append node</span>
+                    ptr<span class="token operator">-&gt;</span>next <span class="token operator">=</span> n<span class="token punctuation">;</span>
+                    <span class="token keyword">break</span><span class="token punctuation">;</span>
+                <span class="token punctuation">}</span>
+                
+                <span class="token comment">// If in middle of list</span>
+                <span class="token keyword">if</span> <span class="token punctuation">(</span>n<span class="token operator">-&gt;</span>number <span class="token operator">&lt;</span> ptr<span class="token operator">-&gt;</span>next<span class="token operator">-&gt;</span>number<span class="token punctuation">)</span>
+                <span class="token punctuation">{</span>
+                    n<span class="token operator">-&gt;</span>next <span class="token operator">=</span> ptr<span class="token operator">-&gt;</span>next<span class="token punctuation">;</span>
+                    ptr<span class="token operator">-&gt;</span>next <span class="token operator">=</span> n<span class="token punctuation">;</span>
+                <span class="token punctuation">}</span>
+            <span class="token punctuation">}</span>
+        <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+    
+    <span class="token comment">// Print numbers</span>
+    <span class="token keyword">for</span> <span class="token punctuation">(</span>node <span class="token operator">*</span>ptr <span class="token operator">=</span> list<span class="token punctuation">;</span> ptr <span class="token operator">!=</span> <span class="token constant">NULL</span><span class="token punctuation">;</span> ptr <span class="token operator">=</span> ptr<span class="token operator">-&gt;</span>next<span class="token punctuation">)</span>
+    <span class="token punctuation">{</span>
+        <span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"%i\n"</span><span class="token punctuation">,</span> ptr<span class="token operator">-&gt;</span>number<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+    
+    <span class="token comment">// Free memory</span>
+    node <span class="token operator">*</span>ptr <span class="token operator">=</span> list<span class="token punctuation">;</span>
+    <span class="token keyword">while</span> <span class="token punctuation">(</span>ptr <span class="token operator">!=</span> <span class="token constant">NULL</span><span class="token punctuation">)</span>
+    <span class="token punctuation">{</span>
+        node <span class="token operator">*</span>next <span class="token operator">=</span> ptr<span class="token operator">-&gt;</span>next<span class="token punctuation">;</span>
+        <span class="token function">free</span><span class="token punctuation">(</span>ptr<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        ptr <span class="token operator">=</span> next<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code><button class="copy-code-button"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon lucide-copy"><rect x="8" y="8" width="14" height="14" rx="2" ry="2"></rect><path d="M4 16c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2"></path></svg></button><button class="run-code-button">Run</button></pre>
+<p>Notice how this list is sorted as it is built. To insert an element in this specific order, our code will still run in O(n) for each insertion, as in the worst case we will have to look through all current elements.</p>
+</li>
+</ul></div></div></div></div></div><div class="el-h2 heading-wrapper"><h2 data-heading="Trees" dir="auto" class="heading" id="Trees"><div class="heading-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle"><path d="M3 8L12 17L21 8"></path></svg></div>Trees</h2><div class="heading-children"><div class="el-ul"><ul>
+<li data-line="0" dir="auto">
+<p><em>Binary search trees</em> are another data structure that can be used to store data more efficiently such that it can be searched and retrieved.</p>
+</li>
+<li data-line="1" dir="auto">
+<p>You can imagine a sorted sequence of numbers.</p>
+<p><img title="tree" alt="1 2 3 4 5 6 7 in boxes next to each other" src="https://cs50.harvard.edu/x/2023/notes/5//cs50Week5Slide086.png" referrerpolicy="no-referrer"></p>
+</li>
+<li data-line="5" dir="auto">
+<p>Imagine then that the center value becomes the top of a tree. Those that are less than this value are placed to the left. Those values that are more than this value are to the right.</p>
+<p><img title="tree" alt="1 2 3 4 5 6 7 in boxes arranged in a heirarchy 4 is at the top 3 and 5 are below that and 1 2 6 7 are below those" src="https://cs50.harvard.edu/x/2023/notes/5//cs50Week5Slide119.png" referrerpolicy="no-referrer"></p>
+</li>
+<li data-line="9" dir="auto">
+<p>Pointers can then be used to point to the correct location of each area of memory such that each of these nodes can be connected.</p>
+<p><img title="tree" alt="1 2 3 4 5 6 7 in boxes arranged in a heirarchy 4 is at the top 3 and 5 are below that and 1 2 6 7 are below those arrows connect them in a tree formation" src="https://cs50.harvard.edu/x/2023/notes/5//cs50Week5Slide120.png" referrerpolicy="no-referrer"></p>
+</li>
+<li data-line="13" dir="auto" class="has-run-code-button">
+<p>In code, this can be implemented as follows.</p>
+<pre class="language-c" tabindex="0"><code data-line="15" class="language-c is-loaded"><span class="token comment">// Implements a list of numbers as a binary search tree</span>
+
+<span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">include</span> <span class="token string">&lt;stdio.h&gt;</span></span>
+<span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">include</span> <span class="token string">&lt;stdlib.h&gt;</span></span>
+
+<span class="token comment">// Represents a node</span>
+<span class="token keyword">typedef</span> <span class="token keyword">struct</span> <span class="token class-name">node</span>
+<span class="token punctuation">{</span>
+    <span class="token keyword">int</span> number<span class="token punctuation">;</span>
+    <span class="token keyword">struct</span> <span class="token class-name">node</span> <span class="token operator">*</span>left<span class="token punctuation">;</span>
+    <span class="token keyword">struct</span> <span class="token class-name">node</span> <span class="token operator">*</span>right<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+node<span class="token punctuation">;</span>
+
+<span class="token keyword">void</span> <span class="token function">free_tree</span><span class="token punctuation">(</span>node <span class="token operator">*</span>root<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token keyword">void</span> <span class="token function">print_tree</span><span class="token punctuation">(</span>node <span class="token operator">*</span>root<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token keyword">int</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token keyword">void</span><span class="token punctuation">)</span>
+<span class="token punctuation">{</span>
+    <span class="token comment">// Tree of size 0</span>
+    node <span class="token operator">*</span>tree <span class="token operator">=</span> <span class="token constant">NULL</span><span class="token punctuation">;</span>
+
+    <span class="token comment">// Add number to list</span>
+    node <span class="token operator">*</span>n <span class="token operator">=</span> <span class="token function">malloc</span><span class="token punctuation">(</span><span class="token keyword">sizeof</span><span class="token punctuation">(</span>node<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span>n <span class="token operator">==</span> <span class="token constant">NULL</span><span class="token punctuation">)</span>
+    <span class="token punctuation">{</span>
+        <span class="token keyword">return</span> <span class="token number">1</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+    n<span class="token operator">-&gt;</span>number <span class="token operator">=</span> <span class="token number">2</span><span class="token punctuation">;</span>
+    n<span class="token operator">-&gt;</span>left <span class="token operator">=</span> <span class="token constant">NULL</span><span class="token punctuation">;</span>
+    n<span class="token operator">-&gt;</span>right <span class="token operator">=</span> <span class="token constant">NULL</span><span class="token punctuation">;</span>
+    tree <span class="token operator">=</span> n<span class="token punctuation">;</span>
+
+    <span class="token comment">// Add number to list</span>
+    n <span class="token operator">=</span> <span class="token function">malloc</span><span class="token punctuation">(</span><span class="token keyword">sizeof</span><span class="token punctuation">(</span>node<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span>n <span class="token operator">==</span> <span class="token constant">NULL</span><span class="token punctuation">)</span>
+    <span class="token punctuation">{</span>
+        <span class="token function">free_tree</span><span class="token punctuation">(</span>tree<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token keyword">return</span> <span class="token number">1</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+    n<span class="token operator">-&gt;</span>number <span class="token operator">=</span> <span class="token number">1</span><span class="token punctuation">;</span>
+    n<span class="token operator">-&gt;</span>left <span class="token operator">=</span> <span class="token constant">NULL</span><span class="token punctuation">;</span>
+    n<span class="token operator">-&gt;</span>right <span class="token operator">=</span> <span class="token constant">NULL</span><span class="token punctuation">;</span>
+    tree<span class="token operator">-&gt;</span>left <span class="token operator">=</span> n<span class="token punctuation">;</span>
+
+    <span class="token comment">// Add number to list</span>
+    n <span class="token operator">=</span> <span class="token function">malloc</span><span class="token punctuation">(</span><span class="token keyword">sizeof</span><span class="token punctuation">(</span>node<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span>n <span class="token operator">==</span> <span class="token constant">NULL</span><span class="token punctuation">)</span>
+    <span class="token punctuation">{</span>
+        <span class="token function">free_tree</span><span class="token punctuation">(</span>tree<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token keyword">return</span> <span class="token number">1</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+    n<span class="token operator">-&gt;</span>number <span class="token operator">=</span> <span class="token number">3</span><span class="token punctuation">;</span>
+    n<span class="token operator">-&gt;</span>left <span class="token operator">=</span> <span class="token constant">NULL</span><span class="token punctuation">;</span>
+    n<span class="token operator">-&gt;</span>right <span class="token operator">=</span> <span class="token constant">NULL</span><span class="token punctuation">;</span>
+    tree<span class="token operator">-&gt;</span>right <span class="token operator">=</span> n<span class="token punctuation">;</span>
+
+    <span class="token comment">// Print tree</span>
+    <span class="token function">print_tree</span><span class="token punctuation">(</span>tree<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+    <span class="token comment">// Free tree</span>
+    <span class="token function">free_tree</span><span class="token punctuation">(</span>tree<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">return</span> <span class="token number">0</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">void</span> <span class="token function">free_tree</span><span class="token punctuation">(</span>node <span class="token operator">*</span>root<span class="token punctuation">)</span>
+<span class="token punctuation">{</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span>root <span class="token operator">==</span> <span class="token constant">NULL</span><span class="token punctuation">)</span>
+    <span class="token punctuation">{</span>
+        <span class="token keyword">return</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+    <span class="token function">free_tree</span><span class="token punctuation">(</span>root<span class="token operator">-&gt;</span>left<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token function">free_tree</span><span class="token punctuation">(</span>root<span class="token operator">-&gt;</span>right<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token function">free</span><span class="token punctuation">(</span>root<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">void</span> <span class="token function">print_tree</span><span class="token punctuation">(</span>node <span class="token operator">*</span>root<span class="token punctuation">)</span>
+<span class="token punctuation">{</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span>root <span class="token operator">==</span> <span class="token constant">NULL</span><span class="token punctuation">)</span>
+    <span class="token punctuation">{</span>
+        <span class="token keyword">return</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+    <span class="token function">print_tree</span><span class="token punctuation">(</span>root<span class="token operator">-&gt;</span>left<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"%i\n"</span><span class="token punctuation">,</span> root<span class="token operator">-&gt;</span>number<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token function">print_tree</span><span class="token punctuation">(</span>root<span class="token operator">-&gt;</span>right<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code><button class="copy-code-button"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon lucide-copy"><rect x="8" y="8" width="14" height="14" rx="2" ry="2"></rect><path d="M4 16c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2"></path></svg></button><button class="run-code-button">Run</button></pre>
+</li>
+</ul></div><div class="el-h3 heading-wrapper"><h3 data-heading="Data Structure Definition" dir="auto" class="heading" id="Data_Structure_Definition"><div class="heading-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle"><path d="M3 8L12 17L21 8"></path></svg></div>Data Structure Definition</h3><div class="heading-children"><div class="el-p"><p dir="auto">This structure is indeed a Binary Tree, where each node can have up to two other nodes after/below connected. By convention the sides after a node are named child and have sides, <code>left</code> and <code>right</code>. In this case, every node represents a <code>int number</code>.</p></div><div class="el-pre has-run-code-button"><pre class="language-c" tabindex="0"><code data-line="0" class="language-c is-loaded"><span class="token keyword">typedef</span> <span class="token keyword">struct</span> <span class="token class-name">node</span>
+<span class="token punctuation">{</span>
+    <span class="token keyword">int</span> number<span class="token punctuation">;</span>
+    <span class="token keyword">struct</span> <span class="token class-name">node</span> <span class="token operator">*</span>left<span class="token punctuation">;</span>
+    <span class="token keyword">struct</span> <span class="token class-name">node</span> <span class="token operator">*</span>right<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+node<span class="token punctuation">;</span>
+</code><button class="copy-code-button"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon lucide-copy"><rect x="8" y="8" width="14" height="14" rx="2" ry="2"></rect><path d="M4 16c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2"></path></svg></button><button class="run-code-button">Run</button></pre></div></div></div><div class="el-h3 heading-wrapper"><h3 data-heading="Function Declarations" dir="auto" class="heading" id="Function_Declarations"><div class="heading-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle"><path d="M3 8L12 17L21 8"></path></svg></div>Function Declarations</h3><div class="heading-children"><div class="el-p"><p dir="auto">The code declares two functions: <code>free_tree</code> and <code>print_tree</code> as prototypes.</p></div><div class="el-pre has-run-code-button"><pre class="language-c" tabindex="0"><code data-line="0" class="language-c is-loaded"><span class="token keyword">void</span> <span class="token function">free_tree</span><span class="token punctuation">(</span>node <span class="token operator">*</span>root<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token keyword">void</span> <span class="token function">print_tree</span><span class="token punctuation">(</span>node <span class="token operator">*</span>root<span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code><button class="copy-code-button"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon lucide-copy"><rect x="8" y="8" width="14" height="14" rx="2" ry="2"></rect><path d="M4 16c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2"></path></svg></button><button class="run-code-button">Run</button></pre></div></div></div><div class="el-h3 heading-wrapper"><h3 data-heading="Main Function" dir="auto" class="heading" id="Main_Function"><div class="heading-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle"><path d="M3 8L12 17L21 8"></path></svg></div>Main Function</h3><div class="heading-children"><div class="el-p"><p dir="auto">The <code>main</code> function is the entry point of the program.</p></div><div class="el-ol"><ol>
+<li data-line="0" dir="auto">It starts by initializing the <code>tree</code> variable, which represents the root of the binary search tree, to <code>NULL</code>.</li>
+</ol></div><div class="el-pre has-run-code-button"><pre class="language-c" tabindex="0"><code data-line="0" class="language-c is-loaded">node <span class="token operator">*</span>tree <span class="token operator">=</span> <span class="token constant">NULL</span><span class="token punctuation">;</span>
+</code><button class="copy-code-button"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon lucide-copy"><rect x="8" y="8" width="14" height="14" rx="2" ry="2"></rect><path d="M4 16c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2"></path></svg></button><button class="run-code-button">Run</button></pre></div><div class="el-ol"><ol start="2">
+<li data-line="0" dir="auto">Three nodes are created using <code>malloc</code> to dynamically allocate memory for each node. The <code>number</code> field of each node is set to a specific value, and the <code>left</code> and <code>right</code> pointers are initially set to <code>NULL</code>.</li>
+</ol></div><div class="el-pre has-run-code-button"><pre class="language-c" tabindex="0"><code data-line="0" class="language-c is-loaded">node <span class="token operator">*</span>n <span class="token operator">=</span> <span class="token function">malloc</span><span class="token punctuation">(</span><span class="token keyword">sizeof</span><span class="token punctuation">(</span>node<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token keyword">if</span> <span class="token punctuation">(</span>n <span class="token operator">==</span> <span class="token constant">NULL</span><span class="token punctuation">)</span>
+<span class="token punctuation">{</span>
+    <span class="token keyword">return</span> <span class="token number">1</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+n <span class="token operator">-&gt;</span> number <span class="token operator">=</span> <span class="token number">2</span><span class="token punctuation">;</span>
+n <span class="token operator">-&gt;</span> left <span class="token operator">=</span> <span class="token constant">NULL</span><span class="token punctuation">;</span>
+n <span class="token operator">-&gt;</span> right <span class="token operator">=</span> <span class="token constant">NULL</span><span class="token punctuation">;</span>
+tree <span class="token operator">=</span> n<span class="token punctuation">;</span>
+</code><button class="copy-code-button"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon lucide-copy"><rect x="8" y="8" width="14" height="14" rx="2" ry="2"></rect><path d="M4 16c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2"></path></svg></button><button class="run-code-button">Run</button></pre></div><div class="el-pre has-run-code-button"><pre class="language-c" tabindex="0"><code data-line="0" class="language-c is-loaded"><span class="token comment">// Similar steps for the second node (1)</span>
+<span class="token comment">// Similar steps for the third node (3)</span>
+</code><button class="copy-code-button"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon lucide-copy"><rect x="8" y="8" width="14" height="14" rx="2" ry="2"></rect><path d="M4 16c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2"></path></svg></button><button class="run-code-button">Run</button></pre></div><div class="el-p"><p dir="auto">By doing this, a binary search tree is constructed with the values 2, 1, and 3.</p></div><div class="el-ol"><ol start="3">
+<li data-line="0" dir="auto">The <code>print_tree</code> function is called, passing the root of the tree. This function recursively traverses the tree in an in-order manner (left subtree, current node, right subtree) and prints the values of each node.</li>
+</ol></div><div class="el-pre has-run-code-button"><pre class="language-c" tabindex="0"><code data-line="0" class="language-c is-loaded"><span class="token function">print_tree</span><span class="token punctuation">(</span>tree<span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code><button class="copy-code-button"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon lucide-copy"><rect x="8" y="8" width="14" height="14" rx="2" ry="2"></rect><path d="M4 16c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2"></path></svg></button><button class="run-code-button">Run</button></pre></div><div class="el-ol"><ol start="4">
+<li data-line="0" dir="auto">Finally, the <code>free_tree</code> function is called to release the memory allocated for the entire tree, starting from the root node.</li>
+</ol></div><div class="el-pre has-run-code-button"><pre class="language-c" tabindex="0"><code data-line="0" class="language-c is-loaded"><span class="token function">free_tree</span><span class="token punctuation">(</span>tree<span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code><button class="copy-code-button"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon lucide-copy"><rect x="8" y="8" width="14" height="14" rx="2" ry="2"></rect><path d="M4 16c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2"></path></svg></button><button class="run-code-button">Run</button></pre></div></div></div><div class="el-h3 heading-wrapper"><h3 data-heading="Tree Traversal Functions" dir="auto" class="heading" id="Tree_Traversal_Functions"><div class="heading-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle"><path d="M3 8L12 17L21 8"></path></svg></div>Tree Traversal Functions</h3><div class="heading-children"><div class="el-p"><p dir="auto">The code provides two functions for working with the binary search tree: <code>free_tree</code> and <code>print_tree</code>.</p></div><div class="el-ol"><ol>
+<li data-line="0" dir="auto"><code>free_tree</code> is a recursive function that frees the memory of each node in the tree. It traverses the tree in a post-order manner (left subtree, right subtree, current node). It checks if the current node is <code>NULL</code> and, if not, recursively calls <code>free_tree</code> for its left and right subtrees. Finally, it frees the memory of the current node.</li>
+</ol></div><div class="el-pre has-run-code-button"><pre class="language-c" tabindex="0"><code data-line="0" class="language-c is-loaded"><span class="token keyword">void</span> <span class="token function">free_tree</span><span class="token punctuation">(</span>node <span class="token operator">*</span>root<span class="token punctuation">)</span>
+<span class="token punctuation">{</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span>root <span class="token operator">==</span> <span class="token constant">NULL</span><span class="token punctuation">)</span>
+    <span class="token punctuation">{</span>
+        <span class="token keyword">return</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+    <span class="token function">free_tree</span><span class="token punctuation">(</span>root<span class="token operator">-&gt;</span>left<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token function">free_tree</span><span class="token punctuation">(</span>root<span class="token operator">-&gt;</span>right<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token function">free</span><span class="token punctuation">(</span>root<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code><button class="copy-code-button"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon lucide-copy"><rect x="8" y="8" width="14" height="14" rx="2" ry="2"></rect><path d="M4 16c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2"></path></svg></button><button class="run-code-button">Run</button></pre></div><div class="el-ol"><ol start="2">
+<li data-line="0" dir="auto"><code>print_tree</code> is also a recursive function that prints the values of the tree nodes in ascending order. It traverses the tree in an in-order manner (left subtree, current node, right subtree). It checks if the current node is <code>NULL</code> and, if not, recursively calls <code>print_tree</code> for its left subtree, prints the value of the current node, and then recursively calls <code>print_tree</code> for its right subtree.</li>
+</ol></div><div class="el-pre has-run-code-button"><pre class="language-c" tabindex="0"><code data-line="0" class="language-c is-loaded"><span class="token keyword">void</span> <span class="token function">print_tree</span><span class="token punctuation">(</span>node <span class="token operator">*</span>root<span class="token punctuation">)</span>
+<span class="token punctuation">{</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span>root <span class="token operator">==</span> <span class="token constant">NULL</span><span class="token punctuation">)</span>
+    <span class="token punctuation">{</span>
+        <span class="token keyword">return</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+    <span class="token function">print_tree</span><span class="token punctuation">(</span>root<span class="token operator">-&gt;</span>left<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"%i\n"</span><span class="token punctuation">,</span> root<span class="token operator">-&gt;</span>number<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token function">print_tree</span><span class="token punctuation">(</span>root<span class="token operator">-&gt;</span>right<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code><button class="copy-code-button"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon lucide-copy"><rect x="8" y="8" width="14" height="14" rx="2" ry="2"></rect><path d="M4 16c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2"></path></svg></button><button class="run-code-button">Run</button></pre></div><div class="el-p"><p dir="auto">By using these two functions, the code can print the values of the tree nodes and release the allocated memory after use.</p></div><div class="el-p"><p dir="auto">That's a summary of each process in the provided code!</p></div><div class="el-p"><p dir="auto">Searching this tree could be implemented as follows:</p></div><div class="el-pre has-run-code-button"><pre class="language-c" tabindex="0"><code data-line="0" class="language-c is-loaded">bool <span class="token function">search</span><span class="token punctuation">(</span>node <span class="token operator">*</span>tree<span class="token punctuation">,</span> <span class="token keyword">int</span> number<span class="token punctuation">)</span>
+<span class="token punctuation">{</span>
+	<span class="token keyword">if</span> <span class="token punctuation">(</span>tree <span class="token operator">==</span> <span class="token constant">NULL</span><span class="token punctuation">)</span>
+	<span class="token punctuation">{</span>
+		<span class="token keyword">return</span> false<span class="token punctuation">;</span>
+	<span class="token punctuation">}</span>
+	<span class="token keyword">else</span> <span class="token keyword">if</span> <span class="token punctuation">(</span>number <span class="token operator">&lt;</span> tree<span class="token operator">-&gt;</span>number<span class="token punctuation">)</span>
+	<span class="token punctuation">{</span>
+		<span class="token keyword">return</span> <span class="token function">search</span><span class="token punctuation">(</span>tree<span class="token operator">-&gt;</span>left<span class="token punctuation">,</span> number<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// recusrion</span>
+	<span class="token punctuation">}</span>
+	<span class="token keyword">else</span> <span class="token keyword">if</span> <span class="token punctuation">(</span>number <span class="token operator">&gt;</span> tree<span class="token operator">-&gt;</span>number<span class="token punctuation">)</span>
+	<span class="token punctuation">{</span>
+		<span class="token keyword">return</span> <span class="token function">search</span><span class="token punctuation">(</span>tree<span class="token operator">-&gt;</span>right<span class="token punctuation">,</span> number<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// recusrion</span>
+	<span class="token punctuation">}</span>
+	<span class="token keyword">else</span> <span class="token keyword">if</span> <span class="token punctuation">(</span>number <span class="token operator">==</span> tree<span class="token operator">-&gt;</span>number<span class="token punctuation">)</span>
+	<span class="token punctuation">{</span>
+		<span class="token keyword">return</span> true<span class="token punctuation">;</span>
+	<span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code><button class="copy-code-button"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon lucide-copy"><rect x="8" y="8" width="14" height="14" rx="2" ry="2"></rect><path d="M4 16c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2"></path></svg></button><button class="run-code-button">Run</button></pre></div><div class="el-p"><p dir="auto">Notice this search function begins by going to the location of <code>tree</code> (i.e. the first node, the root). Then, it uses recursion to search function for <code>number</code> on the half of the tree.</p></div><div class="el-p"><p dir="auto">A tree like the above offers dynamism that an array does not offer. It can grow and shrink as we wish.</p></div></div></div></div></div><div class="el-h2 heading-wrapper"><h2 data-heading="Dictionaries" dir="auto" class="heading" id="Dictionaries"><div class="heading-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle"><path d="M3 8L12 17L21 8"></path></svg></div>Dictionaries</h2><div class="heading-children"><div class="el-p"><p dir="auto"><em>Dictionaries</em> are another data structure. They have a <em>key</em> and a  <em>value</em>.<br>
+The <em>holy grail</em> of time complexity is O(1) or <em>constant time</em>. That is, the ultimate is for access to be instantaneous.</p></div><div class="el-p"><p dir="auto"><img title="time complexity" alt="a graph of various time comlexities where O of log n is second best and O of 1 is best" src="https://cs50.harvard.edu/x/2023/notes/5//cs50Week5Slide151.png" referrerpolicy="no-referrer"></p></div><div class="el-ul"><ul>
+<li data-line="0" dir="auto">Dictionaries can offer this speed of access.</li>
+</ul></div></div></div><div class="el-h2 heading-wrapper"><h2 data-heading="Hashing and Hash Tables" dir="auto" class="heading" id="Hashing_and_Hash_Tables"><div class="heading-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle"><path d="M3 8L12 17L21 8"></path></svg></div>Hashing and Hash Tables</h2><div class="heading-children"><div class="el-p"><p dir="auto"><em>Hashing</em> is the idea of taking a value and being able to output a value that becomes a shortcut to it later.</p></div><div class="el-blockquote"><blockquote dir="auto">
+<p>For example, hashing <em>apple</em> may hash as a value of <code>1</code>, and <em>berry</em> may be hashed as <code>2</code>. Therefore, finding <em>apple</em> is as easy as asking the <em>hash</em> algorithm where <em>apple</em> is stored. </p>
+</blockquote></div><div class="el-p"><p dir="auto">While not ideal in terms of design, ultimately, putting all <em>a</em>’s in one bucket and <em>b</em>’s in another in the given example.</p></div><div class="el-p"><p dir="auto">The concept of <em>bucketizing</em> hashed values illustrates how you can use this concept: a hashed value can be used to shortcut finding such a value.</p></div><div class="el-p"><p dir="auto"><strong>A <em>hash function</em> is an algorithm that reduces a larger value to something small and predictable. Generally, this function takes in an item you wish to add to your hash table, and returns an integer representing the array index in which the item should be placed</strong>.</p></div><div class="el-p"><p dir="auto">A <em>hash table</em> is a fantastic combination of both arrays and linked lists. When implemented in code, a hash table is an <em>array</em> of <em>pointers</em> to _node_s. </p></div><div class="el-ul"><ul>
+<li data-line="0" dir="auto">A hash table could be imagined as follows:</li>
+</ul></div><div class="el-p"><p dir="auto"><img title="alphabet" alt="a verticle column of 26 boxes one for each letter of the alphabet" src="https://cs50.harvard.edu/x/2023/notes/5//cs50Week5Slide157.png" referrerpolicy="no-referrer"></p></div><div class="el-p"><p dir="auto">Notice that this is an array that is assigned each value of the alphabet.</p></div><div class="el-ul"><ul>
+<li data-line="0" dir="auto">Then, at each location of the array, a linked list is used to track each value being stored there:<br>
+<img title="alphabet" alt="a verticle column of 26 boxes one for each letter of the alphabet with various names from the harry potter unverise emergint to the right albus is with a and harry is with h" src="https://cs50.harvard.edu/x/2023/notes/5//cs50Week5Slide169.png" referrerpolicy="no-referrer"></li>
+</ul></div><div class="el-p"><p dir="auto"><em>Collisions</em> are when you add values to the hash table, and something already exists at the hashed location. In the above, collisions are simply appended to the end of the list.</p></div><div class="el-p"><p dir="auto">Collisions can be reduced by better programming your hash table and hash algorithm. You can imagine an improvement upon the above as follows:</p></div><div class="el-p"><p dir="auto"><img title="alphabet" alt="a verticle column of various boxeds arranged by H A G and H A R with hagrid emerging from H A G and harry emerging from H A R" src="https://cs50.harvard.edu/x/2023/notes/5//cs50Week5Slide184.png" referrerpolicy="no-referrer"></p></div><div class="el-ul"><ul>
+<li data-line="0" dir="auto">You, as the programmer, have to make a decision about the advantages of using more memory to have a large hash table and potentially reducing search time or using less memory and potentially increasing search time.</li>
+</ul></div></div></div><div class="el-h2 heading-wrapper"><h2 data-heading="Trie" dir="auto" class="heading" id="Trie"><div class="heading-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle"><path d="M3 8L12 17L21 8"></path></svg></div>Trie</h2><div class="heading-children"><div class="el-ul"><ul>
+<li data-line="0" dir="auto">
+<p><em>Tries</em> are another form of data structure.</p>
+</li>
+<li data-line="1" dir="auto">
+<p><em>Tries</em> are always searchable in constant time.</p>
+</li>
+<li data-line="2" dir="auto">
+<p>One downside to <em>Tries</em> is that they tend to take up a large amount of memory. Notice that we need <span class="math math-inline is-loaded"><mjx-container class="MathJax" jax="CHTML"><mjx-math class="MJX-TEX"><mjx-mn class="mjx-n"><mjx-c class="mjx-c32"></mjx-c><mjx-c class="mjx-c36"></mjx-c></mjx-mn><mjx-mi class="mjx-i"><mjx-c class="mjx-cD7"></mjx-c></mjx-mi><mjx-mn class="mjx-n"><mjx-c class="mjx-c35"></mjx-c></mjx-mn><mjx-mo class="mjx-n" space="4"><mjx-c class="mjx-c3D"></mjx-c></mjx-mo><mjx-mn class="mjx-n" space="4"><mjx-c class="mjx-c31"></mjx-c><mjx-c class="mjx-c33"></mjx-c><mjx-c class="mjx-c30"></mjx-c></mjx-mn></mjx-math></mjx-container></span> <code>node</code>s just to store <em>Hagrid</em>!</p>
+</li>
+<li data-line="3" dir="auto">
+<p><em>Hagrid</em> would be stored as follows:<br>
+<img title="tries" alt="hagrid being spelled with one letter at a time where one letter is associated with one list H from one list A from another and so on" src="https://cs50.harvard.edu/x/2023/notes/5//cs50Week5Slide207.png" referrerpolicy="no-referrer"></p>
+</li>
+<li data-line="6" dir="auto">
+<p><em>Harry</em> would then be stored as follows:<br>
+<img title="tries" alt="hagrid being spelled with one letter at a time where one letter is associated with one list H from one list A from another and so on and harry being spelled similarly where hagrid and harry share a two common letters H and A" src="https://cs50.harvard.edu/x/2023/notes/5//cs50Week5Slide209.png" referrerpolicy="no-referrer"></p>
+</li>
+</ul></div></div></div><div class="el-h2 heading-wrapper"><h2 data-heading="Summing Up" dir="auto" class="heading" id="Summing_Up"><div class="heading-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle"><path d="M3 8L12 17L21 8"></path></svg></div>Summing Up</h2><div class="heading-children"><div class="el-p"><p dir="auto">In this lesson, you learned about using pointers to build new data structures. Specifically, we delved into…</p></div><div class="el-ul"><ul>
+<li data-line="0" dir="auto">Data structures</li>
+<li data-line="1" dir="auto">Stacks and queues</li>
+<li data-line="2" dir="auto">Resizing arrays</li>
+<li data-line="3" dir="auto">Linked lists</li>
+<li data-line="4" dir="auto">Dictionaries</li>
+<li data-line="5" dir="auto">Tries</li>
+</ul></div><div class="el-p"><p dir="auto">See you next time!</p></div><div class="el-hr"><hr></div></div></div></div></div><div class="el-h1 heading-wrapper"><h1 data-heading="Section" dir="auto" class="heading" id="Section">Section</h1><div class="heading-children"><div class="el-blockquote"><blockquote dir="auto">
+<p><a class="internal-link" data-href="./src/transcripts/section5.md" href="courses/cs50x/week5/src/transcripts/section5.html" target="_self" rel="noopener nofollow">Transcript</a></p>
+</blockquote></div><div class="el-ul"><ul>
+<li data-line="0" dir="auto">What are the key trade-offs between data structures we should consider in decisions about which to use?</li>
+<li data-line="1" dir="auto"><div class="list-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle"><path d="M3 8L12 17L21 8"></path></svg></div>What are some of the primary operations we should know how to do and what should we prioritize
+<ul>
+<li data-line="2" dir="auto">Insertion</li>
+<li data-line="3" dir="auto">Search</li>
+<li data-line="4" dir="auto">Deletion</li>
+</ul>
+</li>
+<li data-line="5" dir="auto">How can we build our very own hash table?</li>
+</ul></div><div class="el-p"><p dir="auto">A good Hash function always gives you the same value for the same input, produces an even distribution across, and use all the slots of memory.</p></div><div class="el-hr"><hr></div></div></div><div class="el-h1 heading-wrapper"><h1 data-heading="Shorts" dir="auto" class="heading" id="Shorts">Shorts</h1><div class="heading-children"><div class="el-h2 heading-wrapper"><h2 data-heading="Data Structures" dir="auto" class="heading" id="Data_Structures"><div class="heading-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle"><path d="M3 8L12 17L21 8"></path></svg></div>Data Structures</h2><div class="heading-children"><div class="el-blockquote"><blockquote dir="auto">
+<p><a class="internal-link" data-href="./src/transcripts/shorts5_data_struct.md" href="courses/cs50x/week5/src/transcripts/shorts5_data_struct.html" target="_self" rel="noopener nofollow">Transc</a></p>
+</blockquote></div><div class="el-ul"><ul>
+<li data-line="0" dir="auto">Arrays </li>
+<li data-line="1" dir="auto">Structs</li>
+<li data-line="2" dir="auto">Linked-Lists</li>
+<li data-line="3" dir="auto">Hash Tables </li>
+<li data-line="4" dir="auto">Tries </li>
+<li data-line="5" dir="auto">Queues</li>
+<li data-line="6" dir="auto">Stacks</li>
+</ul></div></div></div><div class="el-h2 heading-wrapper"><h2 data-heading="Structs" dir="auto" class="heading" id="Structs"><div class="heading-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle"><path d="M3 8L12 17L21 8"></path></svg></div>Structs</h2><div class="heading-children"><div class="el-blockquote"><blockquote dir="auto">
+<p><a class="internal-link" data-href="./src/transcripts/shorts5_struct.md" href="courses/cs50x/week5/src/transcripts/shorts5_struct.html" target="_self" rel="noopener nofollow">Transc</a></p>
+</blockquote></div></div></div><div class="el-h2 heading-wrapper"><h2 data-heading="Singly-Linked Lists" dir="auto" class="heading" id="Singly-Linked_Lists"><div class="heading-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle"><path d="M3 8L12 17L21 8"></path></svg></div>Singly-Linked Lists</h2><div class="heading-children"><div class="el-blockquote"><blockquote dir="auto">
+<p><a class="internal-link" data-href="./src/transcripts/shorts5_lists1.md" href="courses/cs50x/week5/src/transcripts/shorts5_lists1.html" target="_self" rel="noopener nofollow">Transc</a></p>
+</blockquote></div><div class="el-ul"><ul>
+<li data-line="0" dir="auto">In order to work with s-linked lists effectively, there are a number of operations that we need to understand:</li>
+</ul></div><div class="el-ol"><ol>
+<li data-line="0" dir="auto">Create a linked list when it doesn't already exist.</li>
+<li data-line="1" dir="auto">Search through a linked list to find an element.</li>
+<li data-line="2" dir="auto">Insert a new node into the linked list.</li>
+<li data-line="3" dir="auto">Delete a single element from a linked list.</li>
+<li data-line="4" dir="auto">Delete an entire linked list.</li>
+</ol></div></div></div><div class="el-h2 heading-wrapper"><h2 data-heading="Doubly-Linked Lists" dir="auto" class="heading" id="Doubly-Linked_Lists"><div class="heading-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle"><path d="M3 8L12 17L21 8"></path></svg></div>Doubly-Linked Lists</h2><div class="heading-children"><div class="el-blockquote"><blockquote dir="auto">
+<p><a class="internal-link" data-href="./src/transcripts/shorts5_lists2.md" href="courses/cs50x/week5/src/transcripts/shorts5_lists2.html" target="_self" rel="noopener nofollow">Transc</a></p>
+</blockquote></div><div class="el-ul"><ul>
+<li data-line="0" dir="auto">In order to work with d-linked lists effectively, there are a number of operations that we need to understand:</li>
+</ul></div><div class="el-ol"><ol>
+<li data-line="0" dir="auto">Create a linked list when it doesn't already exist.</li>
+<li data-line="1" dir="auto">Search through a linked list to find an element.</li>
+<li data-line="2" dir="auto">Insert a new node into the linked list.</li>
+<li data-line="3" dir="auto">Delete a single element from a linked list.</li>
+<li data-line="4" dir="auto">Delete an entire linked list.</li>
+</ol></div></div></div><div class="el-h2 heading-wrapper"><h2 data-heading="Hash Tables" dir="auto" class="heading" id="Hash_Tables"><div class="heading-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle"><path d="M3 8L12 17L21 8"></path></svg></div>Hash Tables</h2><div class="heading-children"><div class="el-blockquote"><blockquote dir="auto">
+<p><a class="internal-link" data-href="./src/transcripts/shorts5_hash_tabs.md" href="courses/cs50x/week5/src/transcripts/shorts5_hash_tabs.html" target="_self" rel="noopener nofollow">Transc</a></p>
+</blockquote></div><div class="el-p"><p dir="auto">The combination of an Array and a Linked-List.  A good hash function should:</p></div><div class="el-ul"><ul>
+<li data-line="0" dir="auto">Use only the data being hashed</li>
+<li data-line="1" dir="auto">Use all of the data being hashed</li>
+<li data-line="2" dir="auto">Be deterministic</li>
+<li data-line="3" dir="auto">Uniformly distribute data</li>
+<li data-line="4" dir="auto">Generate very different hash codes for very similar data</li>
+</ul></div></div></div><div class="el-h2 heading-wrapper"><h2 data-heading="Tries" dir="auto" class="heading" id="Tries"><div class="heading-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle"><path d="M3 8L12 17L21 8"></path></svg></div>Tries</h2><div class="heading-children"><div class="el-blockquote"><blockquote dir="auto">
+<p><a class="internal-link" data-href="./src/transcripts/shorts5_tries.md" href="courses/cs50x/week5/src/transcripts/shorts5_tries.html" target="_self" rel="noopener nofollow">Transc</a></p>
+</blockquote></div></div></div><div class="el-h2 heading-wrapper"><h2 data-heading="Queues" dir="auto" class="heading" id="Queues"><div class="heading-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle"><path d="M3 8L12 17L21 8"></path></svg></div>Queues</h2><div class="heading-children"><div class="el-blockquote"><blockquote dir="auto">
+<p><a class="internal-link" data-href="./src/transcripts/shorts5_queues.md" href="courses/cs50x/week5/src/transcripts/shorts5_queues.html" target="_self" rel="noopener nofollow">Transc</a></p>
+</blockquote></div></div></div><div class="el-h2 heading-wrapper"><h2 data-heading="Stacks" dir="auto" class="heading" id="Stacks"><div class="heading-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle"><path d="M3 8L12 17L21 8"></path></svg></div>Stacks</h2><div class="heading-children"><div class="el-blockquote"><blockquote dir="auto">
+<p><a class="internal-link" data-href="./src/transcripts/shorts5_stacks.md" href="courses/cs50x/week5/src/transcripts/shorts5_stacks.html" target="_self" rel="noopener nofollow">Transc</a></p>
+</blockquote></div><div class="el-blockquote"><blockquote dir="auto">
+<p>So a queue and a stack depends on how you actually use them, and not so much what you build kind of underneath the hood.</p>
+</blockquote></div><div class="el-hr"><hr></div></div></div></div></div><div class="el-h1 heading-wrapper"><h1 data-heading="Exercises" dir="auto" class="heading" id="Exercises">Exercises</h1><div class="heading-children"><div class="el-h2 heading-wrapper"><h2 data-heading="Practice Problems [#](https://cs50.harvard.edu/x/2023/problems/5/)" dir="auto" class="heading" id="Practice_Problems_[#](https://cs50.harvard.edu/x/2023/problems/5/)"><div class="heading-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle"><path d="M3 8L12 17L21 8"></path></svg></div>Practice Problems <a data-tooltip-position="top" aria-label="https://cs50.harvard.edu/x/2023/problems/5/" rel="noopener nofollow" class="external-link" href="https://cs50.harvard.edu/x/2023/problems/5/" target="_blank">#</a></h2><div class="heading-children"><div class="el-p"><p dir="auto">In addition to this week’s lab and problem set, you’re welcome to try any of these (optional!) practice problems:</p></div><div class="el-ul"><ul>
+<li data-line="0" dir="auto"><a class="internal-link" data-href="./trie.md" href="courses/cs50x/week5/trie.html" target="_self" rel="noopener nofollow">Trie</a> <a data-tooltip-position="top" aria-label="https://cs50.harvard.edu/x/2023/problems/5/trie/" rel="noopener nofollow" class="external-link" href="https://cs50.harvard.edu/x/2023/problems/5/trie/" target="_blank">#</a>, for introducing more complex data structures and working with tries</li>
+</ul></div></div></div><div class="el-h2 heading-wrapper"><h2 data-heading="[Lab 5: Inheritance](./lab5.md)" dir="auto" class="heading" id="[Lab_5:_Inheritance](./lab5.md)"><div class="heading-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle"><path d="M3 8L12 17L21 8"></path></svg></div><a class="internal-link" data-href="./lab5.md" href="courses/cs50x/week5/lab5.html" target="_self" rel="noopener nofollow">Lab 5: Inheritance</a></h2><div class="heading-children"><div class="el-blockquote"><blockquote dir="auto">
+<p>Full code <a class="internal-link" data-href="./src/lab5.c" href="courses/cs50x/week5/src/lab5.c" target="_self" rel="noopener nofollow">here</a></p>
+</blockquote></div></div></div><div class="el-h2 heading-wrapper"><h2 data-heading="Problem Set 5" dir="auto" class="heading" id="Problem_Set_5"><div class="heading-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle"><path d="M3 8L12 17L21 8"></path></svg></div>Problem Set 5</h2><div class="heading-children"><div class="el-blockquote"><blockquote dir="auto">
+<p>Collaboration on problem sets is not permitted except to the extent that you may ask classmates and others for help so long as that help does not reduce to another doing your work for you, per the course’s policy on <a data-tooltip-position="top" aria-label="https://cs50.harvard.edu/x/2023/psets/5/../../syllabus/#academic-honesty" rel="noopener nofollow" class="external-link" href="https://cs50.harvard.edu/x/2023/psets/5/../../syllabus/#academic-honesty" target="_blank">academic honesty</a>.</p>
+<p>The staff conducts random audits of submissions to CS50x. Students found to be in violation of this policy will be removed from the course. Students who have already completed CS50x, if found to be in violation, will have their CS50 Certificate permanently revoked.</p>
+</blockquote></div></div></div><div class="el-h2 heading-wrapper"><h2 data-heading="What to Do" dir="auto" class="heading" id="What_to_Do"><div class="heading-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle"><path d="M3 8L12 17L21 8"></path></svg></div>What to Do</h2><div class="heading-children"><div class="el-p"><p dir="auto">Be sure you have completed <a class="internal-link" data-href="./lab5.md" href="courses/cs50x/week5/lab5.html" target="_self" rel="noopener nofollow">Lab 5</a> before beginning this problem set.</p></div><div class="el-ol"><ol>
+<li data-line="0" dir="auto">Log into <a data-tooltip-position="top" aria-label="https://code.cs50.io" rel="noopener nofollow" class="external-link" href="https://code.cs50.io" target="_blank">code.cs50.io</a> using your GitHub account</li>
+<li data-line="1" dir="auto">Run <code>update50</code> in your codespace’s terminal window to ensure your codespace is up-to-date and, when prompted, click <strong>Rebuild now</strong></li>
+<li data-line="2" dir="auto">Submit <a class="internal-link" data-href="./speller.md" href="courses/cs50x/week5/speller.html" target="_self" rel="noopener nofollow">Speller</a> <a data-tooltip-position="top" aria-label="https://cs50.harvard.edu/x/2023/psets/5/speller/" rel="noopener nofollow" class="external-link" href="https://cs50.harvard.edu/x/2023/psets/5/speller/" target="_blank">#</a></li>
+</ol></div></div></div><div class="el-h2 heading-wrapper"><h2 data-heading="Advice" dir="auto" class="heading" id="Advice"><div class="heading-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle"><path d="M3 8L12 17L21 8"></path></svg></div>Advice</h2><div class="heading-children"><div class="el-ul"><ul>
+<li data-line="0" dir="auto">
+<p>Try out any of David’s programs from <a data-tooltip-position="top" aria-label="https://cs50.harvard.edu/x/2023/psets/5/../../weeks/5/" rel="noopener nofollow" class="external-link" href="https://cs50.harvard.edu/x/2023/psets/5/../../weeks/5/" target="_blank">Week 5</a>.</p>
+</li>
+<li data-line="1" dir="auto" class="has-run-code-button">
+<p>If you see any errors when compiling your code with <code>make</code>, focus first on fixing the very first error you see, scrolling up as needed. If unsure what it means, try asking <code>help50</code> for help. For instance, if trying to compile <code>speller</code>, and</p>
+<pre class="language-bash" tabindex="0"><code data-line="3" class="language-bash is-loaded"><span class="token function">make</span> speller
+</code><button class="copy-code-button"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon lucide-copy"><rect x="8" y="8" width="14" height="14" rx="2" ry="2"></rect><path d="M4 16c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2"></path></svg></button><button class="run-code-button">Run</button></pre>
+<p>is yielding errors, try running</p>
+<pre class="language-bash" tabindex="0"><code data-line="9" class="language-bash is-loaded">help50 <span class="token function">make</span> speller
+</code><button class="copy-code-button"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon lucide-copy"><rect x="8" y="8" width="14" height="14" rx="2" ry="2"></rect><path d="M4 16c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2"></path></svg></button></pre>
+<p>instead!</p>
+</li>
+</ul></div><div class="mod-footer mod-ui"></div></div></div></div></div></div></div></div><div class="sidebar-right sidebar"><div class="sidebar-handle"></div><div class="sidebar-topbar"><div class="topbar-content"></div><div class="clickable-icon sidebar-collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" class="svg-icon"><path d="M21 3H3C1.89543 3 1 3.89543 1 5V19C1 20.1046 1.89543 21 3 21H21C22.1046 21 23 20.1046 23 19V5C23 3.89543 22.1046 3 21 3Z"></path><path d="M10 4V20"></path><path d="M4 7H7"></path><path d="M4 10H7"></path><path d="M4 13H7"></path></svg></div></div><div class="sidebar-content"><div class="graph-view-wrapper"><div class="sidebar-section-header">Interactive Graph</div><div class="graph-view-placeholder">
+		<div class="graph-view-container">
+			<div class="graph-icon graph-expand" role="button" aria-label="Expand" data-tooltip-position="top"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon"><line x1="7" y1="17" x2="17" y2="7"></line><polyline points="7 7 17 7 17 17"></polyline></svg></div>
+			<canvas id="graph-canvas" class="hide" width="512px" height="512px"></canvas>
+		</div>
+		</div></div><div class="tree-container mod-root nav-folder tree-item outline-tree" data-depth="0"><div class="tree-header"><span class="sidebar-section-header">Table Of Contents</span><button class="clickable-icon collapse-tree-button" aria-label="Collapse All"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></svg></button></div><div class="tree-scroll-area tree-item-children nav-folder-children"><div class="tree-item mod-tree-folder nav-folder mod-collapsible is-collapsed" style="display: none;"></div><div class="tree-item" data-depth="1"><a class="tree-link" href="gab\estudos-trabalhos\programação\programming-studies\courses\cs50x\week5\readme.html#CS50 - Week 5"><div class="tree-item-contents heading-link" heading-name="CS50 - Week 5"><span class="tree-item-title">CS50 - Week 5</span></div></a><div class="tree-item-children nav-folder-children"></div></div><div class="tree-item" data-depth="1"><a class="tree-link" href="gab\estudos-trabalhos\programação\programming-studies\courses\cs50x\week5\readme.html#Lecture_5"><div class="tree-item-contents heading-link" heading-name="Lecture 5"><span class="tree-item-title">Lecture 5</span></div></a><div class="tree-item-children nav-folder-children"><div class="tree-item" data-depth="2"><a class="tree-link" href="gab\estudos-trabalhos\programação\programming-studies\courses\cs50x\week5\readme.html#Welcome!_[#](https://cs50.harvard.edu/x/2023/notes/5//#welcome)"><div class="tree-item-contents heading-link" heading-name="Welcome! [#](https://cs50.harvard.edu/x/2023/notes/5//#welcome)"><span class="tree-item-title">Welcome! <a data-tooltip-position="top" aria-label="https://cs50.harvard.edu/x/2023/notes/5//#welcome" rel="noopener nofollow" class="external-link" href="https://cs50.harvard.edu/x/2023/notes/5//#welcome" target="_blank">#</a></span></div></a><div class="tree-item-children nav-folder-children"></div></div><div class="tree-item" data-depth="2"><a class="tree-link" href="gab\estudos-trabalhos\programação\programming-studies\courses\cs50x\week5\readme.html#Data_Structures"><div class="tree-item-contents heading-link" heading-name="Data Structures"><span class="tree-item-title">Data Structures</span></div></a><div class="tree-item-children nav-folder-children"></div></div><div class="tree-item" data-depth="2"><a class="tree-link" href="gab\estudos-trabalhos\programação\programming-studies\courses\cs50x\week5\readme.html#Stacks_and_Queues"><div class="tree-item-contents heading-link" heading-name="Stacks and Queues"><span class="tree-item-title">Stacks and Queues</span></div></a><div class="tree-item-children nav-folder-children"></div></div><div class="tree-item" data-depth="2"><a class="tree-link" href="gab\estudos-trabalhos\programação\programming-studies\courses\cs50x\week5\readme.html#Resizing_Arrays"><div class="tree-item-contents heading-link" heading-name="Resizing Arrays"><span class="tree-item-title">Resizing Arrays</span></div></a><div class="tree-item-children nav-folder-children"></div></div><div class="tree-item mod-collapsible" data-depth="2"><a class="tree-link" href="gab\estudos-trabalhos\programação\programming-studies\courses\cs50x\week5\readme.html#[Linked_Lists](ds_linked_list.md)"><div class="tree-item-contents heading-link" heading-name="[Linked Lists](ds_linked_list.md)"><div class="collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle"><path d="M3 8L12 17L21 8"></path></svg></div><span class="tree-item-title"><a class="internal-link" data-href="ds_linked_list.md" href="ds_linked_list.md" target="_blank" rel="noopener nofollow">Linked Lists</a></span></div></a><div class="tree-item-children nav-folder-children"><div class="tree-item" data-depth="3"><a class="tree-link" href="gab\estudos-trabalhos\programação\programming-studies\courses\cs50x\week5\readme.html#Operation"><div class="tree-item-contents heading-link" heading-name="Operation"><span class="tree-item-title">Operation</span></div></a><div class="tree-item-children nav-folder-children"></div></div><div class="tree-item" data-depth="3"><a class="tree-link" href="gab\estudos-trabalhos\programação\programming-studies\courses\cs50x\week5\readme.html#Difference_between_Dot(`.`)_and_Arrow(`->`)_operator"><div class="tree-item-contents heading-link" heading-name="Difference between Dot(`.`) and Arrow(`->`) operator"><span class="tree-item-title">Difference between Dot(<code>.</code>) and Arrow(<code>-&gt;</code>) operator</span></div></a><div class="tree-item-children nav-folder-children"></div></div><div class="tree-item" data-depth="3"><a class="tree-link" href="gab\estudos-trabalhos\programação\programming-studies\courses\cs50x\week5\readme.html#Struct_Definition"><div class="tree-item-contents heading-link" heading-name="Struct Definition"><span class="tree-item-title">Struct Definition</span></div></a><div class="tree-item-children nav-folder-children"></div></div><div class="tree-item" data-depth="3"><a class="tree-link" href="gab\estudos-trabalhos\programação\programming-studies\courses\cs50x\week5\readme.html#Main_Function"><div class="tree-item-contents heading-link" heading-name="Main Function"><span class="tree-item-title">Main Function</span></div></a><div class="tree-item-children nav-folder-children"></div></div><div class="tree-item" data-depth="3"><a class="tree-link" href="gab\estudos-trabalhos\programação\programming-studies\courses\cs50x\week5\readme.html#Adding_Numbers_to_the_Linked_List"><div class="tree-item-contents heading-link" heading-name="Adding Numbers to the Linked List"><span class="tree-item-title">Adding Numbers to the Linked List</span></div></a><div class="tree-item-children nav-folder-children"></div></div><div class="tree-item" data-depth="3"><a class="tree-link" href="gab\estudos-trabalhos\programação\programming-studies\courses\cs50x\week5\readme.html#Traversing_the_Linked_List"><div class="tree-item-contents heading-link" heading-name="Traversing the Linked List"><span class="tree-item-title">Traversing the Linked List</span></div></a><div class="tree-item-children nav-folder-children"></div></div><div class="tree-item" data-depth="3"><a class="tree-link" href="gab\estudos-trabalhos\programação\programming-studies\courses\cs50x\week5\readme.html#Freeing_Memory"><div class="tree-item-contents heading-link" heading-name="Freeing Memory"><span class="tree-item-title">Freeing Memory</span></div></a><div class="tree-item-children nav-folder-children"></div></div></div></div><div class="tree-item mod-collapsible" data-depth="2"><a class="tree-link" href="gab\estudos-trabalhos\programação\programming-studies\courses\cs50x\week5\readme.html#Trees"><div class="tree-item-contents heading-link" heading-name="Trees"><div class="collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle"><path d="M3 8L12 17L21 8"></path></svg></div><span class="tree-item-title">Trees</span></div></a><div class="tree-item-children nav-folder-children"><div class="tree-item" data-depth="3"><a class="tree-link" href="gab\estudos-trabalhos\programação\programming-studies\courses\cs50x\week5\readme.html#Data_Structure_Definition"><div class="tree-item-contents heading-link" heading-name="Data Structure Definition"><span class="tree-item-title">Data Structure Definition</span></div></a><div class="tree-item-children nav-folder-children"></div></div><div class="tree-item" data-depth="3"><a class="tree-link" href="gab\estudos-trabalhos\programação\programming-studies\courses\cs50x\week5\readme.html#Function_Declarations"><div class="tree-item-contents heading-link" heading-name="Function Declarations"><span class="tree-item-title">Function Declarations</span></div></a><div class="tree-item-children nav-folder-children"></div></div><div class="tree-item" data-depth="3"><a class="tree-link" href="gab\estudos-trabalhos\programação\programming-studies\courses\cs50x\week5\readme.html#Main_Function"><div class="tree-item-contents heading-link" heading-name="Main Function"><span class="tree-item-title">Main Function</span></div></a><div class="tree-item-children nav-folder-children"></div></div><div class="tree-item" data-depth="3"><a class="tree-link" href="gab\estudos-trabalhos\programação\programming-studies\courses\cs50x\week5\readme.html#Tree_Traversal_Functions"><div class="tree-item-contents heading-link" heading-name="Tree Traversal Functions"><span class="tree-item-title">Tree Traversal Functions</span></div></a><div class="tree-item-children nav-folder-children"></div></div></div></div><div class="tree-item" data-depth="2"><a class="tree-link" href="gab\estudos-trabalhos\programação\programming-studies\courses\cs50x\week5\readme.html#Dictionaries"><div class="tree-item-contents heading-link" heading-name="Dictionaries"><span class="tree-item-title">Dictionaries</span></div></a><div class="tree-item-children nav-folder-children"></div></div><div class="tree-item" data-depth="2"><a class="tree-link" href="gab\estudos-trabalhos\programação\programming-studies\courses\cs50x\week5\readme.html#Hashing_and_Hash_Tables"><div class="tree-item-contents heading-link" heading-name="Hashing and Hash Tables"><span class="tree-item-title">Hashing and Hash Tables</span></div></a><div class="tree-item-children nav-folder-children"></div></div><div class="tree-item" data-depth="2"><a class="tree-link" href="gab\estudos-trabalhos\programação\programming-studies\courses\cs50x\week5\readme.html#Trie"><div class="tree-item-contents heading-link" heading-name="Trie"><span class="tree-item-title">Trie</span></div></a><div class="tree-item-children nav-folder-children"></div></div><div class="tree-item" data-depth="2"><a class="tree-link" href="gab\estudos-trabalhos\programação\programming-studies\courses\cs50x\week5\readme.html#Summing_Up"><div class="tree-item-contents heading-link" heading-name="Summing Up"><span class="tree-item-title">Summing Up</span></div></a><div class="tree-item-children nav-folder-children"></div></div></div></div><div class="tree-item" data-depth="1"><a class="tree-link" href="gab\estudos-trabalhos\programação\programming-studies\courses\cs50x\week5\readme.html#Section"><div class="tree-item-contents heading-link" heading-name="Section"><span class="tree-item-title">Section</span></div></a><div class="tree-item-children nav-folder-children"></div></div><div class="tree-item" data-depth="1"><a class="tree-link" href="gab\estudos-trabalhos\programação\programming-studies\courses\cs50x\week5\readme.html#Shorts"><div class="tree-item-contents heading-link" heading-name="Shorts"><span class="tree-item-title">Shorts</span></div></a><div class="tree-item-children nav-folder-children"><div class="tree-item" data-depth="2"><a class="tree-link" href="gab\estudos-trabalhos\programação\programming-studies\courses\cs50x\week5\readme.html#Data_Structures"><div class="tree-item-contents heading-link" heading-name="Data Structures"><span class="tree-item-title">Data Structures</span></div></a><div class="tree-item-children nav-folder-children"></div></div><div class="tree-item" data-depth="2"><a class="tree-link" href="gab\estudos-trabalhos\programação\programming-studies\courses\cs50x\week5\readme.html#Structs"><div class="tree-item-contents heading-link" heading-name="Structs"><span class="tree-item-title">Structs</span></div></a><div class="tree-item-children nav-folder-children"></div></div><div class="tree-item" data-depth="2"><a class="tree-link" href="gab\estudos-trabalhos\programação\programming-studies\courses\cs50x\week5\readme.html#Singly-Linked_Lists"><div class="tree-item-contents heading-link" heading-name="Singly-Linked Lists"><span class="tree-item-title">Singly-Linked Lists</span></div></a><div class="tree-item-children nav-folder-children"></div></div><div class="tree-item" data-depth="2"><a class="tree-link" href="gab\estudos-trabalhos\programação\programming-studies\courses\cs50x\week5\readme.html#Doubly-Linked_Lists"><div class="tree-item-contents heading-link" heading-name="Doubly-Linked Lists"><span class="tree-item-title">Doubly-Linked Lists</span></div></a><div class="tree-item-children nav-folder-children"></div></div><div class="tree-item" data-depth="2"><a class="tree-link" href="gab\estudos-trabalhos\programação\programming-studies\courses\cs50x\week5\readme.html#Hash_Tables"><div class="tree-item-contents heading-link" heading-name="Hash Tables"><span class="tree-item-title">Hash Tables</span></div></a><div class="tree-item-children nav-folder-children"></div></div><div class="tree-item" data-depth="2"><a class="tree-link" href="gab\estudos-trabalhos\programação\programming-studies\courses\cs50x\week5\readme.html#Tries"><div class="tree-item-contents heading-link" heading-name="Tries"><span class="tree-item-title">Tries</span></div></a><div class="tree-item-children nav-folder-children"></div></div><div class="tree-item" data-depth="2"><a class="tree-link" href="gab\estudos-trabalhos\programação\programming-studies\courses\cs50x\week5\readme.html#Queues"><div class="tree-item-contents heading-link" heading-name="Queues"><span class="tree-item-title">Queues</span></div></a><div class="tree-item-children nav-folder-children"></div></div><div class="tree-item" data-depth="2"><a class="tree-link" href="gab\estudos-trabalhos\programação\programming-studies\courses\cs50x\week5\readme.html#Stacks"><div class="tree-item-contents heading-link" heading-name="Stacks"><span class="tree-item-title">Stacks</span></div></a><div class="tree-item-children nav-folder-children"></div></div></div></div><div class="tree-item" data-depth="1"><a class="tree-link" href="gab\estudos-trabalhos\programação\programming-studies\courses\cs50x\week5\readme.html#Exercises"><div class="tree-item-contents heading-link" heading-name="Exercises"><span class="tree-item-title">Exercises</span></div></a><div class="tree-item-children nav-folder-children"><div class="tree-item" data-depth="2"><a class="tree-link" href="gab\estudos-trabalhos\programação\programming-studies\courses\cs50x\week5\readme.html#Practice_Problems_[#](https://cs50.harvard.edu/x/2023/problems/5/)"><div class="tree-item-contents heading-link" heading-name="Practice Problems [#](https://cs50.harvard.edu/x/2023/problems/5/)"><span class="tree-item-title">Practice Problems <a data-tooltip-position="top" aria-label="https://cs50.harvard.edu/x/2023/problems/5/" rel="noopener nofollow" class="external-link" href="https://cs50.harvard.edu/x/2023/problems/5/" target="_blank">#</a></span></div></a><div class="tree-item-children nav-folder-children"></div></div><div class="tree-item" data-depth="2"><a class="tree-link" href="gab\estudos-trabalhos\programação\programming-studies\courses\cs50x\week5\readme.html#[Lab_5:_Inheritance](./lab5.md)"><div class="tree-item-contents heading-link" heading-name="[Lab 5: Inheritance](./lab5.md)"><span class="tree-item-title"><a class="internal-link" data-href="./lab5.md" href="./lab5.md" target="_blank" rel="noopener nofollow">Lab 5: Inheritance</a></span></div></a><div class="tree-item-children nav-folder-children"></div></div><div class="tree-item" data-depth="2"><a class="tree-link" href="gab\estudos-trabalhos\programação\programming-studies\courses\cs50x\week5\readme.html#Problem_Set_5"><div class="tree-item-contents heading-link" heading-name="Problem Set 5"><span class="tree-item-title">Problem Set 5</span></div></a><div class="tree-item-children nav-folder-children"></div></div><div class="tree-item" data-depth="2"><a class="tree-link" href="gab\estudos-trabalhos\programação\programming-studies\courses\cs50x\week5\readme.html#What_to_Do"><div class="tree-item-contents heading-link" heading-name="What to Do"><span class="tree-item-title">What to Do</span></div></a><div class="tree-item-children nav-folder-children"></div></div><div class="tree-item" data-depth="2"><a class="tree-link" href="gab\estudos-trabalhos\programação\programming-studies\courses\cs50x\week5\readme.html#Advice"><div class="tree-item-contents heading-link" heading-name="Advice"><span class="tree-item-title">Advice</span></div></a><div class="tree-item-children nav-folder-children"></div></div></div></div></div></div></div><script defer="">let rs = document.querySelector(".sidebar-right"); rs.classList.add("is-collapsed"); if (window.innerWidth > 768) rs.classList.remove("is-collapsed"); rs.style.setProperty("--sidebar-width", localStorage.getItem("sidebar-right-width"));</script></div></div></body></html>

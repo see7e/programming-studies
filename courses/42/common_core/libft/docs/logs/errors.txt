@@ -1,0 +1,74 @@
+For ft_split, in /home/gabrodri/francinette/tests/libft/fsoares/test_split.c:
+
+Error in test 1: ft_split("hello!", 32:' '):
+malloc protection check for 2th malloc:
+: Should return NULL
+Error in test 2: ft_split("xxxxxxxxhello!", 120:'x'):
+malloc protection check for 2th malloc:
+: Should return NULL
+Error in test 3: ft_split("hello!zzzzzzzz", 122:'z'):
+malloc protection check for 2th malloc:
+: Should return NULL
+Error in test 4: ft_split("\t\t\t\thello!\t\t\t\t", 9:'\t'):
+malloc protection check for 2th malloc:
+: Should return NULL
+Error in test 7: ft_split("^^^1^^2a,^^^^3^^^^--h^^^^", 94:'^'):
+malloc protection check for 2th malloc:
+: 
+Memory leak: 0x557d2fa671e0 - 4 bytes
+You failed to free the memory allocated at:
+Memory leak: 0x557d2fa67200 - 2 bytes
+You failed to free the memory allocated at:
+Memory leak: 0x557d2fa67220 - 4 bytes
+You failed to free the memory allocated at:
+Error in test 7: ft_split("^^^1^^2a,^^^^3^^^^--h^^^^", 94:'^'):
+malloc protection check for 2th malloc:
+: Should return NULL
+Error in test 7: ft_split("^^^1^^2a,^^^^3^^^^--h^^^^", 94:'^'):
+malloc protection check for 3th malloc:
+: 
+Memory leak: 0x557d2fa67240 - 2 bytes
+You failed to free the memory allocated at:
+Memory leak: 0x557d2fa67280 - 2 bytes
+You failed to free the memory allocated at:
+Memory leak: 0x557d2fa672a0 - 4 bytes
+You failed to free the memory allocated at:
+Error in test 7: ft_split("^^^1^^2a,^^^^3^^^^--h^^^^", 94:'^'):
+malloc protection check for 3th malloc:
+: Should return NULL
+Error in test 7: ft_split("^^^1^^2a,^^^^3^^^^--h^^^^", 94:'^'):
+malloc protection check for 4th malloc:
+: 
+Memory leak: 0x557d2fa672c0 - 2 bytes
+You failed to free the memory allocated at:
+Memory leak: 0x557d2fa672e0 - 4 bytes
+You failed to free the memory allocated at:
+Memory leak: 0x557d2fa67320 - 4 bytes
+You failed to free the memory allocated at:
+Error in test 7: ft_split("^^^1^^2a,^^^^3^^^^--h^^^^", 94:'^'):
+malloc protection check for 4th malloc:
+: Should return NULL
+Error in test 7: ft_split("^^^1^^2a,^^^^3^^^^--h^^^^", 94:'^'):
+malloc protection check for 5th malloc:
+: 
+Memory leak: 0x557d2fa67340 - 2 bytes
+You failed to free the memory allocated at:
+Memory leak: 0x557d2fa67360 - 4 bytes
+You failed to free the memory allocated at:
+Memory leak: 0x557d2fa67380 - 2 bytes
+You failed to free the memory allocated at:
+Error in test 7: ft_split("^^^1^^2a,^^^^3^^^^--h^^^^", 94:'^'):
+malloc protection check for 5th malloc:
+: Should return NULL
+Error in test 8: ft_split("nonempty", 0:'\0'):
+malloc protection check for 2th malloc:
+: Should return NULL
+
+For ft_lstmap, in /home/gabrodri/francinette/tests/libft/fsoares/test_lstmap.c:
+
+Error in test 2: ft_lstmap(<list: {node: "hello!"}->(null)>, [s => __strlen(s)], [x => free(x)]): different lists
+Expected: <list: {node: "__6"}->(null)>
+Result  : <list: {node: ""}->(null)>
+
+You are trying to free a pointer that was already freed
+Error in test 2: ft_lstmap(<list: {node: "hello!"}->(null)>, [s => __strlen(s)], [x => free(x)]): Memory problems!
