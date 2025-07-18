@@ -40,7 +40,6 @@ There are a couple of issues with the [given code](#found-in-programiz):
 
 
 # Explanation
-> ChatGPT powered
 
 ##  Creating the Hash Table:
 

@@ -425,7 +425,7 @@ Visit the following resources to learn more:
 -	[Python Exceptions: An Introduction](https://realpython.com/python-exceptions/)
 -	[Python Try Except](https://www.w3schools.com/python/python_try_except.asp)
 
-## [Functions](functions-python.md)
+## [Functions](py-functions.md)
 In programming, a function is a reusable block of code that executes a certain functionality when it is called. Functions are integral parts of every programming language because they help make your code more modular and reusable.
 
 In Python, you *define* a function with the `def` keyword, then write the function identifier (*name*) followed by parentheses (*parameters*) and a colon, like:
@@ -1043,7 +1043,7 @@ Visit the following resources to learn more:
 -   [Pyramid Documentation](https://docs.pyramid.com/en/latest/)
 -   [Pyramid Framework Introduction](https://www.tutorialspoint.com/python_web_development_libraries/python_web_development_libraries_pyramid_framework.htm)
 
-## Asynchronous
+## [Asynchronous](py-async.md)
 Asynchronous programming is a type of parallel programming in which a unit of work is allowed to run separately from the primary application thread. When the work is complete, it notifies the main thread about completion or failure of the worker thread. This style is mostly concerned with the asynchronous execution of tasks. Python has several asynchronous frameworks that are used to implement asynchronous programming.
 
 Visit the following resources to learn more:

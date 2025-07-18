@@ -6,6 +6,23 @@ languages: Python
 dependences: Django
 ---
 
+<details> <summary>Table of Contents 🔖</summary>
+
+- [Securing User Inputs in Django](#securing-user-inputs-in-django)
+    - [Django's Built-In Functionality](#djangos-built-in-functionality)
+  - [Implementing](#implementing)
+    - [1. Form Validation and Cleaning](#1-form-validation-and-cleaning)
+    - [2. Model Validation and Cleaning](#2-model-validation-and-cleaning)
+    - [3. Template Escaping](#3-template-escaping)
+    - [4. View to Handle Form Submission](#4-view-to-handle-form-submission)
+    - [5. URL Configuration](#5-url-configuration)
+    - [6. Other Approaches](#6-other-approaches)
+      - [Ajax Example](#ajax-example)
+      - [HTMX Example](#htmx-example)
+
+</details>
+
+---
 # Securing User Inputs in Django
 
 Django provides built-in functionality for input sanitization and validation, and generally, Django's methods are more comprehensive and safer than creating custom solutions on simple functions.

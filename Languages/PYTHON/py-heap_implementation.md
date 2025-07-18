@@ -21,8 +21,6 @@ dependences: NULL
 ---
 
 # Code File [#](heap.py)
-> ChatGPT powered
-
 The [code](#found-in-programiz) provided seems to have a few issues. Here are the bugs I found:
 
 1.  In the `insert` function, you have a semicolon (`;`) after `array.append(newNum)`. Python does not require semicolons to terminate statements, so you can remove it.
@@ -36,7 +34,6 @@ The [code](#found-in-programiz) provided seems to have a few issues. Here are th
 5.  The `heapify` function is not defined correctly. The condition `arr[i] < arr[l]` should be `arr[largest] < arr[l]`, and the condition `arr[largest] < arr[r]` should be `arr[largest] < arr[r]`. Update these conditions accordingly.
 
 # Explanation
-> ChatGPT powered
 
 ## Section 1:
 

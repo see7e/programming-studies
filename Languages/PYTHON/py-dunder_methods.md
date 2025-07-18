@@ -13,7 +13,9 @@ dependences:
 
 <details> <summary>Table of Contents 🔖</summary>
 
-- [New Note](#new-note)
+- [Dunder Method](#dunder-method)
+    - [Instances list](#instances-list)
+  - [`__mro__`](#__mro__)
 
 </details>
 

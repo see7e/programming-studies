@@ -4,6 +4,7 @@ tags:
   - studies
   - programming
   - deprecation
+  - django
 use: Documentation
 languages: Python
 dependences: Django

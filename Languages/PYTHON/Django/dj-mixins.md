@@ -222,7 +222,7 @@ class RequireLoginMixin:
 ```
 
 #### Permission Mixin
-Ensures that **only users with specific permissions can access** a class-based view. It goes beyond just checking if someone is logged in - it verifies they have the right to perform a specific action (refer to [Django Permissions](django-permissions.md)).
+Ensures that **only users with specific permissions can access** a class-based view. It goes beyond just checking if someone is logged in - it verifies they have the right to perform a specific action (refer to [Django Permissions](dj-permissions.md)).
 
 ```python
 class PermissionRequiredMixin:
@@ -319,7 +319,7 @@ class DateValidationMixin:
 ## Advanced Patterns and Best Practices
 
 ### Mixin Ordering and [Method Resolution Order (MRO)](../../../Docs/mro.md)
-The order of mixins in your class definition matters due to [Python's Method Resolution Order](../python-mro.md):
+The order of mixins in your class definition matters due to [Python's Method Resolution Order](../py-mro.md):
 
 ```python
 # Correct order: specific to general

@@ -1,6 +1,9 @@
 ---
 title: Python - Django
-tags: studies, programming
+tags:
+  - studies
+  - programming
+  - django
 use: Documentation
 languages: Python
 dependences: Django
@@ -32,12 +35,10 @@ dependences: Django
 ---
 
 # Django
-
 Django is a high-level Python web framework that encourages rapid development and clean, pragmatic design. It is a free and open-source framework, which follows the model-template-views architectural pattern. Django's primary goal is to ease the creation of complex, database-driven websites.
 
 
 ## The root folders
-
 In the projects which I've worked on, the file structure is usually like this:
 
 ```
@@ -66,80 +67,19 @@ project_name/
 
 
 ## Django configurations (`setup/`)
-> Look here for more [advanced configuration topics](./advanced_configurations.md). 
+> Look here for more [advanced configuration topics](dj-advanced_configurations.md). 
 
 ### `settings.py`
-
 This file is the main configuration file for the Django project. It contains the settings for the project, such as the database configuration, the installed apps, the middleware, the static and media files, the internationalization, the authentication, the logging, and so on.
 
 > [!INFO]
 > For the full list of settings and their values, see https://docs.djangoproject.com/en/dev/ref/settings/
 
-```python
-# Django Application definitions
+> [!WARNING]
+> Note that some configurations reflect important [security considerations (counter measures)](dj-security-countermeasure-policies.md), some may trigger errors, such as [Invalid `HTTP_HOST` error](dj-invalid-HTTP_HOST-error.md). That could either a misconfiguration or an attack attempt.
 
-ALLOWED_HOSTS = [
-    '127.0.0.1',
-    'localhost',
-    # ...,
-]
+For the static files it will depend on how we build the URL calls in the templates we can point the to a single direction, using `python manage.py collectstatic` to join all the statics in a single folder before the deployment.
 
-INSTALLED_APPS = [
-    # django modules
-    'django.contrib.admin',
-    'django.contrib.auth',
-    'django.contrib.contenttypes',
-    'django.contrib.sessions',
-    'django.contrib.messages',
-    'django.contrib.staticfiles',
-    # third party modules
-    'debug_toolbar',
-    'crispy_forms',
-    'crispy_bootstrap5',
-    'widget_tweaks',
-    # internal modules...
-]
-
-MIDDLEWARE = [
-    'django.middleware.security.SecurityMiddleware',
-    'django.contrib.sessions.middleware.SessionMiddleware',
-    'django.middleware.common.CommonMiddleware',
-    'django.middleware.csrf.CsrfViewMiddleware',
-    'django.contrib.auth.middleware.AuthenticationMiddleware',
-    'debug_toolbar.middleware.DebugToolbarMiddleware',
-    'django.contrib.messages.middleware.MessageMiddleware',
-    'django.middleware.clickjacking.XFrameOptionsMiddleware',
-]
-
-INTERNAL_IPS = [
-    '127.0.0.1',
-]
-
-ROOT_URLCONF = 'setup.urls'
-
-CRISPY_ALLOWED_TEMPLATE_PACKS = "bootstrap5"
-CRISPY_TEMPLATE_PACK = "bootstrap5"
-
-TEMPLATES = [
-    {
-        'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [os.path.join(BASE_DIR, "templates")],
-        'APP_DIRS': True,
-        'OPTIONS': {
-            'context_processors': [
-                'django.template.context_processors.debug',
-                'django.template.context_processors.request',
-                'django.contrib.auth.context_processors.auth',
-                'django.contrib.messages.context_processors.messages',
-            ],
-        },
-    },
-]
-
-WSGI_APPLICATION = 'setup.wsgi.application'
-```
-
-For the static files it will depend on how we build the url calls in the templates we can point the to a single direction, using `python manage.py collectstatic` to join all the statics in a single folder before the deployment.
 ```python
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/4.2/howto/static-files/
@@ -155,6 +95,7 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 ```
 
 In most cases we used PostgreSQL as the database provider, so the database settings are usually like this:
+
 ```python
 # Database
 # https://docs.djangoproject.com/en/4.2/ref/settings/#databases
@@ -194,6 +135,7 @@ AUTH_PASSWORD_VALIDATORS = [
 ```
 
 For authentication, had some experience with LDAP Auth because of the company's policy, due to the usage of the Active Directory.
+
 ```python
 import ldap
 from django_auth_ldap.config import LDAPSearch
@@ -221,6 +163,7 @@ AUTHENTICATION_BACKENDS = [
 ```
 
 In case of Language settings there's no mistry, just some default settings for the date and time formats, and the range of years for the date pickers.
+
 ```python
 from datetime import datetime
 
@@ -254,9 +197,10 @@ CURRENT_YEAR = datetime.now().year
 YEAR_RANGE = range(2015, CURRENT_YEAR)
 ```
 
-### `urls.py`
+![request-lifecycle](https://media2.dev.to/dynamic/image/width=800%2Cheight=%2Cfit=scale-down%2Cgravity=auto%2Cformat=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fi%2Ffpd4t997o8bpsqu11fp8.jpg)
 
-The `urls.py` file is `pretty simple, it contains the URL patterns for the project, in order that the requests are directed to the correct urls files of each app.
+### `urls.py`
+The `urls.py` file is pretty simple, it contains the URL patterns for the project, in order that the requests are directed to the correct urls files of each app.
 
 ```python
 from django.contrib import admin
@@ -289,7 +233,6 @@ if settings.DEBUG:
 ```
 
 ### `asgi.py` and `wsgi.py`
-
 These files are used to deploy the application in a server. The `asgi.py` file is used for asynchronous servers, and the `wsgi.py` file is used for synchronous servers. By default, the files looks like this:
 
 ```python
@@ -304,11 +247,9 @@ application = get_asgi_application() # or get_wsgi_application
 
 
 ## Application (`app_name/`)
-
 In this there are some files that usually appear in the applications (such as: `admin.py`, `apps.py`, `models.py`, `tests.py`, `views.py` and `urls.py`), but we can create any other file following the purpose and the logic of the application.
 
 ### App `apps.py`
-
 This file is used to configure the application, and it's used to define the name of the application. By default, the file looks like this:
 
 ```python
@@ -322,7 +263,6 @@ class AppNameConfig(AppConfig):
 
 
 ### App `urls.py`
-
 This follows the same logic as the `urls.py` file in the `setup/` folder, but it contains the URL patterns for the app. So there's some differences in the way the routes are handled.
 Usually we'll have more routes in here as much as the number of the views in the app or the number of the requests received through the templates. For example, if we have a CRUD application, we'll have 5 routes: one for the index, one for the create, one for the update, one for the delete and one for the detail.
 
@@ -343,7 +283,6 @@ urlpatterns = [
 ```
 
 Some points to give notice:
-
 - The `app_name` is used to create a namespace for the app, so we can use the `{% url 'app_name:index' %}` in the templates to call the index route. This improves the readability and the maintainability of the code.
 - In the string patterns we see `<int:pk>`, this is a way to pass a parameter (through the URL) to the view. In this case, the `pk` is the primary key of the object that we want to manipulate (it's a convention) and the `int` is the type of the parameter (in this case, an integer). We can use other types, such as `str`, `slug`, `uuid` and so on.
     - `slug` is a string that contains only letters, numbers, underscores or hyphens, and it's used to create a URL that is more friendly to the search engines.
@@ -351,7 +290,6 @@ Some points to give notice:
 
 
 ### App `views.py`
-
 The views are the functions that handle the requests and return the responses. They are the core of the application, and they are responsible for the logic of the application. The views are the bridge between the templates and the models, and they are the ones that make the application work.
 Usually, the views are divided into two types: the **class-based** views and the **function-based** views. The **class-based** views are used when we have a lot of logic to handle, and the **function-based** views are used when we have a simple logic to handle.
 
@@ -476,6 +414,8 @@ def update_obj_data(request, *args, **kwargs) -> JsonResponse:
 
 > This where used as a call point to HTMX request to deliver the data in a select chain input in the front-end. I'll talk about this in the `templates` section.
 
+> [!NOTE]
+> Another good example is loading a nested dictionary information into the template, in [this article](dj-dynamic-HTML-rendering.md), there's all considerations about this case.
 
 ### App `models.py`
 This is one of the most important files in the application, because it *contains the models of the application* (refer to [ORM](../../../Docs/orm.md)). The models are the classes that represent **the database tables**, and they are the ones that **make the application persistent** (the ones that make possible to store the data in the database). I'll use as example the `CustomUser` model, that I used as example to handle the LDAP authentication:
@@ -501,6 +441,7 @@ This is one of the most important files in the application, because it *contains
 > 
 > In this example, we have a class that inherits from (Django's) `AbstractUser` class, and we have some fields that are specific to the application.
 > But why use the `AbstractUser` and not the `User` class? Because the first one  is a class that contains the basic fields that we need to create a user, and it's a class that we can customize. The `User` class is a class that contains the basic fields that we need to create a user, but it's a class that we can't customize. So, if we want to create a user with some specific fields, we have to create a class that inherits from the `AbstractUser` class.
+> Note that **custom user models require custom managers** that properly implement the authentication interface Django expects, not implementing that may raise some issues e.g. [`AttributeError with get_by_natural_key`](dj-custom_user-auth.md).
 
 Following this principle we can add as many fields as we want, and we can create as many models as we want. The fields can be of different types, such as `CharField`, `IntegerField`, `BooleanField`, `DateField`, `DateTimeField`, `ForeignKey`, `ManyToManyField`, and so on. We can also add some methods to the class, and we can override some methods of the class.
 
@@ -510,10 +451,9 @@ Following this principle we can add as many fields as we want, and we can create
 Talking about **Methods**, one that we already saw is the `__str__` method, that is used to return a string representation of the object. This is a good practice to use, because it makes the object more readable in the admin pages, and it makes the object more readable in the templates. Also, when filtering (querying) the objects, the `__str__` method is used to return the string representation of the object.
 
 > [!TIP]
-> Additionally (in a more advanced approach) **is possible to combine multiple base classes using [mixins](django-mixins.md)**, this prevents creating complex inheritance chains.
+> Additionally (in a more advanced approach) **is possible to combine multiple base classes using [mixins](dj-mixins.md)**, this prevents creating complex inheritance chains.
 
 ### App `admin.py`
-
 This file is used to register the models in the admin pages, and it's used to customize the admin pages.
 
 ```python
@@ -551,7 +491,6 @@ But for doing this we need the `GroupAdminForm` from the `forms.py`.
 
 
 ### App `forms.py`
-
 This file is used to create the forms of the application, and it's used to handle the data that comes from the request. The forms are the classes that represent the HTML forms, and they are the ones that make the application interactive. The forms are the bridge between the views and the templates, and they are the ones that make the application dynamic.
 
 Continuing with the example of the Group admin page:
@@ -779,25 +718,22 @@ class SpecificAdminForm(BaseWorkTimeForm):
 ```
 
 As always, there's some points to give notice:
-
 - In the `SpecificAdminForm` we have a new field, the `multiple_date_selctor`, and we have a new method, the `update_field_attribures`, that is used to update the fields attributes based on the parent `set_readonly_fields` and `set_required_fields` methods, called by the `super()` method (that calls the parent class).
 - The `get_layout` method this time is used to call for the main fields (from the parent class) in the form and add the `multiple_date_selctor` which is a custom HTML to handle the date range selection.
 
 
 ## Templates (`templates/`)
-
 In this case we can have the templates used by the project root as base layouts and the ones used by the apps as extensions of theese layouts. The templates are normal htmlx files that could inport javascript and css code, but in the Django there's an addition named `Django Template Language`, an incrementation of Jinja2, that allows us to use some logic and some variables in the templates.
 
 
 ### Base layout (`base.html`)
-
 Depending on the usage we usually have a base layout that is used by the root of the project, and it's used to create the structure of the pages. This is a simple example of a base layout:
 
 > In this case comes the decision to whether use the static files in the `static/` or the ones collected in the `staticfiles/` folder. Other option is to use a CDN to import the files. In this case I'm using a combination of the static folder and the CDN.
 
 In first place, as said before, is to load the static information and to save time I usually work with Bootstrap and Fontawesome, so I load the static files and the CDN for the icons. The `header_links` and `header_scripts` are used to add some custom links and scripts in the header of the page.
 
-```html
+```django
 {% load static %}
 
 <html lang="en">
@@ -829,7 +765,7 @@ In first place, as said before, is to load the static information and to save ti
 
 For the body, and in this example we use a traditional division of the page in header with a navbar header, a sidebar with the menus and the main section with the content of the page, where the child layouts will be included. The `theme.html` is used to handle the color mode of the page, and the `toast` is used to show the messages in the front-end.
 
-```html
+```django
 <body class="vh-100">
 
 {% include "theme.html" %}
@@ -920,7 +856,7 @@ Other important element to give notice is that in the sidebar, the menus are cre
 
 For the footer we have the scripts that are used to handle the behavior of the page, and the `footer_scripts` is used to add some custom scripts in the footer of the page.
 
-```html
+```django
 <footer>
     <script src="{% static 'js/theme.js' %}"></script>
     
@@ -942,10 +878,9 @@ For the footer we have the scripts that are used to handle the behavior of the p
 
 
 ### Child layout (`child.html`)
-
 This file could be located in any app folder, and it's used to extend the base layout. The child layout is used to create the content of the pages, and it's used to create the structure of the pages. This is a simple example of a child layout:
 
-```html
+```django
 {% extends "base.html" %}
 
 {% load static %}
@@ -974,7 +909,6 @@ This file could be located in any app folder, and it's used to extend the base l
 > We can also directly call a child by the `{% include "other_child.html" %}` in any portion of the page, this helps to avoid code repetition and to keep the code more organized.
 
 ### Custom tags/filters (`templatetags/`)
-
 Django has some [built-in](https://docs.djangoproject.com/en/5.0/ref/templates/builtins/) tags and filters, some of them were used in the past examples such as conditionals (`if`, `else`, `endif`), loops (`for`, `endfor`), or related to django forms (`csrf_token`), or to handle the files and paths (`include`, `load`, `static`, `url`). But we can create our own tags and filters to handle some specific logic in the templates.
 
 For example, we can create a custom tag to handle the color mode of the page, and we can create a custom tag to handle the messages in the front-end. This is a simple example of a custom tag:

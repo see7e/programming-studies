@@ -4,7 +4,7 @@ tags:
   - studies
   - programming
   - logging
-  - python
+  - django
 use: Documentation, Error Handling
 languages: Python
 dependences: Django
@@ -42,7 +42,7 @@ The Python module defines levels with increasing numeric values, from 0 to 50, b
 > ## Concurrency
 > The logging module is thread-safe, meaning that it can be used in multi-threaded applications without the need for additional synchronization. However, if you are using the logging module in a multi-threaded application, it is important to ensure that the log messages are processed in the correct order. This can be done by using a queue to store the log messages before they are processed by the logger.
 > ## Security Considerations
-> When using the logging module, it is important to ensure that sensitive information is not logged. [Here's](django_logging_dive.md) another article that talks about these considerations.
+> When using the logging module, it is important to ensure that sensitive information is not logged. [Here's](dj-logging_dive.md) another article that talks about these considerations.
 
 The Logger module is divided into four components:
 - **Logger**: The main interface for logging messages, which can be configured to log messages at different levels (described above).
@@ -106,7 +106,7 @@ LOGGING = {
     },
 }
 ```
-> For a more in-depth explanation of the `LOGGING` dictionary, look [here](django_logging_dive.md).
+> For a more in-depth explanation of the `LOGGING` dictionary, look [here](dj-logging_dive.md).
 
 When a message is given to the logger, the log level of the message is compared to the log level of the logger. If the log level of the message meets or exceeds the log level of the logger itself, the message will undergo further processing. If it doesn’t, the message will be ignored.
 

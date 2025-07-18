@@ -3,6 +3,7 @@ title: Django Advanced Configurations
 tags:
   - studies
   - programming
+  - django
 use: Documentation
 languages: Python
 dependences: Django
@@ -42,6 +43,7 @@ dependences: Django
 # Topics
 
 - [Offloading Logic Service Layer](offloading_logic_service_layer.md)
-- [`Models.save` vs `Forms.save`](model.save_x_form.save.md)
-- [Signals](signals.md)
-
+- [`Models.save` vs `Forms.save`](dj-model_save-form_save.md)
+- [Signals](dj-signals.md)
+- [Internationalization (`i18n`): lazy translations](dj-internationalization-lazy-translations.md)
+- [Django CLI Commands](dj-cli-app.md)

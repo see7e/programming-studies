@@ -19,7 +19,12 @@ dependences: C3
 
 <details> <summary>Table of Contents 🔖</summary>
 
-- [New Note](#new-note)
+- [Method Resolution Order (MRO) in Python](#method-resolution-order-mro-in-python)
+  - [What Is MRO?](#what-is-mro)
+  - [C3 Linearization](#c3-linearization)
+  - [Related Concepts](#related-concepts)
+  - [Insights](#insights)
+  - [References](#references)
 
 </details>
 
@@ -63,7 +68,7 @@ The **C3 Linearization** algorithm ensures:
 
 This ensures a consistent and predictable lookup chain, avoiding ambiguity and conflicts in complex inheritance trees.
 
-You can inspect the MRO of a class using the [dunder method](dunder_methods.md):
+You can inspect the MRO of a class using the [dunder method](py-dunder_methods.md):
 
 ```python
 print(D.__mro__)

@@ -32,7 +32,7 @@ dependences: Django
 
 ## **7\. Can you explain how Django handles security and what security features it provides?**
 
-**Answer:** Django provides a range of security features that protect against common web security threats, such as SQL injection, cross-site scripting (XSS), and cross-site request forgery (CSRF). Django also provides features for protecting sensitive data, such as password hashing and secure cookie handling. Some of these checks are performed by [Form cleaning mechanisms](securing_user_inputs.md).
+**Answer:** Django provides a range of security features that protect against common web security threats, such as SQL injection, cross-site scripting (XSS), and cross-site request forgery (CSRF). Django also provides features for protecting sensitive data, such as password hashing and secure cookie handling. Some of these checks are performed by [Form cleaning mechanisms](dj-securing_user_inputs.md).
 
 ## **8\. What is Django's cache framework and how is it used?**
 

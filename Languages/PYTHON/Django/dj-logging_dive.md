@@ -3,6 +3,8 @@ title: Logging in Django - Deeper Dive
 tags:
   - studies
   - programming
+  - deep-dive
+  - django
 use: Documentation, Error Handling
 languages: Python
 dependences: Django

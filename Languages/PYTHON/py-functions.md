@@ -10,7 +10,10 @@ dependences:
 
 <details> <summary>Table of Contents 🔖</summary>
 
-- [New Note](#new-note)
+- [Elements of a function](#elements-of-a-function)
+	- [Argument x Parameter](#argument-x-parameter)
+	- [Return](#return)
+	- [Yield](#yield)
 
 </details>
 

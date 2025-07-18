@@ -3,6 +3,7 @@ title: Models.save vs Forms.save
 tags:
   - studies
   - programming
+  - django
 use: Documentation
 languages: Python
 dependences: Django
@@ -189,7 +190,7 @@ def save(self, *args, **kwargs) -> "Period":
 ---
 
 ## Connecting to advanced Django topics
-- **[Signals](signals.md)** – `ModelForm.save()` ultimately triggers the same `pre_save`/`post_save` hooks as calling the model directly, so signal handlers are agnostic to which layer was used.
+- **[Signals](dj-signals.md)** – `ModelForm.save()` ultimately triggers the same `pre_save`/`post_save` hooks as calling the model directly, so signal handlers are agnostic to which layer was used.
 - **Atomic transactions** – wrap a whole form wizard in `@transaction.atomic` so both the form’s `save()` and any extra logic roll back together.
 - **Bulk operations** – when performance matters, skip forms and use `bulk_create`, `bulk_update`, or `QuerySet.update` + `F()` expressions, but remember: bulk APIs **do not** emit save‑signals or call `save()`.
 - **Formsets & `formset.save()`** – orchestrate multiple `ModelForm`s; deleted objects are removed only after `formset.save()`.  ([Formsets | Django documentation](https://docs.djangoproject.com/en/5.2/topics/forms/formsets))
