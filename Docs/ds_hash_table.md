@@ -22,7 +22,7 @@ dependences: NULL
 
 <details> <summary>Implementations</summary>
 
-[`C`](../C/HashTable_implementation.md) | [`Python`](HashTable_implementation.md) | [`JavaScript`](../Front_End/JS/HashTable_implementation.md)
+[`C`](../C/HashTable_implementation.md) | [`Python`](../Languages/Python/py-hash_table-implementation.md) | [`JavaScript`](../Front_End/JS/HashTable_implementation.md)
 
 </details>
 

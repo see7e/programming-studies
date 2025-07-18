@@ -13,7 +13,13 @@ dependences:
 
 <details> <summary>Table of Contents 🔖</summary>
 
-- [New Note](#new-note)
+- [YAGNI – You Aren’t Gonna Need It](#yagni--you-arent-gonna-need-it)
+  - [Why YAGNI Matters](#why-yagni-matters)
+  - [Practical Example](#practical-example)
+  - [YAGNI in Agile and XP](#yagni-in-agile-and-xp)
+  - [Common Misconceptions](#common-misconceptions)
+  - [Related Principles](#related-principles)
+- [References](#references)
 
 </details>
 

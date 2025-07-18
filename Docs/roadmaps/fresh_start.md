@@ -20,8 +20,6 @@ dependences:
 
 ---
 
-- [i] #to_review : marcar pontos importantes, escrever artigos dedicados e conectar, tags e toc ⏫  
-
 > [!INFO] 
 > [101 Code Concepts](101_code_concepts.md)
 > [Usefull links ](links.md) 
@@ -73,7 +71,6 @@ The canvas below is just based on [Programação para Iniciantes](https://www.yo
 ---
 
 # Software Engineering Self-Learning Roadmap for Beginners
-> **Last Updated:** June 18, 2025
 
 ## Programming Paradigms
 Programming paradigms ==are fundamental styles or approaches to programming==. The main paradigms include **procedural programming**, **object-oriented programming (OOP)**, and **functional programming**. Learning these will give you multiple ways to think about and solve problems.
@@ -144,13 +141,14 @@ Beyond high-level design principles like SOLID, there are general coding maxims 
 
 Following these best practices leads to cleaner code. They often complement each other – for instance, YAGNI and KISS both discourage adding complexity “just in case.” DRY, meanwhile, ensures you don’t have the same bug in two places or diverging behaviors when you intended them to be the same. Keep these principles in mind as a checklist when writing and refactoring code.
 
+> [!INFO]
 > **Correlation:** Adopting these practices early will make it easier to work on larger projects later. For example, a DRY approach pairs well with SOLID principles like SRP (both reduce redundancy). KISS and YAGNI together prevent over-complication and over-engineering. As you learn design patterns next, remember that patterns should solve recurring problems – if you try to use a pattern “just in case” (violating YAGNI) or end up with an overly complex pattern usage (violating KISS), it’s a sign to step back. Always balance adding structure with keeping things as simple as possible.
 
 ## Design Patterns
-Once you understand core principles, the next step is learning **design patterns**. A design pattern is a general, reusable solution to a common problem in software design. Think of patterns as tried-and-true templates that you can apply to recurring design challenges. They are not code snippets, but rather abstract solutions you tailor to your needs.
+Once you understand core principles, the next step is learning **design patterns**. A design pattern is a **general, reusable solution to a common problem in software design**. Think of patterns as *tried-and-true templates* that you can apply to recurring design challenges. They are not code snippets, but rather **abstract solutions** you tailor to your needs.
 
-Classic design patterns were popularized by the “Gang of Four” (GoF) book, which catalogs 23 OOP-based patterns. These patterns are often grouped into categories:
-
+Classic design patterns were popularized by the [“Gang of Four” (GoF) book](../books/Design-Patterns-Erich-Gamma-Richard-Helm-Ralph-Johnson-John-Vlissides.md), which catalogs 23 OOP-based patterns. These patterns are often grouped into categories:
+- [i] #to_review last line updated
 - **Creational Patterns:** How to instantiate objects in a way that suits your situation. Examples: Singleton, Factory Method, Builder, Prototype. (e.g., a _Factory Method_ provides an interface for creating objects in a superclass, but allows subclasses to alter the type of objects that will be created.)
 
 - **Structural Patterns:** How to compose classes and objects into larger structures, while keeping these structures flexible and efficient. Examples: Adapter, Decorator, Facade, Composite, Proxy. (e.g., a _Decorator_ can add responsibilities to objects at runtime without changing their class, by wrapping them.)
@@ -242,7 +240,7 @@ Key parts of event-driven architecture include: **Event Producers**, **Event Con
     
 - **Consumers** receive events and perform some action in response (for instance, an email service listens for “OrderPlaced” to send a confirmation email, while an analytics service also listens to update sales metrics).
     
-- **Event Channel/Broker** is the medium through which events are transmitted from producers to consumers. This is often an intermediary like a **message queue** or **pub/sub system** (e.g., RabbitMQ, Apache Kafka, AWS EventBridge). The broker decouples producers and consumers – producers just publish events to the broker, consumers subscribe to relevant events from the broker.
+- **Event Channel/Broker** is the medium through which events are transmitted from producers to consumers. This is often an intermediary like a **message queue** or **[pub/sub](../pub-sub-pattern.md) system** (e.g., RabbitMQ, Apache Kafka, AWS EventBridge). The broker decouples producers and consumers – producers just publish events to the broker, consumers subscribe to relevant events from the broker.
     
 
 **Benefits:** Event-driven systems are **loosely coupled** and **scalable**. Because components only talk via events, you can add new consumers without modifying the producer (just start listening to the event). Systems like this can handle high load by distributing events and processing them in parallel. They’re also great for enabling **asynchronous processing** – the producer can fire an event and not wait for processing to complete (improving responsiveness). For example, when a user uploads a photo, a web app can immediately acknowledge the upload and then emit an event for background services to process the image (resize, filter, etc.) without making the user wait synchronously.
@@ -501,7 +499,7 @@ In summary, _the WebSocket API allows opening an interactive two-way communicati
 
 It’s worth noting that WebSockets do not use HTTP after the handshake, so you can’t rely on the request-response model or easily use HTTP features like cookies (though the initial handshake can use cookies for auth, then you might use token-based auth after). Instead, you might have to do your own application-level protocols (like sending an auth message first upon connection). Higher-level libraries often handle these details for you.
 
-> **Related:** WebSockets are part of the broader set of technologies for real-time and asynchronous communication. Alternatives or related technologies include **Server-Sent Events (SSE)** (unidirectional server-to-client stream), or using **MQTT** for IoT, etc. But WebSockets are unique in enabling full two-way comms in web apps. When designing systems, use WebSockets when you need _instant_ updates or push from server to client. If your app only needs occasional updates and can poll every few seconds, WebSockets might be overkill. WebSockets also require careful resource management – each client holds a connection open, which can strain server resources if not scaled properly (imagine thousands of concurrent sockets). There are services and patterns (like using message brokers) to help scale WebSockets. If you explore microservices or cloud, you might encounter managed WebSocket services or need to design pub-sub systems backing your WebSockets to distribute messages. In any case, for any chat, gaming, or live update feature, WebSockets are a go-to tool.
+> **Related:** WebSockets are part of the broader set of technologies for real-time and asynchronous communication. Alternatives or related technologies include **Server-Sent Events (SSE)** (unidirectional server-to-client stream), or using **MQTT** for IoT, etc. But WebSockets are unique in enabling full two-way comms in web apps. When designing systems, use WebSockets when you need _instant_ updates or push from server to client. If your app only needs occasional updates and can poll every few seconds, WebSockets might be overkill. WebSockets also require careful resource management – each client holds a connection open, which can strain server resources if not scaled properly (imagine thousands of concurrent sockets). There are services and patterns (like using message brokers) to help scale WebSockets. If you explore microservices or cloud, you might encounter managed WebSocket services or need to design [Pub/Sub](../pub-sub-pattern.md) systems backing your WebSockets to distribute messages. In any case, for any chat, gaming, or live update feature, WebSockets are a go-to tool.
 
 ## Cloud and DevOps Considerations (Scalability, Resiliency, Elasticity)
 In modern software engineering, it’s not just about writing code – it’s also about ensuring that code can run reliably under various conditions. This is where **cloud and DevOps** practices come in, focusing on how to deploy, scale, and maintain systems. Three important qualities to aim for are **Scalability**, **Resiliency**, and **Elasticity**. These often come up when designing cloud architectures (e.g., on AWS, Azure, GCP) and thinking about infrastructure. Let’s break down what each means:

@@ -3,7 +3,7 @@ title: GitHub Conventions
 tags:
   - studies
   - programming
-  - best_practices
+  - best-practices
 use: Documentation, Conventions
 languages: 
 dependences: GitHub

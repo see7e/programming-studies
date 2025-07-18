@@ -23,7 +23,7 @@ It already had Windows 10 Pro installed but I didn't wanted another MS machine, 
 
 ## Trying Arch btw
 
-The firsts steps were smoth, following some random tutorial, but in some point of the isntalation (the exact point doesn't matters now, you'll see) the same error was bein raised, tried to troubleshoot for some hours but I wasn't getting any progress, so I decided tto swap the OS with some lightweight linux distro and ended up with a 32bit XFCE MX version, that was really pleasnt to configure.
+The firsts steps were smooth, following some random tutorial, but in some point of the installation (the exact point doesn't matters now, you'll see) the same error was bein raised, tried to troubleshoot for some hours but I wasn't getting any progress, so I decided tto swap the OS with some lightweight linux distro and ended up with a 32bit XFCE MX version, that was really pleasnt to configure.
 
 ## The Configuration
 

@@ -11,21 +11,34 @@ dependences:
 
 <details> <summary>Table of Contents 🔖</summary>
 
-- [New Note](#new-note)
+- [Inheritance vs Composition](#inheritance-vs-composition)
+  - [Foundations](#foundations)
+  - [Strengths and Liabilities](#strengths-and-liabilities)
+  - [Typical Misuses](#typical-misuses)
+    - [Implementation inheritance](#implementation-inheritance)
+    - [Deep hierarchies](#deep-hierarchies)
+  - [When to Prefer Each](#when-to-prefer-each)
+  - [Design-Pattern Bridges](#design-pattern-bridges)
+  - [Beyond Classical OO](#beyond-classical-oo)
+    - [6.1 Mixins \& Traits](#61-mixins--traits)
+    - [6.2 Entity-Component Systems (ECS)](#62-entity-component-systems-ecs)
+    - [6.3 Functional \& ADT Paradigms](#63-functional--adt-paradigms)
+  - [SOLID Connections](#solid-connections)
+  - [Guidelines for Daily Practice](#guidelines-for-daily-practice)
+- [References](#references)
 
 </details>
 
 ---
 
-- [i] #to_review : Escrever, conectar, toc, tags
 # Inheritance vs Composition
 
 ## Foundations
-Inheritance and composition are complementary mechanisms for re-using behavior in object-oriented design.
+Inheritance and composition are complementary mechanisms for re-using behavior in [OOP](OOP.md).
 - **Inheritance** establishes an **is-a** subtype link: a subclass automatically acquires all public members of its parent.
 - **Composition** establishes a **has-a** link: an object delegates work to the collaborating objects it holds.
 
-Both mechanisms pre-date any specific language and appear in the classic “Gang of Four” (GoF) patterns, whose very first guideline reads: _“Favor object composition over class inheritance.”_
+Both mechanisms pre-date any specific language and appear in the classic [“Gang of Four” (GoF) patterns](books/Design-Patterns-Erich-Gamma-Richard-Helm-Ralph-Johnson-John-Vlissides.md), whose very first guideline reads: _“Favor object composition over class inheritance.”_
 
 In essence:
 - Inheritance promotes a **hierarchical**, top-down structure.
@@ -33,37 +46,151 @@ In essence:
 
 ##  Strengths and Liabilities
 
-| Aspect                | Inheritance                                  | Composition                                  |
-| --------------------- | -------------------------------------------- | -------------------------------------------- |
-| Code reuse style      | Compile-time sharing of implementation       | Run-time assembly of behavior                |
-| Coupling              | Tight: subclasses depend on parent internals | Loose: collaborators can be swapped          |
-| Substitutability risk | Can violate Liskov Substitution Principle    | Naturally preserved (no subtype relation)    |
-| Flexibility           | Rigid hierarchy; limited variants            | Combinatorial; avoids subclass explosion     |
-| Evolution cost        | Changes propagate across hierarchy           | Components evolve independently              |
-| Discoverability       | Clear taxonomy via class hierarchy           | More indirection through delegation          |
-| Runtime behavior      | Static                                       | Dynamic (components can be replaced/swapped) |
-| Expressiveness        | Semantic clarity for taxonomies              | Greater behavioral variation                 |
+| Aspect                | Inheritance                                  | Composition                                      |
+| --------------------- | -------------------------------------------- | ------------------------------------------------ |
+| **Code reuse** style  | Compile-time sharing of implementation       | Run-time assembly of behavior                    |
+| **Coupling**          | Tight: subclasses depend on parent internals | **Loose**: collaborators can be swapped          |
+| Substitutability risk | Can violate Liskov Substitution Principle    | **Naturally preserved** (no subtype relation)    |
+| Flexibility           | Rigid hierarchy; limited variants            | Combinatorial; **avoids subclass explosion**     |
+| Evolution cost        | **Changes propagate across hierarchy**       | Components evolve independently                  |
+| Discoverability       | **Clear taxonomy via class hierarchy**       | More indirection through delegation              |
+| Runtime behavior      | Static                                       | Dynamic (**components can be replaced/swapped**) |
+| Expressiveness        | *Semantic clarity for taxonomies*            | *Greater behavioral variation*                   |
+
+> [!NOTE]
+> **Taxonomy**, mentioned above, refers to the structured classification or categorization of entities—typically within an object-oriented design. When it says "clear taxonomy via class hierarchy," it means that the class hierarchy in inheritance provides a well-defined and organized structure. This structure allows you to categorize different types of objects and their relationships in a clear, hierarchical way.
 
 ## Typical Misuses
-1. **Implementation inheritance**: Extending a class only to reuse code rather than model a true is-a relationship often leads to brittle designs and breaks the Liskov Substitution Principle.
-2. **Deep hierarchies**: Modeling every axis of variation as a new subclass level leads to an exponential number of subclasses—a situation known as the “subclass explosion.”
+### Implementation inheritance
+Extending a class only to reuse code rather than model a true is-a relationship often leads to brittle designs and breaks the Liskov Substitution Principle.
+
+```python
+class Vehicle:
+    def start_engine(self):
+        print("Engine starting...")
+
+class Car(Vehicle):
+    def start_engine(self):
+        print("Car engine starting...")
+
+class Airplane(Vehicle):
+    def start_engine(self):
+        print("Airplane engine starting...")
+
+# Wrong usage: Treating Airplane as a Vehicle
+def start_vehicle_engine(vehicle: Vehicle):
+    vehicle.start_engine()
+
+start_vehicle_engine(Car())  # Correct behavior
+start_vehicle_engine(Airplane())
+```
+
+> [!WARNING] 
+> **Problem**: The `Vehicle` class was extended for code reuse, but the **`start_engine()` method’s behavior might not be the same for all types of vehicles**. If the `Airplane` subclass had different behavior for engines that isn't compatible with the `Vehicle` class interface, it would violate the Liskov Substitution Principle, which expects derived classes to behave in a way that makes them substitutable for the parent class.
+> A possible solution is to compose the `Vehicle` class with an `Engine` interface, allowing different types of engines to be used without breaking the substitutability contract.
+> ```python
+> class Engine:
+>     def start(self):
+>         pass
+> 
+> class CarEngine(Engine):
+>     def start(self):
+>         print("Car engine starting...")
+> 
+> class AirplaneEngine(Engine):
+>     def start(self):
+>         print("Airplane engine starting...")
+> 
+> class Vehicle:
+>     def __init__(self, engine: Engine):
+>         self.engine = engine
+> 
+>     def start_engine(self):
+>         self.engine.start()
+> ```
+
+### Deep hierarchies
+Modeling every axis of variation as a new subclass level leads to an exponential number of subclasses—a situation known as the “subclass explosion.”
+
+```python
+class Shape:
+    def area(self): pass
+
+class Circle(Shape):
+    def area(self):
+        return "π * radius^2"
+
+class Square(Shape):
+    def area(self):
+        return "side^2"
+
+# Adding more and more specific subclasses for different shapes
+class SmallCircle(Circle):
+    def area(self):
+        return "π * (small radius)^2"
+
+class LargeCircle(Circle):
+    def area(self):
+        return "π * (large radius)^2"
+
+class SmallSquare(Square):
+    def area(self):
+        return "small side^2"
+
+class LargeSquare(Square):
+    def area(self):
+        return "large side^2"
+
+# This quickly grows and leads to a subclass explosion.
+```
+
+> [!WARNING]
+> **Problem**: Here, each variation in shape size results in a new subclass, which **leads to deep, unwieldy hierarchies**. With many such axes of variation (e.g., sizes, colors, types), this model could grow exponentially and become very difficult to maintain or modify. A better approach might be to use composition or other design patterns like the Strategy pattern to avoid this explosion of subclasses.
+> ```python
+> class Circle(Shape):
+>     def __init__(self, radius):
+>         self.radius = radius
+> 
+>     def area(self):
+>         return 3.14 * (self.radius ** 2)
+> 
+> class Square(Shape):
+>     def __init__(self, side):
+>         self.side = side
+> 
+>     def area(self):
+>         return self.side ** 2
+> 
+> # Separate the "size" variation using a Size class rather than subclassing
+> class Size:
+>     def __init__(self, size_type):
+>         self.size_type = size_type
+> 
+>     def get_factor(self):
+>         if self.size_type == "small":
+>             return 0.5
+>         elif self.size_type == "large":
+>             return 2
+>         return 1
+> ```
 
 ## When to Prefer Each
 Use **inheritance** when:
-- There is a true is-a relationship.
-- All subclasses uphold the behavioral contract of the superclass (per the LSP).
-- You want polymorphic substitution (e.g., GUI components with a shared rendering base).
+- There is a **true is-a relationship**.
+- All subclasses uphold the **behavioral contract of the superclass** (per the LSP).
+- You want **polymorphic substitution** (e.g., GUI components with a shared rendering base).
 
 Use **composition** when:
-- Behavior varies independently along multiple axes (e.g., payment processors, logging).
-- Runtime configurability is important (strategy pattern).
-- Domain logic changes often (typical in business and domain-driven applications).
+- **Behavior varies independently** along multiple axes (e.g., payment processors, logging).
+- **Runtime configurability is important** (*strategy pattern*).
+- **Domain logic** changes often (typical in business and domain-driven applications).
 
-**Pragmatic Rule**: Start with composition by default. Use inheritance _only_ when substitutability is provable, domain-relevant, and semantically clear.
+> [!TIP]
+> **Pragmatic Rule**: Start with composition by default. Use inheritance _only_ when substitutability is provable, domain-relevant, and semantically clear.
 
 ## Design-Pattern Bridges
 Design patterns bridge theory and practical implementation. Here are key patterns that leverage composition:
-- **Strategy**: Encapsulates algorithms in interchangeable objects. The context class delegates to a strategy object.
+- **Strategy**: Encapsulates algorithms in interchangeable objects. The context class delegates to a strategy object (an interface).
 - **Decorator**: Dynamically adds behavior to an object by wrapping it with another object—useful for layered functionality.
 - **Bridge**: Separates abstraction from implementation, enabling both to vary independently through composition.
 
@@ -72,35 +199,35 @@ These patterns make the _“composition over inheritance”_ principle actionabl
 ## Beyond Classical OO
 
 ### 6.1 Mixins & Traits
-Languages like **Scala**, **Rust**, and **Swift** allow code reuse through **traits** or **mixins**. These offer composition-like granularity within an inheritance-based model, often resolving the diamond problem via linearization.
+Languages like **Scala**, **Rust**, and **Swift** or even frameworks like [Django](../Languages/Python/Django/django-mixins.md) allow code reuse through **traits** or **mixins**. These offer composition-like granularity within an inheritance-based model, often resolving the diamond problem via linearization.
 
 ### 6.2 Entity-Component Systems (ECS)
-Game engines such as Unity use **ECS**, where entities are just IDs and all behavior is implemented via systems acting on data-only components. This is **extreme composition**, optimized for modularity and performance.
+Game engines such as Unity use **ECS**, where entities are just IDs and *all behavior is implemented via systems acting on data-only components*. This is **extreme composition**, optimized for modularity and performance.
 
 ### 6.3 Functional & ADT Paradigms
 In purely functional languages, behavior is organized through **algebraic data types** (ADTs), **pattern matching**, and **higher-order functions**. These mechanisms replace class hierarchies entirely, preserving substitutability via the type system.
 
-## SOLID Connections
+## [SOLID](solid.md) Connections
 Inheritance and composition have deep ties to the SOLID principles:
 
-| Principle | Inheritance Impact                                                      | Composition Advantage                                                  |
-| --------- | ----------------------------------------------------------------------- | ---------------------------------------------------------------------- |
-| **SRP**   | Inheritance can lead to bloated base classes with multiple duties.      | Composition encourages small, cohesive, single-purpose components.     |
-| **OCP**   | Extending behavior via subclassing may require altering parent classes. | New composed objects extend behavior without changing existing code.   |
-| **LSP**   | Easy to violate if subclass alters expected behavior.                   | Composition sidesteps substitutability issues entirely.                |
-| **ISP**   | Inheritance can lock classes into large base interfaces.                | Composition promotes use of small, targeted interfaces.                |
-| **DIP**   | Inheritance ties modules to specific class hierarchies.                 | Composition encourages depending on interfaces and injecting behavior. |
+| Principle | Inheritance Impact                                                      | Composition Advantage                                                    |
+| --------- | ----------------------------------------------------------------------- | ------------------------------------------------------------------------ |
+| **SRP**   | Can lead to bloated base classes with multiple duties.                  | **Encourages small, cohesive, single-purpose components**.               |
+| **OCP**   | Extending behavior via subclassing may require altering parent classes. | **New composed objects extend behavior without changing existing code**. |
+| **LSP**   | Easy to violate if subclass alters expected behavior.                   | **Sidesteps substitutability issues entirely**.                          |
+| **ISP**   | Can lock classes into large base interfaces.                            | **Promotes use of small, targeted interfaces**.                          |
+| **DIP**   | Ties modules to specific class hierarchies.                             | **Encourages depending on interfaces and injecting behavior**.           |
 
 ## Guidelines for Daily Practice
-1. Use inheritance only when a genuine subtype relationship exists.
-2. Encapsulate change-prone logic with interfaces and inject via composition.
-3. Prefer shallow hierarchies and delegation over override-heavy subclassing.
-4. Blend composition with abstraction: define interfaces, compose implementations.
+1. Use **inheritance only when a genuine subtype relationship exists**.
+2. **Encapsulate change-prone logic with interfaces** and inject via composition.
+3. Prefer **shallow hierarchies and delegation** over override-heavy subclassing.
+4. Blend composition with abstraction: define interfaces, **compose implementations**.
 5. Validate subtypes with **contract-based tests** to catch LSP violations early.
 
 ---
 
-Inheritance and composition are not rivals but tools—each with strengths, trade-offs, and risks. Modern architecture favors **composition** for its flexibility, testability, and adaptability. Inheritance remains valuable when used judiciously and semantically.
+Inheritance and composition are not rivals but tools—each with strengths, trade-offs, and risks. *Modern architecture favors **composition** for its flexibility, testability, and adaptability*. Inheritance remains valuable when used judiciously and semantically.
 
 Understanding when and why to use each—guided by design patterns, SOLID principles, and the real-world nature of your domain—leads to software that’s robust, understandable, and built to last.
 

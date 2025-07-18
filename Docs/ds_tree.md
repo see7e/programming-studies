@@ -51,7 +51,7 @@ A Tree, is a data structure that stores strings as data items that can be organi
 
 <details> <summary>Implementations</summary>
 
-[`C`](../Languages/C/binary_tree_implementation.md) | [`Python`](../Languages/Python/binary_tree_implementation.md) | [`JavaScript`](../Front_End/JS/binary_tree_implementation.md)
+[`C`](../Languages/C/binary_tree_implementation.md) | [`Python`](../Languages/Python/py-binary_tree-implementation.md) | [`JavaScript`](../Front_End/JS/binary_tree_implementation.md)
 
 </details>
 

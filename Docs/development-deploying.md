@@ -32,7 +32,7 @@ dependences: GitHub, GitHub Actions
 
 ---
 # Intro
-Sometimes we want to test the application in a more effective way than running automated tests (see here for [Django's tests](tests.md)). Or we just want to present for the QA, Testing or Client a brief example of a safe and running environment.
+Sometimes we want to test the application in a more effective way than running automated tests (see here for [Django's tests](../Languages/Python/Django/django-tests.md)). Or we just want to present for the QA, Testing or Client a brief example of a safe and running environment.
 
 As my previous experience, I've been working with GitHub Actions for creating and managing CI/CD pipelines, with various contexts (one already mentioned above).
 In this article we'll see a brief endeavour regarding a deployment pipeline for a Development environment.

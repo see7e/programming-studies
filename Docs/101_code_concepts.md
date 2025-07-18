@@ -194,7 +194,7 @@ In modern computing we're rarely working with the `bare metal` CPU and RAM inste
 
 These machines are the backbone of the internet and are connected via the internet protocol each machine has a unique `IP` address to identify it on the network.
 
-IP address is usually alias to a `URL` that is registered in a global database called the Domain Name Service (`DNS`).
+IP address is usually alias to a `URL` that is registered in a global database called the Domain Name Service (`DNS`). This service is tied with a [resolution management](linux-dns-resolv-conf.md) that converts the domain namespace into the server's IP location.
 
 To establish a connection the two computers will perform a `TCP` handshake which will allow them to exchange messages called `packets` on top of that there's usually a Security Layer Like (`SSL`) to encrypt and decrypt the messages over the network.
 

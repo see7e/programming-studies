@@ -6,6 +6,7 @@ tags:
   - solid
   - design
   - principle
+  - best-practices
 use: Documentation, Design, Principles
 languages: 
 dependences:
@@ -29,10 +30,10 @@ dependences:
 ---
 
 # SOLID Design Principles
-The **SOLID principles** are a set of five core guidelines for object-oriented design, introduced by Robert C. Martin (Uncle Bob) around 2000 [1](#references). The name is an acronym formed from the first letters of each principle. SOLID is widely taught as a cornerstone of good OOP design because following these principles tends to produce code that is easier to understand, extend, and maintain. The principles are:
+The **SOLID principles** are a set of five core guidelines for object-oriented design, introduced by Robert C. Martin (Uncle Bob) around 2000 [^1](#references). The name is an acronym formed from the first letters of each principle. SOLID is widely taught as a cornerstone of good OOP design because following these principles tends to produce code that is easier to understand, extend, and maintain. The principles are:
 
 ## S – Single Responsibility Principle (SRP)
-A class should have one, and only one, reason to change [2](#references). In other words, ==each class should only fulfill a single responsibility or functionality== [3](#references). If a class does too many things, it becomes complex and difficult to maintain. *By keeping classes focused, you achieve higher cohesion*.
+A class should have one, and only one, reason to change [^2](#references). In other words, ==each class should only fulfill a single responsibility or functionality== [^3](#references). If a class does too many things, it becomes complex and difficult to maintain. *By keeping classes focused, you achieve higher cohesion*.
 
 > [!TIP]
 > The point about "only one reason to change" is related with the [coupling](to_review/coupling.md) of the logic ("responsibility") that is expected for that class/method to perform. If more than one performed tasks changes (Robert also refers to *stakeholders*) and this triggers a change in the class, than this principle is broken.
@@ -41,7 +42,7 @@ A class should have one, and only one, reason to change [2](#references). In oth
 
 > For example, a class `ReportGenerator` might have the sole job of generating reports – it shouldn’t also be handling database connections or logging, because those are separate concerns. Following SRP makes classes "smaller" and more maintainable.
 
-As Uncle Bob humorously avises, **“classes should be small! … We count responsibilities to measure class size”**. ==If you can’t describe what a class does in a concise sentence, it likely has multiple responsibilities and should be refactored== [4](#references). Adhering to SRP yields benefits in **maintainability (easier to understand and change one focused class) and testability (simpler to write unit tests for a class that does one thing).**
+As Uncle Bob humorously avises, **“classes should be small! … We count responsibilities to measure class size”**. ==If you can’t describe what a class does in a concise sentence, it likely has multiple responsibilities and should be refactored== [^4](#references). Adhering to SRP yields benefits in **maintainability (easier to understand and change one focused class) and testability (simpler to write unit tests for a class that does one thing).**
 
 Other correlation that could be made with the example is that is if another class needs to make another connection with the database, probably the logic will be repeated, and this breaks the [DRY](dry.md) principle.
 
@@ -49,37 +50,37 @@ Other correlation that could be made with the example is that is if another clas
 Several "*code smells*" and structural symptoms indicate that a class is violating the Single Responsibility Principle (SRP) by having more than one reason to change:
 
 **1. Multiple Areas of Functionality**
-- The class contains *methods or logic that serve distinct, unrelated purposes*. For example, a class that both handles business logic and manages database transactions is taking on too many roles [6](#references) [7](#references).
+- The class contains *methods or logic that serve distinct, unrelated purposes*. For example, a class that both handles business logic and manages database transactions is taking on too many roles [^6](#references) [^7](#references).
 
 **2. Method Grouping by Unrelated Tasks**
-- Methods in the class naturally *group into separate clusters based on different concerns* (e.g., "these are report methods," "these are calculation methods") [6](#references).
+- Methods in the class naturally *group into separate clusters based on different concerns* (e.g., "these are report methods," "these are calculation methods") [^6](#references).
 
 **3. Difficult or Compound Naming**
-- If you *struggle to name the class succinctly*, or the name contains "and" (e.g., `ReportAndCalculationManager`), it's a sign the class does too much [6](#references).
+- If you *struggle to name the class succinctly*, or the name contains "and" (e.g., `ReportAndCalculationManager`), it's a sign the class does too much [^6](#references).
 
 **4. Multiple Stakeholders or Change Drivers**
-- The class must be modified for different reasons by different people (e.g., a change in business rules vs. a change in reporting format) [8](#references).
+- The class must be modified for different reasons by different people (e.g., a change in business rules vs. a change in reporting format) [^8](#references).
 
 **5. Too Many Dependencies**
-- The class *depends on many unrelated services or libraries*, making it complex and tightly coupled [5](#references).
+- The class *depends on many unrelated services or libraries*, making it complex and tightly coupled [^5](#references).
 
 **6. Low Cohesion**
-- The class's methods *do not operate on the same data* or do not logically belong together, reducing cohesion [6](#references).
+- The class's methods *do not operate on the same data* or do not logically belong together, reducing cohesion [^6](#references).
 
 **7. Frequent Changes for Unrelated Reasons**
-- The class is often modified for reasons that are *not directly related* (e.g., updating how data is stored vs. changing how data is displayed) [7](#references) [8](#references).
+- The class is often modified for reasons that are *not directly related* (e.g., updating how data is stored vs. changing how data is displayed) [^7](#references) [^8](#references).
 
 **8. Implementing Many Interfaces**
-- The class *implements interfaces for different concerns*, suggesting it handles multiple responsibilities [6](#references).
+- The class *implements interfaces for different concerns*, suggesting it handles multiple responsibilities [^6](#references).
 
 **9. "Big Ball of Mud"**
-- The class *grows large and unwieldy*, with logic for many different tasks, making it fragile and hard to maintain [6](#references).
+- The class *grows large and unwieldy*, with logic for many different tasks, making it fragile and hard to maintain [^6](#references).
 
-> If you have an `Employee` class that both calculates pay and prints history reports, you would need to change it if the pay calculation changes or if the report format changes. This means the class has more than one reason to change and should be split into separate classes for each responsibility [8].
+> If you have an `Employee` class that both calculates pay and prints history reports, you would need to change it if the pay calculation changes or if the report format changes. This means the class has more than one reason to change and should be split into separate classes for each responsibility [^8].
 
 #### Broader Implications
-- **Coupling:** Multiple responsibilities in one class cause coupling between unrelated features, making the code fragile and harder to test [9](#references).
-- **Maintainability:** Classes with a single responsibility are easier to maintain, extend, debug and test [5](#references).
+- **Coupling:** Multiple responsibilities in one class cause coupling between unrelated features, making the code fragile and harder to test [^9](#references).
+- **Maintainability:** Classes with a single responsibility are easier to maintain, extend, debug and test [^5](#references).
 If you notice any of these signs, it's a good indication that your class may need to be refactored to better adhere to the Single Responsibility Principle.
 
 ---

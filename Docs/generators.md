@@ -10,7 +10,11 @@ dependences:
 
 <details> <summary>Table of Contents 🔖</summary>
 
-- [New Note](#new-note)
+- [Generators](#generators)
+    - [What Differs a Generator from an Iterator?](#what-differs-a-generator-from-an-iterator)
+    - [Generators Across Programming Languages](#generators-across-programming-languages)
+    - [Best Practices for Using Generators](#best-practices-for-using-generators)
+  - [External References and Further Reading](#external-references-and-further-reading)
 
 </details>
 

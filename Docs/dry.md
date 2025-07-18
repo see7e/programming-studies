@@ -12,7 +12,25 @@ dependences:
 
 <details> <summary>Table of Contents 🔖</summary>
 
-- [New Note](#new-note)
+- [The DRY Principle](#the-dry-principle)
+  - [Core Concept and Philosophy](#core-concept-and-philosophy)
+  - [Benefits of Following DRY](#benefits-of-following-dry)
+    - [Enhanced Maintainability and Consistency](#enhanced-maintainability-and-consistency)
+    - [Reduced Error Rates and Improved Reliability](#reduced-error-rates-and-improved-reliability)
+    - [Simplified Development Process](#simplified-development-process)
+  - [Practical Implementation Strategies](#practical-implementation-strategies)
+    - [Code Organization and Structure](#code-organization-and-structure)
+    - [Creating Reusable Components](#creating-reusable-components)
+  - [The WET Alternative and Its Drawbacks](#the-wet-alternative-and-its-drawbacks)
+  - [When **Not** to Apply DRY](#when-not-to-apply-dry)
+    - [Avoiding Premature Abstraction](#avoiding-premature-abstraction)
+    - [The Rule of Three](#the-rule-of-three)
+    - [Balancing Readability and Abstraction](#balancing-readability-and-abstraction)
+  - [Tools and Best Practices](#tools-and-best-practices)
+    - [Relationship to Other Design Principles](#relationship-to-other-design-principles)
+    - [Implementation Support](#implementation-support)
+    - [Documentation and Team Collaboration](#documentation-and-team-collaboration)
+  - [External References](#external-references)
 
 </details>
 
