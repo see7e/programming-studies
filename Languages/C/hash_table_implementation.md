@@ -19,8 +19,6 @@ dependences: NULL
 # Code File [#](hash_table.c)
 
 # Explanation
-> ChatGPT powered
-
 > Here are some explanations for the code snippets in the given code:
 1.  **Structure to represent key-value pair:**
 	

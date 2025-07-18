@@ -17,8 +17,6 @@ dependences: NULL
 ---
 
 # Code File [#](heap.c)
-> ChatGPT powered
-
 Upon reviewing the [code](#found-in-programiz), I have identified several bugs in the provided Max-Heap implementation:
 
 -   In the `heapify` function, the parameter `size` is used both as a function parameter and as a global variable. This can lead to confusion and incorrect results. It's recommended to remove the global variable `size` and use the function parameter `size` consistently throughout the code.
@@ -34,8 +32,6 @@ Upon reviewing the [code](#found-in-programiz), I have identified several bugs i
 -   In the `main` function, the `size` variable is not initialized before calling the `insert` function. This can lead to unpredictable behavior. It's better to initialize `size` to 0 before inserting elements into the heap.
 
 # Explanation
-> ChatGPT powered
-
 ```c
 #include <stdio.h>
 

@@ -21,8 +21,6 @@ dependences: NULL
 ---
 
 # Code File [#](binary_tree.c)
-> ChatGPT
-
 The [code](#found-in-programiz) provided appears to have a logical error rather than bugs. The issue lies in the way you're creating nodes and checking for full binary tree property.
 
 In the `createNewNode` function, the `item` field is declared as an `int`, but you're passing a `char` argument (`k`). It's recommended to change the type of `item` to `int` to match the argument type.
@@ -67,8 +65,6 @@ return false;
 With these changes, the code should now work correctly and determine if the given binary tree is a full binary tree.
 
 # Explanation
-> ChatGPT powered
-
 This [code](binary_tree.c) defines the struct Node with an int field called data, which stores the value of each node. The createNewNode function creates a new node with the provided value.
 
 The isFullBinaryTree function checks if a given binary tree is a full binary tree by recursively examining each node's children. The main function creates a binary tree with nodes and calls the isFullBinaryTree function to determine if it's a full binary tree or not.
