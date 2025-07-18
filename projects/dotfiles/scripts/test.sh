@@ -12,7 +12,7 @@
 #     if [ ! -e "$path" ]; then
 #         non_existing_paths+="$path\n"  # Append the non-existing path to the list
 #     fi
-# done < "/mnt/g/O meu disco/DRIVE/othr/resources/dotlist.txt"
+# done < "/mnt/g/O meu disco/DRIVE/GAB/Estudos-Trabalhos/PROGRAMAÇÃO/programming-studies/othr/resources/dotlist.txt"
 # # Echo the non-existing paths
 # if [ -n "$non_existing_paths" ]; then
 #     echo "The following paths do not exist:"
