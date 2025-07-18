@@ -1,5 +1,0 @@
-- https://www.teleco.com.br/tutoriais/tutorialltecdr/pagina_1.asp
-- https://medium.com/5g-nr/5g-service-based-architecture-sba-47900b0ded0a
-- https://medium.com/long-term-evolution/moving-4g-epc-to-the-cloud-27a15278ea50
-- https://www.eventhelix.com/5G/
-- https://www.etsi.org/standards#Pre-defined%20Collections

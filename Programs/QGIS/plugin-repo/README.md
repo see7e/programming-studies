@@ -65,7 +65,7 @@ error: subprocess-exited-with-error
     ** make sure the development packages of libxml2 and libxslt are installed **
     Using build configuration of libxslt
     running install
-    /home/see7e/byon_scripts/qgs-plugin-repo/qgis-plugins-xml/venv/lib/python3.11/site-packages/setuptools/command/install.py:34: SetuptoolsDeprecationWarning: setup.py install is deprecated. Use build and pip and other standards-based tools.
+    /home/see7e/scripts/qgs-plugin-repo/qgis-plugins-xml/venv/lib/python3.11/site-packages/setuptools/command/install.py:34: SetuptoolsDeprecationWarning: setup.py install is deprecated. Use build and pip and other standards-based tools.
     warnings.warn(
         running build
         running build_py
@@ -137,7 +137,7 @@ error: subprocess-exited-with-error
         creating build/temp.linux-x86_64-3.11
         creating build/temp.linux-x86_64-3.11/src
         creating build/temp.linux-x86_64-3.11/src/lxml
-        x86_64-linux-gnu-gcc -Wsign-compare -DNDEBUG -g -fwrapv -O2 -Wall -g -fstack-protector-strong -Wformat -Werror=format-security -g -fwrapv -O2 -g -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2 -fPIC -DCYTHON_CLINE_IN_TRACEBACK=0 -Isrc -Isrc/lxml/includes -I/home/see7e/byon_scripts/qgs-plugin-repo/qgis-plugins-xml/venv/include -I/usr/include/python3.11 -c src/lxml/etree.c -o build/temp.linux-x86_64-3.11/src/lxml/etree.o -w
+        x86_64-linux-gnu-gcc -Wsign-compare -DNDEBUG -g -fwrapv -O2 -Wall -g -fstack-protector-strong -Wformat -Werror=format-security -g -fwrapv -O2 -g -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2 -fPIC -DCYTHON_CLINE_IN_TRACEBACK=0 -Isrc -Isrc/lxml/includes -I/home/see7e/scripts/qgs-plugin-repo/qgis-plugins-xml/venv/include -I/usr/include/python3.11 -c src/lxml/etree.c -o build/temp.linux-x86_64-3.11/src/lxml/etree.o -w
         src/lxml/etree.c:289:12: fatal error: longintrepr.h: No such file or directory
             289 |   #include "longintrepr.h"
                 |            ^~~~~~~~~~~~~~~
